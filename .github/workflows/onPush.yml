@@ -7,7 +7,7 @@ env:
 
 
 jobs:
-  build:
+  - build:
     runs-on: windows-latest
         
     steps:
@@ -33,9 +33,7 @@ jobs:
         git push
 
 
-
-jobs:
-  build:
+  - build:
     runs-on: ubuntu-latest
         
     steps:
