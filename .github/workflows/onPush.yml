@@ -14,16 +14,16 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Increment version
-      run: cmake -P ${{github.workspace}}/IncrMinorVersion.cmake
+      run: cmake -P ${{github.workspace}}\IncrMinorVersion.cmake
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/Binaries/Windows-x86/
+      run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/Binaries/Windows-x86 --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --config ${{env.BUILD_TYPE}}
       
     - name: Move binary
-      run: move /y ${{github.workspace}}/Binaries/Windows-x86/Release/byteman.exe ${{github.workspace}}/Binaries/Windows-x86/
+      run: move /y "${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe" "${{github.workspace}}\Binaries\Windows-x86\"
 
     - name: Commit binary
       run: |
