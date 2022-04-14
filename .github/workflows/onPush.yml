@@ -12,16 +12,16 @@ jobs:
 
     - name: Run pwd ?
       id: run_pwd
-      run: echo "::set-output name=pwd::$(pwd)"
+      run: echo "::set-output name=pwdlog::$(pwd)"
     - name: Run ls ?
       id: run_ls
-      run: echo "::set-output name=ls::$(ls)"
+      run: echo "::set-output name=lslog::$(ls)"
       
     - name: Output pwd
-      run: echo "PWD output: ${{steps.run_pwd.outputs.pwd}}"
+      run: echo "PWD output: ${{steps.run_pwd.outputs.pwdlog}}"
       
-    - name: Output pwd
-      run: echo "LS output: ${{steps.run_ls.outputs.ls}}"
+    - name: Output ls
+      run: echo "LS output: ${{steps.run_ls.outputs.lslog}}"
 
     - name: Increment minor version
       run: cmake -P ${{github.workspace}}/src/IncrMinorVersion.cmake
