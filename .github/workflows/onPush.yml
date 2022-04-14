@@ -23,6 +23,3 @@ jobs:
     - name: Output ls
       run: echo "${{steps.runls.outputs.lslog}}"
 
-    - name: Increment minor version
-      run: cmake -P ${{github.workspace}}/src/IncrMinorVersion.cmake
-	  
