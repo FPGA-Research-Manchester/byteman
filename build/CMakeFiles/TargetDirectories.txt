@@ -1,0 +1,3 @@
+/home/runner/work/byteman/byteman/build/CMakeFiles/byteman.dir
+/home/runner/work/byteman/byteman/build/CMakeFiles/edit_cache.dir
+/home/runner/work/byteman/byteman/build/CMakeFiles/rebuild_cache.dir
