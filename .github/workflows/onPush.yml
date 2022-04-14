@@ -32,16 +32,17 @@ jobs:
         git diff-index --quiet HEAD || git commit -am "Binaries" -a
         git push
 
-
+#first is windows and it updates the versioning
   build-linux:
+    needs: [build-windows]
     runs-on: ubuntu-latest
         
     steps:
     - uses: actions/checkout@v3
 
-    - name: Increment minor version
-      run: cmake -P ${{github.workspace}}/IncrMinorVersion.cmake
-
+#    - name: Increment minor version
+#      run: cmake -P ${{github.workspace}}/IncrMinorVersion.cmake
+#
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/Binaries/Linux-x86
 
