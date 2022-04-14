@@ -1,0 +1,6 @@
+file(READ "CMakeLists.txt" CMakeLists)
+string(REGEX MATCH "VERSION ([0-9]+).([0-9]+)" FIRST_LINE "${CMakeLists}")
+set(NEW_VER_MAJOR ${CMAKE_MATCH_1})
+math(EXPR NEW_VER_MINOR "${CMAKE_MATCH_2}+1")
+string(REGEX REPLACE "VERSION ([0-9]+).([0-9]+)" "VERSION ${NEW_VER_MAJOR}.${NEW_VER_MINOR}" CMakeLists "${CMakeLists}")
+file(WRITE "CMakeLists.txt" "${CMakeLists}")

@@ -1,6 +1,10 @@
 #ifndef BYTEMAN_H
 #define BYTEMAN_H
-#include "version.h"
+
+#define VERSION "0.0"
+#ifndef CMAKE_PROJECT_VERSION
+#define VERSION CMAKE_PROJECT_VERSION
+#endif
 //placeholder definition to verify linking
 int x;
 
