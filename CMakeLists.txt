@@ -6,5 +6,5 @@ VERSION 0.0
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(byteman src/byteman.cxx src/byteman.h)
+add_executable(byteman src/byteman.cpp src/byteman.h)
 
