@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-#next line has to be in the format "project(byteman VERSION X.Y ..." for the autoversioning
+#next line has to be in the format ..."byteman VERSION X.Y"... for the autoversioning
 project(byteman VERSION 0.0)
 
 set(CMAKE_CXX_STANDARD 11)
