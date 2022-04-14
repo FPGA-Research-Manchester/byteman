@@ -9,6 +9,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+
+    - name: Run pwd ?
+      id: run_pwd
+      run: pwd
+    - name: Run ls ?
+      id: run_ls
+      run: ls
+
     - name: Increment minor version
       run: cmake -P ${{github.workspace}}/src/IncrMinorVersion.cmake
 	  
