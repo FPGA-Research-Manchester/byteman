@@ -6,7 +6,5 @@ VERSION 0.0
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(src)
-
 add_executable(byteman src/byteman.cxx src/byteman.h)
 
