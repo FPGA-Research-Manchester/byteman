@@ -7,14 +7,30 @@ env:
 
 
 jobs:
-  build-windows:
-    runs-on: windows-latest
+  auto-version:
+    runs-on: ubuntu-latest
         
     steps:
     - uses: actions/checkout@v3
 
     - name: Increment version
       run: cmake -P ${{github.workspace}}\IncrMinorVersion.cmake
+
+    - name: Commit version
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add ${{github.workspace}}/src/byteman.h
+        git add ${{github.workspace}}/CMakeLists.txt
+        git diff-index --quiet HEAD || git commit -am "Autoversion" -a
+        git push
+    
+  build-windows:
+    needs: [auto-version]
+    runs-on: windows-latest
+        
+    steps:
+    - uses: actions/checkout@v3
 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\
@@ -38,9 +54,8 @@ jobs:
         git diff-index --quiet HEAD || git commit -am "Binaries" -a
         git push
 
-#first is windows and it updates the versioning
   build-linux:
-    needs: [build-windows]
+    needs: [auto-version]
     runs-on: ubuntu-latest
         
     steps:
