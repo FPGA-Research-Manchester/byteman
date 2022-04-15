@@ -23,6 +23,7 @@ jobs:
       run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --config ${{env.BUILD_TYPE}}
 
     - name: Delete old binary
+      continue-on-error: true
       run: del "${{github.workspace}}\Binaries\Windows-x86\byteman.exe"
 
     - name: Put new binary
