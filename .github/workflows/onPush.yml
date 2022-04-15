@@ -13,8 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Increment version
-      run: cmake -P ${{github.workspace}}/IncrMinorVersion.cmake
+    - name: Increment and propagate build number
+      run: cmake -P ${{github.workspace}}/.github/workflows/CMakeVersioner.cmake
 
     - name: Commit version
       run: |
