@@ -1,7 +1,6 @@
 #ifndef BYTEMAN_H
 #define BYTEMAN_H
-
-#define VERSION "@PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@"
+#define VERSION "0.0"
 //placeholder definition to verify linking
 int x;
 
