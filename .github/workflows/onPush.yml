@@ -22,8 +22,11 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --config ${{env.BUILD_TYPE}}
 
-    - name: Move binary
-      run: copy /y /b "${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe" "${{github.workspace}}\Binaries\Windows-x86\byteman.exe"
+    - name: Delete old binary
+      run: del "${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe"
+
+    - name: Put new binary
+      run: move "${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe" "${{github.workspace}}\Binaries\Windows-x86\"
 
     - name: Commit binary
       run: |
