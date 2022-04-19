@@ -4,6 +4,6 @@
 #define VERSION "0.0"
 #define VERSION_BUILD "14"
 //placeholder definition to verify linking
-int x;
+int x; /** Doxygen test information about int x; */
 
 #endif
