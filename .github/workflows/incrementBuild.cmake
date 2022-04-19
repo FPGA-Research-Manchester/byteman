@@ -14,7 +14,7 @@ string(REGEX REPLACE "PROJECT_NUMBER = ([0-9]+).([0-9]+)" "PROJECT_NUMBER = ${NE
 file(WRITE "Resources/Doxyfile.in" "${DoxyFile}")
 file(READ "README.md" ReadMe)
 string(REGEX REPLACE "byteman-v([0-9]+).([0-9]+)" "byteman-v${NEW_VER_MAJOR}.${NEW_VER_MINOR}" ReadMe "${ReadMe}")
-string(REGEX REPLACE "Build-([0-9]+)-" "Build-${NEW_VER_BUILD}-" ReadMe "${ReadMe}")
+string(REGEX REPLACE "Build%20([0-9]+)-" "Build%20${NEW_VER_BUILD}-" ReadMe "${ReadMe}")
 file(WRITE "README.md" "${ReadMe}")
 file(WRITE commitVersion
 "#!/usr/bin/env bash
