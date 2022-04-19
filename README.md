@@ -1,6 +1,6 @@
 # ![byteman icon](./Resources/icon.png) byteman is open-source high-performance bitstream relocation and manipulation tool.
 [![byteman project](https://img.shields.io/badge/byteman-v0.0-blue)](https://github.com/kmanev/byteman)
-[![byteman build](https://img.shields.io/badge/Build%2024-%E2%9C%94-green)](https://github.com/kmanev/byteman/commits/main)
+[![byteman build](https://img.shields.io/badge/Build%2025-%E2%9C%94-green)](https://github.com/kmanev/byteman/commits/main)
 [![Browse generated docs](https://github.com/kmanev/byteman/actions/workflows/generateDocs.yml/badge.svg)](https://kmanev.github.io/byteman/)
 
 [![Download windows x86 binary](https://github.com/kmanev/byteman/actions/workflows/releaseWindows.yml/badge.svg)](https://github.com/kmanev/byteman/tree/main/Binaries/Windows-x86)
