@@ -86,8 +86,25 @@ jobs:
     needs: [build-linux]
     
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: docs/html
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: main
+
+    - name: Install doxygen
+      run: sudo apt-get update; sudo apt-get install -y doxygen graphviz
+
+        
+    - name: Generate Doxygen Documentation
+      run: doxygen Resources/Doxyfile.in
+      shell: bash
+      
+    - name: Create .nojekyll (ensures pages with underscores work on gh pages)
+      run: touch docs/html/.nojekyll
+      shell: bash
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./

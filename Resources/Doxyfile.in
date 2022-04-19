@@ -1,0 +1,9 @@
+PROJECT_NAME = "byteman"
+PROJECT_NUMBER = 0.0
+PROJECT_BRIEF = "Bitstream relocation and manipulation tool"
+PROJECT_LOGO =
+INPUT = 
+OUTPUT_DIRECTORY = "docs"
+GENERATE_HTML = YES
+HTML_OUTPUT = html/
+HTML_FILE_EXTENSION = .html
