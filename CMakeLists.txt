@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project(byteman VERSION 0.0.21)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_AUTORCC ON)
 
-add_executable(byteman src/byteman.cpp src/byteman.h Resources/icon.rs)
+add_executable(byteman src/byteman.cpp src/byteman.h Resources/icon.rc)
 
