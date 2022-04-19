@@ -14,8 +14,21 @@ string(REGEX REPLACE "PROJECT_NUMBER = ([0-9]+).([0-9]+)" "PROJECT_NUMBER = ${NE
 file(WRITE "Resources/Doxyfile.in" "${DoxyFile}")
 file(READ "README.md" ReadMe)
 string(REGEX REPLACE "byteman-v([0-9]+).([0-9]+)" "byteman-v${NEW_VER_MAJOR}.${NEW_VER_MINOR}" ReadMe "${ReadMe}")
+string(REGEX REPLACE "Build-([0-9]+)-" "Build-${NEW_VER_BUILD}-" ReadMe "${ReadMe}")
 file(WRITE "README.md" "${ReadMe}")
-file(READ ".github/workflows/trackVersionAndBuild.yml" autoVersioner)
-math(EXPR AUTOVERSIONER_NEW_VER_BUILD "${NEW_VER_BUILD}+1")
-string(REGEX REPLACE "name: \"Build ([0-9]+)\"" "name: \"Build ${NEW_VER_BUILD}\"" autoVersioner "${autoVersioner}")
-file(WRITE ".github/workflows/trackVersionAndBuild.yml" "${autoVersioner}")
+file(WRITE commitVersion
+"#!/usr/bin/env bash
+git config --local user.email \"action@github.com\"
+git config --local user.name \"GitHub Action\"
+git add src/byteman.h
+git add CMakeLists.txt
+git add Resources/Doxyfile.in
+git add README.md
+git diff-index --quiet HEAD || git commit -am \"Build #${NEW_VER_BUILD}\" -a
+git push
+")
+file(
+    COPY /commitVersion
+    DESTINATION /
+    FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
+)

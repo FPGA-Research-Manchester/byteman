@@ -1,0 +1,18 @@
+name: "Versioner "
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  auto-version:
+    runs-on: ubuntu-latest
+        
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Increment and propagate build number
+      run: cmake -P ${{github.workspace}}/.github/workflows/incrementBuild.cmake
+
+    - name: Commit version
+      run: ./commitVersion
