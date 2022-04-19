@@ -9,6 +9,7 @@ on:
     types:
       - completed
 
+jobs:
   build-linux:
     runs-on: ubuntu-latest
         

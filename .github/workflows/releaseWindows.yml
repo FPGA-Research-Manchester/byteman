@@ -9,6 +9,7 @@ on:
     types:
       - completed
 
+jobs:
   build-windows:
     runs-on: windows-latest
         

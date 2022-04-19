@@ -1,14 +1,12 @@
 name: Docs
 
-env:
-  BUILD_TYPE: Release
-
 on:
   workflow_run:
     workflows: ["Linux/x86"]
     types:
       - completed
 
+jobs:
   deploy-doxygen:
     runs-on: ubuntu-latest
     
