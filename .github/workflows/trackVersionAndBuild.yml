@@ -20,5 +20,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}/src/byteman.h
         git add ${{github.workspace}}/CMakeLists.txt
+        git add ${{github.workspace}}/Resources/Doxyfile.in
+        git add ${{github.workspace}}/README.md
+        git add ${{github.workspace}}/.github/workflows/trackVersionAndBuild.yml
         git diff-index --quiet HEAD || git commit -am "Autoversion" -a
         git push
