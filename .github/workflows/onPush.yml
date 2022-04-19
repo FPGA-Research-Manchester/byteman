@@ -102,10 +102,8 @@ jobs:
       run: touch docs/.nojekyll
       shell: bash
 
-    - name: Commit docs
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add ${{github.workspace}}/docs/*
-        git diff-index --quiet HEAD || git commit -am "Docs" -a
-        git push
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
