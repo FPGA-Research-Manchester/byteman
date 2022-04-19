@@ -99,7 +99,7 @@ jobs:
       shell: bash
       
     - name: Create .nojekyll (ensures pages with underscores work on gh pages)
-      run: touch docs/html/.nojekyll
+      run: touch docs/.nojekyll
       shell: bash
 
     - name: Commit docs
