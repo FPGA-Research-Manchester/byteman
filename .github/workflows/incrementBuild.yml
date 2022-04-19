@@ -15,4 +15,4 @@ jobs:
       run: cmake -P ${{github.workspace}}/.github/workflows/incrementBuild.cmake
 
     - name: Commit version
-      run: ./commitVersion
+      run: chmod +x commitVersion && ./commitVersion

@@ -27,8 +27,3 @@ git add README.md
 git diff-index --quiet HEAD || git commit -am \"Build #${NEW_VER_BUILD}\" -a
 git push
 ")
-file(
-    COPY commitVersion
-    DESTINATION ""
-    FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
-)
