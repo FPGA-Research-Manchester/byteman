@@ -1,8 +1,8 @@
-name: Docs
+name: "Docs "
 
 on:
   workflow_run:
-    workflows: ["Linux/x86"]
+    workflows: ["Elf/x86 "]
     types:
       - completed
 

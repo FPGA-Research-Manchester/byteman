@@ -1,11 +1,11 @@
-name: Elf/x86
+name: "Elf/x86 "
 
 env:
   BUILD_TYPE: Release
 
 on:
   workflow_run:
-    workflows: ["Windows/x86"]
+    workflows: ["Win/x86"]
     types:
       - completed
 

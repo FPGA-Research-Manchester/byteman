@@ -1,4 +1,4 @@
-name: Auto Version
+name: "Build 0" #build number is always 1 ahead.
 
 on:
   push:
