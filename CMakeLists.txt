@@ -4,5 +4,5 @@ project(byteman VERSION 0.0.14)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(byteman src/byteman.cpp src/byteman.h)
+add_executable(byteman src/byteman.cpp src/byteman.h Resources/icon.rs)
 

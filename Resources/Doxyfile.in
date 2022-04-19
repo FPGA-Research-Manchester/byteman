@@ -1,7 +1,7 @@
 PROJECT_NAME = "byteman"
 PROJECT_NUMBER = 0.0
 PROJECT_BRIEF = "Bitstream relocation and manipulation tool"
-PROJECT_LOGO =
+PROJECT_LOGO = Resources/icon.png
 INPUT = 
 OUTPUT_DIRECTORY = 
 GENERATE_HTML = YES
