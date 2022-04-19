@@ -2,6 +2,9 @@
 #include "byteman.h"
 using namespace std;
 
+void usage(){
+	
+}
 
 int main(){
 	cout << x << endl;
