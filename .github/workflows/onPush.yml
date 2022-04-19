@@ -39,7 +39,7 @@ jobs:
       run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\
 
     - name: Build
-      run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --target ALL_BUILD --config ${{env.BUILD_TYPE}}
 
     - name: Delete old binary
       continue-on-error: true
@@ -81,3 +81,13 @@ jobs:
         git diff-index --quiet HEAD || git commit -am "Binaries" -a
         git push
 
+  deploy-doxygen:
+    runs-on: ubuntu-latest
+    needs: [build-linux]
+    
+    steps:
+      - uses: DenverCoder1/doxygen-github-pages-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/html
