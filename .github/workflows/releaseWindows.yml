@@ -39,18 +39,13 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
         git commit -m "Binaries"
-        $ErrorActionPreference = "Stop" 
-        do{
-          try{
-            git push
-            $pushed = $true
+        git push 3>$null
+        while($LASTEXITCODE -ne 0)
+        {
+          while($LASTEXITCODE -ne 0)
+          {
+            Start-Sleep -s 1
+            git pull 3>$null
           }
-          catch [Exception] {
-            try{
-              git pull
-            }
-            catch [Exception] {
-              Start-Sleep -s 1
-            }
-          } 
-        }until($pushed)
+          git push 3>$null
+        }
