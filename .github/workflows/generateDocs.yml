@@ -9,7 +9,7 @@ on:
 jobs:
   deploy-doxygen:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
       with:
@@ -19,11 +19,10 @@ jobs:
     - name: Install doxygen
       run: sudo apt-get update; sudo apt-get install -y doxygen graphviz
 
-        
     - name: Generate Doxygen Documentation
       run: doxygen Resources/Doxyfile.in
       shell: bash
-      
+
     - name: Create .nojekyll (ensures pages with underscores work on gh pages)
       run: touch docs/.nojekyll
       shell: bash

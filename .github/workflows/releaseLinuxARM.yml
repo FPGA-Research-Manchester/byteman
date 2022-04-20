@@ -13,15 +13,22 @@ on:
 jobs:
   build-linux-arm:
     runs-on: ubuntu-latest
-        
+
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
         ref: main
-    
+
     - name: Install cross-compilation toolchain
       run: sudo apt-get update -y; sudo apt-get install -y gcc-arm-linux-gnueabi
+
+    - name: Test 2
+      run: arm-linux-gnueabi-g++ --help
+      shell: bash
+    - name: Test
+      run: whereis arm-linux-gnueabi-g++
+      shell: bash
 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/Binaries/Linux-ARM -DCMAKE_C_COMPILER=arm-linux-gnueabi-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabi-g++ -DCMAKE_AR=arm-linux-gnueabi-ar -DCMAKE_LINKER=arm-linux-gnueabi-ld -DCMAKE_OBJCOPY=arm-linux-gnueabi-objcopy -DCMAKE_RANLIB=arm-linux-gnueabi-ranlib
