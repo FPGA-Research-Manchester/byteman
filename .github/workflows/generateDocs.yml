@@ -2,7 +2,7 @@ name: "Docs "
 
 on:
   workflow_run:
-    workflows: ["Elf/x86 "]
+    workflows: ["Versioner "]
     types:
       - completed
 
