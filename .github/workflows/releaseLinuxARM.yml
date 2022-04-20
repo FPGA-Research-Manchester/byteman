@@ -33,5 +33,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}/Binaries/Linux-ARM/byteman
-        git diff-index --quiet HEAD || git commit -m "Binaries"
-        git push --force
+        git commit -m "Binaries"
+        git push --force-with-lease
+        git status

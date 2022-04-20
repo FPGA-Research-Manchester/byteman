@@ -20,7 +20,7 @@ jobs:
         ref: main
 
     - name: Install cross-compilation toolchain
-      run: sudo apt-get update -y; sudo apt-get install -y riscv64-linux-gnu-gcc riscv64-linux-gnu-g++
+      run: sudo apt-get update -y; sudo apt-get install -y gcc-riscv64-linux-gnu g++-riscv64-linux-gnu
 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/Binaries/Linux-RISC-V -DCMAKE_C_COMPILER=riscv64-linux-gnu-gcc -DCMAKE_CXX_COMPILER=riscv64-linux-gnu-g++ -DCMAKE_AR=riscv64-linux-gnu-ar -DCMAKE_LINKER=riscv64-linux-gnu-ld -DCMAKE_OBJCOPY=riscv64-linux-gnu-objcopy -DCMAKE_RANLIB=riscv64-linux-gnu-ranlib
@@ -33,5 +33,6 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}/Binaries/Linux-RISC-V/byteman
-        git diff-index --quiet HEAD || git commit -m "Binaries"
-        git push --force
+        git commit -m "Binaries"
+        git push --force-with-lease
+        git status

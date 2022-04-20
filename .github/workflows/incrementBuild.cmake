@@ -24,6 +24,7 @@ git add src/byteman.h
 git add CMakeLists.txt
 git add Resources/Doxyfile.in
 git add README.md
-git diff-index --quiet HEAD || git commit -am \"Build #${NEW_VER_BUILD}\" -a
-git push
+git commit -m \"Build #${NEW_VER_BUILD}\"
+git push --force-with-lease
+git status
 ")
