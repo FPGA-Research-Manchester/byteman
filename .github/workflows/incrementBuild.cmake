@@ -25,6 +25,5 @@ git add CMakeLists.txt
 git add Resources/Doxyfile.in
 git add README.md
 git commit -m \"Build #${NEW_VER_BUILD}\"
-git push --force-with-lease
-git status
+git push
 ")

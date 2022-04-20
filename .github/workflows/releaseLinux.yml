@@ -31,8 +31,10 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}/Binaries/Linux-x86/byteman
         git commit -m "Binaries"
-        echo $?
-        git push --force-with-lease
-        echo $?
-        git status
-        echo $?
+        until git push &> /dev/null
+        do
+          until git pull &> /dev/null
+          do
+            sleep 1
+          done
+        done
