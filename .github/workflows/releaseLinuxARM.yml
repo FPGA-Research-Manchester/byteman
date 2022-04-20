@@ -34,9 +34,9 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}/Binaries/Linux-ARM/byteman
         git commit -m "Binaries"
-        until git push 2>&1 /dev/null
+        until git push &> /dev/null
         do
-          until git pull 2>&1 /dev/null
+          until git pull --rebase &> /dev/null
           do
             sleep 1
             git status
