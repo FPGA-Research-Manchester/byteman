@@ -45,11 +45,11 @@ jobs:
             git push
             $pushed = $true
           }
-          catch{
+          catch [Exception] {
             try{
               git pull
             }
-            catch{
+            catch [Exception] {
               Start-Sleep -s 1
             }
           } 
