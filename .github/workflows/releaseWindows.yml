@@ -45,7 +45,8 @@ jobs:
           while($LASTEXITCODE -ne 0)
           {
             Start-Sleep -s 1
-            git pull 3>$null
+            git status
+            git pull --rebase 3>$null
           }
           git push 3>$null
         }

@@ -33,7 +33,7 @@ jobs:
         git commit -m "Binaries"
         until git push &> /dev/null
         do
-          until git pull &> /dev/null
+          until git pull --rebase &> /dev/null
           do
             sleep 1
             git status
