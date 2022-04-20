@@ -41,12 +41,12 @@ jobs:
         git commit -m "Binaries"
         do{
           try{
-            git push
+            git push -ErrorAction SilentlyContinue
             $pushed = $true
           }
           catch{
             try{
-              git pull
+              git pull -ErrorAction SilentlyContinue
             }
             catch{
               Start-Sleep -s 1
