@@ -37,5 +37,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
-        git diff-index --quiet HEAD || git commit -am "Binaries" -a
-        git push
+        git diff-index --quiet HEAD || git commit -m "Binaries"
+        git push --force

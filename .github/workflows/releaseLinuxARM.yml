@@ -5,7 +5,7 @@ env:
 
 on:
   workflow_run:
-    workflows: ["Elf/x86 "]
+    workflows: ["Versioner "]
     types:
       - completed
 
@@ -27,9 +27,6 @@ jobs:
 
     - name: Build
       run: cmake --build ${{github.workspace}}/Binaries/Linux-ARM --config ${{env.BUILD_TYPE}}
-
-    - name: Test force push safety
-      run: truncate -s 0 ${{github.workspace}}/src/byteman.h
 
     - name: Commit binary
       run: |
