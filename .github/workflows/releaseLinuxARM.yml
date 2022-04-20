@@ -34,5 +34,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}/Binaries/Linux-ARM/byteman
         git commit -m "Binaries"
+        echo $?
         git push --force-with-lease
+        echo $?
         git status
+        echo $?

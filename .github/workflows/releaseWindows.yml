@@ -38,5 +38,8 @@ jobs:
         git config --local user.name "GitHub Action"
         git add ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
         git commit -m "Binaries"
+        echo $?
         git push --force-with-lease
+        echo $?
         git status
+        echo $?
