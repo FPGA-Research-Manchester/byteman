@@ -39,5 +39,6 @@ jobs:
           until git pull &> /dev/null
           do
             sleep 1
+            git status
           done
         done
