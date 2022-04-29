@@ -38,11 +38,27 @@ static int IS_LITTLE_ENDIAN(void)
 #define swapbytes32(x) (uint32_t)(((uint32_t)(x) & 0xff) << 24 | ((uint32_t)(x) & 0xff00) << 8 | ((uint32_t)(x) & 0xff0000) >> 8 | ((uint32_t)(x) & 0xff000000) >> 24)
 #define swapbytes64(x) (uint64_t)((((uint64_t)(x) & 0xff) << 56) | ((uint64_t)(x) & 0xff00ULL) << 40 |((uint64_t)(x) & 0xff0000ULL) << 24 |((uint64_t)(x) & 0xff000000ULL) << 8 |((uint64_t)(x) & 0xff00000000ULL) >> 8 |((uint64_t)(x) & 0xff0000000000ULL) >> 24 | ((uint64_t)(x) & 0xff000000000000ULL) >> 40 | ((uint64_t)(x) & 0xff00000000000000ULL) >> 56)
 
+#ifndef htobe8
 #define htobe8(x) ((uint8_t)(x))
+#endif
+#ifndef htobe16
 #define htobe16(x) (IS_LITTLE_ENDIAN())?swapbytes16(x):((uint16_t)(x))
+#endif
+#ifndef htobe32
 #define htobe32(x) (IS_LITTLE_ENDIAN())?swapbytes32(x):((uint32_t)(x))
+#endif
+#ifndef htobe64
 #define htobe64(x) (IS_LITTLE_ENDIAN())?swapbytes64(x):((uint64_t)(x))
+#endif
+#ifndef htole8
 #define htole8(x) ((uint8_t)(x))
+#endif
+#ifndef htole16
 #define htole16(x) (IS_LITTLE_ENDIAN())?((uint16_t)(x)):swapbytes16(x)
+#endif
+#ifndef htole32
 #define htole32(x) (IS_LITTLE_ENDIAN())?((uint32_t)(x)):swapbytes32(x)
+#endif
+#ifndef htole64
 #define htole64(x) (IS_LITTLE_ENDIAN())?((uint64_t)(x)):swapbytes64(x)
+#endif
