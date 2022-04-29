@@ -287,7 +287,7 @@ void parseCommand(string nextCmd){
 }
 int main(int argc, char * argv[]){
 	if(argc <= 1) 
-		help("",1,1);//show usage and terminate with an error code
+		parseHelp("",1,1);//show usage and terminate with an error code
 	try {
 		string command;
 		bool readSTDIN = false;
