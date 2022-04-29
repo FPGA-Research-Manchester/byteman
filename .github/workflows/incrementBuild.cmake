@@ -40,6 +40,13 @@ git add src/byteman.h
 git add CMakeLists.txt
 git add Resources/Doxyfile.in
 git add README.md
-git commit -m \"Build #${NEW_VER_BUILD}\"
-git push
+git commit -m \"Build #${NEW_VER_BUILD}\"        
+until git push &> /dev/null
+do
+  until git pull --rebase &> /dev/null
+  do
+	sleep 1
+	git status
+  done
+done
 ")
