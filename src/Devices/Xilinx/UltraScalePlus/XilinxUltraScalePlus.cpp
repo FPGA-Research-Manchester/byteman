@@ -518,6 +518,19 @@ void XilinxUltraScalePlus::outputBITregion(ofstream& fout, int outputCLB, int ou
 		}
 	}//outputBRAM
 }
+/**************************************************************************//**
+ * Creates a new bitstream file and writes the selected regions in it.
+ * 
+ *
+ * @filename Name of the output file.
+ * @params A list of parameters to control behavior:
+ * - "logic" or "clb" : Enables bitstream generation in block type 0 (logic, routing, clocking).
+ * - "blockram" or "bram" : Enables bitstream generation in block type 1 (blockram contents).
+ * - "blank" : Enables bitstream blanking (zeroing) before block type 0 generation.
+ * - "full" : Writes the whole chip.
+ * - "partial" : Writes only selected regions.
+ * @throws runtime_error if args don't define a correct region.
+ *****************************************************************************/
 void XilinxUltraScalePlus::writeBitstreamBIT(string filename, string params, int srcRow, int srcCol, int sizeRow, int sizeCol){
     if(verbose)cout<<"Writing Xilinx UltraScale+ bitstream to file \""<<filename<<"\":\n";
 	//parse .BIT header:
