@@ -25,12 +25,15 @@ HTML_OUTPUT = docs/
 HTML_FILE_EXTENSION = .html
 GENERATE_LATEX = NO
 
+HTML_DYNAMIC_MENUS     = YES
+HTML_DYNAMIC_SECTIONS  = YES
+
 SOURCE_TOOLTIPS        = YES
 # If the SEPARATE_MEMBER_PAGES tag is set to YES, then doxygen will produce
 # a new page for each member. If set to NO, the documentation of a member will
 # be part of the file/class/namespace that contains it.
 
-SEPARATE_MEMBER_PAGES  = YES
+SEPARATE_MEMBER_PAGES  = NO
 
 
 
@@ -941,12 +944,6 @@ HTML_COLORSTYLE_GAMMA  = 80
 
 HTML_TIMESTAMP         = YES
 
-# If the HTML_DYNAMIC_SECTIONS tag is set to YES then the generated HTML
-# documentation will contain sections that can be hidden and shown after the
-# page has loaded.
-
-HTML_DYNAMIC_SECTIONS  = NO
-
 # With HTML_INDEX_NUM_ENTRIES one can control the preferred number of
 # entries shown in the various tree structured indices initially; the user
 # can expand and collapse entries dynamically later on. Doxygen will expand
@@ -1826,4 +1823,4 @@ GENERATE_LEGEND        = YES
 # remove the intermediate dot files that are used to generate
 # the various graphs.
 
-DOT_CLEANUP            = YES
+DOT_CLEANUP            = NO
