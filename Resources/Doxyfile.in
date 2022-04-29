@@ -25,6 +25,19 @@ HTML_OUTPUT = docs/
 HTML_FILE_EXTENSION = .html
 GENERATE_LATEX = NO
 
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_MENUS     = YES
+HTML_DYNAMIC_SECTIONS  = YES
+HTML_INDEX_NUM_ENTRIES = 100
+# If the SEPARATE_MEMBER_PAGES tag is set to YES, then doxygen will produce
+# a new page for each member. If set to NO, the documentation of a member will
+# be part of the file/class/namespace that contains it.
+
+SEPARATE_MEMBER_PAGES  = YES
+
 
 
 # This file describes the settings to be used by the documentation system
@@ -172,11 +185,6 @@ MULTILINE_CPP_IS_BRIEF = NO
 
 INHERIT_DOCS           = YES
 
-# If the SEPARATE_MEMBER_PAGES tag is set to YES, then doxygen will produce
-# a new page for each member. If set to NO, the documentation of a member will
-# be part of the file/class/namespace that contains it.
-
-SEPARATE_MEMBER_PAGES  = NO
 
 # The TAB_SIZE tag can be used to set the number of spaces in a tab.
 # Doxygen uses this value to replace tabs by spaces in code fragments.
@@ -396,7 +404,7 @@ EXTRACT_LOCAL_METHODS  = YES
 # name of the file that contains the anonymous namespace. By default
 # anonymous namespaces are hidden.
 
-EXTRACT_ANON_NSPACES   = YES
+EXTRACT_ANON_NSPACES   = NO
 
 # If the HIDE_UNDOC_MEMBERS tag is set to YES, Doxygen will hide all
 # undocumented members of documented classes, files or namespaces.
@@ -440,7 +448,7 @@ INTERNAL_DOCS          = NO
 # in case and if your file system supports case sensitive file names. Windows
 # and Mac users are advised to set this option to NO.
 
-CASE_SENSE_NAMES       = NO
+CASE_SENSE_NAMES       = YES
 
 # If the HIDE_SCOPE_NAMES tag is set to NO (the default) then Doxygen
 # will show members with their full class and namespace scopes in the
@@ -458,7 +466,7 @@ SHOW_INCLUDE_FILES     = YES
 # will list include files with double quotes in the documentation
 # rather than with sharp brackets.
 
-FORCE_LOCAL_INCLUDES   = NO
+FORCE_LOCAL_INCLUDES   = YES
 
 # If the INLINE_INFO tag is set to YES (the default) then a tag [inline]
 # is inserted in the documentation for inline members.
