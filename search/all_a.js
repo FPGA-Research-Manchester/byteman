@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['numberofbramcols_56',['numberOfBRAMCols',['../class_xilinx_ultra_scale_plus.html#a9884d46b6456c33582754395251ebd52',1,'XilinxUltraScalePlus']]],
-  ['numberofbramsbeforecol_57',['numberOfBRAMsBeforeCol',['../class_xilinx_ultra_scale_plus.html#a6d64e2f307ee9ee304a7b73cc4eea5ea',1,'XilinxUltraScalePlus']]],
-  ['numberofcols_58',['numberOfCols',['../class_xilinx_ultra_scale_plus.html#a56cf74542440c3e1ae15173779640034',1,'XilinxUltraScalePlus']]],
-  ['numberofframesbeforecol_59',['numberOfFramesBeforeCol',['../class_xilinx_ultra_scale_plus.html#abe5a83a1c8b3298f213a097ecc9c6103',1,'XilinxUltraScalePlus']]],
-  ['numberofframesperrow_60',['numberOfFramesPerRow',['../class_xilinx_ultra_scale_plus.html#ae87f7b9d5dac788de2620a093850bd53',1,'XilinxUltraScalePlus']]],
-  ['numberofrows_61',['numberOfRows',['../class_xilinx_ultra_scale_plus.html#a9ee262ce5f44683e442d889ad500551a',1,'XilinxUltraScalePlus']]],
-  ['numberofslrs_62',['numberOfSLRs',['../class_xilinx_ultra_scale_plus.html#ac0309d1d6b9850a91f795c812ed9d0d4',1,'XilinxUltraScalePlus']]],
-  ['numberofwordsperrow_63',['numberOfWordsPerRow',['../class_xilinx_ultra_scale_plus.html#a6f06ab0db46bd2d8042a20a490437f57',1,'XilinxUltraScalePlus']]]
+  ['numberofbramcols_56',['numberOfBRAMCols',['../classXilinxUltraScalePlus_a9884d46b6456c33582754395251ebd52.html#a9884d46b6456c33582754395251ebd52',1,'XilinxUltraScalePlus']]],
+  ['numberofbramsbeforecol_57',['numberOfBRAMsBeforeCol',['../classXilinxUltraScalePlus_a6d64e2f307ee9ee304a7b73cc4eea5ea.html#a6d64e2f307ee9ee304a7b73cc4eea5ea',1,'XilinxUltraScalePlus']]],
+  ['numberofcols_58',['numberOfCols',['../classXilinxUltraScalePlus_a56cf74542440c3e1ae15173779640034.html#a56cf74542440c3e1ae15173779640034',1,'XilinxUltraScalePlus']]],
+  ['numberofframesbeforecol_59',['numberOfFramesBeforeCol',['../classXilinxUltraScalePlus_abe5a83a1c8b3298f213a097ecc9c6103.html#abe5a83a1c8b3298f213a097ecc9c6103',1,'XilinxUltraScalePlus']]],
+  ['numberofframesperrow_60',['numberOfFramesPerRow',['../classXilinxUltraScalePlus_ae87f7b9d5dac788de2620a093850bd53.html#ae87f7b9d5dac788de2620a093850bd53',1,'XilinxUltraScalePlus']]],
+  ['numberofrows_61',['numberOfRows',['../classXilinxUltraScalePlus_a9ee262ce5f44683e442d889ad500551a.html#a9ee262ce5f44683e442d889ad500551a',1,'XilinxUltraScalePlus']]],
+  ['numberofslrs_62',['numberOfSLRs',['../classXilinxUltraScalePlus_ac0309d1d6b9850a91f795c812ed9d0d4.html#ac0309d1d6b9850a91f795c812ed9d0d4',1,'XilinxUltraScalePlus']]],
+  ['numberofwordsperrow_63',['numberOfWordsPerRow',['../classXilinxUltraScalePlus_a6f06ab0db46bd2d8042a20a490437f57.html#a6f06ab0db46bd2d8042a20a490437f57',1,'XilinxUltraScalePlus']]]
 ];
