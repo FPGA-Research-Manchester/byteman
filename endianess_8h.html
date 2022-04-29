@@ -69,7 +69,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">endianess.h File Reference</div>  </div>
 </div><!--header-->
@@ -85,19 +86,19 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a4b9167199621b390f82c3e5361ba6df6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a4b9167199621b390f82c3e5361ba6df6">htobe16</a>(x)&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x):((uint16_t)(x))</td></tr>
+<tr class="memitem:a4b9167199621b390f82c3e5361ba6df6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a4b9167199621b390f82c3e5361ba6df6">htobe16</a>(x)&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x):((uint16_t)(x))</td></tr>
 <tr class="separator:a4b9167199621b390f82c3e5361ba6df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa65407014913309932b9a5ea3c16a86d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#aa65407014913309932b9a5ea3c16a86d">htobe32</a>(x)&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x):((uint32_t)(x))</td></tr>
+<tr class="memitem:aa65407014913309932b9a5ea3c16a86d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#aa65407014913309932b9a5ea3c16a86d">htobe32</a>(x)&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x):((uint32_t)(x))</td></tr>
 <tr class="separator:aa65407014913309932b9a5ea3c16a86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c81b75e6da4507e0a90b6f6169c4787"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a5c81b75e6da4507e0a90b6f6169c4787">htobe64</a>(x)&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x):((uint64_t)(x))</td></tr>
+<tr class="memitem:a5c81b75e6da4507e0a90b6f6169c4787"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a5c81b75e6da4507e0a90b6f6169c4787">htobe64</a>(x)&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x):((uint64_t)(x))</td></tr>
 <tr class="separator:a5c81b75e6da4507e0a90b6f6169c4787"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a238c04f0d68c29718d6125ea623407a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a238c04f0d68c29718d6125ea623407a4">htobe8</a>(x)&#160;&#160;&#160;((uint8_t)(x))</td></tr>
 <tr class="separator:a238c04f0d68c29718d6125ea623407a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ea73a6089f61223b225c46e2ba58a47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a3ea73a6089f61223b225c46e2ba58a47">htole16</a>(x)&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?((uint16_t)(x)):<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x)</td></tr>
+<tr class="memitem:a3ea73a6089f61223b225c46e2ba58a47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a3ea73a6089f61223b225c46e2ba58a47">htole16</a>(x)&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?((uint16_t)(x)):<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x)</td></tr>
 <tr class="separator:a3ea73a6089f61223b225c46e2ba58a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bea1e76e277f13ae39ac86095510bfa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a9bea1e76e277f13ae39ac86095510bfa">htole32</a>(x)&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?((uint32_t)(x)):<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x)</td></tr>
+<tr class="memitem:a9bea1e76e277f13ae39ac86095510bfa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a9bea1e76e277f13ae39ac86095510bfa">htole32</a>(x)&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?((uint32_t)(x)):<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x)</td></tr>
 <tr class="separator:a9bea1e76e277f13ae39ac86095510bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3070a5f8867dbc37bdafcb1a7cd491bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a3070a5f8867dbc37bdafcb1a7cd491bf">htole64</a>(x)&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?((uint64_t)(x)):<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x)</td></tr>
+<tr class="memitem:a3070a5f8867dbc37bdafcb1a7cd491bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a3070a5f8867dbc37bdafcb1a7cd491bf">htole64</a>(x)&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?((uint64_t)(x)):<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x)</td></tr>
 <tr class="separator:a3070a5f8867dbc37bdafcb1a7cd491bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3c5e21c1111d39ec382f88404d24e37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#ac3c5e21c1111d39ec382f88404d24e37">htole8</a>(x)&#160;&#160;&#160;((uint8_t)(x))</td></tr>
 <tr class="separator:ac3c5e21c1111d39ec382f88404d24e37"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,6 +108,11 @@ Macros</h2></td></tr>
 <tr class="separator:aae4db7e19f2a27d8b510cc8096875f89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb8f089bf80a927bddc0c992f62eaf9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x)&#160;&#160;&#160;(uint64_t)((((uint64_t)(x) &amp; 0xff) &lt;&lt; 56) | ((uint64_t)(x) &amp; 0xff00ULL) &lt;&lt; 40 |((uint64_t)(x) &amp; 0xff0000ULL) &lt;&lt; 24 |((uint64_t)(x) &amp; 0xff000000ULL) &lt;&lt; 8 |((uint64_t)(x) &amp; 0xff00000000ULL) &gt;&gt; 8 |((uint64_t)(x) &amp; 0xff0000000000ULL) &gt;&gt; 24 | ((uint64_t)(x) &amp; 0xff000000000000ULL) &gt;&gt; 40 | ((uint64_t)(x) &amp; 0xff00000000000000ULL) &gt;&gt; 56)</td></tr>
 <tr class="separator:acb8f089bf80a927bddc0c992f62eaf9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a09334e77fb4b0057f3d9ef99a5ae987c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a> (void)</td></tr>
+<tr class="separator:a09334e77fb4b0057f3d9ef99a5ae987c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4b9167199621b390f82c3e5361ba6df6"></a>
@@ -120,7 +126,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x):((uint16_t)(x))</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x):((uint16_t)(x))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -138,7 +144,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x):((uint32_t)(x))</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x):((uint32_t)(x))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -156,7 +162,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x):((uint64_t)(x))</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x):((uint64_t)(x))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -192,7 +198,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?((uint16_t)(x)):<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?((uint16_t)(x)):<a class="el" href="endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af">swapbytes16</a>(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -210,7 +216,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?((uint32_t)(x)):<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?((uint32_t)(x)):<a class="el" href="endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89">swapbytes32</a>(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -228,7 +234,7 @@ Macros</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(IS_LITTLE_ENDIAN())?((uint64_t)(x)):<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>())?((uint64_t)(x)):<a class="el" href="endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e">swapbytes64</a>(x)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -307,10 +313,37 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a09334e77fb4b0057f3d9ef99a5ae987c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09334e77fb4b0057f3d9ef99a5ae987c">&#9670;&nbsp;</a></span>IS_LITTLE_ENDIAN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int IS_LITTLE_ENDIAN </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:05:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 16:12:47 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

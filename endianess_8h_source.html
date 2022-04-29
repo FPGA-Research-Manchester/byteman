@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//static __attribute__((always_inline)) int IS_LITTLE_ENDIAN(void) GCC</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//static [[msvc::forceinline]] int IS_LITTLE_ENDIAN(void) microsoft C++20</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> IS_LITTLE_ENDIAN(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">   26</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a>(<span class="keywordtype">void</span>)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">union </span>{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> v;</div>
@@ -137,9 +137,10 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="endianess_8h.html#a3070a5f8867dbc37bdafcb1a7cd491bf">   63</a></span>&#160;<span class="preprocessor">#define htole64(x) (IS_LITTLE_ENDIAN())?((uint64_t)(x)):swapbytes64(x)</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aendianess_8h_html_a09334e77fb4b0057f3d9ef99a5ae987c"><div class="ttname"><a href="endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a></div><div class="ttdeci">static int IS_LITTLE_ENDIAN(void)</div><div class="ttdef"><b>Definition:</b> endianess.h:26</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:05:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 16:12:47 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
