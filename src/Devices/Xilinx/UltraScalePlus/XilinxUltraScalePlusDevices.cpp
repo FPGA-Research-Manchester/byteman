@@ -23,13 +23,13 @@
 using namespace std;
 
 int XilinxUltraScalePlus::getDeviceByIDCODEorThrow(int IDCODE){
-	int deviceID = getDeviceByIDCODE(IDCODE);
+	int deviceID = XilinxUltraScalePlus::getDeviceByIDCODE(IDCODE);
 	if(deviceID == XUSP_DEVICE_NULL)
 		throw runtime_error(string("Unknown device with IDCODE = ").append(to_string(IDCODE)).append(" ."));
 	return deviceID;
 }
 int XilinxUltraScalePlus::getDeviceByNameOrThrow(string name){
-	int deviceID = getDeviceByName(name);
+	int deviceID = XilinxUltraScalePlus::getDeviceByName(name);
 	if(deviceID == XUSP_DEVICE_NULL)
 		throw runtime_error(string("Unknown device: ").append(name).append("."));
 	return deviceID;

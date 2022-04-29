@@ -91,7 +91,7 @@ void XilinxUltraScalePlus::region(string params, int posRow, int posCol, int siz
 	}
 }
 void XilinxUltraScalePlus::blank(string params){
-	ensureInitializedBitstreamArrays();
+	XilinxUltraScalePlus::ensureInitializedBitstreamArrays();
 	int blankCLB = 0, blankBRAM = 0;
     if(params.find("logic") != string::npos || params.find("clb") != string::npos)blankCLB++;
     if(params.find("blockram") != string::npos || params.find("bram") != string::npos)blankBRAM++;
@@ -116,7 +116,7 @@ void XilinxUltraScalePlus::blank(string params){
 void XilinxUltraScalePlus::readBitstream(string filename)
 {
     if(0 == filename.compare (filename.length() - 4, 4, ".bit"))
-        readBitstreamBIT(filename);
+        XilinxUltraScalePlus::readBitstreamBIT(filename);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read.\n"));
 }
@@ -181,8 +181,8 @@ void XilinxUltraScalePlus::readBitstreamBIT(string filename)
             }
         }
     }
-    setDevice(getDeviceByNameOrThrow(partName));
-    ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
+    XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName));
+    XilinxUltraScalePlus::ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
 
     //Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
     //However we don't care about reading those
@@ -390,7 +390,7 @@ void XilinxUltraScalePlus::merge(XilinxUltraScalePlus* srcBitstream, string para
 
 void XilinxUltraScalePlus::writeBitstream(string filename, string params, int srcRow, int srcCol, int sizeRow, int sizeCol){
     if(0 == filename.compare (filename.length() - 4, 4, ".bit"))
-        XilinxUltraScalePlus::writeBitstreamBIT(filename, params, srcRow, srcCol, sizeRow, sizeCol);
+        writeBitstreamBIT(filename, params, srcRow, srcCol, sizeRow, sizeCol);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be written.\n"));
 }
@@ -530,7 +530,6 @@ void XilinxUltraScalePlus::outputBITregion(ofstream& fout, int outputCLB, int ou
  * - "full" : Writes the whole chip.
  * - "partial" : Writes only selected regions.
  * @throws runtime_error if args don't define a correct region.
- * @callergraph @callgraph
  *****************************************************************************/
 void XilinxUltraScalePlus::writeBitstreamBIT(string filename, string params, int srcRow, int srcCol, int sizeRow, int sizeCol){
     if(verbose)cout<<"Writing Xilinx UltraScale+ bitstream to file \""<<filename<<"\":\n";
@@ -562,14 +561,14 @@ void XilinxUltraScalePlus::writeBitstreamBIT(string filename, string params, int
 		designName.append(";PARTIAL=TRUE");
 	designName.append(";bytemanVersion=").append(VERSION).append(":").append(VERSION_BUILD);
 	
-	outputBITheader(fout);
+	XilinxUltraScalePlus::outputBITheader(fout);
 	if(partial){
 		for (rect r : regionsSelected) {
-			outputBITregion(fout, outputCLB, outputBRAM, blankCLBs, r.posRow, r.posCol, r.sizeRow, r.sizeCol);
+			XilinxUltraScalePlus::outputBITregion(fout, outputCLB, outputBRAM, blankCLBs, r.posRow, r.posCol, r.sizeRow, r.sizeCol);
 		}
-		outputBITregion(fout, outputCLB, outputBRAM, blankCLBs, srcRow, srcCol, sizeRow, sizeCol);
+		XilinxUltraScalePlus::outputBITregion(fout, outputCLB, outputBRAM, blankCLBs, srcRow, srcCol, sizeRow, sizeCol);
 	} else {// full
-		outputBITregion(fout, outputCLB, outputBRAM, blankCLBs, 0, 0, numberOfRows, numberOfCols);
+		XilinxUltraScalePlus::outputBITregion(fout, outputCLB, outputBRAM, blankCLBs, 0, 0, numberOfRows, numberOfCols);
 	}
-	outputBITfooter(fout);
+	XilinxUltraScalePlus::outputBITfooter(fout);
 }
