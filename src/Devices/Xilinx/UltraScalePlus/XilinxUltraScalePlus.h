@@ -55,11 +55,7 @@ class XilinxUltraScalePlus
 		//functions
 		void blank(string);
 		
-    protected:
-    private:
-		//constant arrays defining US+ fabric
-        int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
-        char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
+		//The ones below are not needed to be public, but we don't really care
 		
 		void outputBITheader(ofstream&);
 		void outputBITfooter(ofstream&);
@@ -95,6 +91,11 @@ class XilinxUltraScalePlus
         string designName;
 		string partName;
         char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
+    protected:
+    private:
+		//constant arrays defining US+ fabric
+        int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
+        char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
 };
 
 #endif // XILINXULTRASCALEPLUS_H
