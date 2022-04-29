@@ -1,7 +1,19 @@
+###############################################################################
+# Copyright 2022 Kristiyan Manev, University of Manchester
+#
+# Licensed under the Apache License, Version 2.0(the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+###############################################################################
 name: "Elf/RISC-V "
-
-env:
-  BUILD_TYPE: Release
 
 on:
   workflow_run:
@@ -26,7 +38,7 @@ jobs:
       run: cmake -B ${{github.workspace}}/Binaries/Linux-RISC-V -DCMAKE_C_COMPILER=riscv64-linux-gnu-gcc -DCMAKE_CXX_COMPILER=riscv64-linux-gnu-g++ -DCMAKE_AR=riscv64-linux-gnu-ar -DCMAKE_LINKER=riscv64-linux-gnu-ld -DCMAKE_OBJCOPY=riscv64-linux-gnu-objcopy -DCMAKE_RANLIB=riscv64-linux-gnu-ranlib
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/Binaries/Linux-RISC-V --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/Binaries/Linux-RISC-V
 
     - name: Commit binary
       run: |
