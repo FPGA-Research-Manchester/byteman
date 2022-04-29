@@ -117,6 +117,23 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00163">163</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="byteman_8cpp_a7387d6a5da2c3ae1a51a14b1c0855112.html#a7387d6a5da2c3ae1a51a14b1c0855112">getAllStrings</a>(blankCmd);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a> == <a class="code" href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a>){</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="byteman_8cpp_a8e9e79993780ed6e578f0556809b0f38.html#a8e9e79993780ed6e578f0556809b0f38">paramHas</a>(<span class="stringliteral">&quot;main&quot;</span>) || <a class="code" href="byteman_8cpp_a8e9e79993780ed6e578f0556809b0f38.html#a8e9e79993780ed6e578f0556809b0f38">paramHas</a>(<span class="stringliteral">&quot;first&quot;</span>))</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            mainXUSP.blank(params);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="byteman_8cpp_a8e9e79993780ed6e578f0556809b0f38.html#a8e9e79993780ed6e578f0556809b0f38">paramHas</a>(<span class="stringliteral">&quot;temp&quot;</span>) || <a class="code" href="byteman_8cpp_a8e9e79993780ed6e578f0556809b0f38.html#a8e9e79993780ed6e578f0556809b0f38">paramHas</a>(<span class="stringliteral">&quot;second&quot;</span>))</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            tempXUSP.blank(params);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="XilinxUltraScalePlus_8cpp_source.html#l00093">XilinxUltraScalePlus::blank()</a>, <a class="el" href="byteman_8cpp_source.html#l00092">getAllStrings()</a>, <a class="el" href="byteman_8cpp_source.html#l00123">paramHas</a>, <a class="el" href="byteman_8cpp_source.html#l00030">selectedArch</a>, and <a class="el" href="byteman_8h_source.html#l00028">XIL_USP</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00255">parseCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -144,9 +161,13 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="abyteman_8cpp_aa22c142004b4926579c873d72b1878a3_html_aa22c142004b4926579c873d72b1878a3"><div class="ttname"><a href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a></div><div class="ttdeci">Arch selectedArch</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00030">byteman.cpp:30</a></div></div>
+<div class="ttc" id="abyteman_8cpp_a7387d6a5da2c3ae1a51a14b1c0855112_html_a7387d6a5da2c3ae1a51a14b1c0855112"><div class="ttname"><a href="byteman_8cpp_a7387d6a5da2c3ae1a51a14b1c0855112.html#a7387d6a5da2c3ae1a51a14b1c0855112">getAllStrings</a></div><div class="ttdeci">string getAllStrings(string s)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00092">byteman.cpp:92</a></div></div>
+<div class="ttc" id="abyteman_8cpp_a8e9e79993780ed6e578f0556809b0f38_html_a8e9e79993780ed6e578f0556809b0f38"><div class="ttname"><a href="byteman_8cpp_a8e9e79993780ed6e578f0556809b0f38.html#a8e9e79993780ed6e578f0556809b0f38">paramHas</a></div><div class="ttdeci">#define paramHas(x)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00123">byteman.cpp:123</a></div></div>
+<div class="ttc" id="abyteman_8h_a0ac03ab06a859320a9072002bdf3aa0f_html_a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f"><div class="ttname"><a href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a></div><div class="ttdeci">@ XIL_USP</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00028">byteman.h:28</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

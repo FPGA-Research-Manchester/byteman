@@ -117,6 +117,25 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00218">218</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                  {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="byteman_8cpp_abb94c0ff14dd633ff41b3b9f83ae0bd3.html#abb94c0ff14dd633ff41b3b9f83ae0bd3">getAllButLastStringArg</a>(outputCmd);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keywordtype">string</span> filename = <a class="code" href="byteman_8cpp_a00471d4a59c1bf585fbc1cdf2398a02d.html#a00471d4a59c1bf585fbc1cdf2398a02d">getLastStringArg</a>(outputCmd);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">int</span> srcRow, srcCol, sizeRow, sizeCol;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    srcRow = <a class="code" href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a>(outputCmd, 0);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    srcCol = <a class="code" href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a>(outputCmd, 1);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    sizeRow = <a class="code" href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a>(outputCmd, 2);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    sizeCol = <a class="code" href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a>(outputCmd, 3);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a> == <a class="code" href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a>)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        mainXUSP.writeBitstream(filename, params, srcRow, srcCol, sizeRow, sizeCol);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00075">getAllButLastStringArg()</a>, <a class="el" href="byteman_8cpp_source.html#l00059">getLastStringArg()</a>, <a class="el" href="byteman_8cpp_source.html#l00107">getNthInt()</a>, <a class="el" href="byteman_8cpp_source.html#l00030">selectedArch</a>, <a class="el" href="XilinxUltraScalePlus_8cpp_source.html#l00391">XilinxUltraScalePlus::writeBitstream()</a>, and <a class="el" href="byteman_8h_source.html#l00028">XIL_USP</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00255">parseCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -146,9 +165,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="abyteman_8cpp_aa22c142004b4926579c873d72b1878a3_html_aa22c142004b4926579c873d72b1878a3"><div class="ttname"><a href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a></div><div class="ttdeci">Arch selectedArch</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00030">byteman.cpp:30</a></div></div>
+<div class="ttc" id="abyteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02_html_a7e6d949e69ac4f52a80dad0b6d62de02"><div class="ttname"><a href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a></div><div class="ttdeci">int getNthInt(string s, int n)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00107">byteman.cpp:107</a></div></div>
+<div class="ttc" id="abyteman_8cpp_a00471d4a59c1bf585fbc1cdf2398a02d_html_a00471d4a59c1bf585fbc1cdf2398a02d"><div class="ttname"><a href="byteman_8cpp_a00471d4a59c1bf585fbc1cdf2398a02d.html#a00471d4a59c1bf585fbc1cdf2398a02d">getLastStringArg</a></div><div class="ttdeci">string getLastStringArg(string s)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00059">byteman.cpp:59</a></div></div>
+<div class="ttc" id="abyteman_8cpp_abb94c0ff14dd633ff41b3b9f83ae0bd3_html_abb94c0ff14dd633ff41b3b9f83ae0bd3"><div class="ttname"><a href="byteman_8cpp_abb94c0ff14dd633ff41b3b9f83ae0bd3.html#abb94c0ff14dd633ff41b3b9f83ae0bd3">getAllButLastStringArg</a></div><div class="ttdeci">string getAllButLastStringArg(string s)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00075">byteman.cpp:75</a></div></div>
+<div class="ttc" id="abyteman_8h_a0ac03ab06a859320a9072002bdf3aa0f_html_a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f"><div class="ttname"><a href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a></div><div class="ttdeci">@ XIL_USP</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00028">byteman.h:28</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

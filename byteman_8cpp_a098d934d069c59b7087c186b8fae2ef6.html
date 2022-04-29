@@ -117,6 +117,28 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00239">239</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                         {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <a class="code" href="byteman_8cpp_a8d14258da7389358995366840e6ca2e5.html#a8d14258da7389358995366840e6ca2e5">archSelected</a> = <span class="keyword">true</span>; <span class="comment">// it will either select it or throw an exception, so just mark it anyway who cares</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">    #define has(x) (arch.rfind(x) != string::npos)</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">    #define hOR(x,y) (has(x)||has(y))</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    transform(arch.begin(), arch.end(),arch.begin(), ::toupper);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="byteman_8cpp_ac8b3eb46fba0ab0bfe4a7e8be2e1234e.html#ac8b3eb46fba0ab0bfe4a7e8be2e1234e">has</a>(<span class="stringliteral">&quot;XUSP&quot;</span>) || (<a class="code" href="byteman_8cpp_ac8b3eb46fba0ab0bfe4a7e8be2e1234e.html#ac8b3eb46fba0ab0bfe4a7e8be2e1234e">has</a>(<span class="stringliteral">&quot;XILINX&quot;</span>) &amp;&amp; <a class="code" href="byteman_8cpp_a611a1a90a08beb70c05dafc1c1cae056.html#a611a1a90a08beb70c05dafc1c1cae056">hOR</a>(<span class="stringliteral">&quot;ULTRASCALE&quot;</span>, <span class="stringliteral">&quot;US&quot;</span>) &amp;&amp; <a class="code" href="byteman_8cpp_a611a1a90a08beb70c05dafc1c1cae056.html#a611a1a90a08beb70c05dafc1c1cae056">hOR</a>(<span class="stringliteral">&quot;PLUS&quot;</span>,<span class="stringliteral">&quot;+&quot;</span>) ) ) {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <a class="code" href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a> = <a class="code" href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">    #undef has</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">    #undef hOR</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown architecture: \&quot;&quot;</span>).append(arch).append(<span class="stringliteral">&quot;\&quot;.&quot;</span>));</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00238">archSelected</a>, <a class="el" href="byteman_8cpp_ac8b3eb46fba0ab0bfe4a7e8be2e1234e.html#ac8b3eb46fba0ab0bfe4a7e8be2e1234e">has</a>, <a class="el" href="byteman_8cpp_a611a1a90a08beb70c05dafc1c1cae056.html#a611a1a90a08beb70c05dafc1c1cae056">hOR</a>, <a class="el" href="byteman_8cpp_source.html#l00030">selectedArch</a>, and <a class="el" href="byteman_8h_source.html#l00028">XIL_USP</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00255">parseCommand()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -134,9 +156,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="abyteman_8cpp_ac8b3eb46fba0ab0bfe4a7e8be2e1234e_html_ac8b3eb46fba0ab0bfe4a7e8be2e1234e"><div class="ttname"><a href="byteman_8cpp_ac8b3eb46fba0ab0bfe4a7e8be2e1234e.html#ac8b3eb46fba0ab0bfe4a7e8be2e1234e">has</a></div><div class="ttdeci">#define has(x)</div></div>
+<div class="ttc" id="abyteman_8cpp_a8d14258da7389358995366840e6ca2e5_html_a8d14258da7389358995366840e6ca2e5"><div class="ttname"><a href="byteman_8cpp_a8d14258da7389358995366840e6ca2e5.html#a8d14258da7389358995366840e6ca2e5">archSelected</a></div><div class="ttdeci">bool archSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00238">byteman.cpp:238</a></div></div>
+<div class="ttc" id="abyteman_8cpp_aa22c142004b4926579c873d72b1878a3_html_aa22c142004b4926579c873d72b1878a3"><div class="ttname"><a href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a></div><div class="ttdeci">Arch selectedArch</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00030">byteman.cpp:30</a></div></div>
+<div class="ttc" id="abyteman_8cpp_a611a1a90a08beb70c05dafc1c1cae056_html_a611a1a90a08beb70c05dafc1c1cae056"><div class="ttname"><a href="byteman_8cpp_a611a1a90a08beb70c05dafc1c1cae056.html#a611a1a90a08beb70c05dafc1c1cae056">hOR</a></div><div class="ttdeci">#define hOR(x, y)</div></div>
+<div class="ttc" id="abyteman_8h_a0ac03ab06a859320a9072002bdf3aa0f_html_a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f"><div class="ttname"><a href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a></div><div class="ttdeci">@ XIL_USP</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00028">byteman.h:28</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

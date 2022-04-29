@@ -128,6 +128,27 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00040">40</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                                       {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    stringstream ss(s);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">string</span> ret;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ret.clear();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">string</span> temp;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> intFound;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ss &gt;&gt; temp;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">while</span> (!ss.eof()) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        ss &gt;&gt; temp;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (!(stringstream(temp) &gt;&gt; intFound)){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span>(i == n)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            i++;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        temp.clear();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> string(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
     </td>
@@ -136,7 +157,7 @@ $(function() {
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

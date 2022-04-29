@@ -117,6 +117,25 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00124">124</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                                    {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> verboseValue = <a class="code" href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a>(verboseCmd, 0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span>(verboseValue == 0)verboseValue = 0; <span class="comment">// if 0 was given, then it&#39;s 0</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">else</span> verboseValue = 1; <span class="comment">// if nothing was given or something else then 1</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    cout&lt;&lt; <span class="stringliteral">&quot;verboseValue now is &quot;</span>&lt;&lt; verboseValue &lt;&lt; endl; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;verboseValue&quot;</span> &lt;&lt; verboseValue &lt;&lt; endl;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a> == <a class="code" href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a>){</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        mainXUSP.verbose = verboseValue;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        tempXUSP.verbose = verboseValue;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00107">getNthInt()</a>, <a class="el" href="byteman_8cpp_source.html#l00030">selectedArch</a>, <a class="el" href="XilinxUltraScalePlus_8h_source.html#l00035">XilinxUltraScalePlus::verbose</a>, and <a class="el" href="byteman_8h_source.html#l00028">XIL_USP</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00255">parseCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -143,9 +162,12 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="abyteman_8cpp_aa22c142004b4926579c873d72b1878a3_html_aa22c142004b4926579c873d72b1878a3"><div class="ttname"><a href="byteman_8cpp_aa22c142004b4926579c873d72b1878a3.html#aa22c142004b4926579c873d72b1878a3">selectedArch</a></div><div class="ttdeci">Arch selectedArch</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00030">byteman.cpp:30</a></div></div>
+<div class="ttc" id="abyteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02_html_a7e6d949e69ac4f52a80dad0b6d62de02"><div class="ttname"><a href="byteman_8cpp_a7e6d949e69ac4f52a80dad0b6d62de02.html#a7e6d949e69ac4f52a80dad0b6d62de02">getNthInt</a></div><div class="ttdeci">int getNthInt(string s, int n)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00107">byteman.cpp:107</a></div></div>
+<div class="ttc" id="abyteman_8h_a0ac03ab06a859320a9072002bdf3aa0f_html_a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f"><div class="ttname"><a href="byteman_8h_a0ac03ab06a859320a9072002bdf3aa0f.html#a0ac03ab06a859320a9072002bdf3aa0faf371be9a95e198126409eea4036e147f">XIL_USP</a></div><div class="ttdeci">@ XIL_USP</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00028">byteman.h:28</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

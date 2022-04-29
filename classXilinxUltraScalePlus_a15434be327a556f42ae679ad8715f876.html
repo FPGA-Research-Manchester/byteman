@@ -132,6 +132,33 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlus_8cpp_source.html#l00093">93</a> of file <a class="el" href="XilinxUltraScalePlus_8cpp_source.html">XilinxUltraScalePlus.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                             {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classXilinxUltraScalePlus_a8dcdd76d3e0d12a68a8b5dfdbee74ce2.html#a8dcdd76d3e0d12a68a8b5dfdbee74ce2">ensureInitializedBitstreamArrays</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">int</span> blankCLB = 0, blankBRAM = 0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span>(params.find(<span class="stringliteral">&quot;logic&quot;</span>) != string::npos || params.find(<span class="stringliteral">&quot;clb&quot;</span>) != string::npos)blankCLB++;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(params.find(<span class="stringliteral">&quot;blockram&quot;</span>) != string::npos || params.find(<span class="stringliteral">&quot;bram&quot;</span>) != string::npos)blankBRAM++;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classXilinxUltraScalePlus_aa746af07720a1b77c8ad929dd968f699.html#aa746af07720a1b77c8ad929dd968f699">regionsSelected</a>.empty()) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span>(blankCLB)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            memset(&amp;<a class="code" href="classXilinxUltraScalePlus_a0f0f78050ccf1536e2af1d261898d459.html#a0f0f78050ccf1536e2af1d261898d459">bitstreamCLB</a>[0][0][0], 0, (&amp;<a class="code" href="classXilinxUltraScalePlus_a21ab3a68dc4f6aa9ddf86ff18c987c4c.html#a21ab3a68dc4f6aa9ddf86ff18c987c4c">bitstreamBRAM</a>[0][0][0]-&amp;<a class="code" href="classXilinxUltraScalePlus_a0f0f78050ccf1536e2af1d261898d459.html#a0f0f78050ccf1536e2af1d261898d459">bitstreamCLB</a>[0][0][0]));</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">if</span>(blankBRAM)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            memset(&amp;<a class="code" href="classXilinxUltraScalePlus_a21ab3a68dc4f6aa9ddf86ff18c987c4c.html#a21ab3a68dc4f6aa9ddf86ff18c987c4c">bitstreamBRAM</a>[0][0][0], 0, (<a class="code" href="classXilinxUltraScalePlus_a082294bb491756bb2d477d66ebaae465.html#a082294bb491756bb2d477d66ebaae465">bitstreamEnd</a>-&amp;<a class="code" href="classXilinxUltraScalePlus_a21ab3a68dc4f6aa9ddf86ff18c987c4c.html#a21ab3a68dc4f6aa9ddf86ff18c987c4c">bitstreamBRAM</a>[0][0][0]));</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span>(blankCLB)</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;r : <a class="code" href="classXilinxUltraScalePlus_aa746af07720a1b77c8ad929dd968f699.html#aa746af07720a1b77c8ad929dd968f699">regionsSelected</a>) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="comment">// TODO, blank bitstream at selected regions (r-&gt;posRow, r-&gt;posCol, r-&gt;sizeRow, r-&gt;sizeCol)</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="comment">//memset(&amp;bitstreamCLB[0][0][0], 0, (&amp;bitstreamBRAM[0][0][0]-&amp;bitstreamCLB[0][0][0]));</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">if</span>(blankBRAM)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;r : <a class="code" href="classXilinxUltraScalePlus_aa746af07720a1b77c8ad929dd968f699.html#aa746af07720a1b77c8ad929dd968f699">regionsSelected</a>) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <span class="comment">// TODO, blank bitstream at selected regions</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="comment">//memset(&amp;bitstreamBRAM[0][0][0], 0, (bitstreamEnd-&amp;bitstreamBRAM[0][0][0]));</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00163">parseBlank()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -150,9 +177,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="aclassXilinxUltraScalePlus_a21ab3a68dc4f6aa9ddf86ff18c987c4c_html_a21ab3a68dc4f6aa9ddf86ff18c987c4c"><div class="ttname"><a href="classXilinxUltraScalePlus_a21ab3a68dc4f6aa9ddf86ff18c987c4c.html#a21ab3a68dc4f6aa9ddf86ff18c987c4c">XilinxUltraScalePlus::bitstreamBRAM</a></div><div class="ttdeci">uint32_t * bitstreamBRAM[20][32]</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8h_source.html#l00083">XilinxUltraScalePlus.h:83</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_a082294bb491756bb2d477d66ebaae465_html_a082294bb491756bb2d477d66ebaae465"><div class="ttname"><a href="classXilinxUltraScalePlus_a082294bb491756bb2d477d66ebaae465.html#a082294bb491756bb2d477d66ebaae465">XilinxUltraScalePlus::bitstreamEnd</a></div><div class="ttdeci">uint32_t * bitstreamEnd</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8h_source.html#l00085">XilinxUltraScalePlus.h:85</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_aa746af07720a1b77c8ad929dd968f699_html_aa746af07720a1b77c8ad929dd968f699"><div class="ttname"><a href="classXilinxUltraScalePlus_aa746af07720a1b77c8ad929dd968f699.html#aa746af07720a1b77c8ad929dd968f699">XilinxUltraScalePlus::regionsSelected</a></div><div class="ttdeci">vector&lt; rect &gt; regionsSelected</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8h_source.html#l00063">XilinxUltraScalePlus.h:63</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_a0f0f78050ccf1536e2af1d261898d459_html_a0f0f78050ccf1536e2af1d261898d459"><div class="ttname"><a href="classXilinxUltraScalePlus_a0f0f78050ccf1536e2af1d261898d459.html#a0f0f78050ccf1536e2af1d261898d459">XilinxUltraScalePlus::bitstreamCLB</a></div><div class="ttdeci">uint32_t * bitstreamCLB[20][1024]</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8h_source.html#l00081">XilinxUltraScalePlus.h:81</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_a8dcdd76d3e0d12a68a8b5dfdbee74ce2_html_a8dcdd76d3e0d12a68a8b5dfdbee74ce2"><div class="ttname"><a href="classXilinxUltraScalePlus_a8dcdd76d3e0d12a68a8b5dfdbee74ce2.html#a8dcdd76d3e0d12a68a8b5dfdbee74ce2">XilinxUltraScalePlus::ensureInitializedBitstreamArrays</a></div><div class="ttdeci">void ensureInitializedBitstreamArrays()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00049">XilinxUltraScalePlus.cpp:49</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:30 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -95,6 +95,17 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlus_8cpp_source.html#l00405">405</a> of file <a class="el" href="XilinxUltraScalePlus_8cpp_source.html">XilinxUltraScalePlus.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                                 {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keyword">struct </span>tm  tstruct;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="keywordtype">char</span>       buf[80];</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    tstruct = *localtime(&amp;timestamp);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    strftime(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%H:%M:%S&quot;</span>, &amp;tstruct);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">return</span> string(buf);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlus_8cpp_source.html#l00413">XilinxUltraScalePlus::outputBITheader()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -113,7 +124,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

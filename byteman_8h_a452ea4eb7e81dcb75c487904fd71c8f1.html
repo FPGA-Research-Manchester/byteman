@@ -128,6 +128,23 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="help_8cpp_source.html#l00022">22</a> of file <a class="el" href="help_8cpp_source.html">help.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                         {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    stringstream ss(args);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">string</span> word;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ss &gt;&gt; word;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span>(ss.eof())</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="help_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="help_8cpp_ae0259929823a681afb82bc7391b0f69b.html#ae0259929823a681afb82bc7391b0f69b">usageArg</a>(args);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>(shouldExit)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        exit(exitCode);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="help_8cpp_source.html#l00033">usage()</a>, and <a class="el" href="help_8cpp_source.html#l00057">usageArg()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00288">main()</a>, and <a class="el" href="byteman_8cpp_source.html#l00255">parseCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -170,9 +187,11 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="ahelp_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0_html_a2ef30c42cbc289d899a8be5d2d8f77d0"><div class="ttname"><a href="help_8cpp_a2ef30c42cbc289d899a8be5d2d8f77d0.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a></div><div class="ttdeci">void usage()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00033">help.cpp:33</a></div></div>
+<div class="ttc" id="ahelp_8cpp_ae0259929823a681afb82bc7391b0f69b_html_ae0259929823a681afb82bc7391b0f69b"><div class="ttname"><a href="help_8cpp_ae0259929823a681afb82bc7391b0f69b.html#ae0259929823a681afb82bc7391b0f69b">usageArg</a></div><div class="ttdeci">void usageArg(string args)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00057">help.cpp:57</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

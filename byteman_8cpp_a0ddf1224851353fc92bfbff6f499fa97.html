@@ -127,6 +127,43 @@ $(function() {
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00288">288</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                                 {</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">if</span>(argc &lt;= 1) </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="byteman_8h_a452ea4eb7e81dcb75c487904fd71c8f1.html#a452ea4eb7e81dcb75c487904fd71c8f1">parseHelp</a>(<span class="stringliteral">&quot;&quot;</span>,1,1);<span class="comment">//show usage and terminate with an error code</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordtype">string</span> command;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordtype">bool</span> readSTDIN = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> argi = 1 ; argi &lt; argc ; argi++) {</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;            <span class="keywordflow">if</span>(argv[argi][0] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; !command.empty()){ <span class="comment">//new cmd and old cmd not empty</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <a class="code" href="byteman_8cpp_a913ad3944130fafece24fe460db9b6aa.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                command.clear();</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;            <span class="keywordflow">if</span>(command.empty())</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                command.append(argv[argi]);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                command.append(<span class="stringliteral">&quot; &quot;</span>).append(argv[argi]);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;            <span class="keywordflow">if</span>(command == <span class="stringliteral">&quot;-stdin&quot;</span>){</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                readSTDIN = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                command.clear();</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            }</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="keywordflow">if</span>(!command.empty())</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            <a class="code" href="byteman_8cpp_a913ad3944130fafece24fe460db9b6aa.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">while</span>(readSTDIN){</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            getline(cin,command);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">if</span>(command.at(command.find_first_not_of(<span class="stringliteral">&quot; \t&quot;</span>)) != <span class="charliteral">&#39;#&#39;</span>)<span class="comment">// if #, skip that line as comment</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                <a class="code" href="byteman_8cpp_a913ad3944130fafece24fe460db9b6aa.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        }</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e){</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The program was terminated with message: \n\t&#39;&quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;&#39;\n&quot;</span>;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    }</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00255">parseCommand()</a>, and <a class="el" href="help_8cpp_source.html#l00022">parseHelp()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -183,9 +220,11 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><!-- contents -->
+<div class="ttc" id="abyteman_8cpp_a913ad3944130fafece24fe460db9b6aa_html_a913ad3944130fafece24fe460db9b6aa"><div class="ttname"><a href="byteman_8cpp_a913ad3944130fafece24fe460db9b6aa.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a></div><div class="ttdeci">void parseCommand(string nextCmd)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00255">byteman.cpp:255</a></div></div>
+<div class="ttc" id="abyteman_8h_a452ea4eb7e81dcb75c487904fd71c8f1_html_a452ea4eb7e81dcb75c487904fd71c8f1"><div class="ttname"><a href="byteman_8h_a452ea4eb7e81dcb75c487904fd71c8f1.html#a452ea4eb7e81dcb75c487904fd71c8f1">parseHelp</a></div><div class="ttdeci">void parseHelp(string, int=0, int=0)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00022">help.cpp:22</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 16:57:29 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:01:32 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
