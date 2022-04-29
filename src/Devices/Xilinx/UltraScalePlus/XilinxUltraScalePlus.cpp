@@ -522,8 +522,8 @@ void XilinxUltraScalePlus::outputBITregion(ofstream& fout, int outputCLB, int ou
  * Creates a new bitstream file and writes the selected regions in it.
  * 
  *
- * @filename Name of the output file.
- * @params A list of parameters to control behavior:
+ * @arg @c filename Name of the output file.
+ * @arg @c params A list of parameters to control behavior:
  * - "logic" or "clb" : Enables bitstream generation in block type 0 (logic, routing, clocking).
  * - "blockram" or "bram" : Enables bitstream generation in block type 1 (blockram contents).
  * - "blank" : Enables bitstream blanking (zeroing) before block type 0 generation.
