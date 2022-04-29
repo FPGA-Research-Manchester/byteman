@@ -29,7 +29,7 @@ enum Arch{
 	XIL_VERSAL
 };
 void printDeviceList();
-void help(string, int=0, int=0);
+void parseHelp(string, int=0, int=0);
 void usage();
 void usageArg(string);
 void usage_verbose();

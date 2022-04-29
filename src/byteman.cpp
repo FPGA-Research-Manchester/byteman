@@ -121,7 +121,7 @@ int getNthInt(string s, int n){
 	return -0x7FFFFFFF;
 }
 #define paramHas(x) (params.find(x) != string::npos)
-void verbose(string verboseCmd){
+void parseVerbose(string verboseCmd){
 	int verboseValue = getNthInt(verboseCmd, 0);
 	if(verboseValue == 0)verboseValue = 0; // if 0 was given, then it's 0
 	else verboseValue = 1; // if nothing was given or something else then 1
@@ -134,7 +134,7 @@ void verbose(string verboseCmd){
 	}
 	#endif
 }
-void warn(string warnCmd){
+void parseWarn(string warnCmd){
 	int warnValue = getNthInt(warnCmd, 0);
 	if(warnValue == 0)warnValue = 0; // if 0 was given, then it's 0
 	else warnValue = 1; // if nothing was given or something else then 1
@@ -146,7 +146,7 @@ void warn(string warnCmd){
 	}
 	#endif
 }
-void region(string regionCmd){
+void parseRegion(string regionCmd){
 	string params = getAllStrings(regionCmd);
 	int srcRow, srcCol, sizeRow, sizeCol;
 	srcRow = getNthInt(regionCmd, 0);
@@ -160,7 +160,7 @@ void region(string regionCmd){
 	}
 	#endif
 }
-void blank(string blankCmd){
+void parseBlank(string blankCmd){
 	string params = getAllStrings(blankCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
@@ -171,13 +171,13 @@ void blank(string blankCmd){
 	}
 	#endif
 }
-void change(string changeCmd){
+void parseChange(string changeCmd){
 	//TODO lut,ff,wires,bram,uram modifications
 	#ifdef XUSP
 	;
 	#endif
 }
-void device(string deviceCmd){
+void parseDevice(string deviceCmd){
 	string params = getAllButLastStringArg(deviceCmd);
 	string deviceName = getLastStringArg(deviceCmd);
 	#ifdef XUSP
@@ -189,7 +189,7 @@ void device(string deviceCmd){
 	}
 	#endif
 }
-void input(string inputCmd){
+void parseInput(string inputCmd){
 	string params = getAllButLastStringArg(inputCmd);
 	string filename = getLastStringArg(inputCmd);
 	#ifdef XUSP
@@ -201,7 +201,7 @@ void input(string inputCmd){
 	}
 	#endif
 }
-void merge(string mergeCmd){
+void parseMerge(string mergeCmd){
 	string params = getAllStrings(mergeCmd);
 	int srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol;
 	srcRow = getNthInt(mergeCmd, 0);
@@ -215,7 +215,7 @@ void merge(string mergeCmd){
 		mainXUSP.merge(&tempXUSP, params, srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol);
 	#endif
 }
-void output(string outputCmd){
+void parseOutput(string outputCmd){
 	string params = getAllButLastStringArg(outputCmd);
 	string filename = getLastStringArg(outputCmd);
 	int srcRow, srcCol, sizeRow, sizeCol;
@@ -228,7 +228,7 @@ void output(string outputCmd){
 		mainXUSP.writeBitstream(filename, params, srcRow, srcCol, sizeRow, sizeCol);
 	#endif
 }
-void assembly(string assemblyCmd){
+void parseAssembly(string assemblyCmd){
 	//TODO , text assembly -> bitstream and vice versa
 	#ifdef XUSP
 	;
@@ -257,30 +257,30 @@ void parseCommand(string nextCmd){
 	if (nextCmd.at(0) == '-') nextCmd.erase(0, 1);
 	#define cmdIs(x,y) (nextCmd.rfind(x, 0) == 0)
 	if(cmdIs("h", "help")){
-		help(nextCmd);
+		parseHelp(nextCmd);
 		return;
 	}
 	if(!archSelected)setArch(nextCmd);
 	if(cmdIs("v", "verbose"))
-		verbose(nextCmd);
+		parseVerbose(nextCmd);
 	else if(cmdIs("w", "warn"))
-		warn(nextCmd);
+		parseWarn(nextCmd);
 	else if(cmdIs("r", "region"))
-		region(nextCmd);
+		parseRegion(nextCmd);
 	else if(cmdIs("b", "blank"))
-		blank(nextCmd);
+		parseBlank(nextCmd);
 	else if(cmdIs("c", "change"))
-		change(nextCmd);
+		parseChange(nextCmd);
 	else if(cmdIs("d", "device"))
-		device(nextCmd);
+		parseDevice(nextCmd);
 	else if(cmdIs("i", "input"))
-		input(nextCmd);
+		parseInput(nextCmd);
 	else if(cmdIs("m", "merge"))
-		merge(nextCmd);
+		parseMerge(nextCmd);
 	else if(cmdIs("o", "output"))
-		output(nextCmd);
+		parseOutput(nextCmd);
 	else if(cmdIs("a", "assembly"))
-		assembly(nextCmd);
+		parseAssembly(nextCmd);
 	else if(cmdIs("e", "end"))
 		exit(0);
 	#undef cmdIs

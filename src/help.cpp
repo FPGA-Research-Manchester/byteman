@@ -19,7 +19,7 @@
 #include <stdexcept>
 using namespace std;
 //TODO prettify all this.
-void help(string args, int shouldExit, int exitCode){
+void parseHelp(string args, int shouldExit, int exitCode){
 	stringstream ss(args);
 	string word;
 	ss >> word;
