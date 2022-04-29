@@ -390,7 +390,7 @@ void XilinxUltraScalePlus::merge(XilinxUltraScalePlus* srcBitstream, string para
 
 void XilinxUltraScalePlus::writeBitstream(string filename, string params, int srcRow, int srcCol, int sizeRow, int sizeCol){
     if(0 == filename.compare (filename.length() - 4, 4, ".bit"))
-        writeBitstreamBIT(filename, params, srcRow, srcCol, sizeRow, sizeCol);
+        XilinxUltraScalePlus::writeBitstreamBIT(filename, params, srcRow, srcCol, sizeRow, sizeCol);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be written.\n"));
 }
