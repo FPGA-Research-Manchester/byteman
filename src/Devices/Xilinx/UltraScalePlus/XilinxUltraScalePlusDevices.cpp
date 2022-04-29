@@ -125,7 +125,7 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 }
 int XilinxUltraScalePlus::getDeviceByName(string name)
 {
-	name.erase(remove_if(name.begin(), name.end(), isspace), name.end());
+	name.erase(remove_if(name.begin(), name.end(), ::isspace), name.end());
 	transform(name.begin(), name.end(),name.begin(), ::toupper);
 	#define deviceIs(x) (name.find(x)!=string::npos)
     //US+ Artix
