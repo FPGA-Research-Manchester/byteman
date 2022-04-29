@@ -54,12 +54,11 @@ class XilinxUltraScalePlus
         void merge(XilinxUltraScalePlus*, string, int, int, int, int, int, int);
 		//functions
 		void blank(string);
-    protected:
-
-    private:
-	void outputBITheader(ofstream&);
-	void outputBITfooter(ofstream&);
-	void outputBITregion(ofstream&, int, int, int, int, int, int, int);
+		
+		
+		void outputBITheader(ofstream&);
+		void outputBITfooter(ofstream&);
+		void outputBITregion(ofstream&, int, int, int, int, int, int, int);
 		vector<rect> regionsSelected;
 		//constant arrays defining US+ fabric
         int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
@@ -94,6 +93,8 @@ class XilinxUltraScalePlus
         string designName;
 		string partName;
         char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
+    protected:
+    private:
 };
 
 #endif // XILINXULTRASCALEPLUS_H
