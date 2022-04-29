@@ -16,7 +16,7 @@
 # min cmake version is 3.10 because "target_sources" is used.
 cmake_minimum_required(VERSION 3.10)
 #next line has to be in the format ..."byteman VERSION X.Y.Z"... for the autoversioning
-project(byteman VERSION 0.2.84)
+project(byteman VERSION 0.2.85)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
