@@ -464,7 +464,7 @@ $(function() {
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
 <div class="line"><a name="l00391"></a><span class="lineno"><a class="line" href="classXilinxUltraScalePlus.html#aecdb65a64d91cb6bcc3a920ac6e55692">  391</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classXilinxUltraScalePlus.html#aecdb65a64d91cb6bcc3a920ac6e55692">XilinxUltraScalePlus::writeBitstream</a>(<span class="keywordtype">string</span> filename, <span class="keywordtype">string</span> params, <span class="keywordtype">int</span> srcRow, <span class="keywordtype">int</span> srcCol, <span class="keywordtype">int</span> sizeRow, <span class="keywordtype">int</span> sizeCol){</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">if</span>(0 == filename.compare (filename.length() - 4, 4, <span class="stringliteral">&quot;.bit&quot;</span>))</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        writeBitstreamBIT(filename, params, srcRow, srcCol, sizeRow, sizeCol);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <a class="code" href="classXilinxUltraScalePlus.html#a84674d061a521a9cf9a7e9ce3cb732e2">XilinxUltraScalePlus::writeBitstreamBIT</a>(filename, params, srcRow, srcCol, sizeRow, sizeCol);</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown Xilinx UltraScale+ file format tried to be written.\n&quot;</span>));</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
@@ -692,7 +692,7 @@ $(function() {
 <div class="ttc" id="aXilinxUltraScalePlusCAP_8h_html_afb5641306a22414626d1e8d71ef328ac"><div class="ttname"><a href="XilinxUltraScalePlusCAP_8h.html#afb5641306a22414626d1e8d71ef328ac">XUSP_CAP_CMD</a></div><div class="ttdeci">#define XUSP_CAP_CMD</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusCAP_8h_source.html#l00026">XilinxUltraScalePlusCAP.h:26</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 17:28:03 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Apr 29 2022 17:37:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
