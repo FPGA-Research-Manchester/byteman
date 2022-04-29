@@ -39,10 +39,16 @@ jobs:
 
     - name: ${{github.workspace}}/Binaries/Linux-ARM
       run: ls ${{github.workspace}}/Binaries/Linux-ARM
-    - name: src/Devices/Xilinx/UltraScalePlus
-      run: ls src/Devices/Xilinx/UltraScalePlus
-    - name: src/Devices/Xilinx/UltraScalePlus/CMakeFiles
-      run: ls src/Devices/Xilinx/UltraScalePlus/CMakeFiles
+    - name: ${{github.workspace}}/Binaries/Linux-ARM/src
+      run: ls ${{github.workspace}}/Binaries/Linux-ARM/src
+    - name: ${{github.workspace}}/Binaries/Linux-ARM/src/Devices
+      run: ls ${{github.workspace}}/Binaries/Linux-ARM/src/Devices
+    - name: ${{github.workspace}}/Binaries/Linux-ARM/src/Devices/Xilinx
+      run: ls ${{github.workspace}}/Binaries/Linux-ARM/src/Devices/Xilinx
+    - name: ${{github.workspace}}/Binaries/Linux-ARM/src/Devices/Xilinx/UltraScalePlus
+      run: ls ${{github.workspace}}/Binaries/Linux-ARM/src/Devices/Xilinx/UltraScalePlus
+    - name: ${{github.workspace}}/Binaries/Linux-ARM/src/Devices/Xilinx/UltraScalePlus/CMakeFiles
+      run: ls ${{github.workspace}}/Binaries/Linux-ARM/src/Devices/Xilinx/UltraScalePlus/CMakeFiles
       
     - name: src/Devices/Xilinx/UltraScalePlus/CMakeFiles/XUSP_LIB.dir
       run: ls src/Devices/Xilinx/UltraScalePlus/CMakeFiles/XUSP_LIB.dir/
