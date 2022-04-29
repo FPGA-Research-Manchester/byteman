@@ -530,6 +530,7 @@ void XilinxUltraScalePlus::outputBITregion(ofstream& fout, int outputCLB, int ou
  * - "full" : Writes the whole chip.
  * - "partial" : Writes only selected regions.
  * @throws runtime_error if args don't define a correct region.
+ * @callergraph @callgraph
  *****************************************************************************/
 void XilinxUltraScalePlus::writeBitstreamBIT(string filename, string params, int srcRow, int srcCol, int sizeRow, int sizeCol){
     if(verbose)cout<<"Writing Xilinx UltraScale+ bitstream to file \""<<filename<<"\":\n";
