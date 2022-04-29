@@ -30,7 +30,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusDevices.cpp)
 
 #build byteman natively (without the library)
-target_sources(byteman PRIVATE ${XUSP_SRC})
+#target_sources(byteman PRIVATE ${XUSP_SRC})
 
 #Create a Xilinx US+ library
 add_library(XUSP_LIB STATIC ${XUSP_SRC})
