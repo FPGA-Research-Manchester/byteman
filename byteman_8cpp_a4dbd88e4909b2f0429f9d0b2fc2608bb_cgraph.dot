@@ -12,4 +12,14 @@ digraph "parseInput"
   Node3 [label="getLastStringArg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a00471d4a59c1bf585fbc1cdf2398a02d",tooltip=" "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="XilinxUltraScalePlus\l::readBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a769ebbdec0576b08602bbc49f9d6ceef",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="XilinxUltraScalePlus\l::ensureInitializedBitstream\lArrays",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a8dcdd76d3e0d12a68a8b5dfdbee74ce2",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="XilinxUltraScalePlus\l::getDeviceByNameOrThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="XilinxUltraScalePlus\l::getDeviceByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4",tooltip=" "];
+  Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="XilinxUltraScalePlus\l::setDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a762297dd90b02efcbb4a4aa0274dd34b",tooltip=" "];
 }

@@ -12,4 +12,11 @@ digraph "XilinxUltraScalePlus::setDevice"
   Node3 [label="parseCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa",tooltip=" "];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="XilinxUltraScalePlus\l::readBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a769ebbdec0576b08602bbc49f9d6ceef",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="parseInput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a4dbd88e4909b2f0429f9d0b2fc2608bb",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

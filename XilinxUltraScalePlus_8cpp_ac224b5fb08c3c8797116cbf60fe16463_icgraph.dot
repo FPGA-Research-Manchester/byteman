@@ -8,4 +8,6 @@ digraph "getDate"
   Node1 [label="getDate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxUltraScalePlus\l::outputBITheader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aaa5a3d294162289a97d4d100f52c2ea8",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="XilinxUltraScalePlus\l::writeBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a84674d061a521a9cf9a7e9ce3cb732e2",tooltip=" "];
 }

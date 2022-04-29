@@ -1,6 +1,9 @@
 <map id="XilinxUltraScalePlus::setDevice" name="XilinxUltraScalePlus::setDevice">
-<area shape="rect" id="node1" title=" " alt="" coords="432,5,585,47"/>
-<area shape="rect" id="node2" href="$byteman_8cpp.html#a883440ce4fd99a9d8375dd36b34346ee" title=" " alt="" coords="281,13,384,39"/>
-<area shape="rect" id="node3" href="$byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa" title=" " alt="" coords="108,13,233,39"/>
-<area shape="rect" id="node4" href="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,60,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="823,27,976,69"/>
+<area shape="rect" id="node2" href="$byteman_8cpp.html#a883440ce4fd99a9d8375dd36b34346ee" title=" " alt="" coords="445,5,548,32"/>
+<area shape="rect" id="node5" href="$classXilinxUltraScalePlus.html#a769ebbdec0576b08602bbc49f9d6ceef" title=" " alt="" coords="621,57,775,98"/>
+<area shape="rect" id="node3" href="$byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa" title=" " alt="" coords="108,35,233,61"/>
+<area shape="rect" id="node4" href="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,35,60,61"/>
+<area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="420,57,573,98"/>
+<area shape="rect" id="node7" href="$byteman_8cpp.html#a4dbd88e4909b2f0429f9d0b2fc2608bb" title=" " alt="" coords="281,60,372,87"/>
 </map>
