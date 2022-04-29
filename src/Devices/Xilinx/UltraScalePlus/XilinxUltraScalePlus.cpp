@@ -40,7 +40,9 @@ XilinxUltraScalePlus::XilinxUltraScalePlus()
 XilinxUltraScalePlus::~XilinxUltraScalePlus()
 {
     //dtor
-	delete blankFrame;
+	free(blankFrame);
+	if(bitstreamGlobal != nullptr)
+		delete bitstreamGlobal;
 }
 
 
