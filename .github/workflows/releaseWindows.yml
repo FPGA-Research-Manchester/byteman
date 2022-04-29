@@ -35,7 +35,7 @@ jobs:
       run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\
 
     - name: Build
-      run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --target ALL_BUILD
+      run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --target ALL_BUILD --config Release
 
     - name: Delete old binary
       continue-on-error: true

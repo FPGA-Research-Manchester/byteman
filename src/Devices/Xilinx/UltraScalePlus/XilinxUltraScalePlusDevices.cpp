@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <string>
 #include <stdexcept>
+#include <cstring>
 using namespace std;
 
 int XilinxUltraScalePlus::getDeviceByIDCODEorThrow(int IDCODE){
