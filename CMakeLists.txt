@@ -45,7 +45,7 @@ add_executable(byteman ${BYTEMAN_SRC})
 add_subdirectory(src/Devices/Xilinx/UltraScalePlus)
 
 # Link the libraries. Currently disabled as target_sources is used
- target_link_libraries(byteman PRIVATE XUSP_LIB)
+# target_link_libraries(byteman PRIVATE XUSP_LIB)
 
 #If profiling is needed (again)
 #if (MSVC)
