@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['selectedarch_60',['selectedArch',['../byteman_8cpp.html#aa22c142004b4926579c873d72b1878a3',1,'byteman.cpp']]],
-  ['setarch_61',['setArch',['../byteman_8cpp.html#a098d934d069c59b7087c186b8fae2ef6',1,'byteman.cpp']]],
-  ['setdevice_62',['setDevice',['../class_xilinx_ultra_scale_plus.html#a762297dd90b02efcbb4a4aa0274dd34b',1,'XilinxUltraScalePlus']]],
-  ['sizecol_63',['sizeCol',['../struct_xilinx_ultra_scale_plus_1_1rect.html#afa1e331a3f374035fdd75445acb6333b',1,'XilinxUltraScalePlus::rect']]],
-  ['sizerow_64',['sizeRow',['../struct_xilinx_ultra_scale_plus_1_1rect.html#aa6e9c9a217bbe4307218ed40600563b8',1,'XilinxUltraScalePlus::rect']]],
-  ['swapbytes16_65',['swapbytes16',['../endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af',1,'endianess.h']]],
-  ['swapbytes32_66',['swapbytes32',['../endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89',1,'endianess.h']]],
-  ['swapbytes64_67',['swapbytes64',['../endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e',1,'endianess.h']]]
+  ['readbitstream_79',['readBitstream',['../class_xilinx_ultra_scale_plus.html#a0e5d08a2e5c37a29a1a04d50b48739d2',1,'XilinxUltraScalePlus']]],
+  ['readbitstreambit_80',['readBitstreamBIT',['../class_xilinx_ultra_scale_plus.html#a769ebbdec0576b08602bbc49f9d6ceef',1,'XilinxUltraScalePlus']]],
+  ['rect_81',['rect',['../struct_xilinx_ultra_scale_plus_1_1rect.html',1,'XilinxUltraScalePlus']]],
+  ['region_82',['region',['../class_xilinx_ultra_scale_plus.html#ab0f4022be98e6a142e5a9331e7ed79ea',1,'XilinxUltraScalePlus::region()'],['../byteman_8cpp.html#a44be6137764e35340860f0d546ce5080',1,'region():&#160;byteman.cpp']]],
+  ['regionsselected_83',['regionsSelected',['../class_xilinx_ultra_scale_plus.html#aa746af07720a1b77c8ad929dd968f699',1,'XilinxUltraScalePlus']]],
+  ['resourcestring_84',['resourceString',['../class_xilinx_ultra_scale_plus.html#a4350d926cea84271beffe74e8bef1a30',1,'XilinxUltraScalePlus']]]
 ];
