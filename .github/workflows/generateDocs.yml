@@ -32,7 +32,7 @@ jobs:
         ref: main
 
     - name: Install doxygen
-      run: sudo apt-get update; sudo apt-get install -y doxygen graphviz
+      run: sudo apt-get update; sudo apt-get install -y doxygen graphviz mscgen
 
     - name: Generate Doxygen Documentation
       run: doxygen Resources/Doxyfile.in

@@ -55,6 +55,11 @@ class XilinxUltraScalePlus
 		//functions
 		void blank(string);
 		
+    protected:
+    private:
+		//constant arrays defining US+ fabric
+        int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
+        char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
 		
 		void outputBITheader(ofstream&);
 		void outputBITfooter(ofstream&);
@@ -66,7 +71,7 @@ class XilinxUltraScalePlus
         void writeBitstreamBIT(string, string, int, int, int, int);
 		
         //loaded bitstream data
-        string initializedBitstreamPartName; /** the partName of currently initialized bitstream buffers */
+        string initializedBitstreamPartName; ///< the partName of currently initialized bitstream buffers
         int numberOfBRAMCols;
         int numberOfCols;
         int numberOfFramesBeforeCol[XUSP_MAX_COLS];
@@ -90,11 +95,6 @@ class XilinxUltraScalePlus
         string designName;
 		string partName;
         char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
-    protected:
-    private:
-		//constant arrays defining US+ fabric
-        int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
-        char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
 };
 
 #endif // XILINXULTRASCALEPLUS_H
