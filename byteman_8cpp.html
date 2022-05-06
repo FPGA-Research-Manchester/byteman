@@ -385,41 +385,45 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Main function for byteman. Parses command line arguments and eventual streamed script files as individual commands (instructions) and feeds them into <a class="el" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand()</a>. Catches any thrown exceptions by the subsystems in byteman.</p>
+<ul>
+<li><code>argc</code> <code>argv</code>[] Command line arguments </li>
+</ul>
 
-<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00223">223</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                 {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">string</span> command;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">if</span>(argc &lt;= 1) </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="byteman_8h.html#a452ea4eb7e81dcb75c487904fd71c8f1">parseHelp</a>(<span class="stringliteral">&quot;&quot;</span>,1,1);<span class="comment">//show usage and terminate with an error code</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">bool</span> readSTDIN = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> argi = 1 ; argi &lt; argc ; argi++) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <span class="keywordflow">if</span>(argv[argi][0] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; !command.empty()){ <span class="comment">//new cmd and old cmd not empty</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                command.clear();</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">if</span>(command.empty())</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                command.append(argv[argi]);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                command.append(<span class="stringliteral">&quot; &quot;</span>).append(argv[argi]);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordflow">if</span>(command == <span class="stringliteral">&quot;-stdin&quot;</span>){</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                readSTDIN = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                command.clear();</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        }</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">if</span>(!command.empty())</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">while</span>(readSTDIN){</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            getline(cin,command);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span>(command.at(command.find_first_not_of(<span class="stringliteral">&quot; \t&quot;</span>)) != <span class="charliteral">&#39;#&#39;</span>)<span class="comment">// if #, skip that line as comment</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e){</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The program was terminated with message: \n\t&#39;&quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;&#39;\nWhile trying to execute command: \n\t&#39;&quot;</span> &lt;&lt; command &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00232">232</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                 {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">string</span> command;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">if</span>(argc &lt;= 1) </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="byteman_8h.html#a452ea4eb7e81dcb75c487904fd71c8f1">parseHelp</a>(<span class="stringliteral">&quot;&quot;</span>,1,1);<span class="comment">//show usage and terminate with an error code</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordtype">bool</span> readSTDIN = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> argi = 1 ; argi &lt; argc ; argi++) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordflow">if</span>(argv[argi][0] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; !command.empty()){ <span class="comment">//new cmd and old cmd not empty</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                command.clear();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">if</span>(command.empty())</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                command.append(argv[argi]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">else</span> </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                command.append(<span class="stringliteral">&quot; &quot;</span>).append(argv[argi]);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">if</span>(command == <span class="stringliteral">&quot;-stdin&quot;</span>){</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                readSTDIN = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                command.clear();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">if</span>(!command.empty())</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">while</span>(readSTDIN){</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            getline(cin,command);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">if</span>(command.at(command.find_first_not_of(<span class="stringliteral">&quot; \t&quot;</span>)) != <span class="charliteral">&#39;#&#39;</span>)<span class="comment">// if #, skip that line as comment</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e){</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;The program was terminated with message: \n\t&#39;&quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="stringliteral">&quot;&#39;\nWhile trying to execute command: \n\t&#39;&quot;</span> &lt;&lt; command &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00179">parseCommand()</a>, and <a class="el" href="help_8cpp_source.html#l00022">parseHelp()</a>.</p>
 <div class="dynheader">
@@ -714,7 +718,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00162">archSelected</a>, <a class="el" href="byteman_8cpp.html#acc3c6cdea0534b02382630340e1f8baa">cmdIs</a>, <a class="el" href="byteman_8cpp_source.html#l00153">parseAssembly()</a>, <a class="el" href="byteman_8cpp_source.html#l00083">parseBlank()</a>, <a class="el" href="byteman_8cpp_source.html#l00094">parseChange()</a>, <a class="el" href="byteman_8cpp_source.html#l00100">parseDevice()</a>, <a class="el" href="help_8cpp_source.html#l00022">parseHelp()</a>, <a class="el" href="byteman_8cpp_source.html#l00112">parseInput()</a>, <a class="el" href="byteman_8cpp_source.html#l00124">parseMerge()</a>, <a class="el" href="byteman_8cpp_source.html#l00139">parseOutput()</a>, <a class="el" href="byteman_8cpp_source.html#l00068">parseRegion()</a>, <a class="el" href="byteman_8cpp_source.html#l00046">parseVerbose()</a>, <a class="el" href="byteman_8cpp_source.html#l00057">parseWarn()</a>, and <a class="el" href="byteman_8cpp_source.html#l00163">setArch()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00223">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00232">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1328,7 +1332,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="abyteman_8cpp_html_a4dbd88e4909b2f0429f9d0b2fc2608bb"><div class="ttname"><a href="byteman_8cpp.html#a4dbd88e4909b2f0429f9d0b2fc2608bb">parseInput</a></div><div class="ttdeci">void parseInput(string inputCmd)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00112">byteman.cpp:112</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 6 2022 18:57:27 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 6 2022 19:10:33 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
