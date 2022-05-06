@@ -35,6 +35,6 @@ using namespace std;
 #define fileWriteLE(ostream,bits,var) {uint##bits##_t tmp=var;tmp=htole##bits(tmp);ostream.write(reinterpret_cast<char*>(&tmp), sizeof(tmp));}
 #define fileWriteString(ostream,var) ostream.write(var.c_str(), var.size()+1);
 
-#define fileExtensionIs(filename, extension) ((filename.length() >= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), "."extension)):0)
+#define fileExtensionIs(filename, extension) ((filename.length() >= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), "." extension)):0)
 
 #endif // FILEIO_H
