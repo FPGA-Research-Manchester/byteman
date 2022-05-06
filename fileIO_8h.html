@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -93,8 +93,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileIO_8h__dep__incl.png" border="0" usemap="#src_2Common_2fileIO_8hdep" alt=""/></div>
 <map name="src_2Common_2fileIO_8hdep" id="src_2Common_2fileIO_8hdep">
-<area shape="rect" title=" " alt="" coords="25,5,179,32"/>
-<area shape="rect" href="XilinxUltraScalePlus_8cpp.html" title=" " alt="" coords="5,80,199,136"/>
+<area shape="rect" title=" " alt="" coords="242,5,397,32"/>
+<area shape="rect" href="XilinxUltraScalePlusAssembler_8cpp.html" title=" " alt="" coords="5,80,199,136"/>
+<area shape="rect" href="XilinxUltraScalePlusInput_8cpp.html" title=" " alt="" coords="223,80,416,136"/>
+<area shape="rect" href="XilinxUltraScalePlusOutput_8cpp.html" title=" " alt="" coords="440,80,633,136"/>
 </map>
 </div>
 </div>
@@ -102,6 +104,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ae60133370d6cc3cbec5e1128e7cdd764"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#ae60133370d6cc3cbec5e1128e7cdd764">fileExtensionIs</a>(filename,  extension)&#160;&#160;&#160;((filename.length() &gt;= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), &quot;.&quot;extension)):0)</td></tr>
+<tr class="separator:ae60133370d6cc3cbec5e1128e7cdd764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e07adcf3fd37acce77de4e0d40eef91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a5e07adcf3fd37acce77de4e0d40eef91">fileReadAndDefineBE</a>(var,  istream,  bits)&#160;&#160;&#160;uint##bits##_t var;<a class="el" href="fileIO_8h.html#a964b3dea1427c22915c1433933a12f57">fileReadBE</a>(var,istream,bits)</td></tr>
 <tr class="separator:a5e07adcf3fd37acce77de4e0d40eef91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e4fd818ccfb1fdd5a192460bde516b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a3e4fd818ccfb1fdd5a192460bde516b7">fileReadAndDefineChars</a>(var,  istream,  num)&#160;&#160;&#160;char* var=new char[num+1];<a class="el" href="fileIO_8h.html#a03e5819441c5cf843d1d7960dd123fea">fileReadChars</a>(var,istream,num)</td></tr>
@@ -124,6 +128,36 @@ Macros</h2></td></tr>
 <tr class="separator:a3313d716f699725ff72a1e42cdaee2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ae60133370d6cc3cbec5e1128e7cdd764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60133370d6cc3cbec5e1128e7cdd764">&#9670;&nbsp;</a></span>fileExtensionIs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define fileExtensionIs</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">filename, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">extension&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((filename.length() &gt;= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), &quot;.&quot;extension)):0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00038">38</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
+
+</div>
+</div>
 <a id="a5e07adcf3fd37acce77de4e0d40eef91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5e07adcf3fd37acce77de4e0d40eef91">&#9670;&nbsp;</a></span>fileReadAndDefineBE</h2>
 
@@ -481,7 +515,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 22:45:09 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 6 2022 18:51:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

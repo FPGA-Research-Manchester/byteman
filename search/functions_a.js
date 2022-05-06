@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['writebitstream_975',['writeBitstream',['../classXilinxUltraScalePlus.html#aecdb65a64d91cb6bcc3a920ac6e55692',1,'XilinxUltraScalePlus']]],
-  ['writebitstreambit_976',['writeBitstreamBIT',['../classXilinxUltraScalePlus.html#a84674d061a521a9cf9a7e9ce3cb732e2',1,'XilinxUltraScalePlus']]]
+  ['setarch_1030',['setArch',['../byteman_8cpp.html#a098d934d069c59b7087c186b8fae2ef6',1,'byteman.cpp']]],
+  ['setdevice_1031',['setDevice',['../classXilinxUltraScalePlus.html#a762297dd90b02efcbb4a4aa0274dd34b',1,'XilinxUltraScalePlus']]]
 ];

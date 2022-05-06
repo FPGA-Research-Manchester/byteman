@@ -7,7 +7,7 @@ digraph "usage_device"
   rankdir="LR";
   Node1 [label="usage_device",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="printDeviceList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a23beb5409443799c43ba81c405375f4f",tooltip=" "];
+  Node2 [label="ArchDeviceHelp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a3ae97399f2ff99155de4dd7f9b7e9077",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScalePlus\l::printDeviceList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ad7b956985959fc268e85fd2c528d81a5",tooltip=" "];
+  Node3 [label="XilinxUltraScalePlus\l::deviceHelp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91",tooltip=" "];
 }

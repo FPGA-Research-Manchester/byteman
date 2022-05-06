@@ -7,5 +7,5 @@ digraph "parseVerbose"
   rankdir="LR";
   Node1 [label="parseVerbose",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="getNthInt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a7e6d949e69ac4f52a80dad0b6d62de02",tooltip=" "];
+  Node2 [label="parseString::getMultipleInts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceparseString.html#ac06596f0fa8d4218207a451019f59df4",tooltip=" "];
 }

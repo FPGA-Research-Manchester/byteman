@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -79,12 +79,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="XilinxUltraScalePlusFabric_8h__dep__incl.png" border="0" usemap="#src_2Devices_2Xilinx_2UltraScalePlus_2XilinxUltraScalePlusFabric_8hdep" alt=""/></div>
 <map name="src_2Devices_2Xilinx_2UltraScalePlus_2XilinxUltraScalePlusFabric_8hdep" id="src_2Devices_2Xilinx_2UltraScalePlus_2XilinxUltraScalePlusFabric_8hdep">
-<area shape="rect" title=" " alt="" coords="269,5,462,61"/>
-<area shape="rect" href="XilinxUltraScalePlus_8h.html" title=" " alt="" coords="161,109,354,165"/>
-<area shape="rect" href="XilinxUltraScalePlusDevices_8h.html" title=" " alt="" coords="378,109,571,165"/>
+<area shape="rect" title=" " alt="" coords="703,5,897,61"/>
+<area shape="rect" href="XilinxUltraScalePlus_8h.html" title=" " alt="" coords="595,109,789,165"/>
+<area shape="rect" href="XilinxUltraScalePlusDevices_8h.html" title=" " alt="" coords="921,109,1114,165"/>
 <area shape="rect" href="byteman_8cpp.html" title=" " alt="" coords="5,228,136,255"/>
 <area shape="rect" href="XilinxUltraScalePlus_8cpp.html" title=" " alt="" coords="161,213,354,269"/>
-<area shape="rect" href="XilinxUltraScalePlusDevices_8cpp.html" title=" " alt="" coords="378,213,571,269"/>
+<area shape="rect" href="XilinxUltraScalePlusAssembler_8cpp.html" title=" " alt="" coords="378,213,571,269"/>
+<area shape="rect" href="XilinxUltraScalePlusDevices_8cpp.html" title=" " alt="" coords="1030,213,1223,269"/>
+<area shape="rect" href="XilinxUltraScalePlusInput_8cpp.html" title=" " alt="" coords="595,213,789,269"/>
+<area shape="rect" href="XilinxUltraScalePlusOutput_8cpp.html" title=" " alt="" coords="813,213,1006,269"/>
 </map>
 </div>
 </div>
@@ -94,8 +97,16 @@ This graph shows which files directly or indirectly include this file:</div>
 Macros</h2></td></tr>
 <tr class="memitem:a8d94c1990f84570c6d4871cc956a50d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a8d94c1990f84570c6d4871cc956a50d1">XUSP_CLB_PER_CLOCK_REGION</a>&#160;&#160;&#160;60</td></tr>
 <tr class="separator:a8d94c1990f84570c6d4871cc956a50d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b7aec907550b0cbdb9086e32e6302b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a51b7aec907550b0cbdb9086e32e6302b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a775235d81c097b48fec3076dffc7992f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a775235d81c097b48fec3076dffc7992f">XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</a>&#160;&#160;&#160;256</td></tr>
 <tr class="separator:a775235d81c097b48fec3076dffc7992f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ebfd2da2ead7cc8455bf8123b8de3ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a3ebfd2da2ead7cc8455bf8123b8de3ba">XUSP_INCR_FAR</a>(b,  r,  c,  m)&#160;&#160;&#160;{if(b==0){<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a52a767601b26b7105089253fcd566f99">XUSP_INCR_FAR_BLOCKTYPE0</a>(b,r,c,m);}else{<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a401f46f285487551609a01530a59453d">XUSP_INCR_FAR_BLOCKTYPE1</a>(b,r,c,m);}}</td></tr>
+<tr class="separator:a3ebfd2da2ead7cc8455bf8123b8de3ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a767601b26b7105089253fcd566f99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a52a767601b26b7105089253fcd566f99">XUSP_INCR_FAR_BLOCKTYPE0</a>(b,  r,  c,  m)&#160;&#160;&#160;{m++;if((c == numberOfCols)?(m==<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a>):(m == numberOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]])){m = 0;c++;if(c == (numberOfCols+1)){c = 0;r++;if(r == numberOfRows){r = 0; b++;}}}}</td></tr>
+<tr class="separator:a52a767601b26b7105089253fcd566f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401f46f285487551609a01530a59453d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a401f46f285487551609a01530a59453d">XUSP_INCR_FAR_BLOCKTYPE1</a>(b,  r,  c,  m)&#160;&#160;&#160;{m++;if((c == numberOfBRAMCols)?(m==<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a>):(m == <a class="el" href="XilinxUltraScalePlusFabric_8h.html#a775235d81c097b48fec3076dffc7992f">XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</a>)){m = 0;c++;if(c == (numberOfBRAMCols+1)){c = 0;r++;if(r == numberOfRows){r = 0; b++;}}}}</td></tr>
+<tr class="separator:a401f46f285487551609a01530a59453d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0642ff716b2ccf6f23638abf5a5f609b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a0642ff716b2ccf6f23638abf5a5f609b">XUSP_LOOKUP_FRAME_NAMES</a></td></tr>
 <tr class="separator:a0642ff716b2ccf6f23638abf5a5f609b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a7c98b686861cfe6a9e8ad6434f85a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusFabric_8h.html#a2a7c98b686861cfe6a9e8ad6434f85a3">XUSP_LOOKUP_FRAME_SIZES</a></td></tr>
@@ -134,6 +145,22 @@ Macros</h2></td></tr>
 
 </div>
 </div>
+<a id="a51b7aec907550b0cbdb9086e32e6302b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b7aec907550b0cbdb9086e32e6302b">&#9670;&nbsp;</a></span>XUSP_EXTRA_FRAMES_PER_ROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_EXTRA_FRAMES_PER_ROW&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00032">32</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
+
+</div>
+</div>
 <a id="a775235d81c097b48fec3076dffc7992f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a775235d81c097b48fec3076dffc7992f">&#9670;&nbsp;</a></span>XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</h2>
 
@@ -147,6 +174,132 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00030">30</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ebfd2da2ead7cc8455bf8123b8de3ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ebfd2da2ead7cc8455bf8123b8de3ba">&#9670;&nbsp;</a></span>XUSP_INCR_FAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_INCR_FAR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">m&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{if(b==0){<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a52a767601b26b7105089253fcd566f99">XUSP_INCR_FAR_BLOCKTYPE0</a>(b,r,c,m);}else{<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a401f46f285487551609a01530a59453d">XUSP_INCR_FAR_BLOCKTYPE1</a>(b,r,c,m);}}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00036">36</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
+
+</div>
+</div>
+<a id="a52a767601b26b7105089253fcd566f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a767601b26b7105089253fcd566f99">&#9670;&nbsp;</a></span>XUSP_INCR_FAR_BLOCKTYPE0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_INCR_FAR_BLOCKTYPE0</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">m&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{m++;if((c == numberOfCols)?(m==<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a>):(m == numberOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]])){m = 0;c++;if(c == (numberOfCols+1)){c = 0;r++;if(r == numberOfRows){r = 0; b++;}}}}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00034">34</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
+
+</div>
+</div>
+<a id="a401f46f285487551609a01530a59453d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401f46f285487551609a01530a59453d">&#9670;&nbsp;</a></span>XUSP_INCR_FAR_BLOCKTYPE1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_INCR_FAR_BLOCKTYPE1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">m&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{m++;if((c == numberOfBRAMCols)?(m==<a class="el" href="XilinxUltraScalePlusFabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a>):(m == <a class="el" href="XilinxUltraScalePlusFabric_8h.html#a775235d81c097b48fec3076dffc7992f">XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</a>)){m = 0;c++;if(c == (numberOfBRAMCols+1)){c = 0;r++;if(r == numberOfRows){r = 0; b++;}}}}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00035">35</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
 
 </div>
 </div>
@@ -170,7 +323,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, \</div>
 <div class="line"><span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>, <span class="stringliteral">&quot;NIL&quot;</span>};</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00112">112</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00118">118</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
 
 </div>
 </div>
@@ -261,7 +414,7 @@ Macros</h2></td></tr>
 <li>"8": "EMPTY2" (unused 2 frames) </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00102">102</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html#l00108">108</a> of file <a class="el" href="XilinxUltraScalePlusFabric_8h_source.html">XilinxUltraScalePlusFabric.h</a>.</p>
 
 </div>
 </div>
@@ -396,7 +549,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 22:45:09 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 6 2022 18:51:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

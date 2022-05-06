@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['version_1181',['VERSION',['../byteman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf',1,'byteman.h']]],
-  ['version_5fbuild_1182',['VERSION_BUILD',['../byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a',1,'byteman.h']]]
+  ['swapbytes16_1276',['swapbytes16',['../endianess_8h.html#ad7d942c4e4ee489cf9f43855fe02f6af',1,'endianess.h']]],
+  ['swapbytes32_1277',['swapbytes32',['../endianess_8h.html#aae4db7e19f2a27d8b510cc8096875f89',1,'endianess.h']]],
+  ['swapbytes64_1278',['swapbytes64',['../endianess_8h.html#acb8f089bf80a927bddc0c992f62eaf9e',1,'endianess.h']]]
 ];

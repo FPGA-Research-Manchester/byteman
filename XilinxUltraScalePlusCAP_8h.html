@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -79,8 +79,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="XilinxUltraScalePlusCAP_8h__dep__incl.png" border="0" usemap="#src_2Devices_2Xilinx_2UltraScalePlus_2XilinxUltraScalePlusCAP_8hdep" alt=""/></div>
 <map name="src_2Devices_2Xilinx_2UltraScalePlus_2XilinxUltraScalePlusCAP_8hdep" id="src_2Devices_2Xilinx_2UltraScalePlus_2XilinxUltraScalePlusCAP_8hdep">
-<area shape="rect" title=" " alt="" coords="5,5,199,61"/>
+<area shape="rect" title=" " alt="" coords="331,5,524,61"/>
 <area shape="rect" href="XilinxUltraScalePlus_8cpp.html" title=" " alt="" coords="5,109,199,165"/>
+<area shape="rect" href="XilinxUltraScalePlusAssembler_8cpp.html" title=" " alt="" coords="223,109,416,165"/>
+<area shape="rect" href="XilinxUltraScalePlusInput_8cpp.html" title=" " alt="" coords="440,109,633,165"/>
+<area shape="rect" href="XilinxUltraScalePlusOutput_8cpp.html" title=" " alt="" coords="657,109,851,165"/>
 </map>
 </div>
 </div>
@@ -88,30 +91,54 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a7f4698718c37a1f087f1e281616ea80b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a7f4698718c37a1f087f1e281616ea80b">writeFAR</a>(ostream,  btype,  row,  maj,  min)&#160;&#160;&#160;<a class="el" href="XilinxUltraScalePlusCAP_8h.html#a2f92c27017a9374839569734e83cd8aa">writeReg</a>(ostream,<a class="el" href="XilinxUltraScalePlusCAP_8h.html#acfdc6551bb8330850bed9d3d38675eb4">XUSP_CAP_FAR</a>,((btype&amp;0x7)&lt;&lt;24 || (row&amp;0x3F)&lt;&lt;18 || (maj&amp;0x3FF)&lt;&lt;8 || (min&amp;0xFF)))</td></tr>
-<tr class="separator:a7f4698718c37a1f087f1e281616ea80b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57da5a0f1b84e2802c095f8118466ed8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a57da5a0f1b84e2802c095f8118466ed8">writeNOP</a>(ostream)&#160;&#160;&#160;<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x20000000);</td></tr>
-<tr class="separator:a57da5a0f1b84e2802c095f8118466ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3db466bd87a40449e42f6fd475b16223"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a3db466bd87a40449e42f6fd475b16223">writeNOPs</a>(ostream,  n)&#160;&#160;&#160;for(int itemp=0;itemp&lt;n;itemp++) <a class="el" href="XilinxUltraScalePlusCAP_8h.html#a57da5a0f1b84e2802c095f8118466ed8">writeNOP</a>(ostream);</td></tr>
-<tr class="separator:a3db466bd87a40449e42f6fd475b16223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f92c27017a9374839569734e83cd8aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a2f92c27017a9374839569734e83cd8aa">writeReg</a>(ostream,  reg,  val)&#160;&#160;&#160;<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000001+(reg&lt;&lt;13)));<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, val);</td></tr>
-<tr class="separator:a2f92c27017a9374839569734e83cd8aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5ee75b01d0c77b6c81ca07b72a3b10a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad5ee75b01d0c77b6c81ca07b72a3b10a">writeSync</a>(ostream)&#160;&#160;&#160;<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0xAA995566);</td></tr>
-<tr class="separator:ad5ee75b01d0c77b6c81ca07b72a3b10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6792735d88ad2d624e41421075d9bd6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6792735d88ad2d624e41421075d9bd6b">CAPreadReg</a>(ostream,  reg,  length)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x28000000+(reg&lt;&lt;13)+length));}</td></tr>
+<tr class="separator:a6792735d88ad2d624e41421075d9bd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7b0d5f0f7e533b406874ebb21fdbc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a7c7b0d5f0f7e533b406874ebb21fdbc1">CAPselectAndWriteFDRI2</a>(ostream,  length)&#160;&#160;&#160;{<a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6116678075a5b82164e54b5022a4ce22">CAPwriteFDRI1</a>(ostream,0);<a class="el" href="XilinxUltraScalePlusCAP_8h.html#abd27ba0bffb48e8f8af09178507ea1d7">CAPwriteFDRI2</a>(ostream,length);}</td></tr>
+<tr class="separator:a7c7b0d5f0f7e533b406874ebb21fdbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeacfd4abb76e130e2cff72859ab3951b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aeacfd4abb76e130e2cff72859ab3951b">CAPselectReg</a>(ostream,  reg)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000000+(reg&lt;&lt;13)));}</td></tr>
+<tr class="separator:aeacfd4abb76e130e2cff72859ab3951b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18240cf11dbfaa07742aec4ccb6942c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a18240cf11dbfaa07742aec4ccb6942c3">CAPwriteFAR</a>(ostream,  btype,  row,  maj,  min)&#160;&#160;&#160;{<a class="el" href="XilinxUltraScalePlusCAP_8h.html#a0fe053643b8743bb94a2bfd26c37398d">CAPwriteReg</a>(ostream,<a class="el" href="XilinxUltraScalePlusCAP_8h.html#aaddf7ce81acce7d8bd2d9832768ec93b">XUSP_CAP_REG_FAR</a>,(((btype&amp;0x7)&lt;&lt;24) + ((row&amp;0x3F)&lt;&lt;18) + ((maj&amp;0x3FF)&lt;&lt;8) + (min&amp;0xFF)));}</td></tr>
+<tr class="separator:a18240cf11dbfaa07742aec4ccb6942c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6116678075a5b82164e54b5022a4ce22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6116678075a5b82164e54b5022a4ce22">CAPwriteFDRI1</a>(ostream,  length)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000000+(<a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad5b237f7f3ed08ce85ff595778b99384">XUSP_CAP_REG_FDRI</a>&lt;&lt;13)+length));}</td></tr>
+<tr class="separator:a6116678075a5b82164e54b5022a4ce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd27ba0bffb48e8f8af09178507ea1d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#abd27ba0bffb48e8f8af09178507ea1d7">CAPwriteFDRI2</a>(ostream,  length)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x50000000+length));}</td></tr>
+<tr class="separator:abd27ba0bffb48e8f8af09178507ea1d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafec6c6bd8a3b1e006cff671447bae4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aafec6c6bd8a3b1e006cff671447bae4b">CAPwriteNOP</a>(ostream)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x20000000);}</td></tr>
+<tr class="separator:aafec6c6bd8a3b1e006cff671447bae4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21efc311ab4cc2b34e1720dfef8385f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a21efc311ab4cc2b34e1720dfef8385f2">CAPwriteNOPs</a>(ostream,  n)&#160;&#160;&#160;{for(int itemp=0;itemp&lt;n;itemp++) <a class="el" href="XilinxUltraScalePlusCAP_8h.html#aafec6c6bd8a3b1e006cff671447bae4b">CAPwriteNOP</a>(ostream);}</td></tr>
+<tr class="separator:a21efc311ab4cc2b34e1720dfef8385f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988676585cc3f3486507d7066d3f814b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a988676585cc3f3486507d7066d3f814b">CAPwriteNOPwData</a>(ostream,  data)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x20000000+data);}</td></tr>
+<tr class="separator:a988676585cc3f3486507d7066d3f814b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe053643b8743bb94a2bfd26c37398d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a0fe053643b8743bb94a2bfd26c37398d">CAPwriteReg</a>(ostream,  reg,  val)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000001+(reg&lt;&lt;13)));<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, val);}</td></tr>
+<tr class="separator:a0fe053643b8743bb94a2bfd26c37398d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a8370a38ea251154710539d8b1699c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a31a8370a38ea251154710539d8b1699c">CAPwriteRESERVEDwData</a>(ostream,  data)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x38000000+data);}</td></tr>
+<tr class="separator:a31a8370a38ea251154710539d8b1699c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6f27ea332c9b80fa47f8dbc9ad8f1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a4b6f27ea332c9b80fa47f8dbc9ad8f1c">CAPwriteSync</a>(ostream)&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0xAA995566);}</td></tr>
+<tr class="separator:a4b6f27ea332c9b80fa47f8dbc9ad8f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11e08c34a0148488ab5705fee8fea311"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a11e08c34a0148488ab5705fee8fea311">getInstructionOPCODE</a>(instruction)&#160;&#160;&#160;((instruction&gt;&gt;27) &amp; 0x3)</td></tr>
+<tr class="separator:a11e08c34a0148488ab5705fee8fea311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a965172b56bdaa24fd6a0a4a36581739e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a965172b56bdaa24fd6a0a4a36581739e">getInstructionPayload</a>(instruction)&#160;&#160;&#160;(instruction &amp; 0x07FFFFFF)</td></tr>
+<tr class="separator:a965172b56bdaa24fd6a0a4a36581739e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a792bca1f7eedc74ea2e4f77ef3950e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a7a792bca1f7eedc74ea2e4f77ef3950e">getInstructionType</a>(instruction)&#160;&#160;&#160;((instruction&gt;&gt;29) &amp; 0x7)</td></tr>
+<tr class="separator:a7a792bca1f7eedc74ea2e4f77ef3950e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc9a1b3cac7b6f0187bfc1a03e0b694"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a3cc9a1b3cac7b6f0187bfc1a03e0b694">getInstructionType1Register</a>(instruction)&#160;&#160;&#160;((instruction&gt;&gt;13) &amp; 0x1F)</td></tr>
+<tr class="separator:a3cc9a1b3cac7b6f0187bfc1a03e0b694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3342445ad4b590e5f3fa89b2761eea8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ac3342445ad4b590e5f3fa89b2761eea8">getInstructionType1WordCount</a>(instruction)&#160;&#160;&#160;(instruction &amp; 0x7FF)</td></tr>
+<tr class="separator:ac3342445ad4b590e5f3fa89b2761eea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a470b039eb8cfe27a1810bb01c2f4ac30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a470b039eb8cfe27a1810bb01c2f4ac30">OP_NOP</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a470b039eb8cfe27a1810bb01c2f4ac30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2de49861c663d987c5876b959396946b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a2de49861c663d987c5876b959396946b">OP_READ</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a2de49861c663d987c5876b959396946b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5051c26768697e2df551f1553a6b1aa2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a5051c26768697e2df551f1553a6b1aa2">OP_RESERVED</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a5051c26768697e2df551f1553a6b1aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b8d4c1c4b65472d724a0c82f687dae3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a8b8d4c1c4b65472d724a0c82f687dae3">OP_WRITE</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a8b8d4c1c4b65472d724a0c82f687dae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423c056af8383b2ba5be41789fb0ad93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a423c056af8383b2ba5be41789fb0ad93">parseFAR</a>(farVal,  varBA,  varRow,  varCol,  varMin)&#160;&#160;&#160;{varBA=(farVal&gt;&gt;24)&amp;0x7;varRow=(farVal&gt;&gt;18)&amp;0x3F;varCol=(farVal&gt;&gt;8)&amp;0x3FF;varMin=farVal&amp;0xFF;}</td></tr>
+<tr class="separator:a423c056af8383b2ba5be41789fb0ad93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f06dba2b0666aa829279105823e08eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a8f06dba2b0666aa829279105823e08eb">XUSP_BLOCKTYPE_BRAM</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a8f06dba2b0666aa829279105823e08eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2f5f77de0b6e3399878c873d694862b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad2f5f77de0b6e3399878c873d694862b">XUSP_BLOCKTYPE_LOGIC</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:ad2f5f77de0b6e3399878c873d694862b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4df46f1e1ede415b62f77b4bd6e982b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ac4df46f1e1ede415b62f77b4bd6e982b">XUSP_CAP_AXSS</a>&#160;&#160;&#160;13</td></tr>
-<tr class="separator:ac4df46f1e1ede415b62f77b4bd6e982b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6741ebf0d15cb0c0566ce0dcb2aadcf5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6741ebf0d15cb0c0566ce0dcb2aadcf5">XUSP_CAP_BOOTSTS</a>&#160;&#160;&#160;22</td></tr>
-<tr class="separator:a6741ebf0d15cb0c0566ce0dcb2aadcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a909c00dbbece41cf3c983cd8c338d2ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a909c00dbbece41cf3c983cd8c338d2ee">XUSP_CAP_BSPI</a>&#160;&#160;&#160;31</td></tr>
-<tr class="separator:a909c00dbbece41cf3c983cd8c338d2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a914fd06f20d60638b1d2e1d79911aafd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a914fd06f20d60638b1d2e1d79911aafd">XUSP_CAP_CBC</a>&#160;&#160;&#160;11</td></tr>
-<tr class="separator:a914fd06f20d60638b1d2e1d79911aafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb5641306a22414626d1e8d71ef328ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#afb5641306a22414626d1e8d71ef328ac">XUSP_CAP_CMD</a>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:afb5641306a22414626d1e8d71ef328ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb760009eac07b4ec34acdf2d503e7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aafb760009eac07b4ec34acdf2d503e7d">XUSP_CAP_CMD_AGHIGH</a>&#160;&#160;&#160;8</td></tr>
 <tr class="separator:aafb760009eac07b4ec34acdf2d503e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adec193d0399a776286b2c621c89b68da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#adec193d0399a776286b2c621c89b68da">XUSP_CAP_CMD_BSPI_READ</a>&#160;&#160;&#160;18</td></tr>
@@ -146,54 +173,164 @@ Macros</h2></td></tr>
 <tr class="separator:a954e9ad9a59826ad901ec704b090d482"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef65763020c3621c6ce774aa8dff07cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aef65763020c3621c6ce774aa8dff07cd">XUSP_CAP_CMD_SWITCH</a>&#160;&#160;&#160;9</td></tr>
 <tr class="separator:aef65763020c3621c6ce774aa8dff07cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da087da51b94232ab17367bb6824c6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a1da087da51b94232ab17367bb6824c6c">XUSP_CAP_CMD_UNKNOWN</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a1da087da51b94232ab17367bb6824c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa489a9f37a134fab35c4665584e5203d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aa489a9f37a134fab35c4665584e5203d">XUSP_CAP_CMD_URAM</a>&#160;&#160;&#160;6</td></tr>
 <tr class="separator:aa489a9f37a134fab35c4665584e5203d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58773c67d1f9f76abd19a7d8e1fbf2a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a58773c67d1f9f76abd19a7d8e1fbf2a9">XUSP_CAP_CMD_WCFG</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a58773c67d1f9f76abd19a7d8e1fbf2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c9a64a3153792f10c6cdb287c1aaf83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a4c9a64a3153792f10c6cdb287c1aaf83">XUSP_CAP_COR0</a>&#160;&#160;&#160;9</td></tr>
-<tr class="separator:a4c9a64a3153792f10c6cdb287c1aaf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad088c84364efb9b36adf8b7c1af00ed1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad088c84364efb9b36adf8b7c1af00ed1">XUSP_CAP_COR1</a>&#160;&#160;&#160;14</td></tr>
-<tr class="separator:ad088c84364efb9b36adf8b7c1af00ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebf0248bf724d68c3d3eeaa6bbce9e3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aebf0248bf724d68c3d3eeaa6bbce9e3c">XUSP_CAP_CRC</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:aebf0248bf724d68c3d3eeaa6bbce9e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10d7350a6c032b9d4c5faf1de5b42f38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a10d7350a6c032b9d4c5faf1de5b42f38">XUSP_CAP_CTRL0</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a10d7350a6c032b9d4c5faf1de5b42f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac147631493071dfbe535b457ec96e693"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ac147631493071dfbe535b457ec96e693">XUSP_CAP_CTRL1</a>&#160;&#160;&#160;24</td></tr>
-<tr class="separator:ac147631493071dfbe535b457ec96e693"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfdc6551bb8330850bed9d3d38675eb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#acfdc6551bb8330850bed9d3d38675eb4">XUSP_CAP_FAR</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:acfdc6551bb8330850bed9d3d38675eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a110493cf2e3c40b0d80eabbce417c40e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a110493cf2e3c40b0d80eabbce417c40e">XUSP_CAP_FDRI</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:a110493cf2e3c40b0d80eabbce417c40e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a056d52d532670fef377704b9ac4856bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a056d52d532670fef377704b9ac4856bf">XUSP_CAP_FDRO</a>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:a056d52d532670fef377704b9ac4856bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc452f5caf0adf7527c0a8e74d5b34a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6bc452f5caf0adf7527c0a8e74d5b34a">XUSP_CAP_IDCODE</a>&#160;&#160;&#160;12</td></tr>
-<tr class="separator:a6bc452f5caf0adf7527c0a8e74d5b34a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae959534aff23619070bea3f38ed91b0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ae959534aff23619070bea3f38ed91b0b">XUSP_CAP_LOUT</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:ae959534aff23619070bea3f38ed91b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa00cd15442d5da9a52eaaf5c8bb42af2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aa00cd15442d5da9a52eaaf5c8bb42af2">XUSP_CAP_MASK</a>&#160;&#160;&#160;6</td></tr>
-<tr class="separator:aa00cd15442d5da9a52eaaf5c8bb42af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5433b3b847d763c912dc44237f3fd1d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a5433b3b847d763c912dc44237f3fd1d3">XUSP_CAP_MFWR</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a5433b3b847d763c912dc44237f3fd1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d05e4b6842be60e3861928d12936da5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a7d05e4b6842be60e3861928d12936da5">XUSP_CAP_STAT</a>&#160;&#160;&#160;7</td></tr>
-<tr class="separator:a7d05e4b6842be60e3861928d12936da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5fea6451ceaef8d025d25d0783a084e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ae5fea6451ceaef8d025d25d0783a084e">XUSP_CAP_TIMER</a>&#160;&#160;&#160;17</td></tr>
-<tr class="separator:ae5fea6451ceaef8d025d25d0783a084e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80327e282e5ba5eb5b3c22a709e34282"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a80327e282e5ba5eb5b3c22a709e34282">XUSP_CAP_UNDOC0</a>&#160;&#160;&#160;19</td></tr>
-<tr class="separator:a80327e282e5ba5eb5b3c22a709e34282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affa335f06c81a5e722115617c28875ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#affa335f06c81a5e722115617c28875ef">XUSP_CAP_UNDOC1</a>&#160;&#160;&#160;30</td></tr>
-<tr class="separator:affa335f06c81a5e722115617c28875ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a107ed59ca8f7b78969de0ebc62cd19a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a107ed59ca8f7b78969de0ebc62cd19a4">XUSP_CAP_WBSTAR</a>&#160;&#160;&#160;16</td></tr>
-<tr class="separator:a107ed59ca8f7b78969de0ebc62cd19a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d6c1116c07d2a549d9a4a3c3b405375"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a5d6c1116c07d2a549d9a4a3c3b405375">XUSP_CAP_REG_AXSS</a>&#160;&#160;&#160;13</td></tr>
+<tr class="separator:a5d6c1116c07d2a549d9a4a3c3b405375"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235125ef98bca8c1120f14511a921349"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a235125ef98bca8c1120f14511a921349">XUSP_CAP_REG_BOOTSTS</a>&#160;&#160;&#160;22</td></tr>
+<tr class="separator:a235125ef98bca8c1120f14511a921349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e75f42387004183a5a601d13780b88e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a7e75f42387004183a5a601d13780b88e">XUSP_CAP_REG_BSPI</a>&#160;&#160;&#160;31</td></tr>
+<tr class="separator:a7e75f42387004183a5a601d13780b88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ee40dfac7c51a0418b27a678e4202a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ac7ee40dfac7c51a0418b27a678e4202a">XUSP_CAP_REG_CBC</a>&#160;&#160;&#160;11</td></tr>
+<tr class="separator:ac7ee40dfac7c51a0418b27a678e4202a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1ebf0895d6ea10e6562267cce01e60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a5c1ebf0895d6ea10e6562267cce01e60">XUSP_CAP_REG_CMD</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a5c1ebf0895d6ea10e6562267cce01e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a455edc7c6f122dbcf39ca527fe965"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#af3a455edc7c6f122dbcf39ca527fe965">XUSP_CAP_REG_COR0</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:af3a455edc7c6f122dbcf39ca527fe965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e505456251e5711c2518098518583f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a2e505456251e5711c2518098518583f6">XUSP_CAP_REG_COR1</a>&#160;&#160;&#160;14</td></tr>
+<tr class="separator:a2e505456251e5711c2518098518583f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f0eb7a76278ddd7cca2149702c3bcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a55f0eb7a76278ddd7cca2149702c3bcc">XUSP_CAP_REG_CRC</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a55f0eb7a76278ddd7cca2149702c3bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae713ab53403eb0e7b5944dec863c862b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ae713ab53403eb0e7b5944dec863c862b">XUSP_CAP_REG_CTRL0</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:ae713ab53403eb0e7b5944dec863c862b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed5020a39ac9a44b61280942ab02177"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a3ed5020a39ac9a44b61280942ab02177">XUSP_CAP_REG_CTRL1</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a3ed5020a39ac9a44b61280942ab02177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaddf7ce81acce7d8bd2d9832768ec93b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aaddf7ce81acce7d8bd2d9832768ec93b">XUSP_CAP_REG_FAR</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aaddf7ce81acce7d8bd2d9832768ec93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b237f7f3ed08ce85ff595778b99384"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad5b237f7f3ed08ce85ff595778b99384">XUSP_CAP_REG_FDRI</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ad5b237f7f3ed08ce85ff595778b99384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8caf2fc8dcd3ad28fd53fffa7a62c507"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a8caf2fc8dcd3ad28fd53fffa7a62c507">XUSP_CAP_REG_FDRO</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a8caf2fc8dcd3ad28fd53fffa7a62c507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd92c0a6cc34f4cfb29895985d0de95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a4dd92c0a6cc34f4cfb29895985d0de95">XUSP_CAP_REG_IDCODE</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:a4dd92c0a6cc34f4cfb29895985d0de95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7db34cfd4a38c14036901c989bd86d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a4c7db34cfd4a38c14036901c989bd86d">XUSP_CAP_REG_LOUT</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a4c7db34cfd4a38c14036901c989bd86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43693784e2892254198deb82f55943d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a43693784e2892254198deb82f55943d0">XUSP_CAP_REG_MAGIC0</a>&#160;&#160;&#160;19</td></tr>
+<tr class="separator:a43693784e2892254198deb82f55943d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af18d0f5c518d261a24509a1969c19916"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#af18d0f5c518d261a24509a1969c19916">XUSP_CAP_REG_MAGIC1</a>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:af18d0f5c518d261a24509a1969c19916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c4571b9b997c261adced73c2efa011"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad6c4571b9b997c261adced73c2efa011">XUSP_CAP_REG_MASK</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:ad6c4571b9b997c261adced73c2efa011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab255fd9090f414fe37a45ea64d28b3c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ab255fd9090f414fe37a45ea64d28b3c8">XUSP_CAP_REG_MFWR</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ab255fd9090f414fe37a45ea64d28b3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eabce04cd6b32c69dde3aa2f777eab9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6eabce04cd6b32c69dde3aa2f777eab9">XUSP_CAP_REG_STAT</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:a6eabce04cd6b32c69dde3aa2f777eab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac96d749178e0dc4ee6cf4fd9c6f0764c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#ac96d749178e0dc4ee6cf4fd9c6f0764c">XUSP_CAP_REG_TIMER</a>&#160;&#160;&#160;17</td></tr>
+<tr class="separator:ac96d749178e0dc4ee6cf4fd9c6f0764c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61481aa8d5597fdc22bcae49cd91e5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#aa61481aa8d5597fdc22bcae49cd91e5c">XUSP_CAP_REG_UNKNOWN</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:aa61481aa8d5597fdc22bcae49cd91e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac915e92eba9d5afedcdb23903bd2ca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XilinxUltraScalePlusCAP_8h.html#a7ac915e92eba9d5afedcdb23903bd2ca">XUSP_CAP_REG_WBSTAR</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a7ac915e92eba9d5afedcdb23903bd2ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a7f4698718c37a1f087f1e281616ea80b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f4698718c37a1f087f1e281616ea80b">&#9670;&nbsp;</a></span>writeFAR</h2>
+<a id="a6792735d88ad2d624e41421075d9bd6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6792735d88ad2d624e41421075d9bd6b">&#9670;&nbsp;</a></span>CAPreadReg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define writeFAR</td>
+          <td class="memname">#define CAPreadReg</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">reg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">length&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x28000000+(reg&lt;&lt;13)+length));}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00086">86</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a7c7b0d5f0f7e533b406874ebb21fdbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7b0d5f0f7e533b406874ebb21fdbc1">&#9670;&nbsp;</a></span>CAPselectAndWriteFDRI2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPselectAndWriteFDRI2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">length&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="XilinxUltraScalePlusCAP_8h.html#a6116678075a5b82164e54b5022a4ce22">CAPwriteFDRI1</a>(ostream,0);<a class="el" href="XilinxUltraScalePlusCAP_8h.html#abd27ba0bffb48e8f8af09178507ea1d7">CAPwriteFDRI2</a>(ostream,length);}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00091">91</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="aeacfd4abb76e130e2cff72859ab3951b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeacfd4abb76e130e2cff72859ab3951b">&#9670;&nbsp;</a></span>CAPselectReg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPselectReg</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">reg&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000000+(reg&lt;&lt;13)));}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00087">87</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a18240cf11dbfaa07742aec4ccb6942c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18240cf11dbfaa07742aec4ccb6942c3">&#9670;&nbsp;</a></span>CAPwriteFAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPwriteFAR</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">ostream, </td>
@@ -225,43 +362,103 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="XilinxUltraScalePlusCAP_8h.html#a2f92c27017a9374839569734e83cd8aa">writeReg</a>(ostream,<a class="el" href="XilinxUltraScalePlusCAP_8h.html#acfdc6551bb8330850bed9d3d38675eb4">XUSP_CAP_FAR</a>,((btype&amp;0x7)&lt;&lt;24 || (row&amp;0x3F)&lt;&lt;18 || (maj&amp;0x3FF)&lt;&lt;8 || (min&amp;0xFF)))</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="XilinxUltraScalePlusCAP_8h.html#a0fe053643b8743bb94a2bfd26c37398d">CAPwriteReg</a>(ostream,<a class="el" href="XilinxUltraScalePlusCAP_8h.html#aaddf7ce81acce7d8bd2d9832768ec93b">XUSP_CAP_REG_FAR</a>,(((btype&amp;0x7)&lt;&lt;24) + ((row&amp;0x3F)&lt;&lt;18) + ((maj&amp;0x3FF)&lt;&lt;8) + (min&amp;0xFF)));}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00069">69</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00088">88</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
-<a id="a57da5a0f1b84e2802c095f8118466ed8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57da5a0f1b84e2802c095f8118466ed8">&#9670;&nbsp;</a></span>writeNOP</h2>
+<a id="a6116678075a5b82164e54b5022a4ce22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6116678075a5b82164e54b5022a4ce22">&#9670;&nbsp;</a></span>CAPwriteFDRI1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define writeNOP</td>
+          <td class="memname">#define CAPwriteFDRI1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">length&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000000+(<a class="el" href="XilinxUltraScalePlusCAP_8h.html#ad5b237f7f3ed08ce85ff595778b99384">XUSP_CAP_REG_FDRI</a>&lt;&lt;13)+length));}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00089">89</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="abd27ba0bffb48e8f8af09178507ea1d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd27ba0bffb48e8f8af09178507ea1d7">&#9670;&nbsp;</a></span>CAPwriteFDRI2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPwriteFDRI2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">length&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x50000000+length));}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00090">90</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="aafec6c6bd8a3b1e006cff671447bae4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafec6c6bd8a3b1e006cff671447bae4b">&#9670;&nbsp;</a></span>CAPwriteNOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPwriteNOP</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">ostream</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x20000000);</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x20000000);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00066">66</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00081">81</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
-<a id="a3db466bd87a40449e42f6fd475b16223"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3db466bd87a40449e42f6fd475b16223">&#9670;&nbsp;</a></span>writeNOPs</h2>
+<a id="a21efc311ab4cc2b34e1720dfef8385f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21efc311ab4cc2b34e1720dfef8385f2">&#9670;&nbsp;</a></span>CAPwriteNOPs</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define writeNOPs</td>
+          <td class="memname">#define CAPwriteNOPs</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">ostream, </td>
@@ -275,23 +472,53 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;for(int itemp=0;itemp&lt;n;itemp++) <a class="el" href="XilinxUltraScalePlusCAP_8h.html#a57da5a0f1b84e2802c095f8118466ed8">writeNOP</a>(ostream);</td>
+          <td></td><td>&#160;&#160;&#160;{for(int itemp=0;itemp&lt;n;itemp++) <a class="el" href="XilinxUltraScalePlusCAP_8h.html#aafec6c6bd8a3b1e006cff671447bae4b">CAPwriteNOP</a>(ostream);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00067">67</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00084">84</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
-<a id="a2f92c27017a9374839569734e83cd8aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f92c27017a9374839569734e83cd8aa">&#9670;&nbsp;</a></span>writeReg</h2>
+<a id="a988676585cc3f3486507d7066d3f814b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988676585cc3f3486507d7066d3f814b">&#9670;&nbsp;</a></span>CAPwriteNOPwData</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define writeReg</td>
+          <td class="memname">#define CAPwriteNOPwData</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x20000000+data);}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00082">82</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a0fe053643b8743bb94a2bfd26c37398d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fe053643b8743bb94a2bfd26c37398d">&#9670;&nbsp;</a></span>CAPwriteReg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPwriteReg</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">ostream, </td>
@@ -311,7 +538,189 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000001+(reg&lt;&lt;13)));<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, val);</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, (0x30000001+(reg&lt;&lt;13)));<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, val);}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00085">85</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a31a8370a38ea251154710539d8b1699c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a8370a38ea251154710539d8b1699c">&#9670;&nbsp;</a></span>CAPwriteRESERVEDwData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPwriteRESERVEDwData</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0x38000000+data);}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00083">83</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a4b6f27ea332c9b80fa47f8dbc9ad8f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6f27ea332c9b80fa47f8dbc9ad8f1c">&#9670;&nbsp;</a></span>CAPwriteSync</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CAPwriteSync</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ostream</td><td>)</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0xAA995566);}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00080">80</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a11e08c34a0148488ab5705fee8fea311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11e08c34a0148488ab5705fee8fea311">&#9670;&nbsp;</a></span>getInstructionOPCODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getInstructionOPCODE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">instruction</td><td>)</td>
+          <td>&#160;&#160;&#160;((instruction&gt;&gt;27) &amp; 0x3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00073">73</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a965172b56bdaa24fd6a0a4a36581739e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a965172b56bdaa24fd6a0a4a36581739e">&#9670;&nbsp;</a></span>getInstructionPayload</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getInstructionPayload</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">instruction</td><td>)</td>
+          <td>&#160;&#160;&#160;(instruction &amp; 0x07FFFFFF)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00074">74</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a7a792bca1f7eedc74ea2e4f77ef3950e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a792bca1f7eedc74ea2e4f77ef3950e">&#9670;&nbsp;</a></span>getInstructionType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getInstructionType</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">instruction</td><td>)</td>
+          <td>&#160;&#160;&#160;((instruction&gt;&gt;29) &amp; 0x7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00072">72</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a3cc9a1b3cac7b6f0187bfc1a03e0b694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc9a1b3cac7b6f0187bfc1a03e0b694">&#9670;&nbsp;</a></span>getInstructionType1Register</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getInstructionType1Register</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">instruction</td><td>)</td>
+          <td>&#160;&#160;&#160;((instruction&gt;&gt;13) &amp; 0x1F)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00075">75</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3342445ad4b590e5f3fa89b2761eea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3342445ad4b590e5f3fa89b2761eea8">&#9670;&nbsp;</a></span>getInstructionType1WordCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getInstructionType1WordCount</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">instruction</td><td>)</td>
+          <td>&#160;&#160;&#160;(instruction &amp; 0x7FF)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00076">76</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a470b039eb8cfe27a1810bb01c2f4ac30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a470b039eb8cfe27a1810bb01c2f4ac30">&#9670;&nbsp;</a></span>OP_NOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OP_NOP&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00067">67</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a2de49861c663d987c5876b959396946b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2de49861c663d987c5876b959396946b">&#9670;&nbsp;</a></span>OP_READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OP_READ&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -320,23 +729,83 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ad5ee75b01d0c77b6c81ca07b72a3b10a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5ee75b01d0c77b6c81ca07b72a3b10a">&#9670;&nbsp;</a></span>writeSync</h2>
+<a id="a5051c26768697e2df551f1553a6b1aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5051c26768697e2df551f1553a6b1aa2">&#9670;&nbsp;</a></span>OP_RESERVED</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define writeSync</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ostream</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream, 32, 0xAA995566);</td>
+          <td class="memname">#define OP_RESERVED&#160;&#160;&#160;3</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00065">65</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00070">70</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a8b8d4c1c4b65472d724a0c82f687dae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b8d4c1c4b65472d724a0c82f687dae3">&#9670;&nbsp;</a></span>OP_WRITE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OP_WRITE&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00069">69</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a423c056af8383b2ba5be41789fb0ad93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423c056af8383b2ba5be41789fb0ad93">&#9670;&nbsp;</a></span>parseFAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define parseFAR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">farVal, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">varBA, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">varRow, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">varCol, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">varMin&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{varBA=(farVal&gt;&gt;24)&amp;0x7;varRow=(farVal&gt;&gt;18)&amp;0x3F;varCol=(farVal&gt;&gt;8)&amp;0x3FF;varMin=farVal&amp;0xFF;}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00078">78</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -372,86 +841,6 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ac4df46f1e1ede415b62f77b4bd6e982b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4df46f1e1ede415b62f77b4bd6e982b">&#9670;&nbsp;</a></span>XUSP_CAP_AXSS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_AXSS&#160;&#160;&#160;13</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00035">35</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="a6741ebf0d15cb0c0566ce0dcb2aadcf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6741ebf0d15cb0c0566ce0dcb2aadcf5">&#9670;&nbsp;</a></span>XUSP_CAP_BOOTSTS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_BOOTSTS&#160;&#160;&#160;22</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00040">40</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="a909c00dbbece41cf3c983cd8c338d2ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a909c00dbbece41cf3c983cd8c338d2ee">&#9670;&nbsp;</a></span>XUSP_CAP_BSPI</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_BSPI&#160;&#160;&#160;31</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00043">43</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="a914fd06f20d60638b1d2e1d79911aafd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a914fd06f20d60638b1d2e1d79911aafd">&#9670;&nbsp;</a></span>XUSP_CAP_CBC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_CBC&#160;&#160;&#160;11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00033">33</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="afb5641306a22414626d1e8d71ef328ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb5641306a22414626d1e8d71ef328ac">&#9670;&nbsp;</a></span>XUSP_CAP_CMD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_CMD&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00026">26</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
 <a id="aafb760009eac07b4ec34acdf2d503e7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aafb760009eac07b4ec34acdf2d503e7d">&#9670;&nbsp;</a></span>XUSP_CAP_CMD_AGHIGH</h2>
 
@@ -464,7 +853,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00054">54</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00055">55</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -480,7 +869,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00062">62</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00063">63</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -496,7 +885,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00060">60</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00061">61</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -512,7 +901,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00058">58</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00059">59</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -528,7 +917,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00048">48</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00049">49</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -544,7 +933,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00063">63</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00064">64</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -560,7 +949,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00056">56</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00057">57</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -576,7 +965,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00059">59</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00060">60</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -592,7 +981,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00049">49</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00050">50</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -608,7 +997,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00061">61</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00062">62</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -624,7 +1013,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00047">47</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00048">48</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -640,7 +1029,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00045">45</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00046">46</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -656,7 +1045,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00050">50</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00051">51</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -672,7 +1061,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00053">53</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00054">54</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -688,7 +1077,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00057">57</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00058">58</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -704,7 +1093,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00051">51</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00052">52</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -720,7 +1109,23 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00055">55</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00056">56</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a1da087da51b94232ab17367bb6824c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da087da51b94232ab17367bb6824c6c">&#9670;&nbsp;</a></span>XUSP_CAP_CMD_UNKNOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_CMD_UNKNOWN&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00065">65</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -736,7 +1141,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00052">52</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00053">53</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
@@ -752,18 +1157,98 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00046">46</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00047">47</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
 
 </div>
 </div>
-<a id="a4c9a64a3153792f10c6cdb287c1aaf83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c9a64a3153792f10c6cdb287c1aaf83">&#9670;&nbsp;</a></span>XUSP_CAP_COR0</h2>
+<a id="a5d6c1116c07d2a549d9a4a3c3b405375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d6c1116c07d2a549d9a4a3c3b405375">&#9670;&nbsp;</a></span>XUSP_CAP_REG_AXSS</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_COR0&#160;&#160;&#160;9</td>
+          <td class="memname">#define XUSP_CAP_REG_AXSS&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00035">35</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a235125ef98bca8c1120f14511a921349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235125ef98bca8c1120f14511a921349">&#9670;&nbsp;</a></span>XUSP_CAP_REG_BOOTSTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_BOOTSTS&#160;&#160;&#160;22</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00040">40</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e75f42387004183a5a601d13780b88e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e75f42387004183a5a601d13780b88e">&#9670;&nbsp;</a></span>XUSP_CAP_REG_BSPI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_BSPI&#160;&#160;&#160;31</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00043">43</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7ee40dfac7c51a0418b27a678e4202a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7ee40dfac7c51a0418b27a678e4202a">&#9670;&nbsp;</a></span>XUSP_CAP_REG_CBC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_CBC&#160;&#160;&#160;11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00033">33</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a5c1ebf0895d6ea10e6562267cce01e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1ebf0895d6ea10e6562267cce01e60">&#9670;&nbsp;</a></span>XUSP_CAP_REG_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_CMD&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00026">26</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="af3a455edc7c6f122dbcf39ca527fe965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a455edc7c6f122dbcf39ca527fe965">&#9670;&nbsp;</a></span>XUSP_CAP_REG_COR0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_COR0&#160;&#160;&#160;9</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -772,14 +1257,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ad088c84364efb9b36adf8b7c1af00ed1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad088c84364efb9b36adf8b7c1af00ed1">&#9670;&nbsp;</a></span>XUSP_CAP_COR1</h2>
+<a id="a2e505456251e5711c2518098518583f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e505456251e5711c2518098518583f6">&#9670;&nbsp;</a></span>XUSP_CAP_REG_COR1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_COR1&#160;&#160;&#160;14</td>
+          <td class="memname">#define XUSP_CAP_REG_COR1&#160;&#160;&#160;14</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -788,14 +1273,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aebf0248bf724d68c3d3eeaa6bbce9e3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebf0248bf724d68c3d3eeaa6bbce9e3c">&#9670;&nbsp;</a></span>XUSP_CAP_CRC</h2>
+<a id="a55f0eb7a76278ddd7cca2149702c3bcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55f0eb7a76278ddd7cca2149702c3bcc">&#9670;&nbsp;</a></span>XUSP_CAP_REG_CRC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_CRC&#160;&#160;&#160;0</td>
+          <td class="memname">#define XUSP_CAP_REG_CRC&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -804,14 +1289,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a10d7350a6c032b9d4c5faf1de5b42f38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10d7350a6c032b9d4c5faf1de5b42f38">&#9670;&nbsp;</a></span>XUSP_CAP_CTRL0</h2>
+<a id="ae713ab53403eb0e7b5944dec863c862b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae713ab53403eb0e7b5944dec863c862b">&#9670;&nbsp;</a></span>XUSP_CAP_REG_CTRL0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_CTRL0&#160;&#160;&#160;5</td>
+          <td class="memname">#define XUSP_CAP_REG_CTRL0&#160;&#160;&#160;5</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -820,14 +1305,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ac147631493071dfbe535b457ec96e693"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac147631493071dfbe535b457ec96e693">&#9670;&nbsp;</a></span>XUSP_CAP_CTRL1</h2>
+<a id="a3ed5020a39ac9a44b61280942ab02177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed5020a39ac9a44b61280942ab02177">&#9670;&nbsp;</a></span>XUSP_CAP_REG_CTRL1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_CTRL1&#160;&#160;&#160;24</td>
+          <td class="memname">#define XUSP_CAP_REG_CTRL1&#160;&#160;&#160;24</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -836,14 +1321,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="acfdc6551bb8330850bed9d3d38675eb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfdc6551bb8330850bed9d3d38675eb4">&#9670;&nbsp;</a></span>XUSP_CAP_FAR</h2>
+<a id="aaddf7ce81acce7d8bd2d9832768ec93b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaddf7ce81acce7d8bd2d9832768ec93b">&#9670;&nbsp;</a></span>XUSP_CAP_REG_FAR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_FAR&#160;&#160;&#160;1</td>
+          <td class="memname">#define XUSP_CAP_REG_FAR&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -852,14 +1337,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a110493cf2e3c40b0d80eabbce417c40e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a110493cf2e3c40b0d80eabbce417c40e">&#9670;&nbsp;</a></span>XUSP_CAP_FDRI</h2>
+<a id="ad5b237f7f3ed08ce85ff595778b99384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b237f7f3ed08ce85ff595778b99384">&#9670;&nbsp;</a></span>XUSP_CAP_REG_FDRI</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_FDRI&#160;&#160;&#160;2</td>
+          <td class="memname">#define XUSP_CAP_REG_FDRI&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -868,14 +1353,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a056d52d532670fef377704b9ac4856bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a056d52d532670fef377704b9ac4856bf">&#9670;&nbsp;</a></span>XUSP_CAP_FDRO</h2>
+<a id="a8caf2fc8dcd3ad28fd53fffa7a62c507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8caf2fc8dcd3ad28fd53fffa7a62c507">&#9670;&nbsp;</a></span>XUSP_CAP_REG_FDRO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_FDRO&#160;&#160;&#160;3</td>
+          <td class="memname">#define XUSP_CAP_REG_FDRO&#160;&#160;&#160;3</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -884,14 +1369,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a6bc452f5caf0adf7527c0a8e74d5b34a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bc452f5caf0adf7527c0a8e74d5b34a">&#9670;&nbsp;</a></span>XUSP_CAP_IDCODE</h2>
+<a id="a4dd92c0a6cc34f4cfb29895985d0de95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dd92c0a6cc34f4cfb29895985d0de95">&#9670;&nbsp;</a></span>XUSP_CAP_REG_IDCODE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_IDCODE&#160;&#160;&#160;12</td>
+          <td class="memname">#define XUSP_CAP_REG_IDCODE&#160;&#160;&#160;12</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -900,14 +1385,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ae959534aff23619070bea3f38ed91b0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae959534aff23619070bea3f38ed91b0b">&#9670;&nbsp;</a></span>XUSP_CAP_LOUT</h2>
+<a id="a4c7db34cfd4a38c14036901c989bd86d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7db34cfd4a38c14036901c989bd86d">&#9670;&nbsp;</a></span>XUSP_CAP_REG_LOUT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_LOUT&#160;&#160;&#160;8</td>
+          <td class="memname">#define XUSP_CAP_REG_LOUT&#160;&#160;&#160;8</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -916,78 +1401,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="aa00cd15442d5da9a52eaaf5c8bb42af2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa00cd15442d5da9a52eaaf5c8bb42af2">&#9670;&nbsp;</a></span>XUSP_CAP_MASK</h2>
+<a id="a43693784e2892254198deb82f55943d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43693784e2892254198deb82f55943d0">&#9670;&nbsp;</a></span>XUSP_CAP_REG_MAGIC0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_MASK&#160;&#160;&#160;6</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00028">28</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="a5433b3b847d763c912dc44237f3fd1d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5433b3b847d763c912dc44237f3fd1d3">&#9670;&nbsp;</a></span>XUSP_CAP_MFWR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_MFWR&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00032">32</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="a7d05e4b6842be60e3861928d12936da5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d05e4b6842be60e3861928d12936da5">&#9670;&nbsp;</a></span>XUSP_CAP_STAT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_STAT&#160;&#160;&#160;7</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00029">29</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="ae5fea6451ceaef8d025d25d0783a084e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5fea6451ceaef8d025d25d0783a084e">&#9670;&nbsp;</a></span>XUSP_CAP_TIMER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_TIMER&#160;&#160;&#160;17</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00038">38</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
-
-</div>
-</div>
-<a id="a80327e282e5ba5eb5b3c22a709e34282"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80327e282e5ba5eb5b3c22a709e34282">&#9670;&nbsp;</a></span>XUSP_CAP_UNDOC0</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XUSP_CAP_UNDOC0&#160;&#160;&#160;19</td>
+          <td class="memname">#define XUSP_CAP_REG_MAGIC0&#160;&#160;&#160;19</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -996,14 +1417,14 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="affa335f06c81a5e722115617c28875ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affa335f06c81a5e722115617c28875ef">&#9670;&nbsp;</a></span>XUSP_CAP_UNDOC1</h2>
+<a id="af18d0f5c518d261a24509a1969c19916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18d0f5c518d261a24509a1969c19916">&#9670;&nbsp;</a></span>XUSP_CAP_REG_MAGIC1</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_UNDOC1&#160;&#160;&#160;30</td>
+          <td class="memname">#define XUSP_CAP_REG_MAGIC1&#160;&#160;&#160;30</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1012,14 +1433,94 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="a107ed59ca8f7b78969de0ebc62cd19a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a107ed59ca8f7b78969de0ebc62cd19a4">&#9670;&nbsp;</a></span>XUSP_CAP_WBSTAR</h2>
+<a id="ad6c4571b9b997c261adced73c2efa011"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c4571b9b997c261adced73c2efa011">&#9670;&nbsp;</a></span>XUSP_CAP_REG_MASK</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define XUSP_CAP_WBSTAR&#160;&#160;&#160;16</td>
+          <td class="memname">#define XUSP_CAP_REG_MASK&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00028">28</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="ab255fd9090f414fe37a45ea64d28b3c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab255fd9090f414fe37a45ea64d28b3c8">&#9670;&nbsp;</a></span>XUSP_CAP_REG_MFWR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_MFWR&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00032">32</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a6eabce04cd6b32c69dde3aa2f777eab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eabce04cd6b32c69dde3aa2f777eab9">&#9670;&nbsp;</a></span>XUSP_CAP_REG_STAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_STAT&#160;&#160;&#160;7</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00029">29</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="ac96d749178e0dc4ee6cf4fd9c6f0764c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96d749178e0dc4ee6cf4fd9c6f0764c">&#9670;&nbsp;</a></span>XUSP_CAP_REG_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_TIMER&#160;&#160;&#160;17</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00038">38</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="aa61481aa8d5597fdc22bcae49cd91e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61481aa8d5597fdc22bcae49cd91e5c">&#9670;&nbsp;</a></span>XUSP_CAP_REG_UNKNOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_UNKNOWN&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html#l00044">44</a> of file <a class="el" href="XilinxUltraScalePlusCAP_8h_source.html">XilinxUltraScalePlusCAP.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ac915e92eba9d5afedcdb23903bd2ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ac915e92eba9d5afedcdb23903bd2ca">&#9670;&nbsp;</a></span>XUSP_CAP_REG_WBSTAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define XUSP_CAP_REG_WBSTAR&#160;&#160;&#160;16</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1031,7 +1532,7 @@ Macros</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 22:45:09 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 6 2022 18:51:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

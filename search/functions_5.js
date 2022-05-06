@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['outputbitfooter_939',['outputBITfooter',['../classXilinxUltraScalePlus.html#a4a2585026a2c51a19ccc56a8d2a6ed84',1,'XilinxUltraScalePlus']]],
-  ['outputbitheader_940',['outputBITheader',['../classXilinxUltraScalePlus.html#aaa5a3d294162289a97d4d100f52c2ea8',1,'XilinxUltraScalePlus']]],
-  ['outputbitregion_941',['outputBITregion',['../classXilinxUltraScalePlus.html#af79c926353e06d991963170d37eea6dc',1,'XilinxUltraScalePlus']]]
+  ['initializeresourcestringparameters_1005',['initializeResourceStringParameters',['../classXilinxUltraScalePlus.html#ac32e568fe37e12bfc1509b4d690528b6',1,'XilinxUltraScalePlus']]],
+  ['is_5flittle_5fendian_1006',['IS_LITTLE_ENDIAN',['../endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c',1,'endianess.h']]]
 ];

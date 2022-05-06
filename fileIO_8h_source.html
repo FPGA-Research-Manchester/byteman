@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -108,12 +108,15 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">   34</a></span>&#160;<span class="preprocessor">#define fileWriteBE(ostream,bits,var) {uint##bits##_t tmp=var;tmp=htobe##bits(tmp);ostream.write(reinterpret_cast&lt;char*&gt;(&amp;tmp), sizeof(tmp));}</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="fileIO_8h.html#ab17558e9c12e51055bbbe4d40af6bf61">   35</a></span>&#160;<span class="preprocessor">#define fileWriteLE(ostream,bits,var) {uint##bits##_t tmp=var;tmp=htole##bits(tmp);ostream.write(reinterpret_cast&lt;char*&gt;(&amp;tmp), sizeof(tmp));}</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="fileIO_8h.html#a3313d716f699725ff72a1e42cdaee2b2">   36</a></span>&#160;<span class="preprocessor">#define fileWriteString(ostream,var) ostream.write(var.c_str(), var.size()+1);</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif // FILEIO_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="fileIO_8h.html#ae60133370d6cc3cbec5e1128e7cdd764">   38</a></span>&#160;<span class="preprocessor">#define fileExtensionIs(filename, extension) ((filename.length() &gt;= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), &quot;.&quot;extension)):0)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif // FILEIO_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aendianess_8h_html"><div class="ttname"><a href="endianess_8h.html">endianess.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 22:45:09 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 6 2022 18:51:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

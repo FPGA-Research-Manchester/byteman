@@ -7,5 +7,5 @@ digraph "XilinxUltraScalePlus::outputBITfooter"
   rankdir="RL";
   Node1 [label="XilinxUltraScalePlus\l::outputBITfooter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::writeBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a84674d061a521a9cf9a7e9ce3cb732e2",tooltip=" "];
+  Node2 [label="XilinxUltraScalePlus\l::writeBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a448d0bc1ec9c5dced1a741302e2e12b1",tooltip=" "];
 }

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['readbitstream_955',['readBitstream',['../classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2',1,'XilinxUltraScalePlus']]],
-  ['readbitstreambit_956',['readBitstreamBIT',['../classXilinxUltraScalePlus.html#a769ebbdec0576b08602bbc49f9d6ceef',1,'XilinxUltraScalePlus']]],
-  ['region_957',['region',['../classXilinxUltraScalePlus.html#ab0f4022be98e6a142e5a9331e7ed79ea',1,'XilinxUltraScalePlus']]]
+  ['outputbitfooter_1009',['outputBITfooter',['../classXilinxUltraScalePlus.html#a4a2585026a2c51a19ccc56a8d2a6ed84',1,'XilinxUltraScalePlus']]],
+  ['outputbitheader_1010',['outputBITheader',['../classXilinxUltraScalePlus.html#afc559facdbe2265596b7e082efc26c58',1,'XilinxUltraScalePlus']]],
+  ['outputbitheaderlengthfield_1011',['outputBITheaderLengthField',['../classXilinxUltraScalePlus.html#a6fa73ce20c6b008bbf415c128d686a32',1,'XilinxUltraScalePlus']]],
+  ['outputbitregion_1012',['outputBITregion',['../classXilinxUltraScalePlus.html#af79c926353e06d991963170d37eea6dc',1,'XilinxUltraScalePlus']]]
 ];

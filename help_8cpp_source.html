@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -105,7 +105,7 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        exit(exitCode);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="help_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a>(){</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;byteman&quot;</span> &lt;&lt; <a class="code" href="byteman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a> &lt;&lt; <span class="stringliteral">&quot;(Build &quot;</span> &lt;&lt; <a class="code" href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">VERSION_BUILD</a> &lt;&lt; <span class="stringliteral">&quot;) usage:&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;byteman &quot;</span> &lt;&lt; <a class="code" href="byteman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a> &lt;&lt; <span class="stringliteral">&quot; (Build &quot;</span> &lt;&lt; <a class="code" href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">VERSION_BUILD</a> &lt;&lt; <span class="stringliteral">&quot;) usage:&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;byteman ARCH [-command...]* [-stdin]&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tCommands:    [Default] : [Description]                                    &quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-a (assembly)          : (de)compile bitstream assembly files. See \&quot;byteman -h assembly\&quot;&quot;</span> &lt;&lt; endl;</div>
@@ -184,7 +184,7 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_device&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Available devices:&quot;</span> &lt;&lt;endl;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="byteman_8cpp.html#a23beb5409443799c43ba81c405375f4f">printDeviceList</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="byteman_8cpp.html#a3ae97399f2ff99155de4dd7f9b7e9077">ArchDeviceHelp</a>();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="help_8cpp.html#af1a5368922439cb186899b545fd1965e">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#af1a5368922439cb186899b545fd1965e">usage_help</a>(){</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_help&quot;</span> &lt;&lt; endl;</div>
@@ -204,25 +204,28 @@ $(function() {
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 <div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="help_8cpp.html#aede32834476091f4eb0ae6749f41eacf">  131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#aede32834476091f4eb0ae6749f41eacf">usage_assembly</a>(){</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_assembly&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="help_8cpp.html#a89a232fcf363da02884b15625ea242b1">  134</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#a89a232fcf363da02884b15625ea242b1">usage_end</a>(){</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_end&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="help_8cpp.html#a49223a995301022ffb657717122d88de">  137</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#a49223a995301022ffb657717122d88de">usage_stdin</a>(){</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-stdin                    : Continue using the same commands on standard input.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                            Standard input ends with a command \&quot;end\&quot;.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                            Stdin commands don’t need \&quot;-\&quot; in front and can be on multiple lines.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                            \&quot;#\&quot; starts a comment until a newline is seen.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="byteman_8cpp.html#a738947aa9d79698f8128fb7cafa487d2">ArchAssemblyHelp</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="help_8cpp.html#a89a232fcf363da02884b15625ea242b1">  135</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#a89a232fcf363da02884b15625ea242b1">usage_end</a>(){</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_end&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="help_8cpp.html#a49223a995301022ffb657717122d88de">  138</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="help_8cpp.html#a49223a995301022ffb657717122d88de">usage_stdin</a>(){</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-stdin                    : Continue using the same commands on standard input.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                            Standard input ends with a command \&quot;end\&quot;.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                            Stdin commands don’t need \&quot;-\&quot; in front and can be on multiple lines.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                            \&quot;#\&quot; starts a comment until a newline is seen.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="ahelp_8cpp_html_a2ef30c42cbc289d899a8be5d2d8f77d0"><div class="ttname"><a href="help_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a></div><div class="ttdeci">void usage()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00033">help.cpp:33</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a33a04cbd434c5ebe2c0113f5acb2c089"><div class="ttname"><a href="help_8cpp.html#a33a04cbd434c5ebe2c0113f5acb2c089">usage_warn</a></div><div class="ttdeci">void usage_warn()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00096">help.cpp:96</a></div></div>
+<div class="ttc" id="abyteman_8cpp_html_a3ae97399f2ff99155de4dd7f9b7e9077"><div class="ttname"><a href="byteman_8cpp.html#a3ae97399f2ff99155de4dd7f9b7e9077">ArchDeviceHelp</a></div><div class="ttdeci">void ArchDeviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00033">byteman.cpp:33</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a259146dc95fb61f516d8308865d49e0e"><div class="ttname"><a href="help_8cpp.html#a259146dc95fb61f516d8308865d49e0e">parseHelp</a></div><div class="ttdeci">void parseHelp(string args, int shouldExit, int exitCode)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00022">help.cpp:22</a></div></div>
+<div class="ttc" id="abyteman_8cpp_html_a738947aa9d79698f8128fb7cafa487d2"><div class="ttname"><a href="byteman_8cpp.html#a738947aa9d79698f8128fb7cafa487d2">ArchAssemblyHelp</a></div><div class="ttdeci">void ArchAssemblyHelp()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00039">byteman.cpp:39</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_af1a5368922439cb186899b545fd1965e"><div class="ttname"><a href="help_8cpp.html#af1a5368922439cb186899b545fd1965e">usage_help</a></div><div class="ttdeci">void usage_help()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00115">help.cpp:115</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_aede32834476091f4eb0ae6749f41eacf"><div class="ttname"><a href="help_8cpp.html#aede32834476091f4eb0ae6749f41eacf">usage_assembly</a></div><div class="ttdeci">void usage_assembly()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00131">help.cpp:131</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_ac40cf37cc9ea9b9a8f099b4974724fad"><div class="ttname"><a href="help_8cpp.html#ac40cf37cc9ea9b9a8f099b4974724fad">usage_output</a></div><div class="ttdeci">void usage_output()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00127">help.cpp:127</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_accc90fd0feeb842781a3e5f91b2d2146"><div class="ttname"><a href="help_8cpp.html#accc90fd0feeb842781a3e5f91b2d2146">usage_blank</a></div><div class="ttdeci">void usage_blank()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00103">help.cpp:103</a></div></div>
-<div class="ttc" id="ahelp_8cpp_html_a89a232fcf363da02884b15625ea242b1"><div class="ttname"><a href="help_8cpp.html#a89a232fcf363da02884b15625ea242b1">usage_end</a></div><div class="ttdeci">void usage_end()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00134">help.cpp:134</a></div></div>
+<div class="ttc" id="ahelp_8cpp_html_a89a232fcf363da02884b15625ea242b1"><div class="ttname"><a href="help_8cpp.html#a89a232fcf363da02884b15625ea242b1">usage_end</a></div><div class="ttdeci">void usage_end()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00135">help.cpp:135</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a120f05cbb24b01b4bcae94229814418b"><div class="ttname"><a href="help_8cpp.html#a120f05cbb24b01b4bcae94229814418b">usage_input</a></div><div class="ttdeci">void usage_input()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00119">help.cpp:119</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_adf57083eb4a99d6885783b9bb106890e"><div class="ttname"><a href="help_8cpp.html#adf57083eb4a99d6885783b9bb106890e">usage_region</a></div><div class="ttdeci">void usage_region()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00099">help.cpp:99</a></div></div>
 <div class="ttc" id="abyteman_8h_html"><div class="ttname"><a href="byteman_8h.html">byteman.h</a></div></div>
@@ -231,14 +234,13 @@ $(function() {
 <div class="ttc" id="ahelp_8cpp_html_ae0259929823a681afb82bc7391b0f69b"><div class="ttname"><a href="help_8cpp.html#ae0259929823a681afb82bc7391b0f69b">usageArg</a></div><div class="ttdeci">void usageArg(string args)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00057">help.cpp:57</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a64f1dbe1c940e02e5bbcba7997554bb8"><div class="ttname"><a href="help_8cpp.html#a64f1dbe1c940e02e5bbcba7997554bb8">argIs</a></div><div class="ttdeci">#define argIs(x, y)</div></div>
 <div class="ttc" id="ahelp_8cpp_html_a46c7d0d124e51b373e20ad7fc73278d4"><div class="ttname"><a href="help_8cpp.html#a46c7d0d124e51b373e20ad7fc73278d4">usage_verbose</a></div><div class="ttdeci">void usage_verbose()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00093">help.cpp:93</a></div></div>
-<div class="ttc" id="abyteman_8cpp_html_a23beb5409443799c43ba81c405375f4f"><div class="ttname"><a href="byteman_8cpp.html#a23beb5409443799c43ba81c405375f4f">printDeviceList</a></div><div class="ttdeci">void printDeviceList()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00034">byteman.cpp:34</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a28714bd0b194f699df903e7bd994a768"><div class="ttname"><a href="help_8cpp.html#a28714bd0b194f699df903e7bd994a768">usage_device</a></div><div class="ttdeci">void usage_device()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00109">help.cpp:109</a></div></div>
 <div class="ttc" id="abyteman_8h_html_a88c2f137526b274b84cf311aa8c68f3a"><div class="ttname"><a href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">VERSION_BUILD</a></div><div class="ttdeci">#define VERSION_BUILD</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00022">byteman.h:22</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a5c779e76e21b34d6bb3b884ac1ef9083"><div class="ttname"><a href="help_8cpp.html#a5c779e76e21b34d6bb3b884ac1ef9083">usage_change</a></div><div class="ttdeci">void usage_change()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00106">help.cpp:106</a></div></div>
-<div class="ttc" id="ahelp_8cpp_html_a49223a995301022ffb657717122d88de"><div class="ttname"><a href="help_8cpp.html#a49223a995301022ffb657717122d88de">usage_stdin</a></div><div class="ttdeci">void usage_stdin()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00137">help.cpp:137</a></div></div>
+<div class="ttc" id="ahelp_8cpp_html_a49223a995301022ffb657717122d88de"><div class="ttname"><a href="help_8cpp.html#a49223a995301022ffb657717122d88de">usage_stdin</a></div><div class="ttdeci">void usage_stdin()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00138">help.cpp:138</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 29 2022 22:45:09 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 6 2022 18:51:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
