@@ -179,7 +179,7 @@ void setArch(string arch){
 void parseCommand(string nextCmd){
 	replace(nextCmd.begin(), nextCmd.end(), '=', ' ');
 	if (nextCmd.at(0) == '-') nextCmd.erase(0, 1);
-	#define cmdIs(x,y) (nextCmd.rfind(x, 0) == 0)
+	#define cmdIs(x,y) (0 == nextCmd.rfind(x, 0))
 	if(cmdIs("h", "help")){
 		parseHelp(nextCmd);
 		return;
@@ -253,8 +253,11 @@ int main(int argc, char * argv[]){
 			parseCommand(command);
 		while(readSTDIN){
 			getline(cin,command);
-			if(command.at(command.find_first_not_of(" \t")) != '#')// if #, skip that line as comment
+			if(command.at(command.find_first_not_of(" \t")) != '#'){// if # is the first non-space char, skip that line as comment
+				if(string::npos != command.find("#"))
+					command = command.substr(0, command.find("#"));//if there is a comment in the current line, remove it
 				parseCommand(command);
+			}
 		}
 	} catch (const exception &e){
         cout << "The program was terminated with message: \n\t'" << e.what() << "'\nWhile trying to execute command: \n\t'" << command << "'" << endl;
