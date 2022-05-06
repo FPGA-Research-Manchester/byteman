@@ -28,7 +28,8 @@ enum Arch{
 	XIL_USP,
 	XIL_VERSAL
 };
-void printDeviceList();
+void ArchDeviceHelp();
+void ArchAssemblyHelp();
 void parseHelp(string, int=0, int=0);
 void usage();
 void usageArg(string);

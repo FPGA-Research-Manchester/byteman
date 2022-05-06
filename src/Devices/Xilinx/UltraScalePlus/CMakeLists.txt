@@ -15,24 +15,18 @@
 ###############################################################################
 
 #Add all sources for Xilinx US+
-#set(XUSP_SRC 
-#${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.cpp 
-#${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusDevices.cpp 
-#${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.h 
-#${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusDevices.h 
-#${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusFabric.h 
-#${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusCAP.h 
-#${CMAKE_CURRENT_SOURCE_DIR}/../../../Common/fileIO.h 
-#${CMAKE_CURRENT_SOURCE_DIR}/../../../Common/endianess.h)
-
 set(XUSP_SRC 
 ${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusDevices.cpp)
+${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusInput.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusOutput.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusDevices.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusAssembler.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/../../../Common/parseString.cpp)
 
 #build byteman natively (without the library)
 target_sources(byteman PRIVATE ${XUSP_SRC})
 
-#Create a Xilinx US+ library, disabled because of the cross compilers
+#Create a Xilinx US+ library, disabled because the github cross compilation can't link them and throws errors
 #add_library(XUSP_LIB STATIC ${XUSP_SRC})
 #target_compile_definitions(XUSP_LIB PUBLIC XUSP_LIB)
 

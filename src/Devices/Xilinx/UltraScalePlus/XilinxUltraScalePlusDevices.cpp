@@ -464,7 +464,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			partName = customPartName;
 
 }
-void XilinxUltraScalePlus::printDeviceList(){
+void XilinxUltraScalePlus::deviceHelp(){
 	cout << "A list of currently recognized US+ devices: " << endl;
 	#ifdef XUSPARTIX
 	cout << "\tUltraScale+ Artix: " << endl;

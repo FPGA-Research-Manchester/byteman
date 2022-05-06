@@ -17,12 +17,11 @@
 #include <stdexcept>
 #include <algorithm>
 #include <stdio.h>
-#include <string.h>
 #include <istream>
 #include <ostream>
 #include <string>
-#include <sstream>
 #include "byteman.h"
+#include "Common/parseString.h"
 using namespace std;
 
 #include "Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlus.h"
@@ -31,103 +30,24 @@ Arch selectedArch = ARCH_NULL;
 #ifdef XUSP
 XilinxUltraScalePlus mainXUSP, tempXUSP;
 #endif //XUSP
-void printDeviceList(){
+void ArchDeviceHelp(){
 	#ifdef XUSP
 	if(selectedArch == ARCH_NULL || selectedArch == XIL_USP)
-		mainXUSP.printDeviceList();
+		XilinxUltraScalePlus::deviceHelp();
 	#endif
 }
-string getNthStringArg(string s, int n){
-	stringstream ss(s);
-	string ret;
-	ret.clear();
-	string temp;
-    int intFound;
-	int i = 0;
-	ss >> temp;
-    while (!ss.eof()) {
-        ss >> temp;
-        if (!(stringstream(temp) >> intFound)){
-            if(i == n)
-				return temp;
-			i++;
-		}
-        temp.clear();
-    }
-	return string("");
-}
-string getLastStringArg(string s){
-	stringstream ss(s);
-	string ret;
-	ret.clear();
-	string temp;
-    int intFound;
-	ss >> temp;
-    while (!ss.eof()) {
-        ss >> temp;
-        if (!(stringstream(temp) >> intFound)){
-            ret = temp;
-		}
-        temp.clear();
-    }
-	return ret;
-}
-string getAllButLastStringArg(string s){
-	stringstream ss(s);
-	string ret;
-	ret.clear();
-	string temp;
-	string temp2;
-    int intFound;
-	ss >> temp;
-    while (!ss.eof()) {
-        ss >> temp;
-        if (!(stringstream(temp) >> intFound)){
-            ret.append(temp2).append(" ");
-			temp2 = temp;
-		}
-    }
-	return ret;
-}
-string getAllStrings(string s){ // returns a string of all string components that are not ints
-	stringstream ss(s);
-	string ret;
-	ret.clear();
-	string temp;
-    int intFound;
-	ss >> temp;
-    while (!ss.eof()) {
-        ss >> temp;
-        if (!(stringstream(temp) >> intFound))
-            ret.append(temp).append(" ");
-        temp.clear();
-    }
-	return ret;
-}
-int getNthInt(string s, int n){
-	stringstream ss(s);
-	string temp;
-    int intFound;
-	int i = 0;
-    while (!ss.eof()) {
-        ss >> temp;
-        if (stringstream(temp) >> intFound){
-			if(i == n)
-				return intFound;
-			i++;
-		}
-        temp.clear();
-    }
-	return -0x7FFFFFFF;
+void ArchAssemblyHelp(){
+	#ifdef XUSP
+	if(selectedArch == ARCH_NULL || selectedArch == XIL_USP)
+		XilinxUltraScalePlus::assemblerHelp();
+	#endif
 }
 #define paramHas(x) (params.find(x) != string::npos)
 void parseVerbose(string verboseCmd){
-	int verboseValue = getNthInt(verboseCmd, 0);
-	if(verboseValue == 0)verboseValue = 0; // if 0 was given, then it's 0
-	else verboseValue = 1; // if nothing was given or something else then 1
-	cout<< "verboseValue now is "<< verboseValue << endl; 
+	int verboseValue;
+	if(!parseString::getMultipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
+	
 	#ifdef XUSP
-	cout<<"verboseValue" << verboseValue << endl;
 	if(selectedArch == XIL_USP){
 		mainXUSP.verbose = verboseValue;
 		tempXUSP.verbose = verboseValue;
@@ -135,10 +55,9 @@ void parseVerbose(string verboseCmd){
 	#endif
 }
 void parseWarn(string warnCmd){
-	int warnValue = getNthInt(warnCmd, 0);
-	if(warnValue == 0)warnValue = 0; // if 0 was given, then it's 0
-	else warnValue = 1; // if nothing was given or something else then 1
-	cout<< "warnValue is now "<< warnValue << endl; 
+	int warnValue;
+	if(!parseString::getMultipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
+	
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		mainXUSP.warn = warnValue;
@@ -147,12 +66,13 @@ void parseWarn(string warnCmd){
 	#endif
 }
 void parseRegion(string regionCmd){
-	string params = getAllStrings(regionCmd);
+	string params = parseString::getAllWords(regionCmd);
 	int srcRow, srcCol, sizeRow, sizeCol;
-	srcRow = getNthInt(regionCmd, 0);
-	srcCol = getNthInt(regionCmd, 1);
-	sizeRow = getNthInt(regionCmd, 2);
-	sizeCol = getNthInt(regionCmd, 3);
+	parseString::getMultipleInts(regionCmd, srcRow, srcCol, sizeRow, sizeCol);
+	//srcRow = getNthInt(regionCmd, 0);
+	//srcCol = getNthInt(regionCmd, 1);
+	//sizeRow = getNthInt(regionCmd, 2);
+	//sizeCol = getNthInt(regionCmd, 3);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		mainXUSP.region(params, srcRow, srcCol, sizeRow, sizeCol);
@@ -161,7 +81,7 @@ void parseRegion(string regionCmd){
 	#endif
 }
 void parseBlank(string blankCmd){
-	string params = getAllStrings(blankCmd);
+	string params = parseString::getAllWords(blankCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		if(paramHas("main") || paramHas("first"))
@@ -178,8 +98,8 @@ void parseChange(string changeCmd){
 	#endif
 }
 void parseDevice(string deviceCmd){
-	string params = getAllButLastStringArg(deviceCmd);
-	string deviceName = getLastStringArg(deviceCmd);
+	string params = parseString::getAllButLastWord(deviceCmd);
+	string deviceName = parseString::getLastWord(deviceCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		if(paramHas("main") || paramHas("first"))
@@ -190,8 +110,8 @@ void parseDevice(string deviceCmd){
 	#endif
 }
 void parseInput(string inputCmd){
-	string params = getAllButLastStringArg(inputCmd);
-	string filename = getLastStringArg(inputCmd);
+	string params = parseString::getAllButLastWord(inputCmd);
+	string filename = parseString::getLastWord(inputCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		if(paramHas("main") || paramHas("first"))
@@ -202,36 +122,40 @@ void parseInput(string inputCmd){
 	#endif
 }
 void parseMerge(string mergeCmd){
-	string params = getAllStrings(mergeCmd);
+	string params = parseString::getAllWords(mergeCmd);
 	int srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol;
-	srcRow = getNthInt(mergeCmd, 0);
-	srcCol = getNthInt(mergeCmd, 1);
-	sizeRow = getNthInt(mergeCmd, 2);
-	sizeCol = getNthInt(mergeCmd, 3);
-	dstRow = getNthInt(mergeCmd, 4);
-	dstCol = getNthInt(mergeCmd, 5);
+	parseString::getMultipleInts(mergeCmd, srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol);
+	//srcRow = getNthInt(mergeCmd, 0);
+	//srcCol = getNthInt(mergeCmd, 1);
+	//sizeRow = getNthInt(mergeCmd, 2);
+	//sizeCol = getNthInt(mergeCmd, 3);
+	//dstRow = getNthInt(mergeCmd, 4);
+	//dstCol = getNthInt(mergeCmd, 5);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP)
 		mainXUSP.merge(&tempXUSP, params, srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol);
 	#endif
 }
 void parseOutput(string outputCmd){
-	string params = getAllButLastStringArg(outputCmd);
-	string filename = getLastStringArg(outputCmd);
+	string params = parseString::getAllButLastWord(outputCmd);
+	string filename = parseString::getLastWord(outputCmd);
 	int srcRow, srcCol, sizeRow, sizeCol;
-	srcRow = getNthInt(outputCmd, 0);
-	srcCol = getNthInt(outputCmd, 1);
-	sizeRow = getNthInt(outputCmd, 2);
-	sizeCol = getNthInt(outputCmd, 3);
+	parseString::getMultipleInts(outputCmd, srcRow, srcCol, sizeRow, sizeCol);
+	//srcRow = getNthInt(outputCmd, 0);
+	//srcCol = getNthInt(outputCmd, 1);
+	//sizeRow = getNthInt(outputCmd, 2);
+	//sizeCol = getNthInt(outputCmd, 3);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP)
 		mainXUSP.writeBitstream(filename, params, srcRow, srcCol, sizeRow, sizeCol);
 	#endif
 }
 void parseAssembly(string assemblyCmd){
+	string filenameIn = parseString::getNthWord(assemblyCmd, 0);
+	string filenameOut = parseString::getNthWord(assemblyCmd, 1);
 	//TODO , text assembly -> bitstream and vice versa
 	#ifdef XUSP
-	;
+	mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
 }
 #undef paramHas
@@ -285,11 +209,22 @@ void parseCommand(string nextCmd){
 		exit(0);
 	#undef cmdIs
 }
+
+
+/**************************************************************************//**
+ * Main function for byteman.
+ * Parses command line arguments and eventual streamed script files as individual
+ * commands (instructions) and feeds them into parseCommand(). Catches any thrown
+ * exceptions by the subsystems in byteman.
+ *
+ * @arg @c argc @c argv[] Command line arguments
+ * @mainpage
+ *****************************************************************************/
 int main(int argc, char * argv[]){
+	string command;
 	if(argc <= 1) 
 		parseHelp("",1,1);//show usage and terminate with an error code
 	try {
-		string command;
 		bool readSTDIN = false;
 		for(int argi = 1 ; argi < argc ; argi++) {
 			if(argv[argi][0] == '-' && !command.empty()){ //new cmd and old cmd not empty
@@ -313,7 +248,7 @@ int main(int argc, char * argv[]){
 				parseCommand(command);
 		}
 	} catch (const exception &e){
-        cout << "The program was terminated with message: \n\t'" << e.what() << "'\n";
+        cout << "The program was terminated with message: \n\t'" << e.what() << "'\nWhile trying to execute command: \n\t'" << command << "'" << endl;
 		return 1;
 	}
     return 0;

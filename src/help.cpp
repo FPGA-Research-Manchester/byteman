@@ -31,7 +31,7 @@ void parseHelp(string args, int shouldExit, int exitCode){
 		exit(exitCode);
 }
 void usage(){
-	cout << "byteman" << VERSION << "(Build " << VERSION_BUILD << ") usage:" << endl;
+	cout << "byteman " << VERSION << " (Build " << VERSION_BUILD << ") usage:" << endl;
 	cout << "byteman ARCH [-command...]* [-stdin]" << endl;
 	cout << "\tCommands:    [Default] : [Description]                                    " << endl;
 	cout << "\t-a (assembly)          : (de)compile bitstream assembly files. See \"byteman -h assembly\"" << endl;
@@ -110,7 +110,7 @@ void usage_device(){
 	cout<<"TODO usage_device" << endl;
 	
 	cout << "Available devices:" <<endl;
-	printDeviceList();
+	ArchDeviceHelp();
 }
 void usage_help(){
 	cout<<"TODO usage_help" << endl;
@@ -130,6 +130,7 @@ void usage_output(){
 }
 void usage_assembly(){
 	cout<<"TODO usage_assembly" << endl;
+	ArchAssemblyHelp();
 }
 void usage_end(){
 	cout<<"TODO usage_end" << endl;
