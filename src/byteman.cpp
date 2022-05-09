@@ -253,7 +253,7 @@ int main(int argc, char * argv[]){
 			parseCommand(command);
 		while(readSTDIN){
 			getline(cin,command);
-			if(command.at(command.find_first_not_of(" \t")) != '#'){// if # is the first non-space char, skip that line as comment
+			if(command.at(command.find_first_not_of(" \t")) != '#'){//parse the command only if it doesnt start with '#'
 				if(string::npos != command.find("#"))
 					command = command.substr(0, command.find("#"));//if there is a comment in the current line, remove it
 				parseCommand(command);
