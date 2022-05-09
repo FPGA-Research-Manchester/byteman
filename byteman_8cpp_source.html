@@ -311,7 +311,7 @@ $(function() {
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">while</span>(readSTDIN){</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            getline(cin,command);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">if</span>(command.at(command.find_first_not_of(<span class="stringliteral">&quot; \t&quot;</span>)) != <span class="charliteral">&#39;#&#39;</span>){<span class="comment">// if # is the first non-space char, skip that line as comment</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keywordflow">if</span>(command.at(command.find_first_not_of(<span class="stringliteral">&quot; \t&quot;</span>)) != <span class="charliteral">&#39;#&#39;</span>){<span class="comment">//parse the command only if it doesnt start with &#39;#&#39;</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">if</span>(string::npos != command.find(<span class="stringliteral">&quot;#&quot;</span>))</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    command = command.substr(0, command.find(<span class="stringliteral">&quot;#&quot;</span>));<span class="comment">//if there is a comment in the current line, remove it</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                <a class="code" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa">parseCommand</a>(command);</div>
@@ -372,7 +372,7 @@ $(function() {
 <div class="ttc" id="aclassXilinxUltraScalePlus_html_a15434be327a556f42ae679ad8715f876"><div class="ttname"><a href="classXilinxUltraScalePlus.html#a15434be327a556f42ae679ad8715f876">XilinxUltraScalePlus::blank</a></div><div class="ttdeci">void blank(string)</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00104">XilinxUltraScalePlus.cpp:104</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 6 2022 20:00:07 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 9 2022 12:28:00 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
