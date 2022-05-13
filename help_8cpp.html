@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -287,8 +287,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-stdin                 : Continue using standard input. See \&quot;byteman -h stdin\&quot;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Examples: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 180 67 120 30 relocatedFilter.bit&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 180 67 120 30 relocatedFilter.bit&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 240 37 120 30 relocatedFilter.bit&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180 67 120 30 180 67 -o logic 180 67 120 30 mergedFilter.bit&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
@@ -933,7 +933,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="ahelp_8cpp_html_a49223a995301022ffb657717122d88de"><div class="ttname"><a href="help_8cpp.html#a49223a995301022ffb657717122d88de">usage_stdin</a></div><div class="ttdeci">void usage_stdin()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00138">help.cpp:138</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 13 2022 07:46:48 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 13 2022 12:41:25 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
