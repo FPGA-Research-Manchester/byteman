@@ -301,7 +301,8 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 			} else if(instructionType == 2) {
 				wordCount = instructionPayload;
 			} else {
-				fout << "Invalid instruction (invalid type): 0x" << hex << setw(8) << setfill('0') << instruction << endl;
+				fout << "0x" << hex << setw(8) << setfill('0') << instruction << " (Invalid instruction [invalid type])" << endl;
+				continue;
 			}
 			
 			if(instructionOPCODE == OP_NOP) {
@@ -373,7 +374,7 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 						fout << " = 0x" << hex << setw(8) << setfill('0') << writeData << endl;
 					}
 				} else {
-					fout << "Bad instruction: 0x"<< hex << setw(8) << setfill('0') << instruction << endl;
+					fout << "0x"<< hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
 				}
 			} // OP_WRITE
 		} // if fin is still good
