@@ -19,7 +19,7 @@
 using namespace std;
 //Any changes to version numbers should be done only in CMakeLists.txt, not here!
 #define VERSION "0.4"
-#define VERSION_BUILD "99"
+#define VERSION_BUILD "100"
 enum Arch{
 	ARCH_NULL = 0,
 	XIL_SERIES6,
