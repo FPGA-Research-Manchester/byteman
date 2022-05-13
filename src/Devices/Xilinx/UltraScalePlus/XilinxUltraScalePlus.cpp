@@ -27,7 +27,7 @@ XilinxUltraScalePlus::XilinxUltraScalePlus()
 	designName = "";
     partName = "";
     initializedBitstreamPartName = "";
-    IDCODEs[0] = 0;
+    SLRinfo[0] = {0, 0, 0};
     numberOfRows = 0;
     verbose = 0;
     warn = 1;

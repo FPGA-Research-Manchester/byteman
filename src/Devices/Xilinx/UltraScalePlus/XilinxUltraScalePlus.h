@@ -88,7 +88,10 @@ class XilinxUltraScalePlus
 		string fileTime;
 		//device data and resource string
         char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
-        int IDCODEs[XUSP_MAX_SLRS];
+		struct {
+			uint32_t IDCODE;
+			int fromRow, toRow; 
+		}SLRinfo[XUSP_MAX_SLRS];
 		
 		//resource string parameters
         string initializedResourceParamsPartName; ///< the partName of currently initialized resource string parameters

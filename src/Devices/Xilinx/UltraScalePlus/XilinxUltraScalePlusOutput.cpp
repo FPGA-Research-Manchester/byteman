@@ -97,7 +97,7 @@ void XilinxUltraScalePlus::writeBitstreamBIT(ofstream& fout, string params, int 
 	CAPwriteNOPs(fout, 132);
 	CAPwriteReg(fout, XUSP_CAP_REG_CMD, XUSP_CAP_CMD_RCRC);
 	CAPwriteNOPs(fout, 2);
-	CAPwriteReg(fout, XUSP_CAP_REG_IDCODE, IDCODEs[0]);
+	CAPwriteReg(fout, XUSP_CAP_REG_IDCODE, SLRinfo[0].IDCODE);
 	CAPwriteReg(fout, XUSP_CAP_REG_CMD, XUSP_CAP_CMD_NULL);
 	CAPwriteReg(fout, XUSP_CAP_REG_MASK, 0x500);
 	CAPwriteReg(fout, XUSP_CAP_REG_CTRL0, 0x500);

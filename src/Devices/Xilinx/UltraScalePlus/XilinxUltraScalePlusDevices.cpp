@@ -38,87 +38,87 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 {
     //US+ Artix
 	#ifdef XUSPARTIX
-    if(IDCODE == XCAU10P_IDCODE)return XUSP_DEVICE_XCAU10P;
-	if(IDCODE == XCAU15P_IDCODE)return XUSP_DEVICE_XCAU15P;
-    if(IDCODE == XCAU20P_IDCODE)return XUSP_DEVICE_XCAU20P;
-    if(IDCODE == XCAU25P_IDCODE)return XUSP_DEVICE_XCAU25P;
+    if(IDCODE == XCAU10P_IDCODE0)return XUSP_DEVICE_XCAU10P;
+	if(IDCODE == XCAU15P_IDCODE0)return XUSP_DEVICE_XCAU15P;
+    if(IDCODE == XCAU20P_IDCODE0)return XUSP_DEVICE_XCAU20P;
+    if(IDCODE == XCAU25P_IDCODE0)return XUSP_DEVICE_XCAU25P;
 	#endif
     //US+ Kintex
 	#ifdef XUSPKINTEX
-    if(IDCODE == XCKU3P_IDCODE)return XUSP_DEVICE_XCKU3P;
-	if(IDCODE == XCKU5P_IDCODE)return XUSP_DEVICE_XCKU5P;
-    if(IDCODE == XCKU9P_IDCODE)return XUSP_DEVICE_XCKU9P;
-    if(IDCODE == XCKU11P_IDCODE)return XUSP_DEVICE_XCKU11P;
-    if(IDCODE == XCKU13P_IDCODE)return XUSP_DEVICE_XCKU13P;
-    if(IDCODE == XCKU15P_IDCODE)return XUSP_DEVICE_XCKU15P;
-    if(IDCODE == XCKU19P_IDCODE)return XUSP_DEVICE_XCKU19P;
+    if(IDCODE == XCKU3P_IDCODE0)return XUSP_DEVICE_XCKU3P;
+	if(IDCODE == XCKU5P_IDCODE0)return XUSP_DEVICE_XCKU5P;
+    if(IDCODE == XCKU9P_IDCODE0)return XUSP_DEVICE_XCKU9P;
+    if(IDCODE == XCKU11P_IDCODE0)return XUSP_DEVICE_XCKU11P;
+    if(IDCODE == XCKU13P_IDCODE0)return XUSP_DEVICE_XCKU13P;
+    if(IDCODE == XCKU15P_IDCODE0)return XUSP_DEVICE_XCKU15P;
+    if(IDCODE == XCKU19P_IDCODE0)return XUSP_DEVICE_XCKU19P;
 	#endif
     //US+ Virtex
 	#ifdef XUSPVIRTEX
-    if(IDCODE == XCVU3P_IDCODE)return XUSP_DEVICE_XCVU3P;
-    if(IDCODE == XCVU5P_IDCODE)return XUSP_DEVICE_XCVU5P;
-    if(IDCODE == XCVU7P_IDCODE)return XUSP_DEVICE_XCVU7P;
-    if(IDCODE == XCVU9P_IDCODE)return XUSP_DEVICE_XCVU9P;
-    if(IDCODE == XCVU11P_IDCODE)return XUSP_DEVICE_XCVU11P;
-    if(IDCODE == XCVU13P_IDCODE)return XUSP_DEVICE_XCVU13P;
-    if(IDCODE == XCVU19P_IDCODE)return XUSP_DEVICE_XCVU19P;
-    if(IDCODE == XCVU23P_IDCODE)return XUSP_DEVICE_XCVU23P;
-    if(IDCODE == XCVU27P_IDCODE)return XUSP_DEVICE_XCVU27P;
-    if(IDCODE == XCVU29P_IDCODE)return XUSP_DEVICE_XCVU29P;
-    if(IDCODE == XCVU31P_IDCODE)return XUSP_DEVICE_XCVU31P;
-    if(IDCODE == XCVU33P_IDCODE)return XUSP_DEVICE_XCVU33P;
-    if(IDCODE == XCVU35P_IDCODE)return XUSP_DEVICE_XCVU35P;
-    if(IDCODE == XCVU37P_IDCODE)return XUSP_DEVICE_XCVU37P;
-    if(IDCODE == XCVU45P_IDCODE)return XUSP_DEVICE_XCVU45P;
-    if(IDCODE == XCVU47P_IDCODE)return XUSP_DEVICE_XCVU47P;
-    if(IDCODE == XCVU57P_IDCODE)return XUSP_DEVICE_XCVU57P;
+    if(IDCODE == XCVU3P_IDCODE0)return XUSP_DEVICE_XCVU3P;
+    if(IDCODE == XCVU5P_IDCODE0)return XUSP_DEVICE_XCVU5P;
+    if(IDCODE == XCVU7P_IDCODE0)return XUSP_DEVICE_XCVU7P;
+    if(IDCODE == XCVU9P_IDCODE0)return XUSP_DEVICE_XCVU9P;
+    if(IDCODE == XCVU11P_IDCODE0)return XUSP_DEVICE_XCVU11P;
+    if(IDCODE == XCVU13P_IDCODE0)return XUSP_DEVICE_XCVU13P;
+    if(IDCODE == XCVU19P_IDCODE0)return XUSP_DEVICE_XCVU19P;
+    if(IDCODE == XCVU23P_IDCODE0)return XUSP_DEVICE_XCVU23P;
+    if(IDCODE == XCVU27P_IDCODE0)return XUSP_DEVICE_XCVU27P;
+    if(IDCODE == XCVU29P_IDCODE0)return XUSP_DEVICE_XCVU29P;
+    if(IDCODE == XCVU31P_IDCODE0)return XUSP_DEVICE_XCVU31P;
+    if(IDCODE == XCVU33P_IDCODE0)return XUSP_DEVICE_XCVU33P;
+    if(IDCODE == XCVU35P_IDCODE0)return XUSP_DEVICE_XCVU35P;
+    if(IDCODE == XCVU37P_IDCODE0)return XUSP_DEVICE_XCVU37P;
+    if(IDCODE == XCVU45P_IDCODE0)return XUSP_DEVICE_XCVU45P;
+    if(IDCODE == XCVU47P_IDCODE0)return XUSP_DEVICE_XCVU47P;
+    if(IDCODE == XCVU57P_IDCODE0)return XUSP_DEVICE_XCVU57P;
 	#endif
 	//US+ RFSoC (RFSOC BEFORE MPSOC, since names collide!)
 	#ifdef XUSPZYNQ
-    if(IDCODE == XCZU21DR_IDCODE)return XUSP_DEVICE_XCZU21DR;
-    if(IDCODE == XCZU25DR_IDCODE)return XUSP_DEVICE_XCZU25DR;
-    if(IDCODE == XCZU27DR_IDCODE)return XUSP_DEVICE_XCZU27DR;
-    if(IDCODE == XCZU28DR_IDCODE)return XUSP_DEVICE_XCZU28DR;
-    if(IDCODE == XCZU29DR_IDCODE)return XUSP_DEVICE_XCZU29DR;
-    if(IDCODE == XCZU39DR_IDCODE)return XUSP_DEVICE_XCZU39DR;
-    if(IDCODE == XCZU42DR_IDCODE)return XUSP_DEVICE_XCZU42DR;
-    if(IDCODE == XCZU43DR_IDCODE)return XUSP_DEVICE_XCZU43DR;
-    if(IDCODE == XCZU46DR_IDCODE)return XUSP_DEVICE_XCZU46DR;
-    if(IDCODE == XCZU47DR_IDCODE)return XUSP_DEVICE_XCZU47DR;
-    if(IDCODE == XCZU48DR_IDCODE)return XUSP_DEVICE_XCZU48DR;
-    if(IDCODE == XCZU49DR_IDCODE)return XUSP_DEVICE_XCZU49DR;
-    if(IDCODE == XCZU65DR_IDCODE)return XUSP_DEVICE_XCZU65DR;
-    if(IDCODE == XCZU67DR_IDCODE)return XUSP_DEVICE_XCZU67DR;
+    if(IDCODE == XCZU21DR_IDCODE0)return XUSP_DEVICE_XCZU21DR;
+    if(IDCODE == XCZU25DR_IDCODE0)return XUSP_DEVICE_XCZU25DR;
+    if(IDCODE == XCZU27DR_IDCODE0)return XUSP_DEVICE_XCZU27DR;
+    if(IDCODE == XCZU28DR_IDCODE0)return XUSP_DEVICE_XCZU28DR;
+    if(IDCODE == XCZU29DR_IDCODE0)return XUSP_DEVICE_XCZU29DR;
+    if(IDCODE == XCZU39DR_IDCODE0)return XUSP_DEVICE_XCZU39DR;
+    if(IDCODE == XCZU42DR_IDCODE0)return XUSP_DEVICE_XCZU42DR;
+    if(IDCODE == XCZU43DR_IDCODE0)return XUSP_DEVICE_XCZU43DR;
+    if(IDCODE == XCZU46DR_IDCODE0)return XUSP_DEVICE_XCZU46DR;
+    if(IDCODE == XCZU47DR_IDCODE0)return XUSP_DEVICE_XCZU47DR;
+    if(IDCODE == XCZU48DR_IDCODE0)return XUSP_DEVICE_XCZU48DR;
+    if(IDCODE == XCZU49DR_IDCODE0)return XUSP_DEVICE_XCZU49DR;
+    if(IDCODE == XCZU65DR_IDCODE0)return XUSP_DEVICE_XCZU65DR;
+    if(IDCODE == XCZU67DR_IDCODE0)return XUSP_DEVICE_XCZU67DR;
 	#endif
 	//US+ Zynq
 	#ifdef XUSPZYNQ
-    if(IDCODE == XCZU1_IDCODE)return XUSP_DEVICE_XCZU1;
-    if(IDCODE == XCZU2_IDCODE)return XUSP_DEVICE_XCZU2;
-    if(IDCODE == XCZU3_IDCODE)return XUSP_DEVICE_XCZU3;
-    if(IDCODE == XCZU4_IDCODE)return XUSP_DEVICE_XCZU4;
-    if(IDCODE == XCZU5_IDCODE)return XUSP_DEVICE_XCZU5;
-    if(IDCODE == XCZU6_IDCODE)return XUSP_DEVICE_XCZU6;
-    if(IDCODE == XCZU7_IDCODE)return XUSP_DEVICE_XCZU7;
-    if(IDCODE == XCZU9_IDCODE)return XUSP_DEVICE_XCZU9;
-    if(IDCODE == XCZU11_IDCODE)return XUSP_DEVICE_XCZU11;
-    if(IDCODE == XCZU15_IDCODE)return XUSP_DEVICE_XCZU15;
-    if(IDCODE == XCZU17_IDCODE)return XUSP_DEVICE_XCZU17;
-    if(IDCODE == XCZU19_IDCODE)return XUSP_DEVICE_XCZU19;
+    if(IDCODE == XCZU1_IDCODE0)return XUSP_DEVICE_XCZU1;
+    if(IDCODE == XCZU2_IDCODE0)return XUSP_DEVICE_XCZU2;
+    if(IDCODE == XCZU3_IDCODE0)return XUSP_DEVICE_XCZU3;
+    if(IDCODE == XCZU4_IDCODE0)return XUSP_DEVICE_XCZU4;
+    if(IDCODE == XCZU5_IDCODE0)return XUSP_DEVICE_XCZU5;
+    if(IDCODE == XCZU6_IDCODE0)return XUSP_DEVICE_XCZU6;
+    if(IDCODE == XCZU7_IDCODE0)return XUSP_DEVICE_XCZU7;
+    if(IDCODE == XCZU9_IDCODE0)return XUSP_DEVICE_XCZU9;
+    if(IDCODE == XCZU11_IDCODE0)return XUSP_DEVICE_XCZU11;
+    if(IDCODE == XCZU15_IDCODE0)return XUSP_DEVICE_XCZU15;
+    if(IDCODE == XCZU17_IDCODE0)return XUSP_DEVICE_XCZU17;
+    if(IDCODE == XCZU19_IDCODE0)return XUSP_DEVICE_XCZU19;
 	#endif
 
 
 	//Alveo rebranding
 	#ifdef XUSPALVEO
-    if(IDCODE == XCU200_IDCODE)return XUSP_DEVICE_XCU200;
-    if(IDCODE == XCU250_IDCODE)return XUSP_DEVICE_XCU250;
-    if(IDCODE == XCU26_IDCODE)return XUSP_DEVICE_XCU26;
-    if(IDCODE == XCUX35_IDCODE)return XUSP_DEVICE_XCUX35;
-    if(IDCODE == XCU50_IDCODE)return XUSP_DEVICE_XCU50;
-    if(IDCODE == XCU55N_IDCODE)return XUSP_DEVICE_XCU55N;
-    if(IDCODE == XCU55C_IDCODE)return XUSP_DEVICE_XCU55C;
-    if(IDCODE == XCU280_IDCODE)return XUSP_DEVICE_XCU280;
-    if(IDCODE == XCU30_IDCODE)return XUSP_DEVICE_XCU30;
-    if(IDCODE == XCU25_IDCODE)return XUSP_DEVICE_XCU25;
+    if(IDCODE == XCU200_IDCODE0)return XUSP_DEVICE_XCU200;
+    if(IDCODE == XCU250_IDCODE0)return XUSP_DEVICE_XCU250;
+    if(IDCODE == XCU26_IDCODE0)return XUSP_DEVICE_XCU26;
+    if(IDCODE == XCUX35_IDCODE0)return XUSP_DEVICE_XCUX35;
+    if(IDCODE == XCU50_IDCODE0)return XUSP_DEVICE_XCU50;
+    if(IDCODE == XCU55N_IDCODE0)return XUSP_DEVICE_XCU55N;
+    if(IDCODE == XCU55C_IDCODE0)return XUSP_DEVICE_XCU55C;
+    if(IDCODE == XCU280_IDCODE0)return XUSP_DEVICE_XCU280;
+    if(IDCODE == XCU30_IDCODE0)return XUSP_DEVICE_XCU30;
+    if(IDCODE == XCU25_IDCODE0)return XUSP_DEVICE_XCU25;
 	#endif
 	
 	return XUSP_DEVICE_NULL;
@@ -297,168 +297,515 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 {
 	bool customNameSet = false;
-	#define setPart(x) customNameSet = true; partName = x;
+	#define setCustomPartName(x) {customNameSet = true; partName = x;}
 	switch(deviceID){
 		//XUSP Artix
 		#ifdef XUSPARTIX
-		case XUSP_DEVICE_XCAU10P: XCAU10P; break;
-		case XUSP_DEVICE_XCAU15P: XCAU15P; break;
-		case XUSP_DEVICE_XCAU20P: XCAU20P; break;
-		case XUSP_DEVICE_XCAU25P: XCAU25P; break;
+		case XUSP_DEVICE_XCAU10P:
+			XCAU10P();
+			break;
+		case XUSP_DEVICE_XCAU15P:
+			XCAU15P();
+			break;
+		case XUSP_DEVICE_XCAU20P:
+			XCAU20P();
+			break;
+		case XUSP_DEVICE_XCAU25P:
+			XCAU25P();
+			break;
 		#endif
 		//XUSP Kintex
 		#ifdef XUSPKINTEX
-		case XUSP_DEVICE_XCKU3P: XCKU3P; break;
-		case XUSP_DEVICE_XCKU5P: XCKU5P; break;
-		case XUSP_DEVICE_XCKU9P: XCKU9P; break;
-		case XUSP_DEVICE_XCKU11P: XCKU11P; break;
-		case XUSP_DEVICE_XCKU13P: XCKU13P; break;
-		case XUSP_DEVICE_XCKU15P: XCKU15P; break;
-		case XUSP_DEVICE_XCKU19P: XCKU19P; break;
+		case XUSP_DEVICE_XCKU3P:
+			XCKU3P();
+			break;
+		case XUSP_DEVICE_XCKU5P:
+			XCKU5P();
+			break;
+		case XUSP_DEVICE_XCKU9P:
+			XCKU9P();
+			break;
+		case XUSP_DEVICE_XCKU11P:
+			XCKU11P();
+			break;
+		case XUSP_DEVICE_XCKU13P:
+			XCKU13P();
+			break;
+		case XUSP_DEVICE_XCKU15P:
+			XCKU15P();
+			break;
+		case XUSP_DEVICE_XCKU19P:
+			XCKU19P();
+			break;
 		#endif
 		//XUSP Virtex
 		#ifdef XUSPVIRTEX
-		case XUSP_DEVICE_XCVU3P: XCVU3P; break;
-		case XUSP_DEVICE_XCVU5P: XCVU5P; break;
-		case XUSP_DEVICE_XCVU7P: XCVU7P; break;
-		case XUSP_DEVICE_XCVU9P: XCVU9P; break;
-		case XUSP_DEVICE_XCVU11P: XCVU11P; break;
-		case XUSP_DEVICE_XCVU13P: XCVU13P; break;
-		case XUSP_DEVICE_XCVU19P: XCVU19P; break;
-		case XUSP_DEVICE_XCVU23P: XCVU23P; break;
-		case XUSP_DEVICE_XCVU27P: XCVU27P; break;
-		case XUSP_DEVICE_XCVU29P: XCVU29P; break;
-		case XUSP_DEVICE_XCVU31P: XCVU31P; break;
-		case XUSP_DEVICE_XCVU33P: XCVU33P; break;
-		case XUSP_DEVICE_XCVU35P: XCVU35P; break;
-		case XUSP_DEVICE_XCVU37P: XCVU37P; break;
-		case XUSP_DEVICE_XCVU45P: XCVU45P; break;
-		case XUSP_DEVICE_XCVU47P: XCVU47P; break;
-		case XUSP_DEVICE_XCVU57P: XCVU57P; break;
+		case XUSP_DEVICE_XCVU3P:
+			XCVU3P();
+			break;
+		case XUSP_DEVICE_XCVU5P:
+			XCVU5P();
+			break;
+		case XUSP_DEVICE_XCVU7P:
+			XCVU7P();
+			break;
+		case XUSP_DEVICE_XCVU9P:
+			XCVU9P();
+			break;
+		case XUSP_DEVICE_XCVU11P:
+			XCVU11P();
+			break;
+		case XUSP_DEVICE_XCVU13P:
+			XCVU13P();
+			break;
+		case XUSP_DEVICE_XCVU19P:
+			XCVU19P();
+			break;
+		case XUSP_DEVICE_XCVU23P:
+			XCVU23P();
+			break;
+		case XUSP_DEVICE_XCVU27P:
+			XCVU27P();
+			break;
+		case XUSP_DEVICE_XCVU29P:
+			XCVU29P();
+			break;
+		case XUSP_DEVICE_XCVU31P:
+			XCVU31P();
+			break;
+		case XUSP_DEVICE_XCVU33P:
+			XCVU33P();
+			break;
+		case XUSP_DEVICE_XCVU35P:
+			XCVU35P();
+			break;
+		case XUSP_DEVICE_XCVU37P:
+			XCVU37P();
+			break;
+		case XUSP_DEVICE_XCVU45P:
+			XCVU45P();
+			break;
+		case XUSP_DEVICE_XCVU47P:
+			XCVU47P();
+			break;
+		case XUSP_DEVICE_XCVU57P:
+			XCVU57P();
+			break;
 		#endif
 		//XUSP RFSoC
 		#ifdef XUSPZYNQRF
-		case XUSP_DEVICE_XCZU21DR: XCZU21DR; break;
-		case XUSP_DEVICE_XCZU25DR: XCZU25DR; break;
-		case XUSP_DEVICE_XCZU27DR: XCZU27DR; break;
-		case XUSP_DEVICE_XCZU28DR: XCZU28DR; break;
-		case XUSP_DEVICE_XCZU29DR: XCZU29DR; break;
-		case XUSP_DEVICE_XCZU39DR: XCZU39DR; break;
-		case XUSP_DEVICE_XCZU42DR: XCZU42DR; break;
-		case XUSP_DEVICE_XCZU43DR: XCZU43DR; break;
-		case XUSP_DEVICE_XCZU46DR: XCZU46DR; break;
-		case XUSP_DEVICE_XCZU47DR: XCZU47DR; break;
-		case XUSP_DEVICE_XCZU48DR: XCZU48DR; break;
-		case XUSP_DEVICE_XCZU49DR: XCZU49DR; break;
-		case XUSP_DEVICE_XCZU65DR: XCZU65DR; break;
-		case XUSP_DEVICE_XCZU67DR: XCZU67DR; break;
+		case XUSP_DEVICE_XCZU21DR:
+			XCZU21DR();
+			break;
+		case XUSP_DEVICE_XCZU25DR:
+			XCZU25DR();
+			break;
+		case XUSP_DEVICE_XCZU27DR:
+			XCZU27DR();
+			break;
+		case XUSP_DEVICE_XCZU28DR:
+			XCZU28DR();
+			break;
+		case XUSP_DEVICE_XCZU29DR:
+			XCZU29DR();
+			break;
+		case XUSP_DEVICE_XCZU39DR:
+			XCZU39DR();
+			break;
+		case XUSP_DEVICE_XCZU42DR:
+			XCZU42DR();
+			break;
+		case XUSP_DEVICE_XCZU43DR:
+			XCZU43DR();
+			break;
+		case XUSP_DEVICE_XCZU46DR:
+			XCZU46DR();
+			break;
+		case XUSP_DEVICE_XCZU47DR:
+			XCZU47DR();
+			break;
+		case XUSP_DEVICE_XCZU48DR:
+			XCZU48DR();
+			break;
+		case XUSP_DEVICE_XCZU49DR:
+			XCZU49DR();
+			break;
+		case XUSP_DEVICE_XCZU65DR:
+			XCZU65DR();
+			break;
+		case XUSP_DEVICE_XCZU67DR:
+			XCZU67DR();
+			break;
 		#endif
 		//XUSP MPSoC
 		#ifdef XUSPZYNQMP
-		case XUSP_DEVICE_XCZU1: XCZU1; break;
-		case XUSP_DEVICE_XCZU2: XCZU2; break;
-		case XUSP_DEVICE_XCZU3: XCZU3; break;
-		case XUSP_DEVICE_XCZU4: XCZU4; break;
-		case XUSP_DEVICE_XCZU5: XCZU5; break;
-		case XUSP_DEVICE_XCZU6: XCZU6; break;
-		case XUSP_DEVICE_XCZU7: XCZU7; break;
-		case XUSP_DEVICE_XCZU9: XCZU9; break;
-		case XUSP_DEVICE_XCZU11: XCZU11; break;
-		case XUSP_DEVICE_XCZU15: XCZU15; break;
-		case XUSP_DEVICE_XCZU17: XCZU17; break;
-		case XUSP_DEVICE_XCZU19: XCZU19; break;
+		case XUSP_DEVICE_XCZU1:
+			XCZU1();
+			break;
+		case XUSP_DEVICE_XCZU2:
+			XCZU2();
+			break;
+		case XUSP_DEVICE_XCZU3:
+			XCZU3();
+			break;
+		case XUSP_DEVICE_XCZU4:
+			XCZU4();
+			break;
+		case XUSP_DEVICE_XCZU5:
+			XCZU5();
+			break;
+		case XUSP_DEVICE_XCZU6:
+			XCZU6();
+			break;
+		case XUSP_DEVICE_XCZU7:
+			XCZU7();
+			break;
+		case XUSP_DEVICE_XCZU9:
+			XCZU9();
+			break;
+		case XUSP_DEVICE_XCZU11:
+			XCZU11();
+			break;
+		case XUSP_DEVICE_XCZU15:
+			XCZU15();
+			break;
+		case XUSP_DEVICE_XCZU17:
+			XCZU17();
+			break;
+		case XUSP_DEVICE_XCZU19:
+			XCZU19();
+			break;
 		#endif
 		//XUSP Alveo
 		#ifdef XUSPALVEO
-		case XUSP_DEVICE_XCU200: XCU200; setPart("XCU200-FSGD2104-2-E"); break;
-		case XUSP_DEVICE_XCU250: XCU250; setPart("XCU250-FIGD2104-2L-E"); break;
-		case XUSP_DEVICE_XCU26: XCU26; setPart("XCU26-L2VSVA1365E"); break;
-		case XUSP_DEVICE_XCUX35: XCUX35; break;
-		case XUSP_DEVICE_XCU50: XCU50; setPart("XCU50-FSVH2104-2LV-E"); break;
-		case XUSP_DEVICE_XCU55N: XCU55N; break;
-		case XUSP_DEVICE_XCU55C: XCU55C; setPart("XCU55C-L2FSVH2892E"); break;
-		case XUSP_DEVICE_XCU280: XCU280; break;
-		case XUSP_DEVICE_XCU30: XCU30; break;
-		case XUSP_DEVICE_XCU25: XCU25; break;
+		case XUSP_DEVICE_XCU200:
+			XCU200(); 
+			setCustomPartName("XCU200-FSGD2104-2-E");
+			break;
+		case XUSP_DEVICE_XCU250:
+			XCU250(); 
+			setCustomPartName("XCU250-FIGD2104-2L-E");
+			break;
+		case XUSP_DEVICE_XCU26:
+			XCU26(); 
+			setCustomPartName("XCU26-L2VSVA1365E");
+			break;
+		case XUSP_DEVICE_XCUX35:
+			XCUX35();
+			break;
+		case XUSP_DEVICE_XCU50:
+			XCU50(); 
+			setCustomPartName("XCU50-FSVH2104-2LV-E");
+			break;
+		case XUSP_DEVICE_XCU55N:
+			XCU55N();
+			break;
+		case XUSP_DEVICE_XCU55C:
+			XCU55C(); 
+			setCustomPartName("XCU55C-L2FSVH2892E");
+			break;
+		case XUSP_DEVICE_XCU280:
+			XCU280();
+			break;
+		case XUSP_DEVICE_XCU30:
+			XCU30();
+			break;
+		case XUSP_DEVICE_XCU25:
+			XCU25();
+			break;
 		#endif
 		//XUSP Boards
 		#ifdef XUSPBOARDS
-		case XUSP_DEVICE_ZCU102: XCZU9; setPart("XCZU9EG-2FFVB1156"); break;
-		case XUSP_DEVICE_ZCU104: XCZU7;setPart("XCZU7EV-2FFVC1156");break;
-		case XUSP_DEVICE_ZCU106: XCZU7;setPart("XCZU7EV-2FFVC1156");break;
-		case XUSP_DEVICE_AXU15EG: XCZU15;setPart("XCZU15EG-2SFFVB1156I");break;
-		case XUSP_DEVICE_AXU2CG: XCZU2;setPart("XCZU2CG-1SFVC784E");break;
-		case XUSP_DEVICE_AXU3EG: XCZU3;setPart("XCZU3EG-1SFVC784I");break;
-		case XUSP_DEVICE_AXU4EV: XCZU4;setPart("XCZU4EV-1SFVC784I");break;
-		case XUSP_DEVICE_AXU5EV: XCZU5;setPart("XCZU5EV-2SFVC784I");break;
-		case XUSP_DEVICE_AXU9EG: XCZU9;setPart("XCZU9EG-2FFVB1156I");break;
-		case XUSP_DEVICE_ULTRAZED_EV: XCZU7;setPart("XCZU7EV-FBVB900");break;
-		case XUSP_DEVICE_CHAMP_XD1S: XCZU4;break;
-		case XUSP_DEVICE_ZU_3EG: XCZU3;setPart("XCZU3EG-SFVC784-1-E");break;
-		case XUSP_DEVICE_ZU_5EV: XCZU5;setPart("XCZU5EV-SFVC784-1-E");break;
-		case XUSP_DEVICE_HTG_Z999_06: XCZU6;setPart("XCZU6EG-2FFVB1156E");break;
-		case XUSP_DEVICE_HTG_Z999_09: XCZU9;setPart("XCZU9EG-2FFVB1156E");break;
-		case XUSP_DEVICE_HTG_Z999_15: XCZU15;setPart("XCZU15EG-2FFVB1156E");break;
-		case XUSP_DEVICE_HTG_930_9_3: XCVU9P;setPart("XCVU9P-3FLGB2104E");break;
-		case XUSP_DEVICE_HTG_930_9: XCVU9P;setPart("XCVU9P-2FLGB2104E");break;
-		case XUSP_DEVICE_HTG_930_13_3: XCVU13P;setPart("XCVU13P-3FHGB2104E");break;
-		case XUSP_DEVICE_HTG_930_13: XCVU13P;setPart("XCVU13P-2FHGB2104E");break;
-		case XUSP_DEVICE_HTG_937_37P: XCVU37P;setPart("XCVU37P-2FSVH2892E4539");break;
-		case XUSP_DEVICE_HTG_937_47P: XCVU47P;setPart("XCVU47P-2FSVH2892E4539");break;
-		case XUSP_DEVICE_HTG_Z922_11: XCZU11;setPart("XCZU11EG-3FFVC1760E");break;
-		case XUSP_DEVICE_HTG_Z922_19_DG: XCZU19;setPart("XQZU19EG-2FFVC1760E");break;
-		case XUSP_DEVICE_HTG_Z922_19: XCZU19;setPart("XCZU19EG-2FFVC1760E");break;
-		case XUSP_DEVICE_CZU3EG: XCZU3;setPart("XCZU3EG-1SFVC784E");break;
-		case XUSP_DEVICE_CZU4EV: XCZU4;setPart("XCZU3EG-1SFVC784E");break;
-		case XUSP_DEVICE_TE0802: XCZU2;setPart("XCZU2CG-1SBVA484E");break;
-		case XUSP_DEVICE_TE0803_04_3BE11: XCZU3;setPart("XCZU3EG-1SFVC784E");break;
-		case XUSP_DEVICE_TE0807_03_7DE21: XCZU7;setPart("XCZU7EV-1FBVB900E");break;
-		case XUSP_DEVICE_TE0808_05_9BE21: XCZU9;setPart("XCZU9EG-1FFVC900E");break;
-		case XUSP_DEVICE_TE0808_05_9GI21: XCZU9;setPart("XCZU9EG-2FFVC900I");break;
-		case XUSP_DEVICE_TE0808_05_BBE21: XCZU15;setPart("XCZU15EG-1FFVC900E");break;
-		case XUSP_DEVICE_TE0812: XCZU6;setPart("XCZU6EG-1FFVC900I");break;
-		case XUSP_DEVICE_TEB0911: XCZU9;setPart("XCZU9EG-1FFVB1156E");break;
-		case XUSP_DEVICE_TEB0912: XCZU11;setPart("XCZU11EG-1FFVC1760I");break; 
-		case XUSP_DEVICE_TYSOM_3_ZU7EV: XCZU7;setPart("ZU7EV-FFVC1156");break;
-		case XUSP_DEVICE_XPEDITE2600: XCZU11;setPart("XCZU11EG");break;
-		case XUSP_DEVICE_AMC574: XCZU29DR;setPart("XCZU29DR");break;
-		case XUSP_DEVICE_ZCU208: XCZU48DR;setPart("XCZU48DR-2FSVG1517E5184");break;
-		case XUSP_DEVICE_ZCU216: XCZU49DR;setPart("XCZU49DR-2FFVF1760");break;
-		case XUSP_DEVICE_ZCU670: XCZU67DR;setPart("XCZU67DR-2FSVE1156I");break;
-		case XUSP_DEVICE_ULTRA96: XCZU3;setPart("XCZU3EG-SBVA484-1-I");break;
-		case XUSP_DEVICE_K26C: XCK26;setPart("XCK26-SFVC784-2LV-C");break;
-		case XUSP_DEVICE_K26I: XCK26;setPart("XCK26-SFVC784-2LV-I");break;
-		case XUSP_DEVICE_KV260: XCK26;setPart("XCK26-SFVC784-2LV-C");break;
-		case XUSP_DEVICE_AMC584: XCVU13P;break;
-		case XUSP_DEVICE_HTG_960: XCVU19P;setPart("XCVU19P-2FSVB3824E");break;
-		case XUSP_DEVICE_VCU1525: XCVU9P;setPart("XCVU9P-L2FSGD2104E");break;
-		case XUSP_DEVICE_VCU118: XCVU9P;setPart("XCVU9P-LGA2104E");break;
-		case XUSP_DEVICE_VCU128: XCVU37P;setPart("XCVU37P-L2FSVH2892E");break;
-		case XUSP_DEVICE_VCU129: XCVU29P;setPart("XCVU29P-L2FSGA2577E");break;
-		case XUSP_DEVICE_HTG_940_9_3: XCVU9P;setPart("XCVU9P-3FLGB2104E ");break;
-		case XUSP_DEVICE_HTG_940_9: XCVU9P;setPart("XCVU9P-2FLGB2104E ");break;
-		case XUSP_DEVICE_HTG_940_13_3: XCVU13P;setPart("XCVU13P-3FHGB2104E");break;
-		case XUSP_DEVICE_HTG_940_13: XCVU13P;setPart("XCVU13P-2FHGB2104E");break;
-		case XUSP_DEVICE_HTG_9200_5P: XCVU5P;setPart("XCVU5P-2FLGB2104E");break;
-		case XUSP_DEVICE_HTG_9200_9P: XCVU9P;setPart("XCVU9P-2FLGB2104E");break;
-		case XUSP_DEVICE_HTG_9200_13P: XCVU13P;setPart("XCVU13P-2FHGB2104E");break;
-		case XUSP_DEVICE_HTG_VUP_PCIE_HH_9P: XCVU9P;setPart("XCVU9P-2FLGB2104E");break;
-		case XUSP_DEVICE_HTG_VUP_PCIE_HH_13P: XCVU13P;setPart("XCVU13P-2FHGB2104E");break;
-		case XUSP_DEVICE_HTG_ZRF_FMC_28: XCZU28DR;setPart("XCZU28DR-2FFVG1517");break;
-		case XUSP_DEVICE_HTG_ZRF_FMC_48: XCZU48DR;setPart("XCZU48DR-2FFVG1517");break;
-		case XUSP_DEVICE_HTG_ZRF16_29: XCZU29DR;setPart("XCZU29DR-2FFVF1760E");break;
-		case XUSP_DEVICE_HTG_ZRF16_49: XCZU49DR;setPart("XCZU49DR-2FFVF1760E");break;
-		case XUSP_DEVICE_HTG_ZRF_HH_28: XCZU28DR;setPart("XCZU28DR-2FFVG1517");break;
-		case XUSP_DEVICE_HTG_ZRF_HH_48: XCZU48DR;setPart("XCZU48DR-2FFVG1517");break;
-		case XUSP_DEVICE_HTG_ZUSP_PCIE_11_3: XCZU11;setPart("XCZU11EG-3FFVC1760E");break;
-		case XUSP_DEVICE_HTG_ZUSP_PCIE_19_2: XCZU19;setPart("XCZU19EG-2FFVC1760E");break;
-		case XUSP_DEVICE_HTG_ZRF8_R2_28: XCZU28DR;setPart("XCZU28DR-2FFVG1517");break;
-		case XUSP_DEVICE_HTG_ZRF8_R2_48_I: XCZU48DR;setPart("XCZU48DR-FFVG1517-2-I");break;
-		case XUSP_DEVICE_HTG_ZRF8_R2_48: XCZU48DR;setPart("XCZU48DR-2FFVG1517");break;
+		case XUSP_DEVICE_ZCU102:
+			XCZU9(); 
+			setCustomPartName("XCZU9EG-2FFVB1156");
+			break;
+		case XUSP_DEVICE_ZCU104:
+			XCZU7(); 
+			setCustomPartName("XCZU7EV-2FFVC1156");
+			break;
+		case XUSP_DEVICE_ZCU106:
+			XCZU7(); 
+			setCustomPartName("XCZU7EV-2FFVC1156");
+			break;
+		case XUSP_DEVICE_AXU15EG:
+			XCZU15(); 
+			setCustomPartName("XCZU15EG-2SFFVB1156I");
+			break;
+		case XUSP_DEVICE_AXU2CG:
+			XCZU2(); 
+			setCustomPartName("XCZU2CG-1SFVC784E");
+			break;
+		case XUSP_DEVICE_AXU3EG:
+			XCZU3(); 
+			setCustomPartName("XCZU3EG-1SFVC784I");
+			break;
+		case XUSP_DEVICE_AXU4EV:
+			XCZU4(); 
+			setCustomPartName("XCZU4EV-1SFVC784I");
+			break;
+		case XUSP_DEVICE_AXU5EV:
+			XCZU5(); 
+			setCustomPartName("XCZU5EV-2SFVC784I");
+			break;
+		case XUSP_DEVICE_AXU9EG:
+			XCZU9(); 
+			setCustomPartName("XCZU9EG-2FFVB1156I");
+			break;
+		case XUSP_DEVICE_ULTRAZED_EV:
+			XCZU7(); 
+			setCustomPartName("XCZU7EV-FBVB900");
+			break;
+		case XUSP_DEVICE_CHAMP_XD1S:
+			XCZU4();
+			break;
+		case XUSP_DEVICE_ZU_3EG:
+			XCZU3(); 
+			setCustomPartName("XCZU3EG-SFVC784-1-E");
+			break;
+		case XUSP_DEVICE_ZU_5EV:
+			XCZU5(); 
+			setCustomPartName("XCZU5EV-SFVC784-1-E");
+			break;
+		case XUSP_DEVICE_HTG_Z999_06:
+			XCZU6(); 
+			setCustomPartName("XCZU6EG-2FFVB1156E");
+			break;
+		case XUSP_DEVICE_HTG_Z999_09:
+			XCZU9(); 
+			setCustomPartName("XCZU9EG-2FFVB1156E");
+			break;
+		case XUSP_DEVICE_HTG_Z999_15:
+			XCZU15(); 
+			setCustomPartName("XCZU15EG-2FFVB1156E");
+			break;
+		case XUSP_DEVICE_HTG_930_9_3:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-3FLGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_930_9:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-2FLGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_930_13_3:
+			XCVU13P(); 
+			setCustomPartName("XCVU13P-3FHGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_930_13:
+			XCVU13P(); 
+			setCustomPartName("XCVU13P-2FHGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_937_37P:
+			XCVU37P(); 
+			setCustomPartName("XCVU37P-2FSVH2892E4539");
+			break;
+		case XUSP_DEVICE_HTG_937_47P:
+			XCVU47P(); 
+			setCustomPartName("XCVU47P-2FSVH2892E4539");
+			break;
+		case XUSP_DEVICE_HTG_Z922_11:
+			XCZU11(); 
+			setCustomPartName("XCZU11EG-3FFVC1760E");
+			break;
+		case XUSP_DEVICE_HTG_Z922_19_DG:
+			XCZU19(); 
+			setCustomPartName("XQZU19EG-2FFVC1760E");
+			break;
+		case XUSP_DEVICE_HTG_Z922_19:
+			XCZU19(); 
+			setCustomPartName("XCZU19EG-2FFVC1760E");
+			break;
+		case XUSP_DEVICE_CZU3EG:
+			XCZU3(); 
+			setCustomPartName("XCZU3EG-1SFVC784E");
+			break;
+		case XUSP_DEVICE_CZU4EV:
+			XCZU4(); 
+			setCustomPartName("XCZU3EG-1SFVC784E");
+			break;
+		case XUSP_DEVICE_TE0802:
+			XCZU2(); 
+			setCustomPartName("XCZU2CG-1SBVA484E");
+			break;
+		case XUSP_DEVICE_TE0803_04_3BE11:
+			XCZU3(); 
+			setCustomPartName("XCZU3EG-1SFVC784E");
+			break;
+		case XUSP_DEVICE_TE0807_03_7DE21:
+			XCZU7(); 
+			setCustomPartName("XCZU7EV-1FBVB900E");
+			break;
+		case XUSP_DEVICE_TE0808_05_9BE21:
+			XCZU9(); 
+			setCustomPartName("XCZU9EG-1FFVC900E");
+			break;
+		case XUSP_DEVICE_TE0808_05_9GI21:
+			XCZU9(); 
+			setCustomPartName("XCZU9EG-2FFVC900I");
+			break;
+		case XUSP_DEVICE_TE0808_05_BBE21:
+			XCZU15(); 
+			setCustomPartName("XCZU15EG-1FFVC900E");
+			break;
+		case XUSP_DEVICE_TE0812:
+			XCZU6(); 
+			setCustomPartName("XCZU6EG-1FFVC900I");
+			break;
+		case XUSP_DEVICE_TEB0911:
+			XCZU9(); 
+			setCustomPartName("XCZU9EG-1FFVB1156E");
+			break;
+		case XUSP_DEVICE_TEB0912:
+			XCZU11(); 
+			setCustomPartName("XCZU11EG-1FFVC1760I");
+			break; 
+		case XUSP_DEVICE_TYSOM_3_ZU7EV:
+			XCZU7(); 
+			setCustomPartName("ZU7EV-FFVC1156");
+			break;
+		case XUSP_DEVICE_XPEDITE2600:
+			XCZU11(); 
+			setCustomPartName("XCZU11EG");
+			break;
+		case XUSP_DEVICE_AMC574:
+			XCZU29DR(); 
+			setCustomPartName("XCZU29DR");
+			break;
+		case XUSP_DEVICE_ZCU208:
+			XCZU48DR(); 
+			setCustomPartName("XCZU48DR-2FSVG1517E5184");
+			break;
+		case XUSP_DEVICE_ZCU216:
+			XCZU49DR(); 
+			setCustomPartName("XCZU49DR-2FFVF1760");
+			break;
+		case XUSP_DEVICE_ZCU670:
+			XCZU67DR(); 
+			setCustomPartName("XCZU67DR-2FSVE1156I");
+			break;
+		case XUSP_DEVICE_ULTRA96:
+			XCZU3(); 
+			setCustomPartName("XCZU3EG-SBVA484-1-I");
+			break;
+		case XUSP_DEVICE_K26C:
+			XCK26(); 
+			setCustomPartName("XCK26-SFVC784-2LV-C");
+			break;
+		case XUSP_DEVICE_K26I:
+			XCK26(); 
+			setCustomPartName("XCK26-SFVC784-2LV-I");
+			break;
+		case XUSP_DEVICE_KV260:
+			XCK26(); 
+			setCustomPartName("XCK26-SFVC784-2LV-C");
+			break;
+		case XUSP_DEVICE_AMC584:
+			XCVU13P();
+			break;
+		case XUSP_DEVICE_HTG_960:
+			XCVU19P(); 
+			setCustomPartName("XCVU19P-2FSVB3824E");
+			break;
+		case XUSP_DEVICE_VCU1525:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-L2FSGD2104E");
+			break;
+		case XUSP_DEVICE_VCU118:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-LGA2104E");
+			break;
+		case XUSP_DEVICE_VCU128:
+			XCVU37P(); 
+			setCustomPartName("XCVU37P-L2FSVH2892E");
+			break;
+		case XUSP_DEVICE_VCU129:
+			XCVU29P(); 
+			setCustomPartName("XCVU29P-L2FSGA2577E");
+			break;
+		case XUSP_DEVICE_HTG_940_9_3:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-3FLGB2104E ");
+			break;
+		case XUSP_DEVICE_HTG_940_9:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-2FLGB2104E ");
+			break;
+		case XUSP_DEVICE_HTG_940_13_3:
+			XCVU13P(); 
+			setCustomPartName("XCVU13P-3FHGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_940_13:
+			XCVU13P(); 
+			setCustomPartName("XCVU13P-2FHGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_9200_5P:
+			XCVU5P(); 
+			setCustomPartName("XCVU5P-2FLGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_9200_9P:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-2FLGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_9200_13P:
+			XCVU13P(); 
+			setCustomPartName("XCVU13P-2FHGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_VUP_PCIE_HH_9P:
+			XCVU9P(); 
+			setCustomPartName("XCVU9P-2FLGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_VUP_PCIE_HH_13P:
+			XCVU13P(); 
+			setCustomPartName("XCVU13P-2FHGB2104E");
+			break;
+		case XUSP_DEVICE_HTG_ZRF_FMC_28:
+			XCZU28DR(); 
+			setCustomPartName("XCZU28DR-2FFVG1517");
+			break;
+		case XUSP_DEVICE_HTG_ZRF_FMC_48:
+			XCZU48DR(); 
+			setCustomPartName("XCZU48DR-2FFVG1517");
+			break;
+		case XUSP_DEVICE_HTG_ZRF16_29:
+			XCZU29DR(); 
+			setCustomPartName("XCZU29DR-2FFVF1760E");
+			break;
+		case XUSP_DEVICE_HTG_ZRF16_49:
+			XCZU49DR(); 
+			setCustomPartName("XCZU49DR-2FFVF1760E");
+			break;
+		case XUSP_DEVICE_HTG_ZRF_HH_28:
+			XCZU28DR(); 
+			setCustomPartName("XCZU28DR-2FFVG1517");
+			break;
+		case XUSP_DEVICE_HTG_ZRF_HH_48:
+			XCZU48DR(); 
+			setCustomPartName("XCZU48DR-2FFVG1517");
+			break;
+		case XUSP_DEVICE_HTG_ZUSP_PCIE_11_3:
+			XCZU11(); 
+			setCustomPartName("XCZU11EG-3FFVC1760E");
+			break;
+		case XUSP_DEVICE_HTG_ZUSP_PCIE_19_2:
+			XCZU19(); 
+			setCustomPartName("XCZU19EG-2FFVC1760E");
+			break;
+		case XUSP_DEVICE_HTG_ZRF8_R2_28:
+			XCZU28DR(); 
+			setCustomPartName("XCZU28DR-2FFVG1517");
+			break;
+		case XUSP_DEVICE_HTG_ZRF8_R2_48_I:
+			XCZU48DR(); 
+			setCustomPartName("XCZU48DR-FFVG1517-2-I");
+			break;
+		case XUSP_DEVICE_HTG_ZRF8_R2_48:
+			XCZU48DR(); 
+			setCustomPartName("XCZU48DR-2FFVG1517");
+			break;
 		#endif
 		default:throw runtime_error("Unknown device ID.");
 	}
-	#undef setPart
+	#undef setCustomPartName
     if(!customNameSet) // if we didn't set already a good full name
 		if(customPartName != "")// if not empty string
 			partName = customPartName;

@@ -49,8 +49,8 @@ void usage(){
 	cout << "\t-stdin                 : Continue using standard input. See \"byteman -h stdin\"" << endl;
 
 	cout << "Examples: " << endl;
-	cout << "\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 180 67 120 30 relocatedFilter.bit" << endl;
-	cout << "\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 180 67 120 30 relocatedFilter.bit" << endl;
+	cout << "\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 240 37 120 30 relocatedFilter.bit" << endl;
+	cout << "\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180 67 120 30 180 67 -o logic 180 67 120 30 mergedFilter.bit" << endl;
 	
 	
 }
