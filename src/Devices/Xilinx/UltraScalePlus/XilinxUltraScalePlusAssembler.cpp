@@ -322,7 +322,7 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 			} else { // OP_WRITE
 				if((regAddr == XUSP_CAP_REG_FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
 					if(shadowFrameValid) {
-						fout<<"# Previous shadow register contents will be written to address (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<endl<<") hex data:"<<endl;
+						fout << "# Shadow register contents are written to frame (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<") (Frame type: " << XUSP_GET_FRAMETYPE(b,r,c) << ")."<<endl;
 						XUSP_INCR_FAR(b,r,c,m)
 					}
 					shadowFrameValid = 1;
@@ -330,8 +330,8 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 					fout << dec << "@FDRI for #" << frameCount << " frames:" << endl;
 					for(int i = 0 ; i < frameCount ; i++){
 						fout << "# ";
-						if(i == (frameCount-1)) fout << "(This is written to shadow register)";
-						fout << dec << "Writing frame #" << i << " located at address (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") hex data:"<<endl;
+						if(i == (frameCount-1)) fout << "(This frame data is written to shadow register!)";
+						fout << dec << "Writing frame #" << i << " (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << XUSP_GET_FRAMETYPE(b,r,c) << ") hex data:"<<endl;
 						uint32_t frameData[XUSP_WORDS_PER_FRAME];
 						for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
 							fileReadBE(frameData[w], fin, 32);
