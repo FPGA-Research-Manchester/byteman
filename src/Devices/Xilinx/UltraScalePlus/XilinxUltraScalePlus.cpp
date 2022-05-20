@@ -17,6 +17,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <cstring>  //memset
 #include <algorithm> //replace
 #include<sstream>
 #include <stdexcept>
