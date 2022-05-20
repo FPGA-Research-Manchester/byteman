@@ -55,6 +55,8 @@ class XilinxUltraScalePlus: public XilinxConfigurationAccessPort
 		//file IO
         void readBitstream(string);
         void readBitstreamBIT(ifstream&);
+        void readBitstreamBIN(ifstream&);
+        void readBitstreamMain(ifstream&);
 		
         //merge (relocate)
 		void ensureRowCompatibility(Coord2D, int, int, Coord2D);
@@ -120,6 +122,7 @@ class XilinxUltraScalePlus: public XilinxConfigurationAccessPort
 		
 		// XCAP: override functions for superclass XilinxConfigurationAccessPort
 		uint32_t XCAP_SyncInstruction() override;
+		uint32_t XCAP_IDCODEInstruction() override;
 		
 		
 		// CAP: local inline alternatives

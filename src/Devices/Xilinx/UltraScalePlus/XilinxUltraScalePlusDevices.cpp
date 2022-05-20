@@ -809,7 +809,10 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
     if(!customNameSet) // if we didn't set already a good full name
 		if(customPartName != "")// if not empty string
 			partName = customPartName;
-
+	
+	
+	if(verbose)
+		cout << "Initialized device type: \"" << partName << "\"" << endl; 
 }
 void XilinxUltraScalePlus::deviceHelp(){
 	cout << "A list of currently recognized US+ devices: " << endl;

@@ -129,3 +129,47 @@ Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin){
 	fin.seekg(fileOffset, fin.beg);
 	return returnVal;
 }
+/**************************************************************************//**
+ * Reads a bitstream until and including the first IDCODE command and returns
+ * the first SLRs IDCODE.
+ * 
+ * @arg @c fin input file stream. Gets fixed back to the original value before
+ * leaving this function!
+ *****************************************************************************/
+uint32_t XilinxConfigurationAccessPort::parseBitstreamIDCODE(ifstream& fin, Endianess e){
+	streamoff fileOffset = fin.tellg();
+	//Optional bitstream header
+	uint32_t returnVal;
+    //Find sync
+    for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
+		if(!fin.good())
+			throw runtime_error("Was unable to find input bitstream's IDCODE command.");
+        int word = FileIO::read32(fin, e);
+        if(XCAP_IDCODEInstruction() == word){
+			returnVal = FileIO::read32(fin, e);
+            syncDetectionDone++;
+		} else
+            fin.seekg(-3,ios::cur);
+    }
+	
+	fin.seekg(fileOffset, fin.beg);
+	return returnVal;
+}
+/**************************************************************************//**
+ * Reads a bitstream header until and including the sync command.
+ * 
+ * @arg @c fin input file stream. Moves the stream pointer to after the SYNC
+ * command and in a word-aligned position with the following instructions.
+ *****************************************************************************/
+void XilinxConfigurationAccessPort::findBitstreamSync(ifstream& fin, Endianess e){
+	for( ; ; ){
+		if(!fin.good())
+			throw runtime_error("Was unable to find input bitstream's SYNC command.");
+        int word = FileIO::read32(fin, e);
+        if(XCAP_SyncInstruction() == word){
+			return;
+		} else
+            fin.seekg(-3,ios::cur);
+    }
+}
+		void findBitstreamSync(ifstream&, Endianess);

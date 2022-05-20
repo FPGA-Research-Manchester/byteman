@@ -21,3 +21,6 @@
 uint32_t XilinxUltraScalePlus::XCAP_SyncInstruction(){
 	return XilinxUltraScalePlus::CAP_makeSyncInstruction();
 }
+uint32_t XilinxUltraScalePlus::XCAP_IDCODEInstruction(){
+	return XilinxUltraScalePlus::XilinxUltraScalePlus::CAP_makeType1WriteInstruction(CAP::Register::IDCODE, 1);
+}

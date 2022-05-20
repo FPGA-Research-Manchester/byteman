@@ -36,6 +36,8 @@ class XilinxConfigurationAccessPort: public CommonDevice
 		//Input
 		void parseBITheader(ifstream&, Endianess);
 		Endianess parseBitstreamEndianess(ifstream&);
+		uint32_t parseBitstreamIDCODE(ifstream&, Endianess);
+		void findBitstreamSync(ifstream&, Endianess);
 		
 		//Output
 		streamoff outputBITheader(ofstream&, Endianess=Endianess::NATIVE);
@@ -51,6 +53,7 @@ class XilinxConfigurationAccessPort: public CommonDevice
 		
 		//Family-specific
 		virtual uint32_t XCAP_SyncInstruction() = 0;
+		virtual uint32_t XCAP_IDCODEInstruction() = 0;
 };
 
 #endif //XILINXCONFIGURATIONACCESSPORT_H

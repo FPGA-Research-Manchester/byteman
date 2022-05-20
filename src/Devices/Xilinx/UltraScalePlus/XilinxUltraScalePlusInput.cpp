@@ -36,6 +36,8 @@ void XilinxUltraScalePlus::readBitstream(string filename)
 	
     if(StringFuncs::checkIf::stringEndsWith(filename, ".bit"))
         XilinxUltraScalePlus::readBitstreamBIT(fin);
+    if(StringFuncs::checkIf::stringEndsWith(filename, ".bin"))
+        XilinxUltraScalePlus::readBitstreamBIN(fin);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read.\n"));
 	fin.close();
@@ -45,7 +47,22 @@ void XilinxUltraScalePlus::readBitstreamBIT(ifstream& fin)
 	XilinxUltraScalePlus::parseBITheader(fin, loadedBitstreamEndianess);
     XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
     XilinxUltraScalePlus::ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
+	
+	XilinxUltraScalePlus::readBitstreamMain(fin);
+}
 
+void XilinxUltraScalePlus::readBitstreamBIN(ifstream& fin)
+{
+	uint32_t IDCODE = XilinxUltraScalePlus::parseBitstreamIDCODE(fin, loadedBitstreamEndianess);
+    XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByIDCODEorThrow(IDCODE));
+    XilinxUltraScalePlus::ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
+	
+	XilinxUltraScalePlus::findBitstreamSync(fin, loadedBitstreamEndianess);
+	XilinxUltraScalePlus::readBitstreamMain(fin);
+}
+
+void XilinxUltraScalePlus::readBitstreamMain(ifstream& fin)
+{
     CAP::Register regAddr = CAP::Register::UNDEFINED;
     int wordCount = 0;
     char shadowFrame[XUSP_WORDS_PER_FRAME*4];
