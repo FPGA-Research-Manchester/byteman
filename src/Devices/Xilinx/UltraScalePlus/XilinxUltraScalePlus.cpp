@@ -26,7 +26,7 @@ using namespace std;
 XilinxUltraScalePlus::XilinxUltraScalePlus()
 {
     initializedBitstreamPartName = "";
-	loadedBitstreamEndianess = Endianess::BIG_ENDIAN;
+	loadedBitstreamEndianess = Endianess::BE;
     SLRinfo[0] = {0, 0, 0};
     numberOfRows = 0;
 	blankFrame = calloc(XUSP_WORDS_PER_FRAME, 4);

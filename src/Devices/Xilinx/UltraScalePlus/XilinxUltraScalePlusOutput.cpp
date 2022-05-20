@@ -68,7 +68,7 @@ void XilinxUltraScalePlus::writeBitstreamBIT(ofstream& fout, string params, Rect
 	designName.append(";bytemanVersion=").append(VERSION).append(":").append(VERSION_BUILD);
 	
 	XilinxUltraScalePlus::updateDateAndTime();
-	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout, Endianess::BIG_ENDIAN);//.bit always big endian
+	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout, Endianess::BE);//.bit always big endian
 	XilinxUltraScalePlus::writeBitstreamMain(fout, params, rect, options);
 	
 	XilinxUltraScalePlus::outputBITheaderLengthField(fout, headerLocationOfRemainingFileLength, loadedBitstreamEndianess);

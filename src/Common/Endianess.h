@@ -41,57 +41,57 @@ static int IS_LITTLE_ENDIAN(void)
 #endif
 	
 enum class Endianess {
-	NATIVE, 					///< Whatever native is, it will always be the fastest endianess to process
-	BIG_ENDIAN,					///< Enforce Big endianess
-	LITTLE_ENDIAN,				///< Enforce Little endianess
-	BIG_ENDIAN_BITSWAPPED,		///< Enforce Big endianess with bit swaps inside each byte
-	LITTLE_ENDIAN_BITSWAPPED	///< Enforce Little endianess with bit swaps inside each byte
+	NATIVE, 			///< Whatever native is, it will always be the fastest endianess to process
+	BE,					///< Detect/Select Big endianess
+	LE,					///< Detect/Select Little endianess
+	BE_BS,				///< Detect/Select Big endianess with bit swaps inside each byte
+	LE_BS				///< Detect/Select Little endianess with bit swaps inside each byte
 };
 
 namespace Endian {
 	inline string to_string(Endianess e){
-		if(Endianess::BIG_ENDIAN == e)
+		if(Endianess::BE == e)
 			return "Big Endian";
-		if(Endianess::LITTLE_ENDIAN == e)
+		if(Endianess::LE == e)
 			return "Little Endian";
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e)
+		if(Endianess::BE_BS == e)
 			return "Big Endian with BitSwap";
-		if(Endianess::LITTLE_ENDIAN_BITSWAPPED == e)
+		if(Endianess::LE_BS == e)
 			return "Little Endian with BitSwap";
 		return "Native";
 	}
 	inline Endianess swapEndian(Endianess e){
-		if(Endianess::BIG_ENDIAN == e)
-			return Endianess::LITTLE_ENDIAN;
-		if(Endianess::LITTLE_ENDIAN == e)
-			return Endianess::BIG_ENDIAN;
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e)
-			return Endianess::LITTLE_ENDIAN_BITSWAPPED;
-		if(Endianess::LITTLE_ENDIAN_BITSWAPPED == e)
-			return Endianess::BIG_ENDIAN_BITSWAPPED;
+		if(Endianess::BE == e)
+			return Endianess::LE;
+		if(Endianess::LE == e)
+			return Endianess::BE;
+		if(Endianess::BE_BS == e)
+			return Endianess::LE_BS;
+		if(Endianess::LE_BS == e)
+			return Endianess::BE_BS;
 		//Native then
 		if(IS_LITTLE_ENDIAN())
-			return Endianess::BIG_ENDIAN;
-		return Endianess::LITTLE_ENDIAN;
+			return Endianess::BE;
+		return Endianess::LE;
 	}
 	inline Endianess swapEndianBits(Endianess e){
-		if(Endianess::BIG_ENDIAN == e)
-			return Endianess::BIG_ENDIAN_BITSWAPPED;
-		if(Endianess::LITTLE_ENDIAN == e)
-			return Endianess::LITTLE_ENDIAN_BITSWAPPED;
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e)
-			return Endianess::BIG_ENDIAN;
-		if(Endianess::LITTLE_ENDIAN_BITSWAPPED == e)
-			return Endianess::LITTLE_ENDIAN;
+		if(Endianess::BE == e)
+			return Endianess::BE_BS;
+		if(Endianess::LE == e)
+			return Endianess::LE_BS;
+		if(Endianess::BE_BS == e)
+			return Endianess::BE;
+		if(Endianess::LE_BS == e)
+			return Endianess::LE;
 		//Native then
 		if(IS_LITTLE_ENDIAN())
-			return Endianess::LITTLE_ENDIAN_BITSWAPPED;
-		return Endianess::BIG_ENDIAN_BITSWAPPED;
+			return Endianess::LE_BS;
+		return Endianess::BE_BS;
 	}
 	inline Endianess fixEndianIfNative(Endianess e){
-		if(IS_LITTLE_ENDIAN() && Endianess::LITTLE_ENDIAN == e)
+		if(IS_LITTLE_ENDIAN() && Endianess::LE == e)
 			return Endianess::NATIVE;
-		if((!(IS_LITTLE_ENDIAN())) && Endianess::BIG_ENDIAN == e)
+		if((!(IS_LITTLE_ENDIAN())) && Endianess::BE == e)
 			return Endianess::NATIVE;
 		return e;
 	}
@@ -105,20 +105,20 @@ namespace Endian {
 	inline Endianess diff(Endianess e1, Endianess e2){
 		Endianess accumulatedEndianessDiff = Endianess::NATIVE;
 		
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e1 || Endianess::LITTLE_ENDIAN_BITSWAPPED == e1)
+		if(Endianess::BE_BS == e1 || Endianess::LE_BS == e1)
 			accumulatedEndianessDiff = swapEndianBits(accumulatedEndianessDiff);
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e2 || Endianess::LITTLE_ENDIAN_BITSWAPPED == e2)
+		if(Endianess::BE_BS == e2 || Endianess::LE_BS == e2)
 			accumulatedEndianessDiff = swapEndianBits(accumulatedEndianessDiff);
 		
 		if(IS_LITTLE_ENDIAN()){ // If native system is little endian
-			if(Endianess::BIG_ENDIAN == e1 || Endianess::BIG_ENDIAN_BITSWAPPED == e1)
+			if(Endianess::BE == e1 || Endianess::BE_BS == e1)
 				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
-			if(Endianess::BIG_ENDIAN == e2 || Endianess::BIG_ENDIAN_BITSWAPPED == e2)
+			if(Endianess::BE == e2 || Endianess::BE_BS == e2)
 				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
 		} else { // If native system is big endian
-			if(Endianess::LITTLE_ENDIAN == e1 || Endianess::LITTLE_ENDIAN_BITSWAPPED == e1)
+			if(Endianess::LE == e1 || Endianess::LE_BS == e1)
 				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
-			if(Endianess::LITTLE_ENDIAN == e2 || Endianess::LITTLE_ENDIAN_BITSWAPPED == e2)
+			if(Endianess::LE == e2 || Endianess::LE_BS == e2)
 				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
 		}
 		
@@ -205,37 +205,37 @@ namespace Endian {
 		return ((uint8_t)(x));
 	}
 	inline uint16_t NativeToAnyEndianess16(uint16_t x, Endianess e){
-		if(Endianess::BIG_ENDIAN == e)
+		if(Endianess::BE == e)
 			return NativeToBigEndian16(x);
-		if(Endianess::LITTLE_ENDIAN == e)
+		if(Endianess::LE == e)
 			return NativeToLittleEndian16(x);
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e)
+		if(Endianess::BE_BS == e)
 			return BitSwap16(NativeToBigEndian16(x));
-		if(Endianess::LITTLE_ENDIAN_BITSWAPPED == e)
+		if(Endianess::LE_BS == e)
 			return BitSwap16(NativeToLittleEndian16(x));
 		//Native then
 		return ((uint16_t)(x));
 	} 
 	inline uint32_t NativeToAnyEndianess32(uint32_t x, Endianess e){
-		if(Endianess::BIG_ENDIAN == e)
+		if(Endianess::BE == e)
 			return NativeToBigEndian32(x);
-		if(Endianess::LITTLE_ENDIAN == e)
+		if(Endianess::LE == e)
 			return NativeToLittleEndian32(x);
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e)
+		if(Endianess::BE_BS == e)
 			return BitSwap32(NativeToBigEndian32(x));
-		if(Endianess::LITTLE_ENDIAN_BITSWAPPED == e)
+		if(Endianess::LE_BS == e)
 			return BitSwap32(NativeToLittleEndian32(x));
 		//Native then
 		return ((uint32_t)(x));
 	} 
 	inline uint64_t NativeToAnyEndianess64(uint64_t x, Endianess e){
-		if(Endianess::BIG_ENDIAN == e)
+		if(Endianess::BE == e)
 			return NativeToBigEndian64(x);
-		if(Endianess::LITTLE_ENDIAN == e)
+		if(Endianess::LE == e)
 			return NativeToLittleEndian64(x);
-		if(Endianess::BIG_ENDIAN_BITSWAPPED == e)
+		if(Endianess::BE_BS == e)
 			return BitSwap64(NativeToBigEndian64(x));
-		if(Endianess::LITTLE_ENDIAN_BITSWAPPED == e)
+		if(Endianess::LE_BS == e)
 			return BitSwap64(NativeToLittleEndian64(x));
 		//Native then
 		return ((uint64_t)(x));

@@ -109,16 +109,16 @@ Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin){
 			returnVal = Endianess::NATIVE;
             syncDetectionDone++;
 		} else if(XCAP_SyncInstruction() == (Endian::NativeToBigEndian32(word))){
-			returnVal = Endianess::BIG_ENDIAN;
+			returnVal = Endianess::BE;
             syncDetectionDone++;
 		} else if(XCAP_SyncInstruction() == (Endian::NativeToLittleEndian32(word))){
-			returnVal = Endianess::LITTLE_ENDIAN;
+			returnVal = Endianess::LE;
             syncDetectionDone++;
 		} else if(XCAP_SyncInstruction() == Endian::BitSwap32(Endian::NativeToBigEndian32(word))){
-			returnVal = Endianess::BIG_ENDIAN_BITSWAPPED;
+			returnVal = Endianess::BE_BS;
             syncDetectionDone++;
 		} else if(XCAP_SyncInstruction() == Endian::BitSwap32(Endian::NativeToLittleEndian32(word))){
-			returnVal = Endianess::LITTLE_ENDIAN_BITSWAPPED;
+			returnVal = Endianess::LE_BS;
             syncDetectionDone++;
 		} else
             fin.seekg(-3,ios::cur);

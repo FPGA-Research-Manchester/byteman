@@ -95,46 +95,46 @@ namespace FileIO{
 		return Endian::BitSwap8(FileIO::readLittleEndian8(fin));
 	}
 	inline uint64_t read64(ifstream& fin, Endianess e = Endianess::NATIVE){
-		if(e == Endianess::BIG_ENDIAN)
+		if(e == Endianess::BE)
 			return FileIO::readBigEndian64(fin);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			return FileIO::readLittleEndian64(fin);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			return FileIO::readBitSwappedBigEndian64(fin);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			return FileIO::readBitSwappedLittleEndian64(fin);
 		return FileIO::readNative64(fin);
 	}
 	inline uint32_t read32(ifstream& fin, Endianess e = Endianess::NATIVE){
-		if(e == Endianess::BIG_ENDIAN)
+		if(e == Endianess::BE)
 			return FileIO::readBigEndian32(fin);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			return FileIO::readLittleEndian32(fin);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			return FileIO::readBitSwappedBigEndian32(fin);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			return FileIO::readBitSwappedLittleEndian32(fin);
 		return FileIO::readNative32(fin);
 	}
 	inline uint16_t read16(ifstream& fin, Endianess e = Endianess::NATIVE){
-		if(e == Endianess::BIG_ENDIAN)
+		if(e == Endianess::BE)
 			return FileIO::readBigEndian16(fin);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			return FileIO::readLittleEndian16(fin);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			return FileIO::readBitSwappedBigEndian16(fin);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			return FileIO::readBitSwappedLittleEndian16(fin);
 		return FileIO::readNative16(fin);
 	}
 	inline uint8_t read8 (ifstream& fin, Endianess e = Endianess::NATIVE){
-		if(e == Endianess::BIG_ENDIAN)
+		if(e == Endianess::BE)
 			return FileIO::readBigEndian8(fin);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			return FileIO::readLittleEndian8(fin);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			return FileIO::readBitSwappedBigEndian8(fin);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			return FileIO::readBitSwappedLittleEndian8(fin);
 		return FileIO::readNative8(fin);
 	}
@@ -167,13 +167,13 @@ namespace FileIO{
 	}
 
 	inline char* readStringIntoCharArray(ifstream& fin, int stringSize, Endianess e){
-		if(e == Endianess::BIG_ENDIAN_BITSWAPPED || e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		if(e == Endianess::BE_BS || e == Endianess::LE_BS)
 			return FileIO::readBitSwappedStringIntoCharArray(fin, stringSize);
 		else
 			return FileIO::readStringIntoCharArray(fin, stringSize);
 	}
 	inline string readString(ifstream& fin, int stringSize, Endianess e){
-		if(e == Endianess::BIG_ENDIAN_BITSWAPPED || e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		if(e == Endianess::BE_BS || e == Endianess::LE_BS)
 			return FileIO::readBitSwappedString(fin, stringSize);
 		else
 			return FileIO::readString(fin, stringSize);
@@ -319,25 +319,25 @@ namespace FileIO{
 	}
 
 	inline void writeCharArray(ofstream& fout, char* writeCharArray, int outputSize, Endianess e){
-		if(e == Endianess::BIG_ENDIAN_BITSWAPPED || e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		if(e == Endianess::BE_BS || e == Endianess::LE_BS)
 			return FileIO::writeBitSwappedCharArray(fout, writeCharArray, outputSize);
 		else
 			return FileIO::writeCharArray(fout, writeCharArray, outputSize);
 	}
 	inline void writeString(ofstream& fout, string writeString, int outputSize, Endianess e){
-		if(e == Endianess::BIG_ENDIAN_BITSWAPPED || e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		if(e == Endianess::BE_BS || e == Endianess::LE_BS)
 			return FileIO::writeBitSwappedString(fout, writeString, outputSize);
 		else
 			return FileIO::writeString(fout, writeString, outputSize);
 	}
 	inline void writeCharArray(ofstream& fout, char* writeCharArray, Endianess e){
-		if(e == Endianess::BIG_ENDIAN_BITSWAPPED || e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		if(e == Endianess::BE_BS || e == Endianess::LE_BS)
 			return FileIO::writeBitSwappedCharArray(fout, writeCharArray, 0);
 		else
 			return FileIO::writeCharArray(fout, writeCharArray, 0);
 	}
 	inline void writeString(ofstream& fout, string writeString, Endianess e){
-		if(e == Endianess::BIG_ENDIAN_BITSWAPPED || e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		if(e == Endianess::BE_BS || e == Endianess::LE_BS)
 			return FileIO::writeBitSwappedString(fout, writeString, 0);
 		else
 			return FileIO::writeString(fout, writeString, 0);
@@ -346,49 +346,49 @@ namespace FileIO{
 	inline void write64(ofstream& fout, uint64_t writeValue, Endianess e = Endianess::NATIVE){
 		if(e == Endianess::NATIVE)
 			FileIO::writeNative64(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN)
+		else if(e == Endianess::BE)
 			FileIO::writeBigEndian64(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			FileIO::writeLittleEndian64(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			FileIO::writeBitSwappedBigEndian64(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			FileIO::writeBitSwappedLittleEndian64(fout, writeValue);
 	}
 	inline void write32(ofstream& fout, uint32_t writeValue, Endianess e = Endianess::NATIVE){
 		if(e == Endianess::NATIVE)
 			FileIO::writeNative32(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN)
+		else if(e == Endianess::BE)
 			FileIO::writeBigEndian32(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			FileIO::writeLittleEndian32(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			FileIO::writeBitSwappedBigEndian32(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			FileIO::writeBitSwappedLittleEndian32(fout, writeValue);
 	}
 	inline void write16(ofstream& fout, uint16_t writeValue, Endianess e = Endianess::NATIVE){
 		if(e == Endianess::NATIVE)
 			FileIO::writeNative16(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN)
+		else if(e == Endianess::BE)
 			FileIO::writeBigEndian16(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			FileIO::writeLittleEndian16(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			FileIO::writeBitSwappedBigEndian16(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			FileIO::writeBitSwappedLittleEndian16(fout, writeValue);
 	}
 	inline void write8 (ofstream& fout, uint8_t  writeValue, Endianess e = Endianess::NATIVE){
 		if(e == Endianess::NATIVE)
 			FileIO::writeNative8(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN)
+		else if(e == Endianess::BE)
 			FileIO::writeBigEndian8(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN)
+		else if(e == Endianess::LE)
 			FileIO::writeLittleEndian8(fout, writeValue);
-		else if(e == Endianess::BIG_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::BE_BS)
 			FileIO::writeBitSwappedBigEndian8(fout, writeValue);
-		else if(e == Endianess::LITTLE_ENDIAN_BITSWAPPED)
+		else if(e == Endianess::LE_BS)
 			FileIO::writeBitSwappedLittleEndian8(fout, writeValue);
 	}
 }
