@@ -14,11 +14,13 @@
  * limitations under the License.
  *****************************************************************************/
 #include "XilinxUltraScalePlus.h"
-#include "XilinxUltraScalePlusCAP.h"
-#include "../../../Common/fileIO.h"
-#include "../../../Common/parseString.h"
+#include "XilinxUltraScalePlusConfigurationAccessPort.h"
+#include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
+#include "../../../Common/FileIO.h"
+#include "../../../Common/StringFuncs.h"
+#include "../../../Common/Endianess.h"
 #include <iostream>
-#include <algorithm>
+#include <algorithm> //replace
 #include <string>
 #include <stdexcept>
 #include <fstream>
@@ -33,14 +35,14 @@ void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut){
 	enum FILEFORMAT {FILE_NULL = 0, FILE_BIT, FILE_BIT_ASM};
 	FILEFORMAT fileformatIn = FILE_NULL, fileformatOut = FILE_NULL;
 	
-    if(fileExtensionIs(filenameIn, "bit"))
+    if(StringFuncs::checkIf::stringEndsWith(filenameIn, ".bit"))
         fileformatIn = FILE_BIT;
-    if(fileExtensionIs(filenameIn, "bitasm"))
+    if(StringFuncs::checkIf::stringEndsWith(filenameIn, ".bitasm"))
         fileformatIn = FILE_BIT_ASM;
 	
-    if(fileExtensionIs(filenameOut, "bit"))
+    if(StringFuncs::checkIf::stringEndsWith(filenameOut, ".bit"))
         fileformatOut = FILE_BIT;
-    if(fileExtensionIs(filenameOut, "bitasm"))
+    if(StringFuncs::checkIf::stringEndsWith(filenameOut, ".bitasm"))
         fileformatOut = FILE_BIT_ASM;
 	if(fileformatIn == FILE_NULL)
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read by the assembler. See \"byteman -h assembly\".\n"));
@@ -66,54 +68,54 @@ void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut){
 	fin.close();
 	fout.close();
 }
-int assemblerGetRegID(string line){
+CAP::Register assemblerGetRegID(string line){
 	#define has(x) (line.find(x) != string::npos)
-	if(has("CRC"))return XUSP_CAP_REG_CRC;
-	else if(has("FAR"))return XUSP_CAP_REG_FAR;
-	else if(has("FDRI"))return XUSP_CAP_REG_FDRI;
-	else if(has("FDRO"))return XUSP_CAP_REG_FDRO;
-	else if(has("CTRL0"))return XUSP_CAP_REG_CTRL0;
-	else if(has("MASK"))return XUSP_CAP_REG_MASK;
-	else if(has("STAT"))return XUSP_CAP_REG_STAT;
-	else if(has("LOUT"))return XUSP_CAP_REG_LOUT;
-	else if(has("COR0"))return XUSP_CAP_REG_COR0;
-	else if(has("MFWR"))return XUSP_CAP_REG_MFWR;
-	else if(has("CBC"))return XUSP_CAP_REG_CBC;
-	else if(has("IDCODE"))return XUSP_CAP_REG_IDCODE;
-	else if(has("AXSS"))return XUSP_CAP_REG_AXSS;
-	else if(has("COR1"))return XUSP_CAP_REG_COR1;
-	else if(has("WBSTAR"))return XUSP_CAP_REG_WBSTAR;
-	else if(has("TIMER"))return XUSP_CAP_REG_TIMER;
-	else if(has("MAGIC0"))return XUSP_CAP_REG_MAGIC0;
-	else if(has("BOOTSTS"))return XUSP_CAP_REG_BOOTSTS;
-	else if(has("CTRL1"))return XUSP_CAP_REG_CTRL1;
-	else if(has("MAGIC1"))return XUSP_CAP_REG_MAGIC1;
-	else if(has("BSPI"))return XUSP_CAP_REG_BSPI;
-	return XUSP_CAP_REG_UNKNOWN;
+	if(has("CRC"))return CAP::Register::CRC;
+	else if(has("FAR"))return CAP::Register::FAR;
+	else if(has("FDRI"))return CAP::Register::FDRI;
+	else if(has("FDRO"))return CAP::Register::FDRO;
+	else if(has("CTRL0"))return CAP::Register::CTRL0;
+	else if(has("MASK"))return CAP::Register::MASK;
+	else if(has("STAT"))return CAP::Register::STAT;
+	else if(has("LOUT"))return CAP::Register::LOUT;
+	else if(has("COR0"))return CAP::Register::COR0;
+	else if(has("MFWR"))return CAP::Register::MFWR;
+	else if(has("CBC"))return CAP::Register::CBC;
+	else if(has("IDCODE"))return CAP::Register::IDCODE;
+	else if(has("AXSS"))return CAP::Register::AXSS;
+	else if(has("COR1"))return CAP::Register::COR1;
+	else if(has("WBSTAR"))return CAP::Register::WBSTAR;
+	else if(has("TIMER"))return CAP::Register::TIMER;
+	else if(has("MAGIC0"))return CAP::Register::MAGIC0;
+	else if(has("BOOTSTS"))return CAP::Register::BOOTSTS;
+	else if(has("CTRL1"))return CAP::Register::CTRL1;
+	else if(has("MAGIC1"))return CAP::Register::MAGIC1;
+	else if(has("BSPI"))return CAP::Register::BSPI;
+	return CAP::Register::UNDEFINED;
 	#undef has
 }
-int assemblerGetCommandID(string line){
+CAP::Command assemblerGetCommandID(string line){
 	#define has(x) (line.find(x) != string::npos)
 	#define hOR(x,y) (has(x)||has(y))
-	if(has("NULL"))return XUSP_CAP_CMD_NULL;
-	else if(hOR("WCFG", "WRITE CONFIG"))return XUSP_CAP_CMD_WCFG;
-	else if(hOR("MFW", "MULTIPLE FRAME WRITE"))return XUSP_CAP_CMD_MFW;
-	else if(hOR("DGHIGH", "DEASSERT GHIGH"))return XUSP_CAP_CMD_DGHIGH;
-	else if(hOR("RCFG", "READ CONFIG"))return XUSP_CAP_CMD_RCFG;
-	else if(has("START"))return XUSP_CAP_CMD_START;
-	else if(hOR("URAM", "CLEAR URAM"))return XUSP_CAP_CMD_URAM;
-	else if(hOR("RCRC", "RESET CRC"))return XUSP_CAP_CMD_RCRC;
-	else if(hOR("AGHIGH", "ASSERT GHIGH"))return XUSP_CAP_CMD_AGHIGH;
-	else if(has("SWITCH"))return XUSP_CAP_CMD_SWITCH;
-	else if(has("GRESTORE"))return XUSP_CAP_CMD_GRESTORE;
-	else if(has("SHUTDOWN"))return XUSP_CAP_CMD_SHUTDOWN;
-	else if(has("DESYNC"))return XUSP_CAP_CMD_DESYNC;
-	else if(has("IPROG"))return XUSP_CAP_CMD_IPROG;
-	else if(has("CRCC"))return XUSP_CAP_CMD_CRCC;
-	else if(has("LTIMER"))return XUSP_CAP_CMD_LTIMER;
-	else if(has("BSPI_READ"))return XUSP_CAP_CMD_BSPI_READ;
-	else if(has("FALL_EDGE"))return XUSP_CAP_CMD_FALL_EDGE;
-	return XUSP_CAP_CMD_UNKNOWN;
+	if(has("NULL"))return CAP::Command::NULLCMD;
+	else if(hOR("WCFG", "WRITE CONFIG"))return CAP::Command::WCFG;
+	else if(hOR("MFW", "MULTIPLE FRAME WRITE"))return CAP::Command::MFW;
+	else if(hOR("DGHIGH", "DEASSERT GHIGH"))return CAP::Command::DGHIGH;
+	else if(hOR("RCFG", "READ CONFIG"))return CAP::Command::RCFG;
+	else if(has("START"))return CAP::Command::START;
+	else if(hOR("URAM", "CLEAR URAM"))return CAP::Command::URAM;
+	else if(hOR("RCRC", "RESET CRC"))return CAP::Command::RCRC;
+	else if(hOR("AGHIGH", "ASSERT GHIGH"))return CAP::Command::AGHIGH;
+	else if(has("SWITCH"))return CAP::Command::SWITCH;
+	else if(has("GRESTORE"))return CAP::Command::GRESTORE;
+	else if(has("SHUTDOWN"))return CAP::Command::SHUTDOWN;
+	else if(has("DESYNC"))return CAP::Command::DESYNC;
+	else if(has("IPROG"))return CAP::Command::IPROG;
+	else if(has("CRCC"))return CAP::Command::CRCC;
+	else if(has("LTIMER"))return CAP::Command::LTIMER;
+	else if(has("BSPI_READ"))return CAP::Command::BSPI_READ;
+	else if(has("FALL_EDGE"))return CAP::Command::FALL_EDGE;
+	return CAP::Command::UNDEFINED;
 	#undef has
 	#undef hOR
 }
@@ -124,18 +126,18 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout){
 		if(firstEqPos != string::npos)
 			line.replace(firstEqPos, 1, '=', ' ');
 		#define has(x) (line.find(x) != string::npos)
-		if(has("Name"))designName = parseString::removeQuotes(parseString::getLastWord(line));
-		if(has("FPGA"))partName = parseString::removeQuotes(parseString::getLastWord(line));
-		if(has("Date"))fileDate = parseString::removeQuotes(parseString::getLastWord(line));
-		if(has("Time"))fileTime = parseString::removeQuotes(parseString::getLastWord(line));
+		if(has("Name"))designName = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
+		if(has("FPGA"))partName = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
+		if(has("Date"))fileDate = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
+		if(has("Time"))fileTime = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
 		if(has("HEADER END"))break;
 		#undef has
 	}
     XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
 	XilinxUltraScalePlus::initializeResourceStringParameters();
-	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout);
+	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout, Endianess::BIG_ENDIAN);
 	
-	int regAddr = XUSP_CAP_REG_UNKNOWN;
+	CAP::Register regAddr = CAP::Register::UNDEFINED;
     int frameCount = 0;
     int b = 7, r = 0, c = 0, m = 0;
 	for (string line; getline(fin, line); ) {
@@ -149,155 +151,159 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout){
 		replace(line.begin(), line.end(), ',', ' ');
 		if(has("NOP")){
 			int nopHiddenValue;
-			if(!parseString::getMultipleInts(line, nopHiddenValue))nopHiddenValue = 0;
-			CAPwriteNOPwData(fout, nopHiddenValue);
+			if(!StringFuncs::parseMultipleInts(line, nopHiddenValue))nopHiddenValue = 0;
+			XilinxUltraScalePlus::CAP_writeNOP(fout, 1, nopHiddenValue, Endianess::BIG_ENDIAN);
 		}
 		else if(has("RESERVED")){
 			int reservedHiddenValue;
-			if(!parseString::getMultipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
-			CAPwriteRESERVEDwData(fout, reservedHiddenValue);
+			if(!StringFuncs::parseMultipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
+			XilinxUltraScalePlus::CAP_writeRESERVED(fout, 1, reservedHiddenValue, Endianess::BIG_ENDIAN);
 		}
 		else if(has("@")){
-			int newRegAddr = assemblerGetRegID(line);
+			CAP::Register newRegAddr = assemblerGetRegID(line);
 			if(has("READ REG @")){
 				int readLength;
-				if(!parseString::getMultipleInts(line, readLength)) readLength = 1; // default read length is 1 if unspecified
-				CAPreadReg(fout, newRegAddr, readLength);
+				if(!StringFuncs::parseMultipleInts(line, readLength)) readLength = 1; // default read length is 1 if unspecified
+				XilinxUltraScalePlus::CAP_writeReadRegister(fout, newRegAddr, readLength, Endianess::BIG_ENDIAN);
 			} else {// must be a write then ¯\_(ツ)_/¯
 			
-				if(newRegAddr == XUSP_CAP_REG_UNKNOWN){
+				if(newRegAddr == CAP::Register::UNDEFINED){
 					throw runtime_error(string("Couldn't parse assembly command: \"").append(line).append("\"!"));
 				} else if(has("SELECT REGISTER")){
-					CAPselectReg(fout, newRegAddr);
-				} else if(newRegAddr == XUSP_CAP_REG_FDRI){
-					if(!parseString::getMultipleInts(line, frameCount))
+					XilinxUltraScalePlus::CAP_writeSelectRegister(fout, newRegAddr, Endianess::BIG_ENDIAN);
+				} else if(newRegAddr == CAP::Register::FDRI){
+					if(!StringFuncs::parseMultipleInts(line, frameCount))
 						throw runtime_error(string("FDRI command needs size: \"").append(line).append("\"!"));
 					int wordCount = frameCount * XUSP_WORDS_PER_FRAME;
-					if(regAddr == XUSP_CAP_REG_FDRI) {
-						CAPwriteFDRI2(fout, wordCount);
+					if(regAddr == CAP::Register::FDRI) {
+						XilinxUltraScalePlus::CAP_writeFDRI2(fout, wordCount, Endianess::BIG_ENDIAN);
 					} else {
-						CAPwriteFDRI1(fout, wordCount);
+						XilinxUltraScalePlus::CAP_writeFDRI1(fout, wordCount, Endianess::BIG_ENDIAN);
 					}
-					string frameLine;
-					for (string frameLine; getline(fin, frameLine); ) {
-						if(frameLine.at(frameLine.find_first_not_of(" \t")) == '#')// if #, skip that line as comment
-							continue;
-						uint32_t frameData[XUSP_WORDS_PER_FRAME];
-						if(!parseString::getArrayOfUints(frameLine, XUSP_WORDS_PER_FRAME, &frameData[0]))
-							throw runtime_error(string("Was expecting the data for a full frame on this line: \"").append(frameLine).append("\", because I think there are ").append(to_string(frameCount)).append(" frames left."));
-						//first 3 words are clk, next 90 are the 0-45 and 48-93 data words
-						for (int w = XUSP_WORDS_AT_CLK; w < (XUSP_WORDS_AT_CLK + XUSP_WORDS_BEFORE_CLK) ; w++){
-							fileWriteBE(fout, 32, frameData[w]);
+					if(frameCount > 0){
+						string frameLine;
+						for (string frameLine; getline(fin, frameLine); ) {
+							if(frameLine.at(frameLine.find_first_not_of(" \t")) == '#')// if #, skip that line as comment
+								continue;
+							uint32_t frameData[XUSP_WORDS_PER_FRAME];
+							if(!StringFuncs::parse::arrayOfUints(frameLine, XUSP_WORDS_PER_FRAME, &frameData[0]))
+								throw runtime_error(string("Was expecting the data for a full frame on this line: \"").append(frameLine).append("\", because I think there are ").append(to_string(frameCount)).append(" frames left."));
+							//first 3 words are clk, next 90 are the 0-45 and 48-93 data words
+							for (int w = XUSP_WORDS_AT_CLK; w < (XUSP_WORDS_AT_CLK + XUSP_WORDS_BEFORE_CLK) ; w++){
+								FileIO::write32(fout, frameData[w], Endianess::BIG_ENDIAN);
+							}
+							for (int w = 0; w < XUSP_WORDS_AT_CLK ; w++){
+								FileIO::write32(fout, frameData[w], Endianess::BIG_ENDIAN);
+							}
+							for (int w = (XUSP_WORDS_AT_CLK + XUSP_WORDS_BEFORE_CLK); w < XUSP_WORDS_PER_FRAME ; w++){
+								FileIO::write32(fout, frameData[w], Endianess::BIG_ENDIAN);
+							}
+							
+							frameCount--;
+							if(frameCount == 0)
+								break;
 						}
-						for (int w = 0; w < XUSP_WORDS_AT_CLK ; w++){
-							fileWriteBE(fout, 32, frameData[w]);
-						}
-						for (int w = (XUSP_WORDS_AT_CLK + XUSP_WORDS_BEFORE_CLK); w < XUSP_WORDS_PER_FRAME ; w++){
-							fileWriteBE(fout, 32, frameData[w]);
-						}
-						
-						frameCount--;
-						if(frameCount == 0)
-							break;
+						if(frameCount != 0)
+							throw runtime_error(string("End of file reached while performing FDRI frame writes.!"));
 					}
-					if(frameCount != 0)
-						throw runtime_error(string("End of file reached while performing FDRI frame writes.!"));
-				} else if(newRegAddr == XUSP_CAP_REG_FAR){
-					if(!parseString::getMultipleInts(line, b, r, c, m))
+				} else if(newRegAddr == CAP::Register::FAR){
+					if(!StringFuncs::parseMultipleInts(line, b, r, c, m))
 						throw runtime_error(string("Could not parse the new FAR value: \"").append(line).append("\"!"));
-					CAPwriteFAR(fout, b, r, c, m);
+					uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(b, r, c, m);
+					XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::FAR, farValue, Endianess::BIG_ENDIAN);
 				} else {
 					int newValue;
-					if(!parseString::getMultipleInts(line, newValue))
+					if(!StringFuncs::parseMultipleInts(line, newValue))
 						throw runtime_error(string("Could not parse the new register value: \"").append(line).append("\"!"));
-					CAPwriteReg(fout, newRegAddr, newValue);
+					XilinxUltraScalePlus::CAP_writeRegister(fout, newRegAddr, newValue, Endianess::BIG_ENDIAN);
 				}
 			}
 			regAddr = newRegAddr;
 		} else {// ! has("@")
 			//must have been a command then
-			int cmdID = assemblerGetCommandID(line);
-			if(cmdID == XUSP_CAP_CMD_UNKNOWN) 
+			CAP::Command cmdID = assemblerGetCommandID(line);
+			if(cmdID == CAP::Command::UNDEFINED) 
 				throw runtime_error(string("Couldn't parse assembly command: \"").append(line).append("\"!"));
-			CAPwriteReg(fout, XUSP_CAP_REG_CMD, cmdID);
+			XilinxUltraScalePlus::CAP_writeCommand(fout, cmdID, Endianess::BIG_ENDIAN);
 		}
 		#undef has
 		#undef hOR
 	}
-	XilinxUltraScalePlus::outputBITheaderLengthField(fout, headerLocationOfRemainingFileLength);
+	XilinxUltraScalePlus::outputBITheaderLengthField(fout, headerLocationOfRemainingFileLength, Endianess::BIG_ENDIAN);
 }
-void writeCommandName(ofstream& fout, int cmdNum){
+void writeCommandName(ofstream& fout, CAP::Command cmdNum){
 	switch(cmdNum){
-		case XUSP_CAP_CMD_NULL: fout << "Null Command"; break;
-		case XUSP_CAP_CMD_WCFG: fout << "Write Config"; break;
-		case XUSP_CAP_CMD_MFW: fout << "Multiple Frame Write"; break;
-		case XUSP_CAP_CMD_DGHIGH: fout << "Deassert GHIGH"; break; // TODO: XUSP_CAP_CMD_DGHIGH and XUSP_CAP_CMD_LFRM are the same
-		case XUSP_CAP_CMD_RCFG: fout << "Read Config"; break;
-		case XUSP_CAP_CMD_START: fout << "Start"; break;
-		case XUSP_CAP_CMD_URAM: fout << "Clear URAM"; break;
-		case XUSP_CAP_CMD_RCRC: fout << "Reset CRC"; break;
-		case XUSP_CAP_CMD_AGHIGH: fout << "Assert GHIGH"; break;
-		case XUSP_CAP_CMD_SWITCH: fout << "Switch"; break;
-		case XUSP_CAP_CMD_GRESTORE: fout << "GRestore"; break;
-		case XUSP_CAP_CMD_SHUTDOWN: fout << "Shutdown"; break;
-		case XUSP_CAP_CMD_DESYNC: fout << "Desync"; break;
-		case XUSP_CAP_CMD_IPROG: fout << "IProg"; break;
-		case XUSP_CAP_CMD_CRCC: fout << "CRCC"; break;
-		case XUSP_CAP_CMD_LTIMER: fout << "LTimer"; break;
-		case XUSP_CAP_CMD_BSPI_READ: fout << "BSPI_Read"; break;
-		case XUSP_CAP_CMD_FALL_EDGE: fout << "Fall_Edge"; break;
+		case CAP::Command::NULLCMD: fout << "Null Command"; break;
+		case CAP::Command::WCFG: fout << "Write Config"; break;
+		case CAP::Command::MFW: fout << "Multiple Frame Write"; break;
+		case CAP::Command::DGHIGH: fout << "Deassert GHIGH"; break;
+		case CAP::Command::RCFG: fout << "Read Config"; break;
+		case CAP::Command::START: fout << "Start"; break;
+		case CAP::Command::URAM: fout << "Clear URAM"; break;
+		case CAP::Command::RCRC: fout << "Reset CRC"; break;
+		case CAP::Command::AGHIGH: fout << "Assert GHIGH"; break;
+		case CAP::Command::SWITCH: fout << "Switch"; break;
+		case CAP::Command::GRESTORE: fout << "GRestore"; break;
+		case CAP::Command::SHUTDOWN: fout << "Shutdown"; break;
+		case CAP::Command::DESYNC: fout << "Desync"; break;
+		case CAP::Command::IPROG: fout << "IProg"; break;
+		case CAP::Command::CRCC: fout << "CRCC"; break;
+		case CAP::Command::LTIMER: fout << "LTimer"; break;
+		case CAP::Command::BSPI_READ: fout << "BSPI_Read"; break;
+		case CAP::Command::FALL_EDGE: fout << "Fall_Edge"; break;
 		default: fout << "UNKNOWN"; break;
 	}
 }
-void writeRegisterName(ofstream& fout, int regNum){
+void writeRegisterName(ofstream& fout, CAP::Register regNum){
 	switch(regNum){
-		case XUSP_CAP_REG_CRC: fout << "CRC"; break;
-		case XUSP_CAP_REG_FAR: fout << "FAR"; break;
-		case XUSP_CAP_REG_FDRI: fout << "FDRI"; break;
-		case XUSP_CAP_REG_FDRO: fout << "FDRO"; break;
-		case XUSP_CAP_REG_CMD: fout << "CMD"; break;
-		case XUSP_CAP_REG_CTRL0: fout << "CTRL0"; break;
-		case XUSP_CAP_REG_MASK: fout << "MASK"; break;
-		case XUSP_CAP_REG_STAT: fout << "STAT"; break;
-		case XUSP_CAP_REG_LOUT: fout << "LOUT"; break;
-		case XUSP_CAP_REG_COR0: fout << "COR0"; break;
-		case XUSP_CAP_REG_MFWR: fout << "MFWR"; break;
-		case XUSP_CAP_REG_CBC: fout << "CBC"; break;
-		case XUSP_CAP_REG_IDCODE: fout << "IDCODE"; break;
-		case XUSP_CAP_REG_AXSS: fout << "AXSS"; break;
-		case XUSP_CAP_REG_COR1: fout << "COR1"; break;
-		case XUSP_CAP_REG_WBSTAR: fout << "WBSTAR"; break;
-		case XUSP_CAP_REG_TIMER: fout << "TIMER"; break;
-		case XUSP_CAP_REG_MAGIC0: fout << "MAGIC0"; break;
-		case XUSP_CAP_REG_BOOTSTS: fout << "BOOTSTS"; break;
-		case XUSP_CAP_REG_CTRL1: fout << "CTRL1"; break;
-		case XUSP_CAP_REG_MAGIC1: fout << "MAGIC1"; break;
-		case XUSP_CAP_REG_BSPI: fout << "BSPI"; break;
+		case CAP::Register::CRC: fout << "CRC"; break;
+		case CAP::Register::FAR: fout << "FAR"; break;
+		case CAP::Register::FDRI: fout << "FDRI"; break;
+		case CAP::Register::FDRO: fout << "FDRO"; break;
+		case CAP::Register::CMD: fout << "CMD"; break;
+		case CAP::Register::CTRL0: fout << "CTRL0"; break;
+		case CAP::Register::MASK: fout << "MASK"; break;
+		case CAP::Register::STAT: fout << "STAT"; break;
+		case CAP::Register::LOUT: fout << "LOUT"; break;
+		case CAP::Register::COR0: fout << "COR0"; break;
+		case CAP::Register::MFWR: fout << "MFWR"; break;
+		case CAP::Register::CBC: fout << "CBC"; break;
+		case CAP::Register::IDCODE: fout << "IDCODE"; break;
+		case CAP::Register::AXSS: fout << "AXSS"; break;
+		case CAP::Register::COR1: fout << "COR1"; break;
+		case CAP::Register::WBSTAR: fout << "WBSTAR"; break;
+		case CAP::Register::TIMER: fout << "TIMER"; break;
+		case CAP::Register::MAGIC0: fout << "MAGIC0"; break;
+		case CAP::Register::BOOTSTS: fout << "BOOTSTS"; break;
+		case CAP::Register::CTRL1: fout << "CTRL1"; break;
+		case CAP::Register::MAGIC1: fout << "MAGIC1"; break;
+		case CAP::Register::BSPI: fout << "BSPI"; break;
 		default: fout << "UNKNOWN"; break;
 	}
 }
 void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
-	XilinxUltraScalePlus::readBITheader(fin);
+	loadedBitstreamEndianess = XilinxUltraScalePlus::parseBitstreamEndianess(fin);
+	XilinxUltraScalePlus::parseBITheader(fin, loadedBitstreamEndianess);
     XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
 	XilinxUltraScalePlus::initializeResourceStringParameters();
 	XilinxUltraScalePlus::disassemblerWriteHeader(fout);
 	
-	int regAddr = XUSP_CAP_REG_UNKNOWN;
+	CAP::Register regAddr = CAP::Register::UNDEFINED;
     int wordCount = 0;
     int shadowFrameValid = 0;
     int b = 7, r = 0, c = 0, m = 0;
     //Parse bitstream
     for( ; ; ){
-        fileReadAndDefineBE(instruction, fin, 32);
+		uint32_t instruction = FileIO::read32(fin, Endianess::BIG_ENDIAN);
         if(!fin.good()){
             break; // done with the bitstream
         } else {
-			int instructionType = getInstructionType(instruction);
-			int instructionOPCODE = getInstructionOPCODE(instruction);
-			int instructionPayload = getInstructionPayload(instruction);
+			int instructionType = XilinxUltraScalePlus::CAP_getInstructionType(instruction);
+			CAP::Operation instructionOPCODE = XilinxUltraScalePlus::CAP_getInstructionOperation(instruction);
+			int instructionPayload = XilinxUltraScalePlus::CAP_getInstructionPayload(instruction);
 			if(instructionType == 1) {
-				wordCount = getInstructionType1WordCount(instruction);
-				regAddr = getInstructionType1Register(instruction);
+				wordCount = XilinxUltraScalePlus::CAP_getInstructionWordCount(instruction);
+				regAddr = XilinxUltraScalePlus::CAP_getInstructionRegister(instruction);
 			} else if(instructionType == 2) {
 				wordCount = instructionPayload;
 			} else {
@@ -305,25 +311,25 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 				continue;
 			}
 			
-			if(instructionOPCODE == OP_NOP) {
+			if(instructionOPCODE == CAP::Operation::NOP) {
 				if(instructionPayload != 0)
 					fout << "NOP #" << instructionPayload << endl;
 				else 
 					fout << "NOP" << endl;
-			} else if(instructionOPCODE == OP_RESERVED) {
+			} else if(instructionOPCODE == CAP::Operation::RESERVED) {
 				if(instructionPayload != 0)
 					fout << "RESERVED #" << instructionPayload << endl;
 				else 
 					fout << "RESERVED" << endl;
-			} else if(instructionOPCODE == OP_READ) {
+			} else if(instructionOPCODE == CAP::Operation::READ) {
 				fout << "Read Reg @";
 				writeRegisterName(fout, regAddr);
 				fout << " for length #" << wordCount << endl;
-			} else { // OP_WRITE
-				if((regAddr == XUSP_CAP_REG_FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
+			} else { // CAP::Operation::WRITE
+				if((regAddr == CAP::Register::FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
 					if(shadowFrameValid) {
-						fout << "# Shadow register contents are written to frame (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<") (Frame type: " << XUSP_GET_FRAMETYPE(b,r,c) << ")."<<endl;
-						XUSP_INCR_FAR(b,r,c,m)
+						fout << "# Shadow register contents are written to frame (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ")."<<endl;
+						XilinxUltraScalePlus::CAP_IncrementFAR(b, r, c, m);
 					}
 					shadowFrameValid = 1;
 					int frameCount = (wordCount/XUSP_WORDS_PER_FRAME);
@@ -331,10 +337,10 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 					for(int i = 0 ; i < frameCount ; i++){
 						fout << "# ";
 						if(i == (frameCount-1)) fout << "(This frame data is written to shadow register!)";
-						fout << dec << "Writing frame #" << i << " (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << XUSP_GET_FRAMETYPE(b,r,c) << ") hex data:"<<endl;
+						fout << dec << "Writing frame #" << i << " (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ") hex data:"<<endl;
 						uint32_t frameData[XUSP_WORDS_PER_FRAME];
 						for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
-							fileReadBE(frameData[w], fin, 32);
+							frameData[w] = FileIO::read32(fin, Endianess::BIG_ENDIAN);
 						}
 						fout<<"CLOCK: ";
 						for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++){
@@ -348,13 +354,13 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 							fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
 						}
 						fout << endl;
-						XUSP_INCR_FAR(b,r,c,m)
+						XilinxUltraScalePlus::CAP_IncrementFAR(b, r, c, m);
 					}
-				} else if(regAddr == XUSP_CAP_REG_CMD && wordCount == 1){
-					fileReadAndDefineBE(writeData, fin, 32);
-					writeCommandName(fout, writeData);
+				} else if(regAddr == CAP::Register::CMD && wordCount == 1){
+					uint32_t writeData = FileIO::read32(fin, Endianess::BIG_ENDIAN);
+					writeCommandName(fout, static_cast<CAP::Command>(writeData));
 					fout << ";";
-					if(writeData == XUSP_CAP_CMD_WCFG){
+					if(CAP::Command::WCFG == static_cast<CAP::Command>(writeData)){
 						shadowFrameValid = 0;
 						fout << " (also clears shadow register)";
 					}
@@ -364,11 +370,11 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 					writeRegisterName(fout, regAddr);
 					fout << endl;
 				} else if(wordCount == 1){
-					fileReadAndDefineBE(writeData, fin, 32);
+					uint32_t writeData = FileIO::read32(fin, Endianess::BIG_ENDIAN);
 					fout << "@";
 					writeRegisterName(fout, regAddr);
-					if(regAddr == XUSP_CAP_REG_FAR) {
-						parseFAR(writeData,b,r,c,m);
+					if(regAddr == CAP::Register::FAR) {
+						XilinxUltraScalePlus::CAP_parseFAR(writeData, b, r, c, m);
 						fout << " = BlockType=" << dec <<b<<" RowAddress="<<r<<" MajorAddress="<<c<<" MinorAddress="<<m<< endl;
 					} else {
 						fout << " = 0x" << hex << setw(8) << setfill('0') << writeData << endl;

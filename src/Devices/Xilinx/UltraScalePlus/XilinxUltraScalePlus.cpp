@@ -14,23 +14,21 @@
  * limitations under the License.
  *****************************************************************************/
 #include "XilinxUltraScalePlus.h"
-#include "XilinxUltraScalePlusCAP.h"
 #include <iostream>
 #include <stdio.h>
-#include <string.h>
+#include <string>
+#include <algorithm> //replace
+#include<sstream>
 #include <stdexcept>
 #include <fstream>
 using namespace std;
 
 XilinxUltraScalePlus::XilinxUltraScalePlus()
 {
-	designName = "";
-    partName = "";
     initializedBitstreamPartName = "";
+	loadedBitstreamEndianess = Endianess::BIG_ENDIAN;
     SLRinfo[0] = {0, 0, 0};
     numberOfRows = 0;
-    verbose = 0;
-    warn = 1;
 	blankFrame = calloc(XUSP_WORDS_PER_FRAME, 4);
 }
 
@@ -42,6 +40,45 @@ XilinxUltraScalePlus::~XilinxUltraScalePlus()
 		delete bitstreamBegin;
 }
 
+/**************************************************************************//**
+ * Parses argument options for multiple operations.
+ * @arg @c params A list of parameters to control behavior:
+ * - "clock" or "clk" : Selects the clocks for operation.
+ * - "logic" or "clb" : Selects the blocktype 0 for operation.
+ * - "blockram" or "bram" : Selects the blockram contents for operation.
+ * - If neither clock, logic, or blockram are chosen, chooses all.
+ * - "blank" : Selects bitstream blanking (zeroing) operation.
+ * - "full" : Disabling partial selection.
+ * - "partial" : Writes only selected regions. Selected by default.
+ * - "set" : Selects SET operation.
+ * - "xor" : Selects bitwise XOR operation.
+ * - "or" : Selects bitwise OR operation.
+ * - "and" : Selects bitwise AND operation.
+ *****************************************************************************/
+XilinxUltraScalePlus::SelectedOptions XilinxUltraScalePlus::parseParams(string params){
+	SelectedOptions options = SelectedOptions();
+	replace(params.begin(), params.end(), ',', ' ');
+	stringstream ss(params);
+	string param;
+	while (!ss.eof()) {
+		ss >> param;
+		if(param == "clock" || param == "clk")options.clk++;
+		if(param == "logic" || param == "clb")options.clb++;
+		if(param == "blockram" || param == "bram")options.bram++;
+		if(param == "blank")options.blank++;
+		if(param == "full")options.partial = 0;
+		if(param == "partial")options.partial = 1;
+		if(param == "set")options.op = MergeOP::SET;
+		if(param == "xor")options.op = MergeOP::XOR;
+		if(param == "or")options.op = MergeOP::OR;
+		if(param == "and")options.op = MergeOP::AND;
+		param.clear();
+	}
+	if(options.clk == 0 &&options.clb == 0 && options.bram == 0){ // by default, choose all
+		options.clk = options.bram = options.clb = 1;
+	}
+	return options;
+}
 
 void XilinxUltraScalePlus::initializeResourceStringParameters(){
 	if(partName == "")
@@ -92,13 +129,13 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 		bitstreamEnd = &bitstreamBegin[offset];
     }
 }
-void XilinxUltraScalePlus::region(string params, int posRow, int posCol, int sizeRow, int sizeCol){
+void XilinxUltraScalePlus::region(string params, Rect2D rect){
 	if(params.find("clear") != string::npos) //first do the clearing
-		regionsSelected.clear();
+		regionSelection.clear();
 	if(params.find("add") != string::npos){ //before potential adding
-		if(sizeRow <= 0 || sizeCol <= 0)
+		if(rect.size.row <= 0 || rect.size.col <= 0)
 			throw runtime_error("Regions need to be of positive size.");
-		regionsSelected.push_back({posRow, posCol, sizeRow, sizeCol});
+		regionSelection.push_back(rect);
 	}
 }
 void XilinxUltraScalePlus::blank(string params){
@@ -106,108 +143,180 @@ void XilinxUltraScalePlus::blank(string params){
 	int blankCLB = 0, blankBRAM = 0;
     if(params.find("logic") != string::npos || params.find("clb") != string::npos)blankCLB++;
     if(params.find("blockram") != string::npos || params.find("bram") != string::npos)blankBRAM++;
-	if(regionsSelected.empty()) {
+	if(regionSelection.empty()) {
 		if(blankCLB)
 			memset(&bitstreamCLB[0][0][0], 0, (&bitstreamBRAM[0][0][0]-&bitstreamCLB[0][0][0]));
 		if(blankBRAM)
 			memset(&bitstreamBRAM[0][0][0], 0, (bitstreamEnd-&bitstreamBRAM[0][0][0]));
 	} else {
 		if(blankCLB)
-			for (auto &r : regionsSelected) {
-				// TODO, blank bitstream at selected regions (r->posRow, r->posCol, r->sizeRow, r->sizeCol)
-				//memset(&bitstreamCLB[0][0][0], 0, (&bitstreamBRAM[0][0][0]-&bitstreamCLB[0][0][0]));
+			for (Rect2D &rect : regionSelection) {
+				for(int r = rect.position.row ; r < (rect.position.row + rect.size.row) ; r++){
+					int blankSize = numberOfFramesBeforeCol[rect.position.col + rect.size.col] - numberOfFramesBeforeCol[rect.position.col];
+					blankSize *= XUSP_WORDS_PER_FRAME * 4;
+					memset(&bitstreamCLB[r][rect.position.col][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
+				}
 			}
 		if(blankBRAM)
-			for (auto &r : regionsSelected) {
-				// TODO, blank bitstream at selected regions
-				//memset(&bitstreamBRAM[0][0][0], 0, (bitstreamEnd-&bitstreamBRAM[0][0][0]));
+			for (Rect2D &rect : regionSelection) {
+				for(int r = rect.position.row ; r < (rect.position.row + rect.size.row) ; r++){
+					int blankSize = numberOfBRAMsBeforeCol[rect.position.col + rect.size.col] - numberOfBRAMsBeforeCol[rect.position.col];
+					blankSize *= XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN * XUSP_WORDS_PER_FRAME * 4;
+					memset(&bitstreamCLB[r][numberOfBRAMsBeforeCol[rect.position.col]][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
+				}
 			}
 	}
 }
-void XilinxUltraScalePlus::ensureRowCompatibility(int srcRow, int srcCol, int offsetRow, int sizeCol, int dstRow, int dstCol){
-	int srcRA = (srcRow+offsetRow) / XUSP_CLB_PER_CLOCK_REGION;
-	int dstRA = (dstRow+offsetRow) / XUSP_CLB_PER_CLOCK_REGION;
+void XilinxUltraScalePlus::ensureRowCompatibility(Coord2D src, int offsetRow, int sizeCol, Coord2D dst){
+	int srcRA = (src.row+offsetRow) / XUSP_CLB_PER_CLOCK_REGION;
+	int dstRA = (dst.row+offsetRow) / XUSP_CLB_PER_CLOCK_REGION;
 	for(int c = 0 ; c < sizeCol ; c++){
-		if(resourceString[srcRA][srcCol+c] != resourceString[dstRA][dstCol+c]){//if any two letters are different
-			if(numberOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][srcCol+c]] != numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dstCol+c]]){
+		if(resourceString[srcRA][src.col+c] != resourceString[dstRA][dst.col+c]){//if any two letters are different
+			if(numberOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]] != numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]){
 				//also the number of frames is different?!
-				throw runtime_error(string("Tried to relocate to an incompatible location(").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][srcCol+c]]).append(" to frame type ").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dstCol+c]]).append(")."));
+				throw runtime_error(string("Tried to relocate to an incompatible location(").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]).append(" to frame type ").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]).append(")."));
 			} else {
 				//okay, different col, but same width. Throw warning?
 				if(warn)
-					cout<<"Relocating from frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][srcCol+c]]<<" to frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dstCol+c]]<<".\n";
+					cout<<"Relocating from frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]<<" to frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]<<".\n";
 			}
 		}
 	}
 }
-void XilinxUltraScalePlus::ensureRegionCompatibility(int srcRow, int srcCol, int sizeRow, int sizeCol, int dstRow, int dstCol){
-    for(int r = 0 ; r < sizeRow ; ){ //this loop will iterate south border and all (srcRow:srcRow+sizeRow) at CLBs 0 and 59
-		XilinxUltraScalePlus::ensureRowCompatibility(srcRow, srcCol, r, sizeCol, dstRow, dstCol);
-		if( ((srcRow + r) % XUSP_CLB_PER_CLOCK_REGION) == (XUSP_CLB_PER_CLOCK_REGION-1) ) { // isLastCLBinRow
+void XilinxUltraScalePlus::ensureRegionCompatibility(Rect2D src, Coord2D dst){
+    for(int r = 0 ; r < src.size.row ; ){ //this loop will iterate south border and all (srcRow:srcRow+sizeRow) at CLBs 0 and 59
+		XilinxUltraScalePlus::ensureRowCompatibility(src.position, r, src.size.col, dst);
+		if( ((src.position.row + r) % XUSP_CLB_PER_CLOCK_REGION) == (XUSP_CLB_PER_CLOCK_REGION-1) ) { // isLastCLBinRow
 			r++;
-		} else if( ((srcRow + r) % XUSP_CLB_PER_CLOCK_REGION) == 0 ) { // isFirstCLBinRow
+		} else if( ((src.position.row + r) % XUSP_CLB_PER_CLOCK_REGION) == 0 ) { // isFirstCLBinRow
 			r += (XUSP_CLB_PER_CLOCK_REGION - 2);
 		} else { // get to the next {isLastCLBinRow} 
-			r += (XUSP_CLB_PER_CLOCK_REGION - 1 - ((srcRow + r) % XUSP_CLB_PER_CLOCK_REGION));
+			r += (XUSP_CLB_PER_CLOCK_REGION - 1 - ((src.position.row + r) % XUSP_CLB_PER_CLOCK_REGION));
 		}
     }
-	ensureRowCompatibility(srcRow, srcCol, sizeRow-1, sizeCol, dstRow, dstCol); //iterate north border as well
+	ensureRowCompatibility(src.position, src.size.row-1, src.size.col, dst); //iterate north border as well
 }
-void XilinxUltraScalePlus::merge(XilinxUltraScalePlus* srcBitstream, string params, int srcRow, int srcCol, int sizeRow, int sizeCol, int dstRow, int dstCol){
-    //Parse merge params
-    //This function uses a pointer to the second XUSP instance, but this pointer gets optimized as it is statically provided in the main function
-    int reloCLK = 0, reloCLB = 0, reloBRAM = 0;
-    if(params.find("logic") != string::npos || params.find("clb") != string::npos)reloCLB++;
-    if(params.find("clock") != string::npos || params.find("clk") != string::npos)reloCLK++;
-    if(params.find("blockram") != string::npos || params.find("bram") != string::npos)reloBRAM++;
-	XilinxUltraScalePlus::ensureRegionCompatibility(srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol);
-    if(srcRow%XUSP_CLB_PER_CLOCK_REGION != 0)
+void XilinxUltraScalePlus::merge(XilinxUltraScalePlus* srcBitstream, string params, Rect2D src, Coord2D dst){
+    //This function uses a pointer to the second XUSP instance, but this pointer should get optimized as it is statically provided in the main function
+	SelectedOptions options = XilinxUltraScalePlus::parseParams(params);
+	
+	XilinxUltraScalePlus::ensureRegionCompatibility(src, dst);
+    if(src.position.row%XUSP_CLB_PER_CLOCK_REGION != 0)
         throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
-    if(sizeRow%XUSP_CLB_PER_CLOCK_REGION != 0)
+    if(src.size.row%XUSP_CLB_PER_CLOCK_REGION != 0)
         throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
-    if(dstRow%XUSP_CLB_PER_CLOCK_REGION != 0)
+    if(dst.row%XUSP_CLB_PER_CLOCK_REGION != 0)
         throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
+	
+	Endianess endianDifference = Endian::diff(loadedBitstreamEndianess, srcBitstream->loadedBitstreamEndianess);
+	
+	if((Endianess::NATIVE == endianDifference) && MergeOP::SET == options.op)
+		fastMerge(srcBitstream, options, src, dst);
+	else
+		flexiMerge(srcBitstream, options, endianDifference, src, dst);
+}
 
-    int srcRA  = srcRow  / XUSP_CLB_PER_CLOCK_REGION;
-    int sizeR = sizeRow / XUSP_CLB_PER_CLOCK_REGION;
-    int dstRA  = dstRow  / XUSP_CLB_PER_CLOCK_REGION;
-
-    for(int r = 0 ; r < sizeR ; r++){
-        for(int c = 0 ; c < sizeCol ; c++){
-            if(resourceString[srcRA+r][srcCol+c] != resourceString[dstRA+r][dstCol+c]){//if any two letters are different
-                if(numberOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA+r][srcCol+c]] != numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dstCol+c]]){
-                    //also the number of frames is different?!
-                    throw runtime_error(string("Tried to relocate to an incompatible location(").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA+r][srcCol+c]]).append(" to frame type ").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dstCol+c]]).append(")."));
-                } else {
-                    //okay, different col, but same width. Throw warning?
-                    if(warn)
-                        cout<<"Relocating from frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA+r][srcCol+c]]<<" to frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dstCol+c]]<<".\n";
-                }
-            }
-        }
-    }
+/**************************************************************************//**
+ * If endianesses of the two bitstreams match and you want to do a relocate
+ * operation, fastMerge is the way to go. 
+ *****************************************************************************/
+void XilinxUltraScalePlus::fastMerge(XilinxUltraScalePlus* srcBitstream, SelectedOptions options, Rect2D src, Coord2D dst){
+    int srcRA = src.position.row  / XUSP_CLB_PER_CLOCK_REGION;
+    int sizeR = src.size.row / XUSP_CLB_PER_CLOCK_REGION;
+    int dstRA = dst.row  / XUSP_CLB_PER_CLOCK_REGION;
 
     for(int r = 0 ; r < sizeR ; r++){
-        for(int c = 0 ; c < sizeCol ; c++){//relocate dst[dstRA+r][dstCol+c] <= src[srcRA+r][srcCol+c]
-            for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dstCol+c]] ; m++){
-                if(reloCLB && reloCLK){
-                    memcpy((char*)&bitstreamCLB[dstRA+r][dstCol+c][m*XUSP_WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][m*XUSP_WORDS_PER_FRAME], XUSP_WORDS_PER_FRAME*4);
+        for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
+            for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
+                if(options.clb && options.clk){
+                    memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME], XUSP_WORDS_PER_FRAME*4);
                 } else {
-                    if(reloCLB){
-                        memcpy((char*)&bitstreamCLB[dstRA+r][dstCol+c][m*XUSP_WORDS_PER_FRAME] ,                                        (char*)&srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][m*XUSP_WORDS_PER_FRAME],                                         XUSP_WORDS_BEFORE_CLK*4);
-                        memcpy((char*)&bitstreamCLB[dstRA+r][dstCol+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK], XUSP_WORDS_AFTER_CLK*4);
+                    if(options.clb){
+                        memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,                                        (char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME],                                         XUSP_WORDS_BEFORE_CLK*4);
+                        memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK], XUSP_WORDS_AFTER_CLK*4);
 					}//-if(reloCLB)
-                    if(reloCLK){
+                    if(options.clk){
                         for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++)
-                            bitstreamCLB[dstRA+r][dstCol+c][m*XUSP_WORDS_PER_FRAME + w] = srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][m*XUSP_WORDS_PER_FRAME + w];
+                            bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w] = srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w];
                     }//-if(reloCLK)
                 }//-if(reloCLB && reloCLK)
             }
-            if(reloBRAM){
-                if(resourceString[dstRA+r][dstCol+c] == 'A' || resourceString[dstRA+r][dstCol+c] == 'B' || resourceString[dstRA+r][dstCol+c] == 'C'){//If resource is BRAM, BRAM_L or BRAM_R
-                    memcpy((char*)&bitstreamBRAM[dstRA+r][numberOfBRAMsBeforeCol[dstCol+c]][0] ,(char*)&srcBitstream->bitstreamBRAM[srcRA+r][numberOfBRAMsBeforeCol[srcCol+c]], XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN * XUSP_WORDS_PER_FRAME * 4);
-                }
-            }//-if(reloBRAM)
         }
     }
+	if(options.bram){
+		for(int r = 0 ; r < sizeR ; r++){
+			int bramCols = numberOfBRAMsBeforeCol[src.position.col + src.size.col] - numberOfBRAMsBeforeCol[src.position.col];
+			int srcCol = numberOfBRAMsBeforeCol[src.position.col];
+			int dstCol = numberOfBRAMsBeforeCol[dst.col];
+			memcpy((char*)&bitstreamBRAM[dstRA+r][dstCol][0] ,(char*)&srcBitstream->bitstreamBRAM[srcRA+r][srcCol], bramCols * XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN * XUSP_WORDS_PER_FRAME * 4);
+		}
+	}//-if(reloBRAM)
+}
+void XilinxUltraScalePlus::flexiMerge(XilinxUltraScalePlus* srcBitstream, SelectedOptions options, Endianess endianConversionNeeded, Rect2D src, Coord2D dst){
+    int srcRA = src.position.row  / XUSP_CLB_PER_CLOCK_REGION;
+    int sizeR = src.size.row / XUSP_CLB_PER_CLOCK_REGION;
+    int dstRA = dst.row  / XUSP_CLB_PER_CLOCK_REGION;
+
+    for(int r = 0 ; r < sizeR ; r++){
+        for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
+            for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
+				for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
+					if(XUSP_WORDS_BEFORE_CLK <= w && (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) > w){
+						if(!options.clk)
+							continue;
+					} else {
+						if(!options.clb)
+							continue;
+					}
+					switch(options.op){
+						case MergeOP::SET:
+							bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w]  = Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w], endianConversionNeeded);
+						break;
+						case MergeOP::XOR:
+							bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w] ^= Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w], endianConversionNeeded);
+						break;
+						case MergeOP::OR:
+							bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w] |= Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w], endianConversionNeeded);
+						break;
+						case MergeOP::AND:
+							bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w] &= Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w], endianConversionNeeded);
+						break;
+					}
+				}
+            }
+        }
+    }
+	if(options.bram){
+		for(int r = 0 ; r < sizeR ; r++){
+			int bramCols = numberOfBRAMsBeforeCol[src.position.col + src.size.col] - numberOfBRAMsBeforeCol[src.position.col];
+			int srcCol = numberOfBRAMsBeforeCol[src.position.col];
+			int dstCol = numberOfBRAMsBeforeCol[dst.col];
+			for(int c = 0 ; c < bramCols ; c++){
+				for(int w = 0 ; w < XUSP_WORDS_PER_FRAME * XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN ; w++){
+					switch(options.op){
+						case MergeOP::SET:
+							bitstreamBRAM[dstRA+r][dstCol+c][w]  = Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+						break;
+						case MergeOP::XOR:
+							bitstreamBRAM[dstRA+r][dstCol+c][w] ^= Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+						break;
+						case MergeOP::OR:
+							bitstreamBRAM[dstRA+r][dstCol+c][w] |= Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+						break;
+						case MergeOP::AND:
+							bitstreamBRAM[dstRA+r][dstCol+c][w] &= Endian::NativeToAnyEndianess32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+						break;
+					}
+				}
+			}
+		}
+	}//-if(reloBRAM)
+}
+string XilinxUltraScalePlus::getFrameType(int blockType, int rowAddress, int columnAddress){
+	if(CAP::BlockType::BLOCKRAM == static_cast<CAP::BlockType>(blockType))
+		return "BlockRAM Contents";
+	else if(CAP::BlockType::LOGIC == static_cast<CAP::BlockType>(blockType))
+		return typeOfFramesPerResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];
+	else
+		return "Unknown";
 }

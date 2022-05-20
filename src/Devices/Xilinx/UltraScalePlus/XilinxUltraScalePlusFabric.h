@@ -31,11 +31,6 @@
 #define XUSP_CLB_PER_CLOCK_REGION 60
 #define XUSP_EXTRA_FRAMES_PER_ROW 2
 
-#define XUSP_INCR_FAR_BLOCKTYPE0(b,r,c,m) {m++;if((c == numberOfCols)?(m==XUSP_EXTRA_FRAMES_PER_ROW):(m == numberOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]])){m = 0;c++;if(c == (numberOfCols+1)){c = 0;r++;if(r == numberOfRows){r = 0; b++;}}}}
-#define XUSP_INCR_FAR_BLOCKTYPE1(b,r,c,m) {m++;if((c == numberOfBRAMCols)?(m==XUSP_EXTRA_FRAMES_PER_ROW):(m == XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN)){m = 0;c++;if(c == (numberOfBRAMCols+1)){c = 0;r++;if(r == numberOfRows){r = 0; b++;}}}}
-#define XUSP_INCR_FAR(b,r,c,m) {if(b==0){XUSP_INCR_FAR_BLOCKTYPE0(b,r,c,m);}else{XUSP_INCR_FAR_BLOCKTYPE1(b,r,c,m);}}
-
-#define XUSP_GET_FRAMETYPE(b,r,c) ((b==0)?typeOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]]:"BlockRAM Contents")
 /**
 	The Xilinx US+ fabric in byteman is encoded in the following letters:
  - "S": "INT" resource represented by 76 frames

@@ -15,13 +15,14 @@
  *****************************************************************************/
 #include <iostream>
 #include <stdexcept>
-#include <algorithm>
+#include <algorithm> //replace
 #include <stdio.h>
 #include <istream>
 #include <ostream>
 #include <string>
 #include "byteman.h"
-#include "Common/parseString.h"
+#include "Common/StringFuncs.h"
+#include "Common/Coords.h"
 using namespace std;
 
 #include "Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlus.h"
@@ -45,7 +46,7 @@ void ArchAssemblyHelp(){
 #define paramHas(x) (params.find(x) != string::npos)
 void parseVerbose(string verboseCmd){
 	int verboseValue;
-	if(!parseString::getMultipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
+	if(!StringFuncs::parseMultipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
 	
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
@@ -56,7 +57,7 @@ void parseVerbose(string verboseCmd){
 }
 void parseWarn(string warnCmd){
 	int warnValue;
-	if(!parseString::getMultipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
+	if(!StringFuncs::parseMultipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
 	
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
@@ -66,22 +67,18 @@ void parseWarn(string warnCmd){
 	#endif
 }
 void parseRegion(string regionCmd){
-	string params = parseString::getAllWords(regionCmd);
-	int srcRow, srcCol, sizeRow, sizeCol;
-	parseString::getMultipleInts(regionCmd, srcRow, srcCol, sizeRow, sizeCol);
-	//srcRow = getNthInt(regionCmd, 0);
-	//srcCol = getNthInt(regionCmd, 1);
-	//sizeRow = getNthInt(regionCmd, 2);
-	//sizeCol = getNthInt(regionCmd, 3);
+	string params = StringFuncs::parse::allStringWords(regionCmd);
+	Rect2D rect;
+	StringFuncs::parseMultipleInts(regionCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
-		mainXUSP.region(params, srcRow, srcCol, sizeRow, sizeCol);
-		tempXUSP.region(params, srcRow, srcCol, sizeRow, sizeCol);
+		mainXUSP.region(params, rect);
+		tempXUSP.region(params, rect);
 	}
 	#endif
 }
 void parseBlank(string blankCmd){
-	string params = parseString::getAllWords(blankCmd);
+	string params = StringFuncs::parse::allStringWords(blankCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		if(paramHas("main") || paramHas("first"))
@@ -98,8 +95,8 @@ void parseChange(string changeCmd){
 	#endif
 }
 void parseDevice(string deviceCmd){
-	string params = parseString::getAllButLastWord(deviceCmd);
-	string deviceName = parseString::getLastWord(deviceCmd);
+	string params = StringFuncs::parse::allStringWordsWithoutLastStringWord(deviceCmd);
+	string deviceName = StringFuncs::parse::lastStringWord(deviceCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		if(paramHas("main") || paramHas("first"))
@@ -110,8 +107,8 @@ void parseDevice(string deviceCmd){
 	#endif
 }
 void parseInput(string inputCmd){
-	string params = parseString::getAllButLastWord(inputCmd);
-	string filename = parseString::getLastWord(inputCmd);
+	string params = StringFuncs::parse::allStringWordsWithoutLastStringWord(inputCmd);
+	string filename = StringFuncs::parse::lastStringWord(inputCmd);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP){
 		if(paramHas("main") || paramHas("first"))
@@ -122,38 +119,28 @@ void parseInput(string inputCmd){
 	#endif
 }
 void parseMerge(string mergeCmd){
-	string params = parseString::getAllWords(mergeCmd);
-	int srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol;
-	parseString::getMultipleInts(mergeCmd, srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol);
-	//srcRow = getNthInt(mergeCmd, 0);
-	//srcCol = getNthInt(mergeCmd, 1);
-	//sizeRow = getNthInt(mergeCmd, 2);
-	//sizeCol = getNthInt(mergeCmd, 3);
-	//dstRow = getNthInt(mergeCmd, 4);
-	//dstCol = getNthInt(mergeCmd, 5);
+	string params = StringFuncs::parse::allStringWords(mergeCmd);
+	Rect2D rect;
+	Coord2D dst;
+	StringFuncs::parseMultipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP)
-		mainXUSP.merge(&tempXUSP, params, srcRow, srcCol, sizeRow, sizeCol, dstRow, dstCol);
+		mainXUSP.merge(&tempXUSP, params, rect, dst);
 	#endif
 }
 void parseOutput(string outputCmd){
-	string params = parseString::getAllButLastWord(outputCmd);
-	string filename = parseString::getLastWord(outputCmd);
-	int srcRow, srcCol, sizeRow, sizeCol;
-	parseString::getMultipleInts(outputCmd, srcRow, srcCol, sizeRow, sizeCol);
-	//srcRow = getNthInt(outputCmd, 0);
-	//srcCol = getNthInt(outputCmd, 1);
-	//sizeRow = getNthInt(outputCmd, 2);
-	//sizeCol = getNthInt(outputCmd, 3);
+	string params = StringFuncs::parse::allStringWordsWithoutLastStringWord(outputCmd);
+	string filename = StringFuncs::parse::lastStringWord(outputCmd);
+	Rect2D rect;
+	StringFuncs::parseMultipleInts(outputCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
 	#ifdef XUSP
 	if(selectedArch == XIL_USP)
-		mainXUSP.writeBitstream(filename, params, srcRow, srcCol, sizeRow, sizeCol);
+		mainXUSP.writeBitstream(filename, params, rect);
 	#endif
 }
 void parseAssembly(string assemblyCmd){
-	string filenameIn = parseString::getNthWord(assemblyCmd, 0);
-	string filenameOut = parseString::getNthWord(assemblyCmd, 1);
-	//TODO , text assembly -> bitstream and vice versa
+	string filenameIn = StringFuncs::parse::nthStringWord(assemblyCmd, 0);
+	string filenameOut = StringFuncs::parse::nthStringWord(assemblyCmd, 1);
 	#ifdef XUSP
 	mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
@@ -178,6 +165,7 @@ void setArch(string arch){
 }
 void parseCommand(string nextCmd){
 	replace(nextCmd.begin(), nextCmd.end(), '=', ' ');
+	replace(nextCmd.begin(), nextCmd.end(), ':', ' ');
 	if (nextCmd.at(0) == '-') nextCmd.erase(0, 1);
 	#define cmdIs(x,y) (0 == nextCmd.rfind(x, 0))
 	if(cmdIs("h", "help")){

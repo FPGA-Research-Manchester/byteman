@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright 2022 Kristiyan Manev, University of Manchester
+ * Copyright 2022 Kristiyan Manev (University of Manchester)
  *
  * Licensed under the Apache License, Version 2.0(the "License");
  * you may not use this file except in compliance with the License.
@@ -15,25 +15,28 @@
  *****************************************************************************/
 #ifndef XILINXULTRASCALEPLUS_H
 #define XILINXULTRASCALEPLUS_H
-#include <cstdint> //uint32_t
-#include <vector>
-#include <string>
+#include<cstdint> //uint
+#include<vector>
+#include<string>
+
+#include "../XilinxConfigurationAccessPort.h"
+#include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "XilinxUltraScalePlusFabric.h"
+#include "../../../Common/Endianess.h"
+#include "../../../Common/Coords.h"
 using namespace std;
-class XilinxUltraScalePlus
+class XilinxUltraScalePlus: public XilinxConfigurationAccessPort
 {
     public:
         XilinxUltraScalePlus();
         virtual ~XilinxUltraScalePlus();
 		
-		//
-		struct rect {
-			int posRow, posCol, sizeRow, sizeCol;
+		enum class MergeOP {SET, XOR, OR, AND};
+		struct SelectedOptions{
+			int clk, clb, bram, blank, partial;
+			MergeOP op;
+			SelectedOptions():clk(0),clb(0),bram(0),blank(0),partial(1),op(MergeOP::SET){}
 		};
-		
-		//runtime params
-        int verbose, warn;
-		
 		//XilinxUltraScalePlusDevices.cpp:
 		int getDeviceByIDCODEorThrow(int);
 		int getDeviceByNameOrThrow(string);
@@ -41,51 +44,47 @@ class XilinxUltraScalePlus
 		int getDeviceByName(string);
 		void setDevice(int, string = "");
 		
+		//parse
+		SelectedOptions parseParams(string);
 		//Info
 		static void deviceHelp();
 		
 		//region selector
-		void region(string, int, int, int, int);
+		vector<Rect2D> regionSelection;
+		void region(string, Rect2D);
 		//file IO
         void readBitstream(string);
-        void writeBitstream(string, string, int, int, int, int);
+        void readBitstreamBIT(ifstream&);
 		
         //merge (relocate)
-		void ensureRowCompatibility(int, int, int, int, int, int);
-		void ensureRegionCompatibility(int, int, int, int, int, int);
-        void merge(XilinxUltraScalePlus*, string, int, int, int, int, int, int);
-		//functions
+		void ensureRowCompatibility(Coord2D, int, int, Coord2D);
+		void ensureRegionCompatibility(Rect2D, Coord2D);
+        void merge(XilinxUltraScalePlus*, string, Rect2D, Coord2D);
+		void fastMerge(XilinxUltraScalePlus*,  SelectedOptions, Rect2D, Coord2D);
+		void flexiMerge(XilinxUltraScalePlus*, SelectedOptions, Endianess, Rect2D, Coord2D);
+		//
 		void blank(string);
 		
 		//The ones below are not needed to be public, but we don't really care
+        void writeBitstream(string, string, Rect2D);
+        void writeBitstreamBIT(ofstream&, string, Rect2D, SelectedOptions);
+        void writeBitstreamBIN(ofstream&, string, Rect2D, SelectedOptions);
+		void writeBitstreamMainSingleRegion(ofstream&, Rect2D, SelectedOptions);
+		void writeBitstreamMain(ofstream&, string, Rect2D, SelectedOptions);
 		
-		streamoff outputBITheader(ofstream&);
-		void outputBITfooter(ofstream&);
-		void outputBITheaderLengthField(ofstream&,streamoff);
-		void outputBITregion(ofstream&, int, int, int, int, int, int, int);
-		vector<rect> regionsSelected;
-		
-		//Priv functions
-		void readBITheader(ifstream&);
-        void readBitstreamBIT(ifstream&);
-        void writeBitstreamBIT(ofstream&, string, int, int, int, int);
 		
 		
 		//helper frame
 		void* blankFrame;
 		//bitstream
+        string initializedBitstreamPartName; 		///< The partName of currently initialized bitstream buffers
+		Endianess loadedBitstreamEndianess;   		///< The endianess of the currently loaded bitstream.
         void ensureInitializedBitstreamArrays();
-        string initializedBitstreamPartName; ///< the partName of currently initialized bitstream buffers
         uint32_t* bitstreamBegin;
         uint32_t* bitstreamCLB[XUSP_MAX_ROWS][XUSP_MAX_COLS];
         uint32_t* bitstreamBRAM[XUSP_MAX_ROWS][XUSP_MAX_BRAM_COLS];
 		uint32_t* bitstreamEnd;
 		
-		//bitstream meta
-        string designName;
-		string partName;
-		string fileDate;
-		string fileTime;
 		//device data and resource string
         char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
 		struct {
@@ -111,6 +110,54 @@ class XilinxUltraScalePlus
 		void disassemblerBitToAsm(ifstream&, ofstream&);
 		static void assemblerHelp();
 		void assembler(string, string);
+		// Info 
+		string getFrameType(int, int, int);
+		
+		// CAP FAR
+		inline void CAP_IncrementFAR_BlockType0(int&, int&, int&, int&);
+		inline void CAP_IncrementFAR_BlockType1(int&, int&, int&, int&);
+		inline void CAP_IncrementFAR(int&, int&, int&, int&);
+		
+		// XCAP: override functions for superclass XilinxConfigurationAccessPort
+		uint32_t XCAP_SyncInstruction() override;
+		
+		
+		// CAP: local inline alternatives
+		inline uint32_t CAP_makeSyncInstruction();
+		
+		inline uint32_t CAP_makeInstruction(int, CAP::Operation, CAP::Register, int);
+		inline uint32_t CAP_makeType1Instruction(CAP::Operation, CAP::Register, int);
+		inline uint32_t CAP_makeType1NopInstruction(int=0);
+		inline uint32_t CAP_makeType1ReadInstruction(CAP::Register, int);
+		inline uint32_t CAP_makeType1WriteInstruction(CAP::Register, int);
+		inline uint32_t CAP_makeType1ReservedInstruction(int=0);
+		
+		inline uint32_t CAP_makeType2Instruction(CAP::Operation, int);
+		inline uint32_t CAP_makeType2NopInstruction(int=0);
+		inline uint32_t CAP_makeType2ReadInstruction(int);
+		inline uint32_t CAP_makeType2WriteInstruction(int);
+		inline uint32_t CAP_makeType2ReservedInstruction(int=0);
+		
+		inline int CAP_getInstructionType(int);
+		inline CAP::Operation CAP_getInstructionOperation(int);
+		inline int CAP_getInstructionPayload(int);
+		inline CAP::Register CAP_getInstructionRegister(int);
+		inline int CAP_getInstructionWordCount(int);
+		inline void CAP_parseFAR(int, int&, int&, int&, int&);
+		inline uint32_t CAP_makeFAR(int, int, int, int);
+		
+		//CAP write
+		inline void CAP_writeSelectRegister(ofstream&, CAP::Register, Endianess=Endianess::NATIVE);
+		inline void CAP_writeReadRegister(ofstream&, CAP::Register, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeNOP(ofstream&, int=0, int=0, Endianess=Endianess::NATIVE);
+		inline void CAP_writeRESERVED(ofstream&, int=0, int=0, Endianess=Endianess::NATIVE);
+		inline void CAP_writeRegister(ofstream&, CAP::Register, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeMaskAndRegister(ofstream&, CAP::Register, int, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeCommand(ofstream&, CAP::Command, Endianess=Endianess::NATIVE);
+		inline void CAP_writeFDRI1(ofstream&, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeFDRI2(ofstream&, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeFDRI(ofstream&, int, Endianess=Endianess::NATIVE);
+		
     protected:
     private:
 		//constant arrays defining US+ fabric

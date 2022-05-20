@@ -14,19 +14,4 @@
 # limitations under the License.
 ###############################################################################
 
-#Add all sources for Xilinx US+
-set(XUSP_SRC 
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusInput.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusOutput.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusDevices.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusAssembler.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusConfigurationAccessPort.cpp)
-
-#build byteman natively (without the library)
-target_sources(byteman PRIVATE ${XUSP_SRC})
-
-#Create a Xilinx US+ library, disabled because the github cross compilation can't link them and throws errors
-#add_library(XUSP_LIB STATIC ${XUSP_SRC} ${XILINX_SHARED_SRC})
-#target_compile_definitions(XUSP_LIB PUBLIC XUSP_LIB)
-
+add_subdirectory(Xilinx)
