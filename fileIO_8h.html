@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -69,453 +69,169 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fileIO.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
-<code>#include &quot;<a class="el" href="endianess_8h_source.html">endianess.h</a>&quot;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &quot;Endianess.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for fileIO.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="fileIO_8h__incl.png" border="0" usemap="#src_2Common_2fileIO_8h" alt=""/></div>
 <map name="src_2Common_2fileIO_8h" id="src_2Common_2fileIO_8h">
-<area shape="rect" title=" " alt="" coords="59,5,214,32"/>
-<area shape="rect" title=" " alt="" coords="5,80,76,107"/>
-<area shape="rect" title=" " alt="" coords="100,80,173,107"/>
-<area shape="rect" href="endianess_8h.html" title=" " alt="" coords="197,80,297,107"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="fileIO_8h__dep__incl.png" border="0" usemap="#src_2Common_2fileIO_8hdep" alt=""/></div>
-<map name="src_2Common_2fileIO_8hdep" id="src_2Common_2fileIO_8hdep">
-<area shape="rect" title=" " alt="" coords="242,5,397,32"/>
-<area shape="rect" href="XilinxUltraScalePlusAssembler_8cpp.html" title=" " alt="" coords="5,80,199,136"/>
-<area shape="rect" href="XilinxUltraScalePlusInput_8cpp.html" title=" " alt="" coords="223,80,416,136"/>
-<area shape="rect" href="XilinxUltraScalePlusOutput_8cpp.html" title=" " alt="" coords="440,80,633,136"/>
+<area shape="rect" title=" " alt="" coords="160,5,315,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,85,107"/>
+<area shape="rect" title=" " alt="" coords="109,80,176,107"/>
+<area shape="rect" title=" " alt="" coords="201,80,274,107"/>
+<area shape="rect" title=" " alt="" coords="299,80,357,107"/>
+<area shape="rect" title=" " alt="" coords="382,80,482,107"/>
 </map>
 </div>
 </div>
 <p><a href="fileIO_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ae60133370d6cc3cbec5e1128e7cdd764"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#ae60133370d6cc3cbec5e1128e7cdd764">fileExtensionIs</a>(filename,  extension)&#160;&#160;&#160;((filename.length() &gt;= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), &quot;.&quot; extension)):0)</td></tr>
-<tr class="separator:ae60133370d6cc3cbec5e1128e7cdd764"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e07adcf3fd37acce77de4e0d40eef91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a5e07adcf3fd37acce77de4e0d40eef91">fileReadAndDefineBE</a>(var,  istream,  bits)&#160;&#160;&#160;uint##bits##_t var;<a class="el" href="fileIO_8h.html#a964b3dea1427c22915c1433933a12f57">fileReadBE</a>(var,istream,bits)</td></tr>
-<tr class="separator:a5e07adcf3fd37acce77de4e0d40eef91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e4fd818ccfb1fdd5a192460bde516b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a3e4fd818ccfb1fdd5a192460bde516b7">fileReadAndDefineChars</a>(var,  istream,  num)&#160;&#160;&#160;char* var=new char[num+1];<a class="el" href="fileIO_8h.html#a03e5819441c5cf843d1d7960dd123fea">fileReadChars</a>(var,istream,num)</td></tr>
-<tr class="separator:a3e4fd818ccfb1fdd5a192460bde516b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f117637e64945f51e19cc13af3658bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a9f117637e64945f51e19cc13af3658bd">fileReadAndDefineLE</a>(var,  istream,  bits)&#160;&#160;&#160;uint##bits##_t var;<a class="el" href="fileIO_8h.html#a9334fcb19e3c0d1c607bea00a30ec22b">fileReadLE</a>(var,istream,bits)</td></tr>
-<tr class="separator:a9f117637e64945f51e19cc13af3658bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f889dab225c95d55eec52e5d93c0356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a3f889dab225c95d55eec52e5d93c0356">fileReadAndMallocChars</a>(var,  istream,  num)&#160;&#160;&#160;var=new char[num+1];<a class="el" href="fileIO_8h.html#a03e5819441c5cf843d1d7960dd123fea">fileReadChars</a>(var,istream,num)</td></tr>
-<tr class="separator:a3f889dab225c95d55eec52e5d93c0356"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a964b3dea1427c22915c1433933a12f57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a964b3dea1427c22915c1433933a12f57">fileReadBE</a>(var,  istream,  bits)&#160;&#160;&#160;istream.read(reinterpret_cast&lt;char*&gt;(&amp;var), sizeof(var));var=htobe##bits(var);</td></tr>
-<tr class="separator:a964b3dea1427c22915c1433933a12f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03e5819441c5cf843d1d7960dd123fea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a03e5819441c5cf843d1d7960dd123fea">fileReadChars</a>(var,  istream,  num)&#160;&#160;&#160;istream.read(var, num);var[num]='\0';</td></tr>
-<tr class="separator:a03e5819441c5cf843d1d7960dd123fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9334fcb19e3c0d1c607bea00a30ec22b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a9334fcb19e3c0d1c607bea00a30ec22b">fileReadLE</a>(var,  istream,  bits)&#160;&#160;&#160;istream.read(reinterpret_cast&lt;char*&gt;(&amp;var), sizeof(var));var=htole##bits(var);</td></tr>
-<tr class="separator:a9334fcb19e3c0d1c607bea00a30ec22b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3db9b8628defcee8e3c5427ee176bda9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a3db9b8628defcee8e3c5427ee176bda9">fileWriteBE</a>(ostream,  bits,  var)&#160;&#160;&#160;{uint##bits##_t tmp=var;tmp=htobe##bits(tmp);ostream.write(reinterpret_cast&lt;char*&gt;(&amp;tmp), sizeof(tmp));}</td></tr>
-<tr class="separator:a3db9b8628defcee8e3c5427ee176bda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab17558e9c12e51055bbbe4d40af6bf61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#ab17558e9c12e51055bbbe4d40af6bf61">fileWriteLE</a>(ostream,  bits,  var)&#160;&#160;&#160;{uint##bits##_t tmp=var;tmp=htole##bits(tmp);ostream.write(reinterpret_cast&lt;char*&gt;(&amp;tmp), sizeof(tmp));}</td></tr>
-<tr class="separator:ab17558e9c12e51055bbbe4d40af6bf61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3313d716f699725ff72a1e42cdaee2b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fileIO_8h.html#a3313d716f699725ff72a1e42cdaee2b2">fileWriteString</a>(ostream,  var)&#160;&#160;&#160;ostream.write(var.c_str(), var.size()+1);</td></tr>
-<tr class="separator:a3313d716f699725ff72a1e42cdaee2b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceFileIO"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html">FileIO</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a48ad27e27400610acdcfbec9a2143b18"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a48ad27e27400610acdcfbec9a2143b18">FileIO::read16</a> (ifstream &amp;fin, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:a48ad27e27400610acdcfbec9a2143b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ef39a2e52da1b679e3224ab5129cbc"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a20ef39a2e52da1b679e3224ab5129cbc">FileIO::read32</a> (ifstream &amp;fin, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:a20ef39a2e52da1b679e3224ab5129cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28bb2b6e0ab2ebda1786875326f559e"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#af28bb2b6e0ab2ebda1786875326f559e">FileIO::read64</a> (ifstream &amp;fin, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:af28bb2b6e0ab2ebda1786875326f559e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac11848720874b2da9fc5a91f74b6a9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aaac11848720874b2da9fc5a91f74b6a9">FileIO::read8</a> (ifstream &amp;fin, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:aaac11848720874b2da9fc5a91f74b6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085994f39dbf647129a14e7b0c3e8051"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a085994f39dbf647129a14e7b0c3e8051">FileIO::readBigEndian16</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a085994f39dbf647129a14e7b0c3e8051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5094057ac3e48a146c33a8bddeaae60f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f">FileIO::readBigEndian32</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a5094057ac3e48a146c33a8bddeaae60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a212ace114b2fb742afa3c087d241f8a0"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a212ace114b2fb742afa3c087d241f8a0">FileIO::readBigEndian64</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a212ace114b2fb742afa3c087d241f8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b3ce5c5a9f4a1f51046bc42404b898b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a6b3ce5c5a9f4a1f51046bc42404b898b">FileIO::readBigEndian8</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a6b3ce5c5a9f4a1f51046bc42404b898b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff728cecb8bbf042b408a8d5bb4f003"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a7ff728cecb8bbf042b408a8d5bb4f003">FileIO::readBitSwappedBigEndian16</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a7ff728cecb8bbf042b408a8d5bb4f003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f45a6b86516466bf524cb04b333eade"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade">FileIO::readBitSwappedBigEndian32</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a5f45a6b86516466bf524cb04b333eade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ee1ec8607da98fd4714328abe2cb49"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a55ee1ec8607da98fd4714328abe2cb49">FileIO::readBitSwappedBigEndian64</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a55ee1ec8607da98fd4714328abe2cb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae68c150a79b76ab8c535f3f1f0dc125f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ae68c150a79b76ab8c535f3f1f0dc125f">FileIO::readBitSwappedBigEndian8</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:ae68c150a79b76ab8c535f3f1f0dc125f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7317fb7deef65dddb8b12103fde926f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ad7317fb7deef65dddb8b12103fde926f">FileIO::readBitSwappedLittleEndian16</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:ad7317fb7deef65dddb8b12103fde926f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd6138a1888683dec937c2f97c24972"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972">FileIO::readBitSwappedLittleEndian32</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a2fd6138a1888683dec937c2f97c24972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56a6aeca7f4fcd6372dc70d3bed9bb2"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ae56a6aeca7f4fcd6372dc70d3bed9bb2">FileIO::readBitSwappedLittleEndian64</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:ae56a6aeca7f4fcd6372dc70d3bed9bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8484befba94b86c1db9ac06c6983572b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a8484befba94b86c1db9ac06c6983572b">FileIO::readBitSwappedLittleEndian8</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a8484befba94b86c1db9ac06c6983572b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c1f8c1d6dbb4a1d3aca546cb18f37e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ad5c1f8c1d6dbb4a1d3aca546cb18f37e">FileIO::readBitSwappedString</a> (ifstream &amp;fin, int stringSize)</td></tr>
+<tr class="separator:ad5c1f8c1d6dbb4a1d3aca546cb18f37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4378c85d423dceeae5c5a3456a3b2e0a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a4378c85d423dceeae5c5a3456a3b2e0a">FileIO::readBitSwappedStringIntoCharArray</a> (ifstream &amp;fin, int stringSize)</td></tr>
+<tr class="separator:a4378c85d423dceeae5c5a3456a3b2e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80c5593d0aec390026ffc092f36aa1a0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a80c5593d0aec390026ffc092f36aa1a0">FileIO::readLittleEndian16</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a80c5593d0aec390026ffc092f36aa1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a993f428d792c535bc6455ac6e4eb0e26"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26">FileIO::readLittleEndian32</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:a993f428d792c535bc6455ac6e4eb0e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea46d694f116963f4d0aeeef79128832"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aea46d694f116963f4d0aeeef79128832">FileIO::readLittleEndian64</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:aea46d694f116963f4d0aeeef79128832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6786d975cc8ef0a86fa8ee0c19697a9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ac6786d975cc8ef0a86fa8ee0c19697a9">FileIO::readLittleEndian8</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:ac6786d975cc8ef0a86fa8ee0c19697a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc737b05c8f0ac44e5034835c6cf836c"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#adc737b05c8f0ac44e5034835c6cf836c">FileIO::readNative16</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:adc737b05c8f0ac44e5034835c6cf836c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab253c19d57dd469687a36fe5b097eb34"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34">FileIO::readNative32</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:ab253c19d57dd469687a36fe5b097eb34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef79dc4b69253b2e1bc59040d72f944"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#abef79dc4b69253b2e1bc59040d72f944">FileIO::readNative64</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:abef79dc4b69253b2e1bc59040d72f944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d460c7fbb05e4104490c4ee18f7d84"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ae6d460c7fbb05e4104490c4ee18f7d84">FileIO::readNative8</a> (ifstream &amp;fin)</td></tr>
+<tr class="separator:ae6d460c7fbb05e4104490c4ee18f7d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41f7dbc9c1ed8a51accfadf6c8fc978"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ad41f7dbc9c1ed8a51accfadf6c8fc978">FileIO::readString</a> (ifstream &amp;fin, int stringSize)</td></tr>
+<tr class="separator:ad41f7dbc9c1ed8a51accfadf6c8fc978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ee94219def7a61d6a292db5107510c"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aa2ee94219def7a61d6a292db5107510c">FileIO::readString</a> (ifstream &amp;fin, int stringSize, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:aa2ee94219def7a61d6a292db5107510c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5860a0c03441d5786067ac7a8165269b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a5860a0c03441d5786067ac7a8165269b">FileIO::readStringIntoCharArray</a> (ifstream &amp;fin, int stringSize)</td></tr>
+<tr class="separator:a5860a0c03441d5786067ac7a8165269b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca7000ffc79f3e2dc9ab247611ce146b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aca7000ffc79f3e2dc9ab247611ce146b">FileIO::readStringIntoCharArray</a> (ifstream &amp;fin, int stringSize, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:aca7000ffc79f3e2dc9ab247611ce146b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f2fd16a042a61fb659f8b4ffa33055"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055">FileIO::write16</a> (ofstream &amp;fout, uint16_t writeValue, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:af1f2fd16a042a61fb659f8b4ffa33055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a016934d3d8c167e7784f826b987cda3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f">FileIO::write32</a> (ofstream &amp;fout, uint32_t writeValue, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:a016934d3d8c167e7784f826b987cda3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a893970325dbe166fd080b186290c4902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a893970325dbe166fd080b186290c4902">FileIO::write64</a> (ofstream &amp;fout, uint64_t writeValue, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:a893970325dbe166fd080b186290c4902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20a00cf946aecd26e3a65b95ea0f7f60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a20a00cf946aecd26e3a65b95ea0f7f60">FileIO::write8</a> (ofstream &amp;fout, uint8_t writeValue, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e=<a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>)</td></tr>
+<tr class="separator:a20a00cf946aecd26e3a65b95ea0f7f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd151d7c49816539cdf5bc4810e16eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb">FileIO::writeBigEndian16</a> (ofstream &amp;fout, uint16_t writeValue)</td></tr>
+<tr class="separator:aebd151d7c49816539cdf5bc4810e16eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b69d50fa3cb892a02baca2296f1c54d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d">FileIO::writeBigEndian32</a> (ofstream &amp;fout, uint32_t writeValue)</td></tr>
+<tr class="separator:a0b69d50fa3cb892a02baca2296f1c54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372e3a89b4f2ea72d70df9a6b4179a4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a372e3a89b4f2ea72d70df9a6b4179a4b">FileIO::writeBigEndian64</a> (ofstream &amp;fout, uint64_t writeValue)</td></tr>
+<tr class="separator:a372e3a89b4f2ea72d70df9a6b4179a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace27e8bf091c04daa573cf803e609311"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ace27e8bf091c04daa573cf803e609311">FileIO::writeBigEndian8</a> (ofstream &amp;fout, uint8_t writeValue)</td></tr>
+<tr class="separator:ace27e8bf091c04daa573cf803e609311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9ba90afc8f12d350f74a0c8bdc6b579"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579">FileIO::writeBitSwappedBigEndian16</a> (ofstream &amp;fout, uint16_t writeValue)</td></tr>
+<tr class="separator:ab9ba90afc8f12d350f74a0c8bdc6b579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af08039fd5e011e286b216b67140959ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#af08039fd5e011e286b216b67140959ea">FileIO::writeBitSwappedBigEndian32</a> (ofstream &amp;fout, uint32_t writeValue)</td></tr>
+<tr class="separator:af08039fd5e011e286b216b67140959ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da32dd4ed25628ef4e57fe04bc95699"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a8da32dd4ed25628ef4e57fe04bc95699">FileIO::writeBitSwappedBigEndian64</a> (ofstream &amp;fout, uint64_t writeValue)</td></tr>
+<tr class="separator:a8da32dd4ed25628ef4e57fe04bc95699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a197b48d6f4ff8c29bef92be77150612c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a197b48d6f4ff8c29bef92be77150612c">FileIO::writeBitSwappedBigEndian8</a> (ofstream &amp;fout, uint8_t writeValue)</td></tr>
+<tr class="separator:a197b48d6f4ff8c29bef92be77150612c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292876a9b466fe12087f42ae7f11a3ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a292876a9b466fe12087f42ae7f11a3ac">FileIO::writeBitSwappedCharArray</a> (ofstream &amp;fout, char *writeCharArray, int outputSize=0)</td></tr>
+<tr class="separator:a292876a9b466fe12087f42ae7f11a3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d0bf27e959dcb5ff6dc46f4a084f35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35">FileIO::writeBitSwappedLittleEndian16</a> (ofstream &amp;fout, uint16_t writeValue)</td></tr>
+<tr class="separator:ac8d0bf27e959dcb5ff6dc46f4a084f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60d14999a525e60b548765722c0cc49a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a60d14999a525e60b548765722c0cc49a">FileIO::writeBitSwappedLittleEndian32</a> (ofstream &amp;fout, uint32_t writeValue)</td></tr>
+<tr class="separator:a60d14999a525e60b548765722c0cc49a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ecf194d4a737c4c2bb23de88dc3d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ae3ecf194d4a737c4c2bb23de88dc3d7c">FileIO::writeBitSwappedLittleEndian64</a> (ofstream &amp;fout, uint64_t writeValue)</td></tr>
+<tr class="separator:ae3ecf194d4a737c4c2bb23de88dc3d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad920e62a7bbafa7d5ba065b5e1f0fab7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ad920e62a7bbafa7d5ba065b5e1f0fab7">FileIO::writeBitSwappedLittleEndian8</a> (ofstream &amp;fout, uint8_t writeValue)</td></tr>
+<tr class="separator:ad920e62a7bbafa7d5ba065b5e1f0fab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4f6a73076432b1faddd4d63f0b0c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aaf4f6a73076432b1faddd4d63f0b0c86">FileIO::writeBitSwappedString</a> (ofstream &amp;fout, string writeString, int outputSize=0)</td></tr>
+<tr class="separator:aaf4f6a73076432b1faddd4d63f0b0c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9553e33558a077d4b712d7fd93277f85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a9553e33558a077d4b712d7fd93277f85">FileIO::writeCharArray</a> (ofstream &amp;fout, char *writeCharArray, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:a9553e33558a077d4b712d7fd93277f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cbb5683933fa90553b693096bb43140"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a2cbb5683933fa90553b693096bb43140">FileIO::writeCharArray</a> (ofstream &amp;fout, char *writeCharArray, int outputSize, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:a2cbb5683933fa90553b693096bb43140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5eaf9d11d5a85c7802d0c1559bd6a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a9c5eaf9d11d5a85c7802d0c1559bd6a1">FileIO::writeCharArray</a> (ofstream &amp;fout, char *writeCharArray, int outputSize=0)</td></tr>
+<tr class="separator:a9c5eaf9d11d5a85c7802d0c1559bd6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd7f11b68ed7b5c0a65d5b1e5703492"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#affd7f11b68ed7b5c0a65d5b1e5703492">FileIO::writeLittleEndian16</a> (ofstream &amp;fout, uint16_t writeValue)</td></tr>
+<tr class="separator:affd7f11b68ed7b5c0a65d5b1e5703492"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf3a57cefdd3a674741d9447c5fcf2a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aaf3a57cefdd3a674741d9447c5fcf2a2">FileIO::writeLittleEndian32</a> (ofstream &amp;fout, uint32_t writeValue)</td></tr>
+<tr class="separator:aaf3a57cefdd3a674741d9447c5fcf2a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a346126f8cebb9afcf8e1f96eee5c0b81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a346126f8cebb9afcf8e1f96eee5c0b81">FileIO::writeLittleEndian64</a> (ofstream &amp;fout, uint64_t writeValue)</td></tr>
+<tr class="separator:a346126f8cebb9afcf8e1f96eee5c0b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e2948acf480edba90b44e53ab9b3bdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a9e2948acf480edba90b44e53ab9b3bdf">FileIO::writeLittleEndian8</a> (ofstream &amp;fout, uint8_t writeValue)</td></tr>
+<tr class="separator:a9e2948acf480edba90b44e53ab9b3bdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e75b6c4bdcf4df31b0bf5513f0a42b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#ad8e75b6c4bdcf4df31b0bf5513f0a42b">FileIO::writeNative16</a> (ofstream &amp;fout, uint16_t writeValue)</td></tr>
+<tr class="separator:ad8e75b6c4bdcf4df31b0bf5513f0a42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0dbfd2ab8a248ca642203dc84bd2a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a8c0dbfd2ab8a248ca642203dc84bd2a4">FileIO::writeNative32</a> (ofstream &amp;fout, uint32_t writeValue)</td></tr>
+<tr class="separator:a8c0dbfd2ab8a248ca642203dc84bd2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77525085e0d5170ed3a4d13e0e367c66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a77525085e0d5170ed3a4d13e0e367c66">FileIO::writeNative64</a> (ofstream &amp;fout, uint64_t writeValue)</td></tr>
+<tr class="separator:a77525085e0d5170ed3a4d13e0e367c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa760d33a91428f38b62a647ed615160e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#aa760d33a91428f38b62a647ed615160e">FileIO::writeNative8</a> (ofstream &amp;fout, uint8_t writeValue)</td></tr>
+<tr class="separator:aa760d33a91428f38b62a647ed615160e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ca63187b58b8cc78338fa631d50778"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#a32ca63187b58b8cc78338fa631d50778">FileIO::writeString</a> (ofstream &amp;fout, string writeString, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:a32ca63187b58b8cc78338fa631d50778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53ead3bdfc65340b5f46c46dd9ce578"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#af53ead3bdfc65340b5f46c46dd9ce578">FileIO::writeString</a> (ofstream &amp;fout, string writeString, int outputSize, <a class="el" href="endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:af53ead3bdfc65340b5f46c46dd9ce578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3354ec506fedaa1272ca02c6da08cd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0">FileIO::writeString</a> (ofstream &amp;fout, string writeString, int outputSize=0)</td></tr>
+<tr class="separator:af3354ec506fedaa1272ca02c6da08cd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ae60133370d6cc3cbec5e1128e7cdd764"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae60133370d6cc3cbec5e1128e7cdd764">&#9670;&nbsp;</a></span>fileExtensionIs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileExtensionIs</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">filename, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">extension&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((filename.length() &gt;= sizeof(extension))?(0 == filename.compare (filename.length() - sizeof(extension), sizeof(extension), &quot;.&quot; extension)):0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00038">38</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a5e07adcf3fd37acce77de4e0d40eef91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e07adcf3fd37acce77de4e0d40eef91">&#9670;&nbsp;</a></span>fileReadAndDefineBE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadAndDefineBE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bits&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;uint##bits##_t var;<a class="el" href="fileIO_8h.html#a964b3dea1427c22915c1433933a12f57">fileReadBE</a>(var,istream,bits)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00025">25</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a3e4fd818ccfb1fdd5a192460bde516b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e4fd818ccfb1fdd5a192460bde516b7">&#9670;&nbsp;</a></span>fileReadAndDefineChars</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadAndDefineChars</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">num&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;char* var=new char[num+1];<a class="el" href="fileIO_8h.html#a03e5819441c5cf843d1d7960dd123fea">fileReadChars</a>(var,istream,num)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00032">32</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a9f117637e64945f51e19cc13af3658bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f117637e64945f51e19cc13af3658bd">&#9670;&nbsp;</a></span>fileReadAndDefineLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadAndDefineLE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bits&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;uint##bits##_t var;<a class="el" href="fileIO_8h.html#a9334fcb19e3c0d1c607bea00a30ec22b">fileReadLE</a>(var,istream,bits)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00028">28</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a3f889dab225c95d55eec52e5d93c0356"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f889dab225c95d55eec52e5d93c0356">&#9670;&nbsp;</a></span>fileReadAndMallocChars</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadAndMallocChars</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">num&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;var=new char[num+1];<a class="el" href="fileIO_8h.html#a03e5819441c5cf843d1d7960dd123fea">fileReadChars</a>(var,istream,num)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00031">31</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a964b3dea1427c22915c1433933a12f57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a964b3dea1427c22915c1433933a12f57">&#9670;&nbsp;</a></span>fileReadBE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadBE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bits&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;istream.read(reinterpret_cast&lt;char*&gt;(&amp;var), sizeof(var));var=htobe##bits(var);</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00024">24</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a03e5819441c5cf843d1d7960dd123fea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03e5819441c5cf843d1d7960dd123fea">&#9670;&nbsp;</a></span>fileReadChars</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadChars</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">num&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;istream.read(var, num);var[num]='\0';</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00030">30</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a9334fcb19e3c0d1c607bea00a30ec22b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9334fcb19e3c0d1c607bea00a30ec22b">&#9670;&nbsp;</a></span>fileReadLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileReadLE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">istream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bits&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;istream.read(reinterpret_cast&lt;char*&gt;(&amp;var), sizeof(var));var=htole##bits(var);</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00027">27</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a3db9b8628defcee8e3c5427ee176bda9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3db9b8628defcee8e3c5427ee176bda9">&#9670;&nbsp;</a></span>fileWriteBE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileWriteBE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ostream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bits, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{uint##bits##_t tmp=var;tmp=htobe##bits(tmp);ostream.write(reinterpret_cast&lt;char*&gt;(&amp;tmp), sizeof(tmp));}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00034">34</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="ab17558e9c12e51055bbbe4d40af6bf61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab17558e9c12e51055bbbe4d40af6bf61">&#9670;&nbsp;</a></span>fileWriteLE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileWriteLE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ostream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">bits, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{uint##bits##_t tmp=var;tmp=htole##bits(tmp);ostream.write(reinterpret_cast&lt;char*&gt;(&amp;tmp), sizeof(tmp));}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00035">35</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
-<a id="a3313d716f699725ff72a1e42cdaee2b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3313d716f699725ff72a1e42cdaee2b2">&#9670;&nbsp;</a></span>fileWriteString</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define fileWriteString</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ostream, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">var&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;ostream.write(var.c_str(), var.size()+1);</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="fileIO_8h_source.html#l00036">36</a> of file <a class="el" href="fileIO_8h_source.html">fileIO.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 16 2022 10:51:52 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 20 2022 12:12:33 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

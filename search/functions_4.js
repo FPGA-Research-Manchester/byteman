@@ -1,15 +1,6 @@
 var searchData=
 [
-  ['getallbutlastword_1167',['getAllButLastWord',['../namespaceparseString.html#a156035f1927fc6dd66e7794c66ae5d09',1,'parseString']]],
-  ['getallwords_1168',['getAllWords',['../namespaceparseString.html#a75a5ff436adf2f18ea551bd79f7a55a0',1,'parseString']]],
-  ['getarrayofuints_1169',['getArrayOfUints',['../namespaceparseString.html#aa6915705d52deeb19251292a5e909f0c',1,'parseString']]],
-  ['getdevicebyidcode_1170',['getDeviceByIDCODE',['../classXilinxUltraScalePlus.html#ac6b62d574927bf0a5b301313f93aa03a',1,'XilinxUltraScalePlus']]],
-  ['getdevicebyidcodeorthrow_1171',['getDeviceByIDCODEorThrow',['../classXilinxUltraScalePlus.html#a260e46db70345e03ee37836fb84b7e9f',1,'XilinxUltraScalePlus']]],
-  ['getdevicebyname_1172',['getDeviceByName',['../classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4',1,'XilinxUltraScalePlus']]],
-  ['getdevicebynameorthrow_1173',['getDeviceByNameOrThrow',['../classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef',1,'XilinxUltraScalePlus']]],
-  ['getlastword_1174',['getLastWord',['../namespaceparseString.html#acf127a8aab609e361d70dcde4695587e',1,'parseString']]],
-  ['getmultipleints_1175',['getMultipleInts',['../namespaceparseString.html#ac06596f0fa8d4218207a451019f59df4',1,'parseString']]],
-  ['getmultipleintsrecursive_1176',['getMultipleIntsRecursive',['../namespaceparseString.html#a4063a6e089107c7165ddcd00cca52160',1,'parseString::getMultipleIntsRecursive(stringstream &amp;ss)'],['../namespaceparseString.html#ad4730cddd822192382d2bce810d33d27',1,'parseString::getMultipleIntsRecursive(stringstream &amp;ss, int &amp;x, Rest &amp;... args)']]],
-  ['getnthint_1177',['getNthInt',['../namespaceparseString.html#abc83bb87dc2f9d9c97ce3526fffc1fcc',1,'parseString']]],
-  ['getnthword_1178',['getNthWord',['../namespaceparseString.html#a4ebf24f6e18184c895f6c8d88d4422c7',1,'parseString']]]
+  ['ensureinitializedbitstreamarrays_1319',['ensureInitializedBitstreamArrays',['../classXilinxUltraScalePlus.html#a8dcdd76d3e0d12a68a8b5dfdbee74ce2',1,'XilinxUltraScalePlus']]],
+  ['ensureregioncompatibility_1320',['ensureRegionCompatibility',['../classXilinxUltraScalePlus.html#aee23123bf4e839c04197f1a8f11441e4',1,'XilinxUltraScalePlus']]],
+  ['ensurerowcompatibility_1321',['ensureRowCompatibility',['../classXilinxUltraScalePlus.html#a2877557d807ee21ed7f111459380f944',1,'XilinxUltraScalePlus']]]
 ];

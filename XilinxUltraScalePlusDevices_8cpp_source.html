@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -90,7 +90,7 @@ $(function() {
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="XilinxUltraScalePlus_8h.html">XilinxUltraScalePlus.h</a>&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="XilinxUltraScalePlusDevices_8h.html">XilinxUltraScalePlusDevices.h</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span> <span class="comment">//transform</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classXilinxUltraScalePlus.html#a260e46db70345e03ee37836fb84b7e9f">   25</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classXilinxUltraScalePlus.html#a260e46db70345e03ee37836fb84b7e9f">XilinxUltraScalePlus::getDeviceByIDCODEorThrow</a>(<span class="keywordtype">int</span> IDCODE){</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> deviceID = <a class="code" href="classXilinxUltraScalePlus.html#ac6b62d574927bf0a5b301313f93aa03a">XilinxUltraScalePlus::getDeviceByIDCODE</a>(IDCODE);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(deviceID == <a class="code" href="XilinxUltraScalePlusDevices_8h.html#a4367d92c255a06ef3daed7619eb37754a3b282f8cc138fd186269fb1c2a6488eb">XUSP_DEVICE_NULL</a>)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown device with IDCODE = &quot;</span>).append(to_string(IDCODE)).append(<span class="stringliteral">&quot; .&quot;</span>));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown device with IDCODE = &quot;</span>).append(<a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">to_string</a>(IDCODE)).append(<span class="stringliteral">&quot; .&quot;</span>));</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> deviceID;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef">   31</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef">XilinxUltraScalePlus::getDeviceByNameOrThrow</a>(<span class="keywordtype">string</span> name){</div>
@@ -1037,6 +1037,7 @@ $(function() {
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_ad23833b9ba4076e5fc8b24eef868eba2"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#ad23833b9ba4076e5fc8b24eef868eba2">XCVU37P_IDCODE</a></div><div class="ttdeci">#define XCVU37P_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l00715">XilinxUltraScalePlusDevices.h:715</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_aa27562d18ee23a7da14d5fa1a7efba0c"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#aa27562d18ee23a7da14d5fa1a7efba0c">XCAU10P_IDCODE</a></div><div class="ttdeci">#define XCAU10P_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l00220">XilinxUltraScalePlusDevices.h:220</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_ac96e0037f26711644c5a5b57fe2c5769"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#ac96e0037f26711644c5a5b57fe2c5769">XCAU15P</a></div><div class="ttdeci">#define XCAU15P()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l00225">XilinxUltraScalePlusDevices.h:225</a></div></div>
+<div class="ttc" id="anamespaceEndian_html_a8ec188b346b1ec0ff9004c53dab82053"><div class="ttname"><a href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianess e)</div><div class="ttdef"><b>Definition:</b> <a href="endianess_8h_source.html#l00052">endianess.h:52</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_a4e6273e8a7da040fd80799973b500b0e"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#a4e6273e8a7da040fd80799973b500b0e">XCVU57P_IDCODE</a></div><div class="ttdeci">#define XCVU57P_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l00801">XilinxUltraScalePlusDevices.h:801</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_a4367d92c255a06ef3daed7619eb37754ae51c5f9000ebd2fedf4d80277b1dbf88"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#a4367d92c255a06ef3daed7619eb37754ae51c5f9000ebd2fedf4d80277b1dbf88">XUSP_DEVICE_KV260</a></div><div class="ttdeci">@ XUSP_DEVICE_KV260</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l00152">XilinxUltraScalePlusDevices.h:152</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_a4367d92c255a06ef3daed7619eb37754a1557562164c372cd444ba6233b30e4e3"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#a4367d92c255a06ef3daed7619eb37754a1557562164c372cd444ba6233b30e4e3">XUSP_DEVICE_ZU_3EG</a></div><div class="ttdeci">@ XUSP_DEVICE_ZU_3EG</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l00118">XilinxUltraScalePlusDevices.h:118</a></div></div>
@@ -1207,7 +1208,7 @@ $(function() {
 <div class="ttc" id="aXilinxUltraScalePlusDevices_8h_html_ac1495b29726a9a69f362b45d430fc9d6"><div class="ttname"><a href="XilinxUltraScalePlusDevices_8h.html#ac1495b29726a9a69f362b45d430fc9d6">XCZU25DR_IDCODE</a></div><div class="ttdeci">#define XCZU25DR_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusDevices_8h_source.html#l01039">XilinxUltraScalePlusDevices.h:1039</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 16 2022 10:51:52 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 20 2022 12:12:33 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

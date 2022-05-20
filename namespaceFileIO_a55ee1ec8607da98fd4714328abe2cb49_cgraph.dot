@@ -1,0 +1,21 @@
+digraph "FileIO::readBitSwappedBigEndian64"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="FileIO::readBitSwappedBig\lEndian64",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Endian::BitSwap64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a57e481bbc161c01a68eadc25ae9e24c9",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="FileIO::readBigEndian64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a212ace114b2fb742afa3c087d241f8a0",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Endian::NativeToBigEndian64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a11c0d291e85247cd4ce004ca26bf3728",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Endian::swapbytes64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#ac57bf63196271e3e09c5029a4ea972e3",tooltip=" "];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="FileIO::readNative64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#abef79dc4b69253b2e1bc59040d72f944",tooltip=" "];
+}

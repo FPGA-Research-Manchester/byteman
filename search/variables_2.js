@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['designname_1233',['designName',['../classXilinxUltraScalePlus.html#a8048613efa3dea1333a48c773ac051eb',1,'XilinxUltraScalePlus']]]
+  ['clb_1471',['clb',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#af06e4ce458e8eb1da7da117560cd772d',1,'XilinxUltraScalePlus::SelectedOptions']]],
+  ['clk_1472',['clk',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#ab113cbfbfb3c65a106f8f787dc6f36f3',1,'XilinxUltraScalePlus::SelectedOptions']]],
+  ['col_1473',['col',['../structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1',1,'Coord2D']]]
 ];

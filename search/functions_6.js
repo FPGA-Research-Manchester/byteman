@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['main_1181',['main',['../byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'byteman.cpp']]],
-  ['merge_1182',['merge',['../classXilinxUltraScalePlus.html#a2736a4556848cdea1b411ef5d4a2fd56',1,'XilinxUltraScalePlus']]]
+  ['getdevicebyidcode_1325',['getDeviceByIDCODE',['../classXilinxUltraScalePlus.html#ac6b62d574927bf0a5b301313f93aa03a',1,'XilinxUltraScalePlus']]],
+  ['getdevicebyidcodeorthrow_1326',['getDeviceByIDCODEorThrow',['../classXilinxUltraScalePlus.html#a260e46db70345e03ee37836fb84b7e9f',1,'XilinxUltraScalePlus']]],
+  ['getdevicebyname_1327',['getDeviceByName',['../classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4',1,'XilinxUltraScalePlus']]],
+  ['getdevicebynameorthrow_1328',['getDeviceByNameOrThrow',['../classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef',1,'XilinxUltraScalePlus']]],
+  ['getframetype_1329',['getFrameType',['../classXilinxUltraScalePlus.html#afc958d093237ae1d55ced73df2153c36',1,'XilinxUltraScalePlus']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['regionsselected_1251',['regionsSelected',['../classXilinxUltraScalePlus.html#aa746af07720a1b77c8ad929dd968f699',1,'XilinxUltraScalePlus']]],
-  ['resourcestring_1252',['resourceString',['../classXilinxUltraScalePlus.html#a4350d926cea84271beffe74e8bef1a30',1,'XilinxUltraScalePlus']]]
+  ['op_1487',['op',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#a045affe0924df212c8e10a7628e88652',1,'XilinxUltraScalePlus::SelectedOptions']]]
 ];

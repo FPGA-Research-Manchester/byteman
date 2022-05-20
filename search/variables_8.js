@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['selectedarch_1253',['selectedArch',['../byteman_8cpp.html#aa22c142004b4926579c873d72b1878a3',1,'byteman.cpp']]],
-  ['sizecol_1254',['sizeCol',['../structXilinxUltraScalePlus_1_1rect.html#afa1e331a3f374035fdd75445acb6333b',1,'XilinxUltraScalePlus::rect']]],
-  ['sizerow_1255',['sizeRow',['../structXilinxUltraScalePlus_1_1rect.html#aa6e9c9a217bbe4307218ed40600563b8',1,'XilinxUltraScalePlus::rect']]],
-  ['slrinfo_1256',['SLRinfo',['../classXilinxUltraScalePlus.html#accdbda92d414a910d05fc101bd128e3c',1,'XilinxUltraScalePlus']]]
+  ['partial_1488',['partial',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#afaa5c742f5fd8a91011b6231f30c3755',1,'XilinxUltraScalePlus::SelectedOptions']]],
+  ['position_1489',['position',['../structRect2D.html#ae5afd98d6745784930feac5136640a85',1,'Rect2D']]]
 ];

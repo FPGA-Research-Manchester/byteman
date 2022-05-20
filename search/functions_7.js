@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['outputbitfooter_1183',['outputBITfooter',['../classXilinxUltraScalePlus.html#a4a2585026a2c51a19ccc56a8d2a6ed84',1,'XilinxUltraScalePlus']]],
-  ['outputbitheader_1184',['outputBITheader',['../classXilinxUltraScalePlus.html#afc559facdbe2265596b7e082efc26c58',1,'XilinxUltraScalePlus']]],
-  ['outputbitheaderlengthfield_1185',['outputBITheaderLengthField',['../classXilinxUltraScalePlus.html#a6fa73ce20c6b008bbf415c128d686a32',1,'XilinxUltraScalePlus']]],
-  ['outputbitregion_1186',['outputBITregion',['../classXilinxUltraScalePlus.html#af79c926353e06d991963170d37eea6dc',1,'XilinxUltraScalePlus']]]
+  ['initializeresourcestringparameters_1330',['initializeResourceStringParameters',['../classXilinxUltraScalePlus.html#ac32e568fe37e12bfc1509b4d690528b6',1,'XilinxUltraScalePlus']]],
+  ['is_5flittle_5fendian_1331',['IS_LITTLE_ENDIAN',['../endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c',1,'endianess.h']]]
 ];

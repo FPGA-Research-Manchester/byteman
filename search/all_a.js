@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['numberofbramcols_91',['numberOfBRAMCols',['../classXilinxUltraScalePlus.html#a9884d46b6456c33582754395251ebd52',1,'XilinxUltraScalePlus']]],
-  ['numberofbramsbeforecol_92',['numberOfBRAMsBeforeCol',['../classXilinxUltraScalePlus.html#a6d64e2f307ee9ee304a7b73cc4eea5ea',1,'XilinxUltraScalePlus']]],
-  ['numberofcols_93',['numberOfCols',['../classXilinxUltraScalePlus.html#a56cf74542440c3e1ae15173779640034',1,'XilinxUltraScalePlus']]],
-  ['numberofframesbeforecol_94',['numberOfFramesBeforeCol',['../classXilinxUltraScalePlus.html#abe5a83a1c8b3298f213a097ecc9c6103',1,'XilinxUltraScalePlus']]],
-  ['numberofframesperrow_95',['numberOfFramesPerRow',['../classXilinxUltraScalePlus.html#ae87f7b9d5dac788de2620a093850bd53',1,'XilinxUltraScalePlus']]],
-  ['numberofrows_96',['numberOfRows',['../classXilinxUltraScalePlus.html#a9ee262ce5f44683e442d889ad500551a',1,'XilinxUltraScalePlus']]],
-  ['numberofslrs_97',['numberOfSLRs',['../classXilinxUltraScalePlus.html#ac0309d1d6b9850a91f795c812ed9d0d4',1,'XilinxUltraScalePlus']]],
-  ['numberofwordsperrow_98',['numberOfWordsPerRow',['../classXilinxUltraScalePlus.html#a6f06ab0db46bd2d8042a20a490437f57',1,'XilinxUltraScalePlus']]]
+  ['magic0_138',['MAGIC0',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059af151505167483b7189e4a563ce7fb775',1,'CAP']]],
+  ['magic1_139',['MAGIC1',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a7c5693628f8cc575ce93b5c30a1d2370',1,'CAP']]],
+  ['main_140',['main',['../byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'byteman.cpp']]],
+  ['mask_141',['MASK',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a0a9501840acacfc8efe7522f5340000c',1,'CAP']]],
+  ['merge_142',['merge',['../classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207',1,'XilinxUltraScalePlus']]],
+  ['mergeop_143',['MergeOP',['../classXilinxUltraScalePlus.html#a3192af6406834fe9e0ba7e408ff7d108',1,'XilinxUltraScalePlus']]],
+  ['mfw_144',['MFW',['../namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620aac2b039894d9ff9f351ff30e3067c866',1,'CAP']]],
+  ['mfwr_145',['MFWR',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a5e565cc05b6b65654a7c61d26aad293b',1,'CAP']]]
 ];

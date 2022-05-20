@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -211,7 +211,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="help_8cpp_source.html#l00033">usage()</a>, and <a class="el" href="help_8cpp_source.html#l00057">usageArg()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00232">main()</a>, and <a class="el" href="byteman_8cpp_source.html#l00179">parseCommand()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00220">main()</a>, and <a class="el" href="byteman_8cpp_source.html#l00166">parseCommand()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -287,8 +287,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-stdin                 : Continue using standard input. See \&quot;byteman -h stdin\&quot;&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Examples: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180 67 120 30 240 37 -o logic 240 37 120 30 relocatedFilter.bit&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180 67 120 30 180 67 -o logic 180 67 120 30 mergedFilter.bit&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
@@ -331,7 +331,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <a class="code" href="byteman_8cpp.html#a738947aa9d79698f8128fb7cafa487d2">ArchAssemblyHelp</a>();</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00039">ArchAssemblyHelp()</a>.</p>
+<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00040">ArchAssemblyHelp()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="help_8cpp_source.html#l00057">usageArg()</a>.</p>
 <div class="dynheader">
@@ -454,7 +454,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="byteman_8cpp.html#a3ae97399f2ff99155de4dd7f9b7e9077">ArchDeviceHelp</a>();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00033">ArchDeviceHelp()</a>.</p>
+<p class="reference">References <a class="el" href="byteman_8cpp_source.html#l00034">ArchDeviceHelp()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="help_8cpp_source.html#l00057">usageArg()</a>.</p>
 <div class="dynheader">
@@ -913,8 +913,8 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <div class="ttc" id="ahelp_8cpp_html_a2ef30c42cbc289d899a8be5d2d8f77d0"><div class="ttname"><a href="help_8cpp.html#a2ef30c42cbc289d899a8be5d2d8f77d0">usage</a></div><div class="ttdeci">void usage()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00033">help.cpp:33</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a33a04cbd434c5ebe2c0113f5acb2c089"><div class="ttname"><a href="help_8cpp.html#a33a04cbd434c5ebe2c0113f5acb2c089">usage_warn</a></div><div class="ttdeci">void usage_warn()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00096">help.cpp:96</a></div></div>
-<div class="ttc" id="abyteman_8cpp_html_a3ae97399f2ff99155de4dd7f9b7e9077"><div class="ttname"><a href="byteman_8cpp.html#a3ae97399f2ff99155de4dd7f9b7e9077">ArchDeviceHelp</a></div><div class="ttdeci">void ArchDeviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00033">byteman.cpp:33</a></div></div>
-<div class="ttc" id="abyteman_8cpp_html_a738947aa9d79698f8128fb7cafa487d2"><div class="ttname"><a href="byteman_8cpp.html#a738947aa9d79698f8128fb7cafa487d2">ArchAssemblyHelp</a></div><div class="ttdeci">void ArchAssemblyHelp()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00039">byteman.cpp:39</a></div></div>
+<div class="ttc" id="abyteman_8cpp_html_a3ae97399f2ff99155de4dd7f9b7e9077"><div class="ttname"><a href="byteman_8cpp.html#a3ae97399f2ff99155de4dd7f9b7e9077">ArchDeviceHelp</a></div><div class="ttdeci">void ArchDeviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00034">byteman.cpp:34</a></div></div>
+<div class="ttc" id="abyteman_8cpp_html_a738947aa9d79698f8128fb7cafa487d2"><div class="ttname"><a href="byteman_8cpp.html#a738947aa9d79698f8128fb7cafa487d2">ArchAssemblyHelp</a></div><div class="ttdeci">void ArchAssemblyHelp()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00040">byteman.cpp:40</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_af1a5368922439cb186899b545fd1965e"><div class="ttname"><a href="help_8cpp.html#af1a5368922439cb186899b545fd1965e">usage_help</a></div><div class="ttdeci">void usage_help()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00115">help.cpp:115</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_aede32834476091f4eb0ae6749f41eacf"><div class="ttname"><a href="help_8cpp.html#aede32834476091f4eb0ae6749f41eacf">usage_assembly</a></div><div class="ttdeci">void usage_assembly()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00131">help.cpp:131</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_ac40cf37cc9ea9b9a8f099b4974724fad"><div class="ttname"><a href="help_8cpp.html#ac40cf37cc9ea9b9a8f099b4974724fad">usage_output</a></div><div class="ttdeci">void usage_output()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00127">help.cpp:127</a></div></div>
@@ -933,7 +933,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="ahelp_8cpp_html_a49223a995301022ffb657717122d88de"><div class="ttname"><a href="help_8cpp.html#a49223a995301022ffb657717122d88de">usage_stdin</a></div><div class="ttdeci">void usage_stdin()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00138">help.cpp:138</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 16 2022 10:51:53 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 20 2022 12:12:33 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

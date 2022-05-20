@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['ensureinitializedbitstreamarrays_1164',['ensureInitializedBitstreamArrays',['../classXilinxUltraScalePlus.html#a8dcdd76d3e0d12a68a8b5dfdbee74ce2',1,'XilinxUltraScalePlus']]],
-  ['ensureregioncompatibility_1165',['ensureRegionCompatibility',['../classXilinxUltraScalePlus.html#ac4e521e12241b4c8d971724fef17d2d9',1,'XilinxUltraScalePlus']]],
-  ['ensurerowcompatibility_1166',['ensureRowCompatibility',['../classXilinxUltraScalePlus.html#a743835eb4f8f894dfd07417067926ace',1,'XilinxUltraScalePlus']]]
+  ['devicehelp_1315',['deviceHelp',['../classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91',1,'XilinxUltraScalePlus']]],
+  ['diff_1316',['diff',['../namespaceEndian.html#a341a75d4d5983d8e5572d021f945d9a5',1,'Endian']]],
+  ['disassemblerbittoasm_1317',['disassemblerBitToAsm',['../classXilinxUltraScalePlus.html#a54f9af4b6723a99c0b9e8e9c9b424d00',1,'XilinxUltraScalePlus']]],
+  ['disassemblerwriteheader_1318',['disassemblerWriteHeader',['../classXilinxUltraScalePlus.html#ae0a45232482c635ab06e413cdcac3854',1,'XilinxUltraScalePlus']]]
 ];

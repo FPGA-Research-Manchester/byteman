@@ -1,5 +1,25 @@
 var searchData=
 [
-  ['todo_144',['TODO',['../XilinxUltraScalePlusDevices_8h.html#ac610b33ec571920dfe1c0f5d93f60516',1,'XilinxUltraScalePlusDevices.h']]],
-  ['torow_145',['toRow',['../classXilinxUltraScalePlus.html#a8a2eaed0315e9533c23677f57aeb363a',1,'XilinxUltraScalePlus']]]
+  ['checkif_233',['checkIf',['../namespaceStringFuncs_1_1checkIf.html',1,'StringFuncs']]],
+  ['parse_234',['parse',['../namespaceStringFuncs_1_1parse.html',1,'StringFuncs']]],
+  ['selectedarch_235',['selectedArch',['../byteman_8cpp.html#aa22c142004b4926579c873d72b1878a3',1,'byteman.cpp']]],
+  ['selectedoptions_236',['SelectedOptions',['../structXilinxUltraScalePlus_1_1SelectedOptions.html',1,'XilinxUltraScalePlus::SelectedOptions'],['../structXilinxUltraScalePlus_1_1SelectedOptions.html#ae1f1646b864fe4e0c7c872b80d41029d',1,'XilinxUltraScalePlus::SelectedOptions::SelectedOptions()']]],
+  ['set_237',['SET',['../classXilinxUltraScalePlus.html#a3192af6406834fe9e0ba7e408ff7d108a8c52684db8f49511e9b44471716bf164',1,'XilinxUltraScalePlus']]],
+  ['setarch_238',['setArch',['../byteman_8cpp.html#a098d934d069c59b7087c186b8fae2ef6',1,'byteman.cpp']]],
+  ['setdevice_239',['setDevice',['../classXilinxUltraScalePlus.html#a762297dd90b02efcbb4a4aa0274dd34b',1,'XilinxUltraScalePlus']]],
+  ['shutdown_240',['SHUTDOWN',['../namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620ab9984206799a7f9fe4bd1b6c18db8112',1,'CAP']]],
+  ['size_241',['size',['../structRect2D.html#a5d621868d788e999caada275e9c0cbc6',1,'Rect2D']]],
+  ['slrinfo_242',['SLRinfo',['../classXilinxUltraScalePlus.html#accdbda92d414a910d05fc101bd128e3c',1,'XilinxUltraScalePlus']]],
+  ['start_243',['START',['../namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620ab078ffd28db767c502ac367053f6e0ac',1,'CAP']]],
+  ['stat_244',['STAT',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a73f760f8a96d0acec3dec614a688ff79',1,'CAP']]],
+  ['stringendswith_245',['stringEndsWith',['../namespaceStringFuncs_1_1checkIf.html#a591ffb1a44f3c8b1f55800ee870bc17b',1,'StringFuncs::checkIf']]],
+  ['stringfuncs_246',['StringFuncs',['../namespaceStringFuncs.html',1,'']]],
+  ['stringfuncs_2eh_247',['StringFuncs.h',['../StringFuncs_8h.html',1,'']]],
+  ['swapbytes16_248',['swapbytes16',['../namespaceEndian.html#a374ca218715c0e791eb073a14a66647f',1,'Endian']]],
+  ['swapbytes32_249',['swapbytes32',['../namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606',1,'Endian']]],
+  ['swapbytes64_250',['swapbytes64',['../namespaceEndian.html#ac57bf63196271e3e09c5029a4ea972e3',1,'Endian']]],
+  ['swapendian_251',['swapEndian',['../namespaceEndian.html#a250cb73cab89a72ecae4c250ca0c41f5',1,'Endian']]],
+  ['swapendianbits_252',['swapEndianBits',['../namespaceEndian.html#ae84a9fd69f0e2b208ae1beb9c5b3d331',1,'Endian']]],
+  ['switch_253',['SWITCH',['../namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620a4239f063a3d4fb9d38a0182be6e39e76',1,'CAP']]],
+  ['sync_254',['SYNC',['../namespaceCAP.html#a0ebffaa7b6bae161b42cea35ba92b7a1',1,'CAP']]]
 ];
