@@ -15,7 +15,7 @@ digraph "parseMerge"
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="Endian::fixEndianIfNative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a8a0c2ce68f029b6a669ea1009ab0054b",tooltip=" "];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
+  Node6 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
   Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="Endian::swapEndian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a250cb73cab89a72ecae4c250ca0c41f5",tooltip=" "];

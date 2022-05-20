@@ -7,7 +7,7 @@ digraph "Endian::NativeToBigEndian16"
   rankdir="LR";
   Node1 [label="Endian::NativeToBigEndian16",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
+  Node2 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="Endian::swapbytes16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f",tooltip=" "];
 }

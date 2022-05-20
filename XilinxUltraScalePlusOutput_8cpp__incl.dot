@@ -22,7 +22,9 @@ digraph "src/Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlusOutput.cpp"
   Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 [label="XilinxUltraScalePlusFabric.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$XilinxUltraScalePlusFabric_8h.html",tooltip=" "];
   Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="../../../Common/Endianess.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node9 [label="../../../Common/Endianess.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html",tooltip=" "];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="../../../Common/Coords.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coords_8h.html",tooltip=" "];
   Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

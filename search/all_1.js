@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['big_5fendian_17',['BIG_ENDIAN',['../endianess_8h.html#a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432',1,'endianess.h']]],
-  ['big_5fendian_5fbitswapped_18',['BIG_ENDIAN_BITSWAPPED',['../endianess_8h.html#a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0',1,'endianess.h']]],
+  ['big_5fendian_17',['BIG_ENDIAN',['../Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432',1,'Endianess.h']]],
+  ['big_5fendian_5fbitswapped_18',['BIG_ENDIAN_BITSWAPPED',['../Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0',1,'Endianess.h']]],
   ['bigendiantonative16_19',['BigEndianToNative16',['../namespaceEndian.html#afb674eed3d17c61f0d99ecb1b2737ad5',1,'Endian']]],
   ['bigendiantonative32_20',['BigEndianToNative32',['../namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae',1,'Endian']]],
   ['bigendiantonative64_21',['BigEndianToNative64',['../namespaceEndian.html#a6bde5f348e92ca9982cb0dbe832ea0fe',1,'Endian']]],

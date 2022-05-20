@@ -11,7 +11,7 @@ digraph "FileIO::writeBitSwappedBigEndian16"
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="Endian::NativeToBigEndian16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d",tooltip=" "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
+  Node4 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
   Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="Endian::swapbytes16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f",tooltip=" "];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

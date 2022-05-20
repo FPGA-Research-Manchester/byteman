@@ -21,7 +21,7 @@ digraph "XilinxUltraScalePlus::CAP_writeNOP"
   Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 [label="Endian::NativeToBigEndian32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88",tooltip=" "];
   Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node9 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
+  Node9 [label="IS_LITTLE_ENDIAN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c",tooltip=" "];
   Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node10 [label="Endian::swapbytes32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606",tooltip=" "];
   Node5 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
