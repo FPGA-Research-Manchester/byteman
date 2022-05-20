@@ -170,7 +170,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00142">NativeToBigEndian16()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00203">FileIO::writeBigEndian16()</a>, and <a class="el" href="fileIO_8h_source.html#l00239">FileIO::writeBitSwappedBigEndian16()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00203">FileIO::writeBigEndian16()</a>, and <a class="el" href="FileIO_8h_source.html#l00239">FileIO::writeBitSwappedBigEndian16()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -227,7 +227,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00145">NativeToBigEndian32()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00199">FileIO::writeBigEndian32()</a>, and <a class="el" href="fileIO_8h_source.html#l00234">FileIO::writeBitSwappedBigEndian32()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00199">FileIO::writeBigEndian32()</a>, and <a class="el" href="FileIO_8h_source.html#l00234">FileIO::writeBitSwappedBigEndian32()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -305,7 +305,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00148">NativeToBigEndian64()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00195">FileIO::writeBigEndian64()</a>, and <a class="el" href="fileIO_8h_source.html#l00229">FileIO::writeBitSwappedBigEndian64()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00195">FileIO::writeBigEndian64()</a>, and <a class="el" href="FileIO_8h_source.html#l00229">FileIO::writeBitSwappedBigEndian64()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -360,7 +360,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> ((uint8_t)(x));</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00207">FileIO::writeBigEndian8()</a>, and <a class="el" href="fileIO_8h_source.html#l00244">FileIO::writeBitSwappedBigEndian8()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00207">FileIO::writeBigEndian8()</a>, and <a class="el" href="FileIO_8h_source.html#l00244">FileIO::writeBitSwappedBigEndian8()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -404,7 +404,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordflow">return</span> (((x &amp; 0x8080)&gt;&gt;7) | ((x &amp; 0x4040)&gt;&gt;5) | ((x &amp; 0x2020)&gt;&gt;3) | ((x &amp; 0x1010)&gt;&gt;1) | ((x &amp; 0x0808)&lt;&lt;1) | ((x &amp; 0x0404)&lt;&lt;3) | ((x &amp; 0x0202)&lt;&lt;5) | ((x &amp; 0x0101)&lt;&lt;7));</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    } </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00207">NativeToAnyEndianess16()</a>, <a class="el" href="fileIO_8h_source.html#l00078">FileIO::readBitSwappedBigEndian16()</a>, <a class="el" href="fileIO_8h_source.html#l00091">FileIO::readBitSwappedLittleEndian16()</a>, <a class="el" href="fileIO_8h_source.html#l00239">FileIO::writeBitSwappedBigEndian16()</a>, and <a class="el" href="fileIO_8h_source.html#l00260">FileIO::writeBitSwappedLittleEndian16()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00207">NativeToAnyEndianess16()</a>, <a class="el" href="FileIO_8h_source.html#l00078">FileIO::readBitSwappedBigEndian16()</a>, <a class="el" href="FileIO_8h_source.html#l00091">FileIO::readBitSwappedLittleEndian16()</a>, <a class="el" href="FileIO_8h_source.html#l00239">FileIO::writeBitSwappedBigEndian16()</a>, and <a class="el" href="FileIO_8h_source.html#l00260">FileIO::writeBitSwappedLittleEndian16()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -452,7 +452,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">return</span> (((x &amp; 0x80808080)&gt;&gt;7) | ((x &amp; 0x40404040)&gt;&gt;5) | ((x &amp; 0x20202020)&gt;&gt;3) | ((x &amp; 0x10101010)&gt;&gt;1) | ((x &amp; 0x08080808)&lt;&lt;1) | ((x &amp; 0x04040404)&lt;&lt;3) | ((x &amp; 0x02020202)&lt;&lt;5) | ((x &amp; 0x01010101)&lt;&lt;7));</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    } </div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00219">NativeToAnyEndianess32()</a>, <a class="el" href="fileIO_8h_source.html#l00075">FileIO::readBitSwappedBigEndian32()</a>, <a class="el" href="fileIO_8h_source.html#l00088">FileIO::readBitSwappedLittleEndian32()</a>, <a class="el" href="fileIO_8h_source.html#l00234">FileIO::writeBitSwappedBigEndian32()</a>, and <a class="el" href="fileIO_8h_source.html#l00255">FileIO::writeBitSwappedLittleEndian32()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00219">NativeToAnyEndianess32()</a>, <a class="el" href="FileIO_8h_source.html#l00075">FileIO::readBitSwappedBigEndian32()</a>, <a class="el" href="FileIO_8h_source.html#l00088">FileIO::readBitSwappedLittleEndian32()</a>, <a class="el" href="FileIO_8h_source.html#l00234">FileIO::writeBitSwappedBigEndian32()</a>, and <a class="el" href="FileIO_8h_source.html#l00255">FileIO::writeBitSwappedLittleEndian32()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -526,7 +526,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">return</span> (((x &amp; 0x8080808080808080)&gt;&gt;7) | ((x &amp; 0x4040404040404040)&gt;&gt;5) | ((x &amp; 0x2020202020202020)&gt;&gt;3) | ((x &amp; 0x1010101010101010)&gt;&gt;1) | ((x &amp; 0x0808080808080808)&lt;&lt;1) | ((x &amp; 0x0404040404040404)&lt;&lt;3) | ((x &amp; 0x0202020202020202)&lt;&lt;5) | ((x &amp; 0x0101010101010101)&lt;&lt;7));</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00231">NativeToAnyEndianess64()</a>, <a class="el" href="fileIO_8h_source.html#l00072">FileIO::readBitSwappedBigEndian64()</a>, <a class="el" href="fileIO_8h_source.html#l00085">FileIO::readBitSwappedLittleEndian64()</a>, <a class="el" href="fileIO_8h_source.html#l00229">FileIO::writeBitSwappedBigEndian64()</a>, and <a class="el" href="fileIO_8h_source.html#l00250">FileIO::writeBitSwappedLittleEndian64()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00231">NativeToAnyEndianess64()</a>, <a class="el" href="FileIO_8h_source.html#l00072">FileIO::readBitSwappedBigEndian64()</a>, <a class="el" href="FileIO_8h_source.html#l00085">FileIO::readBitSwappedLittleEndian64()</a>, <a class="el" href="FileIO_8h_source.html#l00229">FileIO::writeBitSwappedBigEndian64()</a>, and <a class="el" href="FileIO_8h_source.html#l00250">FileIO::writeBitSwappedLittleEndian64()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -574,7 +574,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">return</span> (((x &amp; 0x80)&gt;&gt;7) | ((x &amp; 0x40)&gt;&gt;5) | ((x &amp; 0x20)&gt;&gt;3) | ((x &amp; 0x10)&gt;&gt;1) | ((x &amp; 0x08)&lt;&lt;1) | ((x &amp; 0x04)&lt;&lt;3) | ((x &amp; 0x02)&lt;&lt;5) | ((x &amp; 0x01)&lt;&lt;7));</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00081">FileIO::readBitSwappedBigEndian8()</a>, <a class="el" href="fileIO_8h_source.html#l00094">FileIO::readBitSwappedLittleEndian8()</a>, <a class="el" href="fileIO_8h_source.html#l00156">FileIO::readBitSwappedStringIntoCharArray()</a>, <a class="el" href="fileIO_8h_source.html#l00244">FileIO::writeBitSwappedBigEndian8()</a>, <a class="el" href="fileIO_8h_source.html#l00290">FileIO::writeBitSwappedCharArray()</a>, <a class="el" href="fileIO_8h_source.html#l00265">FileIO::writeBitSwappedLittleEndian8()</a>, and <a class="el" href="fileIO_8h_source.html#l00302">FileIO::writeBitSwappedString()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00081">FileIO::readBitSwappedBigEndian8()</a>, <a class="el" href="FileIO_8h_source.html#l00094">FileIO::readBitSwappedLittleEndian8()</a>, <a class="el" href="FileIO_8h_source.html#l00156">FileIO::readBitSwappedStringIntoCharArray()</a>, <a class="el" href="FileIO_8h_source.html#l00244">FileIO::writeBitSwappedBigEndian8()</a>, <a class="el" href="FileIO_8h_source.html#l00290">FileIO::writeBitSwappedCharArray()</a>, <a class="el" href="FileIO_8h_source.html#l00265">FileIO::writeBitSwappedLittleEndian8()</a>, and <a class="el" href="FileIO_8h_source.html#l00302">FileIO::writeBitSwappedString()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -782,7 +782,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00155">NativeToLittleEndian16()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00260">FileIO::writeBitSwappedLittleEndian16()</a>, and <a class="el" href="fileIO_8h_source.html#l00220">FileIO::writeLittleEndian16()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00260">FileIO::writeBitSwappedLittleEndian16()</a>, and <a class="el" href="FileIO_8h_source.html#l00220">FileIO::writeLittleEndian16()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -839,7 +839,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00158">NativeToLittleEndian32()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00255">FileIO::writeBitSwappedLittleEndian32()</a>, and <a class="el" href="fileIO_8h_source.html#l00216">FileIO::writeLittleEndian32()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00255">FileIO::writeBitSwappedLittleEndian32()</a>, and <a class="el" href="FileIO_8h_source.html#l00216">FileIO::writeLittleEndian32()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -917,7 +917,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00161">NativeToLittleEndian64()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00250">FileIO::writeBitSwappedLittleEndian64()</a>, and <a class="el" href="fileIO_8h_source.html#l00212">FileIO::writeLittleEndian64()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00250">FileIO::writeBitSwappedLittleEndian64()</a>, and <a class="el" href="FileIO_8h_source.html#l00212">FileIO::writeLittleEndian64()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -972,7 +972,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> ((uint8_t)(x));</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="fileIO_8h_source.html#l00265">FileIO::writeBitSwappedLittleEndian8()</a>, and <a class="el" href="fileIO_8h_source.html#l00224">FileIO::writeLittleEndian8()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="FileIO_8h_source.html#l00265">FileIO::writeBitSwappedLittleEndian8()</a>, and <a class="el" href="FileIO_8h_source.html#l00224">FileIO::writeLittleEndian8()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1265,7 +1265,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00032">IS_LITTLE_ENDIAN()</a>, and <a class="el" href="Endianess_8h_source.html#l00128">swapbytes16()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00168">BigEndianToNative16()</a>, <a class="el" href="Endianess_8h_source.html#l00207">NativeToAnyEndianess16()</a>, and <a class="el" href="fileIO_8h_source.html#l00052">FileIO::readBigEndian16()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00168">BigEndianToNative16()</a>, <a class="el" href="Endianess_8h_source.html#l00207">NativeToAnyEndianess16()</a>, and <a class="el" href="FileIO_8h_source.html#l00052">FileIO::readBigEndian16()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1326,7 +1326,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00032">IS_LITTLE_ENDIAN()</a>, and <a class="el" href="Endianess_8h_source.html#l00131">swapbytes32()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00171">BigEndianToNative32()</a>, <a class="el" href="Endianess_8h_source.html#l00219">NativeToAnyEndianess32()</a>, and <a class="el" href="fileIO_8h_source.html#l00049">FileIO::readBigEndian32()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00171">BigEndianToNative32()</a>, <a class="el" href="Endianess_8h_source.html#l00219">NativeToAnyEndianess32()</a>, and <a class="el" href="FileIO_8h_source.html#l00049">FileIO::readBigEndian32()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1413,7 +1413,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00032">IS_LITTLE_ENDIAN()</a>, and <a class="el" href="Endianess_8h_source.html#l00134">swapbytes64()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00174">BigEndianToNative64()</a>, <a class="el" href="Endianess_8h_source.html#l00231">NativeToAnyEndianess64()</a>, and <a class="el" href="fileIO_8h_source.html#l00046">FileIO::readBigEndian64()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00174">BigEndianToNative64()</a>, <a class="el" href="Endianess_8h_source.html#l00231">NativeToAnyEndianess64()</a>, and <a class="el" href="FileIO_8h_source.html#l00046">FileIO::readBigEndian64()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1505,7 +1505,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00032">IS_LITTLE_ENDIAN()</a>, and <a class="el" href="Endianess_8h_source.html#l00128">swapbytes16()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00180">LittleEndianToNative16()</a>, <a class="el" href="Endianess_8h_source.html#l00207">NativeToAnyEndianess16()</a>, and <a class="el" href="fileIO_8h_source.html#l00065">FileIO::readLittleEndian16()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00180">LittleEndianToNative16()</a>, <a class="el" href="Endianess_8h_source.html#l00207">NativeToAnyEndianess16()</a>, and <a class="el" href="FileIO_8h_source.html#l00065">FileIO::readLittleEndian16()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1566,7 +1566,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00032">IS_LITTLE_ENDIAN()</a>, and <a class="el" href="Endianess_8h_source.html#l00131">swapbytes32()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00183">LittleEndianToNative32()</a>, <a class="el" href="Endianess_8h_source.html#l00219">NativeToAnyEndianess32()</a>, and <a class="el" href="fileIO_8h_source.html#l00062">FileIO::readLittleEndian32()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00183">LittleEndianToNative32()</a>, <a class="el" href="Endianess_8h_source.html#l00219">NativeToAnyEndianess32()</a>, and <a class="el" href="FileIO_8h_source.html#l00062">FileIO::readLittleEndian32()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1653,7 +1653,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianess_8h_source.html#l00032">IS_LITTLE_ENDIAN()</a>, and <a class="el" href="Endianess_8h_source.html#l00134">swapbytes64()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00186">LittleEndianToNative64()</a>, <a class="el" href="Endianess_8h_source.html#l00231">NativeToAnyEndianess64()</a>, and <a class="el" href="fileIO_8h_source.html#l00059">FileIO::readLittleEndian64()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00186">LittleEndianToNative64()</a>, <a class="el" href="Endianess_8h_source.html#l00231">NativeToAnyEndianess64()</a>, and <a class="el" href="FileIO_8h_source.html#l00059">FileIO::readLittleEndian64()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2126,7 +2126,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c">Endianess::LITTLE_ENDIAN</a></div><div class="ttdeci">@ LITTLE_ENDIAN</div><div class="ttdoc">Enforce Little endianess.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 20 2022 12:17:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 20 2022 12:20:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
