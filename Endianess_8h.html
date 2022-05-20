@@ -119,11 +119,11 @@ Namespaces</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:a05e8a4169b449a849b680c986bb72756"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> { <br />
 &#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>, 
-<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432">Endianess::BIG_ENDIAN</a>, 
-<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c">Endianess::LITTLE_ENDIAN</a>, 
-<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0">Endianess::BIG_ENDIAN_BITSWAPPED</a>, 
+<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">Endianess::BE</a>, 
+<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">Endianess::LE</a>, 
+<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">Endianess::BE_BS</a>, 
 <br />
-&#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ac8b1e63805349c0531a23cd2b05d6236">Endianess::LITTLE_ENDIAN_BITSWAPPED</a>
+&#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">Endianess::LE_BS</a>
 <br />
  }</td></tr>
 <tr class="separator:a05e8a4169b449a849b680c986bb72756"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,23 +220,23 @@ Functions</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743"></a>NATIVE&#160;</td><td class="fielddoc"><p>Whatever native is, it will always be the fastest endianess to process. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432"></a>BIG_ENDIAN&#160;</td><td class="fielddoc"><p>Enforce Big endianess. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44"></a>BE&#160;</td><td class="fielddoc"><p>Detect/Select Big endianess. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c"></a>LITTLE_ENDIAN&#160;</td><td class="fielddoc"><p>Enforce Little endianess. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6"></a>LE&#160;</td><td class="fielddoc"><p>Detect/Select Little endianess. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0"></a>BIG_ENDIAN_BITSWAPPED&#160;</td><td class="fielddoc"><p>Enforce Big endianess with bit swaps inside each byte. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799"></a>BE_BS&#160;</td><td class="fielddoc"><p>Detect/Select Big endianess with bit swaps inside each byte. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756ac8b1e63805349c0531a23cd2b05d6236"></a>LITTLE_ENDIAN_BITSWAPPED&#160;</td><td class="fielddoc"><p>Enforce Little endianess with bit swaps inside each byte. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7"></a>LE_BS&#160;</td><td class="fielddoc"><p>Detect/Select Little endianess with bit swaps inside each byte. </p>
 </td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="Endianess_8h_source.html#l00043">43</a> of file <a class="el" href="Endianess_8h_source.html">Endianess.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                     {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">NATIVE</a>,                     </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432">BIG_ENDIAN</a>,                 </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c">LITTLE_ENDIAN</a>,              </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0">BIG_ENDIAN_BITSWAPPED</a>,      </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ac8b1e63805349c0531a23cd2b05d6236">LITTLE_ENDIAN_BITSWAPPED</a>    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">NATIVE</a>,             </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">BE</a>,                 </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">LE</a>,                 </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">BE_BS</a>,              </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">LE_BS</a>               </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
@@ -366,14 +366,14 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756ac8b1e63805349c0531a23cd2b05d6236"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ac8b1e63805349c0531a23cd2b05d6236">Endianess::LITTLE_ENDIAN_BITSWAPPED</a></div><div class="ttdeci">@ LITTLE_ENDIAN_BITSWAPPED</div><div class="ttdoc">Enforce Little endianess with bit swaps inside each byte.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">Endianess::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Detect/Select Big endianess.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">Endianess::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Detect/Select Little endianess with bit swaps inside each byte.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">Endianess::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Detect/Select Little endianess.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">Endianess::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Detect/Select Big endianess with bit swaps inside each byte.</div></div>
 <div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a></div><div class="ttdeci">@ NATIVE</div><div class="ttdoc">Whatever native is, it will always be the fastest endianess to process.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a3e3837ede152d846a1d1c6e4b5de4432">Endianess::BIG_ENDIAN</a></div><div class="ttdeci">@ BIG_ENDIAN</div><div class="ttdoc">Enforce Big endianess.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a79615999fd0ebfdbcb0e917ed9fa66b0">Endianess::BIG_ENDIAN_BITSWAPPED</a></div><div class="ttdeci">@ BIG_ENDIAN_BITSWAPPED</div><div class="ttdoc">Enforce Big endianess with bit swaps inside each byte.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c">Endianess::LITTLE_ENDIAN</a></div><div class="ttdeci">@ LITTLE_ENDIAN</div><div class="ttdoc">Enforce Little endianess.</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 20 2022 12:20:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 20 2022 12:29:22 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

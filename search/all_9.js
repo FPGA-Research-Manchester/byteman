@@ -1,8 +1,8 @@
 var searchData=
 [
   ['laststringword_127',['lastStringWord',['../namespaceStringFuncs_1_1parse.html#aa8383cc85530e6443ce534719e7bdf5a',1,'StringFuncs::parse']]],
-  ['little_5fendian_128',['LITTLE_ENDIAN',['../Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad2a887ba52940d91adca3b45876dcf7c',1,'Endianess.h']]],
-  ['little_5fendian_5fbitswapped_129',['LITTLE_ENDIAN_BITSWAPPED',['../Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ac8b1e63805349c0531a23cd2b05d6236',1,'Endianess.h']]],
+  ['le_128',['LE',['../Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6',1,'Endianess.h']]],
+  ['le_5fbs_129',['LE_BS',['../Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7',1,'Endianess.h']]],
   ['littleendiantonative16_130',['LittleEndianToNative16',['../namespaceEndian.html#ae5a1794961e4b010f98402e353502c23',1,'Endian']]],
   ['littleendiantonative32_131',['LittleEndianToNative32',['../namespaceEndian.html#aabd838029ed523d5280997f4ca10f859',1,'Endian']]],
   ['littleendiantonative64_132',['LittleEndianToNative64',['../namespaceEndian.html#a9d9ee5db25197f4c16b6abd1ca0da228',1,'Endian']]],
