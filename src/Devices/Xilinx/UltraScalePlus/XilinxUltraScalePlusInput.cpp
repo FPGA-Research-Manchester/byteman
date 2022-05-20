@@ -36,7 +36,7 @@ void XilinxUltraScalePlus::readBitstream(string filename)
 	
     if(StringFuncs::checkIf::stringEndsWith(filename, ".bit"))
         XilinxUltraScalePlus::readBitstreamBIT(fin);
-    if(StringFuncs::checkIf::stringEndsWith(filename, ".bin"))
+    else if(StringFuncs::checkIf::stringEndsWith(filename, ".bin"))
         XilinxUltraScalePlus::readBitstreamBIN(fin);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read.\n"));
