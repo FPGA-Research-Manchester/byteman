@@ -60,7 +60,7 @@ namespace Endian {
 			return "Little Endian with BitSwap";
 		return "Native";
 	}
-	inline Endianess swapEndian(Endianess e){
+	inline Endianess toggleEndianess(Endianess e){
 		if(Endianess::BE == e)
 			return Endianess::LE;
 		if(Endianess::LE == e)
@@ -74,7 +74,7 @@ namespace Endian {
 			return Endianess::BE;
 		return Endianess::LE;
 	}
-	inline Endianess swapEndianBits(Endianess e){
+	inline Endianess toggleEndianBitSwap(Endianess e){
 		if(Endianess::BE == e)
 			return Endianess::BE_BS;
 		if(Endianess::LE == e)
@@ -106,20 +106,20 @@ namespace Endian {
 		Endianess accumulatedEndianessDiff = Endianess::NATIVE;
 		
 		if(Endianess::BE_BS == e1 || Endianess::LE_BS == e1)
-			accumulatedEndianessDiff = swapEndianBits(accumulatedEndianessDiff);
+			accumulatedEndianessDiff = toggleEndianBitSwap(accumulatedEndianessDiff);
 		if(Endianess::BE_BS == e2 || Endianess::LE_BS == e2)
-			accumulatedEndianessDiff = swapEndianBits(accumulatedEndianessDiff);
+			accumulatedEndianessDiff = toggleEndianBitSwap(accumulatedEndianessDiff);
 		
 		if(IS_LITTLE_ENDIAN()){ // If native system is little endian
 			if(Endianess::BE == e1 || Endianess::BE_BS == e1)
-				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
+				accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff);
 			if(Endianess::BE == e2 || Endianess::BE_BS == e2)
-				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
+				accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff);
 		} else { // If native system is big endian
 			if(Endianess::LE == e1 || Endianess::LE_BS == e1)
-				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
+				accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff);
 			if(Endianess::LE == e2 || Endianess::LE_BS == e2)
-				accumulatedEndianessDiff = swapEndian(accumulatedEndianessDiff);
+				accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff);
 		}
 		
 		return fixEndianIfNative(accumulatedEndianessDiff);
