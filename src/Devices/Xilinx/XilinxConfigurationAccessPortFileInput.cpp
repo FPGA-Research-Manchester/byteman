@@ -31,31 +31,31 @@ void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e)
 	string headerConstText = FileIO::readString(fin, headerConstTextLength, e);
 	int headerConstText2Length = FileIO::read16(fin, e);
 	string headerConstText2 = FileIO::readString(fin, headerConstText2Length, e);
-	if(warn && (!((9 == headerConstTextLength) && ("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0" == headerConstText) && (1 == headerConstText2Length) && ("a" == headerConstText2))))
-        cout << "warn: .bit c0nstant header differs from expected.\n";
+	if((!((9 == headerConstTextLength) && ("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0" == headerConstText) && (1 == headerConstText2Length) && ("a" == headerConstText2))))
+        warn(".bit c0nstant header differs from expected.");
 	//.bit header vars:
 	int headerDesignNameLength = FileIO::read16(fin, e);
 	designName = FileIO::readString(fin, headerDesignNameLength, e);
-	if(verbose)cout<<"\tName of design: "<<designName<<endl;
+	log("\tName of design: " + designName);
     for(int headerDone = 0 ; !headerDone ; ){
         int key = FileIO::readNative8(fin);
         switch(key){
             case 'b': {
                 int headerAttrLength = FileIO::read16(fin, e);
 				partName = FileIO::readString(fin, headerAttrLength, e);
-                if(verbose)cout<<"\tFPGA part: "<<partName<<endl;
+                log("FPGA part: " + partName);
                 break;
             }
             case 'c': {
                 int headerAttrLength = FileIO::read16(fin, e);
 				fileDate = FileIO::readString(fin, headerAttrLength, e);
-                if(verbose)cout<<"\tdate: "<<partName<<endl;
+                log("\tDate: " + fileDate);
                 break;
             }
             case 'd': {
                 int headerAttrLength = FileIO::read16(fin, e);
 				fileTime = FileIO::readString(fin, headerAttrLength, e);
-                if(verbose)cout<<"\ttime: "<<fileTime<<endl;
+                log("\tTime: " + fileTime);
                 break;
             }
             case 'e': {
@@ -65,13 +65,12 @@ void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e)
                 fin.seekg (0, fin.end);
                 int fileSize = (int)fin.tellg();
                 fin.seekg (tmpPos, fin.beg);
-                if(warn && fileSize != (tmpPos + reportedRemainingFileLength))
-                    cout << "warning: .bit header contained inaccurate file length field.\n";
+                if(fileSize != (tmpPos + reportedRemainingFileLength))
+                    warn(".bit header contained inaccurate file length field.");
                 break;
             }
 			default: {
-				if(warn)
-                    cout << "warning: .bit header contained unknown file field type.\n";
+				warn(".bit header contained unknown file field type.");
 			}
         }
     }
@@ -125,8 +124,7 @@ Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin)
 		} else
             fin.seekg(-3,ios::cur);
     }
-	if(verbose)
-		cout << "\tDetected file endianess: " << Endian::to_string(returnVal) << endl;
+	log("\tDetected file endianess: " + Endian::to_string(returnVal));
 	
 	fin.seekg(fileOffset, fin.beg);
 	return returnVal;

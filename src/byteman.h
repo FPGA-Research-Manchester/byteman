@@ -31,6 +31,11 @@
 #define BYTEMAN_H
 
 #include<iostream>
+#include<string>
+
+#ifdef XUSP
+	#include "Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlus.h"
+#endif
 
 using namespace std;
 
@@ -38,32 +43,66 @@ using namespace std;
 #define VERSION "0.5"
 #define VERSION_BUILD "114"
 
-enum Arch{
-	ARCH_NULL = 0,
-	XIL_SERIES6,
-	XIL_SERIES7,
-	XIL_US,
-	XIL_USP,
-	XIL_VERSAL
+class byteman
+{
+	public:
+		byteman();
+		virtual ~byteman(){};
+		enum class Architecture{
+			Unknown,
+			Xilinx_Series6,
+			Xilinx_Series7,
+			Xilinx_UltraScale,
+			Xilinx_UltraScalePlus,
+			Xilinx_Versal
+		} selectedArchitecture = Architecture::Unknown;
+		struct SelectedOptions
+		{
+			int mainBufferSelected, tempBufferSelected;
+			SelectedOptions():mainBufferSelected(0),tempBufferSelected(0){}
+		};
+		//parse
+		SelectedOptions parseParams(string);
+
+		#ifdef XUSP
+		struct {
+			XilinxUltraScalePlus mainBuffer, tempBuffer;
+		} Xilinx_UltraScalePlus;
+		#endif //XUSP
+		
+		
+		void parseCommand(string);
+		void setArchitecture(string);
+		void parseAssembly(string, SelectedOptions);
+		void parseOutput(string, SelectedOptions);
+		void parseMerge(string, SelectedOptions);
+		void parseInput(string, SelectedOptions);
+		void parseDevice(string, SelectedOptions);
+		void parseChange(string, SelectedOptions);
+		void parseBlank(string, SelectedOptions);
+		void parseRegion(string, SelectedOptions);
+		void parseWarn(string, SelectedOptions);
+		void parseVerbose(string, SelectedOptions);
+		
+		
+		void help(string, int);
+		void help(string);
+		void help();
+
+		void helpAssembly();
+		void helpOutput();
+		void helpMerge();
+		void helpInput();
+		void helpDevice();
+		void helpChange();
+		void helpBlank();
+		void helpRegion();
+		void helpWarn();
+		void helpVerbose();
+		void helpHelp();
+		void helpEnd();
+		void helpStdin();
 };
 
-void ArchDeviceHelp();
-void ArchAssemblyHelp();
-void parseHelp(string, int=0, int=0);
-void usage();
-void usageArg(string);
-void usage_verbose();
-void usage_warn();
-void usage_region();
-void usage_blank();
-void usage_change();
-void usage_device();
-void usage_help();
-void usage_input();
-void usage_merge();
-void usage_output();
-void usage_assembly();
-void usage_end();
-void usage_stdin();
 
 #endif //BYTEMAN_H

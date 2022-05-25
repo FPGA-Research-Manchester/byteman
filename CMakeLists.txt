@@ -13,8 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
+
 # min cmake version is 3.10 because "target_sources" is used.
 cmake_minimum_required(VERSION 3.10)
+
 #next line has to be in the format ..."byteman VERSION X.Y.Z"... for the autoversioning
 project(byteman VERSION 0.5.114)
 
@@ -26,6 +28,9 @@ set(CMAKE_CXX_STANDARD 11)
 if(MSVC)
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
+
+add_definitions(-DENABLEWARN) #enables -warn (warnings)
+add_definitions(-DENABLELOGS) #enables -verbose (logging)
 
 add_definitions(-DXUSP) #Add Xilinx UltraScale+ devices in byteman
 add_definitions(-DXUSPARTIX)
@@ -40,6 +45,7 @@ set(BYTEMAN_SRC
 ${CMAKE_SOURCE_DIR}/src/byteman.cpp
 ${CMAKE_SOURCE_DIR}/src/help.cpp
 ${CMAKE_SOURCE_DIR}/Resources/icon.rc)
+
 add_executable(byteman ${BYTEMAN_SRC})
 
 add_subdirectory(src/Devices)

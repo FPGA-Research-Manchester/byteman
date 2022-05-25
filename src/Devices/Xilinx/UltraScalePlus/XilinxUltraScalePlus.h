@@ -35,12 +35,20 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
         XilinxUltraScalePlus();
         virtual ~XilinxUltraScalePlus();
 		
-		enum class MergeOP {SET, XOR, OR, AND};
-		struct SelectedOptions{
+		enum class MergeOP
+		{
+			SET,
+			XOR,
+			OR,
+			AND
+		};
+		struct SelectedOptions
+		{
 			int clk, clb, bram, blank, partial;
 			MergeOP op;
 			SelectedOptions():clk(0),clb(0),bram(0),blank(0),partial(1),op(MergeOP::SET){}
 		};
+		
 		//XilinxUltraScalePlusDevices.cpp:
 		int getDeviceByIDCODEorThrow(int);
 		int getDeviceByNameOrThrow(string);

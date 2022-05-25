@@ -158,19 +158,19 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		replace(line.begin(), line.end(), ',', ' ');
 		if(has("NOP")){
 			int nopHiddenValue;
-			if(!StringFuncs::parseMultipleInts(line, nopHiddenValue))nopHiddenValue = 0;
+			if(!StringFuncs::parse::multipleInts(line, nopHiddenValue))nopHiddenValue = 0;
 			XilinxUltraScalePlus::CAP_writeNOP(fout, 1, nopHiddenValue, Endianess::BE);
 		}
 		else if(has("RESERVED")){
 			int reservedHiddenValue;
-			if(!StringFuncs::parseMultipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
+			if(!StringFuncs::parse::multipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
 			XilinxUltraScalePlus::CAP_writeRESERVED(fout, 1, reservedHiddenValue, Endianess::BE);
 		}
 		else if(has("@")){
 			CAP::Register newRegAddr = assemblerGetRegID(line);
 			if(has("READ REG @")){
 				int readLength;
-				if(!StringFuncs::parseMultipleInts(line, readLength)) readLength = 1; // default read length is 1 if unspecified
+				if(!StringFuncs::parse::multipleInts(line, readLength)) readLength = 1; // default read length is 1 if unspecified
 				XilinxUltraScalePlus::CAP_writeReadRegister(fout, newRegAddr, readLength, Endianess::BE);
 			} else {// must be a write then ¯\_(ツ)_/¯
 			
@@ -179,7 +179,7 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 				} else if(has("SELECT REGISTER")){
 					XilinxUltraScalePlus::CAP_writeSelectRegister(fout, newRegAddr, Endianess::BE);
 				} else if(newRegAddr == CAP::Register::FDRI){
-					if(!StringFuncs::parseMultipleInts(line, frameCount))
+					if(!StringFuncs::parse::multipleInts(line, frameCount))
 						throw runtime_error(string("FDRI command needs size: \"").append(line).append("\"!"));
 					int wordCount = frameCount * XUSP_WORDS_PER_FRAME;
 					if(regAddr == CAP::Register::FDRI) {
@@ -214,13 +214,13 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 							throw runtime_error(string("End of file reached while performing FDRI frame writes.!"));
 					}
 				} else if(newRegAddr == CAP::Register::FAR){
-					if(!StringFuncs::parseMultipleInts(line, b, r, c, m))
+					if(!StringFuncs::parse::multipleInts(line, b, r, c, m))
 						throw runtime_error(string("Could not parse the new FAR value: \"").append(line).append("\"!"));
 					uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(b, r, c, m);
 					XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::FAR, farValue, Endianess::BE);
 				} else {
 					int newValue;
-					if(!StringFuncs::parseMultipleInts(line, newValue))
+					if(!StringFuncs::parse::multipleInts(line, newValue))
 						throw runtime_error(string("Could not parse the new register value: \"").append(line).append("\"!"));
 					XilinxUltraScalePlus::CAP_writeRegister(fout, newRegAddr, newValue, Endianess::BE);
 				}

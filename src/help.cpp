@@ -15,26 +15,23 @@
  *****************************************************************************/
 
 #include<iostream>
-#include "byteman.h"
 #include<sstream>
 #include<stdexcept>
 
+#include "byteman.h"
+#include "Common/StringFuncs.h"
+
 using namespace std;
 
-//TODO prettify all this.
-void parseHelp(string args, int shouldExit, int exitCode)
+void byteman::help(string param, int exitCode)
 {
-	stringstream ss(args);
-	string word;
-	ss >> word;
-	if(ss.eof())
-		usage();
+	if(param.empty())
+		byteman::help();
     else
-		usageArg(args);
-	if(shouldExit)
-		exit(exitCode);
+		byteman::help(param);
+	exit(exitCode);
 }
-void usage()
+void byteman::help()
 {
 	cout << "byteman " << VERSION << " (Build " << VERSION_BUILD << ") usage:" << endl;
 	cout << "byteman ARCH [-command...]* [-stdin]" << endl;
@@ -59,101 +56,99 @@ void usage()
 	
 	
 }
-void usageArg(string args)
+void byteman::help(string param)
 {
-	stringstream ss(args);
-	string word;
-	ss >> word;
-    while (!ss.eof()) {
-        ss >> word;
-	#define argIs(x,y) (word == x || word == y)
-	if(argIs("v", "verbose"))
-		usage_verbose();
-	else if(argIs("w", "warn"))
-		usage_warn();
-	else if(argIs("r", "region"))
-		usage_region();
-	else if(argIs("b", "blank"))
-		usage_blank();
-	else if(argIs("c", "change"))
-		usage_change();
-	else if(argIs("d", "device"))
-		usage_device();
-	else if(argIs("h", "help"))
-		usage_help();
-	else if(argIs("i", "input"))
-		usage_input();
-	else if(argIs("m", "merge"))
-		usage_merge();
-	else if(argIs("o", "output"))
-		usage_output();
-	else if(argIs("a", "assembly"))
-		usage_assembly();
-	else if(argIs("e", "end"))
-		usage_end();
-	else if(argIs("s", "stdin"))
-		usage_stdin();
-	#undef argIs
-    }
+	     if(StringFuncs::checkIf::stringIs(param, "v", "verbose"))
+		byteman::helpVerbose();
+	else if(StringFuncs::checkIf::stringIs(param, "w", "warn"))
+		byteman::helpWarn();
+	else if(StringFuncs::checkIf::stringIs(param, "r", "region"))
+		byteman::helpRegion();
+	else if(StringFuncs::checkIf::stringIs(param, "b", "blank"))
+		byteman::helpBlank();
+	else if(StringFuncs::checkIf::stringIs(param, "c", "change"))
+		byteman::helpChange();
+	else if(StringFuncs::checkIf::stringIs(param, "d", "device"))
+		byteman::helpDevice();
+	else if(StringFuncs::checkIf::stringIs(param, "h", "help"))
+		byteman::helpHelp();
+	else if(StringFuncs::checkIf::stringIs(param, "i", "input"))
+		byteman::helpInput();
+	else if(StringFuncs::checkIf::stringIs(param, "m", "merge"))
+		byteman::helpMerge();
+	else if(StringFuncs::checkIf::stringIs(param, "o", "output"))
+		byteman::helpOutput();
+	else if(StringFuncs::checkIf::stringIs(param, "a", "assembly"))
+		byteman::helpAssembly();
+	else if(StringFuncs::checkIf::stringIs(param, "e", "end"))
+		byteman::helpEnd();
+	else if(StringFuncs::checkIf::stringIs(param, "s", "stdin"))
+		byteman::helpStdin();
 }
-void usage_verbose()
+void byteman::helpVerbose()
 {
 	cout<<"TODO usage_verbose" << endl;
 }
-void usage_warn()
+void byteman::helpWarn()
 {
 	cout<<"TODO usage_warn" << endl;
 }
-void usage_region()
+void byteman::helpRegion()
 {
 	cout<<"TODO usage_region" << endl;
 	cout <<"Region params: main/first, second/temp, add,clear" << endl;
 }
-void usage_blank()
+void byteman::helpBlank()
 {
 	cout<<"TODO usage_blank" << endl;
 }
-void usage_change()
+void byteman::helpChange()
 {
 	cout<<"TODO usage_change" << endl;
 }
-void usage_device()
+void byteman::helpDevice()
 {
-	cout<<"TODO usage_device" << endl;
+	cout<<"TODO helpDevice" << endl;
 	
 	cout << "Available devices:" <<endl;
-	ArchDeviceHelp();
+	#ifdef XUSP
+		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
+			XilinxUltraScalePlus::deviceHelp();
+	#endif
 }
-void usage_help()
+void byteman::helpHelp()
 {
-	cout<<"TODO usage_help" << endl;
+	cout<<"TODO helpHelp" << endl;
 	cout<<"headache" << endl;
 }
-void usage_input()
+void byteman::helpInput()
 {
 	cout<<"TODO usage_input" << endl;
 	cout <<"Input params: main/first, second/temp" << endl;
 }
-void usage_merge()
+void byteman::helpMerge()
 {
 	cout<<"TODO usage_merge" << endl;
 	cout <<"Merge params: clk/clock, clb/logic, bram, uram, set, xor, or, and" << endl;
 }
-void usage_output()
+void byteman::helpOutput()
 {
 	cout<<"TODO usage_output" << endl;
 	cout <<"Output params: main/first, second/temp, clb, bram, blank, full, partial" << endl;
 }
-void usage_assembly()
+void byteman::helpAssembly()
 {
 	cout<<"TODO usage_assembly" << endl;
-	ArchAssemblyHelp();
+	#ifdef XUSP
+		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
+			XilinxUltraScalePlus::assemblerHelp();
+	#endif
 }
-void usage_end()
+void byteman::helpEnd()
 {
 	cout<<"TODO usage_end" << endl;
 }
-void usage_stdin()
+void byteman::helpStdin()
 {
 	cout << "\t-stdin                    : Continue using the same commands on standard input." << endl;
 	cout << "\t                            Standard input ends with a command \"end\"." << endl;

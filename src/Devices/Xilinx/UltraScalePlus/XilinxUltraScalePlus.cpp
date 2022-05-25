@@ -78,7 +78,7 @@ XilinxUltraScalePlus::SelectedOptions XilinxUltraScalePlus::parseParams(string p
 		if(param == "and")options.op = MergeOP::AND;
 		param.clear();
 	}
-	if(options.clk == 0 &&options.clb == 0 && options.bram == 0){ // by default, choose all
+	if(options.clk == 0 && options.clb == 0 && options.bram == 0){ // by default, choose all
 		options.clk = options.bram = options.clb = 1;
 	}
 	return options;
@@ -172,8 +172,7 @@ void XilinxUltraScalePlus::ensureRowCompatibility(Coord2D src, int offsetRow, in
 				throw runtime_error(string("Tried to relocate to an incompatible location(").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]).append(" to frame type ").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]).append(")."));
 			} else {
 				//okay, different col, but same width. Throw warning?
-				if(warn)
-					cout<<"Relocating from frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]<<" to frame type "<<typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]<<".\n";
+				warn("Relocating from frame type " + string(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]) + " to frame type " + string(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]) + ".");
 			}
 		}
 	}

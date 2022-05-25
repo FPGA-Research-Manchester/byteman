@@ -17,18 +17,45 @@
 #ifndef COMMONDEVICE_H
 #define COMMONDEVICE_H
 
+#include<iostream>
+#include<string>
+#include<time.h>
+
+using namespace std;
+
 class CommonDevice
 {
 	public:
         CommonDevice(){
-			warn = 1;
-			verbose = 0;
+			enableWarn = 1;
+			enableLog = 0;
 		};
         virtual ~CommonDevice(){
 			
 		};
-		int warn;
-		int verbose;
+		string instanceName;
+		int enableWarn;
+		int enableLog;
+		inline void printMessage(string message){
+			time_t timestamp = time(0);
+			struct tm  tstruct;
+			char       timeChars[80];
+			tstruct = *localtime(&timestamp);
+			strftime(timeChars, sizeof(timeChars), "%d %b %Y %H:%M:%S @ ", &tstruct);
+			cout << timeChars << instanceName << message << endl;
+		}
+		inline void warn(string message) {
+			#ifdef ENABLEWARN
+				if(enableWarn)
+					CommonDevice::printMessage(string(" warning: ").append(message));
+			#endif
+		}
+		inline void log(string message) {
+			#ifdef ENABLELOGS
+				if(enableLog)
+					CommonDevice::printMessage(string("    info: ").append(message));
+			#endif
+		}
 };
 
 #endif //COMMONDEVICE_H

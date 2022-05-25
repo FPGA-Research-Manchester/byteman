@@ -41,7 +41,7 @@ void XilinxUltraScalePlus::writeBitstream(string filename, string params, Rect2D
         throw runtime_error(string("Invalid file name: \"").append(filename).append("\"!\n"));
 	designName = filename.substr(0, dotpos);
 	
-    if(verbose)cout<<"Writing Xilinx UltraScale+ bitstream to file \""<<filename<<"\":\n";
+    log("Writing Xilinx UltraScale+ bitstream to file \"" + filename + "\":");
 	
 	SelectedOptions options = XilinxUltraScalePlus::parseParams(params);
 	

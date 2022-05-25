@@ -221,18 +221,22 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 
 //Xilinx UltraScale+ Artix
 //IDCODEs
+    #define XCAU10P_NAME "xcau10p"
     #define XCAU10P_ROWNUM TODO
     #define XCAU10P_IDCODE TODO
     #define XCAU10P() {/*TODO*/;throw runtime_error("Device XCAU10P not yet implemented.");}
 
+    #define XCAU15P_NAME "xcau15p"
     #define XCAU15P_ROWNUM TODO
     #define XCAU15P_IDCODE TODO
     #define XCAU15P() {/*TODO*/;throw runtime_error("Device XCAU15P not yet implemented.");}
 
+    #define XCAU20P_NAME "xcau20p"
     #define XCAU20P_ROWNUM TODO
     #define XCAU20P_IDCODE TODO
     #define XCAU20P() {/*TODO*/;throw runtime_error("Device XCAU20P not yet implemented.");}
 
+    #define XCAU25P_NAME "xcau25p"
     #define XCAU25P_ROWNUM TODO
     #define XCAU25P_IDCODE TODO
     #define XCAU25P() {/*TODO*/;throw runtime_error("Device XCAU25P not yet implemented.");}
@@ -240,7 +244,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 //Xilinx UltraScale+ Kintex
 //IDCODEs
     //XCKU3P is software-limited version of XCKU5P
-    #define XCKU3P_NAME "XCKU3P"
+    #define XCKU3P_NAME "xcku3p"
     #define XCKU3P_SLRNUM 1
     #define XCKU3P_ROWNUM 4
     #define XCKU3P_IDCODE 0x4A63093
@@ -253,7 +257,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_4(XCKU3P_);                                                               \
     }
 
-    #define XCKU5P_NAME "XCKU5P"
+    #define XCKU5P_NAME "xcku5p"
     #define XCKU5P_SLRNUM 1
     #define XCKU5P_ROWNUM 4
     #define XCKU5P_IDCODE 0x4A62093
@@ -266,7 +270,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_4(XCKU5P_);                                                               \
     }
 
-    #define XCKU9P_NAME "XCKU9P"
+    #define XCKU9P_NAME "xcku9p"
     #define XCKU9P_SLRNUM 1
     #define XCKU9P_ROWNUM 7
     #define XCKU9P_IDCODE 0x484A093
@@ -282,7 +286,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_7(XCKU9P_);                                                               \
     }
 
-    #define XCKU11P_NAME "XCKU11P"
+    #define XCKU11P_NAME "xcku11p"
     #define XCKU11P_SLRNUM 1
     #define XCKU11P_ROWNUM 8
     #define XCKU11P_IDCODE 0x4A4E093
@@ -299,7 +303,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_8(XCKU11P_);                                                              \
     }
 
-    #define XCKU13P_NAME "XCKU13P"
+    #define XCKU13P_NAME "xcku13p"
     #define XCKU13P_SLRNUM 1
     #define XCKU13P_ROWNUM 7
     #define XCKU13P_IDCODE 0x4A52093
@@ -315,7 +319,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_7(XCKU13P_);                                                              \
     }
 
-    #define XCKU15P_NAME "XCKU15P"
+    #define XCKU15P_NAME "xcku15p"
     #define XCKU15P_SLRNUM 1
     #define XCKU15P_ROWNUM 11
     #define XCKU15P_IDCODE 0x4A56093
@@ -335,7 +339,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_11(XCKU15P_);                                                             \
     }
 
-    #define XCKU19P_NAME "XCKU19P"
+    #define XCKU19P_NAME "xcku19p"
     #define XCKU19P_SLRNUM 1
     #define XCKU19P_ROWNUM 9
     #define XCKU19P_IDCODE 0x4ACF093
@@ -355,7 +359,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 
 //Xilinx UltraScale+ Virtex
 //IDCODEs
-    #define XCVU3P_NAME "XCVU3P"
+    #define XCVU3P_NAME "xcvu3p"
     #define XCVU3P_SLRNUM 1
     #define XCVU3P_ROWNUM 5
     #define XCVU3P_IDCODE 0x4B39093
@@ -370,7 +374,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCVU5P is software-limited version of 2 XCVU3P dies
-    #define XCVU5P_NAME "XCVU5P"
+    #define XCVU5P_NAME "xcvu5p"
     #define XCVU5P_SLRNUM 2
     #define XCVU5P_ROWNUM 10
     #define XCVU5P_IDCODE 0x4B2B093
@@ -396,7 +400,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCVU7P is 2 XCVU3P dies
-    #define XCVU7P_NAME "XCVU7P"
+    #define XCVU7P_NAME "xcvu7p"
     #define XCVU7P_SLRNUM 2
     #define XCVU7P_ROWNUM 10
     #define XCVU7P_IDCODE 0x4B29093
@@ -422,7 +426,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCVU9P is 3 XCVU3P dies
-    #define XCVU9P_NAME "XCVU9P"
+    #define XCVU9P_NAME "xcvu9p"
     #define XCVU9P_SLRNUM 3
     #define XCVU9P_ROWNUM 15
     #define XCVU9P_IDCODE 0x4B31093
@@ -456,7 +460,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //3 identical dies (4 rows each)
-    #define XCVU11P_NAME "XCVU11P"
+    #define XCVU11P_NAME "xcvu11p"
     #define XCVU11P_SLRNUM 3
     #define XCVU11P_ROWNUM 12
     #define XCVU11P_IDCODE 0x4B49093
@@ -487,7 +491,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //4 identical dies (4 rows each) (same dies as XCVU11P)
-    #define XCVU13P_NAME "XCVU13P"
+    #define XCVU13P_NAME "xcvu13p"
     #define XCVU13P_SLRNUM 4
     #define XCVU13P_ROWNUM 16
     #define XCVU13P_IDCODE 0x4B51093
@@ -525,7 +529,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //4 identical dies (5 rows each) also rows are the widest
-    #define XCVU19P_NAME "XCVU19P"
+    #define XCVU19P_NAME "xcvu19p"
     #define XCVU19P_SLRNUM 4
     #define XCVU19P_ROWNUM 20
     #define XCVU19P_IDCODE 0x4BA1093
@@ -566,7 +570,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_20(XCVU19P_);                                                             \
     }
 
-    #define XCVU23P_NAME "XCVU23P"
+    #define XCVU23P_NAME "xcvu23p"
     #define XCVU23P_SLRNUM 1
     #define XCVU23P_ROWNUM 11
     #define XCVU23P_IDCODE 0x4ACE093
@@ -588,7 +592,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 
     //XCVU27P is a software-limited version of XCVU29P
     //4 dies from XCVU11P with different I/O: first third and fourth are the same, second is diff
-    #define XCVU27P_NAME "XCVU27P"
+    #define XCVU27P_NAME "xcvu27p"
     #define XCVU27P_SLRNUM 4
     #define XCVU27P_ROWNUM 16
     #define XCVU27P_IDCODE 0x4B43093
@@ -625,7 +629,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_16(XCVU27P_);                                                             \
     }
 
-    #define XCVU29P_NAME "XCVU29P"
+    #define XCVU29P_NAME "xcvu29p"
     #define XCVU29P_SLRNUM 4
     #define XCVU29P_ROWNUM 16
     #define XCVU29P_IDCODE 0x4B41093
@@ -662,7 +666,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_16(XCVU29P_);                                                             \
     }
 
-    #define XCVU31P_NAME "XCVU31P"
+    #define XCVU31P_NAME "xcvu31p"
     #define XCVU31P_SLRNUM 1
     #define XCVU31P_ROWNUM 4
     #define XCVU31P_IDCODE 0x4B6B093
@@ -676,7 +680,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCVU33P same as XCVU31P but with more HBM
-    #define XCVU33P_NAME "XCVU33P"
+    #define XCVU33P_NAME "xcvu33p"
     #define XCVU33P_SLRNUM 1
     #define XCVU33P_ROWNUM 4
     #define XCVU33P_IDCODE 0x4B69093
@@ -690,7 +694,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //2 dies: XCVU33P + 1 die from XCVU11P
-    #define XCVU35P_NAME "XCVU35P"
+    #define XCVU35P_NAME "xcvu35p"
     #define XCVU35P_SLRNUM 2
     #define XCVU35P_ROWNUM 8
     #define XCVU35P_IDCODE 0x4B71093
@@ -714,7 +718,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //3 dies: XCVU33P + 2 dies from XCVU11P
-    #define XCVU37P_NAME "XCVU37P"
+    #define XCVU37P_NAME "xcvu37p"
     #define XCVU37P_SLRNUM 3
     #define XCVU37P_ROWNUM 12
     #define XCVU37P_IDCODE 0x4B79093
@@ -745,7 +749,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCVU45P same as XCVU35P but with more HBM
-    #define XCVU45P_NAME "XCVU45P"
+    #define XCVU45P_NAME "xcvu45p"
     #define XCVU45P_SLRNUM 2
     #define XCVU45P_ROWNUM 8
     #define XCVU45P_IDCODE 0x4B73093
@@ -769,7 +773,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCVU47P same as XCVU37P but with more HBM
-    #define XCVU47P_NAME "XCVU47P"
+    #define XCVU47P_NAME "xcvu47p"
     #define XCVU47P_SLRNUM 3
     #define XCVU47P_ROWNUM 12
     #define XCVU47P_IDCODE 0x4B7B093
@@ -800,7 +804,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //3 dies: XCVU33P + 2 dies from XCVU27P
-    #define XCVU57P_NAME "XCVU57P"
+    #define XCVU57P_NAME "xcvu57p"
     #define XCVU57P_SLRNUM 3
     #define XCVU57P_ROWNUM 12
     #define XCVU57P_IDCODE 0x4B61093
@@ -832,7 +836,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     
 //Xilinx UltraScale+ Zynq MPSoC
 //IDCODEs
-    #define XCZU1_NAME "XCZU1"
+    #define XCZU1_NAME "xczu1"
     #define XCZU1_SLRNUM 1
     #define XCZU1_ROWNUM 3
     #define XCZU1_IDCODE TODO
@@ -842,7 +846,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     #define XCZU1() {/*TODO*/;throw runtime_error("Device XCZU1 not yet implemented.");}
 
     //XCZU2 is software-limited version of XCZU3
-    #define XCZU2_NAME "XCZU2"
+    #define XCZU2_NAME "xczu2"
     #define XCZU2_SLRNUM 1
     #define XCZU2_ROWNUM 3
     #define XCZU2_IDCODE 0x4A43093
@@ -854,7 +858,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_3(XCZU2_);                                                                \
     }
 
-    #define XCZU3_NAME "XCZU3"
+    #define XCZU3_NAME "xczu3"
     #define XCZU3_SLRNUM 1
     #define XCZU3_ROWNUM 3
     #define XCZU3_IDCODE 0x4A42093
@@ -867,7 +871,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU4 is software-limited version of XCZU5
-    #define XCZU4_NAME "XCZU4"
+    #define XCZU4_NAME "xczu4"
     #define XCZU4_SLRNUM 1
     #define XCZU4_ROWNUM 4
     #define XCZU4_IDCODE 0x4A47093
@@ -880,7 +884,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_4(XCZU4_);                                                                \
     }
 
-    #define XCZU5_NAME "XCZU5"
+    #define XCZU5_NAME "xczu5"
     #define XCZU5_SLRNUM 1
     #define XCZU5_ROWNUM 4
     #define XCZU5_IDCODE 0x4A46093
@@ -894,7 +898,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU6 is software-limited version of XCZU9 (which is XCKU9P with enabled PS)
-    #define XCZU6_NAME "XCZU6"
+    #define XCZU6_NAME "xczu6"
     #define XCZU6_SLRNUM 1
     #define XCZU6_ROWNUM 7
     #define XCZU6_IDCODE 0x484B093
@@ -910,7 +914,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_7(XCZU6_);                                                                \
     }
 
-    #define XCZU7_NAME "XCZU7"
+    #define XCZU7_NAME "xczu7"
     #define XCZU7_SLRNUM 1
     #define XCZU7_ROWNUM 6
     #define XCZU7_IDCODE 0x4A5A093
@@ -926,7 +930,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU9 is XCKU9P but with PS enabled
-    #define XCZU9_NAME "XCZU9"
+    #define XCZU9_NAME "xczu9"
     #define XCZU9_SLRNUM XCKU9P_SLRNUM
     #define XCZU9_ROWNUM XCKU9P_ROWNUM
     #define XCZU9_IDCODE XCKU9P_IDCODE
@@ -943,7 +947,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU11 is XCKU11P but with PS enabled
-    #define XCZU11_NAME "XCZU11"
+    #define XCZU11_NAME "xczu11"
     #define XCZU11_SLRNUM XCKU11P_SLRNUM
     #define XCZU11_ROWNUM XCKU11P_ROWNUM
     #define XCZU11_IDCODE XCKU11P_IDCODE
@@ -961,7 +965,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU15 is XCKU13P but with PS enabled
-    #define XCZU15_NAME "XCZU15"
+    #define XCZU15_NAME "xczu15"
     #define XCZU15_SLRNUM XCKU13P_SLRNUM
     #define XCZU15_ROWNUM XCKU13P_ROWNUM
     #define XCZU15_IDCODE XCKU13P_IDCODE
@@ -978,7 +982,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU17 is software-limited version of XCZU19
-    #define XCZU17_NAME "XCZU17"
+    #define XCZU17_NAME "xczu17"
     #define XCZU17_SLRNUM 1
     #define XCZU17_ROWNUM 11
     #define XCZU17_IDCODE 0x4A57093
@@ -999,7 +1003,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCZU19 is XCKU15P but with PS enabled
-    #define XCZU19_NAME "XCZU19"
+    #define XCZU19_NAME "xczu19"
     #define XCZU19_SLRNUM XCKU15P_SLRNUM
     #define XCZU19_ROWNUM XCKU15P_ROWNUM
     #define XCZU19_IDCODE XCKU15P_IDCODE
@@ -1021,7 +1025,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     
 //Xilinx UltraScale+ Zynq RFSoC
 //IDCODEs
-    #define XCZU21DR_NAME "XCZU21DR"
+    #define XCZU21DR_NAME "xczu21dr"
     #define XCZU21DR_SLRNUM 1
     #define XCZU21DR_ROWNUM 8
     #define XCZU21DR_IDCODE 0x4A83093
@@ -1038,7 +1042,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_STRING_CAT_8(XCZU21DR_);                                                             \
     }
 
-    #define XCZU25DR_NAME "XCZU25DR"
+    #define XCZU25DR_NAME "xczu25dr"
     #define XCZU25DR_SLRNUM 1
     #define XCZU25DR_ROWNUM 6
     #define XCZU25DR_IDCODE 0x4A87093
@@ -1054,7 +1058,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU21DR
-    #define XCZU27DR_NAME "XCZU27DR"
+    #define XCZU27DR_NAME "xczu27dr"
     #define XCZU27DR_IDCODE 0x4A86093
     #define XCZU27DR() {                                                                          \
         XCZU21DR();                                                                               \
@@ -1063,7 +1067,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
     
     //Same as ZU21DR
-    #define XCZU28DR_NAME "XCZU28DR"
+    #define XCZU28DR_NAME "xczu28dr"
     #define XCZU28DR_IDCODE 0x4A82093
     #define XCZU28DR() {                                                                          \
         XCZU21DR();                                                                               \
@@ -1072,7 +1076,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU21DR
-    #define XCZU29DR_NAME "XCZU29DR"
+    #define XCZU29DR_NAME "xczu29dr"
     #define XCZU29DR_IDCODE 0x4A84093
     #define XCZU29DR() {                                                                          \
         XCZU21DR();                                                                               \
@@ -1081,7 +1085,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU21DR
-    #define XCZU39DR_NAME "XCZU39DR"
+    #define XCZU39DR_NAME "xczu39dr"
     #define XCZU39DR_IDCODE 0x4A88093
     #define XCZU39DR() {                                                                          \
         XCZU21DR();                                                                               \
@@ -1089,11 +1093,11 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_IDCODE(0, XCZU39DR_IDCODE);                                                          \
     }
 
-    #define XCZU42DR_NAME "XCZU42DR"
+    #define XCZU42DR_NAME "xczu42dr"
     #define XCZU42DR_IDCODE TODO
     #define XCZU42DR() {/*TODO*/;throw runtime_error("Device XCZU42DR not yet implemented.");}
 
-    #define XCZU43DR_NAME "XCZU43DR"
+    #define XCZU43DR_NAME "xczu43dr"
     #define XCZU43DR_SLRNUM 1
     #define XCZU43DR_ROWNUM 8
     #define XCZU43DR_IDCODE 0x4AA7093
@@ -1111,7 +1115,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU43DR
-    #define XCZU46DR_NAME "XCZU46DR"
+    #define XCZU46DR_NAME "xczu46dr"
     #define XCZU46DR_IDCODE 0x4AA2093
     #define XCZU46DR() {                                                                          \
         XCZU43DR();                                                                               \
@@ -1120,7 +1124,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU43DR
-    #define XCZU47DR_NAME "XCZU47DR"
+    #define XCZU47DR_NAME "xczu47dr"
     #define XCZU47DR_IDCODE 0x4AA9093
     #define XCZU47DR() {                                                                          \
         XCZU43DR();                                                                               \
@@ -1129,7 +1133,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU43DR
-    #define XCZU48DR_NAME "XCZU48DR"
+    #define XCZU48DR_NAME "xczu48dr"
     #define XCZU48DR_IDCODE 0x4AA5093
     #define XCZU48DR() {                                                                          \
         XCZU43DR();                                                                               \
@@ -1138,7 +1142,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //Same as ZU43DR
-    #define XCZU49DR_NAME "XCZU49DR"
+    #define XCZU49DR_NAME "xczu49dr"
     #define XCZU49DR_IDCODE 0x4AA8093
     #define XCZU49DR() {                                                                          \
         XCZU43DR();                                                                               \
@@ -1146,18 +1150,18 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
         XUSP_IDCODE(0, XCZU49DR_IDCODE);                                                          \
     }
 
-    #define XCZU65DR_NAME "XCZU65DR"
+    #define XCZU65DR_NAME "xczu65dr"
     #define XCZU65DR_IDCODE TODO
     #define XCZU65DR() {/*TODO*/;throw runtime_error("Device XCZU65DR not yet implemented.");}
 
-    #define XCZU67DR_NAME "XCZU67DR"
+    #define XCZU67DR_NAME "xczu67dr"
     #define XCZU67DR_IDCODE TODO
     #define XCZU67DR() {/*TODO*/;throw runtime_error("Device XCZU67DR not yet implemented.");}
 
 //Xilinx UltraScale+ Alveo rebranding
 //IDCODEs
     //XCU200 is rebranded XCVU9P, but IDCODE is different
-    #define XCU200_NAME "XCU200"
+    #define XCU200_NAME "xcu200"
     #define XCU200_IDCODE 0x4B37093
     #define XCU200() {                                                                            \
         XCVU9P();                                                                                 \
@@ -1166,7 +1170,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU250 is rebranded XCVU13P, but IDCODE is different
-    #define XCU250_NAME "XCU250"
+    #define XCU250_NAME "xcu250"
     #define XCU250_IDCODE 0x4B57093
     #define XCU250() {                                                                            \
         XCVU13P();                                                                                \
@@ -1175,7 +1179,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU26 is rebranded XCVU23P, but IDCODE is different
-    #define XCU26_NAME "XCU26"
+    #define XCU26_NAME "xcu26"
     #define XCU26_IDCODE 0x4AD5093
     #define XCU26() {                                                                             \
         XCVU23P();                                                                                \
@@ -1184,7 +1188,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCUX35 is same as XC26
-    #define XCUX35_NAME "XCUX35"
+    #define XCUX35_NAME "xcux35"
     #define XCUX35_IDCODE XCU26_IDCODE
     #define XCUX35() {                                                                            \
         XCU26();                                                                                  \
@@ -1193,7 +1197,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU50 is rebranded XCVU35P, but IDCODE is different
-    #define XCU50_NAME "XCU50"
+    #define XCU50_NAME "xcu50"
     #define XCU50_IDCODE 0x4B77093
     #define XCU50() {                                                                             \
         XCVU35P();                                                                                \
@@ -1202,7 +1206,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU55N is rebranded XCVU45P, but IDCODE is different
-    #define XCU55N_NAME "XCU55N"
+    #define XCU55N_NAME "xcu55n"
     #define XCU55N_IDCODE 0x4B77093
     #define XCU55N() {                                                                            \
         XCVU45P();                                                                                \
@@ -1211,7 +1215,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU55C is rebranded XCVU47P, but IDCODE is different
-    #define XCU55C_NAME "XCU55C"
+    #define XCU55C_NAME "xcu55c"
     #define XCU55C_IDCODE 0x4B7D093
     #define XCU55C() {                                                                            \
         XCVU47P();                                                                                \
@@ -1220,7 +1224,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU280 is rebranded XCVU37P, but IDCODE is different
-    #define XCU280_NAME "XCU280"
+    #define XCU280_NAME "xcu280"
     #define XCU280_IDCODE XCU55C_IDCODE
     #define XCU280() {                                                                            \
         XCVU37P();                                                                                \
@@ -1238,7 +1242,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     */
 
     //XCU30 is rebranded XCZU7, but IDCODE is different
-    #define XCU30_NAME "XCU30"
+    #define XCU30_NAME "xcu30"
     #define XCU30_IDCODE 0x4A5C093
     #define XCU30() {                                                                             \
         XCZU7();                                                                                  \
@@ -1247,7 +1251,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
     }
 
     //XCU25 is rebranded XCZU19, but IDCODE is different
-    #define XCU25_NAME "XCU25"
+    #define XCU25_NAME "xcu25"
     #define XCU25_IDCODE 0x4A58093
     #define XCU25() {                                                                             \
         XCZU19();                                                                                 \
@@ -1257,7 +1261,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 
 // Kria rebranding
     //Kria 26 is rebranded XCZU5
-    #define XCK26_NAME "XCK26"
+    #define XCK26_NAME "xck26"
     #define XCK26_IDCODE 0x4A49093
     #define XCK26() {                                                                             \
         XCZU5();                                                                                  \

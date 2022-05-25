@@ -32,7 +32,7 @@ void XilinxUltraScalePlus::readBitstream(string filename)
 	ifstream fin (filename, ifstream::binary);
 	if(!fin.good())
         throw runtime_error(string("Could not open file: \"").append(filename).append("\" .\n"));
-    if(verbose)cout<<"Reading Xilinx UltraScale+ bitstream from file \""<<filename<<"\":\n";
+    log("Reading Xilinx UltraScale+ bitstream from file \"" + filename + "\"");
 	
 	loadedBitstreamEndianess = XilinxUltraScalePlus::parseBitstreamEndianess(fin);
 	
