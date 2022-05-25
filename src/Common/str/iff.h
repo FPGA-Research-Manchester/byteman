@@ -49,7 +49,7 @@ namespace str{
 		{
 			if(checkedString == nextString)
 				return true;
-			return stringEndsWith(checkedString, restStrings...);
+			return stringIs(checkedString, restStrings...);
 		}
 		template<typename ... Rest> inline bool stringContains(string checkedString)	///< Returns false. End of recursion for template
 		{
