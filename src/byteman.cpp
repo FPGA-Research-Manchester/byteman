@@ -196,17 +196,6 @@ void parseCommand(string nextCmd){
 	#undef cmdIs
 }
 
-
-/**************************************************************************//**
- * @mainpage
- * byteman is a high-throughput bitstream relocation and manipulation tool.
- * 
- * 
- * A good starting point for exploring the code is byteman.cpp where 
- * the main() function parses the command line arguments.
- * 
- *****************************************************************************/
-
 /**************************************************************************//**
  * Main function for byteman.
  * Parses command line arguments and eventual streamed script files as individual

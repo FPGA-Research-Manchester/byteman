@@ -14,6 +14,19 @@
  * limitations under the License.
  *****************************************************************************/
 
+/**************************************************************************//**
+ * @mainpage
+ * byteman is a high-throughput bitstream relocation and manipulation tool.
+ * 
+ * 
+ * A good starting point to explore the code is byteman.cpp where the main()
+ * function parses the command line arguments.
+ *
+ * A list of currently implemented FPGA architectures:
+ * - Xilinx UltraScale+ (XilinxUltraScalePlus, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
+ * 
+ *****************************************************************************/
+
 #ifndef BYTEMAN_H
 #define BYTEMAN_H
 
