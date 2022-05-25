@@ -19,7 +19,7 @@
 #include<string>
 #include<stdexcept>
 
-#include "../../../Common/StringFuncs.h"
+#include "../../../Common/str.h"
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusDevices.h"
 
@@ -194,303 +194,303 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 }
 int XilinxUltraScalePlus::getDeviceByName(string name)
 {
-	name = StringFuncs::removeSpaces(name);
-	name = StringFuncs::stringToLower(name);
+	name = str::removeSpaces(name);
+	name = str::stringToLower(name);
 	
     //US+ Artix
 	#ifdef XUSPARTIX
-		if(StringFuncs::checkIf::stringContains(name, XCAU10P_NAME))
+		if(str::iff::stringContains(name, XCAU10P_NAME))
 			return XUSP_DEVICE_XCAU10P;
-		if(StringFuncs::checkIf::stringContains(name, XCAU15P_NAME))
+		if(str::iff::stringContains(name, XCAU15P_NAME))
 			return XUSP_DEVICE_XCAU15P;
-		if(StringFuncs::checkIf::stringContains(name, XCAU20P_NAME))
+		if(str::iff::stringContains(name, XCAU20P_NAME))
 			return XUSP_DEVICE_XCAU20P;
-		if(StringFuncs::checkIf::stringContains(name, XCAU25P_NAME))
+		if(str::iff::stringContains(name, XCAU25P_NAME))
 			return XUSP_DEVICE_XCAU25P;
 	#endif
     //US+ Kintex
 	#ifdef XUSPKINTEX
-		if(StringFuncs::checkIf::stringContains(name, XCKU3P_NAME,  "xqku3p"))
+		if(str::iff::stringContains(name, XCKU3P_NAME,  "xqku3p"))
 			return XUSP_DEVICE_XCKU3P;
-		if(StringFuncs::checkIf::stringContains(name, XCKU5P_NAME,  "xqku5p"))
+		if(str::iff::stringContains(name, XCKU5P_NAME,  "xqku5p"))
 			return XUSP_DEVICE_XCKU5P;
-		if(StringFuncs::checkIf::stringContains(name, XCKU9P_NAME,  "xqku9p"))
+		if(str::iff::stringContains(name, XCKU9P_NAME,  "xqku9p"))
 			return XUSP_DEVICE_XCKU9P;
-		if(StringFuncs::checkIf::stringContains(name, XCKU11P_NAME, "xqku11p"))
+		if(str::iff::stringContains(name, XCKU11P_NAME, "xqku11p"))
 			return XUSP_DEVICE_XCKU11P;
-		if(StringFuncs::checkIf::stringContains(name, XCKU13P_NAME, "xqku13p"))
+		if(str::iff::stringContains(name, XCKU13P_NAME, "xqku13p"))
 			return XUSP_DEVICE_XCKU13P;
-		if(StringFuncs::checkIf::stringContains(name, XCKU15P_NAME, "xqku15p"))
+		if(str::iff::stringContains(name, XCKU15P_NAME, "xqku15p"))
 			return XUSP_DEVICE_XCKU15P;
-		if(StringFuncs::checkIf::stringContains(name, XCKU19P_NAME, "xqku19p"))
+		if(str::iff::stringContains(name, XCKU19P_NAME, "xqku19p"))
 			return XUSP_DEVICE_XCKU19P;
 	#endif
     //US+ Virtex
 	#ifdef XUSPVIRTEX
-		if(StringFuncs::checkIf::stringContains(name, XCVU3P_NAME,  "xqvu3p"))
+		if(str::iff::stringContains(name, XCVU3P_NAME,  "xqvu3p"))
 			return XUSP_DEVICE_XCVU3P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU5P_NAME,  "xqvu5p"))
+		if(str::iff::stringContains(name, XCVU5P_NAME,  "xqvu5p"))
 			return XUSP_DEVICE_XCVU5P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU7P_NAME,  "xqvu7p"))
+		if(str::iff::stringContains(name, XCVU7P_NAME,  "xqvu7p"))
 			return XUSP_DEVICE_XCVU7P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU9P_NAME,  "xqvu9p"))
+		if(str::iff::stringContains(name, XCVU9P_NAME,  "xqvu9p"))
 			return XUSP_DEVICE_XCVU9P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU11P_NAME, "xqvu11p"))
+		if(str::iff::stringContains(name, XCVU11P_NAME, "xqvu11p"))
 			return XUSP_DEVICE_XCVU11P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU13P_NAME, "xqvu13p"))
+		if(str::iff::stringContains(name, XCVU13P_NAME, "xqvu13p"))
 			return XUSP_DEVICE_XCVU13P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU19P_NAME, "xqvu19p"))
+		if(str::iff::stringContains(name, XCVU19P_NAME, "xqvu19p"))
 			return XUSP_DEVICE_XCVU19P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU23P_NAME, "xqvu23p"))
+		if(str::iff::stringContains(name, XCVU23P_NAME, "xqvu23p"))
 			return XUSP_DEVICE_XCVU23P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU27P_NAME, "xqvu27p"))
+		if(str::iff::stringContains(name, XCVU27P_NAME, "xqvu27p"))
 			return XUSP_DEVICE_XCVU27P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU29P_NAME, "xqvu29p"))
+		if(str::iff::stringContains(name, XCVU29P_NAME, "xqvu29p"))
 			return XUSP_DEVICE_XCVU29P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU31P_NAME, "xqvu31p"))
+		if(str::iff::stringContains(name, XCVU31P_NAME, "xqvu31p"))
 			return XUSP_DEVICE_XCVU31P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU33P_NAME, "xqvu33p"))
+		if(str::iff::stringContains(name, XCVU33P_NAME, "xqvu33p"))
 			return XUSP_DEVICE_XCVU33P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU35P_NAME, "xqvu35p"))
+		if(str::iff::stringContains(name, XCVU35P_NAME, "xqvu35p"))
 			return XUSP_DEVICE_XCVU35P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU37P_NAME, "xqvu37p"))
+		if(str::iff::stringContains(name, XCVU37P_NAME, "xqvu37p"))
 			return XUSP_DEVICE_XCVU37P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU45P_NAME, "xqvu45p"))
+		if(str::iff::stringContains(name, XCVU45P_NAME, "xqvu45p"))
 			return XUSP_DEVICE_XCVU45P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU47P_NAME, "xqvu47p"))
+		if(str::iff::stringContains(name, XCVU47P_NAME, "xqvu47p"))
 			return XUSP_DEVICE_XCVU47P;
-		if(StringFuncs::checkIf::stringContains(name, XCVU57P_NAME, "xqvu57p"))
+		if(str::iff::stringContains(name, XCVU57P_NAME, "xqvu57p"))
 			return XUSP_DEVICE_XCVU57P;
 	#endif
 	//US+ RFSoC (RFSOC BEFORE MPSOC, since names collide!)
 	#ifdef XUSPZYNQRF
-		if(StringFuncs::checkIf::stringContains(name, XCZU21DR_NAME, "xqzu21dr"))
+		if(str::iff::stringContains(name, XCZU21DR_NAME, "xqzu21dr"))
 			return XUSP_DEVICE_XCZU21DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU25DR_NAME))
+		if(str::iff::stringContains(name, XCZU25DR_NAME))
 			return XUSP_DEVICE_XCZU25DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU27DR_NAME))
+		if(str::iff::stringContains(name, XCZU27DR_NAME))
 			return XUSP_DEVICE_XCZU27DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU28DR_NAME, "xqzu28dr"))
+		if(str::iff::stringContains(name, XCZU28DR_NAME, "xqzu28dr"))
 			return XUSP_DEVICE_XCZU28DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU29DR_NAME, "xqzu29dr"))
+		if(str::iff::stringContains(name, XCZU29DR_NAME, "xqzu29dr"))
 			return XUSP_DEVICE_XCZU29DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU39DR_NAME))
+		if(str::iff::stringContains(name, XCZU39DR_NAME))
 			return XUSP_DEVICE_XCZU39DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU42DR_NAME))
+		if(str::iff::stringContains(name, XCZU42DR_NAME))
 			return XUSP_DEVICE_XCZU42DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU43DR_NAME))
+		if(str::iff::stringContains(name, XCZU43DR_NAME))
 			return XUSP_DEVICE_XCZU43DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU46DR_NAME, "xqzu48dr", "xqzu49dr"))
+		if(str::iff::stringContains(name, XCZU46DR_NAME, "xqzu48dr", "xqzu49dr"))
 			return XUSP_DEVICE_XCZU46DR; // Yes, this row is correct.
-		if(StringFuncs::checkIf::stringContains(name, XCZU47DR_NAME))
+		if(str::iff::stringContains(name, XCZU47DR_NAME))
 			return XUSP_DEVICE_XCZU47DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU48DR_NAME))
+		if(str::iff::stringContains(name, XCZU48DR_NAME))
 			return XUSP_DEVICE_XCZU48DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU49DR_NAME))
+		if(str::iff::stringContains(name, XCZU49DR_NAME))
 			return XUSP_DEVICE_XCZU49DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU65DR_NAME))
+		if(str::iff::stringContains(name, XCZU65DR_NAME))
 			return XUSP_DEVICE_XCZU65DR;
-		if(StringFuncs::checkIf::stringContains(name, XCZU67DR_NAME))
+		if(str::iff::stringContains(name, XCZU67DR_NAME))
 			return XUSP_DEVICE_XCZU67DR;
 	#endif
 	//US+ Zynq
 	#ifdef XUSPZYNQMP
-		if(StringFuncs::checkIf::stringContains(name, XCZU1_NAME,  "xazu1",  "xqzu1"))
+		if(str::iff::stringContains(name, XCZU1_NAME,  "xazu1",  "xqzu1"))
 			return XUSP_DEVICE_XCZU1;
-		if(StringFuncs::checkIf::stringContains(name, XCZU2_NAME,  "xazu2",  "xqzu2"))
+		if(str::iff::stringContains(name, XCZU2_NAME,  "xazu2",  "xqzu2"))
 			return XUSP_DEVICE_XCZU2;
-		if(StringFuncs::checkIf::stringContains(name, XCZU3_NAME,  "xazu3",  "xqzu3"))
+		if(str::iff::stringContains(name, XCZU3_NAME,  "xazu3",  "xqzu3"))
 			return XUSP_DEVICE_XCZU3;
-		if(StringFuncs::checkIf::stringContains(name, XCZU4_NAME,  "xazu4",  "xqzu4"))
+		if(str::iff::stringContains(name, XCZU4_NAME,  "xazu4",  "xqzu4"))
 			return XUSP_DEVICE_XCZU4;
-		if(StringFuncs::checkIf::stringContains(name, XCZU5_NAME,  "xazu5",  "xqzu5"))
+		if(str::iff::stringContains(name, XCZU5_NAME,  "xazu5",  "xqzu5"))
 			return XUSP_DEVICE_XCZU5;
-		if(StringFuncs::checkIf::stringContains(name, XCZU6_NAME,  "xazu6",  "xqzu6"))
+		if(str::iff::stringContains(name, XCZU6_NAME,  "xazu6",  "xqzu6"))
 			return XUSP_DEVICE_XCZU6;
-		if(StringFuncs::checkIf::stringContains(name, XCZU7_NAME,  "xazu7",  "xqzu7"))
+		if(str::iff::stringContains(name, XCZU7_NAME,  "xazu7",  "xqzu7"))
 			return XUSP_DEVICE_XCZU7;
-		if(StringFuncs::checkIf::stringContains(name, XCZU9_NAME,  "xazu9",  "xqzu9"))
+		if(str::iff::stringContains(name, XCZU9_NAME,  "xazu9",  "xqzu9"))
 			return XUSP_DEVICE_XCZU9;
-		if(StringFuncs::checkIf::stringContains(name, XCZU11_NAME, "xazu11", "xqzu11"))
+		if(str::iff::stringContains(name, XCZU11_NAME, "xazu11", "xqzu11"))
 			return XUSP_DEVICE_XCZU11;
-		if(StringFuncs::checkIf::stringContains(name, XCZU15_NAME, "xazu15", "xqzu15"))
+		if(str::iff::stringContains(name, XCZU15_NAME, "xazu15", "xqzu15"))
 			return XUSP_DEVICE_XCZU15;
-		if(StringFuncs::checkIf::stringContains(name, XCZU17_NAME, "xazu17", "xqzu17"))
+		if(str::iff::stringContains(name, XCZU17_NAME, "xazu17", "xqzu17"))
 			return XUSP_DEVICE_XCZU17;
-		if(StringFuncs::checkIf::stringContains(name, XCZU19_NAME, "xazu19", "xqzu19"))
+		if(str::iff::stringContains(name, XCZU19_NAME, "xazu19", "xqzu19"))
 			return XUSP_DEVICE_XCZU19;
 	#endif
 
 
 	//Alveo rebranding
 	#ifdef XUSPALVEO
-		if(StringFuncs::checkIf::stringContains(name, XCU200_NAME, "alveou200"))
+		if(str::iff::stringContains(name, XCU200_NAME, "alveou200"))
 			return XUSP_DEVICE_XCU200;
-		if(StringFuncs::checkIf::stringContains(name, XCU250_NAME, "alveou250"))
+		if(str::iff::stringContains(name, XCU250_NAME, "alveou250"))
 			return XUSP_DEVICE_XCU250;
-		if(StringFuncs::checkIf::stringContains(name, XCU26_NAME, "alveou26"))
+		if(str::iff::stringContains(name, XCU26_NAME, "alveou26"))
 			return XUSP_DEVICE_XCU26;
-		if(StringFuncs::checkIf::stringContains(name, XCUX35_NAME, "alveou35"))
+		if(str::iff::stringContains(name, XCUX35_NAME, "alveou35"))
 			return XUSP_DEVICE_XCUX35;
-		if(StringFuncs::checkIf::stringContains(name, XCU50_NAME, "alveou50"))
+		if(str::iff::stringContains(name, XCU50_NAME, "alveou50"))
 			return XUSP_DEVICE_XCU50;
-		if(StringFuncs::checkIf::stringContains(name, XCU55N_NAME, "alveou55n"))
+		if(str::iff::stringContains(name, XCU55N_NAME, "alveou55n"))
 			return XUSP_DEVICE_XCU55N;
-		if(StringFuncs::checkIf::stringContains(name, XCU55C_NAME, "alveou55c"))
+		if(str::iff::stringContains(name, XCU55C_NAME, "alveou55c"))
 			return XUSP_DEVICE_XCU55C;
-		if(StringFuncs::checkIf::stringContains(name, XCU280_NAME, "alveou280"))
+		if(str::iff::stringContains(name, XCU280_NAME, "alveou280"))
 			return XUSP_DEVICE_XCU280;
-		if(StringFuncs::checkIf::stringContains(name, XCU30_NAME, "alveou30"))
+		if(str::iff::stringContains(name, XCU30_NAME, "alveou30"))
 			return XUSP_DEVICE_XCU30;
-		if(StringFuncs::checkIf::stringContains(name, XCU25_NAME, "alveou25"))
+		if(str::iff::stringContains(name, XCU25_NAME, "alveou25"))
 			return XUSP_DEVICE_XCU25;
 	#endif
 
     //Some boards for easier use
 	#ifdef XUSPBOARDS
-		if(StringFuncs::checkIf::stringContains(name, "zcu102", "zu-gmsl2"))
+		if(str::iff::stringContains(name, "zcu102", "zu-gmsl2"))
 			return XUSP_DEVICE_ZCU102;
-		if(StringFuncs::checkIf::stringContains(name, "zcu104"))
+		if(str::iff::stringContains(name, "zcu104"))
 			return XUSP_DEVICE_ZCU104;
-		if(StringFuncs::checkIf::stringContains(name, "zcu106"))
+		if(str::iff::stringContains(name, "zcu106"))
 			return XUSP_DEVICE_ZCU106;
-		if(StringFuncs::checkIf::stringContains(name, "axu15eg"))
+		if(str::iff::stringContains(name, "axu15eg"))
 			return XUSP_DEVICE_AXU15EG;
-		if(StringFuncs::checkIf::stringContains(name, "axu2cg"))
+		if(str::iff::stringContains(name, "axu2cg"))
 			return XUSP_DEVICE_AXU2CG;
-		if(StringFuncs::checkIf::stringContains(name, "axu3eg"))
+		if(str::iff::stringContains(name, "axu3eg"))
 			return XUSP_DEVICE_AXU3EG;
-		if(StringFuncs::checkIf::stringContains(name, "axu4ev"))
+		if(str::iff::stringContains(name, "axu4ev"))
 			return XUSP_DEVICE_AXU4EV;
-		if(StringFuncs::checkIf::stringContains(name, "axu5ev"))
+		if(str::iff::stringContains(name, "axu5ev"))
 			return XUSP_DEVICE_AXU5EV;
-		if(StringFuncs::checkIf::stringContains(name, "axu9eg"))
+		if(str::iff::stringContains(name, "axu9eg"))
 			return XUSP_DEVICE_AXU9EG;
-		if(StringFuncs::checkIf::stringContains(name, "ultrazed-ev"))
+		if(str::iff::stringContains(name, "ultrazed-ev"))
 			return XUSP_DEVICE_ULTRAZED_EV;
-		if(StringFuncs::checkIf::stringContains(name, "champ-xd1s"))
+		if(str::iff::stringContains(name, "champ-xd1s"))
 			return XUSP_DEVICE_CHAMP_XD1S;
-		if(StringFuncs::checkIf::stringContains(name, "zu-3eg"))
+		if(str::iff::stringContains(name, "zu-3eg"))
 			return XUSP_DEVICE_ZU_3EG;
-		if(StringFuncs::checkIf::stringContains(name, "zu-5ev"))
+		if(str::iff::stringContains(name, "zu-5ev"))
 			return XUSP_DEVICE_ZU_5EV;
-		if(StringFuncs::checkIf::stringContains(name, "htg-z999-06"))
+		if(str::iff::stringContains(name, "htg-z999-06"))
 			return XUSP_DEVICE_HTG_Z999_06;
-		if(StringFuncs::checkIf::stringContains(name, "htg-z999-09"))
+		if(str::iff::stringContains(name, "htg-z999-09"))
 			return XUSP_DEVICE_HTG_Z999_09;
-		if(StringFuncs::checkIf::stringContains(name, "htg-z999-15"))
+		if(str::iff::stringContains(name, "htg-z999-15"))
 			return XUSP_DEVICE_HTG_Z999_15;
-		if(StringFuncs::checkIf::stringContains(name, "htg-930-9-3"))
+		if(str::iff::stringContains(name, "htg-930-9-3"))
 			return XUSP_DEVICE_HTG_930_9_3;
-		if(StringFuncs::checkIf::stringContains(name, "htg-930-9"))
+		if(str::iff::stringContains(name, "htg-930-9"))
 			return XUSP_DEVICE_HTG_930_9;
-		if(StringFuncs::checkIf::stringContains(name, "htg-930-13-3"))
+		if(str::iff::stringContains(name, "htg-930-13-3"))
 			return XUSP_DEVICE_HTG_930_13_3;
-		if(StringFuncs::checkIf::stringContains(name, "htg-930-13"))
+		if(str::iff::stringContains(name, "htg-930-13"))
 			return XUSP_DEVICE_HTG_930_13;
-		if(StringFuncs::checkIf::stringContains(name, "htg-937-37p"))
+		if(str::iff::stringContains(name, "htg-937-37p"))
 			return XUSP_DEVICE_HTG_937_37P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-937-47p"))
+		if(str::iff::stringContains(name, "htg-937-47p"))
 			return XUSP_DEVICE_HTG_937_47P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-z922-11"))
+		if(str::iff::stringContains(name, "htg-z922-11"))
 			return XUSP_DEVICE_HTG_Z922_11;
-		if(StringFuncs::checkIf::stringContains(name, "htg-z922-19-dg"))
+		if(str::iff::stringContains(name, "htg-z922-19-dg"))
 			return XUSP_DEVICE_HTG_Z922_19_DG;
-		if(StringFuncs::checkIf::stringContains(name, "htg-z922-19"))
+		if(str::iff::stringContains(name, "htg-z922-19"))
 			return XUSP_DEVICE_HTG_Z922_19;
-		if(StringFuncs::checkIf::stringContains(name, "czu3eg"))
+		if(str::iff::stringContains(name, "czu3eg"))
 			return XUSP_DEVICE_CZU3EG;
-		if(StringFuncs::checkIf::stringContains(name, "czu4ev"))
+		if(str::iff::stringContains(name, "czu4ev"))
 			return XUSP_DEVICE_CZU4EV;
-		if(StringFuncs::checkIf::stringContains(name, "te0802"))
+		if(str::iff::stringContains(name, "te0802"))
 			return XUSP_DEVICE_TE0802;
-		if(StringFuncs::checkIf::stringContains(name, "te0803-04-3be11"))
+		if(str::iff::stringContains(name, "te0803-04-3be11"))
 			return XUSP_DEVICE_TE0803_04_3BE11;
-		if(StringFuncs::checkIf::stringContains(name, "te0807-03-7de21"))
+		if(str::iff::stringContains(name, "te0807-03-7de21"))
 			return XUSP_DEVICE_TE0807_03_7DE21;
-		if(StringFuncs::checkIf::stringContains(name, "te0808-05-9be21"))
+		if(str::iff::stringContains(name, "te0808-05-9be21"))
 			return XUSP_DEVICE_TE0808_05_9BE21;
-		if(StringFuncs::checkIf::stringContains(name, "te0808-05-9gi21"))
+		if(str::iff::stringContains(name, "te0808-05-9gi21"))
 			return XUSP_DEVICE_TE0808_05_9GI21;
-		if(StringFuncs::checkIf::stringContains(name, "te0808-05-bbe21"))
+		if(str::iff::stringContains(name, "te0808-05-bbe21"))
 			return XUSP_DEVICE_TE0808_05_BBE21;
-		if(StringFuncs::checkIf::stringContains(name, "te0812"))
+		if(str::iff::stringContains(name, "te0812"))
 			return XUSP_DEVICE_TE0812;
-		if(StringFuncs::checkIf::stringContains(name, "teb0911"))
+		if(str::iff::stringContains(name, "teb0911"))
 			return XUSP_DEVICE_TEB0911;
-		if(StringFuncs::checkIf::stringContains(name, "teb0912"))
+		if(str::iff::stringContains(name, "teb0912"))
 			return XUSP_DEVICE_TEB0912;
-		if(StringFuncs::checkIf::stringContains(name, "tysom-3-zu7ev"))
+		if(str::iff::stringContains(name, "tysom-3-zu7ev"))
 			return XUSP_DEVICE_TYSOM_3_ZU7EV;
-		if(StringFuncs::checkIf::stringContains(name, "xpedite2600"))
+		if(str::iff::stringContains(name, "xpedite2600"))
 			return XUSP_DEVICE_XPEDITE2600;
-		if(StringFuncs::checkIf::stringContains(name, "amc574"))
+		if(str::iff::stringContains(name, "amc574"))
 			return XUSP_DEVICE_AMC574;
-		if(StringFuncs::checkIf::stringContains(name, "zcu208"))
+		if(str::iff::stringContains(name, "zcu208"))
 			return XUSP_DEVICE_ZCU208;
-		if(StringFuncs::checkIf::stringContains(name, "zcu216"))
+		if(str::iff::stringContains(name, "zcu216"))
 			return XUSP_DEVICE_ZCU216;
-		if(StringFuncs::checkIf::stringContains(name, "zcu670"))
+		if(str::iff::stringContains(name, "zcu670"))
 			return XUSP_DEVICE_ZCU670;
-		if(StringFuncs::checkIf::stringContains(name, "ultra96"))
+		if(str::iff::stringContains(name, "ultra96"))
 			return XUSP_DEVICE_ULTRA96;
-		if(StringFuncs::checkIf::stringContains(name, "k26c"))
+		if(str::iff::stringContains(name, "k26c"))
 			return XUSP_DEVICE_K26C;
-		if(StringFuncs::checkIf::stringContains(name, "k26i"))
+		if(str::iff::stringContains(name, "k26i"))
 			return XUSP_DEVICE_K26I;
-		if(StringFuncs::checkIf::stringContains(name, "kv260"))
+		if(str::iff::stringContains(name, "kv260"))
 			return XUSP_DEVICE_KV260;
-		if(StringFuncs::checkIf::stringContains(name, "amc584"))
+		if(str::iff::stringContains(name, "amc584"))
 			return XUSP_DEVICE_AMC584;
-		if(StringFuncs::checkIf::stringContains(name, "htg-960"))
+		if(str::iff::stringContains(name, "htg-960"))
 			return XUSP_DEVICE_HTG_960;
-		if(StringFuncs::checkIf::stringContains(name, "vcu1525"))
+		if(str::iff::stringContains(name, "vcu1525"))
 			return XUSP_DEVICE_VCU1525;
-		if(StringFuncs::checkIf::stringContains(name, "vcu118"))
+		if(str::iff::stringContains(name, "vcu118"))
 			return XUSP_DEVICE_VCU118;
-		if(StringFuncs::checkIf::stringContains(name, "vcu128"))
+		if(str::iff::stringContains(name, "vcu128"))
 			return XUSP_DEVICE_VCU128;
-		if(StringFuncs::checkIf::stringContains(name, "vcu129"))
+		if(str::iff::stringContains(name, "vcu129"))
 			return XUSP_DEVICE_VCU129;
-		if(StringFuncs::checkIf::stringContains(name, "htg-940-9-3"))
+		if(str::iff::stringContains(name, "htg-940-9-3"))
 			return XUSP_DEVICE_HTG_940_9_3;
-		if(StringFuncs::checkIf::stringContains(name, "htg-940-9"))
+		if(str::iff::stringContains(name, "htg-940-9"))
 			return XUSP_DEVICE_HTG_940_9;
-		if(StringFuncs::checkIf::stringContains(name, "htg-940-13-3"))
+		if(str::iff::stringContains(name, "htg-940-13-3"))
 			return XUSP_DEVICE_HTG_940_13_3;
-		if(StringFuncs::checkIf::stringContains(name, "htg-940-13"))
+		if(str::iff::stringContains(name, "htg-940-13"))
 			return XUSP_DEVICE_HTG_940_13;
-		if(StringFuncs::checkIf::stringContains(name, "htg-9200-5p"))
+		if(str::iff::stringContains(name, "htg-9200-5p"))
 			return XUSP_DEVICE_HTG_9200_5P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-9200-9p"))
+		if(str::iff::stringContains(name, "htg-9200-9p"))
 			return XUSP_DEVICE_HTG_9200_9P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-9200-13p"))
+		if(str::iff::stringContains(name, "htg-9200-13p"))
 			return XUSP_DEVICE_HTG_9200_13P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-vup-pcie-hh-9p", "htg-910-9"))
+		if(str::iff::stringContains(name, "htg-vup-pcie-hh-9p", "htg-910-9"))
 			return XUSP_DEVICE_HTG_VUP_PCIE_HH_9P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-vup-pcie-hh-13p", "htg-910-13"))
+		if(str::iff::stringContains(name, "htg-vup-pcie-hh-13p", "htg-910-13"))
 			return XUSP_DEVICE_HTG_VUP_PCIE_HH_13P;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf-fmc-28"))
+		if(str::iff::stringContains(name, "htg-zrf-fmc-28"))
 			return XUSP_DEVICE_HTG_ZRF_FMC_28;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf-fmc-48"))
+		if(str::iff::stringContains(name, "htg-zrf-fmc-48"))
 			return XUSP_DEVICE_HTG_ZRF_FMC_48;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf16-29"))
+		if(str::iff::stringContains(name, "htg-zrf16-29"))
 			return XUSP_DEVICE_HTG_ZRF16_29;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf16-49"))
+		if(str::iff::stringContains(name, "htg-zrf16-49"))
 			return XUSP_DEVICE_HTG_ZRF16_49;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf-hh-28"))
+		if(str::iff::stringContains(name, "htg-zrf-hh-28"))
 			return XUSP_DEVICE_HTG_ZRF_HH_28;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf-hh-48"))
+		if(str::iff::stringContains(name, "htg-zrf-hh-48"))
 			return XUSP_DEVICE_HTG_ZRF_HH_48;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zusp-pcie-11-3"))
+		if(str::iff::stringContains(name, "htg-zusp-pcie-11-3"))
 			return XUSP_DEVICE_HTG_ZUSP_PCIE_11_3;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zusp-pcie-19-2"))
+		if(str::iff::stringContains(name, "htg-zusp-pcie-19-2"))
 			return XUSP_DEVICE_HTG_ZUSP_PCIE_19_2;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf8-r2-28", "htg-zrf8-28"))
+		if(str::iff::stringContains(name, "htg-zrf8-r2-28", "htg-zrf8-28"))
 			return XUSP_DEVICE_HTG_ZRF8_R2_28;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf8-r2-48-I", "htg-zrf8-48-i"))
+		if(str::iff::stringContains(name, "htg-zrf8-r2-48-I", "htg-zrf8-48-i"))
 			return XUSP_DEVICE_HTG_ZRF8_R2_48_I;
-		if(StringFuncs::checkIf::stringContains(name, "htg-zrf8-r2-48", "htg-zrf8-48"))
+		if(str::iff::stringContains(name, "htg-zrf8-r2-48", "htg-zrf8-48"))
 			return XUSP_DEVICE_HTG_ZRF8_R2_48;
 	#endif
 	return XUSP_DEVICE_NULL;

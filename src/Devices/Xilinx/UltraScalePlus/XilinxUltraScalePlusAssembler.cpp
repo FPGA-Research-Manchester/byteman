@@ -26,7 +26,7 @@
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
 #include "../../../Common/FileIO.h"
-#include "../../../Common/StringFuncs.h"
+#include "../../../Common/str.h"
 #include "../../../Common/Endianess.h"
 
 using namespace std;
@@ -40,14 +40,14 @@ void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut)
 	enum FILEFORMAT {FILE_NULL = 0, FILE_BIT, FILE_BIT_ASM};
 	FILEFORMAT fileformatIn = FILE_NULL, fileformatOut = FILE_NULL;
 	
-    if(StringFuncs::checkIf::stringEndsWith(filenameIn, ".bit"))
+    if(str::iff::stringEndsWith(filenameIn, ".bit"))
         fileformatIn = FILE_BIT;
-    if(StringFuncs::checkIf::stringEndsWith(filenameIn, ".bitasm"))
+    if(str::iff::stringEndsWith(filenameIn, ".bitasm"))
         fileformatIn = FILE_BIT_ASM;
 	
-    if(StringFuncs::checkIf::stringEndsWith(filenameOut, ".bit"))
+    if(str::iff::stringEndsWith(filenameOut, ".bit"))
         fileformatOut = FILE_BIT;
-    if(StringFuncs::checkIf::stringEndsWith(filenameOut, ".bitasm"))
+    if(str::iff::stringEndsWith(filenameOut, ".bitasm"))
         fileformatOut = FILE_BIT_ASM;
 	if(fileformatIn == FILE_NULL)
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read by the assembler. See \"byteman -h assembly\".\n"));
@@ -133,10 +133,10 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		if(firstEqPos != string::npos)
 			line.replace(firstEqPos, 1, '=', ' ');
 		#define has(x) (line.find(x) != string::npos)
-		if(has("Name"))designName = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
-		if(has("FPGA"))partName = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
-		if(has("Date"))fileDate = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
-		if(has("Time"))fileTime = StringFuncs::removeExternalQuotes(StringFuncs::parse::lastStringWord(line));
+		if(has("Name"))designName = str::removeExternalQuotes(str::parse::lastStringWord(line));
+		if(has("FPGA"))partName = str::removeExternalQuotes(str::parse::lastStringWord(line));
+		if(has("Date"))fileDate = str::removeExternalQuotes(str::parse::lastStringWord(line));
+		if(has("Time"))fileTime = str::removeExternalQuotes(str::parse::lastStringWord(line));
 		if(has("HEADER END"))break;
 		#undef has
 	}
@@ -158,19 +158,19 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		replace(line.begin(), line.end(), ',', ' ');
 		if(has("NOP")){
 			int nopHiddenValue;
-			if(!StringFuncs::parse::multipleInts(line, nopHiddenValue))nopHiddenValue = 0;
+			if(!str::parse::multipleInts(line, nopHiddenValue))nopHiddenValue = 0;
 			XilinxUltraScalePlus::CAP_writeNOP(fout, 1, nopHiddenValue, Endianess::BE);
 		}
 		else if(has("RESERVED")){
 			int reservedHiddenValue;
-			if(!StringFuncs::parse::multipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
+			if(!str::parse::multipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
 			XilinxUltraScalePlus::CAP_writeRESERVED(fout, 1, reservedHiddenValue, Endianess::BE);
 		}
 		else if(has("@")){
 			CAP::Register newRegAddr = assemblerGetRegID(line);
 			if(has("READ REG @")){
 				int readLength;
-				if(!StringFuncs::parse::multipleInts(line, readLength)) readLength = 1; // default read length is 1 if unspecified
+				if(!str::parse::multipleInts(line, readLength)) readLength = 1; // default read length is 1 if unspecified
 				XilinxUltraScalePlus::CAP_writeReadRegister(fout, newRegAddr, readLength, Endianess::BE);
 			} else {// must be a write then ¯\_(ツ)_/¯
 			
@@ -179,7 +179,7 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 				} else if(has("SELECT REGISTER")){
 					XilinxUltraScalePlus::CAP_writeSelectRegister(fout, newRegAddr, Endianess::BE);
 				} else if(newRegAddr == CAP::Register::FDRI){
-					if(!StringFuncs::parse::multipleInts(line, frameCount))
+					if(!str::parse::multipleInts(line, frameCount))
 						throw runtime_error(string("FDRI command needs size: \"").append(line).append("\"!"));
 					int wordCount = frameCount * XUSP_WORDS_PER_FRAME;
 					if(regAddr == CAP::Register::FDRI) {
@@ -193,7 +193,7 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 							if(frameLine.at(frameLine.find_first_not_of(" \t")) == '#')// if #, skip that line as comment
 								continue;
 							uint32_t frameData[XUSP_WORDS_PER_FRAME];
-							if(!StringFuncs::parse::arrayOfUints(frameLine, XUSP_WORDS_PER_FRAME, &frameData[0]))
+							if(!str::parse::arrayOfUints(frameLine, XUSP_WORDS_PER_FRAME, &frameData[0]))
 								throw runtime_error(string("Was expecting the data for a full frame on this line: \"").append(frameLine).append("\", because I think there are ").append(to_string(frameCount)).append(" frames left."));
 							//first 3 words are clk, next 90 are the 0-45 and 48-93 data words
 							for (int w = XUSP_WORDS_AT_CLK; w < (XUSP_WORDS_AT_CLK + XUSP_WORDS_BEFORE_CLK) ; w++){
@@ -214,13 +214,13 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 							throw runtime_error(string("End of file reached while performing FDRI frame writes.!"));
 					}
 				} else if(newRegAddr == CAP::Register::FAR){
-					if(!StringFuncs::parse::multipleInts(line, b, r, c, m))
+					if(!str::parse::multipleInts(line, b, r, c, m))
 						throw runtime_error(string("Could not parse the new FAR value: \"").append(line).append("\"!"));
 					uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(b, r, c, m);
 					XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::FAR, farValue, Endianess::BE);
 				} else {
 					int newValue;
-					if(!StringFuncs::parse::multipleInts(line, newValue))
+					if(!str::parse::multipleInts(line, newValue))
 						throw runtime_error(string("Could not parse the new register value: \"").append(line).append("\"!"));
 					XilinxUltraScalePlus::CAP_writeRegister(fout, newRegAddr, newValue, Endianess::BE);
 				}

@@ -14,18 +14,21 @@
  * limitations under the License.
  *****************************************************************************/
 
-#ifndef STRINGFUNCS_H
-#define STRINGFUNCS_H
+#ifndef STR_PARSE_H
+#define STR_PARSE_H
 
-#include<iostream>
 #include<cstdint> //uint
-#include<algorithm> //replace
 #include<string>
 #include<sstream>
 
 using namespace std;
 
-namespace StringFuncs{
+/**************************************************************************//**
+ * The str::parse:: namespace holds some custom and/or shorter functions for string
+ * parsing.
+ * 
+ *****************************************************************************/
+namespace str{
 	namespace parse {
 		inline string nthStringWord(string s, int n)	///< Parses a string @c s, returns the n-th string word that is not an integer
 		{
@@ -195,104 +198,5 @@ namespace StringFuncs{
 			return multipleInts(ss, args...);
 		}
 	}
-	namespace checkIf {
-		template<typename ... Rest> inline bool stringEndsWith(string checkedString)	///< Returns false. End of recursion for template
-		{
-			return false;
-		}
-		template<typename ... Rest> inline bool stringEndsWith(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString's final characters match fully any of strings @c nextString or @c restStrings
-		{
-			if(checkedString.length() >= nextString.length())
-				if(0 == checkedString.compare (checkedString.length() - nextString.length(), nextString.length(), nextString))
-					return true;
-			return stringEndsWith(checkedString, restStrings...);
-		}
-		template<typename ... Rest> inline bool stringIs(string checkedString)	///< Returns false. End of recursion for template
-		{
-			return false;
-		}
-		template<typename ... Rest> inline bool stringIs(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
-		{
-			if(checkedString == nextString)
-				return true;
-			return stringEndsWith(checkedString, restStrings...);
-		}
-		template<typename ... Rest> inline bool stringContains(string checkedString)	///< Returns false. End of recursion for template
-		{
-			return false;
-		}
-		template<typename ... Rest> inline bool stringContains(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString contains any of strings @c nextString or @c restStrings
-		{
-			if(string::npos != checkedString.rfind(nextString))
-				return true;
-			return stringContains(checkedString, restStrings...);
-		}
-		template<typename ... Rest> inline bool stringBeginsWith(string checkedString)	///< Returns false. End of recursion for template
-		{
-			return false;
-		}
-		template<typename ... Rest> inline bool stringBeginsWith(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString's first characters match fully any of strings @c nextString or @c restStrings
-		{
-			if(0 == checkedString.rfind(nextString, 0))
-				return true;
-			return stringBeginsWith(checkedString, restStrings...);
-		}
-		template<typename ... Rest> inline bool stringWordIs(string checkedString)	///< Returns false. End of recursion for template
-		{
-			return false;
-		}
-		template<typename ... Rest> inline bool stringWordIs(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
-		{
-			if(checkedString == nextString)
-				return true;
-			return stringBeginsWith(checkedString, restStrings...);
-		}
-		template<typename ... Rest> inline bool firstStringWordIs(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString's first word matches fully any of strings @c nextString or @c restStrings
-		{
-			stringstream ss(checkedString);
-			string firstWord;
-			ss >> firstWord;
-			return stringWordIs(firstWord, nextString, restStrings...);
-		}
-	}
-	inline string findStringAndGetAllAfter(string checkedString, string searchString)///< Finds string @c searchString inside @c checkedString and returns all to the right inside @c checkedString. If can't be found, returns empty string.
-	{
-		size_t loc = checkedString.find(searchString);
-		if(string::npos == loc)
-			return string("");
-		return checkedString.substr(loc + searchString.size());
-	}
-	inline string replace(string str, char oldChar, char newChar)	///< Replaces all instances of @c oldChar in string @c str with @c newChar and returns the resulting string.
-	{
-		replace(str.begin(), str.end(), '=', ' ');
-		return str;
-	}
-	inline string removeSpaces(string str)	///< Removes all space chars of @c str returns the resulting string.
-	{
-		str.erase(remove_if(str.begin(), str.end(), ::isspace), str.end());
-		return str;
-	}
-	inline string stringToUpper(string str)	///< Replaces all lowercase characters in @c str with uppercase and returns the resulting string.
-	{
-		transform(str.begin(), str.end(),str.begin(), ::toupper);
-		return str;
-	}
-	inline string stringToLower(string str)	///< Replaces all uppercase characters in @c str with lowercase and returns the resulting string.
-	{
-		transform(str.begin(), str.end(),str.begin(), ::tolower);
-		return str;
-	}
-	inline string removeExternalQuotes(string str)	///< Removes double quotes from start and end of string @c str and returns the resulting string.
-	{
-		if(str.empty())
-			return str;
-		if(str.front() == '"')
-			str.erase(str.begin());
-		if(str.empty())
-			return str;
-		if(str.back() == '"')
-			str.erase(str.end()-1);
-		return str;
-	}
 }
-#endif //STRINGFUNCS_H
+#endif //STR_PARSE_H

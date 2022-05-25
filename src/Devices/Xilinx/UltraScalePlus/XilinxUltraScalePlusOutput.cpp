@@ -23,7 +23,7 @@
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
 #include "../../../Common/FileIO.h"
-#include "../../../Common/StringFuncs.h"
+#include "../../../Common/str.h"
 #include "../../../byteman.h"
 
 using namespace std;
@@ -55,9 +55,9 @@ void XilinxUltraScalePlus::writeBitstream(string filename, string params, Rect2D
 	ofstream fout (filename, ofstream::binary | ofstream::trunc);
 	if(!fout.good())
         throw runtime_error(string("Could not open file: \"").append(filename).append("\"!\n"));
-    if(StringFuncs::checkIf::stringEndsWith(filename, ".bit"))
+    if(str::iff::stringEndsWith(filename, ".bit"))
         XilinxUltraScalePlus::writeBitstreamBIT(fout, params, rect, options);
-    else if(StringFuncs::checkIf::stringEndsWith(filename, ".bin"))
+    else if(str::iff::stringEndsWith(filename, ".bin"))
         XilinxUltraScalePlus::writeBitstreamBIN(fout, params, rect, options);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be written.\n"));

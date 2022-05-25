@@ -19,7 +19,7 @@
 #include<stdexcept>
 
 #include "byteman.h"
-#include "Common/StringFuncs.h"
+#include "Common/str.h"
 
 using namespace std;
 
@@ -58,31 +58,31 @@ void byteman::help()
 }
 void byteman::help(string param)
 {
-	     if(StringFuncs::checkIf::stringIs(param, "v", "verbose"))
+	     if(str::iff::stringIs(param, "v", "verbose"))
 		byteman::helpVerbose();
-	else if(StringFuncs::checkIf::stringIs(param, "w", "warn"))
+	else if(str::iff::stringIs(param, "w", "warn"))
 		byteman::helpWarn();
-	else if(StringFuncs::checkIf::stringIs(param, "r", "region"))
+	else if(str::iff::stringIs(param, "r", "region"))
 		byteman::helpRegion();
-	else if(StringFuncs::checkIf::stringIs(param, "b", "blank"))
+	else if(str::iff::stringIs(param, "b", "blank"))
 		byteman::helpBlank();
-	else if(StringFuncs::checkIf::stringIs(param, "c", "change"))
+	else if(str::iff::stringIs(param, "c", "change"))
 		byteman::helpChange();
-	else if(StringFuncs::checkIf::stringIs(param, "d", "device"))
+	else if(str::iff::stringIs(param, "d", "device"))
 		byteman::helpDevice();
-	else if(StringFuncs::checkIf::stringIs(param, "h", "help"))
+	else if(str::iff::stringIs(param, "h", "help"))
 		byteman::helpHelp();
-	else if(StringFuncs::checkIf::stringIs(param, "i", "input"))
+	else if(str::iff::stringIs(param, "i", "input"))
 		byteman::helpInput();
-	else if(StringFuncs::checkIf::stringIs(param, "m", "merge"))
+	else if(str::iff::stringIs(param, "m", "merge"))
 		byteman::helpMerge();
-	else if(StringFuncs::checkIf::stringIs(param, "o", "output"))
+	else if(str::iff::stringIs(param, "o", "output"))
 		byteman::helpOutput();
-	else if(StringFuncs::checkIf::stringIs(param, "a", "assembly"))
+	else if(str::iff::stringIs(param, "a", "assembly"))
 		byteman::helpAssembly();
-	else if(StringFuncs::checkIf::stringIs(param, "e", "end"))
+	else if(str::iff::stringIs(param, "e", "end"))
 		byteman::helpEnd();
-	else if(StringFuncs::checkIf::stringIs(param, "s", "stdin"))
+	else if(str::iff::stringIs(param, "s", "stdin"))
 		byteman::helpStdin();
 }
 void byteman::helpVerbose()

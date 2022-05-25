@@ -23,7 +23,7 @@
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
 #include "../../../Common/FileIO.h"
-#include "../../../Common/StringFuncs.h"
+#include "../../../Common/str.h"
 
 using namespace std;
 
@@ -36,9 +36,9 @@ void XilinxUltraScalePlus::readBitstream(string filename)
 	
 	loadedBitstreamEndianess = XilinxUltraScalePlus::parseBitstreamEndianess(fin);
 	
-    if(StringFuncs::checkIf::stringEndsWith(filename, ".bit"))
+    if(str::iff::stringEndsWith(filename, ".bit"))
         XilinxUltraScalePlus::readBitstreamBIT(fin);
-    else if(StringFuncs::checkIf::stringEndsWith(filename, ".bin"))
+    else if(str::iff::stringEndsWith(filename, ".bin"))
         XilinxUltraScalePlus::readBitstreamBIN(fin);
     else
         throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read.\n"));

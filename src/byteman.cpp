@@ -19,7 +19,7 @@
 #include<fstream>
 
 #include "byteman.h"
-#include "Common/StringFuncs.h"
+#include "Common/str.h"
 #include "Common/Coords.h"
 
 using namespace std;
@@ -79,38 +79,38 @@ byteman::byteman()
 
 void byteman::parseCommand(string command)
 {
-	command = StringFuncs::replace(command, '=', ' ');
-	command = StringFuncs::replace(command, ':', ' ');
+	command = str::replace(command, '=', ' ');
+	command = str::replace(command, ':', ' ');
 	if (command.at(0) == '-') command.erase(0, 1);
-	string params = StringFuncs::findStringAndGetAllAfter(command, " ");
+	string params = str::findStringAndGetAllAfter(command, " ");
 	//cout <<"params is \""<<params<<"\""<<endl;
 	SelectedOptions options = parseParams(params);
 	
-	if(StringFuncs::checkIf::firstStringWordIs(command, "h", "help"))//check if help first
+	if(str::iff::firstStringWordIs(command, "h", "help"))//check if help first
 		byteman::help(params, 0);
 	else if(Architecture::Unknown == selectedArchitecture) //then check if architecture
 		byteman::setArchitecture(command);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "v", "verbose")) //check the rest of commands
+	else if(str::iff::firstStringWordIs(command, "v", "verbose")) //check the rest of commands
 		byteman::parseVerbose(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "w", "warn"))
+	else if(str::iff::firstStringWordIs(command, "w", "warn"))
 		byteman::parseWarn(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "r", "region"))
+	else if(str::iff::firstStringWordIs(command, "r", "region"))
 		byteman::parseRegion(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "b", "blank"))
+	else if(str::iff::firstStringWordIs(command, "b", "blank"))
 		byteman::parseBlank(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "c", "change"))
+	else if(str::iff::firstStringWordIs(command, "c", "change"))
 		byteman::parseChange(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "d", "device"))
+	else if(str::iff::firstStringWordIs(command, "d", "device"))
 		byteman::parseDevice(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "i", "input"))
+	else if(str::iff::firstStringWordIs(command, "i", "input"))
 		byteman::parseInput(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "m", "merge"))
+	else if(str::iff::firstStringWordIs(command, "m", "merge"))
 		byteman::parseMerge(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "o", "output"))
+	else if(str::iff::firstStringWordIs(command, "o", "output"))
 		byteman::parseOutput(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "a", "assembly"))
+	else if(str::iff::firstStringWordIs(command, "a", "assembly"))
 		byteman::parseAssembly(params, options);
-	else if(StringFuncs::checkIf::firstStringWordIs(command, "e", "end"))
+	else if(str::iff::firstStringWordIs(command, "e", "end"))
 		exit(0);
 	else
 		throw runtime_error("Could not parse command. Consider checking out \"bytemap -help\".");
@@ -127,7 +127,7 @@ void byteman::parseCommand(string command)
 byteman::SelectedOptions byteman::parseParams(string params)
 {
 	SelectedOptions options = SelectedOptions();
-	params = StringFuncs::replace(params, ',', ' ');
+	params = str::replace(params, ',', ' ');
 	stringstream ss(params);
 	string param;
 	while (!ss.eof()) {
@@ -144,7 +144,7 @@ byteman::SelectedOptions byteman::parseParams(string params)
 void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 {
 	int verboseValue;
-	if(!StringFuncs::parse::multipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
+	if(!str::parse::multipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
 	
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
@@ -156,7 +156,7 @@ void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 void byteman::parseWarn(string warnCmd, SelectedOptions options)
 {
 	int warnValue;
-	if(!StringFuncs::parse::multipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
+	if(!str::parse::multipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
 	
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
@@ -167,9 +167,9 @@ void byteman::parseWarn(string warnCmd, SelectedOptions options)
 }
 void byteman::parseRegion(string regionCmd, SelectedOptions options)
 {
-	string params = StringFuncs::parse::allStringWords(regionCmd);
+	string params = str::parse::allStringWords(regionCmd);
 	Rect2D rect;
-	StringFuncs::parse::multipleInts(regionCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
+	str::parse::multipleInts(regionCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -181,7 +181,7 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 }
 void byteman::parseBlank(string blankCmd, SelectedOptions options)
 {
-	string params = StringFuncs::parse::allStringWords(blankCmd);
+	string params = str::parse::allStringWords(blankCmd);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -200,8 +200,8 @@ void byteman::parseChange(string changeCmd, SelectedOptions options)
 }
 void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 {
-	string params = StringFuncs::parse::allStringWordsWithoutLastStringWord(deviceCmd);
-	string deviceName = StringFuncs::parse::lastStringWord(deviceCmd);
+	string params = str::parse::allStringWordsWithoutLastStringWord(deviceCmd);
+	string deviceName = str::parse::lastStringWord(deviceCmd);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -213,8 +213,8 @@ void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 }
 void byteman::parseInput(string inputCmd, SelectedOptions options)
 {
-	string params = StringFuncs::parse::allStringWordsWithoutLastStringWord(inputCmd);
-	string filename = StringFuncs::parse::lastStringWord(inputCmd);
+	string params = str::parse::allStringWordsWithoutLastStringWord(inputCmd);
+	string filename = str::parse::lastStringWord(inputCmd);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -226,10 +226,10 @@ void byteman::parseInput(string inputCmd, SelectedOptions options)
 }
 void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 {
-	string params = StringFuncs::parse::allStringWords(mergeCmd);
+	string params = str::parse::allStringWords(mergeCmd);
 	Rect2D rect;
 	Coord2D dst;
-	StringFuncs::parse::multipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
+	str::parse::multipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -241,10 +241,10 @@ void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 }
 void byteman::parseOutput(string outputCmd, SelectedOptions options)
 {
-	string params = StringFuncs::parse::allStringWordsWithoutLastStringWord(outputCmd);
-	string filename = StringFuncs::parse::lastStringWord(outputCmd);
+	string params = str::parse::allStringWordsWithoutLastStringWord(outputCmd);
+	string filename = str::parse::lastStringWord(outputCmd);
 	Rect2D rect;
-	StringFuncs::parse::multipleInts(outputCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
+	str::parse::multipleInts(outputCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -256,8 +256,8 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 }
 void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 {
-	string filenameIn = StringFuncs::parse::nthStringWord(assemblyCmd, 0);
-	string filenameOut = StringFuncs::parse::nthStringWord(assemblyCmd, 1);
+	string filenameIn = str::parse::nthStringWord(assemblyCmd, 0);
+	string filenameOut = str::parse::nthStringWord(assemblyCmd, 1);
 	#ifdef XUSP
 		mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
@@ -265,12 +265,12 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 
 void byteman::setArchitecture(string arch)
 {
-	arch = StringFuncs::stringToLower(arch);
+	arch = str::stringToLower(arch);
 	#ifdef XUSP
-		if(StringFuncs::checkIf::stringContains(arch, "xusp")
-		||	(	StringFuncs::checkIf::stringContains(arch, "xilinx")
-			&&	StringFuncs::checkIf::stringContains(arch, "ultrascale", "us")
-			&&	StringFuncs::checkIf::stringContains(arch, "plus","+")
+		if(str::iff::stringContains(arch, "xusp")
+		||	(	str::iff::stringContains(arch, "xilinx")
+			&&	str::iff::stringContains(arch, "ultrascale", "us")
+			&&	str::iff::stringContains(arch, "plus","+")
 			)
 		) {
 			selectedArchitecture = Architecture::Xilinx_UltraScalePlus;
