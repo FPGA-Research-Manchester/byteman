@@ -1,7 +1,7 @@
 # ![byteman icon](./Resources/icon32.png) byteman
 ## *Open-source high-performance bitstream relocation and manipulation tool.*
 [![byteman project](https://img.shields.io/badge/byteman-v0.5-blue)](https://github.com/FPGA-Research-Manchester/byteman)
-[![byteman build](https://img.shields.io/badge/Build%20109-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
+[![byteman build](https://img.shields.io/badge/Build%20110-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
 
 ## ![byteman icon](./Resources/icon16.png) Documentation: [![Browse generated docs](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/generateDocs.yml/badge.svg)](https://FPGA-Research-Manchester.github.io/byteman/)
 
