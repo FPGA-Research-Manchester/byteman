@@ -25,6 +25,10 @@
 using namespace std;
 
 byteman bytemanInstance;
+
+#ifdef XUSP
+	XilinxUltraScalePlus mainXUSP, tempXUSP;
+#endif //XUSP
 /**************************************************************************//**
  * Main function for byteman.
  * Parses command line arguments and eventual streamed script files as individual
@@ -73,8 +77,8 @@ int main(int argc, char * argv[])
 
 byteman::byteman()
 {
-	byteman::mainXUSP.instanceName = "Main Xil US+";
-	byteman::tempXUSP.instanceName = "Temp Xil US+";
+	mainXUSP.instanceName = "Main Xil US+";
+	tempXUSP.instanceName = "Temp Xil US+";
 }
 
 void byteman::parseCommand(string command)
@@ -148,8 +152,8 @@ void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 	
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			byteman::mainXUSP.enableLog = verboseValue;
-			byteman::tempXUSP.enableLog = verboseValue;
+			mainXUSP.enableLog = verboseValue;
+			tempXUSP.enableLog = verboseValue;
 		}
 	#endif
 }
@@ -160,8 +164,8 @@ void byteman::parseWarn(string warnCmd, SelectedOptions options)
 	
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			byteman::mainXUSP.enableWarn = warnValue;
-			byteman::tempXUSP.enableWarn = warnValue;
+			mainXUSP.enableWarn = warnValue;
+			tempXUSP.enableWarn = warnValue;
 		}
 	#endif
 }
@@ -173,9 +177,9 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				byteman::mainXUSP.region(params, rect);
+				mainXUSP.region(params, rect);
 			if(options.tempBufferSelected)
-				byteman::tempXUSP.region(params, rect);
+				tempXUSP.region(params, rect);
 		}
 	#endif
 }
@@ -185,9 +189,9 @@ void byteman::parseBlank(string blankCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				byteman::mainXUSP.blank(params);
+				mainXUSP.blank(params);
 			if(options.tempBufferSelected)
-				byteman::tempXUSP.blank(params);
+				tempXUSP.blank(params);
 		}
 	#endif
 }
@@ -205,9 +209,9 @@ void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				byteman::mainXUSP.setDevice(byteman::mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
+				mainXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
 			if(options.tempBufferSelected)
-				byteman::tempXUSP.setDevice(byteman::mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
+				tempXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
 		}
 	#endif
 }
@@ -218,9 +222,9 @@ void byteman::parseInput(string inputCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				byteman::mainXUSP.readBitstream(filename);
+				mainXUSP.readBitstream(filename);
 			if(options.tempBufferSelected)
-				byteman::tempXUSP.readBitstream(filename);
+				tempXUSP.readBitstream(filename);
 		}
 	#endif
 }
@@ -233,9 +237,9 @@ void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				byteman::mainXUSP.merge(&tempXUSP, params, rect, dst);
+				mainXUSP.merge(&tempXUSP, params, rect, dst);
 			if(options.tempBufferSelected)
-				byteman::tempXUSP.merge(&mainXUSP, params, rect, dst);
+				tempXUSP.merge(&mainXUSP, params, rect, dst);
 		}
 	#endif
 }
@@ -248,9 +252,9 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				byteman::mainXUSP.writeBitstream(filename, params, rect);
+				mainXUSP.writeBitstream(filename, params, rect);
 			if(options.tempBufferSelected)
-				byteman::tempXUSP.writeBitstream(filename, params, rect);
+				tempXUSP.writeBitstream(filename, params, rect);
 		}
 	#endif
 }
@@ -259,7 +263,7 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 	string filenameIn = str::parse::nthStringWord(assemblyCmd, 0);
 	string filenameOut = str::parse::nthStringWord(assemblyCmd, 1);
 	#ifdef XUSP
-		byteman::mainXUSP.assembler(filenameIn, filenameOut);
+		mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
 }
 

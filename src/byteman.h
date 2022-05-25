@@ -64,9 +64,6 @@ class byteman
 		//parse
 		SelectedOptions parseParams(string);
 
-		#ifdef XUSP
-			XilinxUltraScalePlus mainXUSP, tempXUSP;
-		#endif //XUSP
 		
 		
 		void parseCommand(string);
