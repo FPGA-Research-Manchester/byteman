@@ -78,24 +78,26 @@ $(function() {
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &quot;<a class="el" href="byteman_8h_source.html">byteman.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StringFuncs_8h_source.html">Common/StringFuncs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="str_8h_source.html">Common/str.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Coords_8h_source.html">Common/Coords.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for byteman.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="byteman_8cpp__incl.png" border="0" usemap="#src_2byteman_8cpp" alt=""/></div>
 <map name="src_2byteman_8cpp" id="src_2byteman_8cpp">
-<area shape="rect" title=" " alt="" coords="267,5,397,32"/>
-<area shape="rect" title=" " alt="" coords="5,155,85,181"/>
-<area shape="rect" title=" " alt="" coords="366,80,453,107"/>
-<area shape="rect" title=" " alt="" coords="477,80,550,107"/>
-<area shape="rect" href="byteman_8h.html" title=" " alt="" coords="54,80,146,107"/>
-<area shape="rect" href="StringFuncs_8h.html" title=" " alt="" coords="170,80,342,107"/>
-<area shape="rect" href="Coords_8h.html" title=" " alt="" coords="574,80,717,107"/>
-<area shape="rect" title=" " alt="" coords="109,155,168,181"/>
-<area shape="rect" title=" " alt="" coords="192,155,259,181"/>
-<area shape="rect" title=" " alt="" coords="283,155,368,181"/>
-<area shape="rect" title=" " alt="" coords="392,155,467,181"/>
+<area shape="rect" title=" " alt="" coords="204,5,335,32"/>
+<area shape="rect" title=" " alt="" coords="28,229,108,256"/>
+<area shape="rect" title=" " alt="" coords="289,80,375,107"/>
+<area shape="rect" title=" " alt="" coords="399,80,473,107"/>
+<area shape="rect" href="byteman_8h.html" title=" " alt="" coords="22,155,114,181"/>
+<area shape="rect" href="str_8h.html" title=" " alt="" coords="151,80,265,107"/>
+<area shape="rect" href="Coords_8h.html" title=" " alt="" coords="497,80,639,107"/>
+<area shape="rect" title=" " alt="" coords="143,229,201,256"/>
+<area shape="rect" title=" " alt="" coords="396,155,481,181"/>
+<area shape="rect" href="iff_8h.html" title=" " alt="" coords="138,155,206,181"/>
+<area shape="rect" href="parse_8h.html" title=" " alt="" coords="281,155,372,181"/>
+<area shape="rect" title=" " alt="" coords="225,229,300,256"/>
+<area shape="rect" title=" " alt="" coords="324,229,391,256"/>
 </map>
 </div>
 </div>
@@ -182,33 +184,33 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="byteman_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#byteman_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" alt=""/></div>
 <map name="byteman_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="byteman_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
-<area shape="rect" title=" " alt="" coords="5,340,60,367"/>
-<area shape="rect" href="classbyteman.html#a71bcdc1d03effacbe62b91a337710e39" title=" " alt="" coords="145,160,261,187"/>
-<area shape="rect" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e" title=" " alt="" coords="108,365,299,392"/>
-<area shape="rect" href="classbyteman.html#aacff84465ee63b374e85acf9f5f96338" title=" " alt="" coords="385,5,501,32"/>
-<area shape="rect" href="namespaceStringFuncs.html#a641cd88eb61a52fed3bd2e92eb01bdc0" title=" " alt="" coords="347,209,539,250"/>
-<area shape="rect" href="namespaceStringFuncs_1_1checkIf.html#ac34acac30e7a83e20272b379e0d73009" title=" " alt="" coords="367,274,519,315"/>
-<area shape="rect" href="classbyteman.html#a5e7f2e31d95626075a6ce22b54ecbbf8" title=" " alt="" coords="349,340,537,367"/>
-<area shape="rect" href="classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0" title=" " alt="" coords="362,391,523,417"/>
-<area shape="rect" href="classbyteman.html#a48f24b2ec6c504bad93c93079bbc9a05" title=" " alt="" coords="356,56,529,83"/>
-<area shape="rect" href="classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="358,745,527,772"/>
-<area shape="rect" href="classbyteman.html#ac217ac1dbc512bf44a70b147c0ceff04" title=" " alt="" coords="364,695,521,721"/>
-<area shape="rect" href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="360,492,525,519"/>
-<area shape="rect" href="classbyteman.html#a2ff1e5c9e9b542e9f74768b296ace32f" title=" " alt="" coords="359,644,527,671"/>
-<area shape="rect" href="classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="358,441,527,468"/>
-<area shape="rect" href="classbyteman.html#a991b1f28f673d304d827d9777338cf04" title=" " alt="" coords="355,593,531,620"/>
-<area shape="rect" href="classbyteman.html#a232d2d7614b161a9bca019371bafc373" title=" " alt="" coords="364,543,521,569"/>
-<area shape="rect" href="namespaceStringFuncs.html#ae0be85ffb3d60479eb510d645f65bee6" title=" " alt="" coords="366,107,519,133"/>
-<area shape="rect" href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0" title=" " alt="" coords="349,157,536,184"/>
-<area shape="rect" href="namespaceStringFuncs_1_1checkIf.html#af519aa3ab5b77c5d800529cfd24c13ff" title=" " alt="" coords="612,271,764,313"/>
-<area shape="rect" href="namespaceStringFuncs_1_1checkIf.html#a3fa6f9da7cb6e6bb8088c7131bc2fbc5" title=" " alt="" coords="837,271,989,313"/>
-<area shape="rect" href="namespaceStringFuncs_1_1parse.html#a555b37745811cdddd49f90508a1f9c1e" title=" " alt="" coords="617,337,759,378"/>
-<area shape="rect" href="namespaceStringFuncs_1_1parse.html#aca49dfabfcccdb107bf1769a2ced8d7f" title=" " alt="" coords="617,434,759,475"/>
-<area shape="rect" href="namespaceStringFuncs_1_1parse.html#a8d43ee6e9732d4b7e99dd4b855ff7afd" title=" " alt="" coords="587,643,789,699"/>
-<area shape="rect" href="namespaceStringFuncs_1_1parse.html#aa8383cc85530e6443ce534719e7bdf5a" title=" " alt="" coords="617,723,759,765"/>
-<area shape="rect" href="namespaceStringFuncs_1_1parse.html#a1fdd2658af3f1bb42e177f4171f6e616" title=" " alt="" coords="617,535,759,577"/>
-<area shape="rect" href="namespaceStringFuncs_1_1checkIf.html#a64521ae9d7929ba91335111fd918e970" title=" " alt="" coords="612,121,764,162"/>
-<area shape="rect" href="namespaceStringFuncs.html#ad10abb222461616764fb4e5a1a5433d9" title=" " alt="" coords="591,187,785,213"/>
+<area shape="rect" title=" " alt="" coords="5,325,60,352"/>
+<area shape="rect" href="classbyteman.html#a71bcdc1d03effacbe62b91a337710e39" title=" " alt="" coords="145,153,261,180"/>
+<area shape="rect" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e" title=" " alt="" coords="108,351,299,377"/>
+<area shape="rect" href="classbyteman.html#aacff84465ee63b374e85acf9f5f96338" title=" " alt="" coords="383,5,499,32"/>
+<area shape="rect" href="namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c" title=" " alt="" coords="353,209,528,250"/>
+<area shape="rect" href="namespacestr_1_1iff.html#a06c9e283ff14a39e32af47c1b1ca699b" title=" " alt="" coords="353,275,528,301"/>
+<area shape="rect" href="classbyteman.html#a5e7f2e31d95626075a6ce22b54ecbbf8" title=" " alt="" coords="347,325,535,352"/>
+<area shape="rect" href="classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0" title=" " alt="" coords="360,376,521,403"/>
+<area shape="rect" href="classbyteman.html#a48f24b2ec6c504bad93c93079bbc9a05" title=" " alt="" coords="354,56,527,83"/>
+<area shape="rect" href="classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="356,731,525,757"/>
+<area shape="rect" href="classbyteman.html#ac217ac1dbc512bf44a70b147c0ceff04" title=" " alt="" coords="362,680,519,707"/>
+<area shape="rect" href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="358,477,523,504"/>
+<area shape="rect" href="classbyteman.html#a2ff1e5c9e9b542e9f74768b296ace32f" title=" " alt="" coords="357,629,525,656"/>
+<area shape="rect" href="classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="356,427,525,453"/>
+<area shape="rect" href="classbyteman.html#a991b1f28f673d304d827d9777338cf04" title=" " alt="" coords="353,579,529,605"/>
+<area shape="rect" href="classbyteman.html#a232d2d7614b161a9bca019371bafc373" title=" " alt="" coords="362,528,519,555"/>
+<area shape="rect" href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title=" " alt="" coords="393,107,488,133"/>
+<area shape="rect" href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0" title=" " alt="" coords="347,157,534,184"/>
+<area shape="rect" href="namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title=" " alt="" coords="601,275,751,301"/>
+<area shape="rect" href="namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6" title=" " alt="" coords="817,275,996,301"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a15d1a34315ac443a418c7cd34bb4b470" title=" " alt="" coords="585,325,767,352"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title=" " alt="" coords="583,427,769,453"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a6b918a3515ff512b9e181d2cf3cf2563" title=" " alt="" coords="583,643,769,685"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a518e4e06532584a6856409eaf9872922" title=" " alt="" coords="583,709,769,736"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1" title=" " alt="" coords="591,528,761,555"/>
+<area shape="rect" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90" title=" " alt="" coords="595,132,757,159"/>
+<area shape="rect" href="namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title=" " alt="" coords="607,183,745,209"/>
 </map>
 </div>
 
@@ -220,7 +222,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassbyteman_html_a97ad2d6b20a10ddb0dd8d373159eea4e"><div class="ttname"><a href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">byteman::parseCommand</a></div><div class="ttdeci">void parseCommand(string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00080">byteman.cpp:80</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 16:49:22 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 20:44:56 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

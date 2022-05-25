@@ -37,5 +37,5 @@ digraph "byteman::help"
   Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 [label="byteman::helpWarn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#aec845ce66a66575c305d8d6de462b453",tooltip=" "];
   Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="StringFuncs::checkIf\l::stringIs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs_1_1checkIf.html#a830b8c4e0302e015fb3ecba267d070d9",tooltip=" "];
+  Node17 [label="str::iff::stringIs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#acb4ee5230fb11f4c54a20525221abb0b",tooltip=" "];
 }

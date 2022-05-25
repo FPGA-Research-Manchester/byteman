@@ -96,11 +96,11 @@ digraph "XilinxUltraScalePlus::readBitstream"
   Node37 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node38 [label="XilinxUltraScalePlus\l::getDeviceByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4",tooltip=" "];
   Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node39 [label="StringFuncs::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs.html#af6f37dbc02d5a46059fb1480b64a96f5",tooltip=" "];
+  Node39 [label="str::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc",tooltip=" "];
   Node38 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node40 [label="StringFuncs::checkIf\l::stringContains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs_1_1checkIf.html#a64521ae9d7929ba91335111fd918e970",tooltip=" "];
+  Node40 [label="str::iff::stringContains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90",tooltip=" "];
   Node38 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node41 [label="StringFuncs::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs.html#ad10abb222461616764fb4e5a1a5433d9",tooltip=" "];
+  Node41 [label="str::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5",tooltip=" "];
   Node36 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node42 [label="XilinxConfigurationAccess\lPort::parseBITheader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#a0eb1cd9757987010e6879268ae412b4e",tooltip=" "];
   Node42 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -151,5 +151,5 @@ digraph "XilinxUltraScalePlus::readBitstream"
   Node36 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node36 -> Node35 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node60 [label="StringFuncs::checkIf\l::stringEndsWith",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs_1_1checkIf.html#a51bc75a3063bc8b236d933968f07a249",tooltip=" "];
+  Node60 [label="str::iff::stringEndsWith",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#abd3e047423cce50fb0d1570720af08d5",tooltip=" "];
 }

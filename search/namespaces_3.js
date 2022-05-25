@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['checkif_1291',['checkIf',['../namespaceStringFuncs_1_1checkIf.html',1,'StringFuncs']]],
-  ['parse_1292',['parse',['../namespaceStringFuncs_1_1parse.html',1,'StringFuncs']]],
-  ['stringfuncs_1293',['StringFuncs',['../namespaceStringFuncs.html',1,'']]]
+  ['iff_1293',['iff',['../namespacestr_1_1iff.html',1,'str']]],
+  ['parse_1294',['parse',['../namespacestr_1_1parse.html',1,'str']]],
+  ['str_1295',['str',['../namespacestr.html',1,'']]]
 ];

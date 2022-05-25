@@ -1,6 +1,6 @@
 <map id="XilinxUltraScalePlus::getDeviceByName" name="XilinxUltraScalePlus::getDeviceByName">
-<area shape="rect" id="node1" title=" " alt="" coords="5,57,159,98"/>
-<area shape="rect" id="node2" href="$namespaceStringFuncs.html#af6f37dbc02d5a46059fb1480b64a96f5" title=" " alt="" coords="207,5,408,32"/>
-<area shape="rect" id="node3" href="$namespaceStringFuncs_1_1checkIf.html#a64521ae9d7929ba91335111fd918e970" title=" " alt="" coords="231,57,383,98"/>
-<area shape="rect" id="node4" href="$namespaceStringFuncs.html#ad10abb222461616764fb4e5a1a5433d9" title=" " alt="" coords="210,123,405,149"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,49,159,90"/>
+<area shape="rect" id="node2" href="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc" title=" " alt="" coords="217,5,359,32"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90" title=" " alt="" coords="207,56,369,83"/>
+<area shape="rect" id="node4" href="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title=" " alt="" coords="219,107,357,133"/>
 </map>

@@ -10,8 +10,8 @@ var searchData=
   ['fileio_2eh_111',['FileIO.h',['../FileIO_8h.html',1,'']]],
   ['filetime_112',['fileTime',['../classXilinxConfigurationAccessPort.html#a47a79083774208489b1665f0c008f206',1,'XilinxConfigurationAccessPort']]],
   ['findbitstreamsync_113',['findBitstreamSync',['../classXilinxConfigurationAccessPort.html#a323afc347a31a87b314c8d8da952211a',1,'XilinxConfigurationAccessPort']]],
-  ['findstringandgetallafter_114',['findStringAndGetAllAfter',['../namespaceStringFuncs.html#a641cd88eb61a52fed3bd2e92eb01bdc0',1,'StringFuncs']]],
-  ['firststringwordis_115',['firstStringWordIs',['../namespaceStringFuncs_1_1checkIf.html#ac34acac30e7a83e20272b379e0d73009',1,'StringFuncs::checkIf']]],
+  ['findstringandgetallafter_114',['findStringAndGetAllAfter',['../namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c',1,'str']]],
+  ['firststringwordis_115',['firstStringWordIs',['../namespacestr_1_1iff.html#a06c9e283ff14a39e32af47c1b1ca699b',1,'str::iff']]],
   ['fleximerge_116',['flexiMerge',['../classXilinxUltraScalePlus.html#a7939351e4ae9ebd78ef639f3b9f95f5b',1,'XilinxUltraScalePlus']]],
   ['fromrow_117',['fromRow',['../classXilinxUltraScalePlus.html#adbed025f776c871cbf5ca8e615d45522',1,'XilinxUltraScalePlus']]]
 ];

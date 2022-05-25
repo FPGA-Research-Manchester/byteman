@@ -9,9 +9,9 @@ digraph "XilinxUltraScalePlus::writeBitstream"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxUltraScalePlus\l::parseParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aafd36c932d3c93bac078997a32ca8bc6",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="StringFuncs::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs.html#ae0be85ffb3d60479eb510d645f65bee6",tooltip=" "];
+  Node3 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69",tooltip=" "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="StringFuncs::checkIf\l::stringEndsWith",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs_1_1checkIf.html#a51bc75a3063bc8b236d933968f07a249",tooltip=" "];
+  Node4 [label="str::iff::stringEndsWith",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#abd3e047423cce50fb0d1570720af08d5",tooltip=" "];
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="XilinxUltraScalePlus\l::writeBitstreamBIN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab32b8ddf6ed62003568932d9167f7231",tooltip=" "];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
