@@ -16,8 +16,9 @@
 PROJECT_NAME = "byteman"
 PROJECT_NUMBER = 0.5
 PROJECT_BRIEF = "Bitstream relocation and manipulation tool"
-PROJECT_LOGO = Resources/icon32.png
-INPUT = src/ src/Common src/Xilinx src/Devices/Xilinx/UltraScalePlus
+PROJECT_LOGO = Resources/icon64.png
+INPUT = src/
+RECURSIVE = YES
 FILE_PATTERNS = *.h *.hpp *.cpp *.c
 OUTPUT_DIRECTORY = 
 GENERATE_HTML = YES
@@ -681,7 +682,6 @@ INPUT_ENCODING         = UTF-8
 # should be searched for input files as well. Possible values are YES and NO.
 # If left blank NO is used.
 
-RECURSIVE              = NO
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
