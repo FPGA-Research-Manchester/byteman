@@ -16,7 +16,7 @@
 PROJECT_NAME = "byteman"
 PROJECT_NUMBER = 0.5
 PROJECT_BRIEF = "Bitstream relocation and manipulation tool"
-PROJECT_LOGO = Resources/icon.png
+PROJECT_LOGO = Resources/icon32.png
 INPUT = src/ src/Common src/Xilinx src/Devices/Xilinx/UltraScalePlus
 FILE_PATTERNS = *.h *.hpp *.cpp *.c
 OUTPUT_DIRECTORY = 
