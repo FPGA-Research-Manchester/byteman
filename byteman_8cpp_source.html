@@ -98,18 +98,18 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   35</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> * argv[])</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classbyteman.html">byteman</a> bytemanInstance;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">   27</a></span>&#160;<a class="code" href="classbyteman.html">byteman</a> <a class="code" href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">bytemanInstance</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   36</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> * argv[])</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">string</span> command;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span>(argc &lt;= 1) </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        bytemanInstance.<a class="code" href="classbyteman.html#a71bcdc1d03effacbe62b91a337710e39">help</a>(<span class="stringliteral">&quot;&quot;</span>,1);<span class="comment">//show usage and terminate with an error code</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">bytemanInstance</a>.<a class="code" href="classbyteman.html#a71bcdc1d03effacbe62b91a337710e39">help</a>(<span class="stringliteral">&quot;&quot;</span>,1);<span class="comment">//show usage and terminate with an error code</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">bool</span> readSTDIN = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> argi = 1 ; argi &lt; argc ; argi++) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span>(argv[argi][0] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; !command.empty()){ <span class="comment">//new cmd and old cmd not empty</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                bytemanInstance.<a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">parseCommand</a>(command);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <a class="code" href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">bytemanInstance</a>.<a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">parseCommand</a>(command);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                command.clear();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(command.empty())</div>
@@ -122,13 +122,13 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span>(!command.empty())</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            bytemanInstance.<a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">parseCommand</a>(command);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">bytemanInstance</a>.<a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">parseCommand</a>(command);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">while</span>(readSTDIN){</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            getline(cin,command);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span>(command.at(command.find_first_not_of(<span class="stringliteral">&quot; \t&quot;</span>)) != <span class="charliteral">&#39;#&#39;</span>){<span class="comment">//parse the command only if it doesnt start with &#39;#&#39;</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">if</span>(string::npos != command.find(<span class="stringliteral">&quot;#&quot;</span>))</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    command = command.substr(0, command.find(<span class="stringliteral">&quot;#&quot;</span>));<span class="comment">//if there is a comment in the current line, remove it</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                bytemanInstance.<a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">parseCommand</a>(command);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <a class="code" href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">bytemanInstance</a>.<a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">parseCommand</a>(command);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e){</div>
@@ -140,8 +140,8 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">   74</a></span>&#160;<a class="code" href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">byteman::byteman</a>()</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    mainXUSP.instanceName = <span class="stringliteral">&quot;Main Xil US+&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    tempXUSP.instanceName = <span class="stringliteral">&quot;Temp Xil US+&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    byteman::mainXUSP.instanceName = <span class="stringliteral">&quot;Main Xil US+&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    byteman::tempXUSP.instanceName = <span class="stringliteral">&quot;Temp Xil US+&quot;</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">   80</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a97ad2d6b20a10ddb0dd8d373159eea4e">byteman::parseCommand</a>(<span class="keywordtype">string</span> command)</div>
@@ -208,8 +208,8 @@ $(function() {
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            mainXUSP.enableLog = verboseValue;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            tempXUSP.enableLog = verboseValue;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            byteman::mainXUSP.enableLog = verboseValue;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            byteman::tempXUSP.enableLog = verboseValue;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
@@ -220,8 +220,8 @@ $(function() {
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            mainXUSP.enableWarn = warnValue;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            tempXUSP.enableWarn = warnValue;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            byteman::mainXUSP.enableWarn = warnValue;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            byteman::tempXUSP.enableWarn = warnValue;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
@@ -233,9 +233,9 @@ $(function() {
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>)</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                mainXUSP.region(params, rect);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                byteman::mainXUSP.region(params, rect);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                tempXUSP.region(params, rect);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                byteman::tempXUSP.region(params, rect);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
@@ -245,9 +245,9 @@ $(function() {
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>)</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                mainXUSP.blank(params);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                byteman::mainXUSP.blank(params);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                tempXUSP.blank(params);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                byteman::tempXUSP.blank(params);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
@@ -265,9 +265,9 @@ $(function() {
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                mainXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                byteman::mainXUSP.setDevice(byteman::mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                tempXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                byteman::tempXUSP.setDevice(byteman::mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
@@ -278,9 +278,9 @@ $(function() {
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                mainXUSP.readBitstream(filename);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                byteman::mainXUSP.readBitstream(filename);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                tempXUSP.readBitstream(filename);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                byteman::tempXUSP.readBitstream(filename);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
@@ -293,9 +293,9 @@ $(function() {
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                mainXUSP.merge(&amp;tempXUSP, params, rect, dst);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                byteman::mainXUSP.merge(&amp;tempXUSP, params, rect, dst);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                tempXUSP.merge(&amp;mainXUSP, params, rect, dst);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                byteman::tempXUSP.merge(&amp;mainXUSP, params, rect, dst);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
@@ -308,9 +308,9 @@ $(function() {
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                mainXUSP.writeBitstream(filename, params, rect);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                byteman::mainXUSP.writeBitstream(filename, params, rect);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">if</span>(options.<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                tempXUSP.writeBitstream(filename, params, rect);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                byteman::tempXUSP.writeBitstream(filename, params, rect);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
@@ -319,7 +319,7 @@ $(function() {
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">string</span> filenameIn = <a class="code" href="namespacestr_1_1parse.html#a15d1a34315ac443a418c7cd34bb4b470">str::parse::nthStringWord</a>(assemblyCmd, 0);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">string</span> filenameOut = <a class="code" href="namespacestr_1_1parse.html#a15d1a34315ac443a418c7cd34bb4b470">str::parse::nthStringWord</a>(assemblyCmd, 1);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        mainXUSP.assembler(filenameIn, filenameOut);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        byteman::mainXUSP.assembler(filenameIn, filenameOut);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
@@ -341,6 +341,7 @@ $(function() {
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown architecture: \&quot;&quot;</span>).append(arch).append(<span class="stringliteral">&quot;\&quot;.&quot;</span>));</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="abyteman_8cpp_html_ac34ff0ffdabe526dec7bc511f56a1cc1"><div class="ttname"><a href="byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1">bytemanInstance</a></div><div class="ttdeci">byteman bytemanInstance</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00027">byteman.cpp:27</a></div></div>
 <div class="ttc" id="astructRect2D_html_a5d621868d788e999caada275e9c0cbc6"><div class="ttname"><a href="structRect2D.html#a5d621868d788e999caada275e9c0cbc6">Rect2D::size</a></div><div class="ttdeci">Coord2D size</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00029">Coords.h:29</a></div></div>
 <div class="ttc" id="anamespacestr_1_1parse_html_a6b918a3515ff512b9e181d2cf3cf2563"><div class="ttname"><a href="namespacestr_1_1parse.html#a6b918a3515ff512b9e181d2cf3cf2563">str::parse::allStringWordsWithoutLastStringWord</a></div><div class="ttdeci">string allStringWordsWithoutLastStringWord(string s)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00092">parse.h:92</a></div></div>
 <div class="ttc" id="astructCoord2D_html"><div class="ttname"><a href="structCoord2D.html">Coord2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00020">Coords.h:20</a></div></div>
@@ -372,7 +373,7 @@ $(function() {
 <div class="ttc" id="astructCoord2D_html_a2c86b6f3509b769d25a7b363bceab8f1"><div class="ttname"><a href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">Coord2D::col</a></div><div class="ttdeci">int col</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00037">Coords.h:37</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a35c7e4e4d0723a72cfb064333af321f6"><div class="ttname"><a href="classbyteman.html#a35c7e4e4d0723a72cfb064333af321f6">byteman::parseParams</a></div><div class="ttdeci">SelectedOptions parseParams(string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00127">byteman.cpp:127</a></div></div>
 <div class="ttc" id="aclassbyteman_html"><div class="ttname"><a href="classbyteman.html">byteman</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00046">byteman.h:46</a></div></div>
-<div class="ttc" id="abyteman_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00035">byteman.cpp:35</a></div></div>
+<div class="ttc" id="abyteman_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00036">byteman.cpp:36</a></div></div>
 <div class="ttc" id="astructRect2D_html_ae5afd98d6745784930feac5136640a85"><div class="ttname"><a href="structRect2D.html#ae5afd98d6745784930feac5136640a85">Rect2D::position</a></div><div class="ttdeci">Coord2D position</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00028">Coords.h:28</a></div></div>
 <div class="ttc" id="astructRect2D_html"><div class="ttname"><a href="structRect2D.html">Rect2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00026">Coords.h:26</a></div></div>
 <div class="ttc" id="anamespacestr_1_1parse_html_a9f14cc7345a3fc0591a6afaf8033e6d1"><div class="ttname"><a href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00167">parse.h:167</a></div></div>
@@ -383,7 +384,7 @@ $(function() {
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_a907c4807d4101f1827e93971ef83ea15"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">byteman::SelectedOptions::mainBufferSelected</a></div><div class="ttdeci">int mainBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00061">byteman.h:61</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 20:44:56 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 21:10:30 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

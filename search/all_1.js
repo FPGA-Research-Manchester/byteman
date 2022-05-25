@@ -24,5 +24,6 @@ var searchData=
   ['bspi_5fread_33',['BSPI_READ',['../namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620a812edf26d9e0fc50cb3657097a850510',1,'CAP']]],
   ['byteman_34',['byteman',['../classbyteman.html',1,'byteman'],['../classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca',1,'byteman::byteman()']]],
   ['byteman_2ecpp_35',['byteman.cpp',['../byteman_8cpp.html',1,'']]],
-  ['byteman_2eh_36',['byteman.h',['../byteman_8h.html',1,'']]]
+  ['byteman_2eh_36',['byteman.h',['../byteman_8h.html',1,'']]],
+  ['bytemaninstance_37',['bytemanInstance',['../byteman_8cpp.html#ac34ff0ffdabe526dec7bc511f56a1cc1',1,'byteman.cpp']]]
 ];

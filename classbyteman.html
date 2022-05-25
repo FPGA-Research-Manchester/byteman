@@ -228,8 +228,8 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00074">74</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    mainXUSP.instanceName = <span class="stringliteral">&quot;Main Xil US+&quot;</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    tempXUSP.instanceName = <span class="stringliteral">&quot;Temp Xil US+&quot;</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    byteman::mainXUSP.instanceName = <span class="stringliteral">&quot;Main Xil US+&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    byteman::tempXUSP.instanceName = <span class="stringliteral">&quot;Temp Xil US+&quot;</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
@@ -432,7 +432,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="help_8cpp_source.html#l00034">help()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00035">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00036">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -954,7 +954,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">string</span> filenameIn = <a class="code" href="namespacestr_1_1parse.html#a15d1a34315ac443a418c7cd34bb4b470">str::parse::nthStringWord</a>(assemblyCmd, 0);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">string</span> filenameOut = <a class="code" href="namespacestr_1_1parse.html#a15d1a34315ac443a418c7cd34bb4b470">str::parse::nthStringWord</a>(assemblyCmd, 1);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        mainXUSP.assembler(filenameIn, filenameOut);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        byteman::mainXUSP.assembler(filenameIn, filenameOut);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
 </div><!-- fragment -->
@@ -1015,9 +1015,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            <span class="keywordflow">if</span>(options.mainBufferSelected)</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                mainXUSP.blank(params);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                byteman::mainXUSP.blank(params);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">if</span>(options.tempBufferSelected)</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                tempXUSP.blank(params);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                byteman::tempXUSP.blank(params);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
@@ -1152,7 +1152,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="str_8h_source.html#l00034">str::findStringAndGetAllAfter()</a>, <a class="el" href="iff_8h_source.html#l00084">str::iff::firstStringWordIs()</a>, <a class="el" href="help_8cpp_source.html#l00034">help()</a>, <a class="el" href="byteman_8cpp_source.html#l00257">parseAssembly()</a>, <a class="el" href="byteman_8cpp_source.html#l00182">parseBlank()</a>, <a class="el" href="byteman_8cpp_source.html#l00194">parseChange()</a>, <a class="el" href="byteman_8cpp_source.html#l00201">parseDevice()</a>, <a class="el" href="byteman_8cpp_source.html#l00214">parseInput()</a>, <a class="el" href="byteman_8cpp_source.html#l00227">parseMerge()</a>, <a class="el" href="byteman_8cpp_source.html#l00242">parseOutput()</a>, <a class="el" href="byteman_8cpp_source.html#l00168">parseRegion()</a>, <a class="el" href="byteman_8cpp_source.html#l00144">parseVerbose()</a>, <a class="el" href="byteman_8cpp_source.html#l00156">parseWarn()</a>, <a class="el" href="str_8h_source.html#l00041">str::replace()</a>, and <a class="el" href="byteman_8cpp_source.html#l00266">setArchitecture()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00035">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00036">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1230,9 +1230,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span>(options.mainBufferSelected)</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                mainXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                byteman::mainXUSP.setDevice(byteman::mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            <span class="keywordflow">if</span>(options.tempBufferSelected)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                tempXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                byteman::tempXUSP.setDevice(byteman::mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        }</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
@@ -1296,9 +1296,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span>(options.mainBufferSelected)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                mainXUSP.readBitstream(filename);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                byteman::mainXUSP.readBitstream(filename);</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">if</span>(options.tempBufferSelected)</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                tempXUSP.readBitstream(filename);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                byteman::tempXUSP.readBitstream(filename);</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
@@ -1364,9 +1364,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            <span class="keywordflow">if</span>(options.mainBufferSelected)</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                mainXUSP.merge(&amp;tempXUSP, params, rect, dst);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                byteman::mainXUSP.merge(&amp;tempXUSP, params, rect, dst);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordflow">if</span>(options.tempBufferSelected)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                tempXUSP.merge(&amp;mainXUSP, params, rect, dst);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                byteman::tempXUSP.merge(&amp;mainXUSP, params, rect, dst);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        }</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;}</div>
@@ -1432,9 +1432,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">if</span>(options.mainBufferSelected)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                mainXUSP.writeBitstream(filename, params, rect);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                byteman::mainXUSP.writeBitstream(filename, params, rect);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            <span class="keywordflow">if</span>(options.tempBufferSelected)</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                tempXUSP.writeBitstream(filename, params, rect);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                byteman::tempXUSP.writeBitstream(filename, params, rect);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
@@ -1554,9 +1554,9 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span>(options.mainBufferSelected)</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                mainXUSP.region(params, rect);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                byteman::mainXUSP.region(params, rect);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <span class="keywordflow">if</span>(options.tempBufferSelected)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                tempXUSP.region(params, rect);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                byteman::tempXUSP.region(params, rect);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
@@ -1620,8 +1620,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            mainXUSP.enableLog = verboseValue;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            tempXUSP.enableLog = verboseValue;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            byteman::mainXUSP.enableLog = verboseValue;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            byteman::tempXUSP.enableLog = verboseValue;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
@@ -1684,8 +1684,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            mainXUSP.enableWarn = warnValue;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            tempXUSP.enableWarn = warnValue;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            byteman::mainXUSP.enableWarn = warnValue;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            byteman::tempXUSP.enableWarn = warnValue;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
@@ -1848,7 +1848,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassbyteman_html_ae97632145d793ca2e834420291e48128"><div class="ttname"><a href="classbyteman.html#ae97632145d793ca2e834420291e48128">byteman::helpOutput</a></div><div class="ttdeci">void helpOutput()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00134">help.cpp:134</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 20:44:56 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 21:10:30 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
