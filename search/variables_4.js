@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['idcode_1482',['IDCODE',['../classXilinxUltraScalePlus.html#a9293461e387fed77820e231e9591f3b0',1,'XilinxUltraScalePlus']]],
-  ['initializedbitstreampartname_1483',['initializedBitstreamPartName',['../classXilinxUltraScalePlus.html#ae4b5e6e984042114da0e04fdb8d218cc',1,'XilinxUltraScalePlus']]],
-  ['initializedresourceparamspartname_1484',['initializedResourceParamsPartName',['../classXilinxUltraScalePlus.html#a924e573f5690449b7035c294781ab73b',1,'XilinxUltraScalePlus']]]
+  ['filedate_1536',['fileDate',['../classXilinxConfigurationAccessPort.html#a71fbdf0ea84abf8f5809ad445db16d50',1,'XilinxConfigurationAccessPort']]],
+  ['filetime_1537',['fileTime',['../classXilinxConfigurationAccessPort.html#a47a79083774208489b1665f0c008f206',1,'XilinxConfigurationAccessPort']]],
+  ['fromrow_1538',['fromRow',['../classXilinxUltraScalePlus.html#adbed025f776c871cbf5ca8e615d45522',1,'XilinxUltraScalePlus']]]
 ];

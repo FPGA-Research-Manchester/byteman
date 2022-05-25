@@ -68,4 +68,16 @@ digraph "FileIO::writeLittleEndian32"
   Node2 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 [label="XilinxUltraScalePlus\l::CAP_writeSelectRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#abab7151e71f6b02cc8503afd0b782c7f",tooltip=" "];
   Node23 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="XilinxConfigurationAccess\lPort::outputBITheader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#a80c8f1b9404adad15c0eb26612e0f028",tooltip=" "];
+  Node24 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="XilinxConfigurationAccess\lPort::outputBITheaderLengthField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#ad3da926b34bed81d4a0813743f11c3f6",tooltip=" "];
+  Node25 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="XilinxConfigurationAccess\lPort::outputCAPheaderConstant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#a64029ac1ea70312a6a2deee735fe4018",tooltip=" "];
+  Node26 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

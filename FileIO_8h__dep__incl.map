@@ -1,8 +1,10 @@
 <map id="src/Common/FileIO.h" name="src/Common/FileIO.h">
-<area shape="rect" id="node1" title=" " alt="" coords="455,5,613,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="561,5,718,32"/>
 <area shape="rect" id="node2" href="$XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions_8cpp.html" title=" " alt="" coords="334,80,577,151"/>
 <area shape="rect" id="node3" href="$XilinxUltraScalePlusAssembler_8cpp.html" title=" " alt="" coords="5,199,199,255"/>
 <area shape="rect" id="node5" href="$XilinxUltraScalePlusInput_8cpp.html" title=" " alt="" coords="517,199,711,255"/>
 <area shape="rect" id="node6" href="$XilinxUltraScalePlusOutput_8cpp.html" title=" " alt="" coords="735,199,928,255"/>
+<area shape="rect" id="node7" href="$XilinxConfigurationAccessPortFileInput_8cpp.html" title=" " alt="" coords="702,87,897,143"/>
+<area shape="rect" id="node8" href="$XilinxConfigurationAccessPortFileOutput_8cpp.html" title=" " alt="" coords="921,87,1115,143"/>
 <area shape="rect" id="node4" href="$XilinxUltraScalePlusConfigurationAccessPort_8cpp.html" title=" " alt="" coords="223,199,493,255"/>
 </map>
