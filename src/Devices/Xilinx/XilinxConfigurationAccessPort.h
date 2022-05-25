@@ -25,7 +25,7 @@
 #include "../../Common/Endianess.h"
 using namespace std;
 
-class XilinxConfigurationAccessPort: public CommonDevice
+class XilinxConfigurationAccessPort: virtual public CommonDevice
 {
 	public:
         XilinxConfigurationAccessPort();

@@ -14,21 +14,16 @@
  * limitations under the License.
  *****************************************************************************/
 
-#ifndef COMMONDEVICE_H
-#define COMMONDEVICE_H
+#include "CommonDevice2D.h"
 
-class CommonDevice
-{
-	public:
-        CommonDevice(){
-			warn = 1;
-			verbose = 0;
-		};
-        virtual ~CommonDevice(){
-			
-		};
-		int warn;
-		int verbose;
-};
+using namespace std;
 
-#endif //COMMONDEVICE_H
+void CommonDevice2D::region(string params, Rect2D rect){
+	if(params.find("clear") != string::npos) //first do the clearing
+		regionSelection.clear();
+	if(params.find("add") != string::npos){ //before potential adding
+		if(rect.size.row <= 0 || rect.size.col <= 0)
+			throw runtime_error("Regions need to be of positive size.");
+		regionSelection.push_back(rect);
+	}
+}

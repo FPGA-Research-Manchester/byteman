@@ -13,19 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
 #ifndef XILINXULTRASCALEPLUS_H
 #define XILINXULTRASCALEPLUS_H
+
 #include<cstdint> //uint
-#include<vector>
 #include<string>
 
+#include "../../CommonDevice2D.h"
 #include "../XilinxConfigurationAccessPort.h"
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "XilinxUltraScalePlusFabric.h"
 #include "../../../Common/Endianess.h"
 #include "../../../Common/Coords.h"
+
 using namespace std;
-class XilinxUltraScalePlus: public XilinxConfigurationAccessPort
+
+class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAccessPort
 {
     public:
         XilinxUltraScalePlus();
@@ -49,9 +53,6 @@ class XilinxUltraScalePlus: public XilinxConfigurationAccessPort
 		//Info
 		static void deviceHelp();
 		
-		//region selector
-		vector<Rect2D> regionSelection;
-		void region(string, Rect2D);
 		//file IO
         void readBitstream(string);
         void readBitstreamBIT(ifstream&);

@@ -27,6 +27,6 @@ ${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlusConfigurationAccessPort.cpp)
 target_sources(byteman PRIVATE ${XUSP_SRC})
 
 #Create a Xilinx US+ library, disabled because the github cross compilation can't link them and throws errors
-#add_library(XUSP_LIB STATIC ${XUSP_SRC} ${XILINX_SHARED_SRC})
+#add_library(XUSP_LIB STATIC ${XUSP_SRC} ${XILINX_SHARED_SRC} ${DEVICES_SHARED_SRC})
 #target_compile_definitions(XUSP_LIB PUBLIC XUSP_LIB)
 

@@ -14,21 +14,31 @@
  * limitations under the License.
  *****************************************************************************/
 
-#ifndef COMMONDEVICE_H
-#define COMMONDEVICE_H
+#ifndef COMMONDEVICE2D_H
+#define COMMONDEVICE2D_H
 
-class CommonDevice
+#include<string>
+#include<vector>
+#include<stdexcept>
+
+#include "CommonDevice.h"
+#include "../Common/Coords.h"
+
+using namespace std;
+
+class CommonDevice2D: virtual public CommonDevice
 {
 	public:
-        CommonDevice(){
-			warn = 1;
-			verbose = 0;
-		};
-        virtual ~CommonDevice(){
+        CommonDevice2D()
+		{
 			
 		};
-		int warn;
-		int verbose;
+        virtual ~CommonDevice2D(){
+			
+		};
+		//region selector
+		vector<Rect2D> regionSelection;
+		void region(string, Rect2D);
 };
 
-#endif //COMMONDEVICE_H
+#endif //COMMONDEVICE2D_H
