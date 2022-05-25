@@ -73,8 +73,8 @@ int main(int argc, char * argv[])
 
 byteman::byteman()
 {
-	Xilinx_UltraScalePlus.mainBuffer.instanceName = "Main Xilinx US+";
-	Xilinx_UltraScalePlus.tempBuffer.instanceName = "Temp Xilinx US+";
+	mainXUSP.instanceName = "Main Xil US+";
+	tempXUSP.instanceName = "Temp Xil US+";
 }
 
 void byteman::parseCommand(string command)
@@ -148,8 +148,8 @@ void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 	
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			Xilinx_UltraScalePlus.mainBuffer.enableLog = verboseValue;
-			Xilinx_UltraScalePlus.tempBuffer.enableLog = verboseValue;
+			mainXUSP.enableLog = verboseValue;
+			tempXUSP.enableLog = verboseValue;
 		}
 	#endif
 }
@@ -160,8 +160,8 @@ void byteman::parseWarn(string warnCmd, SelectedOptions options)
 	
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			Xilinx_UltraScalePlus.mainBuffer.enableWarn = warnValue;
-			Xilinx_UltraScalePlus.tempBuffer.enableWarn = warnValue;
+			mainXUSP.enableWarn = warnValue;
+			tempXUSP.enableWarn = warnValue;
 		}
 	#endif
 }
@@ -173,9 +173,9 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				Xilinx_UltraScalePlus.mainBuffer.region(params, rect);
+				mainXUSP.region(params, rect);
 			if(options.tempBufferSelected)
-				Xilinx_UltraScalePlus.tempBuffer.region(params, rect);
+				tempXUSP.region(params, rect);
 		}
 	#endif
 }
@@ -185,9 +185,9 @@ void byteman::parseBlank(string blankCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				Xilinx_UltraScalePlus.mainBuffer.blank(params);
+				mainXUSP.blank(params);
 			if(options.tempBufferSelected)
-				Xilinx_UltraScalePlus.tempBuffer.blank(params);
+				tempXUSP.blank(params);
 		}
 	#endif
 }
@@ -205,9 +205,9 @@ void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				Xilinx_UltraScalePlus.mainBuffer.setDevice(Xilinx_UltraScalePlus.mainBuffer.getDeviceByNameOrThrow(deviceName), deviceName);
+				mainXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
 			if(options.tempBufferSelected)
-				Xilinx_UltraScalePlus.tempBuffer.setDevice(Xilinx_UltraScalePlus.mainBuffer.getDeviceByNameOrThrow(deviceName), deviceName);
+				tempXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
 		}
 	#endif
 }
@@ -218,9 +218,9 @@ void byteman::parseInput(string inputCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				Xilinx_UltraScalePlus.mainBuffer.readBitstream(filename);
+				mainXUSP.readBitstream(filename);
 			if(options.tempBufferSelected)
-				Xilinx_UltraScalePlus.tempBuffer.readBitstream(filename);
+				tempXUSP.readBitstream(filename);
 		}
 	#endif
 }
@@ -233,9 +233,9 @@ void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				Xilinx_UltraScalePlus.mainBuffer.merge(&Xilinx_UltraScalePlus.tempBuffer, params, rect, dst);
+				mainXUSP.merge(&tempXUSP, params, rect, dst);
 			if(options.tempBufferSelected)
-				Xilinx_UltraScalePlus.tempBuffer.merge(&Xilinx_UltraScalePlus.mainBuffer, params, rect, dst);
+				tempXUSP.merge(&mainXUSP, params, rect, dst);
 		}
 	#endif
 }
@@ -248,9 +248,9 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				Xilinx_UltraScalePlus.mainBuffer.writeBitstream(filename, params, rect);
+				mainXUSP.writeBitstream(filename, params, rect);
 			if(options.tempBufferSelected)
-				Xilinx_UltraScalePlus.tempBuffer.writeBitstream(filename, params, rect);
+				tempXUSP.writeBitstream(filename, params, rect);
 		}
 	#endif
 }
@@ -259,7 +259,7 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 	string filenameIn = StringFuncs::parse::nthStringWord(assemblyCmd, 0);
 	string filenameOut = StringFuncs::parse::nthStringWord(assemblyCmd, 1);
 	#ifdef XUSP
-		Xilinx_UltraScalePlus.mainBuffer.assembler(filenameIn, filenameOut);
+		mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
 }
 

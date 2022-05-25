@@ -65,9 +65,7 @@ class byteman
 		SelectedOptions parseParams(string);
 
 		#ifdef XUSP
-		struct {
-			XilinxUltraScalePlus mainBuffer, tempBuffer;
-		} Xilinx_UltraScalePlus;
+			XilinxUltraScalePlus mainXUSP, tempXUSP;
 		#endif //XUSP
 		
 		
