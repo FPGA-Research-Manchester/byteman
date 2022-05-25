@@ -17,7 +17,8 @@
 #include "XilinxConfigurationAccessPort.h"
 #include "../../Common/FileIO.h"
 
-streamoff XilinxConfigurationAccessPort::outputBITheader(ofstream& fout, Endianess e){
+streamoff XilinxConfigurationAccessPort::outputBITheader(ofstream& fout, Endianess e)
+{
 	cout << "Output endianess is " << Endian::to_string(e) << endl;
 	FileIO::write16(fout, 9, e);//16-bit BE value = 9
 	FileIO::writeString(fout, string("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0"), e);
@@ -42,14 +43,16 @@ streamoff XilinxConfigurationAccessPort::outputBITheader(ofstream& fout, Endiane
 	
 	return headerLocationOfRemainingFileLength;
 }
-void XilinxConfigurationAccessPort::outputBITheaderLengthField(ofstream& fout, streamoff headerLocationOfRemainingFileLength, Endianess e){
+void XilinxConfigurationAccessPort::outputBITheaderLengthField(ofstream& fout, streamoff headerLocationOfRemainingFileLength, Endianess e)
+{
 	streamoff finalFileSize = fout.tellp();
 	streamoff reportDiff = finalFileSize - (headerLocationOfRemainingFileLength + 4);
 	fout.seekp(headerLocationOfRemainingFileLength);
 	FileIO::write32(fout, static_cast<uint32_t>(reportDiff), e);
 }
 
-void XilinxConfigurationAccessPort::outputCAPheaderConstant(ofstream& fout, Endianess e){
+void XilinxConfigurationAccessPort::outputCAPheaderConstant(ofstream& fout, Endianess e)
+{
 	for(int i = 0 ; i < 16 ; i++) // 64 bytes of 0xFF
 		FileIO::write32(fout, 0xFFFFFFFF, e);//32-bit BE value = 0xFFFFFFFF
 	FileIO::write32(fout, 0x000000BB, e);
@@ -58,4 +61,3 @@ void XilinxConfigurationAccessPort::outputCAPheaderConstant(ofstream& fout, Endi
 	FileIO::write32(fout, 0xFFFFFFFF, e);
 	FileIO::write32(fout, XCAP_SyncInstruction(), e);
 }
-

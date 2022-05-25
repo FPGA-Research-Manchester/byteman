@@ -21,12 +21,13 @@
 #include<cstdint> //uint
 #include<string>
 #include<sstream>
-#include<stdexcept> //TODO is it needed?
 
 using namespace std;
+
 namespace StringFuncs{
 	namespace parse {
-		inline string nthStringWord(string s, int n){
+		inline string nthStringWord(string s, int n)	///< Parses a string @c s, returns the n-th string word that is not an integer
+		{
 			stringstream ss(s);
 			string ret;
 			ret.clear();
@@ -48,7 +49,8 @@ namespace StringFuncs{
 			}
 			return string("");
 		}
-		inline string allStringWords(string s){ // returns a string of all string components that are not ints
+		inline string allStringWords(string s)	///< Parses a string @c s, removes all integers and returns the rest
+		{
 			stringstream ss(s);
 			string ret;
 			ret.clear();
@@ -63,7 +65,8 @@ namespace StringFuncs{
 			}
 			return ret;
 		}
-		inline string lastStringWord(string s){
+		inline string lastStringWord(string s)	///< Parses a string @c s, removes all integers and returns the last of all string words
+		{
 			stringstream ss(s);
 			string ret;
 			ret.clear();
@@ -82,7 +85,8 @@ namespace StringFuncs{
 			}
 			return ret;
 		}
-		inline string allStringWordsWithoutLastStringWord(string s){
+		inline string allStringWordsWithoutLastStringWord(string s)	///< Parses a string @c s, removes all integers and the last string word. Returns the rest
+		{
 			stringstream ss(s);
 			string ret;
 			ret.clear();
@@ -105,7 +109,8 @@ namespace StringFuncs{
 			}
 			return ret;
 		}
-		inline bool nthInteger(string s, int n, int &x){
+		inline bool nthInteger(string s, int n, int &x)	///< Parses a string @c s, returns the n-th integer
+		{
 			stringstream ss(s);
 			string temp;
 			int intFound;
@@ -126,7 +131,7 @@ namespace StringFuncs{
 			}
 			return false;
 		}
-		inline bool arrayOfUints(string s, int arrsize, uint32_t* arr)
+		inline bool arrayOfUints(string s, int arrsize, uint32_t* arr)	///< Removes all string words from a given string @c s and returns the parsed @c arrsize number of integers into @c arr
 		{
 			if (arrsize == 0)
 				return true;
@@ -155,14 +160,16 @@ namespace StringFuncs{
 		}
 	}
 	namespace checkIf {
-		inline bool stringEndsWith(string checkedString, string searchString){
+		inline bool stringEndsWith(string checkedString, string searchString)	///< Returns true if string @c checkedString's final characters match fully string @c searchString
+		{
 			if(checkedString.length() >= searchString.length())
 				if(0 == checkedString.compare (checkedString.length() - searchString.length(), searchString.length(), searchString))
 					return true;
 			return false;
 		}
 	}
-	inline string removeExternalQuotes(string s){
+	inline string removeExternalQuotes(string s)	///< Removes double quotes from start and end of string @c s and returns the resulting string.
+	{
 		if(s.empty())
 			return s;
 		if(s.front() == '"')
@@ -180,7 +187,7 @@ namespace StringFuncs{
 	{
 		return true;
 	}
-	template<typename First, typename ... Rest> inline bool parseMultipleIntsRecursive(stringstream & ss, int & x, Rest & ... args)
+	template<typename First, typename ... Rest> inline bool parseMultipleIntsRecursive(stringstream & ss, int & x, Rest & ... args)	///< Parses stringstream @c ss for integer values, that are returned into @c x, @c args
 	{
 		int numArgs = sizeof...(args);
 		string temp;
@@ -204,7 +211,7 @@ namespace StringFuncs{
 		else 
 			return parseMultipleIntsRecursive<int>(ss, args...);
 	}
-	template<typename ... Args> inline bool parseMultipleInts(string s, Args & ... args)
+	template<typename ... Args> inline bool parseMultipleInts(string s, Args & ... args)	///< Parses string @c s for integer values, that are returned into @c args
 	{
 		stringstream ss(s);
 		return parseMultipleIntsRecursive<int>(ss, args...);

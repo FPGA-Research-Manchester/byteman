@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include <iostream>
-#include <stdexcept>
-#include <algorithm> //replace
-#include <stdio.h>
-#include <istream>
-#include <ostream>
-#include <string>
+#include<iostream>
+#include<stdexcept>
+#include<algorithm> //replace
+#include<fstream>
+#include<string>
 #include "byteman.h"
 #include "Common/StringFuncs.h"
 #include "Common/Coords.h"

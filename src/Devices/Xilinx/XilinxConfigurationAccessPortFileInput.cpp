@@ -24,7 +24,8 @@
  * @arg @c fin input file stream, which is left at the position following the
  * located sync command.
  *****************************************************************************/
-void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e){
+void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e)
+{
     //.bit header c0nstant:
 	int headerConstTextLength = FileIO::read16(fin, e);
 	string headerConstText = FileIO::readString(fin, headerConstTextLength, e);
@@ -93,7 +94,8 @@ void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e){
  * @arg @c fin input file stream. Gets fixed back to the original value before
  * leaving this function!
  *****************************************************************************/
-Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin){
+Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin)
+{
 	streamoff fileOffset = fin.tellg();
 	//Optional bitstream header
 	
@@ -136,7 +138,8 @@ Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin){
  * @arg @c fin input file stream. Gets fixed back to the original value before
  * leaving this function!
  *****************************************************************************/
-uint32_t XilinxConfigurationAccessPort::parseBitstreamIDCODE(ifstream& fin, Endianess e){
+uint32_t XilinxConfigurationAccessPort::parseBitstreamIDCODE(ifstream& fin, Endianess e)
+{
 	streamoff fileOffset = fin.tellg();
 	//Optional bitstream header
 	uint32_t returnVal;
@@ -161,7 +164,8 @@ uint32_t XilinxConfigurationAccessPort::parseBitstreamIDCODE(ifstream& fin, Endi
  * @arg @c fin input file stream. Moves the stream pointer to after the SYNC
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
-void XilinxConfigurationAccessPort::findBitstreamSync(ifstream& fin, Endianess e){
+void XilinxConfigurationAccessPort::findBitstreamSync(ifstream& fin, Endianess e)
+{
 	for( ; ; ){
 		if(!fin.good())
 			throw runtime_error("Was unable to find input bitstream's SYNC command.");
@@ -172,4 +176,3 @@ void XilinxConfigurationAccessPort::findBitstreamSync(ifstream& fin, Endianess e
             fin.seekg(-3,ios::cur);
     }
 }
-		void findBitstreamSync(ifstream&, Endianess);

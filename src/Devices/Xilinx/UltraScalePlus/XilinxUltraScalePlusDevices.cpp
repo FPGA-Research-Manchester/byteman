@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
+#include<iostream>
+#include<algorithm> //transform
+#include<string>
+#include<stdexcept>
+
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusDevices.h"
-#include <iostream>
-#include <algorithm> //transform
-#include <string>
-#include <stdexcept>
-#include <cstring>
+
 using namespace std;
 
-int XilinxUltraScalePlus::getDeviceByIDCODEorThrow(int IDCODE){
+int XilinxUltraScalePlus::getDeviceByIDCODEorThrow(int IDCODE)
+{
 	int deviceID = XilinxUltraScalePlus::getDeviceByIDCODE(IDCODE);
 	if(deviceID == XUSP_DEVICE_NULL)
 		throw runtime_error(string("Unknown device with IDCODE = ").append(to_string(IDCODE)).append(" ."));
 	return deviceID;
 }
-int XilinxUltraScalePlus::getDeviceByNameOrThrow(string name){
+int XilinxUltraScalePlus::getDeviceByNameOrThrow(string name)
+{
 	int deviceID = XilinxUltraScalePlus::getDeviceByName(name);
 	if(deviceID == XUSP_DEVICE_NULL)
 		throw runtime_error(string("Unknown device: ").append(name).append("."));
@@ -814,7 +818,8 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 	if(verbose)
 		cout << "Initialized device type: \"" << partName << "\"" << endl; 
 }
-void XilinxUltraScalePlus::deviceHelp(){
+void XilinxUltraScalePlus::deviceHelp()
+{
 	cout << "A list of currently recognized US+ devices: " << endl;
 	#ifdef XUSPARTIX
 	cout << "\tUltraScale+ Artix: " << endl;

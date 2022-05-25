@@ -13,25 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
+#include<iostream>
+#include<algorithm> //replace
+#include<string>
+#include<stdexcept>
+#include<fstream>
+#include<cstring>
+#include<iomanip>      // std::setfill, std::setw
+
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
 #include "../../../Common/FileIO.h"
 #include "../../../Common/StringFuncs.h"
 #include "../../../Common/Endianess.h"
-#include <iostream>
-#include <algorithm> //replace
-#include <string>
-#include <stdexcept>
-#include <fstream>
-#include <cstring>
-#include <iomanip>      // std::setfill, std::setw
+
 using namespace std;
 
-void XilinxUltraScalePlus::assemblerHelp(){
+void XilinxUltraScalePlus::assemblerHelp()
+{
 	cout<<"Supported file formats are \".bit\" and \".bit.asm\" at the moment." << endl;
 }
-void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut){
+void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut)
+{
 	enum FILEFORMAT {FILE_NULL = 0, FILE_BIT, FILE_BIT_ASM};
 	FILEFORMAT fileformatIn = FILE_NULL, fileformatOut = FILE_NULL;
 	
@@ -68,7 +73,8 @@ void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut){
 	fin.close();
 	fout.close();
 }
-CAP::Register assemblerGetRegID(string line){
+CAP::Register assemblerGetRegID(string line)
+{
 	#define has(x) (line.find(x) != string::npos)
 	if(has("CRC"))return CAP::Register::CRC;
 	else if(has("FAR"))return CAP::Register::FAR;
@@ -94,7 +100,8 @@ CAP::Register assemblerGetRegID(string line){
 	return CAP::Register::UNDEFINED;
 	#undef has
 }
-CAP::Command assemblerGetCommandID(string line){
+CAP::Command assemblerGetCommandID(string line)
+{
 	#define has(x) (line.find(x) != string::npos)
 	#define hOR(x,y) (has(x)||has(y))
 	if(has("NULL"))return CAP::Command::NULLCMD;
@@ -119,8 +126,8 @@ CAP::Command assemblerGetCommandID(string line){
 	#undef has
 	#undef hOR
 }
-void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout){
-	
+void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
+{
 	for (string line; getline(fin, line); ) {
 		auto firstEqPos = line.find_first_of('=');
 		if(firstEqPos != string::npos)
@@ -231,7 +238,8 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout){
 	}
 	XilinxUltraScalePlus::outputBITheaderLengthField(fout, headerLocationOfRemainingFileLength, Endianess::BE);
 }
-void writeCommandName(ofstream& fout, CAP::Command cmdNum){
+void writeCommandName(ofstream& fout, CAP::Command cmdNum)
+{
 	switch(cmdNum){
 		case CAP::Command::NULLCMD: fout << "Null Command"; break;
 		case CAP::Command::WCFG: fout << "Write Config"; break;
@@ -254,7 +262,8 @@ void writeCommandName(ofstream& fout, CAP::Command cmdNum){
 		default: fout << "UNKNOWN"; break;
 	}
 }
-void writeRegisterName(ofstream& fout, CAP::Register regNum){
+void writeRegisterName(ofstream& fout, CAP::Register regNum)
+{
 	switch(regNum){
 		case CAP::Register::CRC: fout << "CRC"; break;
 		case CAP::Register::FAR: fout << "FAR"; break;
@@ -281,7 +290,8 @@ void writeRegisterName(ofstream& fout, CAP::Register regNum){
 		default: fout << "UNKNOWN"; break;
 	}
 }
-void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
+void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
+{
 	loadedBitstreamEndianess = XilinxUltraScalePlus::parseBitstreamEndianess(fin);
 	XilinxUltraScalePlus::parseBITheader(fin, loadedBitstreamEndianess);
     XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
@@ -386,7 +396,8 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout){
 		} // if fin is still good
 	} // for(;;)
 }
-void XilinxUltraScalePlus::disassemblerWriteHeader(ofstream& fout){
+void XilinxUltraScalePlus::disassemblerWriteHeader(ofstream& fout)
+{
 	fout<<"--- HEADER BEGIN ---"<<endl;
 	fout<<"Name = \""<<designName<<"\""<<endl;
 	fout<<"FPGA = \""<<partName<<"\""<<endl;

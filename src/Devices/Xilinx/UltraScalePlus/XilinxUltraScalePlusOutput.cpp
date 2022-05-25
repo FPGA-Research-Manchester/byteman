@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
+#include<iostream>
+#include<string>
+#include<stdexcept>
+#include<fstream>
+#include<cstring>
+
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
 #include "../../../Common/FileIO.h"
 #include "../../../Common/StringFuncs.h"
 #include "../../../byteman.h"
-//#include "../XilinxFileIO.h"
-#include <iostream>
-#include <string>
-#include <stdexcept>
-#include <fstream>
-#include <cstring>
+
 using namespace std;
 
 /**************************************************************************//**

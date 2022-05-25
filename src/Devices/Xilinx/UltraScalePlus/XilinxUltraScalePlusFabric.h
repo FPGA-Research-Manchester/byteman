@@ -13,13 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
 #ifndef XILINXULTRASCALEPLUSFABRIC_H
 #define XILINXULTRASCALEPLUSFABRIC_H
 
 #define XUSP_MAX_SLRS 4
 #define XUSP_MAX_ROWS 20
+
 //692 is currently identified widest row
 #define XUSP_MAX_COLS 1024
+
 //about 12 is currently identified widest row in terms of BRAMs
 #define XUSP_MAX_BRAM_COLS 32
 

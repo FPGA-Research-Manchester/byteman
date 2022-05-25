@@ -16,12 +16,15 @@
 
 #ifndef ENDIANESS_H
 #define ENDIANESS_H
+
 #include<cstdint> //uint
 #include<string>
-using namespace std;
+
 #if __has_include(<sys/param.h>)
-#include <sys/param.h>
+#include<sys/param.h>
 #endif
+
+using namespace std;
 
 #if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN || defined(BYTE_ORDER) && BYTE_ORDER == BIG_ENDIAN || defined(__BIG_ENDIAN__) || defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIBSEB) || defined(__MIBSEB) || defined(__MIBSEB__)
 	#define IS_LITTLE_ENDIAN() 0
@@ -29,28 +32,29 @@ using namespace std;
 	#define IS_LITTLE_ENDIAN() 1
 #else
 	#error Could not determine machine's endianess in the preprocessor!
-inline int IS_LITTLE_ENDIAN()
-{
-	union {
-		unsigned int v;
-		unsigned char b;
-	} u;
-	u.v = 1;
-	return u.b;
-}
+	inline int IS_LITTLE_ENDIAN()
+	{
+		union {
+			unsigned int v;
+			unsigned char b;
+		} u;
+		u.v = 1;
+		return u.b;
+	}
 #endif
 
-enum class Endianess {
-	BE,					///< Detect/Select Big endianess
-	LE,					///< Detect/Select Little endianess
-	BE_BS,				///< Detect/Select Big endianess with bit swaps inside each byte
-	LE_BS,				///< Detect/Select Little endianess with bit swaps inside each byte
-
-	NATIVE = (IS_LITTLE_ENDIAN()?LE:BE)	///< Whatever system native is, it will always be the fastest endianess to process
+enum class Endianess	///< Endianess in byteman is represented not only by big/little endian, but also by potential bit swapping inside bytes
+{
+	BE,					///< Big endian ("BE" instead of full-er name, so it does not conflict with linux's reserved endianess words)
+	LE,					///< Little endian ("LE" instead of full-er name, so it does not conflict with linux's reserved endianess words)
+	BE_BS,				///< Big endian with bit swaps inside each byte
+	LE_BS,				///< Little endian with bit swaps inside each byte
+	NATIVE = (IS_LITTLE_ENDIAN()?LE:BE)	///< System native will always be the fastest endianess to process
 };
 
 namespace Endian {
-	inline string to_string(Endianess e){
+	inline string to_string(Endianess e)
+	{
 		if(Endianess::NATIVE == e)
 			return "Native";
 		if(Endianess::BE == e)
@@ -59,44 +63,49 @@ namespace Endian {
 			return "Little Endian";
 		if(Endianess::BE_BS == e)
 			return "Big Endian with BitSwap";
-		
-		//if(Endianess::LE_BS == e)
+		if(Endianess::LE_BS == e)
 			return "Little Endian with BitSwap";
+		return "null";	//should not be reached.
 	}
-	inline Endianess toggleEndianess(Endianess e){
+	inline Endianess toggleEndianess(Endianess e, bool toggle = true)
+	{
+		if(!toggle)
+			return e;
 		if(Endianess::BE == e)
 			return Endianess::LE;
 		if(Endianess::LE == e)
 			return Endianess::BE;
 		if(Endianess::BE_BS == e)
 			return Endianess::LE_BS;
-		//if(Endianess::LE_BS == e)
+		if(Endianess::LE_BS == e)
 			return Endianess::BE_BS;
+		return Endianess::NATIVE;	//should not be reached.
 	}
-	inline Endianess toggleEndianBitSwap(Endianess e){
+	inline Endianess toggleEndianBitSwap(Endianess e, bool toggle = true)
+	{
+		if(!toggle)
+			return e;
 		if(Endianess::BE == e)
 			return Endianess::BE_BS;
 		if(Endianess::LE == e)
 			return Endianess::LE_BS;
 		if(Endianess::BE_BS == e)
 			return Endianess::BE;
-		//if(Endianess::LE_BS == e)
+		if(Endianess::LE_BS == e)
 			return Endianess::LE;
+		return Endianess::NATIVE;	//should not be reached.
 	}
-	inline bool isBitSwap(Endianess e){
-		if(Endianess::BE_BS == e || Endianess::LE_BS == e)
-			return true;
-		return false;
+	inline bool isBitSwap(Endianess e)
+	{
+		return (Endianess::BE_BS == e || Endianess::LE_BS == e);
 	}
-	inline bool isLE(Endianess e){
-		if(Endianess::LE == e || Endianess::LE_BS == e)
-			return true;
-		return false;
+	inline bool isLE(Endianess e)
+	{
+		return (Endianess::LE == e || Endianess::LE_BS == e);
 	}
-	inline bool isBE(Endianess e){
-		if(Endianess::BE == e || Endianess::BE_BS == e)
-			return true;
-		return false;
+	inline bool isBE(Endianess e)
+	{
+		return (Endianess::BE == e || Endianess::BE_BS == e);
 	}
 /**************************************************************************//**
  * Returns what endianess operation is needed to convert between two endianesses.
@@ -105,102 +114,124 @@ namespace Endian {
  * between the two given endianesses.
  * For example, will return Endianess::NATIVE if no conversion is needed.
  *****************************************************************************/
-	inline Endianess diff(Endianess e1, Endianess e2){
+	inline Endianess diff(Endianess e1, Endianess e2)
+	{
 		Endianess accumulatedEndianessDiff = Endianess::NATIVE;
 
-		if(isBitSwap(e1))
-			accumulatedEndianessDiff = toggleEndianBitSwap(accumulatedEndianessDiff);
-		if(isBitSwap(e2))
-			accumulatedEndianessDiff = toggleEndianBitSwap(accumulatedEndianessDiff);
+		accumulatedEndianessDiff = toggleEndianBitSwap(accumulatedEndianessDiff, isBitSwap(e1));
+		accumulatedEndianessDiff = toggleEndianBitSwap(accumulatedEndianessDiff, isBitSwap(e2));
 
-		if(IS_LITTLE_ENDIAN()?isBE(e1):isLE(e1))
-			accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff);
-		if(IS_LITTLE_ENDIAN()?isBE(e2):isLE(e2))
-			accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff);
+		accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff, isLE(e1));
+		accumulatedEndianessDiff = toggleEndianess(accumulatedEndianessDiff, isLE(e2));
 
 		return accumulatedEndianessDiff;
 	}
 	
-	inline uint16_t swapbytes16(uint16_t x){
+	inline uint16_t swapbytes16(uint16_t x)
+	{
 		return (uint16_t)(((uint16_t)(x) & 0xFFU) << 8 | ((uint16_t)(x) & 0xFF00U) >> 8);
 	}
-	inline uint32_t swapbytes32(uint32_t x){
+	inline uint32_t swapbytes32(uint32_t x)
+	{
 		return (uint32_t)(((uint32_t)(x) & 0xFF) << 24 | ((uint32_t)(x) & 0xFF00) << 8 | ((uint32_t)(x) & 0xFF0000) >> 8 | ((uint32_t)(x) & 0xFF000000) >> 24);
 	}
-	inline uint64_t swapbytes64(uint64_t x){
+	inline uint64_t swapbytes64(uint64_t x)
+	{
 		return (uint64_t)((((uint64_t)(x) & 0xFF) << 56) | ((uint64_t)(x) & 0xFF00ULL) << 40 |((uint64_t)(x) & 0xFF0000ULL) << 24 |((uint64_t)(x) & 0xFF000000ULL) << 8 |((uint64_t)(x) & 0xFF00000000ULL) >> 8 |((uint64_t)(x) & 0xFF0000000000ULL) >> 24 | ((uint64_t)(x) & 0xFF000000000000ULL) >> 40 | ((uint64_t)(x) & 0xFF00000000000000ULL) >> 56);
 	}
 
 
-	inline uint8_t  NativeToBigEndian8 (uint8_t  x){
+	inline uint8_t  NativeToBigEndian8 (uint8_t  x)
+	{
 		return ((uint8_t)(x));
 	}
-	inline uint16_t NativeToBigEndian16(uint16_t x){
-		return (IS_LITTLE_ENDIAN())?swapbytes16(x):((uint16_t)(x));
+	inline uint16_t NativeToBigEndian16(uint16_t x)
+	{
+		return (Endianess::NATIVE == Endianess::BE)?((uint16_t)(x)):swapbytes16(x);
 	}
-	inline uint32_t NativeToBigEndian32(uint32_t x){
-		return (IS_LITTLE_ENDIAN())?swapbytes32(x):((uint32_t)(x));
+	inline uint32_t NativeToBigEndian32(uint32_t x)
+	{
+		return (Endianess::NATIVE == Endianess::BE)?((uint32_t)(x)):swapbytes32(x);
 	}
-	inline uint64_t NativeToBigEndian64(uint64_t x){
-		return (IS_LITTLE_ENDIAN())?swapbytes64(x):((uint64_t)(x));
+	inline uint64_t NativeToBigEndian64(uint64_t x)
+	{
+		return (Endianess::NATIVE == Endianess::BE)?((uint64_t)(x)):swapbytes64(x);
 	}
 	
-	inline uint8_t  NativeToLittleEndian8 (uint8_t  x){
+	inline uint8_t  NativeToLittleEndian8 (uint8_t  x)
+	{
 		return ((uint8_t)(x));
 	}
-	inline uint16_t NativeToLittleEndian16(uint16_t x){
-		return (IS_LITTLE_ENDIAN())?((uint16_t)(x)):swapbytes16(x);
+	inline uint16_t NativeToLittleEndian16(uint16_t x)
+	{
+		return (Endianess::NATIVE == Endianess::LE)?((uint16_t)(x)):swapbytes16(x);
 	}
-	inline uint32_t NativeToLittleEndian32(uint32_t x){
-		return (IS_LITTLE_ENDIAN())?((uint32_t)(x)):swapbytes32(x);
+	inline uint32_t NativeToLittleEndian32(uint32_t x)
+	{
+		return (Endianess::NATIVE == Endianess::LE)?((uint32_t)(x)):swapbytes32(x);
 	}
-	inline uint64_t NativeToLittleEndian64(uint64_t x){
-		return (IS_LITTLE_ENDIAN())?((uint64_t)(x)):swapbytes64(x);
+	inline uint64_t NativeToLittleEndian64(uint64_t x)
+	{
+		return (Endianess::NATIVE == Endianess::LE)?((uint64_t)(x)):swapbytes64(x);
 	}
 	
-	inline uint8_t  BigEndianToNative8(uint8_t  x){
+	inline uint8_t  BigEndianToNative8(uint8_t  x)
+	{
 		return ((uint8_t)(x));
 	}
-	inline uint16_t BigEndianToNative16(uint16_t x){
+	inline uint16_t BigEndianToNative16(uint16_t x)
+	{
 		return NativeToBigEndian16(x);
 	} 
-	inline uint32_t BigEndianToNative32(uint32_t x){
+	inline uint32_t BigEndianToNative32(uint32_t x)
+	{
 		return NativeToBigEndian32(x);
 	} 
-	inline uint64_t BigEndianToNative64(uint64_t x){
+	inline uint64_t BigEndianToNative64(uint64_t x)
+	{
 		return NativeToBigEndian64(x);
 	}
-	inline uint8_t  LittleEndianToNative8(uint8_t  x){
+	inline uint8_t  LittleEndianToNative8(uint8_t  x)
+	{
 		return ((uint8_t)(x));
 	}
-	inline uint16_t LittleEndianToNative16(uint16_t x){
+	inline uint16_t LittleEndianToNative16(uint16_t x)
+	{
 		return NativeToLittleEndian16(x);
 	} 
-	inline uint32_t LittleEndianToNative32(uint32_t x){
+	inline uint32_t LittleEndianToNative32(uint32_t x)
+	{
 		return NativeToLittleEndian32(x);
 	} 
-	inline uint64_t LittleEndianToNative64(uint64_t x){
+	inline uint64_t LittleEndianToNative64(uint64_t x)
+	{
 		return NativeToLittleEndian64(x);
 	} 
 
 	//BitSwaps: swap bit order within the bytes
-	inline uint8_t  BitSwap8(uint8_t  x){
+	inline uint8_t  BitSwap8(uint8_t  x)
+	{
 		return (((x & 0x80)>>7) | ((x & 0x40)>>5) | ((x & 0x20)>>3) | ((x & 0x10)>>1) | ((x & 0x08)<<1) | ((x & 0x04)<<3) | ((x & 0x02)<<5) | ((x & 0x01)<<7));
 	}
-	inline uint16_t BitSwap16(uint16_t x){
+	inline uint16_t BitSwap16(uint16_t x)
+	{
 		return (((x & 0x8080)>>7) | ((x & 0x4040)>>5) | ((x & 0x2020)>>3) | ((x & 0x1010)>>1) | ((x & 0x0808)<<1) | ((x & 0x0404)<<3) | ((x & 0x0202)<<5) | ((x & 0x0101)<<7));
 	} 
-	inline uint32_t BitSwap32(uint32_t x){
+	inline uint32_t BitSwap32(uint32_t x)
+	{
 		return (((x & 0x80808080)>>7) | ((x & 0x40404040)>>5) | ((x & 0x20202020)>>3) | ((x & 0x10101010)>>1) | ((x & 0x08080808)<<1) | ((x & 0x04040404)<<3) | ((x & 0x02020202)<<5) | ((x & 0x01010101)<<7));
 	} 
-	inline uint64_t BitSwap64(uint64_t x){
+	inline uint64_t BitSwap64(uint64_t x)
+	{
 		return (((x & 0x8080808080808080)>>7) | ((x & 0x4040404040404040)>>5) | ((x & 0x2020202020202020)>>3) | ((x & 0x1010101010101010)>>1) | ((x & 0x0808080808080808)<<1) | ((x & 0x0404040404040404)<<3) | ((x & 0x0202020202020202)<<5) | ((x & 0x0101010101010101)<<7));
 	}
 
-	inline uint8_t  NativeToAnyEndianess8(uint8_t  x, Endianess e){
+	inline uint8_t  NativeToAnyEndianess8(uint8_t  x, Endianess e)
+	{
 		return ((uint8_t)(x));
 	}
-	inline uint16_t NativeToAnyEndianess16(uint16_t x, Endianess e){
+	inline uint16_t NativeToAnyEndianess16(uint16_t x, Endianess e)
+	{
 		if(Endianess::BE == e)
 			return NativeToBigEndian16(x);
 		if(Endianess::LE == e)
@@ -212,7 +243,8 @@ namespace Endian {
 		//Native then
 		return ((uint16_t)(x));
 	} 
-	inline uint32_t NativeToAnyEndianess32(uint32_t x, Endianess e){
+	inline uint32_t NativeToAnyEndianess32(uint32_t x, Endianess e)
+	{
 		if(Endianess::BE == e)
 			return NativeToBigEndian32(x);
 		if(Endianess::LE == e)
@@ -224,7 +256,8 @@ namespace Endian {
 		//Native then
 		return ((uint32_t)(x));
 	} 
-	inline uint64_t NativeToAnyEndianess64(uint64_t x, Endianess e){
+	inline uint64_t NativeToAnyEndianess64(uint64_t x, Endianess e)
+	{
 		if(Endianess::BE == e)
 			return NativeToBigEndian64(x);
 		if(Endianess::LE == e)

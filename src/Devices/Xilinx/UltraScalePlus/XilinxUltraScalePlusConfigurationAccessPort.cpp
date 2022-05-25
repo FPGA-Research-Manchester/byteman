@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
-
 
 uint32_t XilinxUltraScalePlus::XCAP_SyncInstruction(){
 	return XilinxUltraScalePlus::CAP_makeSyncInstruction();

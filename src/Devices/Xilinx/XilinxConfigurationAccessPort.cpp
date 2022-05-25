@@ -14,17 +14,21 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "XilinxConfigurationAccessPort.h"
-#include <time.h>
+#include<time.h>
 
-XilinxConfigurationAccessPort::XilinxConfigurationAccessPort(){
+#include "XilinxConfigurationAccessPort.h"
+
+XilinxConfigurationAccessPort::XilinxConfigurationAccessPort()
+{
 	designName = "";
     partName = "";
 }
-XilinxConfigurationAccessPort::~XilinxConfigurationAccessPort(){
+XilinxConfigurationAccessPort::~XilinxConfigurationAccessPort()
+{
 }
 
-void XilinxConfigurationAccessPort::updateDateAndTime(){
+void XilinxConfigurationAccessPort::updateDateAndTime()
+{
 	time_t timestamp = time(0);
 	struct tm  tstruct;
 	char       buf[80];

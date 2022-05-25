@@ -21,8 +21,10 @@
 #include<cstdint> //uint
 #include<fstream>
 #include<string>
+
 #include "../CommonDevice.h"
 #include "../../Common/Endianess.h"
+
 using namespace std;
 
 class XilinxConfigurationAccessPort: virtual public CommonDevice

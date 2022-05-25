@@ -17,11 +17,14 @@
 #ifndef COORDS_H
 #define COORDS_H
 
-struct Coord2D {
+struct Coord2D
+{
 	int row;
 	int col;
 };
-struct Rect2D {
+
+struct Rect2D
+{
 	Coord2D position;
 	Coord2D size;
 };

@@ -13,11 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
 #ifndef XILINXULTRASCALEPLUSDEVICES_H
 #define XILINXULTRASCALEPLUSDEVICES_H
+
+#include<cstring>
+
 #include "XilinxUltraScalePlusFabric.h"
 
-enum XUSP_DEVICE_ENUM {
+enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices and boards.
+{
     XUSP_DEVICE_NULL = 0,
     //XUSP Artix
     XUSP_DEVICE_XCAU10P,

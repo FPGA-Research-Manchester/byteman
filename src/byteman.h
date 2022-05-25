@@ -13,13 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
 #ifndef BYTEMAN_H
 #define BYTEMAN_H
-#include <iostream>
+
+#include<iostream>
+
 using namespace std;
+
 //Any changes to version numbers should be done only in CMakeLists.txt, not here!
 #define VERSION "0.5"
 #define VERSION_BUILD "107"
+
 enum Arch{
 	ARCH_NULL = 0,
 	XIL_SERIES6,
@@ -28,6 +33,7 @@ enum Arch{
 	XIL_USP,
 	XIL_VERSAL
 };
+
 void ArchDeviceHelp();
 void ArchAssemblyHelp();
 void parseHelp(string, int=0, int=0);

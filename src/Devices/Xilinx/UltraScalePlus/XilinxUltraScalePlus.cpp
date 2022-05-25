@@ -13,15 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
-#include "XilinxUltraScalePlus.h"
-#include <iostream>
-#include <stdio.h>
-#include <string>
-#include <cstring>  //memset
-#include <algorithm> //replace
+
+#include<iostream>
+#include<stdio.h>
+#include<string>
+#include<cstring>  //memset
+#include<algorithm> //replace
 #include<sstream>
-#include <stdexcept>
-#include <fstream>
+#include<stdexcept>
+#include<fstream>
+
+#include "XilinxUltraScalePlus.h"
+
 using namespace std;
 
 XilinxUltraScalePlus::XilinxUltraScalePlus()
@@ -129,15 +132,6 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 		}
 		bitstreamEnd = &bitstreamBegin[offset];
     }
-}
-void XilinxUltraScalePlus::region(string params, Rect2D rect){
-	if(params.find("clear") != string::npos) //first do the clearing
-		regionSelection.clear();
-	if(params.find("add") != string::npos){ //before potential adding
-		if(rect.size.row <= 0 || rect.size.col <= 0)
-			throw runtime_error("Regions need to be of positive size.");
-		regionSelection.push_back(rect);
-	}
 }
 void XilinxUltraScalePlus::blank(string params){
 	XilinxUltraScalePlus::ensureInitializedBitstreamArrays();
