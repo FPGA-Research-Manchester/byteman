@@ -118,14 +118,15 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a05e8a4169b449a849b680c986bb72756"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> { <br />
-&#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a>, 
-<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">Endianess::BE</a>, 
+&#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">Endianess::BE</a>, 
 <a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">Endianess::LE</a>, 
 <a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">Endianess::BE_BS</a>, 
+<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">Endianess::LE_BS</a>, 
 <br />
-&#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">Endianess::LE_BS</a>
+&#160;&#160;<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a> = (IS_LITTLE_ENDIAN()?LE:BE)
 <br />
  }</td></tr>
+<tr class="memdesc:a05e8a4169b449a849b680c986bb72756"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Endianess in byteman is represented not only by big/little endian, but also by potential bit swapping inside bytes  <a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">More...</a><br /></td></tr>
 <tr class="separator:a05e8a4169b449a849b680c986bb72756"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -148,10 +149,14 @@ Functions</h2></td></tr>
 <tr class="separator:a36a7e410427efdc262d2d4c93fb80561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a341a75d4d5983d8e5572d021f945d9a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a341a75d4d5983d8e5572d021f945d9a5">Endian::diff</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e1, <a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e2)</td></tr>
 <tr class="separator:a341a75d4d5983d8e5572d021f945d9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a0c2ce68f029b6a669ea1009ab0054b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a8a0c2ce68f029b6a669ea1009ab0054b">Endian::fixEndianIfNative</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
-<tr class="separator:a8a0c2ce68f029b6a669ea1009ab0054b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09334e77fb4b0057f3d9ef99a5ae987c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c">IS_LITTLE_ENDIAN</a> (void)</td></tr>
-<tr class="separator:a09334e77fb4b0057f3d9ef99a5ae987c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93aa01caf857c339c847048e55fcd975"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Endianess_8h.html#a93aa01caf857c339c847048e55fcd975">IS_LITTLE_ENDIAN</a> ()</td></tr>
+<tr class="separator:a93aa01caf857c339c847048e55fcd975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7538ff972b9569eec509352bb063064"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#aa7538ff972b9569eec509352bb063064">Endian::isBE</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:aa7538ff972b9569eec509352bb063064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee71d0cfce8566775581dcef188a96e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a0ee71d0cfce8566775581dcef188a96e">Endian::isBitSwap</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:a0ee71d0cfce8566775581dcef188a96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b231283bb8c53be1fa195923b07364d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a3b231283bb8c53be1fa195923b07364d">Endian::isLE</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
+<tr class="separator:a3b231283bb8c53be1fa195923b07364d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5a1794961e4b010f98402e353502c23"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23">Endian::LittleEndianToNative16</a> (uint16_t x)</td></tr>
 <tr class="separator:ae5a1794961e4b010f98402e353502c23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabd838029ed523d5280997f4ca10f859"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#aabd838029ed523d5280997f4ca10f859">Endian::LittleEndianToNative32</a> (uint32_t x)</td></tr>
@@ -192,10 +197,10 @@ Functions</h2></td></tr>
 <tr class="separator:ac57bf63196271e3e09c5029a4ea972e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ec188b346b1ec0ff9004c53dab82053"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
 <tr class="separator:a8ec188b346b1ec0ff9004c53dab82053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af469f5fd27060a81c82806dea65554a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#af469f5fd27060a81c82806dea65554a7">Endian::toggleEndianBitSwap</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
-<tr class="separator:af469f5fd27060a81c82806dea65554a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a954bd435350458e73339029cae57e78b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a954bd435350458e73339029cae57e78b">Endian::toggleEndianess</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</td></tr>
-<tr class="separator:a954bd435350458e73339029cae57e78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d41fb3e11006d6a325dae4e37f9740"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#a46d41fb3e11006d6a325dae4e37f9740">Endian::toggleEndianBitSwap</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e, bool toggle=true)</td></tr>
+<tr class="separator:a46d41fb3e11006d6a325dae4e37f9740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07cde46e0b49a5e956bbe512540dd0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEndian.html#ab07cde46e0b49a5e956bbe512540dd0f">Endian::toggleEndianess</a> (<a class="el" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e, bool toggle=true)</td></tr>
+<tr class="separator:ab07cde46e0b49a5e956bbe512540dd0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a05e8a4169b449a849b680c986bb72756"></a>
@@ -217,33 +222,35 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>&lt; Endianess in byteman is represented not only by big/little endian, but also by potential bit swapping inside bytes </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743"></a>NATIVE&#160;</td><td class="fielddoc"><p>Whatever native is, it will always be the fastest endianess to process. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44"></a>BE&#160;</td><td class="fielddoc"><p>Big endian ("BE" instead of full-er name, so it does not conflict with linux's reserved endianess words) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44"></a>BE&#160;</td><td class="fielddoc"><p>Detect/Select Big endianess. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6"></a>LE&#160;</td><td class="fielddoc"><p>Little endian ("LE" instead of full-er name, so it does not conflict with linux's reserved endianess words) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6"></a>LE&#160;</td><td class="fielddoc"><p>Detect/Select Little endianess. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799"></a>BE_BS&#160;</td><td class="fielddoc"><p>Big endian with bit swaps inside each byte. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799"></a>BE_BS&#160;</td><td class="fielddoc"><p>Detect/Select Big endianess with bit swaps inside each byte. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7"></a>LE_BS&#160;</td><td class="fielddoc"><p>Little endian with bit swaps inside each byte. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7"></a>LE_BS&#160;</td><td class="fielddoc"><p>Detect/Select Little endianess with bit swaps inside each byte. </p>
+<tr><td class="fieldname"><a id="a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743"></a>NATIVE&#160;</td><td class="fielddoc"><p>System native will always be the fastest endianess to process. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="Endianess_8h_source.html#l00043">43</a> of file <a class="el" href="Endianess_8h_source.html">Endianess.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                     {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">NATIVE</a>,             </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">BE</a>,                 </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">LE</a>,                 </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">BE_BS</a>,              </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">LE_BS</a>               </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<p class="definition">Definition at line <a class="el" href="Endianess_8h_source.html#l00046">46</a> of file <a class="el" href="Endianess_8h_source.html">Endianess.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">BE</a>,                 </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">LE</a>,                 </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">BE_BS</a>,              </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">LE_BS</a>,              </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">NATIVE</a> = (<a class="code" href="Endianess_8h.html#a93aa01caf857c339c847048e55fcd975">IS_LITTLE_ENDIAN</a>()?<a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">LE</a>:<a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">BE</a>) </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a09334e77fb4b0057f3d9ef99a5ae987c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09334e77fb4b0057f3d9ef99a5ae987c">&#9670;&nbsp;</a></span>IS_LITTLE_ENDIAN()</h2>
+<a id="a93aa01caf857c339c847048e55fcd975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93aa01caf857c339c847048e55fcd975">&#9670;&nbsp;</a></span>IS_LITTLE_ENDIAN()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,130 +259,41 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static int IS_LITTLE_ENDIAN </td>
+          <td class="memname">int IS_LITTLE_ENDIAN </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Endianess_8h_source.html#l00032">32</a> of file <a class="el" href="Endianess_8h_source.html">Endianess.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">union </span>{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> v;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> b;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } u;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    u.v = 1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> u.b;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Endianess_8h_source.html#l00035">35</a> of file <a class="el" href="Endianess_8h_source.html">Endianess.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> v;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> b;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        } u;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        u.v = 1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> u.b;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="Endianess_8h_source.html#l00105">Endian::diff()</a>, <a class="el" href="Endianess_8h_source.html#l00091">Endian::fixEndianIfNative()</a>, <a class="el" href="Endianess_8h_source.html#l00142">Endian::NativeToBigEndian16()</a>, <a class="el" href="Endianess_8h_source.html#l00145">Endian::NativeToBigEndian32()</a>, <a class="el" href="Endianess_8h_source.html#l00148">Endian::NativeToBigEndian64()</a>, <a class="el" href="Endianess_8h_source.html#l00155">Endian::NativeToLittleEndian16()</a>, <a class="el" href="Endianess_8h_source.html#l00158">Endian::NativeToLittleEndian32()</a>, <a class="el" href="Endianess_8h_source.html#l00161">Endian::NativeToLittleEndian64()</a>, <a class="el" href="Endianess_8h_source.html#l00077">Endian::toggleEndianBitSwap()</a>, and <a class="el" href="Endianess_8h_source.html#l00063">Endian::toggleEndianess()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="Endianess_8h_a09334e77fb4b0057f3d9ef99a5ae987c_icgraph.png" border="0" usemap="#Endianess_8h_a09334e77fb4b0057f3d9ef99a5ae987c_icgraph" alt=""/></div>
-<map name="Endianess_8h_a09334e77fb4b0057f3d9ef99a5ae987c_icgraph" id="Endianess_8h_a09334e77fb4b0057f3d9ef99a5ae987c_icgraph">
-<area shape="rect" title=" " alt="" coords="2784,355,2925,382"/>
-<area shape="rect" href="namespaceEndian.html#a341a75d4d5983d8e5572d021f945d9a5" title=" " alt="" coords="2297,135,2392,162"/>
-<area shape="rect" href="namespaceEndian.html#a8a0c2ce68f029b6a669ea1009ab0054b" title=" " alt="" coords="2531,279,2717,306"/>
-<area shape="rect" href="namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="2518,330,2730,357"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="2518,725,2730,751"/>
-<area shape="rect" href="namespaceEndian.html#a11c0d291e85247cd4ce004ca26bf3728" title=" " alt="" coords="2518,1269,2730,1295"/>
-<area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="2512,381,2736,407"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="2512,659,2736,686"/>
-<area shape="rect" href="namespaceEndian.html#a70ebba7cd4f75a6825704e1b55c1db59" title=" " alt="" coords="2512,1218,2736,1245"/>
-<area shape="rect" href="namespaceEndian.html#af469f5fd27060a81c82806dea65554a7" title=" " alt="" coords="2518,127,2730,154"/>
-<area shape="rect" href="namespaceEndian.html#a954bd435350458e73339029cae57e78b" title=" " alt="" coords="2533,178,2715,205"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="1995,5,2149,47"/>
-<area shape="rect" href="byteman_8cpp.html#a8c6afae26d72a7030f5f568b832170cc" title=" " alt="" coords="459,150,558,177"/>
-<area shape="rect" href="byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa" title=" " alt="" coords="108,437,233,463"/>
-<area shape="rect" href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,437,60,463"/>
-<area shape="rect" href="namespaceEndian.html#afb674eed3d17c61f0d99ecb1b2737ad5" title=" " alt="" coords="2239,186,2451,213"/>
-<area shape="rect" href="namespaceEndian.html#a77386f5518cfdc767045bdd8b89e019a" title=" " alt="" coords="2225,377,2464,403"/>
-<area shape="rect" href="namespaceFileIO.html#a085994f39dbf647129a14e7b0c3e8051" title=" " alt="" coords="2256,326,2433,353"/>
-<area shape="rect" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb" title=" " alt="" coords="1981,71,2163,98"/>
-<area shape="rect" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579" title=" " alt="" coords="1973,123,2171,164"/>
-<area shape="rect" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055" title=" " alt="" coords="1803,162,1919,189"/>
-<area shape="rect" href="namespaceFileIO.html#a48ad27e27400610acdcfbec9a2143b18" title=" " alt="" coords="1805,393,1917,419"/>
-<area shape="rect" href="namespaceFileIO.html#a7ff728cecb8bbf042b408a8d5bb4f003" title=" " alt="" coords="1975,356,2169,397"/>
-<area shape="rect" href="namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae" title=" " alt="" coords="2239,687,2451,714"/>
-<area shape="rect" href="namespaceEndian.html#a722e32142ba4afc7cf5b9057633fed10" title=" " alt="" coords="2225,738,2464,765"/>
-<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="2256,955,2433,982"/>
-<area shape="rect" href="namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="1981,655,2163,682"/>
-<area shape="rect" href="namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="1973,707,2171,748"/>
-<area shape="rect" href="namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f" title=" " alt="" coords="1803,605,1919,631"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="1084,569,1243,611"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aede65ef4cccf0d77f0a9168382e73e29" title=" " alt="" coords="1583,480,1736,521"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a06074bb014909a1f88d737a6ccb24e9b" title=" " alt="" coords="1583,415,1736,456"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#afec424bf1fbe86abbc7a79d1bf14ac02" title=" " alt="" coords="1348,409,1501,451"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a7fa0aac97196eb1e909554ebc003a6ac" title=" " alt="" coords="1333,780,1516,821"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a24ae5ad716caec7390276bb39449658e" title=" " alt="" coords="1583,256,1736,297"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a78c72b637aa224dd978c8d5f239595e5" title=" " alt="" coords="1577,597,1742,639"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#abab7151e71f6b02cc8503afd0b782c7f" title=" " alt="" coords="1564,663,1755,704"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a53e5f6ec962f1f2a961f90b8b9e90e10" title=" " alt="" coords="837,569,991,611"/>
-<area shape="rect" href="byteman_8cpp.html#abdebe35e6ba3749eaa14350ca0942419" title=" " alt="" coords="447,463,570,490"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#ab2c3ca3d68a14cd6cf50d1f8cca6b0ed" title=" " alt="" coords="1348,344,1501,385"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a838df6236b078c1a751e65feb9463e12" title=" " alt="" coords="1041,285,1285,327"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#afcd0f828eff528d0c178a5e473ee2181" title=" " alt="" coords="835,256,993,297"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#ab32b8ddf6ed62003568932d9167f7231" title=" " alt="" coords="633,256,787,297"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aafc764306446548f9127f3e30759af49" title=" " alt="" coords="633,321,787,363"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a7f2a7c34766d004adc6f1cfe1bdd62e7" title=" " alt="" coords="432,321,585,363"/>
-<area shape="rect" href="byteman_8cpp.html#a6864a632485326d2049256aeb01cc4cf" title=" " alt="" coords="281,407,384,434"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aea40ae16e356d3c14e6288d4c8eb105c" title=" " alt="" coords="1343,227,1506,268"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#ab133ea6afae968c8607ce982ea627733" title=" " alt="" coords="1058,109,1269,151"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a7939351e4ae9ebd78ef639f3b9f95f5b" title=" " alt="" coords="1995,772,2149,813"/>
-<area shape="rect" href="namespaceFileIO.html#a20ef39a2e52da1b679e3224ab5129cbc" title=" " alt="" coords="1805,901,1917,927"/>
-<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="1975,1007,2169,1048"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a54f9af4b6723a99c0b9e8e9c9b424d00" title=" " alt="" coords="1074,733,1253,775"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#ade1b1830c328d64beb957417ecc445b3" title=" " alt="" coords="1582,897,1737,939"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#ae197b2b5b423cd1be99409c70f51bc37" title=" " alt="" coords="1348,963,1501,1004"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a62dea738808396d7d520f26d8e5594d2" title=" " alt="" coords="1348,897,1501,939"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="1087,897,1240,939"/>
-<area shape="rect" href="byteman_8cpp.html#a4dbd88e4909b2f0429f9d0b2fc2608bb" title=" " alt="" coords="287,663,378,690"/>
-<area shape="rect" href="namespaceEndian.html#a6bde5f348e92ca9982cb0dbe832ea0fe" title=" " alt="" coords="2239,1218,2451,1245"/>
-<area shape="rect" href="namespaceEndian.html#a22d51fb21911a8aaf6f630630ecddb7d" title=" " alt="" coords="2225,1319,2464,1346"/>
-<area shape="rect" href="namespaceFileIO.html#a212ace114b2fb742afa3c087d241f8a0" title=" " alt="" coords="2256,1423,2433,1450"/>
-<area shape="rect" href="namespaceFileIO.html#a372e3a89b4f2ea72d70df9a6b4179a4b" title=" " alt="" coords="1981,1189,2163,1215"/>
-<area shape="rect" href="namespaceFileIO.html#a8da32dd4ed25628ef4e57fe04bc95699" title=" " alt="" coords="1973,1240,2171,1281"/>
-<area shape="rect" href="namespaceFileIO.html#a893970325dbe166fd080b186290c4902" title=" " alt="" coords="1803,1163,1919,1190"/>
-<area shape="rect" href="namespaceFileIO.html#af28bb2b6e0ab2ebda1786875326f559e" title=" " alt="" coords="1805,1394,1917,1421"/>
-<area shape="rect" href="namespaceFileIO.html#a55ee1ec8607da98fd4714328abe2cb49" title=" " alt="" coords="1975,1475,2169,1516"/>
-<area shape="rect" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="2233,254,2457,281"/>
-<area shape="rect" href="namespaceFileIO.html#a80c5593d0aec390026ffc092f36aa1a0" title=" " alt="" coords="2250,427,2439,454"/>
-<area shape="rect" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35" title=" " alt="" coords="1967,188,2177,229"/>
-<area shape="rect" href="namespaceFileIO.html#affd7f11b68ed7b5c0a65d5b1e5703492" title=" " alt="" coords="1975,254,2169,281"/>
-<area shape="rect" href="namespaceFileIO.html#ad7317fb7deef65dddb8b12103fde926f" title=" " alt="" coords="1969,473,2175,515"/>
-<area shape="rect" href="namespaceEndian.html#aabd838029ed523d5280997f4ca10f859" title=" " alt="" coords="2233,605,2457,631"/>
-<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="2250,838,2439,865"/>
-<area shape="rect" href="namespaceFileIO.html#a60d14999a525e60b548765722c0cc49a" title=" " alt="" coords="1967,539,2177,580"/>
-<area shape="rect" href="namespaceFileIO.html#aaf3a57cefdd3a674741d9447c5fcf2a2" title=" " alt="" coords="1975,605,2169,631"/>
-<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="1969,889,2175,931"/>
-<area shape="rect" href="namespaceEndian.html#a9d9ee5db25197f4c16b6abd1ca0da228" title=" " alt="" coords="2233,1138,2457,1165"/>
-<area shape="rect" href="namespaceFileIO.html#aea46d694f116963f4d0aeeef79128832" title=" " alt="" coords="2250,1269,2439,1295"/>
-<area shape="rect" href="namespaceFileIO.html#ae3ecf194d4a737c4c2bb23de88dc3d7c" title=" " alt="" coords="1967,1072,2177,1113"/>
-<area shape="rect" href="namespaceFileIO.html#a346126f8cebb9afcf8e1f96eee5c0b81" title=" " alt="" coords="1975,1138,2169,1165"/>
-<area shape="rect" href="namespaceFileIO.html#ae56a6aeca7f4fcd6372dc70d3bed9bb2" title=" " alt="" coords="1969,1357,2175,1399"/>
-</map>
-</div>
-
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">Endianess::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Detect/Select Big endianess.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">Endianess::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Detect/Select Little endianess with bit swaps inside each byte.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">Endianess::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Detect/Select Little endianess.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">Endianess::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Detect/Select Big endianess with bit swaps inside each byte.</div></div>
-<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a></div><div class="ttdeci">@ NATIVE</div><div class="ttdoc">Whatever native is, it will always be the fastest endianess to process.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756ad3dcf429c679f9af82eb9a3b31c4df44">Endianess::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Big endian (&quot;BE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess wor...</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756aa50da08642d2718a10763e19bd0c06b7">Endianess::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756acfe6055d2e0503be378bb63449ec7ba6">Endianess::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Little endian (&quot;LE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess ...</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756a11461c19bfb4108fb25f239e710ba799">Endianess::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Big endian with bit swaps inside each byte.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743"><div class="ttname"><a href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756af78504d96ba7177dc0c6784905ac8743">Endianess::NATIVE</a></div><div class="ttdeci">@ NATIVE</div><div class="ttdoc">System native will always be the fastest endianess to process.</div></div>
+<div class="ttc" id="aEndianess_8h_html_a93aa01caf857c339c847048e55fcd975"><div class="ttname"><a href="Endianess_8h.html#a93aa01caf857c339c847048e55fcd975">IS_LITTLE_ENDIAN</a></div><div class="ttdeci">int IS_LITTLE_ENDIAN()</div><div class="ttdef"><b>Definition:</b> <a href="Endianess_8h_source.html#l00035">Endianess.h:35</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 20 2022 18:02:08 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 11:04:56 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

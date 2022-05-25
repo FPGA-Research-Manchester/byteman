@@ -1,6 +1,5 @@
 <map id="Endian::BigEndianToNative32" name="Endian::BigEndianToNative32">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,217,57"/>
-<area shape="rect" id="node2" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="265,31,477,57"/>
-<area shape="rect" id="node3" href="$Endianess_8h.html#a09334e77fb4b0057f3d9ef99a5ae987c" title=" " alt="" coords="535,5,676,32"/>
-<area shape="rect" id="node4" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="525,56,685,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,217,32"/>
+<area shape="rect" id="node2" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="265,5,477,32"/>
+<area shape="rect" id="node3" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="525,5,685,32"/>
 </map>
