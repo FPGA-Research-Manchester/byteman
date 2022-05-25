@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//Any changes to version numbers should be done only in CMakeLists.txt, not here!</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="byteman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">   43</a></span>&#160;<span class="preprocessor">#define VERSION &quot;0.6&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">   44</a></span>&#160;<span class="preprocessor">#define VERSION_BUILD &quot;116&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">   44</a></span>&#160;<span class="preprocessor">#define VERSION_BUILD &quot;117&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classbyteman.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbyteman.html">byteman</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
@@ -127,47 +127,45 @@ $(function() {
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        SelectedOptions parseParams(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">        #ifdef XUSP</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classXilinxUltraScalePlus.html">XilinxUltraScalePlus</a> mainBuffer, tempBuffer;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        } Xilinx_UltraScalePlus;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">        #endif //XUSP</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> parseCommand(<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> setArchitecture(<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> parseAssembly(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> parseOutput(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> parseMerge(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> parseInput(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> parseDevice(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> parseChange(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> parseBlank(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> parseRegion(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> parseWarn(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">void</span> parseVerbose(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> help(<span class="keywordtype">string</span>, <span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> help(<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> help();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> helpAssembly();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">void</span> helpOutput();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> helpMerge();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> helpInput();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> helpDevice();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> helpChange();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> helpBlank();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> helpRegion();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> helpWarn();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> helpVerbose();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> helpHelp();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> helpEnd();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> helpStdin();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif //BYTEMAN_H</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classXilinxUltraScalePlus.html">XilinxUltraScalePlus</a> mainXUSP, tempXUSP;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">        #endif //XUSP</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> parseCommand(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">void</span> setArchitecture(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> parseAssembly(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> parseOutput(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> parseMerge(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> parseInput(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">void</span> parseDevice(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> parseChange(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> parseBlank(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> parseRegion(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> parseWarn(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> parseVerbose(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> help(<span class="keywordtype">string</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> help(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> help();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> helpAssembly();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">void</span> helpOutput();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> helpMerge();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">void</span> helpInput();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> helpDevice();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> helpChange();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> helpBlank();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordtype">void</span> helpRegion();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">void</span> helpWarn();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> helpVerbose();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> helpHelp();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> helpEnd();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordtype">void</span> helpStdin();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif //BYTEMAN_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_ae408f6df57e2f54e9063e9a451962718"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">byteman::SelectedOptions::SelectedOptions</a></div><div class="ttdeci">SelectedOptions()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00062">byteman.h:62</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScalePlus_html"><div class="ttname"><a href="classXilinxUltraScalePlus.html">XilinxUltraScalePlus</a></div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8h_source.html#l00032">XilinxUltraScalePlus.h:32</a></div></div>
@@ -179,7 +177,7 @@ $(function() {
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5">byteman::Architecture</a></div><div class="ttdeci">Architecture</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00051">byteman.h:51</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 16:35:43 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 16:49:22 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
