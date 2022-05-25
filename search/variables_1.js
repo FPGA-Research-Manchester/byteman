@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['bitstreambegin_1525',['bitstreamBegin',['../classXilinxUltraScalePlus.html#adabbcd5c6139e530f4ce74880ec7b271',1,'XilinxUltraScalePlus']]],
-  ['bitstreambram_1526',['bitstreamBRAM',['../classXilinxUltraScalePlus.html#a21ab3a68dc4f6aa9ddf86ff18c987c4c',1,'XilinxUltraScalePlus']]],
-  ['bitstreamclb_1527',['bitstreamCLB',['../classXilinxUltraScalePlus.html#a0f0f78050ccf1536e2af1d261898d459',1,'XilinxUltraScalePlus']]],
-  ['bitstreamend_1528',['bitstreamEnd',['../classXilinxUltraScalePlus.html#a082294bb491756bb2d477d66ebaae465',1,'XilinxUltraScalePlus']]],
-  ['blank_1529',['blank',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#a027bc2d5226ff1332d3156b7dda04acc',1,'XilinxUltraScalePlus::SelectedOptions']]],
-  ['blankframe_1530',['blankFrame',['../classXilinxUltraScalePlus.html#aaaf28ee2dee1d22944c78d17c916496d',1,'XilinxUltraScalePlus']]],
-  ['bram_1531',['bram',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#ab977e1f1b77f2b3ca7be5f681bada371',1,'XilinxUltraScalePlus::SelectedOptions']]]
+  ['clb_1554',['clb',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#af06e4ce458e8eb1da7da117560cd772d',1,'XilinxUltraScalePlus::SelectedOptions']]],
+  ['clk_1555',['clk',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#ab113cbfbfb3c65a106f8f787dc6f36f3',1,'XilinxUltraScalePlus::SelectedOptions']]],
+  ['col_1556',['col',['../structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1',1,'Coord2D']]]
 ];

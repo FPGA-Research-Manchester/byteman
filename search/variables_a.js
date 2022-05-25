@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['regionselection_1555',['regionSelection',['../classCommonDevice2D.html#a142a8a40fe75da1416468cb9a5fd8f7c',1,'CommonDevice2D']]],
-  ['resourcestring_1556',['resourceString',['../classXilinxUltraScalePlus.html#a4350d926cea84271beffe74e8bef1a30',1,'XilinxUltraScalePlus']]],
-  ['row_1557',['row',['../structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc',1,'Coord2D']]]
+  ['partial_1578',['partial',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#afaa5c742f5fd8a91011b6231f30c3755',1,'XilinxUltraScalePlus::SelectedOptions']]],
+  ['partname_1579',['partName',['../classXilinxConfigurationAccessPort.html#a65ad66ac4ae99356297c7831a0019c84',1,'XilinxConfigurationAccessPort']]],
+  ['position_1580',['position',['../structRect2D.html#ae5afd98d6745784930feac5136640a85',1,'Rect2D']]]
 ];

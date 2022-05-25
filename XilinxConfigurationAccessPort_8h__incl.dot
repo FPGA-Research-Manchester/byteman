@@ -15,8 +15,12 @@ digraph "src/Devices/Xilinx/XilinxConfigurationAccessPort.h"
   Node5 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="../CommonDevice.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CommonDevice_8h.html",tooltip=" "];
-  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="../../Common/Endianess.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html",tooltip=" "];
-  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="../../Common/Endianess.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Endianess_8h.html",tooltip=" "];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

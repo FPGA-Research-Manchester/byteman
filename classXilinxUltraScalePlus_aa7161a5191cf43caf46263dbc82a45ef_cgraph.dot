@@ -8,4 +8,10 @@ digraph "XilinxUltraScalePlus::getDeviceByNameOrThrow"
   Node1 [label="XilinxUltraScalePlus\l::getDeviceByNameOrThrow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxUltraScalePlus\l::getDeviceByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="StringFuncs::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs.html#af6f37dbc02d5a46059fb1480b64a96f5",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="StringFuncs::checkIf\l::stringContains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs_1_1checkIf.html#a64521ae9d7929ba91335111fd918e970",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="StringFuncs::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceStringFuncs.html#ad10abb222461616764fb4e5a1a5433d9",tooltip=" "];
 }

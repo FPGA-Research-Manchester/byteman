@@ -1,8 +1,5 @@
 <map id="XilinxConfigurationAccessPort::findBitstreamSync" name="XilinxConfigurationAccessPort::findBitstreamSync">
-<area shape="rect" id="node1" title=" " alt="" coords="823,5,1013,47"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#ae197b2b5b423cd1be99409c70f51bc37" title=" " alt="" coords="621,5,775,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="420,5,573,47"/>
-<area shape="rect" id="node4" href="$byteman_8cpp.html#a4dbd88e4909b2f0429f9d0b2fc2608bb" title=" " alt="" coords="281,13,372,39"/>
-<area shape="rect" id="node5" href="$byteman_8cpp.html#a913ad3944130fafece24fe460db9b6aa" title=" " alt="" coords="108,13,233,39"/>
-<area shape="rect" id="node6" href="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,60,39"/>
+<area shape="rect" id="node1" title=" " alt="" coords="408,5,599,47"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#ae197b2b5b423cd1be99409c70f51bc37" title=" " alt="" coords="207,5,360,47"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="5,5,159,47"/>
 </map>

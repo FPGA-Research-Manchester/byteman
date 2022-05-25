@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['torow_1562',['toRow',['../classXilinxUltraScalePlus.html#a8a2eaed0315e9533c23677f57aeb363a',1,'XilinxUltraScalePlus']]]
+  ['selectedarchitecture_1584',['selectedArchitecture',['../classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b',1,'byteman']]],
+  ['size_1585',['size',['../structRect2D.html#a5d621868d788e999caada275e9c0cbc6',1,'Rect2D']]],
+  ['slrinfo_1586',['SLRinfo',['../classXilinxUltraScalePlus.html#accdbda92d414a910d05fc101bd128e3c',1,'XilinxUltraScalePlus']]],
+  ['sync_1587',['SYNC',['../namespaceCAP.html#a0ebffaa7b6bae161b42cea35ba92b7a1',1,'CAP']]]
 ];

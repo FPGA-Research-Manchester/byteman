@@ -1,9 +1,10 @@
 <map id="src/Devices/Xilinx/XilinxConfigurationAccessPort.h" name="src/Devices/Xilinx/XilinxConfigurationAccessPort.h">
-<area shape="rect" id="node1" title=" " alt="" coords="177,5,372,61"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,109,85,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="240,184,307,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="161,109,234,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="401,184,460,211"/>
-<area shape="rect" id="node6" href="$CommonDevice_8h.html" title=" " alt="" coords="470,109,621,136"/>
-<area shape="rect" id="node7" href="$Endianess_8h.html" title=" " alt="" coords="259,109,445,136"/>
+<area shape="rect" id="node1" title=" " alt="" coords="231,5,425,61"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,184,85,211"/>
+<area shape="rect" id="node3" title=" " alt="" coords="425,184,492,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="562,109,635,136"/>
+<area shape="rect" id="node5" title=" " alt="" coords="233,184,292,211"/>
+<area shape="rect" id="node6" href="$CommonDevice_8h.html" title=" " alt="" coords="74,109,225,136"/>
+<area shape="rect" id="node8" href="$Endianess_8h.html" title=" " alt="" coords="300,109,487,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="117,184,181,211"/>
 </map>

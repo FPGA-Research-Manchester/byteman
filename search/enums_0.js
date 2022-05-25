@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['arch_1565',['Arch',['../byteman_8h.html#a0ac03ab06a859320a9072002bdf3aa0f',1,'byteman.h']]]
+  ['architecture_1590',['Architecture',['../classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5',1,'byteman']]]
 ];

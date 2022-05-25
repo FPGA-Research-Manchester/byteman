@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['clb_1532',['clb',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#af06e4ce458e8eb1da7da117560cd772d',1,'XilinxUltraScalePlus::SelectedOptions']]],
-  ['clk_1533',['clk',['../structXilinxUltraScalePlus_1_1SelectedOptions.html#ab113cbfbfb3c65a106f8f787dc6f36f3',1,'XilinxUltraScalePlus::SelectedOptions']]],
-  ['col_1534',['col',['../structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1',1,'Coord2D']]]
+  ['designname_1557',['designName',['../classXilinxConfigurationAccessPort.html#a9a305f865efcff32f2f5d657983d1852',1,'XilinxConfigurationAccessPort']]]
 ];

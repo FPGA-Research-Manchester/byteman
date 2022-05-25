@@ -15,6 +15,11 @@ digraph "src/Devices/CommonDevice2D.cpp"
   Node5 [label="stdexcept",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="CommonDevice.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CommonDevice_8h.html",tooltip=" "];
-  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="../Common/Coords.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coords_8h.html",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="time.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="../Common/Coords.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Coords_8h.html",tooltip=" "];
 }

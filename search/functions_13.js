@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_7ecommondevice_1520',['~CommonDevice',['../classCommonDevice.html#a99e4b15e13795f0920f301a4cacae39e',1,'CommonDevice']]],
-  ['_7ecommondevice2d_1521',['~CommonDevice2D',['../classCommonDevice2D.html#ae63d54d27a5810b90830e36f708d4fe0',1,'CommonDevice2D']]],
-  ['_7exilinxconfigurationaccessport_1522',['~XilinxConfigurationAccessPort',['../classXilinxConfigurationAccessPort.html#adeb4eced6c1fb53340179137a2f1b7e1',1,'XilinxConfigurationAccessPort']]],
-  ['_7exilinxultrascaleplus_1523',['~XilinxUltraScalePlus',['../classXilinxUltraScalePlus.html#a33ffd944743c89e78963634c6ae09996',1,'XilinxUltraScalePlus']]]
+  ['xcap_5fidcodeinstruction_1538',['XCAP_IDCODEInstruction',['../classXilinxUltraScalePlus.html#a0c23a95d58ff1d08f333445096f94776',1,'XilinxUltraScalePlus::XCAP_IDCODEInstruction()'],['../classXilinxConfigurationAccessPort.html#a55976af5151a0b685b6b77c6f4311c95',1,'XilinxConfigurationAccessPort::XCAP_IDCODEInstruction()']]],
+  ['xcap_5fsyncinstruction_1539',['XCAP_SyncInstruction',['../classXilinxUltraScalePlus.html#ae18fec71dee139731b8701cc6b99cc87',1,'XilinxUltraScalePlus::XCAP_SyncInstruction()'],['../classXilinxConfigurationAccessPort.html#a9ae26bf52a66b293798e560febf9db77',1,'XilinxConfigurationAccessPort::XCAP_SyncInstruction()']]],
+  ['xilinxconfigurationaccessport_1540',['XilinxConfigurationAccessPort',['../classXilinxConfigurationAccessPort.html#aa90e80b4a6667387b68aade08426985a',1,'XilinxConfigurationAccessPort']]],
+  ['xilinxultrascaleplus_1541',['XilinxUltraScalePlus',['../classXilinxUltraScalePlus.html#ac1aac4d66efbf2d4502a2916f3de5cc5',1,'XilinxUltraScalePlus']]]
 ];

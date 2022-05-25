@@ -91,30 +91,60 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef COMMONDEVICE_H</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define COMMONDEVICE_H</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classCommonDevice.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCommonDevice.html">CommonDevice</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classCommonDevice.html#a810cea7006368b9a944b4ad5bbe31c78">CommonDevice</a>(){</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classCommonDevice.html#ad529817c96d3712bd746542f23bf30d0">warn</a> = 1;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classCommonDevice.html#a8ea8e1ad921132d6735c60f17fc10e24">verbose</a> = 0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        };</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classCommonDevice.html#a99e4b15e13795f0920f301a4cacae39e">~CommonDevice</a>(){</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCommonDevice.html#ad529817c96d3712bd746542f23bf30d0">warn</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCommonDevice.html#a8ea8e1ad921132d6735c60f17fc10e24">verbose</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif //COMMONDEVICE_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include&lt;iostream&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include&lt;string&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include&lt;time.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classCommonDevice.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCommonDevice.html">CommonDevice</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classCommonDevice.html#a810cea7006368b9a944b4ad5bbe31c78">   29</a></span>&#160;        <a class="code" href="classCommonDevice.html#a810cea7006368b9a944b4ad5bbe31c78">CommonDevice</a>(){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            enableWarn = 1;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            enableLog = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        };</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classCommonDevice.html#a99e4b15e13795f0920f301a4cacae39e">   33</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classCommonDevice.html#a99e4b15e13795f0920f301a4cacae39e">~CommonDevice</a>(){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classCommonDevice.html#a960f75267a349736a4796e652bce3616">   35</a></span>&#160;        };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">string</span> instanceName;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCommonDevice.html#a4433b44d292e5c3bbb33527ed29631f4">   37</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCommonDevice.html#a4433b44d292e5c3bbb33527ed29631f4">enableWarn</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classCommonDevice.html#a1b287d855028111de85592b8e07ef3ce">   38</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classCommonDevice.html#a1b287d855028111de85592b8e07ef3ce">enableLog</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657">   39</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657">printMessage</a>(<span class="keywordtype">string</span> message){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            time_t timestamp = time(0);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keyword">struct </span>tm  tstruct;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordtype">char</span>       timeChars[80];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            tstruct = *localtime(&amp;timestamp);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            strftime(timeChars, <span class="keyword">sizeof</span>(timeChars), <span class="stringliteral">&quot;%d %b %Y %H:%M:%S @ &quot;</span>, &amp;tstruct);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            cout &lt;&lt; timeChars &lt;&lt; instanceName &lt;&lt; message &lt;&lt; endl;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classCommonDevice.html#aff50b99a44e085a1edb93cc9be817b8f">   47</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classCommonDevice.html#aff50b99a44e085a1edb93cc9be817b8f">warn</a>(<span class="keywordtype">string</span> message) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">            #ifdef ENABLEWARN</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span>(enableWarn)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <a class="code" href="classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657">CommonDevice::printMessage</a>(<span class="keywordtype">string</span>(<span class="stringliteral">&quot; warning: &quot;</span>).append(message));</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">   53</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="keywordtype">string</span> message) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">            #ifdef ENABLELOGS</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordflow">if</span>(enableLog)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <a class="code" href="classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657">CommonDevice::printMessage</a>(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;    info: &quot;</span>).append(message));</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">            #endif</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif //COMMONDEVICE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassCommonDevice_html"><div class="ttname"><a href="classCommonDevice.html">CommonDevice</a></div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00020">CommonDevice.h:20</a></div></div>
-<div class="ttc" id="aclassCommonDevice_html_a810cea7006368b9a944b4ad5bbe31c78"><div class="ttname"><a href="classCommonDevice.html#a810cea7006368b9a944b4ad5bbe31c78">CommonDevice::CommonDevice</a></div><div class="ttdeci">CommonDevice()</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00037">CommonDevice.h:37</a></div></div>
-<div class="ttc" id="aclassCommonDevice_html_a99e4b15e13795f0920f301a4cacae39e"><div class="ttname"><a href="classCommonDevice.html#a99e4b15e13795f0920f301a4cacae39e">CommonDevice::~CommonDevice</a></div><div class="ttdeci">virtual ~CommonDevice()</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00041">CommonDevice.h:41</a></div></div>
-<div class="ttc" id="aclassCommonDevice_html_a8ea8e1ad921132d6735c60f17fc10e24"><div class="ttname"><a href="classCommonDevice.html#a8ea8e1ad921132d6735c60f17fc10e24">CommonDevice::verbose</a></div><div class="ttdeci">int verbose</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00045">CommonDevice.h:45</a></div></div>
-<div class="ttc" id="aclassCommonDevice_html_ad529817c96d3712bd746542f23bf30d0"><div class="ttname"><a href="classCommonDevice.html#ad529817c96d3712bd746542f23bf30d0">CommonDevice::warn</a></div><div class="ttdeci">int warn</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00043">CommonDevice.h:43</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_aff50b99a44e085a1edb93cc9be817b8f"><div class="ttname"><a href="classCommonDevice.html#aff50b99a44e085a1edb93cc9be817b8f">CommonDevice::warn</a></div><div class="ttdeci">void warn(string message)</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00047">CommonDevice.h:47</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html"><div class="ttname"><a href="classCommonDevice.html">CommonDevice</a></div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00026">CommonDevice.h:26</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_a4433b44d292e5c3bbb33527ed29631f4"><div class="ttname"><a href="classCommonDevice.html#a4433b44d292e5c3bbb33527ed29631f4">CommonDevice::enableWarn</a></div><div class="ttdeci">int enableWarn</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00037">CommonDevice.h:37</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_aa42337dfb4b5ff34a063c2145ab87478"><div class="ttname"><a href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">CommonDevice::log</a></div><div class="ttdeci">void log(string message)</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00053">CommonDevice.h:53</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_a810cea7006368b9a944b4ad5bbe31c78"><div class="ttname"><a href="classCommonDevice.html#a810cea7006368b9a944b4ad5bbe31c78">CommonDevice::CommonDevice</a></div><div class="ttdeci">CommonDevice()</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00029">CommonDevice.h:29</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_a1b287d855028111de85592b8e07ef3ce"><div class="ttname"><a href="classCommonDevice.html#a1b287d855028111de85592b8e07ef3ce">CommonDevice::enableLog</a></div><div class="ttdeci">int enableLog</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00038">CommonDevice.h:38</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_a99e4b15e13795f0920f301a4cacae39e"><div class="ttname"><a href="classCommonDevice.html#a99e4b15e13795f0920f301a4cacae39e">CommonDevice::~CommonDevice</a></div><div class="ttdeci">virtual ~CommonDevice()</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00033">CommonDevice.h:33</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_af047ea6fd9b60bae9fcc94a7d8859657"><div class="ttname"><a href="classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657">CommonDevice::printMessage</a></div><div class="ttdeci">void printMessage(string message)</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00039">CommonDevice.h:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 11:52:37 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 16:17:47 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

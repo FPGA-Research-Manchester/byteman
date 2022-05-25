@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['designname_1535',['designName',['../classXilinxConfigurationAccessPort.html#a9a305f865efcff32f2f5d657983d1852',1,'XilinxConfigurationAccessPort']]]
+  ['enablelog_1558',['enableLog',['../classCommonDevice.html#a1b287d855028111de85592b8e07ef3ce',1,'CommonDevice']]],
+  ['enablewarn_1559',['enableWarn',['../classCommonDevice.html#a4433b44d292e5c3bbb33527ed29631f4',1,'CommonDevice']]]
 ];
