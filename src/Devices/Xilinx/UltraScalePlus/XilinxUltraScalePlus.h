@@ -31,9 +31,9 @@ using namespace std;
 
 class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAccessPort
 {
-    public:
-        XilinxUltraScalePlus();
-        virtual ~XilinxUltraScalePlus();
+	public:
+		XilinxUltraScalePlus();
+		virtual ~XilinxUltraScalePlus();
 		
 		enum class MergeOP
 		{
@@ -62,58 +62,63 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		static void deviceHelp();
 		
 		//file IO
-        void readBitstream(string);
-        void readBitstreamBIT(ifstream&);
-        void readBitstreamBIN(ifstream&);
-        void readBitstreamMain(ifstream&);
+		void readBitstream(string);
+		void readBitstreamBIT(ifstream&);
+		void readBitstreamBIN(ifstream&);
+		void readBitstreamMain(ifstream&);
 		
-        //merge (relocate)
+		//merge (relocate)
 		void ensureRowCompatibility(Coord2D, int, int, Coord2D);
 		void ensureRegionCompatibility(Rect2D, Coord2D);
-        void merge(XilinxUltraScalePlus*, string, Rect2D, Coord2D);
+		void merge(XilinxUltraScalePlus*, string, Rect2D, Coord2D);
 		void fastMerge(XilinxUltraScalePlus*,  SelectedOptions, Rect2D, Coord2D);
 		void flexiMerge(XilinxUltraScalePlus*, SelectedOptions, Endianess, Rect2D, Coord2D);
 		//
 		void blank(string);
 		
 		//The ones below are not needed to be public, but we don't really care
-        void writeBitstream(string, string, Rect2D);
-        void writeBitstreamBIT(ofstream&, string, Rect2D, SelectedOptions);
-        void writeBitstreamBIN(ofstream&, string, Rect2D, SelectedOptions);
-		void writeBitstreamMainSingleRegion(ofstream&, Rect2D, SelectedOptions);
+		void writeBitstream(string, string, Rect2D);
+		void writeBitstreamBIT(ofstream&, string, Rect2D, SelectedOptions);
+		void writeBitstreamBIN(ofstream&, string, Rect2D, SelectedOptions);
+		
+		
 		void writeBitstreamMain(ofstream&, string, Rect2D, SelectedOptions);
+		streamoff XilinxUltraScalePlus::writeBitstreamMainEmptySLR(ofstream&, int, SelectedOptions);
+		streamoff XilinxUltraScalePlus::writeBitstreamMainSingleSLR(ofstream&, int, Rect2D, SelectedOptions);
+		void XilinxUltraScalePlus::writeBitstreamMainSLRfooter(ofstream&, int, SelectedOptions);
+		void writeBitstreamMainSingleRegion(ofstream&, int, Rect2D, SelectedOptions);
 		
 		
 		
 		//helper frame
 		void* blankFrame;
 		//bitstream
-        string initializedBitstreamPartName; 		///< The partName of currently initialized bitstream buffers
+		string initializedBitstreamPartName; 		///< The partName of currently initialized bitstream buffers
 		Endianess loadedBitstreamEndianess;   		///< The endianess of the currently loaded bitstream.
-        void ensureInitializedBitstreamArrays();
-        uint32_t* bitstreamBegin;
-        uint32_t* bitstreamCLB[XUSP_MAX_ROWS][XUSP_MAX_COLS];
-        uint32_t* bitstreamBRAM[XUSP_MAX_ROWS][XUSP_MAX_BRAM_COLS];
+		void ensureInitializedBitstreamArrays();
+		uint32_t* bitstreamBegin;
+		uint32_t* bitstreamCLB[XUSP_MAX_ROWS][XUSP_MAX_COLS];
+		uint32_t* bitstreamBRAM[XUSP_MAX_ROWS][XUSP_MAX_BRAM_COLS];
 		uint32_t* bitstreamEnd;
 		
 		//device data and resource string
-        char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
+		char resourceString[XUSP_MAX_ROWS][XUSP_MAX_COLS];
 		struct {
 			uint32_t IDCODE;
 			int fromRow, toRow; 
 		}SLRinfo[XUSP_MAX_SLRS];
 		
 		//resource string parameters
-        string initializedResourceParamsPartName; ///< the partName of currently initialized resource string parameters
+		string initializedResourceParamsPartName; ///< the partName of currently initialized resource string parameters
 		void initializeResourceStringParameters();
-        int numberOfSLRs;
-        int numberOfRows;
-        int numberOfBRAMCols;
-        int numberOfCols;
-        int numberOfFramesBeforeCol[XUSP_MAX_COLS];
-        int numberOfBRAMsBeforeCol[XUSP_MAX_COLS];
-        int numberOfFramesPerRow;
-        int numberOfWordsPerRow;
+		int numberOfSLRs;
+		int numberOfRows;
+		int numberOfBRAMCols;
+		int numberOfCols;
+		int numberOfFramesBeforeCol[XUSP_MAX_COLS];
+		int numberOfBRAMsBeforeCol[XUSP_MAX_COLS];
+		int numberOfFramesPerRow;
+		int numberOfWordsPerRow;
 		
 		//assembler
 		void assemblerAsmToBit(ifstream&, ofstream&);
@@ -125,9 +130,9 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		string getFrameType(int, int, int);
 		
 		// CAP FAR
-		inline void CAP_IncrementFAR_BlockType0(int&, int&, int&, int&);
-		inline void CAP_IncrementFAR_BlockType1(int&, int&, int&, int&);
-		inline void CAP_IncrementFAR(int&, int&, int&, int&);
+		inline void CAP_IncrementFAR_BlockType0(int, int&, int&, int&, int&);
+		inline void CAP_IncrementFAR_BlockType1(int, int&, int&, int&, int&);
+		inline void CAP_IncrementFAR(int, int&, int&, int&, int&);
 		
 		// XCAP: override functions for superclass XilinxConfigurationAccessPort
 		uint32_t XCAP_SyncInstruction() override;
@@ -155,8 +160,8 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		inline int CAP_getInstructionPayload(int);
 		inline CAP::Register CAP_getInstructionRegister(int);
 		inline int CAP_getInstructionWordCount(int);
-		inline void CAP_parseFAR(int, int&, int&, int&, int&);
-		inline uint32_t CAP_makeFAR(int, int, int, int);
+		inline void CAP_parseFAR(int, int, int&, int&, int&, int&);
+		inline uint32_t CAP_makeFAR(int, int, int, int, int);
 		
 		//CAP write
 		inline void CAP_writeSelectRegister(ofstream&, CAP::Register, Endianess=Endianess::NATIVE);
@@ -167,14 +172,15 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		inline void CAP_writeMaskAndRegister(ofstream&, CAP::Register, int, int, Endianess=Endianess::NATIVE);
 		inline void CAP_writeCommand(ofstream&, CAP::Command, Endianess=Endianess::NATIVE);
 		inline void CAP_writeFDRI1(ofstream&, int, Endianess=Endianess::NATIVE);
-		inline void CAP_writeFDRI2(ofstream&, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeType2(ofstream&, int, Endianess=Endianess::NATIVE);
 		inline void CAP_writeFDRI(ofstream&, int, Endianess=Endianess::NATIVE);
+		inline void CAP_writeSYNQ(ofstream&, Endianess=Endianess::NATIVE);
 		
-    protected:
-    private:
+	protected:
+	private:
 		//constant arrays defining US+ fabric
-        int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
-        char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
+		int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
+		char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
 };
 
 #endif // XILINXULTRASCALEPLUS_H

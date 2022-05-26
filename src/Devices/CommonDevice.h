@@ -26,11 +26,11 @@ using namespace std;
 class CommonDevice
 {
 	public:
-        CommonDevice(){
+		CommonDevice(){
 			enableWarn = 1;
 			enableLog = 0;
 		};
-        virtual ~CommonDevice(){
+		virtual ~CommonDevice(){
 			
 		};
 		string instanceName;
@@ -39,7 +39,7 @@ class CommonDevice
 		inline void printMessage(string message){
 			time_t timestamp = time(0);
 			struct tm  tstruct;
-			char       timeChars[80];
+			char	   timeChars[80];
 			tstruct = *localtime(&timestamp);
 			strftime(timeChars, sizeof(timeChars), "%d %b %Y %H:%M:%S @ ", &tstruct);
 			cout << timeChars << instanceName << message << endl;
@@ -53,7 +53,7 @@ class CommonDevice
 		inline void log(string message) {
 			#ifdef ENABLELOGS
 				if(enableLog)
-					CommonDevice::printMessage(string("    info: ").append(message));
+					CommonDevice::printMessage(string("	info: ").append(message));
 			#endif
 		}
 };

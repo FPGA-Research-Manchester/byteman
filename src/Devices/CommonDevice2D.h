@@ -29,11 +29,11 @@ using namespace std;
 class CommonDevice2D: virtual public CommonDevice
 {
 	public:
-        CommonDevice2D()
+		CommonDevice2D()
 		{
 			
 		};
-        virtual ~CommonDevice2D(){
+		virtual ~CommonDevice2D(){
 			
 		};
 		//region selector

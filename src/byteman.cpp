@@ -32,7 +32,7 @@ byteman bytemanInstance;
 /**************************************************************************//**
  * Main function for byteman.
  * Parses command line arguments and eventual streamed script files as individual
- * commands (instructions) and feeds them into parseCommand(). Catches any thrown
+ * commands (instructions) and feeds them into parse(). Catches any thrown
  * exceptions by the subsystems in byteman.
  *
  * @arg @c argc @c argv[] Command line arguments
@@ -46,7 +46,7 @@ int main(int argc, char * argv[])
 		bool readSTDIN = false;
 		for(int argi = 1 ; argi < argc ; argi++) {
 			if(argv[argi][0] == '-' && !command.empty()){ //new cmd and old cmd not empty
-				bytemanInstance.parseCommand(command);
+				bytemanInstance.parse(command);
 				command.clear();
 			}
 			if(command.empty())
@@ -59,29 +59,23 @@ int main(int argc, char * argv[])
 			}
 		}
 		if(!command.empty())
-			bytemanInstance.parseCommand(command);
+			bytemanInstance.parse(command);
 		while(readSTDIN){
 			getline(cin,command);
 			if(command.at(command.find_first_not_of(" \t")) != '#'){//parse the command only if it doesnt start with '#'
 				if(string::npos != command.find("#"))
 					command = command.substr(0, command.find("#"));//if there is a comment in the current line, remove it
-				bytemanInstance.parseCommand(command);
+				bytemanInstance.parse(command);
 			}
 		}
 	} catch (const exception &e){
-        cout << "The program was terminated with message: \n\t'" << e.what() << "'\nWhile trying to execute command: \n\t'" << command << "'" << endl;
+		cout << "The program was terminated with message: \n\t'" << e.what() << "'\nWhile trying to execute command: \n\t'" << command << "'" << endl;
 		return 1;
 	}
-    return 0;
+	return 0;
 }
 
-byteman::byteman()
-{
-	mainXUSP.instanceName = "Main Xil US+";
-	tempXUSP.instanceName = "Temp Xil US+";
-}
-
-void byteman::parseCommand(string command)
+void byteman::parse(string command)
 {
 	command = str::replace(command, '=', ' ');
 	command = str::replace(command, ':', ' ');
@@ -118,6 +112,10 @@ void byteman::parseCommand(string command)
 		exit(0);
 	else
 		throw runtime_error("Could not parse command. Consider checking out \"bytemap -help\".");
+}
+void byteman::init(){
+	mainXUSP.instanceName = "Main Xil US+";
+	tempXUSP.instanceName = "Temp Xil US+";
 }
 
 /**************************************************************************//**
@@ -263,7 +261,8 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 	string filenameIn = str::parse::nthStringWord(assemblyCmd, 0);
 	string filenameOut = str::parse::nthStringWord(assemblyCmd, 1);
 	#ifdef XUSP
-		mainXUSP.assembler(filenameIn, filenameOut);
+		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
+			mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
 }
 

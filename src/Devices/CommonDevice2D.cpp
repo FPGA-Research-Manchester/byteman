@@ -18,12 +18,12 @@
 
 using namespace std;
 
-void CommonDevice2D::region(string params, Rect2D rect){
+void CommonDevice2D::region(string params, Rect2D cmdRect){
 	if(params.find("clear") != string::npos) //first do the clearing
 		regionSelection.clear();
 	if(params.find("add") != string::npos){ //before potential adding
-		if(rect.size.row <= 0 || rect.size.col <= 0)
+		if(cmdRect.size.row <= 0 || cmdRect.size.col <= 0)
 			throw runtime_error("Regions need to be of positive size.");
-		regionSelection.push_back(rect);
+		regionSelection.push_back(cmdRect);
 	}
 }

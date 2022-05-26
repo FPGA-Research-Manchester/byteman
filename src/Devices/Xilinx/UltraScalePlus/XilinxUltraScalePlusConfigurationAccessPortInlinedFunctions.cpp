@@ -18,7 +18,7 @@
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "../../../Common/FileIO.h"
 
-inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 0
+inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 0
 {
 	minorAddress++;
 	if((columnAddress == numberOfCols)?(minorAddress == XUSP_EXTRA_FRAMES_PER_ROW):(minorAddress == numberOfFramesPerResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]])){
@@ -26,15 +26,16 @@ inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int& blockType, in
 		columnAddress++;
 		if(columnAddress == (numberOfCols+1)){
 			columnAddress = 0;
-			rowAddress++;
-			if(rowAddress == numberOfRows){
-				rowAddress = 0; 
+			if(rowAddress == SLRinfo[slrID].toRow){
+				rowAddress = SLRinfo[slrID].fromRow;
 				blockType++;
+			} else {
+				rowAddress++;
 			}
 		}
 	}
 }
-inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 1
+inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 1
 {
 	minorAddress++;
 	if((columnAddress == numberOfBRAMCols)?(minorAddress == XUSP_EXTRA_FRAMES_PER_ROW):(minorAddress == XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN)){
@@ -42,20 +43,21 @@ inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int& blockType, in
 		columnAddress++;
 		if(columnAddress == (numberOfBRAMCols+1)){
 			columnAddress = 0;
-			rowAddress++;
-			if(rowAddress == numberOfRows){
-				rowAddress = 0;
+			if(rowAddress == SLRinfo[slrID].toRow){
+				rowAddress = SLRinfo[slrID].fromRow;
 				blockType++;
+			} else {
+				rowAddress++;
 			}
 		}
 	}
 }
-inline void XilinxUltraScalePlus::CAP_IncrementFAR(int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address
+inline void XilinxUltraScalePlus::CAP_IncrementFAR(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address
 {
 	if(CAP::BlockType::BLOCKRAM == static_cast<CAP::BlockType>(blockType))
-		CAP_IncrementFAR_BlockType0(blockType, rowAddress, columnAddress, minorAddress);
+		CAP_IncrementFAR_BlockType0(slrID, blockType, rowAddress, columnAddress, minorAddress);
 	else if(CAP::BlockType::LOGIC == static_cast<CAP::BlockType>(blockType))
-		CAP_IncrementFAR_BlockType1(blockType, rowAddress, columnAddress, minorAddress);
+		CAP_IncrementFAR_BlockType1(slrID, blockType, rowAddress, columnAddress, minorAddress);
 }
 
 inline int XilinxUltraScalePlus::CAP_getInstructionType(int instruction)///< Parses and returns instruction type. Valid XUS+ instructions will be of types 1 and 2
@@ -78,16 +80,17 @@ inline int XilinxUltraScalePlus::CAP_getInstructionWordCount(int instruction)///
 {
 	return (instruction & 0x7FF);
 }
-inline void XilinxUltraScalePlus::CAP_parseFAR(int farValue, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress)///< Parse the Frame Address Register @c farValue into referenced @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress
+inline void XilinxUltraScalePlus::CAP_parseFAR(int farValue, int slr, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress)///< Parse the Frame Address Register @c farValue into referenced @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress
 {
 	blockType = (farValue >> 24) & 0x7;
 	rowAddress = (farValue >> 18) & 0x3F;
+	rowAddress += SLRinfo[slr].fromRow;
 	columnAddress = (farValue >> 8) & 0x3FF;
 	minorAddress = farValue & 0xFF;
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeFAR(int blockType, int rowAddress, int columnAddress, int minorAddress)///< Parse @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress. Generate and return Frame Address Register encoding value.
+inline uint32_t XilinxUltraScalePlus::CAP_makeFAR(int slr, int blockType, int rowAddress, int columnAddress, int minorAddress)///< Parse @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress. Generate and return Frame Address Register encoding value.
 {
-	return (((blockType & 0x7) << 24) | ((rowAddress & 0x3F) << 18) | ((columnAddress & 0x3FF) << 8) | (minorAddress & 0xFF));
+	return (((blockType & 0x7) << 24) | (((rowAddress - SLRinfo[slr].fromRow) & 0x3F) << 18) | ((columnAddress & 0x3FF) << 8) | (minorAddress & 0xFF));
 }
 inline uint32_t XilinxUltraScalePlus::CAP_makeInstruction(int type, CAP::Operation operation, CAP::Register reg, int payload)///< Generate and return the encoding for an instruction.
 {
@@ -179,7 +182,7 @@ inline void XilinxUltraScalePlus::CAP_writeFDRI1(ofstream& fout, int wordCount, 
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1WriteInstruction(CAP::Register::FDRI, wordCount);
 	FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeFDRI2(ofstream& fout, int wordCount, Endianess e) ///< Generate and write only a type 2 FDRI command.
+inline void XilinxUltraScalePlus::CAP_writeType2(ofstream& fout, int wordCount, Endianess e) ///< Generate and write only a type 2 FDRI command.
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType2WriteInstruction(wordCount);
 	FileIO::write32(fout, instruction, e);
@@ -187,5 +190,9 @@ inline void XilinxUltraScalePlus::CAP_writeFDRI2(ofstream& fout, int wordCount, 
 inline void XilinxUltraScalePlus::CAP_writeFDRI(ofstream& fout, int wordCount, Endianess e) ///< Generate and write an FDRI command. Always uses type 2 command for simplicity.
 {	
 	XilinxUltraScalePlus::CAP_writeFDRI1(fout, 0, e);
-	XilinxUltraScalePlus::CAP_writeFDRI2(fout, wordCount, e);
+	XilinxUltraScalePlus::CAP_writeType2(fout, wordCount, e);
+}
+inline void XilinxUltraScalePlus::CAP_writeSYNQ(ofstream& fout, Endianess e) ///< Generate and write an SYNQ command.
+{	
+	FileIO::write32(fout, XilinxUltraScalePlus::CAP_makeSyncInstruction(), e);
 }

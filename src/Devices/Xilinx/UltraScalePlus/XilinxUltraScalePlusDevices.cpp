@@ -41,152 +41,152 @@ int XilinxUltraScalePlus::getDeviceByNameOrThrow(string name)
 }
 int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 {
-    //US+ Artix
+	//US+ Artix
 	#ifdef XUSPARTIX
-    if(IDCODE == XCAU10P_IDCODE)
+	if(IDCODE == XCAU10P_IDCODE)
 		return XUSP_DEVICE_XCAU10P;
 	if(IDCODE == XCAU15P_IDCODE)
 		return XUSP_DEVICE_XCAU15P;
-    if(IDCODE == XCAU20P_IDCODE)
+	if(IDCODE == XCAU20P_IDCODE)
 		return XUSP_DEVICE_XCAU20P;
-    if(IDCODE == XCAU25P_IDCODE)
+	if(IDCODE == XCAU25P_IDCODE)
 		return XUSP_DEVICE_XCAU25P;
 	#endif
-    //US+ Kintex
+	//US+ Kintex
 	#ifdef XUSPKINTEX
-    if(IDCODE == XCKU3P_IDCODE)
+	if(IDCODE == XCKU3P_IDCODE)
 		return XUSP_DEVICE_XCKU3P;
 	if(IDCODE == XCKU5P_IDCODE)
 		return XUSP_DEVICE_XCKU5P;
-    if(IDCODE == XCKU9P_IDCODE)
+	if(IDCODE == XCKU9P_IDCODE)
 		return XUSP_DEVICE_XCKU9P;
-    if(IDCODE == XCKU11P_IDCODE)
+	if(IDCODE == XCKU11P_IDCODE)
 		return XUSP_DEVICE_XCKU11P;
-    if(IDCODE == XCKU13P_IDCODE)
+	if(IDCODE == XCKU13P_IDCODE)
 		return XUSP_DEVICE_XCKU13P;
-    if(IDCODE == XCKU15P_IDCODE)
+	if(IDCODE == XCKU15P_IDCODE)
 		return XUSP_DEVICE_XCKU15P;
-    if(IDCODE == XCKU19P_IDCODE)
+	if(IDCODE == XCKU19P_IDCODE)
 		return XUSP_DEVICE_XCKU19P;
 	#endif
-    //US+ Virtex
+	//US+ Virtex
 	#ifdef XUSPVIRTEX
-    if(IDCODE == XCVU3P_IDCODE)
+	if(IDCODE == XCVU3P_IDCODE)
 		return XUSP_DEVICE_XCVU3P;
-    if(IDCODE == XCVU5P_IDCODE)
+	if(IDCODE == XCVU5P_IDCODE)
 		return XUSP_DEVICE_XCVU5P;
-    if(IDCODE == XCVU7P_IDCODE)
+	if(IDCODE == XCVU7P_IDCODE)
 		return XUSP_DEVICE_XCVU7P;
-    if(IDCODE == XCVU9P_IDCODE)
+	if(IDCODE == XCVU9P_IDCODE)
 		return XUSP_DEVICE_XCVU9P;
-    if(IDCODE == XCVU11P_IDCODE)
+	if(IDCODE == XCVU11P_IDCODE)
 		return XUSP_DEVICE_XCVU11P;
-    if(IDCODE == XCVU13P_IDCODE)
+	if(IDCODE == XCVU13P_IDCODE)
 		return XUSP_DEVICE_XCVU13P;
-    if(IDCODE == XCVU19P_IDCODE)
+	if(IDCODE == XCVU19P_IDCODE)
 		return XUSP_DEVICE_XCVU19P;
-    if(IDCODE == XCVU23P_IDCODE)
+	if(IDCODE == XCVU23P_IDCODE)
 		return XUSP_DEVICE_XCVU23P;
-    if(IDCODE == XCVU27P_IDCODE)
+	if(IDCODE == XCVU27P_IDCODE)
 		return XUSP_DEVICE_XCVU27P;
-    if(IDCODE == XCVU29P_IDCODE)
+	if(IDCODE == XCVU29P_IDCODE)
 		return XUSP_DEVICE_XCVU29P;
-    if(IDCODE == XCVU31P_IDCODE)
+	if(IDCODE == XCVU31P_IDCODE)
 		return XUSP_DEVICE_XCVU31P;
-    if(IDCODE == XCVU33P_IDCODE)
+	if(IDCODE == XCVU33P_IDCODE)
 		return XUSP_DEVICE_XCVU33P;
-    if(IDCODE == XCVU35P_IDCODE)
+	if(IDCODE == XCVU35P_IDCODE)
 		return XUSP_DEVICE_XCVU35P;
-    if(IDCODE == XCVU37P_IDCODE)
+	if(IDCODE == XCVU37P_IDCODE)
 		return XUSP_DEVICE_XCVU37P;
-    if(IDCODE == XCVU45P_IDCODE)
+	if(IDCODE == XCVU45P_IDCODE)
 		return XUSP_DEVICE_XCVU45P;
-    if(IDCODE == XCVU47P_IDCODE)
+	if(IDCODE == XCVU47P_IDCODE)
 		return XUSP_DEVICE_XCVU47P;
-    if(IDCODE == XCVU57P_IDCODE)
+	if(IDCODE == XCVU57P_IDCODE)
 		return XUSP_DEVICE_XCVU57P;
 	#endif
 	//US+ RFSoC (RFSOC BEFORE MPSOC, since names collide!)
 	#ifdef XUSPZYNQ
-    if(IDCODE == XCZU21DR_IDCODE)
+	if(IDCODE == XCZU21DR_IDCODE)
 		return XUSP_DEVICE_XCZU21DR;
-    if(IDCODE == XCZU25DR_IDCODE)
+	if(IDCODE == XCZU25DR_IDCODE)
 		return XUSP_DEVICE_XCZU25DR;
-    if(IDCODE == XCZU27DR_IDCODE)
+	if(IDCODE == XCZU27DR_IDCODE)
 		return XUSP_DEVICE_XCZU27DR;
-    if(IDCODE == XCZU28DR_IDCODE)
+	if(IDCODE == XCZU28DR_IDCODE)
 		return XUSP_DEVICE_XCZU28DR;
-    if(IDCODE == XCZU29DR_IDCODE)
+	if(IDCODE == XCZU29DR_IDCODE)
 		return XUSP_DEVICE_XCZU29DR;
-    if(IDCODE == XCZU39DR_IDCODE)
+	if(IDCODE == XCZU39DR_IDCODE)
 		return XUSP_DEVICE_XCZU39DR;
-    if(IDCODE == XCZU42DR_IDCODE)
+	if(IDCODE == XCZU42DR_IDCODE)
 		return XUSP_DEVICE_XCZU42DR;
-    if(IDCODE == XCZU43DR_IDCODE)
+	if(IDCODE == XCZU43DR_IDCODE)
 		return XUSP_DEVICE_XCZU43DR;
-    if(IDCODE == XCZU46DR_IDCODE)
+	if(IDCODE == XCZU46DR_IDCODE)
 		return XUSP_DEVICE_XCZU46DR;
-    if(IDCODE == XCZU47DR_IDCODE)
+	if(IDCODE == XCZU47DR_IDCODE)
 		return XUSP_DEVICE_XCZU47DR;
-    if(IDCODE == XCZU48DR_IDCODE)
+	if(IDCODE == XCZU48DR_IDCODE)
 		return XUSP_DEVICE_XCZU48DR;
-    if(IDCODE == XCZU49DR_IDCODE)
+	if(IDCODE == XCZU49DR_IDCODE)
 		return XUSP_DEVICE_XCZU49DR;
-    if(IDCODE == XCZU65DR_IDCODE)
+	if(IDCODE == XCZU65DR_IDCODE)
 		return XUSP_DEVICE_XCZU65DR;
-    if(IDCODE == XCZU67DR_IDCODE)
+	if(IDCODE == XCZU67DR_IDCODE)
 		return XUSP_DEVICE_XCZU67DR;
 	#endif
 	//US+ Zynq
 	#ifdef XUSPZYNQ
-    if(IDCODE == XCZU1_IDCODE)
+	if(IDCODE == XCZU1_IDCODE)
 		return XUSP_DEVICE_XCZU1;
-    if(IDCODE == XCZU2_IDCODE)
+	if(IDCODE == XCZU2_IDCODE)
 		return XUSP_DEVICE_XCZU2;
-    if(IDCODE == XCZU3_IDCODE)
+	if(IDCODE == XCZU3_IDCODE)
 		return XUSP_DEVICE_XCZU3;
-    if(IDCODE == XCZU4_IDCODE)
+	if(IDCODE == XCZU4_IDCODE)
 		return XUSP_DEVICE_XCZU4;
-    if(IDCODE == XCZU5_IDCODE)
+	if(IDCODE == XCZU5_IDCODE)
 		return XUSP_DEVICE_XCZU5;
-    if(IDCODE == XCZU6_IDCODE)
+	if(IDCODE == XCZU6_IDCODE)
 		return XUSP_DEVICE_XCZU6;
-    if(IDCODE == XCZU7_IDCODE)
+	if(IDCODE == XCZU7_IDCODE)
 		return XUSP_DEVICE_XCZU7;
-    if(IDCODE == XCZU9_IDCODE)
+	if(IDCODE == XCZU9_IDCODE)
 		return XUSP_DEVICE_XCZU9;
-    if(IDCODE == XCZU11_IDCODE)
+	if(IDCODE == XCZU11_IDCODE)
 		return XUSP_DEVICE_XCZU11;
-    if(IDCODE == XCZU15_IDCODE)
+	if(IDCODE == XCZU15_IDCODE)
 		return XUSP_DEVICE_XCZU15;
-    if(IDCODE == XCZU17_IDCODE)
+	if(IDCODE == XCZU17_IDCODE)
 		return XUSP_DEVICE_XCZU17;
-    if(IDCODE == XCZU19_IDCODE)
+	if(IDCODE == XCZU19_IDCODE)
 		return XUSP_DEVICE_XCZU19;
 	#endif
 
 
 	//Alveo rebranding
 	#ifdef XUSPALVEO
-    if(IDCODE == XCU200_IDCODE)
+	if(IDCODE == XCU200_IDCODE)
 		return XUSP_DEVICE_XCU200;
-    if(IDCODE == XCU250_IDCODE)
+	if(IDCODE == XCU250_IDCODE)
 		return XUSP_DEVICE_XCU250;
-    if(IDCODE == XCU26_IDCODE)
+	if(IDCODE == XCU26_IDCODE)
 		return XUSP_DEVICE_XCU26;
-    if(IDCODE == XCUX35_IDCODE)
+	if(IDCODE == XCUX35_IDCODE)
 		return XUSP_DEVICE_XCUX35;
-    if(IDCODE == XCU50_IDCODE)
+	if(IDCODE == XCU50_IDCODE)
 		return XUSP_DEVICE_XCU50;
-    if(IDCODE == XCU55N_IDCODE)
+	if(IDCODE == XCU55N_IDCODE)
 		return XUSP_DEVICE_XCU55N;
-    if(IDCODE == XCU55C_IDCODE)
+	if(IDCODE == XCU55C_IDCODE)
 		return XUSP_DEVICE_XCU55C;
-    if(IDCODE == XCU280_IDCODE)
+	if(IDCODE == XCU280_IDCODE)
 		return XUSP_DEVICE_XCU280;
-    if(IDCODE == XCU30_IDCODE)
+	if(IDCODE == XCU30_IDCODE)
 		return XUSP_DEVICE_XCU30;
-    if(IDCODE == XCU25_IDCODE)
+	if(IDCODE == XCU25_IDCODE)
 		return XUSP_DEVICE_XCU25;
 	#endif
 	
@@ -197,7 +197,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 	name = str::removeSpaces(name);
 	name = str::stringToLower(name);
 	
-    //US+ Artix
+	//US+ Artix
 	#ifdef XUSPARTIX
 		if(str::iff::stringContains(name, XCAU10P_NAME))
 			return XUSP_DEVICE_XCAU10P;
@@ -208,7 +208,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCAU25P_NAME))
 			return XUSP_DEVICE_XCAU25P;
 	#endif
-    //US+ Kintex
+	//US+ Kintex
 	#ifdef XUSPKINTEX
 		if(str::iff::stringContains(name, XCKU3P_NAME,  "xqku3p"))
 			return XUSP_DEVICE_XCKU3P;
@@ -225,7 +225,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCKU19P_NAME, "xqku19p"))
 			return XUSP_DEVICE_XCKU19P;
 	#endif
-    //US+ Virtex
+	//US+ Virtex
 	#ifdef XUSPVIRTEX
 		if(str::iff::stringContains(name, XCVU3P_NAME,  "xqvu3p"))
 			return XUSP_DEVICE_XCVU3P;
@@ -346,7 +346,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_XCU25;
 	#endif
 
-    //Some boards for easier use
+	//Some boards for easier use
 	#ifdef XUSPBOARDS
 		if(str::iff::stringContains(name, "zcu102", "zu-gmsl2"))
 			return XUSP_DEVICE_ZCU102;
@@ -1010,7 +1010,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 		default:throw runtime_error("Unknown device ID.");
 	}
 	#undef setCustomPartName
-    if(!customNameSet) // if we didn't set already a good full name
+	if(!customNameSet) // if we didn't set already a good full name
 		if(customPartName != "")// if not empty string
 			partName = customPartName;
 	

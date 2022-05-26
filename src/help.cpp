@@ -27,7 +27,7 @@ void byteman::help(string param, int exitCode)
 {
 	if(param.empty())
 		byteman::help();
-    else
+	else
 		byteman::help(param);
 	exit(exitCode);
 }
@@ -58,7 +58,7 @@ void byteman::help()
 }
 void byteman::help(string param)
 {
-	     if(str::iff::stringIs(param, "v", "verbose"))
+		 if(str::iff::stringIs(param, "v", "verbose"))
 		byteman::helpVerbose();
 	else if(str::iff::stringIs(param, "w", "warn"))
 		byteman::helpWarn();
@@ -150,8 +150,8 @@ void byteman::helpEnd()
 }
 void byteman::helpStdin()
 {
-	cout << "\t-stdin                    : Continue using the same commands on standard input." << endl;
-	cout << "\t                            Standard input ends with a command \"end\"." << endl;
-	cout << "\t                            Stdin commands don’t need \"-\" in front and can be on multiple lines." << endl;
-	cout << "\t                            \"#\" starts a comment until a newline is seen." << endl;
+	cout << "\t-stdin					: Continue using the same commands on standard input." << endl;
+	cout << "\t							Standard input ends with a command \"end\"." << endl;
+	cout << "\t							Stdin commands don’t need \"-\" in front and can be on multiple lines." << endl;
+	cout << "\t							\"#\" starts a comment until a newline is seen." << endl;
 }

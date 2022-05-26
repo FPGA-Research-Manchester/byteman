@@ -46,7 +46,7 @@ using namespace std;
 class byteman
 {
 	public:
-		byteman();
+		byteman(){};
 		virtual ~byteman(){};
 		enum class Architecture{
 			Unknown,
@@ -64,9 +64,9 @@ class byteman
 		//parse
 		SelectedOptions parseParams(string);
 
+		void init();
 		
-		
-		void parseCommand(string);
+		void parse(string);
 		void setArchitecture(string);
 		void parseAssembly(string, SelectedOptions);
 		void parseOutput(string, SelectedOptions);

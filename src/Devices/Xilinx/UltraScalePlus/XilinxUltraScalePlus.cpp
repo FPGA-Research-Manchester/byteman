@@ -29,16 +29,16 @@ using namespace std;
 
 XilinxUltraScalePlus::XilinxUltraScalePlus()
 {
-    initializedBitstreamPartName = "";
+	initializedBitstreamPartName = "";
 	loadedBitstreamEndianess = Endianess::BE;
-    SLRinfo[0] = {0, 0, 0};
-    numberOfRows = 0;
+	SLRinfo[0] = {0, 0, 0};
+	numberOfRows = 0;
 	blankFrame = calloc(XUSP_WORDS_PER_FRAME, 4);
 }
 
 XilinxUltraScalePlus::~XilinxUltraScalePlus()
 {
-    //dtor
+	//dtor
 	free(blankFrame);
 	if(bitstreamBegin != nullptr)
 		delete bitstreamBegin;
@@ -87,57 +87,71 @@ XilinxUltraScalePlus::SelectedOptions XilinxUltraScalePlus::parseParams(string p
 void XilinxUltraScalePlus::initializeResourceStringParameters(){
 	if(partName == "")
 		throw runtime_error("The target device needs to be known, before you can manipulate any bitstream!");
-    if(initializedResourceParamsPartName != partName){//The device is changed
+	if(initializedResourceParamsPartName != partName){//The device is changed
 		initializedResourceParamsPartName = partName;
 
-        for((numberOfCols = 0, numberOfFramesBeforeCol[0] = 0, numberOfBRAMCols = 0) ; (uint8_t)resourceString[0][numberOfCols] ; numberOfCols++){
-            numberOfFramesBeforeCol[numberOfCols+1] = numberOfFramesBeforeCol[numberOfCols] + numberOfFramesPerResourceLetter[(uint8_t)resourceString[0][numberOfCols]];
-            numberOfBRAMsBeforeCol[numberOfCols] = numberOfBRAMCols;
-            if(resourceString[0][numberOfCols] == 'A' || resourceString[0][numberOfCols] == 'B' || resourceString[0][numberOfCols] == 'C' || resourceString[0][numberOfCols] == '1') //ABC1 are "BRAM_L", "BRAM", "BRAM_R", "NULL BRAM"
-                numberOfBRAMCols++;
-        }
-        numberOfFramesPerRow = numberOfFramesBeforeCol[numberOfCols] + XUSP_EXTRA_FRAMES_PER_ROW;
-        numberOfWordsPerRow = numberOfFramesPerRow * XUSP_WORDS_PER_FRAME;
+		for((numberOfCols = 0, numberOfFramesBeforeCol[0] = 0, numberOfBRAMCols = 0) ; (uint8_t)resourceString[0][numberOfCols] ; numberOfCols++){
+			numberOfFramesBeforeCol[numberOfCols+1] = numberOfFramesBeforeCol[numberOfCols] + numberOfFramesPerResourceLetter[(uint8_t)resourceString[0][numberOfCols]];
+			numberOfBRAMsBeforeCol[numberOfCols] = numberOfBRAMCols;
+			if(resourceString[0][numberOfCols] == 'A' || resourceString[0][numberOfCols] == 'B' || resourceString[0][numberOfCols] == 'C' || resourceString[0][numberOfCols] == '1') //ABC1 are "BRAM_L", "BRAM", "BRAM_R", "NULL BRAM"
+				numberOfBRAMCols++;
+		}
+		numberOfFramesPerRow = numberOfFramesBeforeCol[numberOfCols] + XUSP_EXTRA_FRAMES_PER_ROW;
+		numberOfWordsPerRow = numberOfFramesPerRow * XUSP_WORDS_PER_FRAME;
 	}
 }
 
 void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 	if(partName == "")
 		throw runtime_error("The target device needs to be known, before you can manipulate any bitstream!");
-    if(initializedBitstreamPartName != partName){//The device is changed
+	if(initializedBitstreamPartName != partName){//The device is changed
 		initializedBitstreamPartName = partName;
-        if(bitstreamBegin != nullptr)
-            delete bitstreamBegin;
+		if(bitstreamBegin != nullptr)
+			delete bitstreamBegin;
 
-        XilinxUltraScalePlus::initializeResourceStringParameters();
+		XilinxUltraScalePlus::initializeResourceStringParameters();
 		//Allocate
-        bitstreamBegin = new uint32_t[numberOfRows * (numberOfWordsPerRow + numberOfBRAMCols * (XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN+XUSP_EXTRA_FRAMES_PER_ROW) * XUSP_WORDS_PER_FRAME)];
+		bitstreamBegin = new uint32_t[numberOfRows * (numberOfWordsPerRow + numberOfBRAMCols * (XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN+XUSP_EXTRA_FRAMES_PER_ROW) * XUSP_WORDS_PER_FRAME)];
+		
+		//Calc pointers
+		int offset = 0;
+		
+		int srchSLRrow = 0, fromSLRrow = 0, toSLRrow = 0; // build the device bottom up (as visualized), no matter the SLR order
+		for(int slrcnt = 0 ; slrcnt < numberOfSLRs ; slrcnt++){
+			for(int slri = 0 ; slri < numberOfSLRs ; slri++){ // get the next SLR (bottom up as visualized)
+				if(SLRinfo[slri].fromRow == srchSLRrow){
+					fromSLRrow = SLRinfo[slri].fromRow;
+					toSLRrow = SLRinfo[slri].toRow + 1;
+				}
+			}
+			//build the pointers of the next SLR
+			for(int r = fromSLRrow ; r < toSLRrow ; r++){
+				for(int c = 0 ; c < numberOfCols ; c++){
+					bitstreamCLB[r][c] = &bitstreamBegin[offset];
+					offset += numberOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]] * XUSP_WORDS_PER_FRAME;
+				}
+				offset += XUSP_EXTRA_FRAMES_PER_ROW * XUSP_WORDS_PER_FRAME;
+			}
 
-        //Calc pointers
-        int offset = 0;
-        for(int r = 0 ; r < numberOfRows ; r++){
-            for(int c = 0 ; c < numberOfCols ; c++){
-                bitstreamCLB[r][c] = &bitstreamBegin[offset];
-                offset += numberOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]] * XUSP_WORDS_PER_FRAME;
-            }
-			offset += XUSP_EXTRA_FRAMES_PER_ROW * XUSP_WORDS_PER_FRAME;
+			for(int r = fromSLRrow ; r < toSLRrow ; r++){
+				for(int c = 0 ; c < numberOfBRAMCols ; c++){
+					bitstreamBRAM[r][c] = &bitstreamBegin[offset];
+					offset += XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN*XUSP_WORDS_PER_FRAME;
+				}
+				offset += XUSP_EXTRA_FRAMES_PER_ROW * XUSP_WORDS_PER_FRAME;
+			}
+			
+			srchSLRrow = toSLRrow;//the start row of the next SLR.
 		}
-
-        for(int r = 0 ; r < numberOfRows ; r++){
-            for(int c = 0 ; c < numberOfBRAMCols ; c++){
-                bitstreamBRAM[r][c] = &bitstreamBegin[offset];
-                offset += XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN*XUSP_WORDS_PER_FRAME;
-            }
-			offset += XUSP_EXTRA_FRAMES_PER_ROW * XUSP_WORDS_PER_FRAME;
-		}
+		
 		bitstreamEnd = &bitstreamBegin[offset];
-    }
+	}
 }
 void XilinxUltraScalePlus::blank(string params){
 	XilinxUltraScalePlus::ensureInitializedBitstreamArrays();
 	int blankCLB = 0, blankBRAM = 0;
-    if(params.find("logic") != string::npos || params.find("clb") != string::npos)blankCLB++;
-    if(params.find("blockram") != string::npos || params.find("bram") != string::npos)blankBRAM++;
+	if(params.find("logic") != string::npos || params.find("clb") != string::npos)blankCLB++;
+	if(params.find("blockram") != string::npos || params.find("bram") != string::npos)blankBRAM++;
 	if(regionSelection.empty()) {
 		if(blankCLB)
 			memset(&bitstreamCLB[0][0][0], 0, (&bitstreamBRAM[0][0][0]-&bitstreamCLB[0][0][0]));
@@ -145,19 +159,19 @@ void XilinxUltraScalePlus::blank(string params){
 			memset(&bitstreamBRAM[0][0][0], 0, (bitstreamEnd-&bitstreamBRAM[0][0][0]));
 	} else {
 		if(blankCLB)
-			for (Rect2D &rect : regionSelection) {
-				for(int r = rect.position.row ; r < (rect.position.row + rect.size.row) ; r++){
-					int blankSize = numberOfFramesBeforeCol[rect.position.col + rect.size.col] - numberOfFramesBeforeCol[rect.position.col];
+			for (Rect2D &selRect : regionSelection) {
+				for(int r = selRect.position.row ; r < (selRect.position.row + selRect.size.row) ; r++){
+					int blankSize = numberOfFramesBeforeCol[selRect.position.col + selRect.size.col] - numberOfFramesBeforeCol[selRect.position.col];
 					blankSize *= XUSP_WORDS_PER_FRAME * 4;
-					memset(&bitstreamCLB[r][rect.position.col][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
+					memset(&bitstreamCLB[r][selRect.position.col][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
 				}
 			}
 		if(blankBRAM)
-			for (Rect2D &rect : regionSelection) {
-				for(int r = rect.position.row ; r < (rect.position.row + rect.size.row) ; r++){
-					int blankSize = numberOfBRAMsBeforeCol[rect.position.col + rect.size.col] - numberOfBRAMsBeforeCol[rect.position.col];
+			for (Rect2D &selRect : regionSelection) {
+				for(int r = selRect.position.row ; r < (selRect.position.row + selRect.size.row) ; r++){
+					int blankSize = numberOfBRAMsBeforeCol[selRect.position.col + selRect.size.col] - numberOfBRAMsBeforeCol[selRect.position.col];
 					blankSize *= XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN * XUSP_WORDS_PER_FRAME * 4;
-					memset(&bitstreamCLB[r][numberOfBRAMsBeforeCol[rect.position.col]][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
+					memset(&bitstreamCLB[r][numberOfBRAMsBeforeCol[selRect.position.col]][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
 				}
 			}
 	}
@@ -178,7 +192,7 @@ void XilinxUltraScalePlus::ensureRowCompatibility(Coord2D src, int offsetRow, in
 	}
 }
 void XilinxUltraScalePlus::ensureRegionCompatibility(Rect2D src, Coord2D dst){
-    for(int r = 0 ; r < src.size.row ; ){ //this loop will iterate south border and all (srcRow:srcRow+sizeRow) at CLBs 0 and 59
+	for(int r = 0 ; r < src.size.row ; ){ //this loop will iterate south border and all (srcRow:srcRow+sizeRow) at CLBs 0 and 59
 		XilinxUltraScalePlus::ensureRowCompatibility(src.position, r, src.size.col, dst);
 		if( ((src.position.row + r) % XUSP_CLB_PER_CLOCK_REGION) == (XUSP_CLB_PER_CLOCK_REGION-1) ) { // isLastCLBinRow
 			r++;
@@ -187,20 +201,20 @@ void XilinxUltraScalePlus::ensureRegionCompatibility(Rect2D src, Coord2D dst){
 		} else { // get to the next {isLastCLBinRow} 
 			r += (XUSP_CLB_PER_CLOCK_REGION - 1 - ((src.position.row + r) % XUSP_CLB_PER_CLOCK_REGION));
 		}
-    }
+	}
 	ensureRowCompatibility(src.position, src.size.row-1, src.size.col, dst); //iterate north border as well
 }
 void XilinxUltraScalePlus::merge(XilinxUltraScalePlus* srcBitstream, string params, Rect2D src, Coord2D dst){
-    //This function uses a pointer to the second XUSP instance, but this pointer should get optimized as it is statically provided in the main function
+	//This function uses a pointer to the second XUSP instance, but this pointer should get optimized as it is statically provided in the main function
 	SelectedOptions options = XilinxUltraScalePlus::parseParams(params);
 	
 	XilinxUltraScalePlus::ensureRegionCompatibility(src, dst);
-    if(src.position.row%XUSP_CLB_PER_CLOCK_REGION != 0)
-        throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
-    if(src.size.row%XUSP_CLB_PER_CLOCK_REGION != 0)
-        throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
-    if(dst.row%XUSP_CLB_PER_CLOCK_REGION != 0)
-        throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
+	if(src.position.row%XUSP_CLB_PER_CLOCK_REGION != 0)
+		throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
+	if(src.size.row%XUSP_CLB_PER_CLOCK_REGION != 0)
+		throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
+	if(dst.row%XUSP_CLB_PER_CLOCK_REGION != 0)
+		throw runtime_error("Currently only full clock region height relocations are supported (use row numbers multiple of 60).");
 	
 	Endianess endianDifference = Endian::diff(loadedBitstreamEndianess, srcBitstream->loadedBitstreamEndianess);
 	
@@ -215,28 +229,28 @@ void XilinxUltraScalePlus::merge(XilinxUltraScalePlus* srcBitstream, string para
  * operation, fastMerge is the way to go. 
  *****************************************************************************/
 void XilinxUltraScalePlus::fastMerge(XilinxUltraScalePlus* srcBitstream, SelectedOptions options, Rect2D src, Coord2D dst){
-    int srcRA = src.position.row  / XUSP_CLB_PER_CLOCK_REGION;
-    int sizeR = src.size.row / XUSP_CLB_PER_CLOCK_REGION;
-    int dstRA = dst.row  / XUSP_CLB_PER_CLOCK_REGION;
+	int srcRA = src.position.row  / XUSP_CLB_PER_CLOCK_REGION;
+	int sizeR = src.size.row / XUSP_CLB_PER_CLOCK_REGION;
+	int dstRA = dst.row  / XUSP_CLB_PER_CLOCK_REGION;
 
-    for(int r = 0 ; r < sizeR ; r++){
-        for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
-            for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
-                if(options.clb && options.clk){
-                    memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME], XUSP_WORDS_PER_FRAME*4);
-                } else {
-                    if(options.clb){
-                        memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,                                        (char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME],                                         XUSP_WORDS_BEFORE_CLK*4);
-                        memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK], XUSP_WORDS_AFTER_CLK*4);
+	for(int r = 0 ; r < sizeR ; r++){
+		for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
+			for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
+				if(options.clb && options.clk){
+					memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME], XUSP_WORDS_PER_FRAME*4);
+				} else {
+					if(options.clb){
+						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,										(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME],										 XUSP_WORDS_BEFORE_CLK*4);
+						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME+XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK], XUSP_WORDS_AFTER_CLK*4);
 					}//-if(reloCLB)
-                    if(options.clk){
-                        for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++)
-                            bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w] = srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w];
-                    }//-if(reloCLK)
-                }//-if(reloCLB && reloCLK)
-            }
-        }
-    }
+					if(options.clk){
+						for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++)
+							bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME + w] = srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME + w];
+					}//-if(reloCLK)
+				}//-if(reloCLB && reloCLK)
+			}
+		}
+	}
 	if(options.bram){
 		for(int r = 0 ; r < sizeR ; r++){
 			int bramCols = numberOfBRAMsBeforeCol[src.position.col + src.size.col] - numberOfBRAMsBeforeCol[src.position.col];
@@ -247,13 +261,13 @@ void XilinxUltraScalePlus::fastMerge(XilinxUltraScalePlus* srcBitstream, Selecte
 	}//-if(reloBRAM)
 }
 void XilinxUltraScalePlus::flexiMerge(XilinxUltraScalePlus* srcBitstream, SelectedOptions options, Endianess endianConversionNeeded, Rect2D src, Coord2D dst){
-    int srcRA = src.position.row  / XUSP_CLB_PER_CLOCK_REGION;
-    int sizeR = src.size.row / XUSP_CLB_PER_CLOCK_REGION;
-    int dstRA = dst.row  / XUSP_CLB_PER_CLOCK_REGION;
+	int srcRA = src.position.row  / XUSP_CLB_PER_CLOCK_REGION;
+	int sizeR = src.size.row / XUSP_CLB_PER_CLOCK_REGION;
+	int dstRA = dst.row  / XUSP_CLB_PER_CLOCK_REGION;
 
-    for(int r = 0 ; r < sizeR ; r++){
-        for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
-            for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
+	for(int r = 0 ; r < sizeR ; r++){
+		for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
+			for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
 				for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
 					if(XUSP_WORDS_BEFORE_CLK <= w && (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) > w){
 						if(!options.clk)
@@ -277,9 +291,9 @@ void XilinxUltraScalePlus::flexiMerge(XilinxUltraScalePlus* srcBitstream, Select
 						break;
 					}
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 	if(options.bram){
 		for(int r = 0 ; r < sizeR ; r++){
 			int bramCols = numberOfBRAMsBeforeCol[src.position.col + src.size.col] - numberOfBRAMsBeforeCol[src.position.col];

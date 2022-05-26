@@ -21,7 +21,7 @@
 XilinxConfigurationAccessPort::XilinxConfigurationAccessPort()
 {
 	designName = "";
-    partName = "";
+	partName = "";
 }
 XilinxConfigurationAccessPort::~XilinxConfigurationAccessPort()
 {
@@ -31,7 +31,7 @@ void XilinxConfigurationAccessPort::updateDateAndTime()
 {
 	time_t timestamp = time(0);
 	struct tm  tstruct;
-	char       buf[80];
+	char	   buf[80];
 	tstruct = *localtime(&timestamp);
 	strftime(buf, sizeof(buf), "%Y/%m/%d", &tstruct);
 	fileDate = string(buf);

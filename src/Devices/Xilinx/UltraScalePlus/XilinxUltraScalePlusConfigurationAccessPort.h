@@ -79,7 +79,7 @@ namespace CAP {
 		RESERVED = 3
 	};
 	
-	
+	const uint32_t FARFAR = 0x07FC0000; ///< A FAR address that is far away from any real address :D
 	const uint32_t SYNC = 0xAA995566;
 }
 

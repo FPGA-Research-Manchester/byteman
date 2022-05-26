@@ -20,7 +20,7 @@
 #include<stdexcept>
 #include<fstream>
 #include<cstring>
-#include<iomanip>      // std::setfill, std::setw
+#include<iomanip>	  // std::setfill, std::setw
 
 #include "XilinxUltraScalePlus.h"
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
@@ -40,30 +40,29 @@ void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut)
 	enum FILEFORMAT {FILE_NULL = 0, FILE_BIT, FILE_BIT_ASM};
 	FILEFORMAT fileformatIn = FILE_NULL, fileformatOut = FILE_NULL;
 	
-    if(str::iff::stringEndsWith(filenameIn, ".bit"))
-        fileformatIn = FILE_BIT;
-    if(str::iff::stringEndsWith(filenameIn, ".bitasm"))
-        fileformatIn = FILE_BIT_ASM;
-	
-    if(str::iff::stringEndsWith(filenameOut, ".bit"))
-        fileformatOut = FILE_BIT;
-    if(str::iff::stringEndsWith(filenameOut, ".bitasm"))
-        fileformatOut = FILE_BIT_ASM;
+	if(str::iff::stringEndsWith(filenameIn, ".bit"))
+		fileformatIn = FILE_BIT;
+	if(str::iff::stringEndsWith(filenameIn, ".bitasm"))
+		fileformatIn = FILE_BIT_ASM;
+	if(str::iff::stringEndsWith(filenameOut, ".bit"))
+		fileformatOut = FILE_BIT;
+	if(str::iff::stringEndsWith(filenameOut, ".bitasm"))
+		fileformatOut = FILE_BIT_ASM;
 	if(fileformatIn == FILE_NULL)
-        throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read by the assembler. See \"byteman -h assembly\".\n"));
+		throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read by the assembler. See \"byteman -h assembly\".\n"));
 	if(fileformatOut == FILE_NULL)
-        throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be written by the assembler. See \"byteman -h assembly\".\n"));
+		throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be written by the assembler. See \"byteman -h assembly\".\n"));
 	if(fileformatIn == fileformatOut)
-        throw runtime_error(string("Unknown Xilinx UltraScale+ assembler operation between identical file formats. See \"byteman -h assembly\".\n"));
+		throw runtime_error(string("Unknown Xilinx UltraScale+ assembler operation between identical file formats. See \"byteman -h assembly\".\n"));
 	
 	
 	ifstream fin (filenameIn, ifstream::binary);
 	if(!fin.good())
-        throw runtime_error(string("Could not open file: \"").append(filenameIn).append("\" .\n"));
+		throw runtime_error(string("Could not open file: \"").append(filenameIn).append("\" .\n"));
 	
 	ofstream fout (filenameOut, ofstream::binary | ofstream::trunc);
 	if(!fout.good())
-        throw runtime_error(string("Could not open file: \"").append(filenameOut).append("\"!\n"));
+		throw runtime_error(string("Could not open file: \"").append(filenameOut).append("\"!\n"));
 	
 	if(fileformatIn == FILE_BIT && fileformatOut == FILE_BIT_ASM)
 		XilinxUltraScalePlus::disassemblerBitToAsm(fin, fout);
@@ -140,13 +139,13 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		if(has("HEADER END"))break;
 		#undef has
 	}
-    XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
+	XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
 	XilinxUltraScalePlus::initializeResourceStringParameters();
 	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout, Endianess::BE);
 	
 	CAP::Register regAddr = CAP::Register::UNDEFINED;
-    int frameCount = 0;
-    int b = 7, r = 0, c = 0, m = 0;
+	int frameCount = 0;
+	int slr = 0, b = 7, r = 0, c = 0, m = 0;
 	for (string line; getline(fin, line); ) {
 		#define has(x) (line.find(x) != string::npos)
 		#define hOR(x,y) (has(x)||has(y))
@@ -156,7 +155,15 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		replace(line.begin(), line.end(), '=', ' ');
 		replace(line.begin(), line.end(), '#', ' ');
 		replace(line.begin(), line.end(), ',', ' ');
-		if(has("NOP")){
+		if(has("SYNC")){
+			XilinxUltraScalePlus::CAP_writeSYNQ(fout, Endianess::BE);
+		}
+		else if(has(".WORD")){
+			int wordValue;
+			if(!str::parse::multipleInts(line, wordValue))wordValue = 0;
+			FileIO::write32(fout, wordValue, Endianess::BE);
+		}
+		else if(has("NOP")){
 			int nopHiddenValue;
 			if(!str::parse::multipleInts(line, nopHiddenValue))nopHiddenValue = 0;
 			XilinxUltraScalePlus::CAP_writeNOP(fout, 1, nopHiddenValue, Endianess::BE);
@@ -165,6 +172,13 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 			int reservedHiddenValue;
 			if(!str::parse::multipleInts(line, reservedHiddenValue))reservedHiddenValue = 0;
 			XilinxUltraScalePlus::CAP_writeRESERVED(fout, 1, reservedHiddenValue, Endianess::BE);
+		}
+		else if(has("SELECT NEXT SLR")){
+			slr++;
+			int magic1size;
+			if(!str::parse::multipleInts(line, magic1size))magic1size = 0;
+			XilinxUltraScalePlus::CAP_writeSelectRegister(fout, CAP::Register::MAGIC1, Endianess::BE);
+			XilinxUltraScalePlus::CAP_writeType2(fout, magic1size, Endianess::BE);
 		}
 		else if(has("@")){
 			CAP::Register newRegAddr = assemblerGetRegID(line);
@@ -183,7 +197,7 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 						throw runtime_error(string("FDRI command needs size: \"").append(line).append("\"!"));
 					int wordCount = frameCount * XUSP_WORDS_PER_FRAME;
 					if(regAddr == CAP::Register::FDRI) {
-						XilinxUltraScalePlus::CAP_writeFDRI2(fout, wordCount, Endianess::BE);
+						XilinxUltraScalePlus::CAP_writeType2(fout, wordCount, Endianess::BE);
 					} else {
 						XilinxUltraScalePlus::CAP_writeFDRI1(fout, wordCount, Endianess::BE);
 					}
@@ -216,7 +230,8 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 				} else if(newRegAddr == CAP::Register::FAR){
 					if(!str::parse::multipleInts(line, b, r, c, m))
 						throw runtime_error(string("Could not parse the new FAR value: \"").append(line).append("\"!"));
-					uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(b, r, c, m);
+					r += SLRinfo[slr].fromRow;
+					uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(slr, b, r, c, m);
 					XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::FAR, farValue, Endianess::BE);
 				} else {
 					int newValue;
@@ -294,105 +309,128 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 {
 	loadedBitstreamEndianess = XilinxUltraScalePlus::parseBitstreamEndianess(fin);
 	XilinxUltraScalePlus::parseBITheader(fin, loadedBitstreamEndianess);
-    XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
+	XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
 	XilinxUltraScalePlus::initializeResourceStringParameters();
 	XilinxUltraScalePlus::disassemblerWriteHeader(fout);
 	
 	CAP::Register regAddr = CAP::Register::UNDEFINED;
-    int wordCount = 0;
-    int shadowFrameValid = 0;
-    int b = 7, r = 0, c = 0, m = 0;
-    //Parse bitstream
-    for( ; ; ){
+	bool synched = true;
+	int wordCount = 0;
+	int shadowFrameValid = 0;
+	int slr = 0, b = 7, r = 0, c = 0, m = 0;
+	//Parse bitstream
+	for( ; ; ){
 		uint32_t instruction = FileIO::read32(fin, Endianess::BE);
-        if(!fin.good()){
-            break; // done with the bitstream
-        } else {
-			int instructionType = XilinxUltraScalePlus::CAP_getInstructionType(instruction);
-			CAP::Operation instructionOPCODE = XilinxUltraScalePlus::CAP_getInstructionOperation(instruction);
-			int instructionPayload = XilinxUltraScalePlus::CAP_getInstructionPayload(instruction);
-			if(instructionType == 1) {
-				wordCount = XilinxUltraScalePlus::CAP_getInstructionWordCount(instruction);
-				regAddr = XilinxUltraScalePlus::CAP_getInstructionRegister(instruction);
-			} else if(instructionType == 2) {
-				wordCount = instructionPayload;
+		if(!fin.good()){
+			break; // done with the bitstream
+		} else {
+			if(! synched){
+				if(0xAA995566 == instruction){
+					synched = true;
+					fout << "SYNC" << endl;
+				} else {
+					fout << ".word " <<"0x" << hex << setw(8) << setfill('0') << instruction << endl;
+				}
 			} else {
-				fout << "0x" << hex << setw(8) << setfill('0') << instruction << " (Invalid instruction [invalid type])" << endl;
-				continue;
-			}
-			
-			if(instructionOPCODE == CAP::Operation::NOP) {
-				if(instructionPayload != 0)
-					fout << "NOP #" << instructionPayload << endl;
-				else 
-					fout << "NOP" << endl;
-			} else if(instructionOPCODE == CAP::Operation::RESERVED) {
-				if(instructionPayload != 0)
-					fout << "RESERVED #" << instructionPayload << endl;
-				else 
-					fout << "RESERVED" << endl;
-			} else if(instructionOPCODE == CAP::Operation::READ) {
-				fout << "Read Reg @";
-				writeRegisterName(fout, regAddr);
-				fout << " for length #" << wordCount << endl;
-			} else { // CAP::Operation::WRITE
-				if((regAddr == CAP::Register::FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
-					if(shadowFrameValid) {
-						fout << "# Shadow register contents are written to frame (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ")."<<endl;
-						XilinxUltraScalePlus::CAP_IncrementFAR(b, r, c, m);
-					}
-					shadowFrameValid = 1;
-					int frameCount = (wordCount/XUSP_WORDS_PER_FRAME);
-					fout << dec << "@FDRI for #" << frameCount << " frames:" << endl;
-					for(int i = 0 ; i < frameCount ; i++){
-						fout << "# ";
-						if(i == (frameCount-1)) fout << "(This frame data is written to shadow register!)";
-						fout << dec << "Writing frame #" << i << " (BlockType="<<b<<", RowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ") hex data:"<<endl;
-						uint32_t frameData[XUSP_WORDS_PER_FRAME];
-						for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
-							frameData[w] = FileIO::read32(fin, Endianess::BE);
+				int instructionType = XilinxUltraScalePlus::CAP_getInstructionType(instruction);
+				CAP::Operation instructionOPCODE = XilinxUltraScalePlus::CAP_getInstructionOperation(instruction);
+				int instructionPayload = XilinxUltraScalePlus::CAP_getInstructionPayload(instruction);
+				if(instructionType == 1) {
+					wordCount = XilinxUltraScalePlus::CAP_getInstructionWordCount(instruction);
+					regAddr = XilinxUltraScalePlus::CAP_getInstructionRegister(instruction);
+				} else if(instructionType == 2) {
+					wordCount = instructionPayload;
+				} else {
+					fout << "0x" << hex << setw(8) << setfill('0') << instruction << " (Invalid instruction [invalid type])" << endl;
+					continue;
+				}
+				
+				if(instructionOPCODE == CAP::Operation::NOP) {
+					if(instructionPayload != 0)
+						fout << "NOP #" << instructionPayload << endl;
+					else 
+						fout << "NOP" << endl;
+				} else if(instructionOPCODE == CAP::Operation::RESERVED) {
+					if(instructionPayload != 0)
+						fout << "RESERVED #" << instructionPayload << endl;
+					else 
+						fout << "RESERVED" << endl;
+				} else if(instructionOPCODE == CAP::Operation::READ) {
+					fout << "Read Reg @";
+					writeRegisterName(fout, regAddr);
+					fout << " for length #" << wordCount << endl;
+				} else { // CAP::Operation::WRITE
+					if((regAddr == CAP::Register::FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
+						if(shadowFrameValid) {
+							fout << "# Shadow register contents are written to frame (BlockType="<<b<<", GlobalRowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ")."<<endl;
+							XilinxUltraScalePlus::CAP_IncrementFAR(slr, b, r, c, m);
 						}
-						fout<<"CLOCK: ";
-						for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++){
-							fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+						shadowFrameValid = 1;
+						int frameCount = (wordCount/XUSP_WORDS_PER_FRAME);
+						fout << dec << "@FDRI for #" << frameCount << " frames:" << endl;
+						for(int i = 0 ; i < frameCount ; i++){
+							fout << "# ";
+							if(i == (frameCount-1)) fout << "(This frame data is written to shadow register!)";
+							fout << dec << "Writing frame #" << i << " (BlockType="<<b<<", GlobalRowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ") hex data:"<<endl;
+							uint32_t frameData[XUSP_WORDS_PER_FRAME];
+							for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
+								frameData[w] = FileIO::read32(fin, Endianess::BE);
+							}
+							fout<<"CLOCK: ";
+							for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++){
+								fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+							}
+							fout<<" ;DATA: ";
+							for(int w = 0 ; w < XUSP_WORDS_BEFORE_CLK ; w++){
+								fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+							}
+							for(int w = (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w < XUSP_WORDS_PER_FRAME ; w++){
+								fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+							}
+							fout << endl;
+							XilinxUltraScalePlus::CAP_IncrementFAR(slr, b, r, c, m);
 						}
-						fout<<" ;DATA: ";
-						for(int w = 0 ; w < XUSP_WORDS_BEFORE_CLK ; w++){
-							fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
-						}
-						for(int w = (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w < XUSP_WORDS_PER_FRAME ; w++){
-							fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+					} else if(regAddr == CAP::Register::CMD && wordCount == 1){
+						uint32_t writeData = FileIO::read32(fin, Endianess::BE);
+						writeCommandName(fout, static_cast<CAP::Command>(writeData));
+						fout << ";";
+						if(CAP::Command::WCFG == static_cast<CAP::Command>(writeData)){
+							shadowFrameValid = 0;
+							fout << " (also clears shadow register)";
 						}
 						fout << endl;
-						XilinxUltraScalePlus::CAP_IncrementFAR(b, r, c, m);
-					}
-				} else if(regAddr == CAP::Register::CMD && wordCount == 1){
-					uint32_t writeData = FileIO::read32(fin, Endianess::BE);
-					writeCommandName(fout, static_cast<CAP::Command>(writeData));
-					fout << ";";
-					if(CAP::Command::WCFG == static_cast<CAP::Command>(writeData)){
-						shadowFrameValid = 0;
-						fout << " (also clears shadow register)";
-					}
-					fout << endl;
-				} else if((instructionType == 1) && (wordCount == 0)){
-					fout << "Select register @";
-					writeRegisterName(fout, regAddr);
-					fout << endl;
-				} else if(wordCount == 1){
-					uint32_t writeData = FileIO::read32(fin, Endianess::BE);
-					fout << "@";
-					writeRegisterName(fout, regAddr);
-					if(regAddr == CAP::Register::FAR) {
-						XilinxUltraScalePlus::CAP_parseFAR(writeData, b, r, c, m);
-						fout << " = BlockType=" << dec <<b<<" RowAddress="<<r<<" MajorAddress="<<c<<" MinorAddress="<<m<< endl;
+					} else if(regAddr == CAP::Register::MAGIC1){
+						uint32_t nextInstr = FileIO::read32(fin, Endianess::BE);
+						int nextInstrType = XilinxUltraScalePlus::CAP_getInstructionType(nextInstr);
+						CAP::Operation nextInstrOP = XilinxUltraScalePlus::CAP_getInstructionOperation(nextInstr);
+						int nextInstrPayload = XilinxUltraScalePlus::CAP_getInstructionPayload(nextInstr);
+						if(2 == nextInstrType && CAP::Operation::WRITE == nextInstrOP && 0 < nextInstrPayload){
+							slr++;
+							synched = false;
+							fout << "Select next SLR for the next #"<<dec<<nextInstrPayload<<" words." << endl;
+						} else {
+							fout << "Bad MAGIC1 instruction" << endl;
+							fin.seekg(-4,ios::cur);//rewind next instruction if not
+						}
+					} else if((instructionType == 1) && (wordCount == 0)){
+						fout << "Select register @";
+						writeRegisterName(fout, regAddr);
+						fout << endl;
+					} else if(wordCount == 1){
+						uint32_t writeData = FileIO::read32(fin, Endianess::BE);
+						fout << "@";
+						writeRegisterName(fout, regAddr);
+						if(regAddr == CAP::Register::FAR) {
+							XilinxUltraScalePlus::CAP_parseFAR(writeData, slr, b, r, c, m);
+							fout << " = BlockType=" << dec <<b<<" RowAddress="<<(r-SLRinfo[slr].fromRow)<<" MajorAddress="<<c<<" MinorAddress="<<m<< endl;
+						} else {
+							fout << " = 0x" << hex << setw(8) << setfill('0') << writeData << endl;
+						}
 					} else {
-						fout << " = 0x" << hex << setw(8) << setfill('0') << writeData << endl;
+						fout << "0x"<< hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
 					}
-				} else {
-					fout << "0x"<< hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
-				}
-			} // OP_WRITE
+				} // OP_WRITE
+			}// if synched
 		} // if fin is still good
 	} // for(;;)
 }

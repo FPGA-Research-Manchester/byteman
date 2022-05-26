@@ -39,8 +39,6 @@ streamoff XilinxConfigurationAccessPort::outputBITheader(ofstream& fout, Endiane
 	streamoff headerLocationOfRemainingFileLength = fout.tellp();
 	FileIO::write32(fout, 0, e);//32-bit BE value = 0 representing remaining file size. needs to be fixed later
 	
-	XilinxConfigurationAccessPort::outputCAPheaderConstant(fout, e);
-	
 	return headerLocationOfRemainingFileLength;
 }
 void XilinxConfigurationAccessPort::outputBITheaderLengthField(ofstream& fout, streamoff headerLocationOfRemainingFileLength, Endianess e)

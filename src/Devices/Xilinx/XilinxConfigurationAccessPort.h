@@ -30,8 +30,8 @@ using namespace std;
 class XilinxConfigurationAccessPort: virtual public CommonDevice
 {
 	public:
-        XilinxConfigurationAccessPort();
-        virtual ~XilinxConfigurationAccessPort();
+		XilinxConfigurationAccessPort();
+		virtual ~XilinxConfigurationAccessPort();
 		//
 		void updateDateAndTime();
 		
@@ -48,7 +48,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice
 		void outputCAPheaderConstant(ofstream&, Endianess=Endianess::NATIVE);
 		
 		//bitstream meta
-        string designName;
+		string designName;
 		string partName;
 		string fileDate;
 		string fileTime;

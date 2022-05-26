@@ -33,12 +33,8 @@ namespace str{
 		inline string nthStringWord(string s, int n)	///< Parses a string @c s, returns the n-th string word that is not an integer
 		{
 			stringstream ss(s);
-			string ret;
-			ret.clear();
 			string temp;
-			int intFound;
-			int i = 0;
-			ss >> temp;
+			int intFound, i = 0;
 			while (!ss.eof()) {
 				ss >> temp;
 				try{
@@ -56,15 +52,18 @@ namespace str{
 		inline string allStringWords(string s)	///< Parses a string @c s, removes all integers and returns the rest
 		{
 			stringstream ss(s);
-			string ret;
-			ret.clear();
-			string temp;
+			string temp, ret = "";
 			int intFound;
-			ss >> temp;
 			while (!ss.eof()) {
 				ss >> temp;
-				if (!(stringstream(temp) >> intFound))
-					ret.append(temp).append(" ");
+				try{
+					intFound = stoi(temp, nullptr, 0);
+				} catch (const exception &e) {
+					if(!ret.empty())
+						ret.append(" ");
+					ret.append(temp);
+					e;
+				}
 				temp.clear();
 			}
 			return ret;
@@ -76,7 +75,6 @@ namespace str{
 			ret.clear();
 			string temp;
 			int intFound;
-			ss >> temp;
 			while (!ss.eof()) {
 				ss >> temp;
 				try{
@@ -97,7 +95,6 @@ namespace str{
 			string temp;
 			string temp2;
 			int intFound;
-			ss >> temp;
 			while (!ss.eof()) {
 				ss >> temp;
 				try{
