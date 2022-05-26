@@ -536,17 +536,6 @@ template&lt;typename ... Rest&gt; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1iff.html#aebccf1e6df8e04c3c29272bbe093938a">stringEndsWith</a>(checkedString, restStrings...);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="iff_8h_source.html#l00048">stringIs()</a>.</p>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacestr_1_1iff_aebccf1e6df8e04c3c29272bbe093938a_icgraph.png" border="0" usemap="#namespacestr_1_1iff_aebccf1e6df8e04c3c29272bbe093938a_icgraph" alt=""/></div>
-<map name="namespacestr_1_1iff_aebccf1e6df8e04c3c29272bbe093938a_icgraph" id="namespacestr_1_1iff_aebccf1e6df8e04c3c29272bbe093938a_icgraph">
-<area shape="rect" title=" " alt="" coords="169,5,336,32"/>
-<area shape="rect" href="namespacestr_1_1iff.html#a601403c9e7da58fbd61f844377898afe" title=" " alt="" coords="5,5,121,32"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="acb4ee5230fb11f4c54a20525221abb0b"></a>
@@ -651,20 +640,9 @@ template&lt;typename ... Rest&gt; </div>
 <div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span>(checkedString == nextString)</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1iff.html#aebccf1e6df8e04c3c29272bbe093938a">stringEndsWith</a>(checkedString, restStrings...);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1iff.html#a601403c9e7da58fbd61f844377898afe">stringIs</a>(checkedString, restStrings...);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="iff_8h_source.html#l00037">stringEndsWith()</a>.</p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="namespacestr_1_1iff_a601403c9e7da58fbd61f844377898afe_cgraph.png" border="0" usemap="#namespacestr_1_1iff_a601403c9e7da58fbd61f844377898afe_cgraph" alt=""/></div>
-<map name="namespacestr_1_1iff_a601403c9e7da58fbd61f844377898afe_cgraph" id="namespacestr_1_1iff_a601403c9e7da58fbd61f844377898afe_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
-<area shape="rect" href="namespacestr_1_1iff.html#aebccf1e6df8e04c3c29272bbe093938a" title=" " alt="" coords="169,5,336,32"/>
-</map>
-</div>
-
 </div>
 </div>
 <a id="a0227bb89abbe1f3f0681f494fc46ea84"></a>
@@ -789,12 +767,13 @@ Here is the caller graph for this function:</div>
 </div>
 </div><!-- contents -->
 <div class="ttc" id="anamespacestr_1_1iff_html_aebccf1e6df8e04c3c29272bbe093938a"><div class="ttname"><a href="namespacestr_1_1iff.html#aebccf1e6df8e04c3c29272bbe093938a">str::iff::stringEndsWith</a></div><div class="ttdeci">bool stringEndsWith(string checkedString, string nextString, Rest ... restStrings)</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00037">iff.h:37</a></div></div>
+<div class="ttc" id="anamespacestr_1_1iff_html_a601403c9e7da58fbd61f844377898afe"><div class="ttname"><a href="namespacestr_1_1iff.html#a601403c9e7da58fbd61f844377898afe">str::iff::stringIs</a></div><div class="ttdeci">bool stringIs(string checkedString, string nextString, Rest ... restStrings)</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00048">iff.h:48</a></div></div>
 <div class="ttc" id="anamespacestr_1_1iff_html_ad163aa64036fc9b8aff14275ecc71c8d"><div class="ttname"><a href="namespacestr_1_1iff.html#ad163aa64036fc9b8aff14275ecc71c8d">str::iff::stringContains</a></div><div class="ttdeci">bool stringContains(string checkedString, string nextString, Rest ... restStrings)</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00058">iff.h:58</a></div></div>
 <div class="ttc" id="anamespacestr_1_1iff_html_a6d3613fc3d6e8d86b3041d6d225aa6b6"><div class="ttname"><a href="namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6">str::iff::stringBeginsWith</a></div><div class="ttdeci">bool stringBeginsWith(string checkedString, string nextString, Rest ... restStrings)</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00068">iff.h:68</a></div></div>
 <div class="ttc" id="anamespacestr_1_1iff_html_ab3d5fdd04adcc9952bcf512260c06d8f"><div class="ttname"><a href="namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f">str::iff::stringWordIs</a></div><div class="ttdeci">bool stringWordIs(string checkedString, string nextString, Rest ... restStrings)</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00078">iff.h:78</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 22:31:31 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 25 2022 23:59:52 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
