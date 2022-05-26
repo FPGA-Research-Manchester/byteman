@@ -85,7 +85,7 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		void writeBitstreamMain(ofstream&, string, Rect2D, SelectedOptions);
 		streamoff XilinxUltraScalePlus::writeBitstreamMainEmptySLR(ofstream&, int, SelectedOptions);
 		streamoff XilinxUltraScalePlus::writeBitstreamMainSingleSLR(ofstream&, int, Rect2D, SelectedOptions);
-		void XilinxUltraScalePlus::writeBitstreamMainSLRfooter(ofstream&, int, SelectedOptions);
+		void writeBitstreamMainSLRfooter(ofstream&, int, SelectedOptions);
 		void writeBitstreamMainSingleRegion(ofstream&, int, Rect2D, SelectedOptions);
 		
 		
