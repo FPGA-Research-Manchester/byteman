@@ -146,6 +146,9 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:af71f00d7f90b4c3be3dc386b3a89a757"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCAP.html#af71f00d7f90b4c3be3dc386b3a89a757">FARFAR</a> = 0x07FC0000</td></tr>
+<tr class="memdesc:af71f00d7f90b4c3be3dc386b3a89a757"><td class="mdescLeft">&#160;</td><td class="mdescRight">A FAR address that is far away from any real address :D.  <a href="namespaceCAP.html#af71f00d7f90b4c3be3dc386b3a89a757">More...</a><br /></td></tr>
+<tr class="separator:af71f00d7f90b4c3be3dc386b3a89a757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ebffaa7b6bae161b42cea35ba92b7a1"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCAP.html#a0ebffaa7b6bae161b42cea35ba92b7a1">SYNC</a> = 0xAA995566</td></tr>
 <tr class="separator:a0ebffaa7b6bae161b42cea35ba92b7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -228,7 +231,7 @@ Variables</h2></td></tr>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="namespaceCAP.html#a1673ff40e0d63eac7d117f273db5fd8fa83c7f2aa8c3ac10ed8beb75cad162827">RESERVED</a> = 3</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> uint32_t <a class="code" href="namespaceCAP.html#af71f00d7f90b4c3be3dc386b3a89a757">FARFAR</a> = 0x07FC0000; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">const</span> uint32_t <a class="code" href="namespaceCAP.html#a0ebffaa7b6bae161b42cea35ba92b7a1">SYNC</a> = 0xAA995566;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
@@ -329,6 +332,26 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="af71f00d7f90b4c3be3dc386b3a89a757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af71f00d7f90b4c3be3dc386b3a89a757">&#9670;&nbsp;</a></span>FARFAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const uint32_t CAP::FARFAR = 0x07FC0000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A FAR address that is far away from any real address :D. </p>
+
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusConfigurationAccessPort_8h_source.html#l00096">96</a> of file <a class="el" href="XilinxUltraScalePlusConfigurationAccessPort_8h_source.html">XilinxUltraScalePlusConfigurationAccessPort.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlusOutput_8cpp_source.html#l00143">XilinxUltraScalePlus::writeBitstreamMainSingleSLR()</a>.</p>
+
+</div>
+</div>
 <a id="a0ebffaa7b6bae161b42cea35ba92b7a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ebffaa7b6bae161b42cea35ba92b7a1">&#9670;&nbsp;</a></span>SYNC</h2>
 
@@ -343,7 +366,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="XilinxUltraScalePlusConfigurationAccessPort_8h_source.html#l00097">97</a> of file <a class="el" href="XilinxUltraScalePlusConfigurationAccessPort_8h_source.html">XilinxUltraScalePlusConfigurationAccessPort.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions_8cpp_source.html#l00096">XilinxUltraScalePlus::CAP_makeSyncInstruction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions_8cpp_source.html#l00099">XilinxUltraScalePlus::CAP_makeSyncInstruction()</a>.</p>
 
 </div>
 </div>
@@ -352,6 +375,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespaceCAP_html_a1673ff40e0d63eac7d117f273db5fd8fa3466fab4975481651940ed328aa990e4"><div class="ttname"><a href="namespaceCAP.html#a1673ff40e0d63eac7d117f273db5fd8fa3466fab4975481651940ed328aa990e4">CAP::Operation::READ</a></div><div class="ttdeci">@ READ</div></div>
 <div class="ttc" id="anamespaceCAP_html_a9d92de4c82108f195c0bd853e348d620ab078ffd28db767c502ac367053f6e0ac"><div class="ttname"><a href="namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620ab078ffd28db767c502ac367053f6e0ac">CAP::Command::START</a></div><div class="ttdeci">@ START</div></div>
 <div class="ttc" id="anamespaceCAP_html_a1673ff40e0d63eac7d117f273db5fd8fa83c7f2aa8c3ac10ed8beb75cad162827"><div class="ttname"><a href="namespaceCAP.html#a1673ff40e0d63eac7d117f273db5fd8fa83c7f2aa8c3ac10ed8beb75cad162827">CAP::Operation::RESERVED</a></div><div class="ttdeci">@ RESERVED</div></div>
+<div class="ttc" id="anamespaceCAP_html_af71f00d7f90b4c3be3dc386b3a89a757"><div class="ttname"><a href="namespaceCAP.html#af71f00d7f90b4c3be3dc386b3a89a757">CAP::FARFAR</a></div><div class="ttdeci">const uint32_t FARFAR</div><div class="ttdoc">A FAR address that is far away from any real address :D.</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlusConfigurationAccessPort_8h_source.html#l00096">XilinxUltraScalePlusConfigurationAccessPort.h:96</a></div></div>
 <div class="ttc" id="anamespaceCAP_html_a9d92de4c82108f195c0bd853e348d620acf8cc37584ffb836c257445004df5200"><div class="ttname"><a href="namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620acf8cc37584ffb836c257445004df5200">CAP::Command::WCFG</a></div><div class="ttdeci">@ WCFG</div></div>
 <div class="ttc" id="anamespaceCAP_html_a9d92de4c82108f195c0bd853e348d620a304109e24fca649cc4005af4398011e2"><div class="ttname"><a href="namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620a304109e24fca649cc4005af4398011e2">CAP::Command::RCFG</a></div><div class="ttdeci">@ RCFG</div></div>
 <div class="ttc" id="anamespaceCAP_html_a9d92de4c82108f195c0bd853e348d620a457a3b9bd5820ecafcc0db84ecf95f9b"><div class="ttname"><a href="namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620a457a3b9bd5820ecafcc0db84ecf95f9b">CAP::Command::URAM</a></div><div class="ttdeci">@ URAM</div></div>
@@ -367,7 +391,7 @@ Variables</h2></td></tr>
 <div class="ttc" id="anamespaceCAP_html_ae4eb485ee1937c4d2e600a7a70e7b059a0db45d2a4141101bdfe48e3314cfbca3"><div class="ttname"><a href="namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a0db45d2a4141101bdfe48e3314cfbca3">CAP::Register::UNDEFINED</a></div><div class="ttdeci">@ UNDEFINED</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 23:59:52 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 26 2022 12:56:21 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

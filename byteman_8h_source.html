@@ -103,12 +103,12 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//Any changes to version numbers should be done only in CMakeLists.txt, not here!</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="byteman_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">   43</a></span>&#160;<span class="preprocessor">#define VERSION &quot;0.6&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">   44</a></span>&#160;<span class="preprocessor">#define VERSION_BUILD &quot;121&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="byteman_8h.html#a88c2f137526b274b84cf311aa8c68f3a">   44</a></span>&#160;<span class="preprocessor">#define VERSION_BUILD &quot;122&quot;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classbyteman.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classbyteman.html">byteman</a></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classbyteman.html">byteman</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">   49</a></span>&#160;        <a class="code" href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">byteman</a>(){};</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classbyteman.html#a65219a5b7cb0e7f7d6e82d204828507c">   50</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classbyteman.html#a65219a5b7cb0e7f7d6e82d204828507c">~byteman</a>(){};</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5">   51</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5">Architecture</a>{</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            Unknown,</div>
@@ -126,9 +126,9 @@ $(function() {
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">//parse</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        SelectedOptions parseParams(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">void</span> init();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> parseCommand(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">void</span> parse(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> setArchitecture(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">void</span> parseAssembly(<span class="keywordtype">string</span>, SelectedOptions);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> parseOutput(<span class="keywordtype">string</span>, SelectedOptions);</div>
@@ -167,13 +167,14 @@ $(function() {
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_ae408f6df57e2f54e9063e9a451962718"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">byteman::SelectedOptions::SelectedOptions</a></div><div class="ttdeci">SelectedOptions()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00062">byteman.h:62</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_aa90ed95b00c2ef09cc141a9f2fa88eac"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">byteman::SelectedOptions::tempBufferSelected</a></div><div class="ttdeci">int tempBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00061">byteman.h:61</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html">byteman::SelectedOptions</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00059">byteman.h:59</a></div></div>
+<div class="ttc" id="aclassbyteman_html_aee627bcad1c698d2d81e035edb9d32ca"><div class="ttname"><a href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">byteman::byteman</a></div><div class="ttdeci">byteman()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00049">byteman.h:49</a></div></div>
 <div class="ttc" id="aclassbyteman_html"><div class="ttname"><a href="classbyteman.html">byteman</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00046">byteman.h:46</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a65219a5b7cb0e7f7d6e82d204828507c"><div class="ttname"><a href="classbyteman.html#a65219a5b7cb0e7f7d6e82d204828507c">byteman::~byteman</a></div><div class="ttdeci">virtual ~byteman()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00050">byteman.h:50</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlus_8h_html"><div class="ttname"><a href="XilinxUltraScalePlus_8h.html">XilinxUltraScalePlus.h</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5">byteman::Architecture</a></div><div class="ttdeci">Architecture</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00051">byteman.h:51</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 25 2022 23:59:51 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 26 2022 12:56:21 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
