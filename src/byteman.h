@@ -41,7 +41,7 @@ using namespace std;
 
 //Any changes to version numbers should be done only in CMakeLists.txt, not here!
 #define VERSION "0.6"
-#define VERSION_BUILD "123"
+#define VERSION_BUILD "124"
 
 class byteman
 {
