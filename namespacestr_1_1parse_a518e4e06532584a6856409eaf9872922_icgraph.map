@@ -1,5 +1,5 @@
 <map id="str::parse::lastStringWord" name="str::parse::lastStringWord">
-<area shape="rect" id="node1" title=" " alt="" coords="949,97,1136,123"/>
+<area shape="rect" id="node1" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="949,97,1136,123"/>
 <area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="738,5,897,47"/>
 <area shape="rect" id="node7" href="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="516,71,685,98"/>
 <area shape="rect" id="node8" href="$classbyteman.html#ac217ac1dbc512bf44a70b147c0ceff04" title=" " alt="" coords="295,122,453,149"/>

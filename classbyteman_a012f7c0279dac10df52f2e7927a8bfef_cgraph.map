@@ -1,6 +1,6 @@
 <map id="byteman::parseMerge" name="byteman::parseMerge">
 <area shape="rect" id="node1" title=" " alt="" coords="5,212,171,239"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title=" " alt="" coords="219,153,404,180"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title="Parses a string s, removes all integers and returns the rest." alt="" coords="219,153,404,180"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="235,205,388,246"/>
 <area shape="rect" id="node13" href="$namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1" title=" " alt="" coords="227,271,396,297"/>
 <area shape="rect" id="node4" href="$namespaceEndian.html#a341a75d4d5983d8e5572d021f945d9a5" title=" " alt="" coords="508,107,603,133"/>
@@ -11,5 +11,5 @@
 <area shape="rect" id="node7" href="$namespaceEndian.html#a46d41fb3e11006d6a325dae4e37f9740" title=" " alt="" coords="707,107,919,133"/>
 <area shape="rect" id="node8" href="$namespaceEndian.html#ab07cde46e0b49a5e956bbe512540dd0f" title=" " alt="" coords="722,157,903,184"/>
 <area shape="rect" id="node10" href="$classXilinxUltraScalePlus.html#a2877557d807ee21ed7f111459380f944" title=" " alt="" coords="717,209,908,250"/>
-<area shape="rect" id="node12" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title=" " alt="" coords="765,277,860,304"/>
+<area shape="rect" id="node12" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="765,277,860,304"/>
 </map>

@@ -5,9 +5,9 @@ digraph "XilinxUltraScalePlus::CAP_writeSYNQ"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_writeSYNQ",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_writeSYNQ",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and write an SYNQ command."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::CAP_makeSyncInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a2dfd745d78c94ac09b5f9a0c71aec113",tooltip=" "];
+  Node2 [label="XilinxUltraScalePlus\l::CAP_makeSyncInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a2dfd745d78c94ac09b5f9a0c71aec113",tooltip="Generate and return the encoding for a SYNC instruction."];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="FileIO::write32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f",tooltip=" "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -1,5 +1,5 @@
 <map id="XilinxUltraScalePlus::CAP_makeType1NopInstruction" name="XilinxUltraScalePlus::CAP_makeType1NopInstruction">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,237,47"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title=" " alt="" coords="285,5,492,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title=" " alt="" coords="540,5,708,47"/>
+<area shape="rect" id="node1" title="Generate and return the encoding for a type 1 NOP instruction." alt="" coords="5,5,237,47"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title="Generate and return the encoding for a type 1 instruction." alt="" coords="285,5,492,47"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title="Generate and return the encoding for an instruction." alt="" coords="540,5,708,47"/>
 </map>

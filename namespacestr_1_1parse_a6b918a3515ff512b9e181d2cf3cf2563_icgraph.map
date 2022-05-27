@@ -1,5 +1,5 @@
 <map id="str::parse::allStringWordsWithoutLastStringWord" name="str::parse::allStringWordsWithoutLastStringWord">
-<area shape="rect" id="node1" title=" " alt="" coords="497,49,683,90"/>
+<area shape="rect" id="node1" title="Parses a string s, removes all integers and the last string word. Returns the rest." alt="" coords="497,49,683,90"/>
 <area shape="rect" id="node2" href="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="280,5,449,32"/>
 <area shape="rect" id="node5" href="$classbyteman.html#ac217ac1dbc512bf44a70b147c0ceff04" title=" " alt="" coords="286,56,443,83"/>
 <area shape="rect" id="node6" href="$classbyteman.html#a2ff1e5c9e9b542e9f74768b296ace32f" title=" " alt="" coords="281,107,449,133"/>

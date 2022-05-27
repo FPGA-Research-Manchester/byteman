@@ -5,7 +5,7 @@ digraph "XilinxUltraScalePlus::CAP_writeFDRI1"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_writeFDRI1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_writeFDRI1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and write only a type 1 FDRI command."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxUltraScalePlus\l::assemblerAsmToBit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207",tooltip=" "];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -17,7 +17,7 @@ digraph "XilinxUltraScalePlus::CAP_writeFDRI1"
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab2c3ca3d68a14cd6cf50d1f8cca6b0ed",tooltip=" "];
+  Node7 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab2c3ca3d68a14cd6cf50d1f8cca6b0ed",tooltip="Generate and write an FDRI command. Always uses type 2 command for simplicity."];
   Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 [label="XilinxUltraScalePlus\l::writeBitstreamMainSingleRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a1b63faa4285401972ad75e524434c89b",tooltip=" "];
   Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

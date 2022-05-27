@@ -1,5 +1,5 @@
 <map id="str::parse::allStringWords" name="str::parse::allStringWords">
-<area shape="rect" id="node1" title=" " alt="" coords="497,56,683,83"/>
+<area shape="rect" id="node1" title="Parses a string s, removes all integers and returns the rest." alt="" coords="497,56,683,83"/>
 <area shape="rect" id="node2" href="$classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0" title=" " alt="" coords="284,5,445,32"/>
 <area shape="rect" id="node5" href="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="282,56,447,83"/>
 <area shape="rect" id="node6" href="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="280,107,449,133"/>

@@ -5,7 +5,7 @@ digraph "XilinxUltraScalePlus::CAP_writeFDRI"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and write an FDRI command. Always uses type 2 command for simplicity."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxUltraScalePlus\l::writeBitstreamMainSingleRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a1b63faa4285401972ad75e524434c89b",tooltip=" "];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

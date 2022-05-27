@@ -1,5 +1,5 @@
 <map id="XilinxUltraScalePlus::CAP_IncrementFAR" name="XilinxUltraScalePlus::CAP_IncrementFAR">
-<area shape="rect" id="node1" title=" " alt="" coords="1145,39,1299,80"/>
+<area shape="rect" id="node1" title="Modifies the references blockType, rowAddress, columnAddress, and minorAddress to increment FAR addre..." alt="" coords="1145,39,1299,80"/>
 <area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a54f9af4b6723a99c0b9e8e9c9b424d00" title=" " alt="" coords="919,5,1097,47"/>
 <area shape="rect" id="node7" href="$classXilinxUltraScalePlus.html#ade1b1830c328d64beb957417ecc445b3" title=" " alt="" coords="931,71,1085,112"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a53e5f6ec962f1f2a961f90b8b9e90e10" title=" " alt="" coords="717,5,871,47"/>

@@ -5,9 +5,9 @@ digraph "XilinxUltraScalePlus::CAP_makeType2WriteInstruction"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_makeType2WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_makeType2WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and return the encoding for a type 2 Write instruction."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::CAP_makeType2Instruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a133eb8583c8cd45a9210ab9b61362623",tooltip=" "];
+  Node2 [label="XilinxUltraScalePlus\l::CAP_makeType2Instruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a133eb8583c8cd45a9210ab9b61362623",tooltip="Generate and return the encoding for a type 2 instruction."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScalePlus\l::CAP_makeInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e",tooltip=" "];
+  Node3 [label="XilinxUltraScalePlus\l::CAP_makeInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e",tooltip="Generate and return the encoding for an instruction."];
 }

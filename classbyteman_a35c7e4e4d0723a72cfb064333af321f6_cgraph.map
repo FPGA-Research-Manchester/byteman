@@ -1,4 +1,4 @@
 <map id="byteman::parseParams" name="byteman::parseParams">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,177,32"/>
-<area shape="rect" id="node2" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title=" " alt="" coords="225,5,320,32"/>
+<area shape="rect" id="node2" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="225,5,320,32"/>
 </map>

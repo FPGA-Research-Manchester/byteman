@@ -1,5 +1,5 @@
 <map id="XilinxUltraScalePlus::CAP_writeFDRI" name="XilinxUltraScalePlus::CAP_writeFDRI">
-<area shape="rect" id="node1" title=" " alt="" coords="1668,39,1821,80"/>
+<area shape="rect" id="node1" title="Generate and write an FDRI command. Always uses type 2 command for simplicity." alt="" coords="1668,39,1821,80"/>
 <area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a1b63faa4285401972ad75e524434c89b" title=" " alt="" coords="1376,39,1620,80"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a452023c07e40cbb6b1a5c65db8494a65" title=" " alt="" coords="1105,39,1328,80"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#afcd0f828eff528d0c178a5e473ee2181" title=" " alt="" coords="899,39,1057,80"/>

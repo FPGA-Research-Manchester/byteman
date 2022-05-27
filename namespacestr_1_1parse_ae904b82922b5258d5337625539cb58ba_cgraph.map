@@ -1,4 +1,4 @@
 <map id="str::parse::multipleInts" name="str::parse::multipleInts">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,175,32"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f" title=" " alt="" coords="223,5,392,32"/>
+<area shape="rect" id="node1" title="Parses stringstream ss for integer values, that are returned into x, args." alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f" title="Parses string s for integer values, that are returned into args." alt="" coords="223,5,392,32"/>
 </map>

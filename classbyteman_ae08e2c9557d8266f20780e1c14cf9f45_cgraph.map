@@ -1,11 +1,11 @@
 <map id="byteman::parseDevice" name="byteman::parseDevice">
 <area shape="rect" id="node1" title=" " alt="" coords="5,107,175,134"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a6b918a3515ff512b9e181d2cf3cf2563" title=" " alt="" coords="233,5,419,47"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a6b918a3515ff512b9e181d2cf3cf2563" title="Parses a string s, removes all integers and the last string word. Returns the rest." alt="" coords="233,5,419,47"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef" title=" " alt="" coords="223,71,429,112"/>
-<area shape="rect" id="node8" href="$namespacestr_1_1parse.html#a518e4e06532584a6856409eaf9872922" title=" " alt="" coords="233,137,419,163"/>
+<area shape="rect" id="node8" href="$namespacestr_1_1parse.html#a518e4e06532584a6856409eaf9872922" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="233,137,419,163"/>
 <area shape="rect" id="node9" href="$classXilinxUltraScalePlus.html#a762297dd90b02efcbb4a4aa0274dd34b" title=" " alt="" coords="249,188,403,229"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4" title=" " alt="" coords="477,71,631,112"/>
-<area shape="rect" id="node5" href="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc" title=" " alt="" coords="689,27,831,54"/>
-<area shape="rect" id="node6" href="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90" title=" " alt="" coords="679,78,841,105"/>
-<area shape="rect" id="node7" href="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title=" " alt="" coords="691,129,829,155"/>
+<area shape="rect" id="node5" href="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc" title="Removes all space chars of str returns the resulting string." alt="" coords="689,27,831,54"/>
+<area shape="rect" id="node6" href="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90" title="Returns false. End of recursion for template." alt="" coords="679,78,841,105"/>
+<area shape="rect" id="node7" href="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="691,129,829,155"/>
 </map>

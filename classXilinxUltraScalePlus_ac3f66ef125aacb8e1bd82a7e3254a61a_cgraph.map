@@ -1,5 +1,5 @@
 <map id="XilinxUltraScalePlus::CAP_makeType1ReservedInstruction" name="XilinxUltraScalePlus::CAP_makeType1ReservedInstruction">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,272,47"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title=" " alt="" coords="320,5,527,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title=" " alt="" coords="575,5,743,47"/>
+<area shape="rect" id="node1" title="Generate and return the encoding for a type 1 Reserved instruction." alt="" coords="5,5,272,47"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title="Generate and return the encoding for a type 1 instruction." alt="" coords="320,5,527,47"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title="Generate and return the encoding for an instruction." alt="" coords="575,5,743,47"/>
 </map>

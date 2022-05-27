@@ -5,9 +5,9 @@ digraph "XilinxUltraScalePlus::CAP_makeType1WriteInstruction"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_makeType1WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_makeType1WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and return the encoding for a type 1 Write instruction."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::CAP_writeFDRI1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aede65ef4cccf0d77f0a9168382e73e29",tooltip=" "];
+  Node2 [label="XilinxUltraScalePlus\l::CAP_writeFDRI1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aede65ef4cccf0d77f0a9168382e73e29",tooltip="Generate and write only a type 1 FDRI command."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="XilinxUltraScalePlus\l::assemblerAsmToBit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207",tooltip=" "];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -19,7 +19,7 @@ digraph "XilinxUltraScalePlus::CAP_makeType1WriteInstruction"
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node8 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab2c3ca3d68a14cd6cf50d1f8cca6b0ed",tooltip=" "];
+  Node8 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab2c3ca3d68a14cd6cf50d1f8cca6b0ed",tooltip="Generate and write an FDRI command. Always uses type 2 command for simplicity."];
   Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="XilinxUltraScalePlus\l::writeBitstreamMainSingleRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a1b63faa4285401972ad75e524434c89b",tooltip=" "];
   Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -37,10 +37,10 @@ digraph "XilinxUltraScalePlus::CAP_makeType1WriteInstruction"
   Node15 [label="XilinxUltraScalePlus\l::writeBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aafc764306446548f9127f3e30759af49",tooltip=" "];
   Node15 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="XilinxUltraScalePlus\l::CAP_writeRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a24ae5ad716caec7390276bb39449658e",tooltip=" "];
+  Node16 [label="XilinxUltraScalePlus\l::CAP_writeRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a24ae5ad716caec7390276bb39449658e",tooltip="Generate the encoding for writing a CAP register and write it to file ofstream."];
   Node16 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="XilinxUltraScalePlus\l::CAP_writeCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aea40ae16e356d3c14e6288d4c8eb105c",tooltip=" "];
+  Node17 [label="XilinxUltraScalePlus\l::CAP_writeCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aea40ae16e356d3c14e6288d4c8eb105c",tooltip="Generate the encoding for writing a CAP command and write it to file ofstream."];
   Node17 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 [label="XilinxUltraScalePlus\l::writeBitstreamMainEmptySLR",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a9c88e1cc4400a4f80a7757536442a193",tooltip=" "];
@@ -51,12 +51,12 @@ digraph "XilinxUltraScalePlus::CAP_makeType1WriteInstruction"
   Node19 [label="XilinxUltraScalePlus\l::writeBitstreamMainSLRfooter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a67e27bfc5941d09b9c09055a7fc705fd",tooltip=" "];
   Node19 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node20 [label="XilinxUltraScalePlus\l::CAP_writeMaskAndRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab133ea6afae968c8607ce982ea627733",tooltip=" "];
+  Node20 [label="XilinxUltraScalePlus\l::CAP_writeMaskAndRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab133ea6afae968c8607ce982ea627733",tooltip="Generate the encoding for writing a CAP register with a mask and write it to file ofstream."];
   Node20 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node21 [label="XilinxUltraScalePlus\l::CAP_writeSelectRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#abab7151e71f6b02cc8503afd0b782c7f",tooltip=" "];
+  Node21 [label="XilinxUltraScalePlus\l::CAP_writeSelectRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#abab7151e71f6b02cc8503afd0b782c7f",tooltip="Generate the encoding for \"selecting\" a CAP register and write it to file ofstream."];
   Node21 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node21 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node21 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

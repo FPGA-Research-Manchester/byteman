@@ -9,9 +9,9 @@ digraph "XilinxUltraScalePlus::getDeviceByNameOrThrow"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxUltraScalePlus\l::getDeviceByName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="str::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc",tooltip=" "];
+  Node3 [label="str::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc",tooltip="Removes all space chars of str returns the resulting string."];
   Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="str::iff::stringContains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90",tooltip=" "];
+  Node4 [label="str::iff::stringContains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90",tooltip="Returns false. End of recursion for template."];
   Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="str::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5",tooltip=" "];
+  Node5 [label="str::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5",tooltip="Replaces all uppercase characters in str with lowercase and returns the resulting string."];
 }

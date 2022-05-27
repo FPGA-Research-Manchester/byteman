@@ -5,9 +5,9 @@ digraph "XilinxUltraScalePlus::CAP_makeType1NopInstruction"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="RL";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_makeType1NopInstruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_makeType1NopInstruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and return the encoding for a type 1 NOP instruction."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::CAP_writeNOP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#afec424bf1fbe86abbc7a79d1bf14ac02",tooltip=" "];
+  Node2 [label="XilinxUltraScalePlus\l::CAP_writeNOP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#afec424bf1fbe86abbc7a79d1bf14ac02",tooltip="Generate the encoding for NOP instructions and write them to file ofstream."];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="XilinxUltraScalePlus\l::assemblerAsmToBit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207",tooltip=" "];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

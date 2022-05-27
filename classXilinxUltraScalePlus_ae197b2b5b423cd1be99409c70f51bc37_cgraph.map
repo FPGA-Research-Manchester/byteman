@@ -21,13 +21,13 @@
 <area shape="rect" id="node17" href="$classXilinxUltraScalePlus.html#ac6b62d574927bf0a5b301313f93aa03a" title=" " alt="" coords="519,763,683,804"/>
 <area shape="rect" id="node18" href="$namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053" title=" " alt="" coords="536,711,667,738"/>
 <area shape="rect" id="node20" href="$classXilinxConfigurationAccessPort.html#a55976af5151a0b685b6b77c6f4311c95" title=" " alt="" coords="493,71,710,112"/>
-<area shape="rect" id="node22" href="$classXilinxUltraScalePlus.html#a258888ed1c5edbce1275936415a5c29f" title=" " alt="" coords="493,515,710,556"/>
-<area shape="rect" id="node23" href="$classXilinxUltraScalePlus.html#ab2af5caca239d35640afb7710c9d4f84" title=" " alt="" coords="499,580,703,621"/>
-<area shape="rect" id="node24" href="$classXilinxUltraScalePlus.html#ac3f739f52da58e0b31d85125829ec9e6" title=" " alt="" coords="498,645,705,687"/>
-<area shape="rect" id="node25" href="$classXilinxUltraScalePlus.html#a8afd898c91c6b76582f09156a0137252" title=" " alt="" coords="510,253,693,295"/>
-<area shape="rect" id="node26" href="$classXilinxUltraScalePlus.html#afcc191bd2a2c3fc77ce9ec3de7a5bca4" title=" " alt="" coords="489,319,713,360"/>
-<area shape="rect" id="node27" href="$classXilinxUltraScalePlus.html#aabe6e9f72184d9bcdb7577ac34d23578" title=" " alt="" coords="525,384,678,425"/>
-<area shape="rect" id="node30" href="$classXilinxUltraScalePlus.html#a41444107d2934ee665cdef4572be6786" title=" " alt="" coords="525,449,678,491"/>
-<area shape="rect" id="node28" href="$classXilinxUltraScalePlus.html#a1de9b4e73ca53726b0a2335c4a912959" title=" " alt="" coords="779,443,1013,484"/>
-<area shape="rect" id="node29" href="$classXilinxUltraScalePlus.html#a070e9606852dd9476d7533157eb07e54" title=" " alt="" coords="779,377,1013,419"/>
+<area shape="rect" id="node22" href="$classXilinxUltraScalePlus.html#a258888ed1c5edbce1275936415a5c29f" title="Parses and returns instruction operation. Most XUS+ instructions will NOP or write." alt="" coords="493,515,710,556"/>
+<area shape="rect" id="node23" href="$classXilinxUltraScalePlus.html#ab2af5caca239d35640afb7710c9d4f84" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="499,580,703,621"/>
+<area shape="rect" id="node24" href="$classXilinxUltraScalePlus.html#ac3f739f52da58e0b31d85125829ec9e6" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="498,645,705,687"/>
+<area shape="rect" id="node25" href="$classXilinxUltraScalePlus.html#a8afd898c91c6b76582f09156a0137252" title="Parses and returns instruction type. Valid XUS+ instructions will be of types 1 and 2." alt="" coords="510,253,693,295"/>
+<area shape="rect" id="node26" href="$classXilinxUltraScalePlus.html#afcc191bd2a2c3fc77ce9ec3de7a5bca4" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="489,319,713,360"/>
+<area shape="rect" id="node27" href="$classXilinxUltraScalePlus.html#aabe6e9f72184d9bcdb7577ac34d23578" title="Modifies the references blockType, rowAddress, columnAddress, and minorAddress to increment FAR addre..." alt="" coords="525,384,678,425"/>
+<area shape="rect" id="node30" href="$classXilinxUltraScalePlus.html#a41444107d2934ee665cdef4572be6786" title="Parse the Frame Address Register farValue into referenced blockType, rowAddress, columnAddress,..." alt="" coords="525,449,678,491"/>
+<area shape="rect" id="node28" href="$classXilinxUltraScalePlus.html#a1de9b4e73ca53726b0a2335c4a912959" title="Modifies the references blockType, rowAddress, columnAddress, and minorAddress to increment FAR addre..." alt="" coords="779,443,1013,484"/>
+<area shape="rect" id="node29" href="$classXilinxUltraScalePlus.html#a070e9606852dd9476d7533157eb07e54" title="Modifies the references blockType, rowAddress, columnAddress, and minorAddress to increment FAR addre..." alt="" coords="779,377,1013,419"/>
 </map>

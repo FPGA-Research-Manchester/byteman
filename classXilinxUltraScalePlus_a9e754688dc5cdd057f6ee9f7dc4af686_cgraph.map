@@ -1,6 +1,6 @@
 <map id="XilinxUltraScalePlus::CAP_writeSYNQ" name="XilinxUltraScalePlus::CAP_writeSYNQ">
-<area shape="rect" id="node1" title=" " alt="" coords="5,93,159,134"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a2dfd745d78c94ac09b5f9a0c71aec113" title=" " alt="" coords="207,63,405,105"/>
+<area shape="rect" id="node1" title="Generate and write an SYNQ command." alt="" coords="5,93,159,134"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a2dfd745d78c94ac09b5f9a0c71aec113" title="Generate and return the encoding for a SYNC instruction." alt="" coords="207,63,405,105"/>
 <area shape="rect" id="node3" href="$namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f" title=" " alt="" coords="248,129,364,156"/>
 <area shape="rect" id="node4" href="$namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="468,5,649,32"/>
 <area shape="rect" id="node8" href="$namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="459,57,658,98"/>

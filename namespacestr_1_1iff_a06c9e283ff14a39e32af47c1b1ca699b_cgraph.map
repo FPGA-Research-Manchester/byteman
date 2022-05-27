@@ -1,5 +1,5 @@
 <map id="str::iff::firstStringWordIs" name="str::iff::firstStringWordIs">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,180,32"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title=" " alt="" coords="228,5,377,32"/>
-<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6" title=" " alt="" coords="425,5,604,32"/>
+<area shape="rect" id="node1" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="5,5,180,32"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="228,5,377,32"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6" title="Returns true if string checkedString&#39;s first characters match fully any of strings nextString or rest..." alt="" coords="425,5,604,32"/>
 </map>

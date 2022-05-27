@@ -1,9 +1,9 @@
 <map id="XilinxUltraScalePlus::CAP_writeNOP" name="XilinxUltraScalePlus::CAP_writeNOP">
-<area shape="rect" id="node1" title=" " alt="" coords="5,127,159,168"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#ac869f82966f5ba89cf943fc6b60b5271" title=" " alt="" coords="207,52,439,93"/>
+<area shape="rect" id="node1" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="5,127,159,168"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#ac869f82966f5ba89cf943fc6b60b5271" title="Generate and return the encoding for a type 1 NOP instruction." alt="" coords="207,52,439,93"/>
 <area shape="rect" id="node5" href="$namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f" title=" " alt="" coords="265,163,381,190"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title=" " alt="" coords="489,5,695,47"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title=" " alt="" coords="773,5,941,47"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title="Generate and return the encoding for a type 1 instruction." alt="" coords="489,5,695,47"/>
+<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title="Generate and return the encoding for an instruction." alt="" coords="773,5,941,47"/>
 <area shape="rect" id="node6" href="$namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="501,71,683,98"/>
 <area shape="rect" id="node10" href="$namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="493,123,691,164"/>
 <area shape="rect" id="node12" href="$namespaceFileIO.html#a60d14999a525e60b548765722c0cc49a" title=" " alt="" coords="487,188,697,229"/>

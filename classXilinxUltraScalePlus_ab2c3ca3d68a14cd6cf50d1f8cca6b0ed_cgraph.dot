@@ -5,15 +5,15 @@ digraph "XilinxUltraScalePlus::CAP_writeFDRI"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxUltraScalePlus\l::CAP_writeFDRI",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and write an FDRI command. Always uses type 2 command for simplicity."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::CAP_writeFDRI1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aede65ef4cccf0d77f0a9168382e73e29",tooltip=" "];
+  Node2 [label="XilinxUltraScalePlus\l::CAP_writeFDRI1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aede65ef4cccf0d77f0a9168382e73e29",tooltip="Generate and write only a type 1 FDRI command."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScalePlus\l::CAP_makeType1WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab35a91fcdb182224b63bdffd57c3cc48",tooltip=" "];
+  Node3 [label="XilinxUltraScalePlus\l::CAP_makeType1WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ab35a91fcdb182224b63bdffd57c3cc48",tooltip="Generate and return the encoding for a type 1 Write instruction."];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="XilinxUltraScalePlus\l::CAP_makeType1Instruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b",tooltip=" "];
+  Node4 [label="XilinxUltraScalePlus\l::CAP_makeType1Instruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b",tooltip="Generate and return the encoding for a type 1 instruction."];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="XilinxUltraScalePlus\l::CAP_makeInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e",tooltip=" "];
+  Node5 [label="XilinxUltraScalePlus\l::CAP_makeInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e",tooltip="Generate and return the encoding for an instruction."];
   Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="FileIO::write32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f",tooltip=" "];
   Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -43,11 +43,11 @@ digraph "XilinxUltraScalePlus::CAP_writeFDRI"
   Node6 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 [label="FileIO::writeNative32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a8c0dbfd2ab8a248ca642203dc84bd2a4",tooltip=" "];
   Node1 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="XilinxUltraScalePlus\l::CAP_writeType2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a8bd7c590797b1437a2b64ed84a13c966",tooltip=" "];
+  Node18 [label="XilinxUltraScalePlus\l::CAP_writeType2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a8bd7c590797b1437a2b64ed84a13c966",tooltip="Generate and write only a type 2 FDRI command."];
   Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node19 [label="XilinxUltraScalePlus\l::CAP_makeType2WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a578b4cc28609c881a39fa2776985747a",tooltip=" "];
+  Node19 [label="XilinxUltraScalePlus\l::CAP_makeType2WriteInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a578b4cc28609c881a39fa2776985747a",tooltip="Generate and return the encoding for a type 2 Write instruction."];
   Node19 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node20 [label="XilinxUltraScalePlus\l::CAP_makeType2Instruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a133eb8583c8cd45a9210ab9b61362623",tooltip=" "];
+  Node20 [label="XilinxUltraScalePlus\l::CAP_makeType2Instruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a133eb8583c8cd45a9210ab9b61362623",tooltip="Generate and return the encoding for a type 2 instruction."];
   Node20 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

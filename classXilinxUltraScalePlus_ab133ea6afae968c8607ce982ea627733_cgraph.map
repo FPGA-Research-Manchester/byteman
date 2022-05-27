@@ -1,10 +1,10 @@
 <map id="XilinxUltraScalePlus::CAP_writeMaskAndRegister" name="XilinxUltraScalePlus::CAP_writeMaskAndRegister">
-<area shape="rect" id="node1" title=" " alt="" coords="5,127,216,168"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a24ae5ad716caec7390276bb39449658e" title=" " alt="" coords="264,127,417,168"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#ab35a91fcdb182224b63bdffd57c3cc48" title=" " alt="" coords="465,52,707,93"/>
+<area shape="rect" id="node1" title="Generate the encoding for writing a CAP register with a mask and write it to file ofstream." alt="" coords="5,127,216,168"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a24ae5ad716caec7390276bb39449658e" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="264,127,417,168"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#ab35a91fcdb182224b63bdffd57c3cc48" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="465,52,707,93"/>
 <area shape="rect" id="node6" href="$namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f" title=" " alt="" coords="528,163,644,190"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title=" " alt="" coords="757,5,963,47"/>
-<area shape="rect" id="node5" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title=" " alt="" coords="1041,5,1209,47"/>
+<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a1d778781731c87486eebba98b97ef77b" title="Generate and return the encoding for a type 1 instruction." alt="" coords="757,5,963,47"/>
+<area shape="rect" id="node5" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title="Generate and return the encoding for an instruction." alt="" coords="1041,5,1209,47"/>
 <area shape="rect" id="node7" href="$namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="769,71,951,98"/>
 <area shape="rect" id="node11" href="$namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="761,123,959,164"/>
 <area shape="rect" id="node13" href="$namespaceFileIO.html#a60d14999a525e60b548765722c0cc49a" title=" " alt="" coords="755,188,965,229"/>
