@@ -26,7 +26,7 @@ string(REGEX REPLACE "#define VERSION \"([0-9]+).([0-9]+)\"" "#define VERSION \"
 string(REGEX REPLACE "#define VERSION_BUILD \"([0-9]+)\"" "#define VERSION_BUILD \"${NEW_VER_BUILD}\"" BytemanHeader "${BytemanHeader}")
 file(WRITE "src/byteman.h" "${BytemanHeader}")
 file(READ "Resources/Doxyfile.in" DoxyFile)
-string(REGEX REPLACE "PROJECT_NUMBER = \"([0-9]+).([0-9]+) \(Build \#([0-9]+)\)\"" "PROJECT_NUMBER = \"${NEW_VER_MAJOR}.${NEW_VER_MINOR} (Build \#${NEW_VER_BUILD})\"" DoxyFile "${DoxyFile}")
+string(REGEX REPLACE "PROJECT_NUMBER = \"([0-9]+).([0-9]+) \(Build #([0-9]+)\)\"" "PROJECT_NUMBER = \"${NEW_VER_MAJOR}.${NEW_VER_MINOR} (Build #${NEW_VER_BUILD})\"" DoxyFile "${DoxyFile}")
 file(WRITE "Resources/Doxyfile.in" "${DoxyFile}")
 file(READ "README.md" ReadMe)
 string(REGEX REPLACE "byteman-v([0-9]+).([0-9]+)" "byteman-v${NEW_VER_MAJOR}.${NEW_VER_MINOR}" ReadMe "${ReadMe}")
