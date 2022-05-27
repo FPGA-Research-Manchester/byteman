@@ -26,9 +26,12 @@ using namespace std;
 
 byteman bytemanInstance;
 
+//Ideally the device instances should be in byteman class itself, but doxygen
+//doesn't seem to be able to trace method calls that way?!
 #ifdef XUSP
 	XilinxUltraScalePlus mainXUSP, tempXUSP;
 #endif //XUSP
+
 /**************************************************************************//**
  * Main function for byteman.
  * Parses command line arguments and eventual streamed script files as individual
