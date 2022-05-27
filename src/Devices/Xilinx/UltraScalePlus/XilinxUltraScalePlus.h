@@ -179,8 +179,8 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 	protected:
 	private:
 		//constant arrays defining US+ fabric
-		int const numberOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
-		char const *typeOfFramesPerResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
+		int const LUT_numberOfFramesForResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
+		char const *LUT_typeOfFrameForResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
 };
 
 #endif // XILINXULTRASCALEPLUS_H

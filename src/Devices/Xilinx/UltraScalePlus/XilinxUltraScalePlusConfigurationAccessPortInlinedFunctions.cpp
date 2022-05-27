@@ -21,7 +21,7 @@
 inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 0
 {
 	minorAddress++;
-	if((columnAddress == numberOfCols)?(minorAddress == XUSP_EXTRA_FRAMES_PER_ROW):(minorAddress == numberOfFramesPerResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]])){
+	if((columnAddress == numberOfCols)?(minorAddress == XUSP_EXTRA_FRAMES_PER_ROW):(minorAddress == LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]])){
 		minorAddress = 0;
 		columnAddress++;
 		if(columnAddress == (numberOfCols+1)){

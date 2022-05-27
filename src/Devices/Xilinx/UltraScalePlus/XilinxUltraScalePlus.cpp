@@ -91,7 +91,7 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 		initializedResourceParamsPartName = partName;
 
 		for((numberOfCols = 0, numberOfFramesBeforeCol[0] = 0, numberOfBRAMCols = 0) ; (uint8_t)resourceString[0][numberOfCols] ; numberOfCols++){
-			numberOfFramesBeforeCol[numberOfCols+1] = numberOfFramesBeforeCol[numberOfCols] + numberOfFramesPerResourceLetter[(uint8_t)resourceString[0][numberOfCols]];
+			numberOfFramesBeforeCol[numberOfCols+1] = numberOfFramesBeforeCol[numberOfCols] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols]];
 			numberOfBRAMsBeforeCol[numberOfCols] = numberOfBRAMCols;
 			if(resourceString[0][numberOfCols] == 'A' || resourceString[0][numberOfCols] == 'B' || resourceString[0][numberOfCols] == 'C' || resourceString[0][numberOfCols] == '1') //ABC1 are "BRAM_L", "BRAM", "BRAM_R", "NULL BRAM"
 				numberOfBRAMCols++;
@@ -128,7 +128,7 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 			for(int r = fromSLRrow ; r < toSLRrow ; r++){
 				for(int c = 0 ; c < numberOfCols ; c++){
 					bitstreamCLB[r][c] = &bitstreamBegin[offset];
-					offset += numberOfFramesPerResourceLetter[(uint8_t)resourceString[r][c]] * XUSP_WORDS_PER_FRAME;
+					offset += LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]] * XUSP_WORDS_PER_FRAME;
 				}
 				offset += XUSP_EXTRA_FRAMES_PER_ROW * XUSP_WORDS_PER_FRAME;
 			}
@@ -181,12 +181,12 @@ void XilinxUltraScalePlus::ensureRowCompatibility(Coord2D src, int offsetRow, in
 	int dstRA = (dst.row+offsetRow) / XUSP_CLB_PER_CLOCK_REGION;
 	for(int c = 0 ; c < sizeCol ; c++){
 		if(resourceString[srcRA][src.col+c] != resourceString[dstRA][dst.col+c]){//if any two letters are different
-			if(numberOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]] != numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]){
+			if(LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]] != LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]){
 				//also the number of frames is different?!
-				throw runtime_error(string("Tried to relocate to an incompatible location(").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]).append(" to frame type ").append(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]).append(")."));
+				throw runtime_error(string("Tried to relocate to an incompatible location(").append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]).append(" to frame type ").append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]).append(")."));
 			} else {
 				//okay, different col, but same width. Throw warning?
-				warn("Relocating from frame type " + string(typeOfFramesPerResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]) + " to frame type " + string(typeOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]) + ".");
+				warn("Relocating from frame type " + string(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]) + " to frame type " + string(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]) + ".");
 			}
 		}
 	}
@@ -235,7 +235,7 @@ void XilinxUltraScalePlus::fastMerge(XilinxUltraScalePlus* srcBitstream, Selecte
 
 	for(int r = 0 ; r < sizeR ; r++){
 		for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
-			for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
+			for(int m = 0 ; m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
 				if(options.clb && options.clk){
 					memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*XUSP_WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*XUSP_WORDS_PER_FRAME], XUSP_WORDS_PER_FRAME*4);
 				} else {
@@ -267,7 +267,7 @@ void XilinxUltraScalePlus::flexiMerge(XilinxUltraScalePlus* srcBitstream, Select
 
 	for(int r = 0 ; r < sizeR ; r++){
 		for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
-			for(int m = 0 ; m < numberOfFramesPerResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
+			for(int m = 0 ; m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
 				for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
 					if(XUSP_WORDS_BEFORE_CLK <= w && (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) > w){
 						if(!options.clk)
@@ -324,7 +324,7 @@ string XilinxUltraScalePlus::getFrameType(int blockType, int rowAddress, int col
 	if(CAP::BlockType::BLOCKRAM == static_cast<CAP::BlockType>(blockType))
 		return "BlockRAM Contents";
 	else if(CAP::BlockType::LOGIC == static_cast<CAP::BlockType>(blockType))
-		return typeOfFramesPerResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];
+		return LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];
 	else
 		return "Unknown";
 }
