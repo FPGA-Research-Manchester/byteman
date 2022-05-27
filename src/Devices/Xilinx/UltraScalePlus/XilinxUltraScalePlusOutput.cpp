@@ -217,10 +217,18 @@ void XilinxUltraScalePlus::writeBitstreamMainSingleRegion(ofstream& fout, int sl
 		return;
 	int srcR  = writeRect.position.row / XUSP_CLB_PER_CLOCK_REGION;
 	int sizeR = writeRect.size.row / XUSP_CLB_PER_CLOCK_REGION;
-	if(options.clb){
-		for(int r = 0 ; r < sizeR ; r++){
-			int framesToWrite = numberOfFramesBeforeCol[writeRect.position.col+writeRect.size.col]-numberOfFramesBeforeCol[writeRect.position.col];
-			uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(static_cast<int>(CAP::BlockType::LOGIC), slr, srcR+r, writeRect.position.col, 0);
+	for(int r = 0 ; r < sizeR ; r++){
+		int fromCol = writeRect.position.col;
+		int toCol = writeRect.position.col+writeRect.size.col;
+		if(options.skipUnused){
+			for( ; (fromCol < numberOfCols && LUT_isFrameUnusedForResourceLetter[(uint8_t)resourceString[srcR+r][fromCol]]) ; fromCol++);
+			for( ; (toCol > 0 && LUT_isFrameUnusedForResourceLetter[(uint8_t)resourceString[srcR+r][toCol]]) ; toCol--);
+			if(fromCol >= toCol)
+				continue;
+		}
+		if(options.clb){
+			int framesToWrite = numberOfFramesBeforeCol[toCol]-numberOfFramesBeforeCol[fromCol];
+			uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(static_cast<int>(CAP::BlockType::LOGIC), slr, srcR+r, fromCol, 0);
 			if(options.blank){
 				XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::FAR, farValue, loadedBitstreamEndianess);
 				XilinxUltraScalePlus::CAP_writeCommand(fout, CAP::Command::WCFG, loadedBitstreamEndianess);
@@ -234,24 +242,21 @@ void XilinxUltraScalePlus::writeBitstreamMainSingleRegion(ofstream& fout, int sl
 			XilinxUltraScalePlus::CAP_writeNOP(fout, 1, 0, loadedBitstreamEndianess);
 			XilinxUltraScalePlus::CAP_writeFDRI(fout, ((framesToWrite+1)*XUSP_WORDS_PER_FRAME), loadedBitstreamEndianess);
 			
-			fout.write((char*)&bitstreamCLB[srcR+r][writeRect.position.col][0], framesToWrite * XUSP_WORDS_PER_FRAME * 4);
+			fout.write((char*)&bitstreamCLB[srcR+r][fromCol][0], framesToWrite * XUSP_WORDS_PER_FRAME * 4);
 			fout.write((char*)blankFrame, XUSP_WORDS_PER_FRAME * 4);
-		}
-	}//options.clb
-	//TODO
-	if(options.bram){
-		for(int r = 0 ; r < sizeR ; r++){
-			int framesToWrite = XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN * (numberOfBRAMsBeforeCol[writeRect.position.col+writeRect.size.col]-numberOfBRAMsBeforeCol[writeRect.position.col]);
+		}//options.clb
+		if(options.bram){
+			int framesToWrite = XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN * (numberOfBRAMsBeforeCol[toCol]-numberOfBRAMsBeforeCol[fromCol]);
 			if(framesToWrite > 0) {
-				uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(static_cast<int>(CAP::BlockType::BLOCKRAM), slr, srcR+r, numberOfBRAMsBeforeCol[writeRect.position.col], 0);
+				uint32_t farValue = XilinxUltraScalePlus::CAP_makeFAR(static_cast<int>(CAP::BlockType::BLOCKRAM), slr, srcR+r, numberOfBRAMsBeforeCol[fromCol], 0);
 				XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::FAR, farValue, loadedBitstreamEndianess);
 				XilinxUltraScalePlus::CAP_writeCommand(fout, CAP::Command::WCFG, loadedBitstreamEndianess);
 				XilinxUltraScalePlus::CAP_writeNOP(fout, 1, 0, loadedBitstreamEndianess);
 				XilinxUltraScalePlus::CAP_writeFDRI(fout, ((framesToWrite+1)*XUSP_WORDS_PER_FRAME), loadedBitstreamEndianess);
 				
-				fout.write((char*)&bitstreamBRAM[srcR+r][numberOfBRAMsBeforeCol[writeRect.position.col]][0], framesToWrite * XUSP_WORDS_PER_FRAME * 4);
+				fout.write((char*)&bitstreamBRAM[srcR+r][numberOfBRAMsBeforeCol[fromCol]][0], framesToWrite * XUSP_WORDS_PER_FRAME * 4);
 				fout.write((char*)blankFrame, XUSP_WORDS_PER_FRAME * 4);
 			}
-		}
-	}//options.blockram
+		}//options.bram
+	}
 }

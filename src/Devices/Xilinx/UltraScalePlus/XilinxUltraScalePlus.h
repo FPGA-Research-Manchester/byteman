@@ -44,9 +44,9 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		};
 		struct SelectedOptions
 		{
-			int clk, clb, bram, blank, partial;
+			int clk, clb, bram, blank, partial, skipUnused;
 			MergeOP op;
-			SelectedOptions():clk(0),clb(0),bram(0),blank(0),partial(1),op(MergeOP::SET){}
+			SelectedOptions():clk(0),clb(0),bram(0),blank(0),partial(1),op(MergeOP::SET),skipUnused(1){}
 		};
 		
 		//XilinxUltraScalePlusDevices.cpp:
@@ -181,6 +181,7 @@ class XilinxUltraScalePlus: public CommonDevice2D, public XilinxConfigurationAcc
 		//constant arrays defining US+ fabric
 		int const LUT_numberOfFramesForResourceLetter[256] = XUSP_LOOKUP_FRAME_SIZES;
 		char const *LUT_typeOfFrameForResourceLetter[256] = XUSP_LOOKUP_FRAME_NAMES;
+		bool const LUT_isFrameUnusedForResourceLetter[256] = XUSP_LOOKUP_FRAME_UNUSED;
 };
 
 #endif // XILINXULTRASCALEPLUS_H
