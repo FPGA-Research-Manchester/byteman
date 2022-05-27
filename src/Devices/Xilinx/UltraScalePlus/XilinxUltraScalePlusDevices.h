@@ -167,6 +167,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 	XUSP_DEVICE_HTG_ZRF8_R2_28,
 	XUSP_DEVICE_HTG_ZRF8_R2_48_I,
 	XUSP_DEVICE_HTG_ZRF8_R2_48,
+	XUSP_DEVICE_ZUBOARD_1CG,
 	
 	
 	

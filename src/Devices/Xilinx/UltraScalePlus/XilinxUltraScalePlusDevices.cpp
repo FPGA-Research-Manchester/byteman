@@ -492,6 +492,8 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_HTG_ZRF8_R2_48_I;
 		if(str::iff::stringContains(name, "htg-zrf8-r2-48", "htg-zrf8-48"))
 			return XUSP_DEVICE_HTG_ZRF8_R2_48;
+		if(str::iff::stringContains(name, "zuboard1cg"))
+			return XUSP_DEVICE_ZUBOARD_1CG;
 	#endif
 	return XUSP_DEVICE_NULL;
 }
@@ -1006,6 +1008,10 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCZU48DR(); 
 			setCustomPartName("xczu48dr-2ffvg1517");
 			break;
+		case XUSP_DEVICE_ZUBOARD_1CG:
+			XCZU1();
+			
+			break;
 		#endif
 		default:throw runtime_error("Unknown device ID.");
 	}
@@ -1059,6 +1065,6 @@ void XilinxUltraScalePlus::deviceHelp()
 	cout << "\t\tUltra96, K26C, K26I, KV260, AMC584, HTG-960, VCU1525, VCU118, VCU128, VCU129, HTG-940-9-3, HTG-940-9, HTG-940-13-3," << endl;
 	cout << "\t\tHTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13," << endl;
 	cout << "\t\tHTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3," << endl;
-	cout << "\t\tHTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48" << endl;
+	cout << "\t\tHTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48, ZUBoard 1CG" << endl;
 	#endif
 }
