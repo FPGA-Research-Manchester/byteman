@@ -30,58 +30,69 @@ using namespace std;
  *****************************************************************************/
 namespace str{
 	namespace iff {
-		template<typename ... Rest> inline bool stringEndsWith(string checkedString)	///< Returns false. End of recursion for template
+		/// Returns false. End of recursion for template
+		template<typename ... Rest> inline bool stringEndsWith(string checkedString)	
 		{
 			return false;
 		}
-		template<typename ... Rest> inline bool stringEndsWith(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString's final characters match fully any of strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString's final characters match fully any of strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringEndsWith(string checkedString, string nextString, Rest ... restStrings)	
 		{
 			if(checkedString.length() >= nextString.length())
 				if(0 == checkedString.compare (checkedString.length() - nextString.length(), nextString.length(), nextString))
 					return true;
 			return stringEndsWith(checkedString, restStrings...);
 		}
-		template<typename ... Rest> inline bool stringIs(string checkedString)	///< Returns false. End of recursion for template
+		/// Returns false. End of recursion for template
+		template<typename ... Rest> inline bool stringIs(string checkedString)	
 		{
 			return false;
 		}
-		template<typename ... Rest> inline bool stringIs(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringIs(string checkedString, string nextString, Rest ... restStrings)	
 		{
 			if(checkedString == nextString)
 				return true;
 			return stringIs(checkedString, restStrings...);
 		}
-		template<typename ... Rest> inline bool stringContains(string checkedString)	///< Returns false. End of recursion for template
+		/// Returns false. End of recursion for template
+		template<typename ... Rest> inline bool stringContains(string checkedString)	
 		{
 			return false;
 		}
-		template<typename ... Rest> inline bool stringContains(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString contains any of strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString contains any of strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringContains(string checkedString, string nextString, Rest ... restStrings)	
 		{
 			if(string::npos != checkedString.rfind(nextString))
 				return true;
 			return stringContains(checkedString, restStrings...);
 		}
-		template<typename ... Rest> inline bool stringBeginsWith(string checkedString)	///< Returns false. End of recursion for template
+		/// Returns false. End of recursion for template
+		template<typename ... Rest> inline bool stringBeginsWith(string checkedString)	
 		{
 			return false;
 		}
-		template<typename ... Rest> inline bool stringBeginsWith(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString's first characters match fully any of strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString's first characters match fully any of strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringBeginsWith(string checkedString, string nextString, Rest ... restStrings)	
 		{
 			if(0 == checkedString.rfind(nextString, 0))
 				return true;
 			return stringBeginsWith(checkedString, restStrings...);
 		}
-		template<typename ... Rest> inline bool stringWordIs(string checkedString)	///< Returns false. End of recursion for template
+		/// Returns false. End of recursion for template
+		template<typename ... Rest> inline bool stringWordIs(string checkedString)	
 		{
 			return false;
 		}
-		template<typename ... Rest> inline bool stringWordIs(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringWordIs(string checkedString, string nextString, Rest ... restStrings)	
 		{
 			if(checkedString == nextString)
 				return true;
 			return stringBeginsWith(checkedString, restStrings...);
 		}
-		template<typename ... Rest> inline bool firstStringWordIs(string checkedString, string nextString, Rest ... restStrings)	///< Returns true if string @c checkedString's first word matches fully any of strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString's first word matches fully any of strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool firstStringWordIs(string checkedString, string nextString, Rest ... restStrings)	
 		{
 			stringstream ss(checkedString);
 			string firstWord;

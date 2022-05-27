@@ -30,7 +30,8 @@ using namespace std;
  *****************************************************************************/
 namespace str{
 	namespace parse {
-		inline string nthStringWord(string s, int n)	///< Parses a string @c s, returns the n-th string word that is not an integer
+		/// Parses a string @c s, returns the n-th string word that is not an integer
+		inline string nthStringWord(string s, int n)	
 		{
 			stringstream ss(s);
 			string temp;
@@ -49,7 +50,8 @@ namespace str{
 			}
 			return string("");
 		}
-		inline string allStringWords(string s)	///< Parses a string @c s, removes all integers and returns the rest
+		/// Parses a string @c s, removes all integers and returns the rest
+		inline string allStringWords(string s)	
 		{
 			stringstream ss(s);
 			string temp, ret = "";
@@ -68,7 +70,8 @@ namespace str{
 			}
 			return ret;
 		}
-		inline string lastStringWord(string s)	///< Parses a string @c s, removes all integers and returns the last of all string words
+		/// Parses a string @c s, removes all integers and returns the last of all string words
+		inline string lastStringWord(string s)	
 		{
 			stringstream ss(s);
 			string ret;
@@ -87,7 +90,8 @@ namespace str{
 			}
 			return ret;
 		}
-		inline string allStringWordsWithoutLastStringWord(string s)	///< Parses a string @c s, removes all integers and the last string word. Returns the rest
+		/// Parses a string @c s, removes all integers and the last string word. Returns the rest
+		inline string allStringWordsWithoutLastStringWord(string s)	
 		{
 			stringstream ss(s);
 			string ret;
@@ -110,7 +114,8 @@ namespace str{
 			}
 			return ret;
 		}
-		inline bool nthInteger(string s, int n, int &x)	///< Parses a string @c s, returns the n-th integer
+		/// Parses a string @c s, returns the n-th integer
+		inline bool nthInteger(string s, int n, int &x)	
 		{
 			stringstream ss(s);
 			string temp;
@@ -132,7 +137,8 @@ namespace str{
 			}
 			return false;
 		}
-		inline bool arrayOfUints(string s, int arrsize, uint32_t* arr)	///< Removes all string words from a given string @c s and returns the parsed @c arrsize number of integers into @c arr
+		/// Removes all string words from a given string @c s and returns the parsed @c arrsize number of integers into @c arr
+		inline bool arrayOfUints(string s, int arrsize, uint32_t* arr)	
 		{
 			if (arrsize == 0)
 				return true;
@@ -165,7 +171,8 @@ namespace str{
 		{
 			return true;
 		}
-		template<typename ... Rest> inline bool multipleInts(stringstream & ss, int & x, Rest & ... args)	///< Parses stringstream @c ss for integer values, that are returned into @c x, @c args
+		/// Parses stringstream @c ss for integer values, that are returned into @c x, @c args
+		template<typename ... Rest> inline bool multipleInts(stringstream & ss, int & x, Rest & ... args)	
 		{
 			int numArgs = sizeof...(args);
 			string temp;
@@ -189,7 +196,8 @@ namespace str{
 			else 
 				return multipleInts(ss, args...);
 		}
-		template<typename ... Args> inline bool multipleInts(string s, Args & ... args)	///< Parses string @c s for integer values, that are returned into @c args
+		/// Parses string @c s for integer values, that are returned into @c args
+		template<typename ... Args> inline bool multipleInts(string s, Args & ... args)	
 		{
 			stringstream ss(s);
 			return multipleInts(ss, args...);

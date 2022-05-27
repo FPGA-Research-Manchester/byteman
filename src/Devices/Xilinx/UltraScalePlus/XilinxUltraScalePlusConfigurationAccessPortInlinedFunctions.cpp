@@ -18,7 +18,8 @@
 #include "XilinxUltraScalePlusConfigurationAccessPort.h"
 #include "../../../Common/FileIO.h"
 
-inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 0
+/// Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 0
+inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress)
 {
 	minorAddress++;
 	if((columnAddress == numberOfCols)?(minorAddress == XUSP_EXTRA_FRAMES_PER_ROW):(minorAddress == LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]])){
@@ -35,7 +36,8 @@ inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType0(int slrID, int& bl
 		}
 	}
 }
-inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 1
+/// Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address in bitstream's block type 1
+inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) 
 {
 	minorAddress++;
 	if((columnAddress == numberOfBRAMCols)?(minorAddress == XUSP_EXTRA_FRAMES_PER_ROW):(minorAddress == XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN)){
@@ -52,7 +54,8 @@ inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int slrID, int& bl
 		}
 	}
 }
-inline void XilinxUltraScalePlus::CAP_IncrementFAR(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address
+/// Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address
+inline void XilinxUltraScalePlus::CAP_IncrementFAR(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) 
 {
 	if(CAP::BlockType::LOGIC == static_cast<CAP::BlockType>(blockType))
 		CAP_IncrementFAR_BlockType0(slrID, blockType, rowAddress, columnAddress, minorAddress);
@@ -60,27 +63,33 @@ inline void XilinxUltraScalePlus::CAP_IncrementFAR(int slrID, int& blockType, in
 		CAP_IncrementFAR_BlockType1(slrID, blockType, rowAddress, columnAddress, minorAddress);
 }
 
-inline int XilinxUltraScalePlus::CAP_getInstructionType(int instruction)///< Parses and returns instruction type. Valid XUS+ instructions will be of types 1 and 2
+/// Parses and returns instruction type. Valid XUS+ instructions will be of types 1 and 2
+inline int XilinxUltraScalePlus::CAP_getInstructionType(int instruction)
 {
 	return ((instruction>>29) & 0x7);
 }
-inline CAP::Operation XilinxUltraScalePlus::CAP_getInstructionOperation(int instruction)///< Parses and returns instruction operation. Most XUS+ instructions will NOP or write.
+/// Parses and returns instruction operation. Most XUS+ instructions will NOP or write.
+inline CAP::Operation XilinxUltraScalePlus::CAP_getInstructionOperation(int instruction)
 {
 	return static_cast<CAP::Operation>((instruction>>27) & 0x3);
 }
-inline int XilinxUltraScalePlus::CAP_getInstructionPayload(int instruction)///< Parses and returns instruction payload. This is the immediate value after instruction type and operation encodings.
+/// Parses and returns instruction payload. This is the immediate value after instruction type and operation encodings.
+inline int XilinxUltraScalePlus::CAP_getInstructionPayload(int instruction)
 {
 	return (instruction & 0x07FFFFFF);
 }
-inline CAP::Register XilinxUltraScalePlus::CAP_getInstructionRegister(int instruction)///< Parses and returns instruction register. This is the register being addressed if the instruction is of type 1
+/// Parses and returns instruction register. This is the register being addressed if the instruction is of type 1
+inline CAP::Register XilinxUltraScalePlus::CAP_getInstructionRegister(int instruction)
 {
 	return static_cast<CAP::Register>((instruction>>13) & 0x1F);
 }
-inline int XilinxUltraScalePlus::CAP_getInstructionWordCount(int instruction)///< Parses and returns instruction word count. This is the number of words to be read/written if the instruction is of type 1
+/// Parses and returns instruction word count. This is the number of words to be read/written if the instruction is of type 1
+inline int XilinxUltraScalePlus::CAP_getInstructionWordCount(int instruction)
 {
 	return (instruction & 0x7FF);
 }
-inline void XilinxUltraScalePlus::CAP_parseFAR(int farValue, int slr, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress)///< Parse the Frame Address Register @c farValue into referenced @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress
+/// Parse the Frame Address Register @c farValue into referenced @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress
+inline void XilinxUltraScalePlus::CAP_parseFAR(int farValue, int slr, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress)
 {
 	blockType = (farValue >> 24) & 0x7;
 	rowAddress = (farValue >> 18) & 0x3F;
@@ -88,111 +97,135 @@ inline void XilinxUltraScalePlus::CAP_parseFAR(int farValue, int slr, int& block
 	columnAddress = (farValue >> 8) & 0x3FF;
 	minorAddress = farValue & 0xFF;
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeFAR(int slr, int blockType, int rowAddress, int columnAddress, int minorAddress)///< Parse @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress. Generate and return Frame Address Register encoding value.
+/// Parse @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress. Generate and return Frame Address Register encoding value.
+inline uint32_t XilinxUltraScalePlus::CAP_makeFAR(int slr, int blockType, int rowAddress, int columnAddress, int minorAddress)
 {
 	return (((blockType & 0x7) << 24) | (((rowAddress - SLRinfo[slr].fromRow) & 0x3F) << 18) | ((columnAddress & 0x3FF) << 8) | (minorAddress & 0xFF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeInstruction(int type, CAP::Operation operation, CAP::Register reg, int payload)///< Generate and return the encoding for an instruction.
+/// Generate and return the encoding for an instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeInstruction(int type, CAP::Operation operation, CAP::Register reg, int payload)
 {
 	return (((type & 0x7) << 29) | ((static_cast<int>(operation) & 0x3) << 27) | ((static_cast<int>(reg) & 0x1F) << 13) | (payload & 0x07FFFFFF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeSyncInstruction()///< Generate and return the encoding for a SYNC instruction.
+/// Generate and return the encoding for a SYNC instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeSyncInstruction()
 {
 	return CAP::SYNC;
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType1Instruction(CAP::Operation operation, CAP::Register reg, int payload)///< Generate and return the encoding for a type 1 instruction.
+/// Generate and return the encoding for a type 1 instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType1Instruction(CAP::Operation operation, CAP::Register reg, int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeInstruction(1, operation, reg, (payload & 0x7FF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType1NopInstruction(int payload)///< Generate and return the encoding for a type 1 NOP instruction.
+/// Generate and return the encoding for a type 1 NOP instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType1NopInstruction(int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType1Instruction(CAP::Operation::NOP, static_cast<CAP::Register>(0), payload);
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType1ReadInstruction(CAP::Register reg, int payload)///< Generate and return the encoding for a type 1 Read instruction.
+/// Generate and return the encoding for a type 1 Read instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType1ReadInstruction(CAP::Register reg, int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType1Instruction(CAP::Operation::READ, reg, (payload & 0x7FF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType1WriteInstruction(CAP::Register reg, int payload)///< Generate and return the encoding for a type 1 Write instruction.
+/// Generate and return the encoding for a type 1 Write instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType1WriteInstruction(CAP::Register reg, int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType1Instruction(CAP::Operation::WRITE, reg, (payload & 0x7FF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType1ReservedInstruction(int payload)///< Generate and return the encoding for a type 1 Reserved instruction.
+/// Generate and return the encoding for a type 1 Reserved instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType1ReservedInstruction(int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType1Instruction(CAP::Operation::RESERVED, static_cast<CAP::Register>(0), payload);
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType2Instruction(CAP::Operation operation, int payload)///< Generate and return the encoding for a type 2 instruction.
+/// Generate and return the encoding for a type 2 instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType2Instruction(CAP::Operation operation, int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeInstruction(2, operation, static_cast<CAP::Register>(0), payload);
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType2NopInstruction(int payload)///< Generate and return the encoding for a type 2 NOP instruction.
+/// Generate and return the encoding for a type 2 NOP instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType2NopInstruction(int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType2Instruction(CAP::Operation::NOP, payload);
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType2ReadInstruction(int payload)///< Generate and return the encoding for a type 2 Read instruction.
+/// Generate and return the encoding for a type 2 Read instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType2ReadInstruction(int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType2Instruction(CAP::Operation::READ, (payload & 0x07FFFFFF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType2WriteInstruction(int payload)///< Generate and return the encoding for a type 2 Write instruction.
+/// Generate and return the encoding for a type 2 Write instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType2WriteInstruction(int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType2Instruction(CAP::Operation::WRITE, (payload & 0x07FFFFFF));
 }
-inline uint32_t XilinxUltraScalePlus::CAP_makeType2ReservedInstruction(int payload)///< Generate and return the encoding for a type 2 Reserved instruction.
+/// Generate and return the encoding for a type 2 Reserved instruction.
+inline uint32_t XilinxUltraScalePlus::CAP_makeType2ReservedInstruction(int payload)
 {
 	return XilinxUltraScalePlus::CAP_makeType2Instruction(CAP::Operation::RESERVED, payload);
 }
-inline void XilinxUltraScalePlus::CAP_writeNOP(ofstream& fout, int cnt, int payload, Endianess e)///< Generate the encoding for NOP instructions and write them to file ofstream.
+/// Generate the encoding for NOP instructions and write them to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeNOP(ofstream& fout, int cnt, int payload, Endianess e)
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1NopInstruction(payload);
 	for(int i = 0 ; i < cnt ; i++)
 		FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeRESERVED(ofstream& fout, int cnt, int payload, Endianess e)///< Generate the encoding for Reserved instructions and write them to file ofstream.
+/// Generate the encoding for Reserved instructions and write them to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeRESERVED(ofstream& fout, int cnt, int payload, Endianess e)
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1ReservedInstruction(payload);
 	for(int i = 0 ; i < cnt ; i++)
 		FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeSelectRegister(ofstream& fout, CAP::Register reg, Endianess e)///< Generate the encoding for "selecting" a CAP register and write it to file ofstream.
+/// Generate the encoding for "selecting" a CAP register and write it to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeSelectRegister(ofstream& fout, CAP::Register reg, Endianess e)
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1WriteInstruction(reg, 0);
 	FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeReadRegister(ofstream& fout, CAP::Register reg, int readLength, Endianess e)///< Generate the encoding for reading a CAP register and write it to file ofstream.
+/// Generate the encoding for reading a CAP register and write it to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeReadRegister(ofstream& fout, CAP::Register reg, int readLength, Endianess e)
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1ReadInstruction(reg, readLength);
 	FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeRegister(ofstream& fout, CAP::Register reg, int writeValue, Endianess e)///< Generate the encoding for writing a CAP register and write it to file ofstream.
+/// Generate the encoding for writing a CAP register and write it to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeRegister(ofstream& fout, CAP::Register reg, int writeValue, Endianess e)
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1WriteInstruction(reg, 1);
 	FileIO::write32(fout, instruction, e);
 	FileIO::write32(fout, writeValue, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeCommand(ofstream& fout, CAP::Command cmd, Endianess e)///< Generate the encoding for writing a CAP command and write it to file ofstream.
+/// Generate the encoding for writing a CAP command and write it to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeCommand(ofstream& fout, CAP::Command cmd, Endianess e)
 {
 	XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::CMD, static_cast<int>(cmd), e);
 }
-inline void XilinxUltraScalePlus::CAP_writeMaskAndRegister(ofstream& fout, CAP::Register reg, int writeMask, int writeValue, Endianess e)///< Generate the encoding for writing a CAP register with a mask and write it to file ofstream.
+/// Generate the encoding for writing a CAP register with a mask and write it to file ofstream.
+inline void XilinxUltraScalePlus::CAP_writeMaskAndRegister(ofstream& fout, CAP::Register reg, int writeMask, int writeValue, Endianess e)
 {
 	XilinxUltraScalePlus::CAP_writeRegister(fout, CAP::Register::MASK, writeMask, e);
 	XilinxUltraScalePlus::CAP_writeRegister(fout, reg, writeValue, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeFDRI1(ofstream& fout, int wordCount, Endianess e) ///< Generate and write only a type 1 FDRI command.
+/// Generate and write only a type 1 FDRI command.
+inline void XilinxUltraScalePlus::CAP_writeFDRI1(ofstream& fout, int wordCount, Endianess e) 
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType1WriteInstruction(CAP::Register::FDRI, wordCount);
 	FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeType2(ofstream& fout, int wordCount, Endianess e) ///< Generate and write only a type 2 FDRI command.
+/// Generate and write only a type 2 FDRI command.
+inline void XilinxUltraScalePlus::CAP_writeType2(ofstream& fout, int wordCount, Endianess e) 
 {
 	uint32_t instruction = XilinxUltraScalePlus::CAP_makeType2WriteInstruction(wordCount);
 	FileIO::write32(fout, instruction, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeFDRI(ofstream& fout, int wordCount, Endianess e) ///< Generate and write an FDRI command. Always uses type 2 command for simplicity.
+/// Generate and write an FDRI command. Always uses type 2 command for simplicity.
+inline void XilinxUltraScalePlus::CAP_writeFDRI(ofstream& fout, int wordCount, Endianess e) 
 {	
 	XilinxUltraScalePlus::CAP_writeFDRI1(fout, 0, e);
 	XilinxUltraScalePlus::CAP_writeType2(fout, wordCount, e);
 }
-inline void XilinxUltraScalePlus::CAP_writeSYNQ(ofstream& fout, Endianess e) ///< Generate and write an SYNQ command.
+/// Generate and write an SYNQ command.
+inline void XilinxUltraScalePlus::CAP_writeSYNQ(ofstream& fout, Endianess e) 
 {	
 	FileIO::write32(fout, XilinxUltraScalePlus::CAP_makeSyncInstruction(), e);
 }

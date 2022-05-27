@@ -31,34 +31,40 @@ using namespace std;
  * 
  *****************************************************************************/
 namespace str{
-	inline string findStringAndGetAllAfter(string checkedString, string searchString)///< Finds string @c searchString inside @c checkedString and returns all to the right inside @c checkedString. If can't be found, returns empty string.
+	/// Finds string @c searchString inside @c checkedString and returns all to the right inside @c checkedString. If can't be found, returns empty string.
+	inline string findStringAndGetAllAfter(string checkedString, string searchString)
 	{
 		size_t loc = checkedString.find(searchString);
 		if(string::npos == loc)
 			return string("");
 		return checkedString.substr(loc + searchString.size());
 	}
-	inline string replace(string str, char oldChar, char newChar)	///< Replaces all instances of @c oldChar in string @c str with @c newChar and returns the resulting string.
+	/// Replaces all instances of @c oldChar in string @c str with @c newChar and returns the resulting string.
+	inline string replace(string str, char oldChar, char newChar)	
 	{
 		replace(str.begin(), str.end(), '=', ' ');
 		return str;
 	}
-	inline string removeSpaces(string str)	///< Removes all space chars of @c str returns the resulting string.
+	/// Removes all space chars of @c str returns the resulting string.
+	inline string removeSpaces(string str)	
 	{
 		str.erase(remove_if(str.begin(), str.end(), ::isspace), str.end());
 		return str;
 	}
-	inline string stringToUpper(string str)	///< Replaces all lowercase characters in @c str with uppercase and returns the resulting string.
+	/// Replaces all lowercase characters in @c str with uppercase and returns the resulting string.
+	inline string stringToUpper(string str)	
 	{
 		transform(str.begin(), str.end(),str.begin(), ::toupper);
 		return str;
 	}
-	inline string stringToLower(string str)	///< Replaces all uppercase characters in @c str with lowercase and returns the resulting string.
+	/// Replaces all uppercase characters in @c str with lowercase and returns the resulting string.
+	inline string stringToLower(string str)	
 	{
 		transform(str.begin(), str.end(),str.begin(), ::tolower);
 		return str;
 	}
-	inline string removeExternalQuotes(string str)	///< Removes double quotes from start and end of string @c str and returns the resulting string.
+	/// Removes double quotes from start and end of string @c str and returns the resulting string.
+	inline string removeExternalQuotes(string str)	
 	{
 		if(str.empty())
 			return str;
