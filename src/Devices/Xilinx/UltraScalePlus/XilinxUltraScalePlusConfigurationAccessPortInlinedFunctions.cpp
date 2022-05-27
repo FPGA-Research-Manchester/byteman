@@ -54,9 +54,9 @@ inline void XilinxUltraScalePlus::CAP_IncrementFAR_BlockType1(int slrID, int& bl
 }
 inline void XilinxUltraScalePlus::CAP_IncrementFAR(int slrID, int& blockType, int& rowAddress, int& columnAddress, int& minorAddress) ///< Modifies the references @c blockType, @c rowAddress, @c columnAddress, and @c minorAddress to increment FAR address
 {
-	if(CAP::BlockType::BLOCKRAM == static_cast<CAP::BlockType>(blockType))
+	if(CAP::BlockType::LOGIC == static_cast<CAP::BlockType>(blockType))
 		CAP_IncrementFAR_BlockType0(slrID, blockType, rowAddress, columnAddress, minorAddress);
-	else if(CAP::BlockType::LOGIC == static_cast<CAP::BlockType>(blockType))
+	else if(CAP::BlockType::BLOCKRAM == static_cast<CAP::BlockType>(blockType))
 		CAP_IncrementFAR_BlockType1(slrID, blockType, rowAddress, columnAddress, minorAddress);
 }
 
