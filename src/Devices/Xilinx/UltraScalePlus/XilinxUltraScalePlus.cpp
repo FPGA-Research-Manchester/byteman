@@ -149,16 +149,17 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 }
 void XilinxUltraScalePlus::blank(string params){
 	XilinxUltraScalePlus::ensureInitializedBitstreamArrays();
-	int blankCLB = 0, blankBRAM = 0;
-	if(params.find("logic") != string::npos || params.find("clb") != string::npos)blankCLB++;
-	if(params.find("blockram") != string::npos || params.find("bram") != string::npos)blankBRAM++;
+	SelectedOptions options = XilinxUltraScalePlus::parseParams(params);
+	if((!options.clb) && (!options.bram))
+		options.bram = options.clb = 1; //if nothing chosen, enable all
+	
 	if(regionSelection.empty()) {
-		if(blankCLB)
+		if(options.clb)
 			memset(&bitstreamCLB[0][0][0], 0, (&bitstreamBRAM[0][0][0]-&bitstreamCLB[0][0][0]));
-		if(blankBRAM)
+		if(options.bram)
 			memset(&bitstreamBRAM[0][0][0], 0, (bitstreamEnd-&bitstreamBRAM[0][0][0]));
 	} else {
-		if(blankCLB)
+		if(options.clb)
 			for (Rect2D &selRect : regionSelection) {
 				for(int r = selRect.position.row ; r < (selRect.position.row + selRect.size.row) ; r++){
 					int blankSize = numberOfFramesBeforeCol[selRect.position.col + selRect.size.col] - numberOfFramesBeforeCol[selRect.position.col];
@@ -166,7 +167,7 @@ void XilinxUltraScalePlus::blank(string params){
 					memset(&bitstreamCLB[r][selRect.position.col][0], 0, blankSize); //memset with size 0 is safe, no need to check anything
 				}
 			}
-		if(blankBRAM)
+		if(options.bram)
 			for (Rect2D &selRect : regionSelection) {
 				for(int r = selRect.position.row ; r < (selRect.position.row + selRect.size.row) ; r++){
 					int blankSize = numberOfBRAMsBeforeCol[selRect.position.col + selRect.size.col] - numberOfBRAMsBeforeCol[selRect.position.col];
