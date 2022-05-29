@@ -221,7 +221,7 @@ enum XUSP_DEVICE_ENUM	///< Enumeration of recognized Xilinx UltraScale+ devices 
 	XUSP_SLRNUM(prefix##SLRNUM);																  \
 	XUSP_ROWNUM(prefix##ROWNUM);																  \
 	XUSP_SLRFROMROW(0,0);																		 \
-	XUSP_SLRTOROW(0,prefix##ROWNUM);															  \
+    XUSP_SLRTOROW(0,prefix##ROWNUM-1);                                                              \
 	XUSP_IDCODE(0,prefix##IDCODE);																\
 }
 
