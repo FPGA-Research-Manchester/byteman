@@ -494,6 +494,18 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_HTG_ZRF8_R2_48;
 		if(str::iff::stringContains(name, "zuboard1cg"))
 			return XUSP_DEVICE_ZUBOARD_1CG;
+		if(str::iff::stringContains(name, "kcu116"))
+			return XUSP_DEVICE_KCU116;
+		if(str::iff::stringContains(name, "vermeot1mp"))
+			return XUSP_DEVICE_VERMEO_T1_MP;
+		if(str::iff::stringContains(name, "vermeot1rf"))
+			return XUSP_DEVICE_VERMEO_T1_RF;
+		if(str::iff::stringContains(name, "zcu1275"))
+			return XUSP_DEVICE_ZCU1275;
+		if(str::iff::stringContains(name, "zcu1285"))
+			return XUSP_DEVICE_ZCU1285;
+		if(str::iff::stringContains(name, "zcu111"))
+			return XUSP_DEVICE_ZCU111;
 	#endif
 	return XUSP_DEVICE_NULL;
 }
@@ -1012,6 +1024,30 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCZU1();
 			
 			break;
+		case XUSP_DEVICE_KCU116:
+			XCKU5P();
+			setCustomPartName("xcku5p-ffvb676-2-e");
+			break;
+		case XUSP_DEVICE_VERMEO_T1_MP:
+			XCZU19();
+			setCustomPartName("xczu19eg-ffvd1760-2L-e");
+			break;
+		case XUSP_DEVICE_VERMEO_T1_RF:
+			XCZU21DR();
+			setCustomPartName("xczu21dr-ffvd1156-2L-e");
+			break;
+		case XUSP_DEVICE_ZCU1275:
+			XCZU29DR();
+			setCustomPartName("xczu29dr-ffvf1760-2-e");
+			break;
+		case XUSP_DEVICE_ZCU1285:
+			XCZU39DR();
+			setCustomPartName("xczu39dr-ffvf1760-2-i");
+			break;
+		case XUSP_DEVICE_ZCU111:
+			XCZU28DR();
+			setCustomPartName("xczu28dr-ffvg1517-2-e");
+			break;
 		#endif
 		default:throw runtime_error("Unknown device ID.");
 	}
@@ -1065,6 +1101,7 @@ void XilinxUltraScalePlus::deviceHelp()
 	cout << "\t\tUltra96, K26C, K26I, KV260, AMC584, HTG-960, VCU1525, VCU118, VCU128, VCU129, HTG-940-9-3, HTG-940-9, HTG-940-13-3," << endl;
 	cout << "\t\tHTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13," << endl;
 	cout << "\t\tHTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3," << endl;
-	cout << "\t\tHTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48, ZUBoard 1CG" << endl;
+	cout << "\t\tHTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48" << endl;
+	cout << "\t\tZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111" << endl;
 	#endif
 }
