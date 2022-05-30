@@ -362,7 +362,7 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 				} else { // CAP::Operation::WRITE
 					if((regAddr == CAP::Register::FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
 						if(shadowFrameValid) {
-							fout << "# Shadow register contents are written to frame (BlockType="<<b<<", GlobalRowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress"<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ")."<<endl;
+							fout << dec << "# Shadow register contents are written to frame (BlockType="<<b<<", GlobalRowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << XilinxUltraScalePlus::getFrameType(b,r,c) << ")."<<endl;
 							XilinxUltraScalePlus::CAP_IncrementFAR(slr, b, r, c, m);
 						}
 						shadowFrameValid = 1;
