@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.6 (Build #131)</span>
+   &#160;<span id="projectnumber">0.6 (Build #132)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -436,7 +436,7 @@ $(function() {
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;                } <span class="keywordflow">else</span> { <span class="comment">// CAP::Operation::WRITE</span></div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;                    <span class="keywordflow">if</span>((regAddr == <a class="code" href="namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059ac9b0993109b5ca599fa108e02df7420d">CAP::Register::FDRI</a>) &amp;&amp; (wordCount &gt; 0) &amp;&amp; (wordCount % <a class="code" href="XilinxUltraScalePlusFabric_8h.html#a4b915af6c17d4c85911e619f19286caa">XUSP_WORDS_PER_FRAME</a> == 0)) {</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;                        <span class="keywordflow">if</span>(shadowFrameValid) {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                            fout &lt;&lt; <span class="stringliteral">&quot;# Shadow register contents are written to frame (BlockType=&quot;</span>&lt;&lt;b&lt;&lt;<span class="stringliteral">&quot;, GlobalRowAddress=&quot;</span>&lt;&lt;r&lt;&lt;<span class="stringliteral">&quot;, MajorAddress=&quot;</span>&lt;&lt;c&lt;&lt;<span class="stringliteral">&quot;, MinorAddress&quot;</span>&lt;&lt;m&lt;&lt;<span class="stringliteral">&quot;) (Frame type: &quot;</span> &lt;&lt; <a class="code" href="classXilinxUltraScalePlus.html#afc958d093237ae1d55ced73df2153c36">XilinxUltraScalePlus::getFrameType</a>(b,r,c) &lt;&lt; <span class="stringliteral">&quot;).&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;                            fout &lt;&lt; dec &lt;&lt; <span class="stringliteral">&quot;# Shadow register contents are written to frame (BlockType=&quot;</span>&lt;&lt;b&lt;&lt;<span class="stringliteral">&quot;, GlobalRowAddress=&quot;</span>&lt;&lt;r&lt;&lt;<span class="stringliteral">&quot;, MajorAddress=&quot;</span>&lt;&lt;c&lt;&lt;<span class="stringliteral">&quot;, MinorAddress=&quot;</span>&lt;&lt;m&lt;&lt;<span class="stringliteral">&quot;) (Frame type: &quot;</span> &lt;&lt; <a class="code" href="classXilinxUltraScalePlus.html#afc958d093237ae1d55ced73df2153c36">XilinxUltraScalePlus::getFrameType</a>(b,r,c) &lt;&lt; <span class="stringliteral">&quot;).&quot;</span>&lt;&lt;endl;</div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;                            <a class="code" href="classXilinxUltraScalePlus.html#aabe6e9f72184d9bcdb7577ac34d23578">XilinxUltraScalePlus::CAP_IncrementFAR</a>(slr, b, r, c, m);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;                        }</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;                        shadowFrameValid = 1;</div>
@@ -621,7 +621,7 @@ $(function() {
 <div class="ttc" id="anamespaceCAP_html_ae4eb485ee1937c4d2e600a7a70e7b059a0a9501840acacfc8efe7522f5340000c"><div class="ttname"><a href="namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a0a9501840acacfc8efe7522f5340000c">CAP::Register::MASK</a></div><div class="ttdeci">@ MASK</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 29 2022 22:45:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 30 2022 01:08:52 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
