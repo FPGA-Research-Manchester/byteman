@@ -1079,7 +1079,7 @@ void XilinxUltraScalePlus::deviceHelp()
 	#ifdef XUSPZYNQRF
 	cout << "\tUltraScale+ Zynq RFSoC: " << endl;
 	cout << "\t\tXCZU21DR, XQZU21DR, XCZU25DR, XCZU27DR, XCZU28DR, XQZU28DR, XCZU29DR, XQZU29DR, XCZU39DR, XCZU42DR," << endl;
-	cout << "\t\tXCZU43DR, XCZU46DR, XQZU48DR, XQZU49DR, XCZU47DR, XCZU48DR, XCZU49DR, XCZU65DR, XCZU67DR" << endl;
+	cout << "\t\tXCZU43DR, XCZU46DR, XQZU48DR, XQZU49DR, XCZU47DR, XCZU48DR, XCZU49DR" << endl;
 	#endif
 	#ifdef XUSPZYNQMP
 	cout << "\tUltraScale+ Zynq MPSoC: " << endl;
