@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.6 (Build #135)</span>
+   &#160;<span id="projectnumber">0.6 (Build #136)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -616,7 +616,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//.bit header vars:</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> headerDesignNameLength = <a class="code" href="namespaceFileIO.html#a48ad27e27400610acdcfbec9a2143b18">FileIO::read16</a>(fin, e);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classXilinxConfigurationAccessPort.html#a9a305f865efcff32f2f5d657983d1852">designName</a> = <a class="code" href="namespaceFileIO.html#ad41f7dbc9c1ed8a51accfadf6c8fc978">FileIO::readString</a>(fin, headerDesignNameLength, e);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;\tName of design: &quot;</span> + <a class="code" href="classXilinxConfigurationAccessPort.html#a9a305f865efcff32f2f5d657983d1852">designName</a>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Name of design: &quot;</span> + <a class="code" href="classXilinxConfigurationAccessPort.html#a9a305f865efcff32f2f5d657983d1852">designName</a>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> headerDone = 0 ; !headerDone ; ){</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">int</span> key = <a class="code" href="namespaceFileIO.html#ae6d460c7fbb05e4104490c4ee18f7d84">FileIO::readNative8</a>(fin);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">switch</span>(key){</div>
@@ -629,13 +629,13 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>: {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">int</span> headerAttrLength = <a class="code" href="namespaceFileIO.html#a48ad27e27400610acdcfbec9a2143b18">FileIO::read16</a>(fin, e);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="classXilinxConfigurationAccessPort.html#a71fbdf0ea84abf8f5809ad445db16d50">fileDate</a> = <a class="code" href="namespaceFileIO.html#ad41f7dbc9c1ed8a51accfadf6c8fc978">FileIO::readString</a>(fin, headerAttrLength, e);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;\tDate: &quot;</span> + <a class="code" href="classXilinxConfigurationAccessPort.html#a71fbdf0ea84abf8f5809ad445db16d50">fileDate</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Date: &quot;</span> + <a class="code" href="classXilinxConfigurationAccessPort.html#a71fbdf0ea84abf8f5809ad445db16d50">fileDate</a>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>: {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">int</span> headerAttrLength = <a class="code" href="namespaceFileIO.html#a48ad27e27400610acdcfbec9a2143b18">FileIO::read16</a>(fin, e);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="classXilinxConfigurationAccessPort.html#a47a79083774208489b1665f0c008f206">fileTime</a> = <a class="code" href="namespaceFileIO.html#ad41f7dbc9c1ed8a51accfadf6c8fc978">FileIO::readString</a>(fin, headerAttrLength, e);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;\tTime: &quot;</span> + <a class="code" href="classXilinxConfigurationAccessPort.html#a47a79083774208489b1665f0c008f206">fileTime</a>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Time: &quot;</span> + <a class="code" href="classXilinxConfigurationAccessPort.html#a47a79083774208489b1665f0c008f206">fileTime</a>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;e&#39;</span>: {</div>
@@ -778,7 +778,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        } <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            fin.seekg(-3,ios::cur);</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;\tDetected file endianess: &quot;</span> + <a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a>(returnVal));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Detected file endianess: &quot;</span> + <a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a>(returnVal));</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    fin.seekg(fileOffset, fin.beg);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> returnVal;</div>
@@ -1171,7 +1171,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a55976af5151a0b685b6b77c6f4311c95"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a55976af5151a0b685b6b77c6f4311c95">XilinxConfigurationAccessPort::XCAP_IDCODEInstruction</a></div><div class="ttdeci">virtual uint32_t XCAP_IDCODEInstruction()=0</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 31 2022 15:12:47 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 31 2022 20:57:12 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
