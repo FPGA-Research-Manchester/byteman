@@ -132,10 +132,10 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		if(firstEqPos != string::npos)
 			line.replace(firstEqPos, 1, '=', ' ');
 		#define has(x) (line.find(x) != string::npos)
-		if(has("Name"))designName = str::removeExternalQuotes(str::parse::lastStringWord(line));
-		if(has("FPGA"))partName = str::removeExternalQuotes(str::parse::lastStringWord(line));
-		if(has("Date"))fileDate = str::removeExternalQuotes(str::parse::lastStringWord(line));
-		if(has("Time"))fileTime = str::removeExternalQuotes(str::parse::lastStringWord(line));
+		if(has("Name"))designName = str::parse::lastStringWord(line);
+		if(has("FPGA"))partName = str::parse::lastStringWord(line);
+		if(has("Date"))fileDate = str::parse::lastStringWord(line);
+		if(has("Time"))fileTime = str::parse::lastStringWord(line);
 		if(has("HEADER END"))break;
 		#undef has
 	}
