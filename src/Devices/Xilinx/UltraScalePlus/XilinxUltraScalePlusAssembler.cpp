@@ -131,6 +131,7 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		auto firstEqPos = line.find_first_of('=');
 		if(firstEqPos != string::npos)
 			line.replace(firstEqPos, 1, '=', ' ');
+		
 		#define has(x) (line.find(x) != string::npos)
 		if(has("Name"))designName = str::parse::lastStringWord(line);
 		if(has("FPGA"))partName = str::parse::lastStringWord(line);
@@ -139,6 +140,11 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		if(has("HEADER END"))break;
 		#undef has
 	}
+	log("Design name: " + designName);
+	log("FPGA: " + partName);
+	log("Date: " + fileDate);
+	log("Time: " + fileTime);
+	
 	XilinxUltraScalePlus::setDevice(XilinxUltraScalePlus::getDeviceByNameOrThrow(partName), partName);
 	XilinxUltraScalePlus::initializeResourceStringParameters();
 	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout, Endianess::BE);
