@@ -155,7 +155,7 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 		replace(line.begin(), line.end(), '=', ' ');
 		replace(line.begin(), line.end(), '#', ' ');
 		replace(line.begin(), line.end(), ',', ' ');
-		if(has("SYNC")){
+		if(has("SYNC") && (!has("DESYNC"))){
 			XilinxUltraScalePlus::CAP_writeSYNQ(fout, Endianess::BE);
 		}
 		else if(has(".WORD")){
