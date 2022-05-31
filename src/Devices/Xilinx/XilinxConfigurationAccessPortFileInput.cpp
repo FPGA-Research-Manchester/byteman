@@ -36,7 +36,7 @@ void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e)
 	//.bit header vars:
 	int headerDesignNameLength = FileIO::read16(fin, e);
 	designName = FileIO::readString(fin, headerDesignNameLength, e);
-	log("\tName of design: " + designName);
+	log("Name of design: " + designName);
 	for(int headerDone = 0 ; !headerDone ; ){
 		int key = FileIO::readNative8(fin);
 		switch(key){
@@ -49,13 +49,13 @@ void XilinxConfigurationAccessPort::parseBITheader(ifstream& fin, Endianess e)
 			case 'c': {
 				int headerAttrLength = FileIO::read16(fin, e);
 				fileDate = FileIO::readString(fin, headerAttrLength, e);
-				log("\tDate: " + fileDate);
+				log("Date: " + fileDate);
 				break;
 			}
 			case 'd': {
 				int headerAttrLength = FileIO::read16(fin, e);
 				fileTime = FileIO::readString(fin, headerAttrLength, e);
-				log("\tTime: " + fileTime);
+				log("Time: " + fileTime);
 				break;
 			}
 			case 'e': {
@@ -124,7 +124,7 @@ Endianess XilinxConfigurationAccessPort::parseBitstreamEndianess(ifstream& fin)
 		} else
 			fin.seekg(-3,ios::cur);
 	}
-	log("\tDetected file endianess: " + Endian::to_string(returnVal));
+	log("Detected file endianess: " + Endian::to_string(returnVal));
 	
 	fin.seekg(fileOffset, fin.beg);
 	return returnVal;
