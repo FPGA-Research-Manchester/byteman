@@ -13,9 +13,12 @@ digraph "str::parse::allStringWords"
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="byteman::parseMerge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef",tooltip=" "];
+  Node5 [label="byteman::parseDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45",tooltip=" "];
   Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286",tooltip=" "];
+  Node6 [label="byteman::parseMerge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef",tooltip=" "];
   Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

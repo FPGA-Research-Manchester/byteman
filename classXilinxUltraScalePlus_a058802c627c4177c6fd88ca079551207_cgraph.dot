@@ -175,11 +175,16 @@ digraph "XilinxUltraScalePlus::assemblerAsmToBit"
   Node70 [label="XilinxConfigurationAccess\lPort::outputBITheaderLengthField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#ad3da926b34bed81d4a0813743f11c3f6",tooltip=" "];
   Node70 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node71 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node71 [label="str::removeExternalQuotes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#abbe31eb69bc1b10fa3c78fab4f0dee4f",tooltip="Removes double quotes from start and end of string str and returns the resulting string."];
-  Node1 -> Node72 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node72 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69",tooltip="Replaces all instances of oldChar in string str with newChar and returns the resulting string."];
+  Node71 [label="XilinxConfigurationAccess\lPort::outputCAPheaderConstant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#a64029ac1ea70312a6a2deee735fe4018",tooltip=" "];
+  Node71 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node71 -> Node72 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node72 [label="XilinxConfigurationAccess\lPort::XCAP_SyncInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html#a9ae26bf52a66b293798e560febf9db77",tooltip=" "];
   Node1 -> Node73 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node73 [label="XilinxUltraScalePlus\l::setDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a762297dd90b02efcbb4a4aa0274dd34b",tooltip=" "];
+  Node73 [label="str::removeExternalQuotes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#abbe31eb69bc1b10fa3c78fab4f0dee4f",tooltip="Removes double quotes from start and end of string str and returns the resulting string."];
+  Node1 -> Node74 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node74 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69",tooltip="Replaces all instances of oldChar in string str with newChar and returns the resulting string."];
+  Node1 -> Node75 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node75 [label="XilinxUltraScalePlus\l::setDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a762297dd90b02efcbb4a4aa0274dd34b",tooltip=" "];
   Node1 -> Node45 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

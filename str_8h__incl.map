@@ -1,10 +1,11 @@
 <map id="src/Common/str.h" name="src/Common/str.h">
-<area shape="rect" id="node1" title=" " alt="" coords="96,5,232,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="117,5,253,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,80,91,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="80,155,139,181"/>
-<area shape="rect" id="node4" href="$iff_8h.html" title=" " alt="" coords="166,80,234,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="152,155,211,181"/>
+<area shape="rect" id="node4" href="$iff_8h.html" title=" " alt="" coords="115,80,183,107"/>
 <area shape="rect" id="node7" href="$parse_8h.html" title=" " alt="" coords="259,80,349,107"/>
-<area shape="rect" id="node5" title=" " alt="" coords="163,155,243,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="267,155,341,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="365,155,432,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="48,155,128,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="235,155,309,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="432,155,499,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="333,155,408,181"/>
 </map>
