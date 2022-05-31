@@ -19,7 +19,7 @@
 
 streamoff XilinxConfigurationAccessPort::outputBITheader(ofstream& fout, Endianess e)
 {
-	cout << "Output endianess is " << Endian::to_string(e) << endl;
+	log("Generating header in " + Endian::to_string(e));
 	FileIO::write16(fout, 9, e);//16-bit BE value = 9
 	FileIO::writeString(fout, string("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0"), e);
 	FileIO::write16(fout, 1, e);//16-bit BE value = 1

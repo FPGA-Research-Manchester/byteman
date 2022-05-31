@@ -66,7 +66,6 @@ void XilinxUltraScalePlus::writeBitstream(string filename, string params, Rect2D
 }
 void XilinxUltraScalePlus::writeBitstreamBIT(ofstream& fout, string params, Rect2D cmdRect, SelectedOptions options)
 {
-
 	if(options.partial)
 		designName.append(";PARTIAL=TRUE");
 	designName.append(";bytemanVersion=").append(VERSION).append(":").append(VERSION_BUILD);
