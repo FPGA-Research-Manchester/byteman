@@ -39,6 +39,7 @@ namespace str{
 			int intFound, i = 0;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
+				if(temp.empty()) break;
 				try{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
@@ -62,6 +63,7 @@ namespace str{
 			int intFound;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
+				if(temp.empty()) break;
 				try{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
@@ -87,6 +89,7 @@ namespace str{
 			int intFound;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
+				if(temp.empty()) break;
 				try{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
@@ -111,6 +114,7 @@ namespace str{
 			int intFound;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
+				if(temp.empty()) break;
 				try{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
@@ -136,6 +140,7 @@ namespace str{
 			int i = 0;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
+				if(temp.empty()) break;
 				try{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
@@ -167,6 +172,7 @@ namespace str{
 				intWasFound = false;
 				while ((!ss.eof()) && (!intWasFound)) {
 					ss >> quoted(temp);
+					if(temp.empty()) break;
 					try{
 						size_t sz;
 						intFound = (uint32_t)(stoll(temp, &sz, 0));
@@ -199,6 +205,7 @@ namespace str{
 			bool intWasFound = false;
 			while ((!ss.eof()) && (!intWasFound)) {
 				ss >> quoted(temp);
+				if(temp.empty()) break;
 				try{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
