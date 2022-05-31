@@ -18,7 +18,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 #next line has to be in the format ..."byteman VERSION X.Y.Z"... for the autoversioning
-project(byteman VERSION 0.6.132)
+project(byteman VERSION 0.6.133)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
