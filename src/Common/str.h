@@ -42,7 +42,7 @@ namespace str{
 	/// Replaces all instances of @c oldChar in string @c str with @c newChar and returns the resulting string.
 	inline string replace(string str, char oldChar, char newChar)	
 	{
-		replace(str.begin(), str.end(), '=', ' ');
+		replace(str.begin(), str.end(), oldChar, newChar);
 		return str;
 	}
 	/// Removes all space chars of @c str returns the resulting string.
