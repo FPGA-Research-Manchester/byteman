@@ -19,6 +19,7 @@
 
 #include<cstdint> //uint
 #include<string>
+#include<iomanip> //quoted
 #include<sstream>
 
 using namespace std;
@@ -37,7 +38,7 @@ namespace str{
 			string temp;
 			int intFound, i = 0;
 			while (!ss.eof()) {
-				ss >> temp;
+				ss >> quoted(temp);
 				try{
 					intFound = stoi(temp, nullptr, 0);
 				} catch (const exception &e) {
@@ -57,7 +58,7 @@ namespace str{
 			string temp, ret = "";
 			int intFound;
 			while (!ss.eof()) {
-				ss >> temp;
+				ss >> quoted(temp);
 				try{
 					intFound = stoi(temp, nullptr, 0);
 				} catch (const exception &e) {
@@ -79,7 +80,7 @@ namespace str{
 			string temp;
 			int intFound;
 			while (!ss.eof()) {
-				ss >> temp;
+				ss >> quoted(temp);
 				try{
 					intFound = stoi(temp, nullptr, 0);
 				} catch (const exception &e) {
@@ -100,7 +101,7 @@ namespace str{
 			string temp2;
 			int intFound;
 			while (!ss.eof()) {
-				ss >> temp;
+				ss >> quoted(temp);
 				try{
 					intFound = stoi(temp, nullptr, 0);
 				} catch (const exception &e) {
@@ -122,7 +123,7 @@ namespace str{
 			int intFound;
 			int i = 0;
 			while (!ss.eof()) {
-				ss >> temp;
+				ss >> quoted(temp);
 				try{
 					intFound = stoi(temp, nullptr, 0);
 					if(i == n) {
@@ -150,7 +151,7 @@ namespace str{
 			{
 				intWasFound = false;
 				while ((!ss.eof()) && (!intWasFound)) {
-					ss >> temp;
+					ss >> quoted(temp);
 					try{
 						intFound = (uint32_t)(stoll(temp, nullptr, 0));
 						arr[i] = intFound;
@@ -179,7 +180,7 @@ namespace str{
 			int intFound;
 			bool intWasFound = false;
 			while ((!ss.eof()) && (!intWasFound)) {
-				ss >> temp;
+				ss >> quoted(temp);
 				try{
 					intFound = stoi(temp, nullptr, 0);
 					x = intFound;
