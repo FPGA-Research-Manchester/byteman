@@ -205,8 +205,7 @@ void byteman::parseChange(string changeCmd, SelectedOptions options)
 }
 void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 {
-	string params = str::parse::allStringWordsWithoutLastStringWord(deviceCmd);
-	string deviceName = str::parse::lastStringWord(deviceCmd);
+	string deviceName = str::parse::allStringWords(deviceCmd);
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
