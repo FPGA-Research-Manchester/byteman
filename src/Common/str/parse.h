@@ -40,7 +40,10 @@ namespace str{
 			while (!ss.eof()) {
 				ss >> quoted(temp);
 				try{
-					intFound = stoi(temp, nullptr, 0);
+					size_t sz;
+					intFound = stoi(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
 				} catch (const exception &e) {
 					if(i == n)
 						return temp;
@@ -60,7 +63,10 @@ namespace str{
 			while (!ss.eof()) {
 				ss >> quoted(temp);
 				try{
-					intFound = stoi(temp, nullptr, 0);
+					size_t sz;
+					intFound = stoi(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
 				} catch (const exception &e) {
 					if(!ret.empty())
 						ret.append(" ");
@@ -82,7 +88,10 @@ namespace str{
 			while (!ss.eof()) {
 				ss >> quoted(temp);
 				try{
-					intFound = stoi(temp, nullptr, 0);
+					size_t sz;
+					intFound = stoi(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
 				} catch (const exception &e) {
 					ret = temp;
 					e;
@@ -103,7 +112,10 @@ namespace str{
 			while (!ss.eof()) {
 				ss >> quoted(temp);
 				try{
-					intFound = stoi(temp, nullptr, 0);
+					size_t sz;
+					intFound = stoi(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
 				} catch (const exception &e) {
 					if(!ret.empty())
 						ret.append(" ");
@@ -125,7 +137,10 @@ namespace str{
 			while (!ss.eof()) {
 				ss >> quoted(temp);
 				try{
-					intFound = stoi(temp, nullptr, 0);
+					size_t sz;
+					intFound = stoi(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
 					if(i == n) {
 						x = intFound;
 						return true;
@@ -153,7 +168,10 @@ namespace str{
 				while ((!ss.eof()) && (!intWasFound)) {
 					ss >> quoted(temp);
 					try{
-						intFound = (uint32_t)(stoll(temp, nullptr, 0));
+						size_t sz;
+						intFound = (uint32_t)(stoll(temp, &sz, 0));
+						if(temp.size() != sz)
+							throw exception();
 						arr[i] = intFound;
 						intWasFound = true;
 					} catch (const exception &e) {
@@ -182,7 +200,10 @@ namespace str{
 			while ((!ss.eof()) && (!intWasFound)) {
 				ss >> quoted(temp);
 				try{
-					intFound = stoi(temp, nullptr, 0);
+					size_t sz;
+					intFound = stoi(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
 					x = intFound;
 					intWasFound = true;
 				} catch (const exception &e) {
