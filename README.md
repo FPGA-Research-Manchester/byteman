@@ -3,7 +3,7 @@
 [![byteman project](https://img.shields.io/badge/byteman-v0.6-blue)](https://github.com/FPGA-Research-Manchester/byteman)
 [![byteman build](https://img.shields.io/badge/Build%20134-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
 [![Apache license](https://img.shields.io/github/license/FPGA-Research-Manchester/byteman)](https://opensource.org/licenses/Apache-2.0)
-[![C++ Standard](https://img.shields.io/badge/C%2B%2B-11-green.svg)](https://en.wikipedia.org/wiki/C%2B%2B14)
+[![C++ Standard](https://img.shields.io/badge/C%2B%2B-14-green.svg)](https://en.wikipedia.org/wiki/C%2B%2B14)
 
 ## ![byteman icon](./Resources/icon16.png) Download executable: [![Download windows x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseWindows.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Windows-x86/byteman.exe) [![Download linux x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinux.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-x86/byteman) [![Download linux ARM binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxARM.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-ARM/byteman) [![Download linux RISC-V binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxRISCV.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-RISC-V/byteman)
 
