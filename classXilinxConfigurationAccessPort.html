@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.6 (Build #137)</span>
+   &#160;<span id="projectnumber">0.6 (Build #138)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -318,7 +318,7 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="XilinxConfigurationAccessPortFileOutput_8cpp_source.html#l00020">20</a> of file <a class="el" href="XilinxConfigurationAccessPortFileOutput_8cpp_source.html">XilinxConfigurationAccessPortFileOutput.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Output endianess is &quot;</span> &lt;&lt; <a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a>(e) &lt;&lt; endl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Generating header in &quot;</span> + <a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a>(e));</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055">FileIO::write16</a>(fout, 9, e);<span class="comment">//16-bit BE value = 9</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0">FileIO::writeString</a>(fout, <span class="keywordtype">string</span>(<span class="stringliteral">&quot;\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0&quot;</span>), e);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055">FileIO::write16</a>(fout, 1, e);<span class="comment">//16-bit BE value = 1</span></div>
@@ -341,7 +341,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> headerLocationOfRemainingFileLength;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00051">designName</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00053">fileDate</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00054">fileTime</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00052">partName</a>, <a class="el" href="Endianess_8h_source.html#l00056">Endian::to_string()</a>, <a class="el" href="FileIO_8h_source.html#l00434">FileIO::write16()</a>, <a class="el" href="FileIO_8h_source.html#l00421">FileIO::write32()</a>, <a class="el" href="FileIO_8h_source.html#l00447">FileIO::write8()</a>, and <a class="el" href="FileIO_8h_source.html#l00334">FileIO::writeString()</a>.</p>
+<p class="reference">References <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00051">designName</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00053">fileDate</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00054">fileTime</a>, <a class="el" href="CommonDevice_8h_source.html#l00053">CommonDevice::log()</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00052">partName</a>, <a class="el" href="Endianess_8h_source.html#l00056">Endian::to_string()</a>, <a class="el" href="FileIO_8h_source.html#l00434">FileIO::write16()</a>, <a class="el" href="FileIO_8h_source.html#l00421">FileIO::write32()</a>, <a class="el" href="FileIO_8h_source.html#l00447">FileIO::write8()</a>, and <a class="el" href="FileIO_8h_source.html#l00334">FileIO::writeString()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlusAssembler_8cpp_source.html#l00128">XilinxUltraScalePlus::assemblerAsmToBit()</a>, and <a class="el" href="XilinxUltraScalePlusOutput_8cpp_source.html#l00067">XilinxUltraScalePlus::writeBitstreamBIT()</a>.</p>
 <div class="dynheader">
@@ -349,44 +349,46 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classXilinxConfigurationAccessPort_a80c8f1b9404adad15c0eb26612e0f028_cgraph.png" border="0" usemap="#classXilinxConfigurationAccessPort_a80c8f1b9404adad15c0eb26612e0f028_cgraph" alt=""/></div>
 <map name="classXilinxConfigurationAccessPort_a80c8f1b9404adad15c0eb26612e0f028_cgraph" id="classXilinxConfigurationAccessPort_a80c8f1b9404adad15c0eb26612e0f028_cgraph">
-<area shape="rect" title=" " alt="" coords="5,391,196,433"/>
-<area shape="rect" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053" title=" " alt="" coords="248,129,379,156"/>
-<area shape="rect" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055" title=" " alt="" coords="255,180,371,207"/>
-<area shape="rect" href="namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f" title=" " alt="" coords="255,399,371,425"/>
-<area shape="rect" href="namespaceFileIO.html#a20a00cf946aecd26e3a65b95ea0f7f60" title=" " alt="" coords="482,720,590,747"/>
-<area shape="rect" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0" title=" " alt="" coords="244,573,383,600"/>
-<area shape="rect" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb" title=" " alt="" coords="445,239,627,265"/>
-<area shape="rect" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579" title=" " alt="" coords="437,173,635,214"/>
-<area shape="rect" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35" title=" " alt="" coords="431,107,641,149"/>
-<area shape="rect" href="namespaceFileIO.html#affd7f11b68ed7b5c0a65d5b1e5703492" title=" " alt="" coords="439,56,633,83"/>
-<area shape="rect" href="namespaceFileIO.html#ad8e75b6c4bdcf4df31b0bf5513f0a42b" title=" " alt="" coords="457,5,615,32"/>
-<area shape="rect" href="namespaceEndian.html#afb674eed3d17c61f0d99ecb1b2737ad5" title=" " alt="" coords="695,199,907,225"/>
-<area shape="rect" href="namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="967,187,1179,213"/>
-<area shape="rect" href="namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="1233,149,1393,176"/>
-<area shape="rect" href="namespaceEndian.html#a299b13501873eba82fbb3df182a26414" title=" " alt="" coords="730,148,873,175"/>
-<area shape="rect" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="689,97,913,124"/>
-<area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="961,111,1185,137"/>
-<area shape="rect" href="namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="445,523,627,549"/>
-<area shape="rect" href="namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="437,457,635,498"/>
-<area shape="rect" href="namespaceFileIO.html#a60d14999a525e60b548765722c0cc49a" title=" " alt="" coords="431,391,641,433"/>
-<area shape="rect" href="namespaceFileIO.html#aaf3a57cefdd3a674741d9447c5fcf2a2" title=" " alt="" coords="439,340,633,367"/>
-<area shape="rect" href="namespaceFileIO.html#a8c0dbfd2ab8a248ca642203dc84bd2a4" title=" " alt="" coords="457,289,615,316"/>
-<area shape="rect" href="namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae" title=" " alt="" coords="695,481,907,508"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="967,469,1179,496"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1233,443,1393,469"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="730,431,873,457"/>
-<area shape="rect" href="namespaceEndian.html#aabd838029ed523d5280997f4ca10f859" title=" " alt="" coords="689,380,913,407"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="961,405,1185,432"/>
-<area shape="rect" href="namespaceFileIO.html#ace27e8bf091c04daa573cf803e609311" title=" " alt="" coords="715,691,888,717"/>
-<area shape="rect" href="namespaceFileIO.html#a197b48d6f4ff8c29bef92be77150612c" title=" " alt="" coords="702,625,901,666"/>
-<area shape="rect" href="namespaceFileIO.html#ad920e62a7bbafa7d5ba065b5e1f0fab7" title=" " alt="" coords="696,742,907,783"/>
-<area shape="rect" href="namespaceFileIO.html#a9e2948acf480edba90b44e53ab9b3bdf" title=" " alt="" coords="709,808,894,835"/>
-<area shape="rect" href="namespaceFileIO.html#aa760d33a91428f38b62a647ed615160e" title=" " alt="" coords="726,859,877,885"/>
-<area shape="rect" href="namespaceEndian.html#a1b015d819713390c25d87cc03f75be8f" title=" " alt="" coords="971,687,1175,713"/>
-<area shape="rect" href="namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1006,632,1141,659"/>
-<area shape="rect" href="namespaceEndian.html#a3e240c93c1ff33708295c8d92b0ebe92" title=" " alt="" coords="965,779,1181,805"/>
-<area shape="rect" href="namespaceFileIO.html#a32ca63187b58b8cc78338fa631d50778" title=" " alt="" coords="467,573,605,600"/>
-<area shape="rect" href="namespaceFileIO.html#aaf4f6a73076432b1faddd4d63f0b0c86" title=" " alt="" coords="694,573,909,600"/>
+<area shape="rect" title=" " alt="" coords="5,313,196,354"/>
+<area shape="rect" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478" title=" " alt="" coords="244,72,399,99"/>
+<area shape="rect" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053" title=" " alt="" coords="256,188,387,215"/>
+<area shape="rect" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055" title=" " alt="" coords="263,239,379,265"/>
+<area shape="rect" href="namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f" title=" " alt="" coords="263,432,379,459"/>
+<area shape="rect" href="namespaceFileIO.html#a20a00cf946aecd26e3a65b95ea0f7f60" title=" " alt="" coords="504,771,612,797"/>
+<area shape="rect" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0" title=" " alt="" coords="252,624,391,651"/>
+<area shape="rect" href="classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657" title=" " alt="" coords="447,5,669,32"/>
+<area shape="rect" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb" title=" " alt="" coords="467,56,649,83"/>
+<area shape="rect" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579" title=" " alt="" coords="459,107,657,149"/>
+<area shape="rect" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35" title=" " alt="" coords="453,173,663,214"/>
+<area shape="rect" href="namespaceFileIO.html#affd7f11b68ed7b5c0a65d5b1e5703492" title=" " alt="" coords="461,289,655,316"/>
+<area shape="rect" href="namespaceFileIO.html#ad8e75b6c4bdcf4df31b0bf5513f0a42b" title=" " alt="" coords="479,239,637,265"/>
+<area shape="rect" href="namespaceEndian.html#afb674eed3d17c61f0d99ecb1b2737ad5" title=" " alt="" coords="723,97,935,124"/>
+<area shape="rect" href="namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="995,111,1207,137"/>
+<area shape="rect" href="namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="1261,149,1421,176"/>
+<area shape="rect" href="namespaceEndian.html#a299b13501873eba82fbb3df182a26414" title=" " alt="" coords="758,148,901,175"/>
+<area shape="rect" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="717,199,941,225"/>
+<area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="989,187,1213,213"/>
+<area shape="rect" href="namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="467,340,649,367"/>
+<area shape="rect" href="namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="459,391,657,433"/>
+<area shape="rect" href="namespaceFileIO.html#a60d14999a525e60b548765722c0cc49a" title=" " alt="" coords="453,457,663,498"/>
+<area shape="rect" href="namespaceFileIO.html#aaf3a57cefdd3a674741d9447c5fcf2a2" title=" " alt="" coords="461,573,655,600"/>
+<area shape="rect" href="namespaceFileIO.html#a8c0dbfd2ab8a248ca642203dc84bd2a4" title=" " alt="" coords="479,523,637,549"/>
+<area shape="rect" href="namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae" title=" " alt="" coords="723,380,935,407"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="995,405,1207,432"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1261,443,1421,469"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="758,431,901,457"/>
+<area shape="rect" href="namespaceEndian.html#aabd838029ed523d5280997f4ca10f859" title=" " alt="" coords="717,481,941,508"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="989,469,1213,496"/>
+<area shape="rect" href="namespaceFileIO.html#ace27e8bf091c04daa573cf803e609311" title=" " alt="" coords="743,741,916,768"/>
+<area shape="rect" href="namespaceFileIO.html#a197b48d6f4ff8c29bef92be77150612c" title=" " alt="" coords="730,675,929,717"/>
+<area shape="rect" href="namespaceFileIO.html#ad920e62a7bbafa7d5ba065b5e1f0fab7" title=" " alt="" coords="724,793,935,834"/>
+<area shape="rect" href="namespaceFileIO.html#a9e2948acf480edba90b44e53ab9b3bdf" title=" " alt="" coords="737,859,922,885"/>
+<area shape="rect" href="namespaceFileIO.html#aa760d33a91428f38b62a647ed615160e" title=" " alt="" coords="754,909,905,936"/>
+<area shape="rect" href="namespaceEndian.html#a1b015d819713390c25d87cc03f75be8f" title=" " alt="" coords="999,737,1203,764"/>
+<area shape="rect" href="namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1034,683,1169,709"/>
+<area shape="rect" href="namespaceEndian.html#a3e240c93c1ff33708295c8d92b0ebe92" title=" " alt="" coords="993,829,1209,856"/>
+<area shape="rect" href="namespaceFileIO.html#a32ca63187b58b8cc78338fa631d50778" title=" " alt="" coords="489,624,627,651"/>
+<area shape="rect" href="namespaceFileIO.html#aaf4f6a73076432b1faddd4d63f0b0c86" title=" " alt="" coords="722,624,937,651"/>
 </map>
 </div>
 <div class="dynheader">
@@ -529,7 +531,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="FileIO_8h_source.html#l00421">FileIO::write32()</a>, and <a class="el" href="classXilinxConfigurationAccessPort.html#a9ae26bf52a66b293798e560febf9db77">XCAP_SyncInstruction()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlusAssembler_8cpp_source.html#l00128">XilinxUltraScalePlus::assemblerAsmToBit()</a>, <a class="el" href="XilinxUltraScalePlusOutput_8cpp_source.html#l00125">XilinxUltraScalePlus::writeBitstreamMainEmptySLR()</a>, and <a class="el" href="XilinxUltraScalePlusOutput_8cpp_source.html#l00143">XilinxUltraScalePlus::writeBitstreamMainSingleSLR()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XilinxUltraScalePlusAssembler_8cpp_source.html#l00128">XilinxUltraScalePlus::assemblerAsmToBit()</a>, <a class="el" href="XilinxUltraScalePlusOutput_8cpp_source.html#l00124">XilinxUltraScalePlus::writeBitstreamMainEmptySLR()</a>, and <a class="el" href="XilinxUltraScalePlusOutput_8cpp_source.html#l00142">XilinxUltraScalePlus::writeBitstreamMainSingleSLR()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1171,7 +1173,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a55976af5151a0b685b6b77c6f4311c95"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a55976af5151a0b685b6b77c6f4311c95">XilinxConfigurationAccessPort::XCAP_IDCODEInstruction</a></div><div class="ttdeci">virtual uint32_t XCAP_IDCODEInstruction()=0</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 31 2022 22:36:48 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 31 2022 22:38:12 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

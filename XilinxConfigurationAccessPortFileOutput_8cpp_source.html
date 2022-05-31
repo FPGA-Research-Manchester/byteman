@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">0.6 (Build #137)</span>
+   &#160;<span id="projectnumber">0.6 (Build #138)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classXilinxConfigurationAccessPort.html#a80c8f1b9404adad15c0eb26612e0f028">   20</a></span>&#160;streamoff <a class="code" href="classXilinxConfigurationAccessPort.html#a80c8f1b9404adad15c0eb26612e0f028">XilinxConfigurationAccessPort::outputBITheader</a>(ofstream&amp; fout, <a class="code" href="Endianess_8h.html#a05e8a4169b449a849b680c986bb72756">Endianess</a> e)</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Output endianess is &quot;</span> &lt;&lt; <a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a>(e) &lt;&lt; endl;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Generating header in &quot;</span> + <a class="code" href="namespaceEndian.html#a8ec188b346b1ec0ff9004c53dab82053">Endian::to_string</a>(e));</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055">FileIO::write16</a>(fout, 9, e);<span class="comment">//16-bit BE value = 9</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0">FileIO::writeString</a>(fout, <span class="keywordtype">string</span>(<span class="stringliteral">&quot;\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0&quot;</span>), e);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="namespaceFileIO.html#af1f2fd16a042a61fb659f8b4ffa33055">FileIO::write16</a>(fout, 1, e);<span class="comment">//16-bit BE value = 1</span></div>
@@ -136,6 +136,7 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a71fbdf0ea84abf8f5809ad445db16d50"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a71fbdf0ea84abf8f5809ad445db16d50">XilinxConfigurationAccessPort::fileDate</a></div><div class="ttdeci">string fileDate</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00053">XilinxConfigurationAccessPort.h:53</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_a016934d3d8c167e7784f826b987cda3f"><div class="ttname"><a href="namespaceFileIO.html#a016934d3d8c167e7784f826b987cda3f">FileIO::write32</a></div><div class="ttdeci">void write32(ofstream &amp;fout, uint32_t writeValue, Endianess e=Endianess::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00421">FileIO.h:421</a></div></div>
+<div class="ttc" id="aclassCommonDevice_html_aa42337dfb4b5ff34a063c2145ab87478"><div class="ttname"><a href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">CommonDevice::log</a></div><div class="ttdeci">void log(string message)</div><div class="ttdef"><b>Definition:</b> <a href="CommonDevice_8h_source.html#l00053">CommonDevice.h:53</a></div></div>
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a65ad66ac4ae99356297c7831a0019c84"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a65ad66ac4ae99356297c7831a0019c84">XilinxConfigurationAccessPort::partName</a></div><div class="ttdeci">string partName</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00052">XilinxConfigurationAccessPort.h:52</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_af3354ec506fedaa1272ca02c6da08cd0"><div class="ttname"><a href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0">FileIO::writeString</a></div><div class="ttdeci">void writeString(ofstream &amp;fout, string writeString, int outputSize=0)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00334">FileIO.h:334</a></div></div>
 <div class="ttc" id="aXilinxConfigurationAccessPort_8h_html"><div class="ttname"><a href="XilinxConfigurationAccessPort_8h.html">XilinxConfigurationAccessPort.h</a></div></div>
@@ -151,7 +152,7 @@ $(function() {
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a64029ac1ea70312a6a2deee735fe4018"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a64029ac1ea70312a6a2deee735fe4018">XilinxConfigurationAccessPort::outputCAPheaderConstant</a></div><div class="ttdeci">void outputCAPheaderConstant(ofstream &amp;, Endianess=Endianess::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPortFileOutput_8cpp_source.html#l00052">XilinxConfigurationAccessPortFileOutput.cpp:52</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 31 2022 22:36:48 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 31 2022 22:38:12 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
