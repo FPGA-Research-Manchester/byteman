@@ -143,6 +143,8 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 	XilinxUltraScalePlus::initializeResourceStringParameters();
 	streamoff headerLocationOfRemainingFileLength = XilinxUltraScalePlus::outputBITheader(fout, Endianess::BE);
 	
+	XilinxUltraScalePlus::outputCAPheaderConstant(fout, Endianess::BE);
+	
 	CAP::Register regAddr = CAP::Register::UNDEFINED;
 	int frameCount = 0;
 	int slr = 0, b = 7, r = 0, c = 0, m = 0;
