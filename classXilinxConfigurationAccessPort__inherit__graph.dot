@@ -1,12 +1,12 @@
-digraph "XilinxConfigurationAccessPort"
+digraph "XilinxConfigurationAccessPort&lt; BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;"
 {
  // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="XilinxConfigurationAccessPort",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="XilinxConfigurationAccess\lPort\< BLOCKTYPE_LOGIC,\l BLOCKTYPE_BLOCKRAM, WORDS\l_BEFORE_CLK, WORDS_AT_CLK,\l WORDS_AFTER_CLK, WORDS_PER\l_FRAME, FRAMES_PER_BRAM_CONTENT\l_COLUMN, CLB_PER_CLOCK_REGION,\l BRAM_PER_CLOCK_REGION, EXTRA_FRAMES\l_PER_ROW, FAR_BLOCKTYPE_SHIFT, FAR\l_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT,\l FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS\l_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS\l_SHIFT, FAR_MINORADDRESS_MASK \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="CommonDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommonDevice.html",tooltip=" "];
-  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScalePlus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html",tooltip=" "];
+  Node2 [label="CommonDevice2D",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommonDevice2D.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CommonDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommonDevice.html",tooltip=" "];
 }

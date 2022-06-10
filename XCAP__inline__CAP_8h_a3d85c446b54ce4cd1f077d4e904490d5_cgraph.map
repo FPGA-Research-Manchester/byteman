@@ -1,0 +1,5 @@
+<map id="XCAP_makeType2WriteInstruction" name="XCAP_makeType2WriteInstruction">
+<area shape="rect" id="node1" title="Generate and return the encoding for a type 2 Write instruction." alt="" coords="5,5,247,32"/>
+<area shape="rect" id="node2" href="$XCAP__inline__CAP_8h.html#ad1ab0c3df3aa91532cd677a778222cf2" title="Generate and return the encoding for a type 2 instruction." alt="" coords="295,5,501,32"/>
+<area shape="rect" id="node3" href="$XCAP__inline__CAP_8h.html#a5c0b68a6d44004c84affd1a63bff5035" title="Generate and return the encoding for an instruction." alt="" coords="549,5,717,32"/>
+</map>

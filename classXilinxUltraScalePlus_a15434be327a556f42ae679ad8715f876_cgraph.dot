@@ -7,11 +7,11 @@ digraph "XilinxUltraScalePlus::blank"
   rankdir="LR";
   Node1 [label="XilinxUltraScalePlus\l::blank",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScalePlus\l::ensureInitializedBitstream\lArrays",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a8dcdd76d3e0d12a68a8b5dfdbee74ce2",tooltip=" "];
-  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScalePlus\l::initializeResourceStringParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#ac32e568fe37e12bfc1509b4d690528b6",tooltip=" "];
+  Node2 [label="blankBuffers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$XCAP__inline__Blank_8h.html#a10ffb5917ae93f7a4be5533f80e3bb9b",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="XilinxUltraScalePlus\l::ensureInitializedBitstream\lArrays",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a96d1607f720750cee0905e331dce0353",tooltip=" "];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="XilinxUltraScalePlus\l::parseParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aafd36c932d3c93bac078997a32ca8bc6",tooltip=" "];
+  Node4 [label="parseParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$XCAP__inline__ParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056",tooltip=" "];
   Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69",tooltip="Replaces all instances of oldChar in string str with newChar and returns the resulting string."];
 }

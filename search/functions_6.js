@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['getdevicebyidcode_1434',['getDeviceByIDCODE',['../classXilinxUltraScalePlus.html#ac6b62d574927bf0a5b301313f93aa03a',1,'XilinxUltraScalePlus']]],
-  ['getdevicebyidcodeorthrow_1435',['getDeviceByIDCODEorThrow',['../classXilinxUltraScalePlus.html#a260e46db70345e03ee37836fb84b7e9f',1,'XilinxUltraScalePlus']]],
-  ['getdevicebyname_1436',['getDeviceByName',['../classXilinxUltraScalePlus.html#aff5435669bcff7d1a37611e13d32a3f4',1,'XilinxUltraScalePlus']]],
-  ['getdevicebynameorthrow_1437',['getDeviceByNameOrThrow',['../classXilinxUltraScalePlus.html#aa7161a5191cf43caf46263dbc82a45ef',1,'XilinxUltraScalePlus']]],
-  ['getframetype_1438',['getFrameType',['../classXilinxUltraScalePlus.html#afc958d093237ae1d55ced73df2153c36',1,'XilinxUltraScalePlus']]],
-  ['getoverlap_1439',['getOverlap',['../namespacerect.html#a97b9449bf7fcfe1754ad8383a82995ed',1,'rect']]]
+  ['getdevicebyidcode_1753',['getDeviceByIDCODE',['../classXilinxUltraScale.html#aab063e31fe8db273a0b5c4057f206d58',1,'XilinxUltraScale::getDeviceByIDCODE()'],['../classXilinxUltraScalePlus.html#a1392dd338c9d38abf3254aa5b5938be6',1,'XilinxUltraScalePlus::getDeviceByIDCODE()'],['../classXilinxConfigurationAccessPort.html#aea367cc90f5d78cc56a18f1d009187a8',1,'XilinxConfigurationAccessPort::getDeviceByIDCODE()']]],
+  ['getdevicebyidcodeorthrow_1754',['getDeviceByIDCODEorThrow',['../classXilinxUltraScale.html#a25b4faa957ea0f214a1c21bb982572d1',1,'XilinxUltraScale::getDeviceByIDCODEorThrow()'],['../classXilinxUltraScalePlus.html#a92388a7fd1d5f5256cb01fa011d46199',1,'XilinxUltraScalePlus::getDeviceByIDCODEorThrow()'],['../classXilinxConfigurationAccessPort.html#a0511e8ecae23a201ea490b54c88fdf45',1,'XilinxConfigurationAccessPort::getDeviceByIDCODEorThrow()']]],
+  ['getdevicebyname_1755',['getDeviceByName',['../classXilinxUltraScale.html#a84cd2e2bc1c74a92a1c029a0766ec96d',1,'XilinxUltraScale::getDeviceByName()'],['../classXilinxUltraScalePlus.html#a8e9c53a1927042531467d5c35af3c0bc',1,'XilinxUltraScalePlus::getDeviceByName()'],['../classXilinxConfigurationAccessPort.html#a55a8ea03ddafdce60c73710ace37255b',1,'XilinxConfigurationAccessPort::getDeviceByName()']]],
+  ['getdevicebynameorthrow_1756',['getDeviceByNameOrThrow',['../classXilinxUltraScale.html#a881b11957a70a5eba6a53af021d5f648',1,'XilinxUltraScale::getDeviceByNameOrThrow()'],['../classXilinxUltraScalePlus.html#a05952a1b8836917cc2f0ae95b4bbb96a',1,'XilinxUltraScalePlus::getDeviceByNameOrThrow()'],['../classXilinxConfigurationAccessPort.html#ac5b69640b1dabd302e6c7dc487cdcf3c',1,'XilinxConfigurationAccessPort::getDeviceByNameOrThrow()']]],
+  ['getframetype_1757',['getFrameType',['../classXilinxUltraScale.html#a529c5929560f66c9c489498112613028',1,'XilinxUltraScale::getFrameType()'],['../classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760',1,'XilinxUltraScalePlus::getFrameType()'],['../classXilinxConfigurationAccessPort.html#afa457bf349c8fa982bdc4f72dadbe681',1,'XilinxConfigurationAccessPort::getFrameType()']]],
+  ['getoverlap_1758',['getOverlap',['../namespacerect.html#a97b9449bf7fcfe1754ad8383a82995ed',1,'rect']]],
+  ['getxcapcommand_1759',['getXCAPcommand',['../XCAP__inline__CAP_8h.html#aa2ec73a784528bc16781a71e5388650e',1,'XCAP_inline_CAP.h']]],
+  ['getxcapregister_1760',['getXCAPregister',['../XCAP__inline__CAP_8h.html#acfc0355ad80bf49778f60a967037333e',1,'XCAP_inline_CAP.h']]]
 ];

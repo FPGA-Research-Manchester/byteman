@@ -1,4 +1,0 @@
-<map id="XilinxUltraScalePlus::CAP_makeType2Instruction" name="XilinxUltraScalePlus::CAP_makeType2Instruction">
-<area shape="rect" id="node1" title="Generate and return the encoding for a type 2 instruction." alt="" coords="5,5,212,47"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#aa261ea6bf2b474d7aee3ab061853cd7e" title="Generate and return the encoding for an instruction." alt="" coords="260,5,428,47"/>
-</map>

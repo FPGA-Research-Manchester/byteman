@@ -1,4 +1,6 @@
-<map id="XilinxConfigurationAccessPort" name="XilinxConfigurationAccessPort">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,223,107"/>
-<area shape="rect" id="node2" href="$classCommonDevice.html" title=" " alt="" coords="51,5,177,32"/>
+<map id="XilinxConfigurationAccessPort&lt; BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;" name="XilinxConfigurationAccessPort&lt; BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="755,39,1171,241"/>
+<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="317,5,461,32"/>
+<area shape="rect" id="node3" href="$classCommonDevice.html" title=" " alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node4" href="$structXilinxConfigurationAccessPort_1_1SelectedOptions.html" title=" " alt="" coords="181,56,597,259"/>
 </map>

@@ -1,0 +1,11 @@
+digraph "XCAP_makeType2Instruction"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="XCAP_makeType2Instruction",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate and return the encoding for a type 2 instruction."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="XCAP_makeInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$XCAP__inline__CAP_8h.html#a5c0b68a6d44004c84affd1a63bff5035",tooltip="Generate and return the encoding for an instruction."];
+}

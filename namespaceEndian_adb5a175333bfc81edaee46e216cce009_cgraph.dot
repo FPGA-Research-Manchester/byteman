@@ -1,0 +1,17 @@
+digraph "Endian::diff"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Endian::diff",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Endian::isBitSwap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Endian::isLE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a2908cb68d06425c31c71fae71797cded",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Endian::toggleEndianBitSwap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Endian::toggleEndianness",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8",tooltip=" "];
+}

@@ -1,4 +1,5 @@
 <map id="byteman::helpDevice" name="byteman::helpDevice">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,167,39"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91" title=" " alt="" coords="215,5,368,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,167,61"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScale.html#a0dafd9e7a8e3c762f47fc43e67e4c811" title=" " alt="" coords="215,5,421,32"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91" title=" " alt="" coords="241,57,395,98"/>
 </map>

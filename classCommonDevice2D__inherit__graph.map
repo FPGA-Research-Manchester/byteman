@@ -1,5 +1,9 @@
 <map id="CommonDevice2D" name="CommonDevice2D">
-<area shape="rect" id="node1" title=" " alt="" coords="10,80,154,107"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html" title=" " alt="" coords="5,155,159,181"/>
-<area shape="rect" id="node2" href="$classCommonDevice.html" title=" " alt="" coords="19,5,145,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="180,371,324,397"/>
+<area shape="rect" id="node3" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,5,788,208"/>
+<area shape="rect" id="node4" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="445,232,715,347"/>
+<area shape="rect" id="node5" href="$classXilinxUltraScalePlus.html" title=" " alt="" coords="836,324,989,351"/>
+<area shape="rect" id="node6" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="425,421,735,536"/>
+<area shape="rect" id="node7" href="$classXilinxUltraScale.html" title=" " alt="" coords="849,512,976,539"/>
+<area shape="rect" id="node2" href="$classCommonDevice.html" title=" " alt="" coords="5,371,132,397"/>
 </map>

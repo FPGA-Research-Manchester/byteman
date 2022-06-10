@@ -1,4 +1,5 @@
 <map id="byteman::helpAssembly" name="byteman::helpAssembly">
-<area shape="rect" id="node1" title=" " alt="" coords="5,13,185,39"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScalePlus.html#aff73edd581c9694ceb1db5b7eb6ff715" title=" " alt="" coords="233,5,387,47"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,185,61"/>
+<area shape="rect" id="node2" href="$classXilinxUltraScale.html#a4f809977f2438ee89ec21f6e3bbff095" title=" " alt="" coords="233,5,465,32"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#aff73edd581c9694ceb1db5b7eb6ff715" title=" " alt="" coords="273,57,426,98"/>
 </map>

@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['magic0_1688',['MAGIC0',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059af151505167483b7189e4a563ce7fb775',1,'CAP']]],
-  ['magic1_1689',['MAGIC1',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a7c5693628f8cc575ce93b5c30a1d2370',1,'CAP']]],
-  ['mask_1690',['MASK',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a0a9501840acacfc8efe7522f5340000c',1,'CAP']]],
-  ['mfw_1691',['MFW',['../namespaceCAP.html#a9d92de4c82108f195c0bd853e348d620aac2b039894d9ff9f351ff30e3067c866',1,'CAP']]],
-  ['mfwr_1692',['MFWR',['../namespaceCAP.html#ae4eb485ee1937c4d2e600a7a70e7b059a5e565cc05b6b65654a7c61d26aad293b',1,'CAP']]]
+  ['magic0_2056',['MAGIC0',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514af151505167483b7189e4a563ce7fb775',1,'XCAP']]],
+  ['magic1_2057',['MAGIC1',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370',1,'XCAP']]],
+  ['magic2_2058',['MAGIC2',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca24d6ea421597acfbcdc2d07a5b27aea6',1,'XCAP']]],
+  ['mask_2059',['MASK',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0a9501840acacfc8efe7522f5340000c',1,'XCAP']]],
+  ['mfw_2060',['MFW',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcaac2b039894d9ff9f351ff30e3067c866',1,'XCAP']]],
+  ['mfwr_2061',['MFWR',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a5e565cc05b6b65654a7c61d26aad293b',1,'XCAP']]]
 ];

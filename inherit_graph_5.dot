@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="XilinxUltraScalePlus\l::SelectedOptions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structXilinxUltraScalePlus_1_1SelectedOptions.html",tooltip=" "];
+  Node0 [label="XilinxConfigurationAccess\lPort\< BLOCKTYPE_LOGIC,\l BLOCKTYPE_BLOCKRAM, WORDS\l_BEFORE_CLK, WORDS_AT_CLK,\l WORDS_AFTER_CLK, WORDS_PER\l_FRAME, FRAMES_PER_BRAM_CONTENT\l_COLUMN, CLB_PER_CLOCK_REGION,\l BRAM_PER_CLOCK_REGION, EXTRA_FRAMES\l_PER_ROW, FAR_BLOCKTYPE_SHIFT, FAR\l_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT,\l FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS\l_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS\l_SHIFT, FAR_MINORADDRESS_MASK \>::SelectedOptions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structXilinxConfigurationAccessPort_1_1SelectedOptions.html",tooltip=" "];
 }

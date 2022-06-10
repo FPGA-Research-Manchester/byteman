@@ -1,6 +1,5 @@
 <map id="byteman::parseRegion" name="byteman::parseRegion">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,175,83"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title="Parses a string s, removes all integers and returns the rest." alt="" coords="227,5,412,32"/>
-<area shape="rect" id="node3" href="$namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1" title=" " alt="" coords="235,56,404,83"/>
-<area shape="rect" id="node4" href="$classCommonDevice2D.html#a2484e9d2bb5d8fd1c278f5097b1707b7" title=" " alt="" coords="223,107,416,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,175,57"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,5,408,32"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1" title=" " alt="" coords="231,56,400,83"/>
 </map>

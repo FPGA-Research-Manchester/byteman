@@ -1,0 +1,5 @@
+<map id="XCAP_makeType1ReadInstruction" name="XCAP_makeType1ReadInstruction">
+<area shape="rect" id="node1" title="Generate and return the encoding for a type 1 Read instruction." alt="" coords="5,5,244,32"/>
+<area shape="rect" id="node2" href="$XCAP__inline__CAP_8h.html#a38ef532cbf6d0e27012dc985536ab51b" title="Generate and return the encoding for a type 1 instruction." alt="" coords="292,5,499,32"/>
+<area shape="rect" id="node3" href="$XCAP__inline__CAP_8h.html#a5c0b68a6d44004c84affd1a63bff5035" title="Generate and return the encoding for an instruction." alt="" coords="547,5,715,32"/>
+</map>
