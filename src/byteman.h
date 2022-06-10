@@ -23,6 +23,7 @@
  * function parses the command line arguments.
  *
  * A list of currently implemented FPGA architectures:
+ * - Xilinx UltraScale (XilinxUltraScale, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * - Xilinx UltraScale+ (XilinxUltraScalePlus, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * 
  *****************************************************************************/
@@ -33,21 +34,29 @@
 #include<iostream>
 #include<string>
 
+#ifdef XUS
+	#include "Devices/Xilinx/UltraScale/UltraScale.h"
+#endif
+
 #ifdef XUSP
-	#include "Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlus.h"
+	#include "Devices/Xilinx/UltraScalePlus/UltraScalePlus.h"
 #endif
 
 using namespace std;
 
-//Any changes to version numbers should be done only in CMakeLists.txt, not here!
-#define VERSION "0.6"
-#define VERSION_BUILD "138"
-
 class byteman
 {
 	public:
-		byteman(){};
-		virtual ~byteman(){};
+		byteman();
+		virtual ~byteman();
+		#ifdef XUS
+			XilinxUltraScale mainXUS, tempXUS;
+		#endif //XUS
+		
+		#ifdef XUSP
+			XilinxUltraScalePlus mainXUSP, tempXUSP;
+		#endif //XUSP
+		
 		enum class Architecture{
 			Unknown,
 			Xilinx_Series6,
@@ -63,8 +72,6 @@ class byteman
 		};
 		//parse
 		SelectedOptions parseParams(string);
-
-		void init();
 		
 		void parse(string);
 		void setArchitecture(string);

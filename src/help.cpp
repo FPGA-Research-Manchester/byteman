@@ -19,10 +19,15 @@
 #include<stdexcept>
 
 #include "byteman.h"
+#include "version.h"
 #include "Common/str.h"
 
 using namespace std;
-
+#ifdef _WIN32
+	#define EXECUTABLE "byteman.exe"
+#else
+	#define EXECUTABLE "byteman"
+#endif
 void byteman::help(string param, int exitCode)
 {
 	if(param.empty())
@@ -51,10 +56,8 @@ void byteman::help()
 	cout << "\t-stdin                 : Continue using standard input. See \"byteman -h stdin\"" << endl;
 
 	cout << "Examples: " << endl;
-	cout << "\tbyteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit" << endl;
-	cout << "\tbyteman.exe Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit" << endl;
-	
-	
+	cout << "\t" EXECUTABLE " Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit" << endl;
+	cout << "\t" EXECUTABLE " Xilinx US+ -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit" << endl;
 }
 void byteman::help(string param)
 {
@@ -112,6 +115,10 @@ void byteman::helpDevice()
 	
 	cout << "Available devices:" <<endl;
 	#ifdef XUSP
+		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)
+			XilinxUltraScale::deviceHelp();
+	#endif
+	#ifdef XUSP
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
 			XilinxUltraScalePlus::deviceHelp();
 	#endif
@@ -139,6 +146,10 @@ void byteman::helpOutput()
 void byteman::helpAssembly()
 {
 	cout<<"TODO usage_assembly" << endl;
+	#ifdef XUS
+		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)
+			XilinxUltraScale::assemblerHelp();
+	#endif
 	#ifdef XUSP
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
 			XilinxUltraScalePlus::assemblerHelp();

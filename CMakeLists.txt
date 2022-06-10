@@ -18,7 +18,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 #next line has to be in the format ..."byteman VERSION X.Y.Z"... for the autoversioning
-project(byteman VERSION 0.6.138)
+project(byteman VERSION 1.0.138)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
@@ -31,6 +31,10 @@ endif()
 
 add_definitions(-DENABLEWARN) #enables -warn (warnings)
 add_definitions(-DENABLELOGS) #enables -verbose (logging)
+
+add_definitions(-DXUS) #Add Xilinx UltraScale devices in byteman
+add_definitions(-DXUSKINTEX)
+add_definitions(-DXUSVIRTEX)
 
 add_definitions(-DXUSP) #Add Xilinx UltraScale+ devices in byteman
 add_definitions(-DXUSPARTIX)

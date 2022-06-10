@@ -14,13 +14,16 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include "XilinxUltraScalePlus.h"
-#include "XilinxUltraScalePlusConfigurationAccessPort.h"
-#include "XilinxUltraScalePlusConfigurationAccessPortInlinedFunctions.cpp"
+#include "../../../Common/str.h"
 
-uint32_t XilinxUltraScalePlus::XCAP_SyncInstruction(){
-	return XilinxUltraScalePlus::CAP_makeSyncInstruction();
-}
-uint32_t XilinxUltraScalePlus::XCAP_IDCODEInstruction(){
-	return XilinxUltraScalePlus::XilinxUltraScalePlus::CAP_makeType1WriteInstruction(CAP::Register::IDCODE, 1);
+#include "Fabric.h"
+//#include "ConfigurationAccessPort.h"
+#include "UltraScale.h"
+
+
+void XilinxUltraScale::blank(string params){
+	ensureInitializedBitstreamArrays();
+	parseParams(params);
+	
+	blankBuffers();
 }

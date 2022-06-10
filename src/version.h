@@ -14,27 +14,11 @@
  * limitations under the License.
  *****************************************************************************/
 
-#include<time.h>
+#ifndef VERSION_H
+#define VERSION_H
 
-#include "XilinxConfigurationAccessPort.h"
+//Any changes to version numbers should be done only in the global CMakeLists.txt, not here!
+#define VERSION "0.6"
+#define VERSION_BUILD "138"
 
-XilinxConfigurationAccessPort::XilinxConfigurationAccessPort()
-{
-	designName = "";
-	partName = "";
-}
-XilinxConfigurationAccessPort::~XilinxConfigurationAccessPort()
-{
-}
-
-void XilinxConfigurationAccessPort::updateDateAndTime()
-{
-	time_t timestamp = time(0);
-	struct tm  tstruct;
-	char	   buf[80];
-	tstruct = *localtime(&timestamp);
-	strftime(buf, sizeof(buf), "%Y/%m/%d", &tstruct);
-	fileDate = string(buf);
-	strftime(buf, sizeof(buf), "%H:%M:%S", &tstruct);
-	fileTime = string(buf);
-}
+#endif //VERSION_H

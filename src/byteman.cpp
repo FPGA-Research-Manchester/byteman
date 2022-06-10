@@ -24,14 +24,6 @@
 
 using namespace std;
 
-byteman bytemanInstance;
-
-//Ideally the device instances should be in byteman class itself, but doxygen
-//doesn't seem to be able to trace method calls that way?!
-#ifdef XUSP
-	XilinxUltraScalePlus mainXUSP, tempXUSP;
-#endif //XUSP
-
 /**************************************************************************//**
  * Main function for byteman.
  * Parses command line arguments and eventual streamed script files as individual
@@ -42,6 +34,7 @@ byteman bytemanInstance;
  *****************************************************************************/
 int main(int argc, char * argv[])
 {
+	byteman bytemanInstance;
 	string command;
 	if(argc <= 1) 
 		bytemanInstance.help("",1);//show usage and terminate with an error code
@@ -76,6 +69,21 @@ int main(int argc, char * argv[])
 		return 1;
 	}
 	return 0;
+}
+
+byteman::byteman(){
+	#ifdef XUS
+		mainXUS.instanceName = "Main Xil US";
+		tempXUS.instanceName = "Temp Xil US";
+	#endif //XUS
+	
+	#ifdef XUSP
+		mainXUSP.instanceName = "Main Xil US+";
+		tempXUSP.instanceName = "Temp Xil US+";
+	#endif //XUSP
+}
+byteman::~byteman(){
+	
 }
 
 void byteman::parse(string command)
@@ -116,10 +124,6 @@ void byteman::parse(string command)
 	else
 		throw runtime_error("Could not parse command. Consider checking out \"bytemap -help\".");
 }
-void byteman::init(){
-	mainXUSP.instanceName = "Main Xil US+";
-	tempXUSP.instanceName = "Temp Xil US+";
-}
 
 /**************************************************************************//**
  * Parses argument options for byteman
@@ -151,6 +155,12 @@ void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 	int verboseValue;
 	if(!str::parse::multipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
 	
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			mainXUS.enableLog = verboseValue;
+			tempXUS.enableLog = verboseValue;
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			mainXUSP.enableLog = verboseValue;
@@ -163,6 +173,12 @@ void byteman::parseWarn(string warnCmd, SelectedOptions options)
 	int warnValue;
 	if(!str::parse::multipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
 	
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			mainXUS.enableWarn = warnValue;
+			tempXUS.enableWarn = warnValue;
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			mainXUSP.enableWarn = warnValue;
@@ -175,6 +191,14 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 	string params = str::parse::allStringWords(regionCmd);
 	Rect2D rect;
 	str::parse::multipleInts(regionCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.region(params, rect);
+			if(options.tempBufferSelected)
+				tempXUS.region(params, rect);
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -187,6 +211,14 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 void byteman::parseBlank(string blankCmd, SelectedOptions options)
 {
 	string params = str::parse::allStringWords(blankCmd);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.blank(params);
+			if(options.tempBufferSelected)
+				tempXUS.blank(params);
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -199,6 +231,9 @@ void byteman::parseBlank(string blankCmd, SelectedOptions options)
 void byteman::parseChange(string changeCmd, SelectedOptions options)
 {
 	//TODO lut,ff,wires,bram,uram modifications
+	#ifdef XUS
+		;
+	#endif
 	#ifdef XUSP
 		;
 	#endif
@@ -206,12 +241,20 @@ void byteman::parseChange(string changeCmd, SelectedOptions options)
 void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 {
 	string deviceName = str::parse::allStringWords(deviceCmd);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.setDeviceByNameOrThrow(deviceName);
+			if(options.tempBufferSelected)
+				tempXUS.setDeviceByNameOrThrow(deviceName);
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
-				mainXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
+				mainXUSP.setDeviceByNameOrThrow(deviceName);
 			if(options.tempBufferSelected)
-				tempXUSP.setDevice(mainXUSP.getDeviceByNameOrThrow(deviceName), deviceName);
+				tempXUSP.setDeviceByNameOrThrow(deviceName);
 		}
 	#endif
 }
@@ -219,6 +262,14 @@ void byteman::parseInput(string inputCmd, SelectedOptions options)
 {
 	string params = str::parse::allStringWordsWithoutLastStringWord(inputCmd);
 	string filename = str::parse::lastStringWord(inputCmd);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.readBitstream(filename);
+			if(options.tempBufferSelected)
+				tempXUS.readBitstream(filename);
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -234,6 +285,14 @@ void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 	Rect2D rect;
 	Coord2D dst;
 	str::parse::multipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.merge(&tempXUS, params, rect, dst);
+			if(options.tempBufferSelected)
+				tempXUS.merge(&mainXUS, params, rect, dst);
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -249,6 +308,14 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 	string filename = str::parse::lastStringWord(outputCmd);
 	Rect2D rect;
 	str::parse::multipleInts(outputCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.writeBitstream(filename, params, rect);
+			if(options.tempBufferSelected)
+				tempXUS.writeBitstream(filename, params, rect);
+		}
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -262,6 +329,10 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 {
 	string filenameIn = str::parse::nthStringWord(assemblyCmd, 0);
 	string filenameOut = str::parse::nthStringWord(assemblyCmd, 1);
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture)
+			mainXUS.assembler(filenameIn, filenameOut);
+	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
 			mainXUSP.assembler(filenameIn, filenameOut);
@@ -281,7 +352,16 @@ void byteman::setArchitecture(string arch)
 			selectedArchitecture = Architecture::Xilinx_UltraScalePlus;
 			return;
 		}
-	#endif
-	
+	#endif//XUSP
+	#ifdef XUS
+		if(str::iff::stringContains(arch, "xus")
+		||	(	str::iff::stringContains(arch, "xilinx")
+			&&	str::iff::stringContains(arch, "ultrascale", "us")
+			)
+		) {
+			selectedArchitecture = Architecture::Xilinx_UltraScale;
+			return;
+		}
+	#endif//XUS
 	throw runtime_error(string("Unknown architecture: \"").append(arch).append("\"."));
 }

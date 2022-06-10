@@ -14,5 +14,22 @@
 # limitations under the License.
 ###############################################################################
 
-add_subdirectory(UltraScale)
-add_subdirectory(UltraScalePlus)
+#Add all sources for Xilinx US
+set(XUS_SRC 
+${CMAKE_CURRENT_SOURCE_DIR}/UltraScale.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/Fabric.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/Input.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/Output.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/Merge.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/Blank.cpp 
+${CMAKE_CURRENT_SOURCE_DIR}/Devices.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/Assembler.cpp
+)
+
+#build byteman natively (without the library)
+target_sources(byteman PRIVATE ${XUS_SRC})
+
+#Create a Xilinx US library, disabled because the github cross compilation can't link them and throws errors
+#add_library(XUS_LIB STATIC ${XUS_SRC} ${DEVICES_SHARED_SRC})
+#target_compile_definitions(XUS_LIB PUBLIC XUS_LIB)
+

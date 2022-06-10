@@ -99,6 +99,18 @@ namespace str{
 			ss >> firstWord;
 			return stringWordIs(firstWord, nextString, restStrings...);
 		}
+		/// Returns false. End of recursion for template
+		template<typename ... Rest> inline bool charIs(char checkedChar)	
+		{
+			return false;
+		}
+		/// Returns true if char @c checkedChar matches any of chars @c nextChar or @c restChars
+		template<typename ... Rest> inline bool charIs(char checkedChar, char nextChar, Rest ... restChars)	
+		{
+			if(checkedChar == nextChar)
+				return true;
+			return charIs(checkedChar, restChars...);
+		}
 	}
 }
 #endif //STR_IFF_H
