@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.0 (Build #139)</span>
+   &#160;<span id="projectnumber">1.0 (Build #140)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -100,12 +100,12 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using namespace </span>std;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#if defined(__BYTE_ORDER) &amp;&amp; __BYTE_ORDER == __BIG_ENDIAN || defined(BYTE_ORDER) &amp;&amp; BYTE_ORDER == BIG_ENDIAN || defined(__BIG_ENDIAN__) || defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIBSEB) || defined(__MIBSEB) || defined(__MIBSEB__)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#if (defined(__BYTE_ORDER) &amp;&amp; __BYTE_ORDER == __BIG_ENDIAN) || (defined(BYTE_ORDER) &amp;&amp; BYTE_ORDER == BIG_ENDIAN) || defined(__BIG_ENDIAN__) || defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIBSEB) || defined(__MIBSEB) || defined(__MIBSEB__)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">    #define IS_LITTLE_ENDIAN() 0</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#elif defined(_WIN32) || defined(__BYTE_ORDER) &amp;&amp; __BYTE_ORDER == __LITTLE_ENDIAN || defined(BYTE_ORDER) &amp;&amp; BYTE_ORDER == LITTLE_ENDIAN || defined(__LITTLE_ENDIAN__) || defined(__ARMEL__) || defined(__THUMBEL__) || defined(__AARCH64EL__) || defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#elif defined(_WIN32) || (defined(__BYTE_ORDER) &amp;&amp; __BYTE_ORDER == __LITTLE_ENDIAN) || (defined(BYTE_ORDER) &amp;&amp; BYTE_ORDER == LITTLE_ENDIAN) || defined(__LITTLE_ENDIAN__) || defined(__ARMEL__) || defined(__THUMBEL__) || defined(__AARCH64EL__) || defined(_MIPSEL) || defined(__MIPSEL) || defined(__MIPSEL__)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">    #define IS_LITTLE_ENDIAN() 1</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">    #error Could not determine machine&#39;s endianess in the preprocessor!</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">    #error Could not determine machine endianness in the preprocessor!</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="Endianness_8h.html#a93aa01caf857c339c847048e55fcd975">   35</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="Endianness_8h.html#a93aa01caf857c339c847048e55fcd975">IS_LITTLE_ENDIAN</a>()</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">union </span>{</div>
@@ -384,7 +384,7 @@ $(function() {
 <div class="ttc" id="anamespaceEndian_html_a896856c90678cc626e146846452aa2f6"><div class="ttname"><a href="namespaceEndian.html#a896856c90678cc626e146846452aa2f6">Endian::NativeToAnyEndianness64</a></div><div class="ttdeci">uint64_t NativeToAnyEndianness64(uint64_t x, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00259">Endianness.h:259</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 10 2022 13:03:19 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 10 2022 14:26:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
