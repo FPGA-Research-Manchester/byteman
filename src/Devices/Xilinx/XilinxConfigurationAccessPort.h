@@ -23,6 +23,7 @@
 #include<algorithm> //replace
 #include<string>
 #include<sstream>
+#include<cstring> //memset
 
 #include "Fabric.h"
 #include "XCAP.h"
