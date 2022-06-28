@@ -1195,14 +1195,26 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
         XUSP_PARTNAME(XCZU49DR_NAME);                                                             \
         XUSP_IDCODE(0, XCZU49DR_IDCODE);                                                          \
     }
-
+	
+	//Same as ZU42DR
     #define XCZU65DR_NAME "xczu65dr"
     #define XCZU65DR_IDCODE TODO
-    #define XCZU65DR() {/*TODO*/;throw runtime_error("Device XCZU65DR not yet implemented.");}
+    #define XCZU65DR() {                                                                          \
+        throw runtime_error("Device XCZU65DR not yet implemented.");                              \
+        XCZU42DR();                                                                               \
+        XUSP_PARTNAME(XCZU65DR_NAME);                                                             \
+        XUSP_IDCODE(0, XCZU65DR_IDCODE);                                                          \
+    }
 
+	//Same as ZU42DR
     #define XCZU67DR_NAME "xczu67dr"
     #define XCZU67DR_IDCODE TODO
-    #define XCZU67DR() {/*TODO*/;throw runtime_error("Device XCZU67DR not yet implemented.");}
+    #define XCZU67DR() {                                                                          \
+        throw runtime_error("Device XCZU67DR not yet implemented.");                              \
+        XCZU42DR();                                                                               \
+        XUSP_PARTNAME(XCZU67DR_NAME);                                                             \
+        XUSP_IDCODE(0, XCZU67DR_IDCODE);                                                          \
+    }
 
 //Xilinx UltraScale+ Alveo rebranding
     //XCU200 is rebranded XCVU9P, but IDCODE is different
