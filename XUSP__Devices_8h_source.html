@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #144)</span>
+   &#160;<span id="projectnumber">1.1 (Build #145)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -1269,126 +1269,138 @@ $(function() {
 <div class="line"><a name="l01195"></a><span class="lineno"> 1195</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCZU49DR_NAME);                                                             \</span></div>
 <div class="line"><a name="l01196"></a><span class="lineno"> 1196</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCZU49DR_IDCODE);                                                          \</span></div>
 <div class="line"><a name="l01197"></a><span class="lineno"> 1197</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160; </div>
-<div class="line"><a name="l01199"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a7f2d0e57e5fd5543561164becf7a4985"> 1199</a></span>&#160;<span class="preprocessor">    #define XCZU65DR_NAME &quot;xczu65dr&quot;</span></div>
-<div class="line"><a name="l01200"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a0294828b5ad619cee98a17e7d6cb34e1"> 1200</a></span>&#160;<span class="preprocessor">    #define XCZU65DR_IDCODE TODO</span></div>
-<div class="line"><a name="l01201"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a01ea15e564dbabc58c3866729681e67e"> 1201</a></span>&#160;<span class="preprocessor">    #define XCZU65DR() {</span><span class="comment">/*TODO*/</span><span class="preprocessor">;throw runtime_error(&quot;Device XCZU65DR not yet implemented.&quot;);}</span></div>
-<div class="line"><a name="l01202"></a><span class="lineno"> 1202</span>&#160; </div>
-<div class="line"><a name="l01203"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a52025a8c7e586916769802d1d9d77659"> 1203</a></span>&#160;<span class="preprocessor">    #define XCZU67DR_NAME &quot;xczu67dr&quot;</span></div>
-<div class="line"><a name="l01204"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a665df96f56291bda198a3e947cb3782f"> 1204</a></span>&#160;<span class="preprocessor">    #define XCZU67DR_IDCODE TODO</span></div>
-<div class="line"><a name="l01205"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aa98b64c117bcba4c5285f55a2a9ff9b8"> 1205</a></span>&#160;<span class="preprocessor">    #define XCZU67DR() {</span><span class="comment">/*TODO*/</span><span class="preprocessor">;throw runtime_error(&quot;Device XCZU67DR not yet implemented.&quot;);}</span></div>
-<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160; </div>
-<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;<span class="comment">//Xilinx UltraScale+ Alveo rebranding</span></div>
-<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160;    <span class="comment">//XCU200 is rebranded XCVU9P, but IDCODE is different</span></div>
-<div class="line"><a name="l01209"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ac2bc06982e9a17e452ad8d08d82980c5"> 1209</a></span>&#160;<span class="preprocessor">    #define XCU200_NAME &quot;xcu200&quot;</span></div>
-<div class="line"><a name="l01210"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aca1fbb6b26245622efef50cc14c78024"> 1210</a></span>&#160;<span class="preprocessor">    #define XCU200_IDCODE 0x4B37093</span></div>
-<div class="line"><a name="l01211"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#af6fd267728a3e1b553b0cd74a8524406"> 1211</a></span>&#160;<span class="preprocessor">    #define XCU200() {                                                                            \</span></div>
-<div class="line"><a name="l01212"></a><span class="lineno"> 1212</span>&#160;<span class="preprocessor">        XCVU9P();                                                                                 \</span></div>
-<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU200_NAME);                                                               \</span></div>
-<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU200_IDCODE);                                                            \</span></div>
-<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160; </div>
-<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;    <span class="comment">//XCU250 is rebranded XCVU13P, but IDCODE is different</span></div>
-<div class="line"><a name="l01218"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a7e977757d9067f04ebf3c6f85867cd36"> 1218</a></span>&#160;<span class="preprocessor">    #define XCU250_NAME &quot;xcu250&quot;</span></div>
-<div class="line"><a name="l01219"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aabaf31968d8245ed597ffb0dddb49ff4"> 1219</a></span>&#160;<span class="preprocessor">    #define XCU250_IDCODE 0x4B57093</span></div>
-<div class="line"><a name="l01220"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a79ed0a118f07ae8089bba02d0b665389"> 1220</a></span>&#160;<span class="preprocessor">    #define XCU250() {                                                                            \</span></div>
-<div class="line"><a name="l01221"></a><span class="lineno"> 1221</span>&#160;<span class="preprocessor">        XCVU13P();                                                                                \</span></div>
-<div class="line"><a name="l01222"></a><span class="lineno"> 1222</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU250_NAME);                                                               \</span></div>
-<div class="line"><a name="l01223"></a><span class="lineno"> 1223</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU250_IDCODE);                                                            \</span></div>
-<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160; </div>
-<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;    <span class="comment">//XCU26 is rebranded XCVU23P, but IDCODE is different</span></div>
-<div class="line"><a name="l01227"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aad7704c2cd45df6444fd53e290114cda"> 1227</a></span>&#160;<span class="preprocessor">    #define XCU26_NAME &quot;xcu26&quot;</span></div>
-<div class="line"><a name="l01228"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aaeccb8cd1a7a16d5518c916f6c8bc995"> 1228</a></span>&#160;<span class="preprocessor">    #define XCU26_IDCODE 0x4AD5093</span></div>
-<div class="line"><a name="l01229"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a18ce8288fff8072cf4dc415a1d9d08b5"> 1229</a></span>&#160;<span class="preprocessor">    #define XCU26() {                                                                             \</span></div>
-<div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;<span class="preprocessor">        XCVU23P();                                                                                \</span></div>
-<div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU26_NAME);                                                                \</span></div>
-<div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU26_IDCODE);                                                             \</span></div>
-<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160; </div>
-<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;    <span class="comment">//XCUX35 is same as XC26</span></div>
-<div class="line"><a name="l01236"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a6f7dbab62ea922f71d2e47e21656a19c"> 1236</a></span>&#160;<span class="preprocessor">    #define XCUX35_NAME &quot;xcux35&quot;</span></div>
-<div class="line"><a name="l01237"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a8be04c0adc3db1224bc30e8db9e14109"> 1237</a></span>&#160;<span class="preprocessor">    #define XCUX35_IDCODE XCU26_IDCODE</span></div>
-<div class="line"><a name="l01238"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a7a0e5d73b8ad405d01995a2330f98ee8"> 1238</a></span>&#160;<span class="preprocessor">    #define XCUX35() {                                                                            \</span></div>
-<div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;<span class="preprocessor">        XCU26();                                                                                  \</span></div>
-<div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCUX35_NAME);                                                               \</span></div>
-<div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCUX35_IDCODE);                                                            \</span></div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160; </div>
-<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    <span class="comment">//XCU50 is rebranded XCVU35P, but IDCODE is different</span></div>
-<div class="line"><a name="l01245"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aadfd2e3e18e410b13a9eb817be69dcaf"> 1245</a></span>&#160;<span class="preprocessor">    #define XCU50_NAME &quot;xcu50&quot;</span></div>
-<div class="line"><a name="l01246"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aad730f28afc9834faceaf609806e98df"> 1246</a></span>&#160;<span class="preprocessor">    #define XCU50_IDCODE 0x4B77093</span></div>
-<div class="line"><a name="l01247"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ab2d7a60f383344057c29ed8a3bb77796"> 1247</a></span>&#160;<span class="preprocessor">    #define XCU50() {                                                                             \</span></div>
-<div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;<span class="preprocessor">        XCVU35P();                                                                                \</span></div>
-<div class="line"><a name="l01249"></a><span class="lineno"> 1249</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU50_NAME);                                                                \</span></div>
-<div class="line"><a name="l01250"></a><span class="lineno"> 1250</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU50_IDCODE);                                                             \</span></div>
-<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160; </div>
-<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;    <span class="comment">//XCU55N is rebranded XCVU45P, but IDCODE is different</span></div>
-<div class="line"><a name="l01254"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a0b69c5bc0d9e2cbccce0d81a0c54fcd2"> 1254</a></span>&#160;<span class="preprocessor">    #define XCU55N_NAME &quot;xcu55n&quot;</span></div>
-<div class="line"><a name="l01255"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#acfe067cb82152dea00756112cd1743e9"> 1255</a></span>&#160;<span class="preprocessor">    #define XCU55N_IDCODE 0x4B77093</span></div>
-<div class="line"><a name="l01256"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a4a52bc1c888167783f06194cf2ea8e2d"> 1256</a></span>&#160;<span class="preprocessor">    #define XCU55N() {                                                                            \</span></div>
-<div class="line"><a name="l01257"></a><span class="lineno"> 1257</span>&#160;<span class="preprocessor">        XCVU45P();                                                                                \</span></div>
-<div class="line"><a name="l01258"></a><span class="lineno"> 1258</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU55N_NAME);                                                               \</span></div>
-<div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU55N_IDCODE);                                                            \</span></div>
-<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160; </div>
-<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;    <span class="comment">//XCU55C is rebranded XCVU47P, but IDCODE is different</span></div>
-<div class="line"><a name="l01263"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a4604430c30f37e38abe92f36dd418a01"> 1263</a></span>&#160;<span class="preprocessor">    #define XCU55C_NAME &quot;xcu55c&quot;</span></div>
-<div class="line"><a name="l01264"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a596fe2a113e0bcc57feec103b11c90e0"> 1264</a></span>&#160;<span class="preprocessor">    #define XCU55C_IDCODE 0x4B7D093</span></div>
-<div class="line"><a name="l01265"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a5e304c610344f4480d3a4f6f2299fe19"> 1265</a></span>&#160;<span class="preprocessor">    #define XCU55C() {                                                                            \</span></div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;<span class="preprocessor">        XCVU47P();                                                                                \</span></div>
-<div class="line"><a name="l01267"></a><span class="lineno"> 1267</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU55C_NAME);                                                               \</span></div>
-<div class="line"><a name="l01268"></a><span class="lineno"> 1268</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU55C_IDCODE);                                                            \</span></div>
-<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160; </div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;    <span class="comment">//XCU280 is rebranded XCVU37P, but IDCODE is different</span></div>
-<div class="line"><a name="l01272"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#abb5f429e4739dae45ad734e76c17185a"> 1272</a></span>&#160;<span class="preprocessor">    #define XCU280_NAME &quot;xcu280&quot;</span></div>
-<div class="line"><a name="l01273"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ac9a3e52e34d9103db1d79e5c099a7fd8"> 1273</a></span>&#160;<span class="preprocessor">    #define XCU280_IDCODE XCU55C_IDCODE</span></div>
-<div class="line"><a name="l01274"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ad369830b287145b6383dad0328e4ba2c"> 1274</a></span>&#160;<span class="preprocessor">    #define XCU280() {                                                                            \</span></div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;<span class="preprocessor">        XCVU37P();                                                                                \</span></div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU280_NAME);                                                               \</span></div>
-<div class="line"><a name="l01277"></a><span class="lineno"> 1277</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU280_IDCODE);                                                            \</span></div>
-<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160; </div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;<span class="comment">    offtopic rant: so lets get this straight:</span></div>
-<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160;<span class="comment">    1. XCVU37P is same FPGA as XCVU47P but in a different package and changed IDCODE</span></div>
-<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;<span class="comment">    2. XCU280 is rebranded XCVU37P with a changed IDCODE</span></div>
-<div class="line"><a name="l01284"></a><span class="lineno"> 1284</span>&#160;<span class="comment">    3. XCU55C is rebranded XCVU47P with a changed IDCODE</span></div>
-<div class="line"><a name="l01285"></a><span class="lineno"> 1285</span>&#160;<span class="comment">    4. XCU280 and XCU55C have the same IDCODE</span></div>
-<div class="line"><a name="l01286"></a><span class="lineno"> 1286</span>&#160;<span class="comment">    5. profit</span></div>
-<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160; </div>
-<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;    <span class="comment">//XCU30 is rebranded XCZU7, but IDCODE is different</span></div>
-<div class="line"><a name="l01290"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ab3b4078e20b92cd1122c09416d9a33d0"> 1290</a></span>&#160;<span class="preprocessor">    #define XCU30_NAME &quot;xcu30&quot;</span></div>
-<div class="line"><a name="l01291"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a9c6efe77636171d27f0e04c0e8a06d2f"> 1291</a></span>&#160;<span class="preprocessor">    #define XCU30_IDCODE 0x4A5C093</span></div>
-<div class="line"><a name="l01292"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#af7d7361bc483fd67c3c950ba62511c3e"> 1292</a></span>&#160;<span class="preprocessor">    #define XCU30() {                                                                             \</span></div>
-<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;<span class="preprocessor">        XCZU7();                                                                                  \</span></div>
-<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU30_NAME);                                                                \</span></div>
-<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU30_IDCODE);                                                             \</span></div>
-<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160; </div>
-<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;    <span class="comment">//XCU25 is rebranded XCZU19, but IDCODE is different</span></div>
-<div class="line"><a name="l01299"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a470e8aebc4277f23313f0696f7380c88"> 1299</a></span>&#160;<span class="preprocessor">    #define XCU25_NAME &quot;xcu25&quot;</span></div>
-<div class="line"><a name="l01300"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ac8c6452cd8a8a737cb6b1af6aa0f8eca"> 1300</a></span>&#160;<span class="preprocessor">    #define XCU25_IDCODE 0x4A58093</span></div>
-<div class="line"><a name="l01301"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a589453e499749b8124befd8bcd47236e"> 1301</a></span>&#160;<span class="preprocessor">    #define XCU25() {                                                                             \</span></div>
-<div class="line"><a name="l01302"></a><span class="lineno"> 1302</span>&#160;<span class="preprocessor">        XCZU19();                                                                                 \</span></div>
-<div class="line"><a name="l01303"></a><span class="lineno"> 1303</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU25_NAME);                                                                \</span></div>
-<div class="line"><a name="l01304"></a><span class="lineno"> 1304</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU25_IDCODE);                                                             \</span></div>
-<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160; </div>
-<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;<span class="comment">// Kria rebranding</span></div>
-<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;    <span class="comment">//Kria 26 is rebranded XCZU5</span></div>
-<div class="line"><a name="l01309"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#af538c78573f1d2cf7e67d2d5b657c84b"> 1309</a></span>&#160;<span class="preprocessor">    #define XCK26_NAME &quot;xck26&quot;</span></div>
-<div class="line"><a name="l01310"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a61df5baabf371c2ef3b9e366ce8c1d45"> 1310</a></span>&#160;<span class="preprocessor">    #define XCK26_IDCODE 0x4A49093</span></div>
-<div class="line"><a name="l01311"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a106c6a4f41816ef707440e9257c6f7bc"> 1311</a></span>&#160;<span class="preprocessor">    #define XCK26() {                                                                             \</span></div>
-<div class="line"><a name="l01312"></a><span class="lineno"> 1312</span>&#160;<span class="preprocessor">        XCZU5();                                                                                  \</span></div>
-<div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCK26_NAME);                                                                \</span></div>
-<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCK26_IDCODE);                                                             \</span></div>
-<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="preprocessor">    }</span></div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160; </div>
-<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;<span class="preprocessor">#endif // XILINXULTRASCALEPLUSDEVICES_H</span></div>
+<div class="line"><a name="l01198"></a><span class="lineno"> 1198</span>&#160;    </div>
+<div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;    <span class="comment">//Same as ZU42DR</span></div>
+<div class="line"><a name="l01200"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a7f2d0e57e5fd5543561164becf7a4985"> 1200</a></span>&#160;<span class="preprocessor">    #define XCZU65DR_NAME &quot;xczu65dr&quot;</span></div>
+<div class="line"><a name="l01201"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a0294828b5ad619cee98a17e7d6cb34e1"> 1201</a></span>&#160;<span class="preprocessor">    #define XCZU65DR_IDCODE TODO</span></div>
+<div class="line"><a name="l01202"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a01ea15e564dbabc58c3866729681e67e"> 1202</a></span>&#160;<span class="preprocessor">    #define XCZU65DR() {                                                                          \</span></div>
+<div class="line"><a name="l01203"></a><span class="lineno"> 1203</span>&#160;<span class="preprocessor">        throw runtime_error(&quot;Device XCZU65DR not yet implemented.&quot;);                              \</span></div>
+<div class="line"><a name="l01204"></a><span class="lineno"> 1204</span>&#160;<span class="preprocessor">        XCZU42DR();                                                                               \</span></div>
+<div class="line"><a name="l01205"></a><span class="lineno"> 1205</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCZU65DR_NAME);                                                             \</span></div>
+<div class="line"><a name="l01206"></a><span class="lineno"> 1206</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCZU65DR_IDCODE);                                                          \</span></div>
+<div class="line"><a name="l01207"></a><span class="lineno"> 1207</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01208"></a><span class="lineno"> 1208</span>&#160; </div>
+<div class="line"><a name="l01209"></a><span class="lineno"> 1209</span>&#160;    <span class="comment">//Same as ZU42DR</span></div>
+<div class="line"><a name="l01210"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a52025a8c7e586916769802d1d9d77659"> 1210</a></span>&#160;<span class="preprocessor">    #define XCZU67DR_NAME &quot;xczu67dr&quot;</span></div>
+<div class="line"><a name="l01211"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a665df96f56291bda198a3e947cb3782f"> 1211</a></span>&#160;<span class="preprocessor">    #define XCZU67DR_IDCODE TODO</span></div>
+<div class="line"><a name="l01212"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aa98b64c117bcba4c5285f55a2a9ff9b8"> 1212</a></span>&#160;<span class="preprocessor">    #define XCZU67DR() {                                                                          \</span></div>
+<div class="line"><a name="l01213"></a><span class="lineno"> 1213</span>&#160;<span class="preprocessor">        throw runtime_error(&quot;Device XCZU67DR not yet implemented.&quot;);                              \</span></div>
+<div class="line"><a name="l01214"></a><span class="lineno"> 1214</span>&#160;<span class="preprocessor">        XCZU42DR();                                                                               \</span></div>
+<div class="line"><a name="l01215"></a><span class="lineno"> 1215</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCZU67DR_NAME);                                                             \</span></div>
+<div class="line"><a name="l01216"></a><span class="lineno"> 1216</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCZU67DR_IDCODE);                                                          \</span></div>
+<div class="line"><a name="l01217"></a><span class="lineno"> 1217</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01218"></a><span class="lineno"> 1218</span>&#160; </div>
+<div class="line"><a name="l01219"></a><span class="lineno"> 1219</span>&#160;<span class="comment">//Xilinx UltraScale+ Alveo rebranding</span></div>
+<div class="line"><a name="l01220"></a><span class="lineno"> 1220</span>&#160;    <span class="comment">//XCU200 is rebranded XCVU9P, but IDCODE is different</span></div>
+<div class="line"><a name="l01221"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ac2bc06982e9a17e452ad8d08d82980c5"> 1221</a></span>&#160;<span class="preprocessor">    #define XCU200_NAME &quot;xcu200&quot;</span></div>
+<div class="line"><a name="l01222"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aca1fbb6b26245622efef50cc14c78024"> 1222</a></span>&#160;<span class="preprocessor">    #define XCU200_IDCODE 0x4B37093</span></div>
+<div class="line"><a name="l01223"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#af6fd267728a3e1b553b0cd74a8524406"> 1223</a></span>&#160;<span class="preprocessor">    #define XCU200() {                                                                            \</span></div>
+<div class="line"><a name="l01224"></a><span class="lineno"> 1224</span>&#160;<span class="preprocessor">        XCVU9P();                                                                                 \</span></div>
+<div class="line"><a name="l01225"></a><span class="lineno"> 1225</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU200_NAME);                                                               \</span></div>
+<div class="line"><a name="l01226"></a><span class="lineno"> 1226</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU200_IDCODE);                                                            \</span></div>
+<div class="line"><a name="l01227"></a><span class="lineno"> 1227</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01228"></a><span class="lineno"> 1228</span>&#160; </div>
+<div class="line"><a name="l01229"></a><span class="lineno"> 1229</span>&#160;    <span class="comment">//XCU250 is rebranded XCVU13P, but IDCODE is different</span></div>
+<div class="line"><a name="l01230"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a7e977757d9067f04ebf3c6f85867cd36"> 1230</a></span>&#160;<span class="preprocessor">    #define XCU250_NAME &quot;xcu250&quot;</span></div>
+<div class="line"><a name="l01231"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aabaf31968d8245ed597ffb0dddb49ff4"> 1231</a></span>&#160;<span class="preprocessor">    #define XCU250_IDCODE 0x4B57093</span></div>
+<div class="line"><a name="l01232"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a79ed0a118f07ae8089bba02d0b665389"> 1232</a></span>&#160;<span class="preprocessor">    #define XCU250() {                                                                            \</span></div>
+<div class="line"><a name="l01233"></a><span class="lineno"> 1233</span>&#160;<span class="preprocessor">        XCVU13P();                                                                                \</span></div>
+<div class="line"><a name="l01234"></a><span class="lineno"> 1234</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU250_NAME);                                                               \</span></div>
+<div class="line"><a name="l01235"></a><span class="lineno"> 1235</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU250_IDCODE);                                                            \</span></div>
+<div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160; </div>
+<div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;    <span class="comment">//XCU26 is rebranded XCVU23P, but IDCODE is different</span></div>
+<div class="line"><a name="l01239"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aad7704c2cd45df6444fd53e290114cda"> 1239</a></span>&#160;<span class="preprocessor">    #define XCU26_NAME &quot;xcu26&quot;</span></div>
+<div class="line"><a name="l01240"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aaeccb8cd1a7a16d5518c916f6c8bc995"> 1240</a></span>&#160;<span class="preprocessor">    #define XCU26_IDCODE 0x4AD5093</span></div>
+<div class="line"><a name="l01241"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a18ce8288fff8072cf4dc415a1d9d08b5"> 1241</a></span>&#160;<span class="preprocessor">    #define XCU26() {                                                                             \</span></div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="preprocessor">        XCVU23P();                                                                                \</span></div>
+<div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU26_NAME);                                                                \</span></div>
+<div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU26_IDCODE);                                                             \</span></div>
+<div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160; </div>
+<div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;    <span class="comment">//XCUX35 is same as XC26</span></div>
+<div class="line"><a name="l01248"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a6f7dbab62ea922f71d2e47e21656a19c"> 1248</a></span>&#160;<span class="preprocessor">    #define XCUX35_NAME &quot;xcux35&quot;</span></div>
+<div class="line"><a name="l01249"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a8be04c0adc3db1224bc30e8db9e14109"> 1249</a></span>&#160;<span class="preprocessor">    #define XCUX35_IDCODE XCU26_IDCODE</span></div>
+<div class="line"><a name="l01250"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a7a0e5d73b8ad405d01995a2330f98ee8"> 1250</a></span>&#160;<span class="preprocessor">    #define XCUX35() {                                                                            \</span></div>
+<div class="line"><a name="l01251"></a><span class="lineno"> 1251</span>&#160;<span class="preprocessor">        XCU26();                                                                                  \</span></div>
+<div class="line"><a name="l01252"></a><span class="lineno"> 1252</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCUX35_NAME);                                                               \</span></div>
+<div class="line"><a name="l01253"></a><span class="lineno"> 1253</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCUX35_IDCODE);                                                            \</span></div>
+<div class="line"><a name="l01254"></a><span class="lineno"> 1254</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01255"></a><span class="lineno"> 1255</span>&#160; </div>
+<div class="line"><a name="l01256"></a><span class="lineno"> 1256</span>&#160;    <span class="comment">//XCU50 is rebranded XCVU35P, but IDCODE is different</span></div>
+<div class="line"><a name="l01257"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aadfd2e3e18e410b13a9eb817be69dcaf"> 1257</a></span>&#160;<span class="preprocessor">    #define XCU50_NAME &quot;xcu50&quot;</span></div>
+<div class="line"><a name="l01258"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#aad730f28afc9834faceaf609806e98df"> 1258</a></span>&#160;<span class="preprocessor">    #define XCU50_IDCODE 0x4B77093</span></div>
+<div class="line"><a name="l01259"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ab2d7a60f383344057c29ed8a3bb77796"> 1259</a></span>&#160;<span class="preprocessor">    #define XCU50() {                                                                             \</span></div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;<span class="preprocessor">        XCVU35P();                                                                                \</span></div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU50_NAME);                                                                \</span></div>
+<div class="line"><a name="l01262"></a><span class="lineno"> 1262</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU50_IDCODE);                                                             \</span></div>
+<div class="line"><a name="l01263"></a><span class="lineno"> 1263</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160; </div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    <span class="comment">//XCU55N is rebranded XCVU45P, but IDCODE is different</span></div>
+<div class="line"><a name="l01266"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a0b69c5bc0d9e2cbccce0d81a0c54fcd2"> 1266</a></span>&#160;<span class="preprocessor">    #define XCU55N_NAME &quot;xcu55n&quot;</span></div>
+<div class="line"><a name="l01267"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#acfe067cb82152dea00756112cd1743e9"> 1267</a></span>&#160;<span class="preprocessor">    #define XCU55N_IDCODE 0x4B77093</span></div>
+<div class="line"><a name="l01268"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a4a52bc1c888167783f06194cf2ea8e2d"> 1268</a></span>&#160;<span class="preprocessor">    #define XCU55N() {                                                                            \</span></div>
+<div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;<span class="preprocessor">        XCVU45P();                                                                                \</span></div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU55N_NAME);                                                               \</span></div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU55N_IDCODE);                                                            \</span></div>
+<div class="line"><a name="l01272"></a><span class="lineno"> 1272</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01273"></a><span class="lineno"> 1273</span>&#160; </div>
+<div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;    <span class="comment">//XCU55C is rebranded XCVU47P, but IDCODE is different</span></div>
+<div class="line"><a name="l01275"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a4604430c30f37e38abe92f36dd418a01"> 1275</a></span>&#160;<span class="preprocessor">    #define XCU55C_NAME &quot;xcu55c&quot;</span></div>
+<div class="line"><a name="l01276"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a596fe2a113e0bcc57feec103b11c90e0"> 1276</a></span>&#160;<span class="preprocessor">    #define XCU55C_IDCODE 0x4B7D093</span></div>
+<div class="line"><a name="l01277"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a5e304c610344f4480d3a4f6f2299fe19"> 1277</a></span>&#160;<span class="preprocessor">    #define XCU55C() {                                                                            \</span></div>
+<div class="line"><a name="l01278"></a><span class="lineno"> 1278</span>&#160;<span class="preprocessor">        XCVU47P();                                                                                \</span></div>
+<div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU55C_NAME);                                                               \</span></div>
+<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU55C_IDCODE);                                                            \</span></div>
+<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01282"></a><span class="lineno"> 1282</span>&#160; </div>
+<div class="line"><a name="l01283"></a><span class="lineno"> 1283</span>&#160;    <span class="comment">//XCU280 is rebranded XCVU37P, but IDCODE is different</span></div>
+<div class="line"><a name="l01284"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#abb5f429e4739dae45ad734e76c17185a"> 1284</a></span>&#160;<span class="preprocessor">    #define XCU280_NAME &quot;xcu280&quot;</span></div>
+<div class="line"><a name="l01285"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ac9a3e52e34d9103db1d79e5c099a7fd8"> 1285</a></span>&#160;<span class="preprocessor">    #define XCU280_IDCODE XCU55C_IDCODE</span></div>
+<div class="line"><a name="l01286"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ad369830b287145b6383dad0328e4ba2c"> 1286</a></span>&#160;<span class="preprocessor">    #define XCU280() {                                                                            \</span></div>
+<div class="line"><a name="l01287"></a><span class="lineno"> 1287</span>&#160;<span class="preprocessor">        XCVU37P();                                                                                \</span></div>
+<div class="line"><a name="l01288"></a><span class="lineno"> 1288</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU280_NAME);                                                               \</span></div>
+<div class="line"><a name="l01289"></a><span class="lineno"> 1289</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU280_IDCODE);                                                            \</span></div>
+<div class="line"><a name="l01290"></a><span class="lineno"> 1290</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01291"></a><span class="lineno"> 1291</span>&#160; </div>
+<div class="line"><a name="l01292"></a><span class="lineno"> 1292</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l01293"></a><span class="lineno"> 1293</span>&#160;<span class="comment">    offtopic rant: so lets get this straight:</span></div>
+<div class="line"><a name="l01294"></a><span class="lineno"> 1294</span>&#160;<span class="comment">    1. XCVU37P is same FPGA as XCVU47P but in a different package and changed IDCODE</span></div>
+<div class="line"><a name="l01295"></a><span class="lineno"> 1295</span>&#160;<span class="comment">    2. XCU280 is rebranded XCVU37P with a changed IDCODE</span></div>
+<div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;<span class="comment">    3. XCU55C is rebranded XCVU47P with a changed IDCODE</span></div>
+<div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;<span class="comment">    4. XCU280 and XCU55C have the same IDCODE</span></div>
+<div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;<span class="comment">    5. profit</span></div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160; </div>
+<div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;    <span class="comment">//XCU30 is rebranded XCZU7, but IDCODE is different</span></div>
+<div class="line"><a name="l01302"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ab3b4078e20b92cd1122c09416d9a33d0"> 1302</a></span>&#160;<span class="preprocessor">    #define XCU30_NAME &quot;xcu30&quot;</span></div>
+<div class="line"><a name="l01303"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a9c6efe77636171d27f0e04c0e8a06d2f"> 1303</a></span>&#160;<span class="preprocessor">    #define XCU30_IDCODE 0x4A5C093</span></div>
+<div class="line"><a name="l01304"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#af7d7361bc483fd67c3c950ba62511c3e"> 1304</a></span>&#160;<span class="preprocessor">    #define XCU30() {                                                                             \</span></div>
+<div class="line"><a name="l01305"></a><span class="lineno"> 1305</span>&#160;<span class="preprocessor">        XCZU7();                                                                                  \</span></div>
+<div class="line"><a name="l01306"></a><span class="lineno"> 1306</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU30_NAME);                                                                \</span></div>
+<div class="line"><a name="l01307"></a><span class="lineno"> 1307</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU30_IDCODE);                                                             \</span></div>
+<div class="line"><a name="l01308"></a><span class="lineno"> 1308</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01309"></a><span class="lineno"> 1309</span>&#160; </div>
+<div class="line"><a name="l01310"></a><span class="lineno"> 1310</span>&#160;    <span class="comment">//XCU25 is rebranded XCZU19, but IDCODE is different</span></div>
+<div class="line"><a name="l01311"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a470e8aebc4277f23313f0696f7380c88"> 1311</a></span>&#160;<span class="preprocessor">    #define XCU25_NAME &quot;xcu25&quot;</span></div>
+<div class="line"><a name="l01312"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#ac8c6452cd8a8a737cb6b1af6aa0f8eca"> 1312</a></span>&#160;<span class="preprocessor">    #define XCU25_IDCODE 0x4A58093</span></div>
+<div class="line"><a name="l01313"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a589453e499749b8124befd8bcd47236e"> 1313</a></span>&#160;<span class="preprocessor">    #define XCU25() {                                                                             \</span></div>
+<div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;<span class="preprocessor">        XCZU19();                                                                                 \</span></div>
+<div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCU25_NAME);                                                                \</span></div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCU25_IDCODE);                                                             \</span></div>
+<div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160; </div>
+<div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;<span class="comment">// Kria rebranding</span></div>
+<div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;    <span class="comment">//Kria 26 is rebranded XCZU5</span></div>
+<div class="line"><a name="l01321"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#af538c78573f1d2cf7e67d2d5b657c84b"> 1321</a></span>&#160;<span class="preprocessor">    #define XCK26_NAME &quot;xck26&quot;</span></div>
+<div class="line"><a name="l01322"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a61df5baabf371c2ef3b9e366ce8c1d45"> 1322</a></span>&#160;<span class="preprocessor">    #define XCK26_IDCODE 0x4A49093</span></div>
+<div class="line"><a name="l01323"></a><span class="lineno"><a class="line" href="XUSP__Devices_8h.html#a106c6a4f41816ef707440e9257c6f7bc"> 1323</a></span>&#160;<span class="preprocessor">    #define XCK26() {                                                                             \</span></div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;<span class="preprocessor">        XCZU5();                                                                                  \</span></div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;<span class="preprocessor">        XUSP_PARTNAME(XCK26_NAME);                                                                \</span></div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;<span class="preprocessor">        XUSP_IDCODE(0, XCK26_IDCODE);                                                             \</span></div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;<span class="preprocessor">    }</span></div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160; </div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;<span class="preprocessor">#endif // XILINXULTRASCALEPLUSDEVICES_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754a1557562164c372cd444ba6233b30e4e3"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754a1557562164c372cd444ba6233b30e4e3">XUSP_DEVICE_ZU_3EG</a></div><div class="ttdeci">@ XUSP_DEVICE_ZU_3EG</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00121">XUSP_Devices.h:121</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754a9a0b58d843ecabd379769da1ec299474"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754a9a0b58d843ecabd379769da1ec299474">XUSP_DEVICE_XCU30</a></div><div class="ttdeci">@ XUSP_DEVICE_XCU30</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00107">XUSP_Devices.h:107</a></div></div>
@@ -1540,7 +1552,7 @@ $(function() {
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754ace03d42723608df77e380fb5ab8d1a32"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754ace03d42723608df77e380fb5ab8d1a32">XUSP_DEVICE_XCU25</a></div><div class="ttdeci">@ XUSP_DEVICE_XCU25</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00108">XUSP_Devices.h:108</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 15:53:15 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 28 2022 16:08:28 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
