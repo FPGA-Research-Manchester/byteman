@@ -1,0 +1,9 @@
+<map id="XCAP_getCTRL0value" name="XCAP_getCTRL0value">
+<area shape="rect" id="node1" title="Generate CTRL0 register write value." alt="" coords="337,189,499,215"/>
+<area shape="rect" id="node2" href="$classXilinxSeries7.html#a28d4beae559e44094857ad6a0243cdaa" title=" " alt="" coords="37,5,258,47"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScale.html#ac200e25f1cb772ba722fd2a4f349f420" title=" " alt="" coords="8,71,287,112"/>
+<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a3ec7369b24adadff9c91726a1e002fb3" title=" " alt="" coords="15,137,280,193"/>
+<area shape="rect" id="node5" href="$classXilinxSeries7.html#a158d75566b3ec28cd5d5dd4263ba9793" title=" " alt="" coords="37,217,258,259"/>
+<area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html#a0e05d34036776af627385346940c7a9b" title=" " alt="" coords="12,283,283,339"/>
+<area shape="rect" id="node7" href="$classXilinxUltraScale.html#ad03f8a5324c34bb865ba30d1316492f2" title=" " alt="" coords="5,364,289,405"/>
+</map>

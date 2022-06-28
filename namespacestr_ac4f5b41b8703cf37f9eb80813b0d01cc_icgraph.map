@@ -1,5 +1,6 @@
 <map id="str::removeSpaces" name="str::removeSpaces">
-<area shape="rect" id="node1" title="Removes all space chars of str returns the resulting string." alt="" coords="253,46,396,73"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScale.html#a84cd2e2bc1c74a92a1c029a0766ec96d" title=" " alt="" coords="5,5,205,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a8e9c53a1927042531467d5c35af3c0bc" title=" " alt="" coords="29,71,182,112"/>
+<area shape="rect" id="node1" title="Removes all space chars of str returns the resulting string." alt="" coords="253,78,396,105"/>
+<area shape="rect" id="node2" href="$classXilinxSeries7.html#ad00e8927650d1bf9817ee80b73960850" title=" " alt="" coords="15,5,196,47"/>
+<area shape="rect" id="node3" href="$classXilinxUltraScale.html#a84cd2e2bc1c74a92a1c029a0766ec96d" title=" " alt="" coords="5,71,205,112"/>
+<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a8e9c53a1927042531467d5c35af3c0bc" title=" " alt="" coords="29,136,182,177"/>
 </map>

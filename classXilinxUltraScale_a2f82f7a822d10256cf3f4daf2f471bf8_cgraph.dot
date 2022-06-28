@@ -7,5 +7,5 @@ digraph "XilinxUltraScale::initFabric"
   rankdir="LR";
   Node1 [label="XilinxUltraScale::initFabric",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScale::setFabricChar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a99140a95e7438abb4e554da7178468d9",tooltip=" "];
+  Node2 [label="setFabricChar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineSetFabric_8h.html#a48a5d7c5921da6f83844f721655b16a8",tooltip=" "];
 }

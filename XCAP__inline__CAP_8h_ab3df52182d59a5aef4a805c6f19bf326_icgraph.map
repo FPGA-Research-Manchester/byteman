@@ -1,7 +1,0 @@
-<map id="XCAP_writeMaskAndRegister" name="XCAP_writeMaskAndRegister">
-<area shape="rect" id="node1" title="Generate the encoding for writing a CAP register with a mask and write it to file ofstream." alt="" coords="337,126,548,153"/>
-<area shape="rect" id="node2" href="$classXilinxUltraScale.html#ac200e25f1cb772ba722fd2a4f349f420" title=" " alt="" coords="8,5,287,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a3ec7369b24adadff9c91726a1e002fb3" title=" " alt="" coords="15,71,280,127"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a0e05d34036776af627385346940c7a9b" title=" " alt="" coords="12,151,283,207"/>
-<area shape="rect" id="node5" href="$classXilinxUltraScale.html#ad03f8a5324c34bb865ba30d1316492f2" title=" " alt="" coords="5,232,289,273"/>
-</map>

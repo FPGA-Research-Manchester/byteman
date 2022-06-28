@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.0 (Build #141)</span>
+   &#160;<span id="projectnumber">1.1 (Build #142)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -188,87 +188,97 @@ $(function() {
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO helpDevice&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Available devices:&quot;</span> &lt;&lt;endl;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="classXilinxUltraScale.html#a0dafd9e7a8e3c762f47fc43e67e4c811">XilinxUltraScale::deviceHelp</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <a class="code" href="classXilinxSeries7.html#aeb57c8998c061a0b2e4da83cb64c7af9">XilinxSeries7::deviceHelp</a>();</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91">XilinxUltraScalePlus::deviceHelp</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <a class="code" href="classXilinxUltraScale.html#a0dafd9e7a8e3c762f47fc43e67e4c811">XilinxUltraScale::deviceHelp</a>();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
-<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789">byteman::helpHelp</a>()</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;{</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO helpHelp&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;headache&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classbyteman.html#a6d0592f55d3d9b1d0d6788e042040e0d">  131</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a6d0592f55d3d9b1d0d6788e042040e0d">byteman::helpInput</a>()</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_input&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;Input params: main/first, second/temp&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classbyteman.html#ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5">  136</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5">byteman::helpMerge</a>()</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_merge&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;Merge params: clk/clock, clb/logic, bram, uram, set, xor, or, and&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classbyteman.html#ae97632145d793ca2e834420291e48128">  141</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#ae97632145d793ca2e834420291e48128">byteman::helpOutput</a>()</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_output&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;Output params: main/first, second/temp, clb, bram, blank, full, partial&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classbyteman.html#a9ad2bc3f3016aaaebc149252b2709a93">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a9ad2bc3f3016aaaebc149252b2709a93">byteman::helpAssembly</a>()</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_assembly&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <a class="code" href="classXilinxUltraScale.html#a4f809977f2438ee89ec21f6e3bbff095">XilinxUltraScale::assemblerHelp</a>();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classXilinxUltraScalePlus.html#aff73edd581c9694ceb1db5b7eb6ff715">XilinxUltraScalePlus::assemblerHelp</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <a class="code" href="classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91">XilinxUltraScalePlus::deviceHelp</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789">  130</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789">byteman::helpHelp</a>()</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO helpHelp&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;headache&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classbyteman.html#a6d0592f55d3d9b1d0d6788e042040e0d">  135</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a6d0592f55d3d9b1d0d6788e042040e0d">byteman::helpInput</a>()</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_input&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;Input params: main/first, second/temp&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classbyteman.html#ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5">  140</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5">byteman::helpMerge</a>()</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_merge&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;Merge params: clk/clock, clb/logic, bram, uram, set, xor, or, and&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classbyteman.html#ae97632145d793ca2e834420291e48128">  145</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#ae97632145d793ca2e834420291e48128">byteman::helpOutput</a>()</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_output&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    cout &lt;&lt;<span class="stringliteral">&quot;Output params: main/first, second/temp, clb, bram, blank, full, partial&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classbyteman.html#a9ad2bc3f3016aaaebc149252b2709a93">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a9ad2bc3f3016aaaebc149252b2709a93">byteman::helpAssembly</a>()</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_assembly&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classXilinxSeries7.html#a5edc28c990f3047471123656a2416214">XilinxSeries7::assemblerHelp</a>();</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04">  158</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04">byteman::helpEnd</a>()</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_end&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classbyteman.html#adc32a9f5982faae7605b39f22a50c8bc">  162</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#adc32a9f5982faae7605b39f22a50c8bc">byteman::helpStdin</a>()</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-stdin                   : Continue using the same commands on standard input.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                         Standard input ends with a command \&quot;end\&quot;.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                         Stdin commands don’t need \&quot;-\&quot; in front and can be on multiple lines.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                         \&quot;#\&quot; starts a comment until a newline is seen.&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="classXilinxUltraScale.html#a4f809977f2438ee89ec21f6e3bbff095">XilinxUltraScale::assemblerHelp</a>();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">if</span>(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <a class="code" href="classXilinxUltraScalePlus.html#aff73edd581c9694ceb1db5b7eb6ff715">XilinxUltraScalePlus::assemblerHelp</a>();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04">  166</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04">byteman::helpEnd</a>()</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;TODO usage_end&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classbyteman.html#adc32a9f5982faae7605b39f22a50c8bc">  170</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#adc32a9f5982faae7605b39f22a50c8bc">byteman::helpStdin</a>()</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t-stdin                   : Continue using the same commands on standard input.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                         Standard input ends with a command \&quot;end\&quot;.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                         Stdin commands don’t need \&quot;-\&quot; in front and can be on multiple lines.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t                         \&quot;#\&quot; starts a comment until a newline is seen.&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassXilinxUltraScalePlus_html_aff73edd581c9694ceb1db5b7eb6ff715"><div class="ttname"><a href="classXilinxUltraScalePlus.html#aff73edd581c9694ceb1db5b7eb6ff715">XilinxUltraScalePlus::assemblerHelp</a></div><div class="ttdeci">static void assemblerHelp()</div><div class="ttdef"><b>Definition:</b> <a href="lus_2Assembler_8cpp_source.html#l00036">Assembler.cpp:36</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_html_aff73edd581c9694ceb1db5b7eb6ff715"><div class="ttname"><a href="classXilinxUltraScalePlus.html#aff73edd581c9694ceb1db5b7eb6ff715">XilinxUltraScalePlus::assemblerHelp</a></div><div class="ttdeci">static void assemblerHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Assembler_8cpp_source.html#l00032">XUSP_Assembler.cpp:32</a></div></div>
 <div class="ttc" id="astr_8h_html"><div class="ttname"><a href="str_8h.html">str.h</a></div></div>
 <div class="ttc" id="anamespacestr_1_1iff_html_acb4ee5230fb11f4c54a20525221abb0b"><div class="ttname"><a href="namespacestr_1_1iff.html#acb4ee5230fb11f4c54a20525221abb0b">str::iff::stringIs</a></div><div class="ttdeci">bool stringIs(string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00047">iff.h:47</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a663cb8a05b02f27bbddd7775a5b045d3"><div class="ttname"><a href="classbyteman.html#a663cb8a05b02f27bbddd7775a5b045d3">byteman::helpRegion</a></div><div class="ttdeci">void helpRegion()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00099">help.cpp:99</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a7ff9beec60180e0b89c025f18d6d5179"><div class="ttname"><a href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a></div><div class="ttdeci">#define EXECUTABLE</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00029">help.cpp:29</a></div></div>
-<div class="ttc" id="aclassbyteman_html_adc32a9f5982faae7605b39f22a50c8bc"><div class="ttname"><a href="classbyteman.html#adc32a9f5982faae7605b39f22a50c8bc">byteman::helpStdin</a></div><div class="ttdeci">void helpStdin()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00162">help.cpp:162</a></div></div>
+<div class="ttc" id="aclassbyteman_html_adc32a9f5982faae7605b39f22a50c8bc"><div class="ttname"><a href="classbyteman.html#adc32a9f5982faae7605b39f22a50c8bc">byteman::helpStdin</a></div><div class="ttdeci">void helpStdin()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00170">help.cpp:170</a></div></div>
 <div class="ttc" id="aversion_8h_html_a88c2f137526b274b84cf311aa8c68f3a"><div class="ttname"><a href="version_8h.html#a88c2f137526b274b84cf311aa8c68f3a">VERSION_BUILD</a></div><div class="ttdeci">#define VERSION_BUILD</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00022">version.h:22</a></div></div>
 <div class="ttc" id="aversion_8h_html"><div class="ttname"><a href="version_8h.html">version.h</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aec845ce66a66575c305d8d6de462b453"><div class="ttname"><a href="classbyteman.html#aec845ce66a66575c305d8d6de462b453">byteman::helpWarn</a></div><div class="ttdeci">void helpWarn()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00095">help.cpp:95</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aceeb0af157eeee6bb3f2dcc19fbff117"><div class="ttname"><a href="classbyteman.html#aceeb0af157eeee6bb3f2dcc19fbff117">byteman::helpChange</a></div><div class="ttdeci">void helpChange()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00108">help.cpp:108</a></div></div>
-<div class="ttc" id="aclassbyteman_html_a241d8ba46adc36207705d5d8bbaa5789"><div class="ttname"><a href="classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789">byteman::helpHelp</a></div><div class="ttdeci">void helpHelp()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00126">help.cpp:126</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a241d8ba46adc36207705d5d8bbaa5789"><div class="ttname"><a href="classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789">byteman::helpHelp</a></div><div class="ttdeci">void helpHelp()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00130">help.cpp:130</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aa774e482391e449932ac6c05fb67ce03"><div class="ttname"><a href="classbyteman.html#aa774e482391e449932ac6c05fb67ce03">byteman::helpVerbose</a></div><div class="ttdeci">void helpVerbose()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00091">help.cpp:91</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aacff84465ee63b374e85acf9f5f96338"><div class="ttname"><a href="classbyteman.html#aacff84465ee63b374e85acf9f5f96338">byteman::help</a></div><div class="ttdeci">void help()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00039">help.cpp:39</a></div></div>
-<div class="ttc" id="aclassbyteman_html_ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5"><div class="ttname"><a href="classbyteman.html#ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5">byteman::helpMerge</a></div><div class="ttdeci">void helpMerge()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00136">help.cpp:136</a></div></div>
+<div class="ttc" id="aclassbyteman_html_ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5"><div class="ttname"><a href="classbyteman.html#ad9e8a2b8dfd164c3b8eabdb7cf8d0cc5">byteman::helpMerge</a></div><div class="ttdeci">void helpMerge()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00140">help.cpp:140</a></div></div>
 <div class="ttc" id="aversion_8h_html_a1c6d5de492ac61ad29aec7aa9a436bbf"><div class="ttname"><a href="version_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a></div><div class="ttdeci">#define VERSION</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00021">version.h:21</a></div></div>
 <div class="ttc" id="abyteman_8h_html"><div class="ttname"><a href="byteman_8h.html">byteman.h</a></div></div>
-<div class="ttc" id="aclassXilinxUltraScale_html_a4f809977f2438ee89ec21f6e3bbff095"><div class="ttname"><a href="classXilinxUltraScale.html#a4f809977f2438ee89ec21f6e3bbff095">XilinxUltraScale::assemblerHelp</a></div><div class="ttdeci">static void assemblerHelp()</div><div class="ttdef"><b>Definition:</b> <a href="Assembler_8cpp_source.html#l00036">Assembler.cpp:36</a></div></div>
-<div class="ttc" id="aclassbyteman_html_a6d0592f55d3d9b1d0d6788e042040e0d"><div class="ttname"><a href="classbyteman.html#a6d0592f55d3d9b1d0d6788e042040e0d">byteman::helpInput</a></div><div class="ttdeci">void helpInput()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00131">help.cpp:131</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScale_html_a4f809977f2438ee89ec21f6e3bbff095"><div class="ttname"><a href="classXilinxUltraScale.html#a4f809977f2438ee89ec21f6e3bbff095">XilinxUltraScale::assemblerHelp</a></div><div class="ttdeci">static void assemblerHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Assembler_8cpp_source.html#l00032">XUS_Assembler.cpp:32</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a6d0592f55d3d9b1d0d6788e042040e0d"><div class="ttname"><a href="classbyteman.html#a6d0592f55d3d9b1d0d6788e042040e0d">byteman::helpInput</a></div><div class="ttdeci">void helpInput()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00135">help.cpp:135</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a71cff3e5fdf872ab4191272e8093e251"><div class="ttname"><a href="classbyteman.html#a71cff3e5fdf872ab4191272e8093e251">byteman::helpDevice</a></div><div class="ttdeci">void helpDevice()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00112">help.cpp:112</a></div></div>
-<div class="ttc" id="aclassbyteman_html_ac6a29d60a9ec9c660ae3f0b5738ddc04"><div class="ttname"><a href="classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04">byteman::helpEnd</a></div><div class="ttdeci">void helpEnd()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00158">help.cpp:158</a></div></div>
-<div class="ttc" id="aclassbyteman_html_a9ad2bc3f3016aaaebc149252b2709a93"><div class="ttname"><a href="classbyteman.html#a9ad2bc3f3016aaaebc149252b2709a93">byteman::helpAssembly</a></div><div class="ttdeci">void helpAssembly()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00146">help.cpp:146</a></div></div>
-<div class="ttc" id="aclassXilinxUltraScalePlus_html_a564a6581d411cbd833267af724371c91"><div class="ttname"><a href="classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91">XilinxUltraScalePlus::deviceHelp</a></div><div class="ttdeci">static void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="lus_2Devices_8cpp_source.html#l01081">Devices.cpp:1081</a></div></div>
-<div class="ttc" id="aclassXilinxUltraScale_html_a0dafd9e7a8e3c762f47fc43e67e4c811"><div class="ttname"><a href="classXilinxUltraScale.html#a0dafd9e7a8e3c762f47fc43e67e4c811">XilinxUltraScale::deviceHelp</a></div><div class="ttdeci">static void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="Devices_8cpp_source.html#l00209">Devices.cpp:209</a></div></div>
+<div class="ttc" id="aclassXilinxSeries7_html_aeb57c8998c061a0b2e4da83cb64c7af9"><div class="ttname"><a href="classXilinxSeries7.html#aeb57c8998c061a0b2e4da83cb64c7af9">XilinxSeries7::deviceHelp</a></div><div class="ttdeci">static void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8cpp_source.html#l00655">XS7_Devices.cpp:655</a></div></div>
+<div class="ttc" id="aclassXilinxSeries7_html_a5edc28c990f3047471123656a2416214"><div class="ttname"><a href="classXilinxSeries7.html#a5edc28c990f3047471123656a2416214">XilinxSeries7::assemblerHelp</a></div><div class="ttdeci">static void assemblerHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Assembler_8cpp_source.html#l00032">XS7_Assembler.cpp:32</a></div></div>
+<div class="ttc" id="aclassbyteman_html_ac6a29d60a9ec9c660ae3f0b5738ddc04"><div class="ttname"><a href="classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04">byteman::helpEnd</a></div><div class="ttdeci">void helpEnd()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00166">help.cpp:166</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a9ad2bc3f3016aaaebc149252b2709a93"><div class="ttname"><a href="classbyteman.html#a9ad2bc3f3016aaaebc149252b2709a93">byteman::helpAssembly</a></div><div class="ttdeci">void helpAssembly()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00150">help.cpp:150</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_html_a564a6581d411cbd833267af724371c91"><div class="ttname"><a href="classXilinxUltraScalePlus.html#a564a6581d411cbd833267af724371c91">XilinxUltraScalePlus::deviceHelp</a></div><div class="ttdeci">static void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8cpp_source.html#l01091">XUSP_Devices.cpp:1091</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScale_html_a0dafd9e7a8e3c762f47fc43e67e4c811"><div class="ttname"><a href="classXilinxUltraScale.html#a0dafd9e7a8e3c762f47fc43e67e4c811">XilinxUltraScale::deviceHelp</a></div><div class="ttdeci">static void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Devices_8cpp_source.html#l00207">XUS_Devices.cpp:207</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aa47adb75915e3b69a8a0ed3f3f7a5d8a"><div class="ttname"><a href="classbyteman.html#aa47adb75915e3b69a8a0ed3f3f7a5d8a">byteman::helpBlank</a></div><div class="ttdeci">void helpBlank()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00104">help.cpp:104</a></div></div>
-<div class="ttc" id="aclassbyteman_html_ae97632145d793ca2e834420291e48128"><div class="ttname"><a href="classbyteman.html#ae97632145d793ca2e834420291e48128">byteman::helpOutput</a></div><div class="ttdeci">void helpOutput()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00141">help.cpp:141</a></div></div>
+<div class="ttc" id="aclassbyteman_html_ae97632145d793ca2e834420291e48128"><div class="ttname"><a href="classbyteman.html#ae97632145d793ca2e834420291e48128">byteman::helpOutput</a></div><div class="ttdeci">void helpOutput()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00145">help.cpp:145</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 10 2022 14:39:13 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jun 28 2022 15:42:34 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

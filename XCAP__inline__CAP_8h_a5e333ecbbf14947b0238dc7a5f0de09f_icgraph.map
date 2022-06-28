@@ -1,6 +1,0 @@
-<map id="XCAP_makeType1ReservedInstruction" name="XCAP_makeType1ReservedInstruction">
-<area shape="rect" id="node1" title="Generate and return the encoding for a type 1 Reserved instruction." alt="" coords="469,46,736,73"/>
-<area shape="rect" id="node2" href="$XCAP__inline__CAP_8h.html#a5c148b873dfb74d47d35806f727c6bc0" title="Generate the encoding for Reserved instructions and write them to file ofstream." alt="" coords="256,46,421,73"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScale.html#ae59064108c5ceddce061542356c05a41" title=" " alt="" coords="5,5,208,47"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="27,71,186,112"/>
-</map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xus_5fdevice_5fenum_2025',['XUS_DEVICE_ENUM',['../Devices_8h.html#aeed70cb89cbfa838eee0554101f78829',1,'Devices.h']]],
-  ['xusp_5fdevice_5fenum_2026',['XUSP_DEVICE_ENUM',['../lus_2Devices_8h.html#a4367d92c255a06ef3daed7619eb37754',1,'Devices.h']]]
+  ['match_5fcycle_2826',['MATCH_CYCLE',['../inlineCAP_8h.html#a2ebac8820e49338e761ddf947b6f4961',1,'inlineCAP.h']]],
+  ['mergeop_2827',['MergeOP',['../classXilinxConfigurationAccessPort.html#a904ed27b44c5c1c62dda9d773b1f5eb1',1,'XilinxConfigurationAccessPort']]]
 ];

@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['set_2070',['SET',['../classXilinxConfigurationAccessPort.html#a904ed27b44c5c1c62dda9d773b1f5eb1a8c52684db8f49511e9b44471716bf164',1,'XilinxConfigurationAccessPort']]],
-  ['shutdown_2071',['SHUTDOWN',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcab9984206799a7f9fe4bd1b6c18db8112',1,'XCAP']]],
-  ['start_2072',['START',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcab078ffd28db767c502ac367053f6e0ac',1,'XCAP']]],
-  ['stat_2073',['STAT',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a73f760f8a96d0acec3dec614a688ff79',1,'XCAP']]],
-  ['switch_2074',['SWITCH',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca4239f063a3d4fb9d38a0182be6e39e76',1,'XCAP']]]
+  ['rcfg_2882',['RCFG',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca304109e24fca649cc4005af4398011e2',1,'XCAP']]],
+  ['rcrc_2883',['RCRC',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca78c49a674c810fdd03d20432f7be864a',1,'XCAP']]],
+  ['read_2884',['READ',['../namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383a3466fab4975481651940ed328aa990e4',1,'XCAP']]],
+  ['reserved_2885',['RESERVED',['../namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383a83c7f2aa8c3ac10ed8beb75cad162827',1,'XCAP']]]
 ];

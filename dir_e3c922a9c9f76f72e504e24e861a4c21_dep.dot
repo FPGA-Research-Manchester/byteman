@@ -1,0 +1,9 @@
+digraph "src/Devices/Xilinx/Series6" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_3b80f9b66070ce327ebd8ab923ef7ff0 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Xilinx" fontname="Helvetica", fontsize="10", URL="dir_3b80f9b66070ce327ebd8ab923ef7ff0.html"]
+  dir_e3c922a9c9f76f72e504e24e861a4c21 [shape=box, label="Series6", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_e3c922a9c9f76f72e504e24e861a4c21.html"];
+  }
+}

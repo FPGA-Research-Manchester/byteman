@@ -1,6 +1,0 @@
-<map id="XCAP_makeType1ReadInstruction" name="XCAP_makeType1ReadInstruction">
-<area shape="rect" id="node1" title="Generate and return the encoding for a type 1 Read instruction." alt="" coords="487,46,725,73"/>
-<area shape="rect" id="node2" href="$XCAP__inline__CAP_8h.html#a6d5a9e9dc8c166890b79906cebafe1db" title="Generate the encoding for reading a CAP register and write it to file ofstream." alt="" coords="256,46,439,73"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScale.html#ae59064108c5ceddce061542356c05a41" title=" " alt="" coords="5,5,208,47"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="27,71,186,112"/>
-</map>

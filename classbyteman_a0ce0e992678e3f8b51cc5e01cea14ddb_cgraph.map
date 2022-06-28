@@ -1,28 +1,9 @@
 <map id="byteman::parse" name="byteman::parse">
-<area shape="rect" id="node1" title=" " alt="" coords="5,401,129,427"/>
-<area shape="rect" id="node2" href="$namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c" title="Finds string searchString inside checkedString and returns all to the right inside checkedString...." alt="" coords="184,5,359,47"/>
-<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a06c9e283ff14a39e32af47c1b1ca699b" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="184,71,359,98"/>
-<area shape="rect" id="node6" href="$classbyteman.html#aacff84465ee63b374e85acf9f5f96338" title=" " alt="" coords="213,122,329,149"/>
-<area shape="rect" id="node7" href="$classbyteman.html#a5e7f2e31d95626075a6ce22b54ecbbf8" title=" " alt="" coords="177,173,365,199"/>
-<area shape="rect" id="node9" href="$classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0" title=" " alt="" coords="191,223,352,250"/>
-<area shape="rect" id="node11" href="$classbyteman.html#a48f24b2ec6c504bad93c93079bbc9a05" title=" " alt="" coords="185,629,358,655"/>
-<area shape="rect" id="node12" href="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="187,274,356,301"/>
-<area shape="rect" id="node13" href="$classbyteman.html#ac217ac1dbc512bf44a70b147c0ceff04" title=" " alt="" coords="193,578,350,605"/>
-<area shape="rect" id="node16" href="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="189,325,354,351"/>
-<area shape="rect" id="node18" href="$classbyteman.html#a2ff1e5c9e9b542e9f74768b296ace32f" title=" " alt="" coords="187,527,355,554"/>
-<area shape="rect" id="node19" href="$XCAP__inline__ParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056" title=" " alt="" coords="218,730,325,757"/>
-<area shape="rect" id="node20" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="459,691,554,718"/>
-<area shape="rect" id="node21" href="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="187,375,356,402"/>
-<area shape="rect" id="node22" href="$classbyteman.html#a991b1f28f673d304d827d9777338cf04" title=" " alt="" coords="183,426,359,453"/>
-<area shape="rect" id="node23" href="$classbyteman.html#a232d2d7614b161a9bca019371bafc373" title=" " alt="" coords="193,477,350,503"/>
-<area shape="rect" id="node24" href="$classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0" title=" " alt="" coords="178,781,365,807"/>
-<area shape="rect" id="node4" href="$namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="432,71,581,98"/>
-<area shape="rect" id="node5" href="$namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6" title="Returns true if string checkedString&#39;s first characters match fully any of strings nextString or rest..." alt="" coords="648,71,827,98"/>
-<area shape="rect" id="node8" href="$namespacestr_1_1parse.html#a15d1a34315ac443a418c7cd34bb4b470" title="Parses a string s, returns the n&#45;th string word that is not an integer." alt="" coords="415,173,598,199"/>
-<area shape="rect" id="node10" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title="Parses a string s, removes all integers and returns the rest." alt="" coords="414,299,599,326"/>
-<area shape="rect" id="node14" href="$namespacestr_1_1parse.html#a6b918a3515ff512b9e181d2cf3cf2563" title="Parses a string s, removes all integers and the last string word. Returns the rest." alt="" coords="414,575,599,616"/>
-<area shape="rect" id="node15" href="$namespacestr_1_1parse.html#a518e4e06532584a6856409eaf9872922" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="413,523,600,550"/>
-<area shape="rect" id="node17" href="$namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1" title=" " alt="" coords="422,426,591,453"/>
-<area shape="rect" id="node25" href="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90" title="Returns false. End of recursion for template." alt="" coords="425,818,588,845"/>
-<area shape="rect" id="node26" href="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="438,767,575,794"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,97,129,123"/>
+<area shape="rect" id="node2" href="$namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c" title="Finds string searchString inside checkedString and returns all to the right inside checkedString...." alt="" coords="177,5,352,47"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a06c9e283ff14a39e32af47c1b1ca699b" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="177,71,352,98"/>
+<area shape="rect" id="node6" href="$inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056" title=" " alt="" coords="211,122,318,149"/>
+<area shape="rect" id="node7" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="427,147,522,174"/>
+<area shape="rect" id="node4" href="$namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="400,71,549,98"/>
+<area shape="rect" id="node5" href="$namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6" title="Returns true if string checkedString&#39;s first characters match fully any of strings nextString or rest..." alt="" coords="597,71,776,98"/>
 </map>

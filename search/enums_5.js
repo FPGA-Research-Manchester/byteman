@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['register_2024',['Register',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514',1,'XCAP']]]
+  ['lock_5fcycle_2825',['LOCK_CYCLE',['../inlineCAP_8h.html#af38324267795fee086ddb379a6cb3df7',1,'inlineCAP.h']]]
 ];

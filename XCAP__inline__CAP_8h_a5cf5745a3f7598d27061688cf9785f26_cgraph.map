@@ -1,6 +1,0 @@
-<map id="XCAP_IDCODEInstruction" name="XCAP_IDCODEInstruction">
-<area shape="rect" id="node1" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="5,5,188,32"/>
-<area shape="rect" id="node2" href="$XCAP__inline__CAP_8h.html#a509babfe5191252a4f2996fa1e017114" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="236,5,477,32"/>
-<area shape="rect" id="node3" href="$XCAP__inline__CAP_8h.html#a38ef532cbf6d0e27012dc985536ab51b" title="Generate and return the encoding for a type 1 instruction." alt="" coords="525,5,732,32"/>
-<area shape="rect" id="node4" href="$XCAP__inline__CAP_8h.html#a5c0b68a6d44004c84affd1a63bff5035" title="Generate and return the encoding for an instruction." alt="" coords="780,5,948,32"/>
-</map>

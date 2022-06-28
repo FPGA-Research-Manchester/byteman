@@ -1,0 +1,5 @@
+<map id="XCAP_getType2NopInstruction" name="XCAP_getType2NopInstruction">
+<area shape="rect" id="node1" title="Generate and return the encoding for a type 2 NOP instruction." alt="" coords="5,5,223,32"/>
+<area shape="rect" id="node2" href="$inlineCAP_8h.html#a87029e32abb502c9ffc5c3569788d312" title="Generate and return the encoding for a type 2 instruction." alt="" coords="271,5,461,32"/>
+<area shape="rect" id="node3" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="509,5,663,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="XCAP_getType2Instruction" name="XCAP_getType2Instruction">
+<area shape="rect" id="node1" title="Generate and return the encoding for a type 2 instruction." alt="" coords="5,5,196,32"/>
+<area shape="rect" id="node2" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="244,5,397,32"/>
+</map>
