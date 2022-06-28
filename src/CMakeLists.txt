@@ -14,22 +14,12 @@
 # limitations under the License.
 ###############################################################################
 
-#Add all sources for Xilinx US
-set(XUS_SRC 
-${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScale.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Fabric.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Input.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Output.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Merge.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Blank.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Devices.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/XUS_Assembler.cpp
+#byteman top sources
+set(MAIN_SRC 
+${CMAKE_CURRENT_SOURCE_DIR}/byteman.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/help.cpp
 )
 
-#build byteman natively (without the library)
-target_sources(byteman PRIVATE ${XUS_SRC})
+target_sources(byteman PRIVATE ${MAIN_SRC})
 
-#Create a Xilinx US library, disabled because the github cross compilation can't link them and throws errors
-#add_library(XUS_LIB STATIC ${XUS_SRC} ${DEVICES_SHARED_SRC})
-#target_compile_definitions(XUS_LIB PUBLIC XUS_LIB)
-
+add_subdirectory(Devices)

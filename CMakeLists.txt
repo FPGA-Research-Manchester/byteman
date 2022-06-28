@@ -18,19 +18,23 @@
 cmake_minimum_required(VERSION 3.10)
 
 #next line has to be in the format ..."byteman VERSION X.Y.Z"... for the autoversioning
-project(byteman VERSION 1.0.141)
+project(byteman VERSION 1.1.141)
+set(CMAKE_CXX_STANDARD 14)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_STANDARD 14)
-if(MSVC)
-    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-endif()
-
 add_definitions(-DENABLEWARN) #enables -warn (warnings)
 add_definitions(-DENABLELOGS) #enables -verbose (logging)
+
+add_definitions(-DXS7) #Add Xilinx Series 7 devices in byteman
+add_definitions(-DXS7SPARTAN)
+add_definitions(-DXS7ARTIX)
+add_definitions(-DXS7ZYNQ)
+add_definitions(-DXS7KINTEX)
+add_definitions(-DXS7VIRTEX)
+add_definitions(-DXS7BOARDS)
 
 add_definitions(-DXUS) #Add Xilinx UltraScale devices in byteman
 add_definitions(-DXUSKINTEX)
@@ -45,23 +49,15 @@ add_definitions(-DXUSPZYNQMP)
 add_definitions(-DXUSPALVEO)
 add_definitions(-DXUSPBOARDS)
 
-set(BYTEMAN_SRC 
-${CMAKE_SOURCE_DIR}/src/byteman.cpp
-${CMAKE_SOURCE_DIR}/src/help.cpp
-${CMAKE_SOURCE_DIR}/Resources/icon.rc)
+set(BYTEMAN_ICON ${CMAKE_SOURCE_DIR}/Resources/icon.rc)
+add_executable(byteman ${BYTEMAN_ICON})
 
-add_executable(byteman ${BYTEMAN_SRC})
-
-add_subdirectory(src/Devices)
-
-# Link the libraries. Currently disabled as target_sources is used
-# target_link_libraries(byteman PRIVATE XUSP_LIB)
+add_subdirectory(src)
 
 if(MSVC)
 	set_target_properties(byteman PROPERTIES LINK_FLAGS "/STACK:4194304")
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
-	#If profiling is needed (again)
-	#set_target_properties(byteman PROPERTIES LINK_FLAGS "/PROFILE")
+	#set_target_properties(byteman PROPERTIES LINK_FLAGS "/PROFILE") #If profiling is needed (again)
 else()
 	set_target_properties(byteman PROPERTIES LINK_FLAGS "--stack,4194304")
 endif()

@@ -72,6 +72,11 @@ int main(int argc, char * argv[])
 }
 
 byteman::byteman(){
+	#ifdef XS7
+		mainXS7.instanceName = "Main Xil S7";
+		tempXS7.instanceName = "Temp Xil S7";
+	#endif //XS7
+	
 	#ifdef XUS
 		mainXUS.instanceName = "Main Xil US";
 		tempXUS.instanceName = "Temp Xil US";
@@ -92,33 +97,32 @@ void byteman::parse(string command)
 	command = str::replace(command, ':', ' ');
 	if (command.at(0) == '-') command.erase(0, 1);
 	string params = str::findStringAndGetAllAfter(command, " ");
-	//cout <<"params is \""<<params<<"\""<<endl;
 	SelectedOptions options = parseParams(params);
 	
 	if(str::iff::firstStringWordIs(command, "h", "help"))//check if help first
-		byteman::help(params, 0);
+		help(params, 0);
 	else if(Architecture::Unknown == selectedArchitecture) //then check if architecture
-		byteman::setArchitecture(command);
+		setArchitecture(command);
 	else if(str::iff::firstStringWordIs(command, "v", "verbose")) //check the rest of commands
-		byteman::parseVerbose(params, options);
+		parseVerbose(params, options);
 	else if(str::iff::firstStringWordIs(command, "w", "warn"))
-		byteman::parseWarn(params, options);
+		parseWarn(params, options);
 	else if(str::iff::firstStringWordIs(command, "r", "region"))
-		byteman::parseRegion(params, options);
+		parseRegion(params, options);
 	else if(str::iff::firstStringWordIs(command, "b", "blank"))
-		byteman::parseBlank(params, options);
+		parseBlank(params, options);
 	else if(str::iff::firstStringWordIs(command, "c", "change"))
-		byteman::parseChange(params, options);
+		parseChange(params, options);
 	else if(str::iff::firstStringWordIs(command, "d", "device"))
-		byteman::parseDevice(params, options);
+		parseDevice(params, options);
 	else if(str::iff::firstStringWordIs(command, "i", "input"))
-		byteman::parseInput(params, options);
+		parseInput(params, options);
 	else if(str::iff::firstStringWordIs(command, "m", "merge"))
-		byteman::parseMerge(params, options);
+		parseMerge(params, options);
 	else if(str::iff::firstStringWordIs(command, "o", "output"))
-		byteman::parseOutput(params, options);
+		parseOutput(params, options);
 	else if(str::iff::firstStringWordIs(command, "a", "assembly"))
-		byteman::parseAssembly(params, options);
+		parseAssembly(params, options);
 	else if(str::iff::firstStringWordIs(command, "e", "end"))
 		exit(0);
 	else
@@ -155,6 +159,12 @@ void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 	int verboseValue;
 	if(!str::parse::multipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
 	
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			mainXS7.enableLog = verboseValue;
+			tempXS7.enableLog = verboseValue;
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			mainXUS.enableLog = verboseValue;
@@ -173,6 +183,12 @@ void byteman::parseWarn(string warnCmd, SelectedOptions options)
 	int warnValue;
 	if(!str::parse::multipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
 	
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			mainXS7.enableWarn = warnValue;
+			tempXS7.enableWarn = warnValue;
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			mainXUS.enableWarn = warnValue;
@@ -191,6 +207,14 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 	string params = str::parse::allStringWords(regionCmd);
 	Rect2D rect;
 	str::parse::multipleInts(regionCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXS7.region(params, rect);
+			if(options.tempBufferSelected)
+				tempXS7.region(params, rect);
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -211,6 +235,14 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 void byteman::parseBlank(string blankCmd, SelectedOptions options)
 {
 	string params = str::parse::allStringWords(blankCmd);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXS7.blank(params);
+			if(options.tempBufferSelected)
+				tempXS7.blank(params);
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -231,6 +263,9 @@ void byteman::parseBlank(string blankCmd, SelectedOptions options)
 void byteman::parseChange(string changeCmd, SelectedOptions options)
 {
 	//TODO lut,ff,wires,bram,uram modifications
+	#ifdef XS7
+		;
+	#endif
 	#ifdef XUS
 		;
 	#endif
@@ -241,6 +276,14 @@ void byteman::parseChange(string changeCmd, SelectedOptions options)
 void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 {
 	string deviceName = str::parse::allStringWords(deviceCmd);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXS7.setDeviceByNameOrThrow(deviceName);
+			if(options.tempBufferSelected)
+				tempXS7.setDeviceByNameOrThrow(deviceName);
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -262,6 +305,14 @@ void byteman::parseInput(string inputCmd, SelectedOptions options)
 {
 	string params = str::parse::allStringWordsWithoutLastStringWord(inputCmd);
 	string filename = str::parse::lastStringWord(inputCmd);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXS7.readBitstream(filename);
+			if(options.tempBufferSelected)
+				tempXS7.readBitstream(filename);
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -285,20 +336,19 @@ void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 	Rect2D rect;
 	Coord2D dst;
 	str::parse::multipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			mainXS7.merge(&tempXS7, params, rect, dst);
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXUS.merge(&tempXUS, params, rect, dst);
-			if(options.tempBufferSelected)
-				tempXUS.merge(&mainXUS, params, rect, dst);
+			mainXUS.merge(&tempXUS, params, rect, dst);
 		}
 	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXUSP.merge(&tempXUSP, params, rect, dst);
-			if(options.tempBufferSelected)
-				tempXUSP.merge(&mainXUSP, params, rect, dst);
+			mainXUSP.merge(&tempXUSP, params, rect, dst);
 		}
 	#endif
 }
@@ -308,6 +358,14 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 	string filename = str::parse::lastStringWord(outputCmd);
 	Rect2D rect;
 	str::parse::multipleInts(outputCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXS7.writeBitstream(filename, params, rect);
+			if(options.tempBufferSelected)
+				tempXS7.writeBitstream(filename, params, rect);
+		}
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -329,6 +387,10 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 {
 	string filenameIn = str::parse::nthStringWord(assemblyCmd, 0);
 	string filenameOut = str::parse::nthStringWord(assemblyCmd, 1);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture)
+			mainXS7.assembler(filenameIn, filenameOut);
+	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture)
 			mainXUS.assembler(filenameIn, filenameOut);
@@ -363,5 +425,16 @@ void byteman::setArchitecture(string arch)
 			return;
 		}
 	#endif//XUS
+	#ifdef XS7
+		if(str::iff::stringContains(arch, "xs7")
+		||	(	str::iff::stringContains(arch, "xilinx")
+			&&	str::iff::stringContains(arch, "series")
+			&&	str::iff::stringContains(arch, "7")
+			)
+		) {
+			selectedArchitecture = Architecture::Xilinx_Series7;
+			return;
+		}
+	#endif//XS7
 	throw runtime_error(string("Unknown architecture: \"").append(arch).append("\"."));
 }

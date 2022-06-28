@@ -14,5 +14,6 @@
 # limitations under the License.
 ###############################################################################
 
+add_subdirectory(Series7)
 add_subdirectory(UltraScale)
 add_subdirectory(UltraScalePlus)

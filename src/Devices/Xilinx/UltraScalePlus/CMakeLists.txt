@@ -16,14 +16,14 @@
 
 #Add all sources for Xilinx US+
 set(XUSP_SRC 
-${CMAKE_CURRENT_SOURCE_DIR}/UltraScalePlus.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/Fabric.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/Input.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/Output.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/Merge.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/Blank.cpp 
-${CMAKE_CURRENT_SOURCE_DIR}/Devices.cpp
-${CMAKE_CURRENT_SOURCE_DIR}/Assembler.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Fabric.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Input.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Output.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Merge.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Blank.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Devices.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Assembler.cpp
 )
 
 #build byteman natively (without the library)

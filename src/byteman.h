@@ -34,12 +34,16 @@
 #include<iostream>
 #include<string>
 
+#ifdef XS7
+	#include "Devices/Xilinx/Series7/XilinxSeries7.h"
+#endif
+
 #ifdef XUS
-	#include "Devices/Xilinx/UltraScale/UltraScale.h"
+	#include "Devices/Xilinx/UltraScale/XilinxUltraScale.h"
 #endif
 
 #ifdef XUSP
-	#include "Devices/Xilinx/UltraScalePlus/UltraScalePlus.h"
+	#include "Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlus.h"
 #endif
 
 using namespace std;
@@ -49,6 +53,10 @@ class byteman
 	public:
 		byteman();
 		virtual ~byteman();
+		#ifdef XS7
+			XilinxSeries7 mainXS7, tempXS7;
+		#endif //XS7
+		
 		#ifdef XUS
 			XilinxUltraScale mainXUS, tempXUS;
 		#endif //XUS

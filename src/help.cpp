@@ -114,7 +114,11 @@ void byteman::helpDevice()
 	cout<<"TODO helpDevice" << endl;
 	
 	cout << "Available devices:" <<endl;
-	#ifdef XUSP
+	#ifdef XS7
+		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)
+			XilinxSeries7::deviceHelp();
+	#endif
+	#ifdef XUS
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)
 			XilinxUltraScale::deviceHelp();
 	#endif
@@ -146,6 +150,10 @@ void byteman::helpOutput()
 void byteman::helpAssembly()
 {
 	cout<<"TODO usage_assembly" << endl;
+	#ifdef XS7
+		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)
+			XilinxSeries7::assemblerHelp();
+	#endif
 	#ifdef XUS
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)
 			XilinxUltraScale::assemblerHelp();

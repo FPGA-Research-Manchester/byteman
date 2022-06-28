@@ -25,8 +25,7 @@
 #include<sstream>
 #include<cstring> //memset
 
-#include "Fabric.h"
-#include "XCAP.h"
+#include "XCAP/XCAP.h"
 
 #include "../CommonDevice2D.h"
 #include "../../Common/Endianness.h"
@@ -38,9 +37,13 @@
 using namespace std;
 
 //As indicator for number and types of variables in the template
-#define FABRIC_TEMPLATE(BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, BT_SHIFT, BT_MASK, RA_SHIFT, RA_MASK, CA_SHIFT, CA_MASK, MA_SHIFT, MA_MASK) BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, BT_SHIFT, BT_MASK, RA_SHIFT, RA_MASK, CA_SHIFT, CA_MASK, MA_SHIFT, MA_MASK
+#define FABRIC_TEMPLATE(MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, ENABLE_TOP_BOTTOM, TOP_BOTTOM_BIT_SHIFT, BLOCKTYPE_SHIFT, BLOCKTYPE_MASK, ROWADDRESS_SHIFT, ROWADDRESS_MASK, COLUMNADDRESS_SHIFT, COLUMNADDRESS_MASK, MINORADDRESS_SHIFT, MINORADDRESS_MASK) MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, ENABLE_TOP_BOTTOM, TOP_BOTTOM_BIT_SHIFT, BLOCKTYPE_SHIFT, BLOCKTYPE_MASK, ROWADDRESS_SHIFT, ROWADDRESS_MASK, COLUMNADDRESS_SHIFT, COLUMNADDRESS_MASK, MINORADDRESS_SHIFT, MINORADDRESS_MASK
 
-template <int BLOCKTYPE_LOGIC,
+template <int MAX_SLRS,
+	int MAX_ROWS,
+	int MAX_COLS,
+	int MAX_BRAM_COLS,
+	int BLOCKTYPE_LOGIC,
 	int BLOCKTYPE_BLOCKRAM,
 	int WORDS_BEFORE_CLK,
 	int WORDS_AT_CLK,
@@ -50,6 +53,8 @@ template <int BLOCKTYPE_LOGIC,
 	int CLB_PER_CLOCK_REGION,
 	int BRAM_PER_CLOCK_REGION,
 	int EXTRA_FRAMES_PER_ROW,
+	int FAR_ENABLE_TOP_BOTTOM_BIT,
+	int FAR_TOP_BOTTOM_BIT_SHIFT,
 	int FAR_BLOCKTYPE_SHIFT,
 	int FAR_BLOCKTYPE_MASK,
 	int FAR_ROWADDRESS_SHIFT,
@@ -103,40 +108,46 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		string initializedBitstreamPartName; 		///< The partName of currently initialized bitstream buffers
 		Endianness loadedBitstreamEndianness;   		///< The endianess of the currently loaded bitstream.
 		uint32_t* bitstreamBegin;
-		uint32_t* bitstreamCLB[FABRIC_MAX_ROWS][FABRIC_MAX_COLS];
-		uint32_t* bitstreamBRAM[FABRIC_MAX_ROWS][FABRIC_MAX_BRAM_COLS];
+		uint32_t* bitstreamCLB[MAX_ROWS][MAX_COLS];
+		uint32_t* bitstreamBRAM[MAX_ROWS][MAX_BRAM_COLS];
 		uint32_t* bitstreamEnd;
 
 	//resource string parameters
 		string initializedResourceParamsPartName; ///< the partName of currently initialized resource string parameters
 		int numberOfSLRs;
 		int numberOfRows;
-		int numberOfBRAMCols;
-		int numberOfCols;
-		int numberOfFramesBeforeCol[FABRIC_MAX_COLS];
-		int numberOfBRAMsBeforeCol[FABRIC_MAX_COLS];
-		int numberOfFramesPerRow;
-		int numberOfWordsPerRow;
+		int numberOfBRAMCols[MAX_ROWS];
+		int numberOfCols[MAX_ROWS];
+		int maxNumberOfCols;
+		int maxNumberOfBRAMCols;
+		int numberOfFramesBeforeCol[MAX_ROWS][MAX_COLS];
+		int numberOfBRAMsBeforeCol[MAX_ROWS][MAX_COLS];
+		int numberOfFramesPerRow[MAX_ROWS];
+		int numberOfWordsPerRow[MAX_ROWS];
 
 	//SLR data and resource string
-		char resourceString[FABRIC_MAX_ROWS][FABRIC_MAX_COLS];
+		char resourceString[MAX_ROWS][MAX_COLS];
 		struct {
 			uint32_t IDCODE;
-			int fromRow, toRow; 
-		}SLRinfo[FABRIC_MAX_SLRS];
+			int fromRow, toRow;
+			int rowsInTopHalf, rowsInBottomHalf;//used for xilinx series 7
+		}SLRinfo[MAX_SLRS];
 
 	//constant arrays defining selected fabric
-		int LUT_numberOfFramesForResourceLetter[256] = DEFAULT_LOOKUP_FRAME_SIZES;
-		string LUT_typeOfFrameForResourceLetter[256] = DEFAULT_LOOKUP_FRAME_NAMES;
-		bool LUT_isFrameUnusedForResourceLetter[256] = DEFAULT_LOOKUP_FRAME_UNUSED;
+		int LUT_numberOfFramesForResourceLetter[256];
+		string LUT_typeOfFrameForResourceLetter[256];
+		bool LUT_isFrameUnusedForResourceLetter[256];
 
 //Base class functions are inlined and included here (this is so to force multiple instances that get optimized for the architectures' constants)
-		#include "XCAP_inline_Blank.h"
-		#include "XCAP_inline_Input.h"
-		#include "XCAP_inline_Output.h"
-		#include "XCAP_inline_Merge.h"
-		#include "XCAP_inline_ParseParams.h"
-		#include "XCAP_inline_CAP.h"
+		#include "XCAP/inlineBlank.h"
+		#include "XCAP/inlineInput.h"
+		#include "XCAP/inlineOutput.h"
+		#include "XCAP/inlineMerge.h"
+		#include "XCAP/inlineParseParams.h"
+		#include "XCAP/inlineCAP.h"
+		#include "XCAP/inlineFAR.h"
+		#include "XCAP/inlineSetFabric.h"
+		
 
 //Some functions that will need to be implemented by each architecture
 	//get/set device type
