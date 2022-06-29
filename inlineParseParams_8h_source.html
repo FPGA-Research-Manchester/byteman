@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -108,17 +108,20 @@ $(function() {
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span>(param == <span class="stringliteral">&quot;and&quot;</span>)selectedOptions.op = MergeOP::AND;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        param.clear();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.clk == 0 &amp;&amp; selectedOptions.clb == 0 &amp;&amp; selectedOptions.bram == 0){ <span class="comment">// by default, choose all</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = 1;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a>(params, selectedOptions.intParam))</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        selectedOptions.intParam = 0; <span class="comment">//default 0 if there is nothing</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.clk == 0 &amp;&amp; selectedOptions.clb == 0 &amp;&amp; selectedOptions.bram == 0){ <span class="comment">// by default, choose all</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="ainlineParseParams_8h_html_a7f22499069a08d35dfe2ec4697d03056"><div class="ttname"><a href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">parseParams</a></div><div class="ttdeci">void parseParams(string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineParseParams_8h_source.html#l00032">inlineParseParams.h:32</a></div></div>
 <div class="ttc" id="anamespacestr_html_ac23568893d7dd0123ecfc9105c9f3a69"><div class="ttname"><a href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69">str::replace</a></div><div class="ttdeci">string replace(string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in string str with newChar and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00043">str.h:43</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_a9f14cc7345a3fc0591a6afaf8033e6d1"><div class="ttname"><a href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00194">parse.h:194</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

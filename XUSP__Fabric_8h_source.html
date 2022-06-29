@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -103,38 +103,39 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//max 12 bram cols in UltraScale+</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#af22e3aecc29cbe8adfd14e27a09ebb46">   30</a></span>&#160;<span class="preprocessor">    #define XUSP_MAX_BRAM_COLS 16</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#ad2f5f77de0b6e3399878c873d694862b">   32</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_LOGIC 0</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#acdc1bf21787c174f2230b19234543826">   33</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_BLOCKRAM 1</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a7f957ccb62487e68e937a88173e75387">   35</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_BEFORE_CLK 45</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a3b64319fd53b310841bfd2895a2516b6">   36</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_AT_CLK 3</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a133a90b216875829c3a5fa831b18e83c">   37</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_AFTER_CLK 45</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">   38</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_PER_FRAME (XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK+XUSP_WORDS_AFTER_CLK)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a775235d81c097b48fec3076dffc7992f">   39</a></span>&#160;<span class="preprocessor">    #define XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN 256</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a8d94c1990f84570c6d4871cc956a50d1">   40</a></span>&#160;<span class="preprocessor">    #define XUSP_CLB_PER_CLOCK_REGION 60</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a1f792a46a032c65d4198fcd2ae605fbb">   41</a></span>&#160;<span class="preprocessor">    #define XUSP_BRAM_PER_CLOCK_REGION 12</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">   43</a></span>&#160;<span class="preprocessor">    #define XUSP_EXTRA_FRAMES_PER_ROW 2</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a21ba6539fc0eb1b31db709d6ea899fba">   45</a></span>&#160;<span class="preprocessor">    #define XUSP_USESTOPBOTTOM 0</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#af4bf306556ba72ebaa99771d431cf39a">   46</a></span>&#160;<span class="preprocessor">    #define XUSP_TOPBOTTOM_SHIFT 0</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a4bbd243097af96f600545295440e6c53">   48</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_SHIFT 24</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#aaec30a6044eff5cbaaf26fbfd980073f">   49</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_MASK 0x7</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a8a6473ccb76297a10b75a0706c51b28e">   50</a></span>&#160;<span class="preprocessor">    #define XUSP_ROWADDRESS_SHIFT 18</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a0ae8c07c2d267b9ae84f3bb00cb05998">   51</a></span>&#160;<span class="preprocessor">    #define XUSP_ROWADDRESS_MASK 0x3F</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#ad61ef4f7d5f6fb135126bcdf91091466">   52</a></span>&#160;<span class="preprocessor">    #define XUSP_COLUMNADDRESS_SHIFT 8</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#ae44021608b181bd210e7db4f226ee479">   53</a></span>&#160;<span class="preprocessor">    #define XUSP_COLUMNADDRESS_MASK 0x3FF</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a7a46363f486fd2333d1ab1701fdf8489">   54</a></span>&#160;<span class="preprocessor">    #define XUSP_MINORADDRESS_SHIFT 0</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#af6ae4abd602ad68a81361b4e55cfa73f">   55</a></span>&#160;<span class="preprocessor">    #define XUSP_MINORADDRESS_MASK 0xFF</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a760792bbca94175f6a3227154c1a0a5a">   57</a></span>&#160;<span class="preprocessor">    #define archXUSPtemplate FABRIC_TEMPLATE(XUSP_MAX_SLRS, XUSP_MAX_ROWS, XUSP_MAX_COLS, XUSP_MAX_BRAM_COLS, XUSP_BLOCKTYPE_LOGIC, XUSP_BLOCKTYPE_BLOCKRAM,XUSP_WORDS_BEFORE_CLK, XUSP_WORDS_AT_CLK, XUSP_WORDS_AFTER_CLK, XUSP_WORDS_PER_FRAME,XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN, XUSP_CLB_PER_CLOCK_REGION, XUSP_BRAM_PER_CLOCK_REGION, XUSP_EXTRA_FRAMES_PER_ROW, XUSP_USESTOPBOTTOM, XUSP_TOPBOTTOM_SHIFT, XUSP_BLOCKTYPE_SHIFT, XUSP_BLOCKTYPE_MASK, XUSP_ROWADDRESS_SHIFT, XUSP_ROWADDRESS_MASK, XUSP_COLUMNADDRESS_SHIFT, XUSP_COLUMNADDRESS_MASK, XUSP_MINORADDRESS_SHIFT, XUSP_MINORADDRESS_MASK)</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif//XUSP_FABRIC_H</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a154ed05210abd1c23551d9410151a8a9">   32</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_MAX 2</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#ad2f5f77de0b6e3399878c873d694862b">   33</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_LOGIC 0</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#acdc1bf21787c174f2230b19234543826">   34</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_BLOCKRAM 1</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a7f957ccb62487e68e937a88173e75387">   36</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_BEFORE_CLK 45</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a3b64319fd53b310841bfd2895a2516b6">   37</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_AT_CLK 3</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a133a90b216875829c3a5fa831b18e83c">   38</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_AFTER_CLK 45</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">   39</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_PER_FRAME (XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK+XUSP_WORDS_AFTER_CLK)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a775235d81c097b48fec3076dffc7992f">   40</a></span>&#160;<span class="preprocessor">    #define XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN 256</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a8d94c1990f84570c6d4871cc956a50d1">   41</a></span>&#160;<span class="preprocessor">    #define XUSP_CLB_PER_CLOCK_REGION 60</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a1f792a46a032c65d4198fcd2ae605fbb">   42</a></span>&#160;<span class="preprocessor">    #define XUSP_BRAM_PER_CLOCK_REGION 12</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">   44</a></span>&#160;<span class="preprocessor">    #define XUSP_EXTRA_FRAMES_PER_ROW 2</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a21ba6539fc0eb1b31db709d6ea899fba">   46</a></span>&#160;<span class="preprocessor">    #define XUSP_USESTOPBOTTOM 0</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#af4bf306556ba72ebaa99771d431cf39a">   47</a></span>&#160;<span class="preprocessor">    #define XUSP_TOPBOTTOM_SHIFT 0</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a4bbd243097af96f600545295440e6c53">   49</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_SHIFT 24</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#aaec30a6044eff5cbaaf26fbfd980073f">   50</a></span>&#160;<span class="preprocessor">    #define XUSP_BLOCKTYPE_MASK 0x7</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a8a6473ccb76297a10b75a0706c51b28e">   51</a></span>&#160;<span class="preprocessor">    #define XUSP_ROWADDRESS_SHIFT 18</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a0ae8c07c2d267b9ae84f3bb00cb05998">   52</a></span>&#160;<span class="preprocessor">    #define XUSP_ROWADDRESS_MASK 0x3F</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#ad61ef4f7d5f6fb135126bcdf91091466">   53</a></span>&#160;<span class="preprocessor">    #define XUSP_COLUMNADDRESS_SHIFT 8</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#ae44021608b181bd210e7db4f226ee479">   54</a></span>&#160;<span class="preprocessor">    #define XUSP_COLUMNADDRESS_MASK 0x3FF</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a7a46363f486fd2333d1ab1701fdf8489">   55</a></span>&#160;<span class="preprocessor">    #define XUSP_MINORADDRESS_SHIFT 0</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#af6ae4abd602ad68a81361b4e55cfa73f">   56</a></span>&#160;<span class="preprocessor">    #define XUSP_MINORADDRESS_MASK 0xFF</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a760792bbca94175f6a3227154c1a0a5a">   58</a></span>&#160;<span class="preprocessor">    #define archXUSPtemplate FABRIC_TEMPLATE(XUSP_MAX_SLRS, XUSP_MAX_ROWS, XUSP_MAX_COLS, XUSP_MAX_BRAM_COLS, XUSP_BLOCKTYPE_MAX, XUSP_BLOCKTYPE_LOGIC, XUSP_BLOCKTYPE_BLOCKRAM,XUSP_WORDS_BEFORE_CLK, XUSP_WORDS_AT_CLK, XUSP_WORDS_AFTER_CLK, XUSP_WORDS_PER_FRAME,XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN, XUSP_CLB_PER_CLOCK_REGION, XUSP_BRAM_PER_CLOCK_REGION, XUSP_EXTRA_FRAMES_PER_ROW, XUSP_USESTOPBOTTOM, XUSP_TOPBOTTOM_SHIFT, XUSP_BLOCKTYPE_SHIFT, XUSP_BLOCKTYPE_MASK, XUSP_ROWADDRESS_SHIFT, XUSP_ROWADDRESS_MASK, XUSP_COLUMNADDRESS_SHIFT, XUSP_COLUMNADDRESS_MASK, XUSP_MINORADDRESS_SHIFT, XUSP_MINORADDRESS_MASK)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif//XUSP_FABRIC_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

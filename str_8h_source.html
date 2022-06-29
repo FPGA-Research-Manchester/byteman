@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -140,8 +140,16 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="namespacestr.html">str</a>.erase(<a class="code" href="namespacestr.html">str</a>.end()-1);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif //STR_H</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespacestr.html#ab8076639844f210b71c0ff0837612bac">   79</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacestr.html#ab8076639844f210b71c0ff0837612bac">findAndReplace</a>(<span class="keywordtype">string</span> &amp;<a class="code" href="namespacestr.html">str</a>, <span class="keywordtype">string</span> toFind, <span class="keywordtype">string</span> toReplaceWith)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">size_t</span> pos = <a class="code" href="namespacestr.html">str</a>.find(toFind);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">while</span>( pos != std::string::npos) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="namespacestr.html">str</a>.replace(pos, toFind.size(), toReplaceWith);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            pos = <a class="code" href="namespacestr.html">str</a>.find(toFind, pos + toReplaceWith.size());</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif //STR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacestr_html_abbe31eb69bc1b10fa3c78fab4f0dee4f"><div class="ttname"><a href="namespacestr.html#abbe31eb69bc1b10fa3c78fab4f0dee4f">str::removeExternalQuotes</a></div><div class="ttdeci">string removeExternalQuotes(string str)</div><div class="ttdoc">Removes double quotes from start and end of string str and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00067">str.h:67</a></div></div>
 <div class="ttc" id="anamespacestr_html_a105c2a28a97e18e146cd18c000d2ecf5"><div class="ttname"><a href="namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5">str::stringToLower</a></div><div class="ttdeci">string stringToLower(string str)</div><div class="ttdoc">Replaces all uppercase characters in str with lowercase and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00061">str.h:61</a></div></div>
@@ -149,12 +157,13 @@ $(function() {
 <div class="ttc" id="aparse_8h_html"><div class="ttname"><a href="parse_8h.html">parse.h</a></div></div>
 <div class="ttc" id="anamespacestr_html_ac4f5b41b8703cf37f9eb80813b0d01cc"><div class="ttname"><a href="namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc">str::removeSpaces</a></div><div class="ttdeci">string removeSpaces(string str)</div><div class="ttdoc">Removes all space chars of str returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00049">str.h:49</a></div></div>
 <div class="ttc" id="anamespacestr_html_a664d127caf0e35994e01d38d9c0fc16c"><div class="ttname"><a href="namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c">str::findStringAndGetAllAfter</a></div><div class="ttdeci">string findStringAndGetAllAfter(string checkedString, string searchString)</div><div class="ttdoc">Finds string searchString inside checkedString and returns all to the right inside checkedString....</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00035">str.h:35</a></div></div>
+<div class="ttc" id="anamespacestr_html_ab8076639844f210b71c0ff0837612bac"><div class="ttname"><a href="namespacestr.html#ab8076639844f210b71c0ff0837612bac">str::findAndReplace</a></div><div class="ttdeci">void findAndReplace(string &amp;str, string toFind, string toReplaceWith)</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00079">str.h:79</a></div></div>
 <div class="ttc" id="anamespacestr_html"><div class="ttname"><a href="namespacestr.html">str</a></div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00031">iff.h:31</a></div></div>
 <div class="ttc" id="aiff_8h_html"><div class="ttname"><a href="iff_8h.html">iff.h</a></div></div>
 <div class="ttc" id="anamespacestr_html_aba1e8068674251ecc2234ee3c9bbbcd1"><div class="ttname"><a href="namespacestr.html#aba1e8068674251ecc2234ee3c9bbbcd1">str::stringToUpper</a></div><div class="ttdeci">string stringToUpper(string str)</div><div class="ttdoc">Replaces all lowercase characters in str with uppercase and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00055">str.h:55</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

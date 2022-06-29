@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    ifstream fin (filename, ifstream::binary);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>(!fin.good())</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Could not open file: \&quot;&quot;</span>).append(filename).append(<span class="stringliteral">&quot;\&quot; .\n&quot;</span>));</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    log(<span class="stringliteral">&quot;Reading Xilinx UltraScale+ bitstream from file \&quot;&quot;</span> + filename + <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    log(<span class="stringliteral">&quot;Reading Xilinx Series 7 bitstream from file \&quot;&quot;</span> + filename + <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    loadedBitstreamEndianness = <a class="code" href="inlineInput_8h.html#afecbc7d2f0175cd665f732ec0c5b93bf">parseBitstreamEndianness</a>(fin);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
@@ -112,19 +112,19 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#abd3e047423cce50fb0d1570720af08d5">str::iff::stringEndsWith</a>(filename, <span class="stringliteral">&quot;.bin&quot;</span>))</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a>(fin);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown Xilinx UltraScale+ file format tried to be read.\n&quot;</span>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown Xilinx Series 7 file format tried to be read.\n&quot;</span>));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    fin.close();</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacestr_1_1iff_html_abd3e047423cce50fb0d1570720af08d5"><div class="ttname"><a href="namespacestr_1_1iff.html#abd3e047423cce50fb0d1570720af08d5">str::iff::stringEndsWith</a></div><div class="ttdeci">bool stringEndsWith(string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00034">iff.h:34</a></div></div>
 <div class="ttc" id="aXilinxSeries7_8h_html"><div class="ttname"><a href="XilinxSeries7_8h.html">XilinxSeries7.h</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_afecbc7d2f0175cd665f732ec0c5b93bf"><div class="ttname"><a href="inlineInput_8h.html#afecbc7d2f0175cd665f732ec0c5b93bf">parseBitstreamEndianness</a></div><div class="ttdeci">Endianness parseBitstreamEndianness(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00094">inlineInput.h:94</a></div></div>
-<div class="ttc" id="ainlineInput_8h_html_ada7d4f59a2b9aa44680a400d5bd37ec5"><div class="ttname"><a href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a></div><div class="ttdeci">void readBitstreamBIN(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00276">inlineInput.h:276</a></div></div>
-<div class="ttc" id="ainlineInput_8h_html_a2015af67475241b52cb4fdd54ab6577e"><div class="ttname"><a href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a></div><div class="ttdeci">void readBitstreamBIT(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00267">inlineInput.h:267</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_ada7d4f59a2b9aa44680a400d5bd37ec5"><div class="ttname"><a href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a></div><div class="ttdeci">void readBitstreamBIN(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00282">inlineInput.h:282</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_a2015af67475241b52cb4fdd54ab6577e"><div class="ttname"><a href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a></div><div class="ttdeci">void readBitstreamBIT(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00273">inlineInput.h:273</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html_a81a5d771b3230f2442613574c522f7c8"><div class="ttname"><a href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8">XilinxSeries7::readBitstream</a></div><div class="ttdeci">void readBitstream(string)</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Input_8cpp_source.html#l00027">XS7_Input.cpp:27</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

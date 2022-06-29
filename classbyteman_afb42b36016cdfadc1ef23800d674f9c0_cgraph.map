@@ -1,4 +1,0 @@
-<map id="byteman::parseBlank" name="byteman::parseBlank">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title="Parses a string s, removes all integers and returns the rest." alt="" coords="215,5,400,32"/>
-</map>

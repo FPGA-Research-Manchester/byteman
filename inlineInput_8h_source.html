@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -229,109 +229,115 @@ $(function() {
 <div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">  179</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(ifstream&amp; fin)</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;{</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">int</span> slr = 0;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a> regAddr = <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::Register::UNDEFINED</a>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> wordCount = 0;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">char</span> shadowFrame[WORDS_PER_FRAME*4];</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">bool</span> shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">int</span> b = 7, r = 0, c = 0, m = 0;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">//Parse bitstream</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">for</span>( ; ; ){</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        uint32_t instruction = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span>(!fin.good()){</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">break</span>; <span class="comment">// done with the bitstream</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordtype">int</span> instructionType = <a class="code" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece">XCAP_getInstructionType</a>(instruction);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383">XCAP::Operation</a> instructionOPCODE = <a class="code" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04">XCAP_getInstructionOperation</a>(instruction);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordtype">int</span> instructionPayload = <a class="code" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f">XCAP_getInstructionPayload</a>(instruction);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">if</span>(instructionType == 1) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                regAddr = <a class="code" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464">XCAP_getInstructionRegister</a>(instruction);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                wordCount = <a class="code" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8">XCAP_getInstructionWordCount</a>(instruction);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(instructionType == 2) {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                wordCount = instructionPayload;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Bitstream has invalid instruction (invalid type).&quot;</span>);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            }</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">if</span>(instructionOPCODE == <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383ad4b9e47f65b6e79b010582f15785867e">XCAP::Operation::WRITE</a>){ <span class="comment">//Write register</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                <span class="keywordflow">for</span>( ; wordCount &gt; 0 ; ){</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a>){</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        uint32_t farValue = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        wordCount--;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        <a class="code" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688">XCAP_parseFAR</a>(farValue, slr, b, r, c, m);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        <span class="keywordflow">if</span>(shadowFrameValid){</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                            <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                memcpy((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME] ,&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM) {</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                memcpy((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME] ,&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                            }</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                            <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                            shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                        }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a>){</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        <span class="keywordflow">if</span>(wordCount % WORDS_PER_FRAME != 0)</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                            <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;FDRI write of a partial frame was detected, which is currently not supported.&quot;</span>);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        <span class="keywordflow">if</span>(shadowFrameValid){</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                            <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                                memcpy((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME] ,&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM) {</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                                memcpy((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME] ,&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                            }</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                            <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        <span class="keywordtype">int</span> forwardShadowReg = (wordCount/WORDS_PER_FRAME) - 1;<span class="comment">//skip shadow reg for certain number of frames</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        <span class="keywordflow">if</span>(forwardShadowReg &gt; 0){</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                            <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){ <span class="comment">// CLB</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM){</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                            }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; forwardShadowReg ; i++){</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                                <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                            }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                        }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                        wordCount -= forwardShadowReg * WORDS_PER_FRAME;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                        shadowFrameValid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                        fin.read((<span class="keywordtype">char</span>*)&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                        wordCount -= WORDS_PER_FRAME;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514aa28966bac17b8eef99c5afa5eb594130">XCAP::Register::CMD</a>){</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                        <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a> command = <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a><span class="keyword">&gt;</span>(<a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness));</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                        wordCount--;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                        <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a>){</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                            shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                        }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a>){</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                        slr++;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                        wordCount = 0;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                        shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                        uint32_t scrap = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                        wordCount--;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                }<span class="comment">//Write register count for loop</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            }<span class="comment">//Write register instruction</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }<span class="comment">// not end of file</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }<span class="comment">// for loop parsing the rest of the bitstream</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">  267</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a>(ifstream&amp; fin)</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;{</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <a class="code" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    setDeviceByPartNameOrThrow();</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;}</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">  276</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a>(ifstream&amp; fin)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;{</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    uint32_t idcode = <a class="code" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    setDeviceByIDCODEOrThrow(idcode);</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    </div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="inlineInput_8h.html#a69607c16f8f44d041835c83ac73816d3">findBitstreamSync</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a> regAddr = <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::Register::UNDEFINED</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">int</span> wordCount = 0;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">char</span> shadowFrame[WORDS_PER_FRAME*4];</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">bool</span> shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">int</span> b = 7, r = 0, c = 0, m = 0;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">//Parse bitstream</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">for</span>( ; ; ){</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        uint32_t instruction = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordflow">if</span>(!fin.good()){</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;            <span class="keywordflow">break</span>; <span class="comment">// done with the bitstream</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            <span class="keywordtype">int</span> instructionType = <a class="code" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece">XCAP_getInstructionType</a>(instruction);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383">XCAP::Operation</a> instructionOPCODE = <a class="code" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04">XCAP_getInstructionOperation</a>(instruction);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordtype">int</span> instructionPayload = <a class="code" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f">XCAP_getInstructionPayload</a>(instruction);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">if</span>(instructionType == 1) {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                regAddr = <a class="code" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464">XCAP_getInstructionRegister</a>(instruction);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                wordCount = <a class="code" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8">XCAP_getInstructionWordCount</a>(instruction);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(instructionType == 2) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                wordCount = instructionPayload;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Bitstream has invalid instruction (invalid type).&quot;</span>);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordflow">if</span>(instructionOPCODE == <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383ad4b9e47f65b6e79b010582f15785867e">XCAP::Operation::WRITE</a>){ <span class="comment">//Write register</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">for</span>( ; wordCount &gt; 0 ; ){</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a>){</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                        uint32_t farValue = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                        wordCount--;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                        <a class="code" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688">XCAP_parseFAR</a>(farValue, slr, b, r, c, m);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                        <span class="comment">/*</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">                        if(shadowFrameValid){</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">                            if(b == BLOCKTYPE_LOGIC){</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment">                                memcpy((char*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">                            } else if(b == BLOCKTYPE_BLOCKRAM) {</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">                                memcpy((char*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">                            }</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">                            XCAP_IncrementFAR(slr, b, r, c, m);</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">                            shadowFrameValid = false;</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">                        }</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">                        */</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a>){</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        <span class="keywordflow">if</span>(wordCount % WORDS_PER_FRAME != 0)</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                            <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;FDRI write of a partial frame was detected, which is currently not supported.&quot;</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                        <span class="keywordflow">if</span>(shadowFrameValid){</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                            assert(b &lt; BLOCKTYPE_MAX);</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                            assert(r &lt; numberOfRows);</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                            assert(c &lt; numberOfCols[r]);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                            <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                                assert(m &lt; LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                memcpy((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM) {</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                assert(m &lt; FRAMES_PER_BRAM_CONTENT_COLUMN);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                memcpy((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                            }</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                            <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                        <span class="keywordtype">int</span> forwardShadowReg = (wordCount/WORDS_PER_FRAME) - 1;<span class="comment">//skip shadow reg for certain number of frames</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                        <span class="keywordflow">if</span>(forwardShadowReg &gt; 0){</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                            <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){ <span class="comment">// CLB</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM){</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                            }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; forwardShadowReg ; i++){</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                            }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                        }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                        wordCount -= forwardShadowReg * WORDS_PER_FRAME;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                        shadowFrameValid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                        fin.read((<span class="keywordtype">char</span>*)&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                        wordCount -= WORDS_PER_FRAME;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514aa28966bac17b8eef99c5afa5eb594130">XCAP::Register::CMD</a>){</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                        <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a> command = <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a><span class="keyword">&gt;</span>(<a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness));</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                        wordCount--;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                        <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a>){</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                            shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                        }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a>){</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                        slr++;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        wordCount = 0;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                        uint32_t scrap = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                        wordCount--;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                }<span class="comment">//Write register count for loop</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            }<span class="comment">//Write register instruction</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        }<span class="comment">// not end of file</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    }<span class="comment">// for loop parsing the rest of the bitstream</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">  273</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a>(ifstream&amp; fin)</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;{</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <a class="code" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    setDeviceByPartNameOrThrow();</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">  282</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a>(ifstream&amp; fin)</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;{</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    uint32_t idcode = <a class="code" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    setDeviceByIDCODEOrThrow(idcode);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="inlineInput_8h.html#a69607c16f8f44d041835c83ac73816d3">findBitstreamSync</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a></div><div class="ttdeci">Register</div><div class="ttdef"><b>Definition:</b> <a href="XCAP_8h_source.html#l00034">XCAP.h:34</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a5cf5745a3f7598d27061688cf9785f26"><div class="ttname"><a href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26">XCAP_IDCODEInstruction</a></div><div class="ttdeci">uint32_t XCAP_IDCODEInstruction()</div><div class="ttdoc">Generate and return the encoding for a IDCODE writing instruction.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00424">inlineCAP.h:424</a></div></div>
@@ -364,18 +370,18 @@ $(function() {
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a></div><div class="ttdeci">@ MAGIC1</div></div>
 <div class="ttc" id="anamespaceEndian_html_a7cd80b2cb2ed674196a68549c8489f88"><div class="ttname"><a href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a></div><div class="ttdeci">uint32_t NativeToBigEndian32(uint32_t x)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00152">Endianness.h:152</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a></div><div class="ttdeci">@ FDRI</div></div>
-<div class="ttc" id="ainlineInput_8h_html_ada7d4f59a2b9aa44680a400d5bd37ec5"><div class="ttname"><a href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a></div><div class="ttdeci">void readBitstreamBIN(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00276">inlineInput.h:276</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_ada7d4f59a2b9aa44680a400d5bd37ec5"><div class="ttname"><a href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a></div><div class="ttdeci">void readBitstreamBIN(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00282">inlineInput.h:282</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_aaca4e37f11bf6f869a9f1296b5b0182a"><div class="ttname"><a href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a></div><div class="ttdeci">uint32_t parseBitstreamIDCODE(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00138">inlineInput.h:138</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
 <div class="ttc" id="anamespaceFileIO_html_ae4a16190bddd38b1508e472f1323bd06"><div class="ttname"><a href="namespaceFileIO.html#ae4a16190bddd38b1508e472f1323bd06">FileIO::read16</a></div><div class="ttdeci">uint16_t read16(ifstream &amp;fin, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00145">FileIO.h:145</a></div></div>
-<div class="ttc" id="ainlineInput_8h_html_a2015af67475241b52cb4fdd54ab6577e"><div class="ttname"><a href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a></div><div class="ttdeci">void readBitstreamBIT(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00267">inlineInput.h:267</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_a2015af67475241b52cb4fdd54ab6577e"><div class="ttname"><a href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a></div><div class="ttdeci">void readBitstreamBIT(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00273">inlineInput.h:273</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cab"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a></div><div class="ttdeci">Endianness</div><div class="ttdoc">&lt; Endianness in byteman is represented not only by big/little endian, but also by potential bit swapp...</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00046">Endianness.h:46</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_ac0e8d10f67fbe4b89886a2f5be7c690c"><div class="ttname"><a href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a></div><div class="ttdeci">void parseBITheader(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00024">inlineInput.h:24</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200"><div class="ttname"><a href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a></div><div class="ttdeci">@ WCFG</div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a445d56f4c0c7afb68ecfa18087a6af31"><div class="ttname"><a href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a></div><div class="ttdeci">uint32_t XCAP_getSyncInstruction()</div><div class="ttdoc">Generate and return the encoding for a SYNC instruction.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00430">inlineCAP.h:430</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

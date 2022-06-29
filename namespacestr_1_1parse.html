@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -100,6 +100,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ae904b82922b5258d5337625539cb58ba"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1parse.html#ae904b82922b5258d5337625539cb58ba">multipleInts</a> (stringstream &amp;ss, int &amp;x, Rest &amp;... args)</td></tr>
 <tr class="memdesc:ae904b82922b5258d5337625539cb58ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses stringstream <code>ss</code> for integer values, that are returned into <code>x</code>, <code>args</code>.  <a href="namespacestr_1_1parse.html#ae904b82922b5258d5337625539cb58ba">More...</a><br /></td></tr>
 <tr class="separator:ae904b82922b5258d5337625539cb58ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; </td></tr>
+<tr class="memitem:a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1parse.html#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8">multipleUints</a> (string s, Args &amp;... args)</td></tr>
+<tr class="memdesc:a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses string <code>s</code> for uint32_t values, that are returned into <code>args</code>.  <a href="namespacestr_1_1parse.html#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8">More...</a><br /></td></tr>
+<tr class="separator:a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af68ae3f2c28f832a262dbd7f5add8456"><td class="memTemplParams" colspan="2">template&lt;typename ... Rest&gt; </td></tr>
+<tr class="memitem:af68ae3f2c28f832a262dbd7f5add8456"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1parse.html#af68ae3f2c28f832a262dbd7f5add8456">multipleUints</a> (stringstream &amp;ss)</td></tr>
+<tr class="separator:af68ae3f2c28f832a262dbd7f5add8456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787409d03f6cc90479ee0db55ebe61d9"><td class="memTemplParams" colspan="2">template&lt;typename ... Rest&gt; </td></tr>
+<tr class="memitem:a787409d03f6cc90479ee0db55ebe61d9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacestr_1_1parse.html#a787409d03f6cc90479ee0db55ebe61d9">multipleUints</a> (stringstream &amp;ss, uint32_t &amp;x, Rest &amp;... args)</td></tr>
+<tr class="memdesc:a787409d03f6cc90479ee0db55ebe61d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses stringstream <code>ss</code> for uint32_t values, that are returned into <code>x</code>, <code>args</code>.  <a href="namespacestr_1_1parse.html#a787409d03f6cc90479ee0db55ebe61d9">More...</a><br /></td></tr>
+<tr class="separator:a787409d03f6cc90479ee0db55ebe61d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac443722e87f423ddb0d2597531d2318"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestr_1_1parse.html#aac443722e87f423ddb0d2597531d2318">nthInteger</a> (string s, int n, int &amp;x)</td></tr>
 <tr class="memdesc:aac443722e87f423ddb0d2597531d2318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a string <code>s</code>, returns the n-th integer.  <a href="namespacestr_1_1parse.html#aac443722e87f423ddb0d2597531d2318">More...</a><br /></td></tr>
 <tr class="separator:aac443722e87f423ddb0d2597531d2318"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,17 +169,16 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00235">byteman::parseBlank()</a>, <a class="el" href="byteman_8cpp_source.html#l00276">byteman::parseDevice()</a>, <a class="el" href="byteman_8cpp_source.html#l00333">byteman::parseMerge()</a>, and <a class="el" href="byteman_8cpp_source.html#l00205">byteman::parseRegion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00280">byteman::parseDevice()</a>, <a class="el" href="byteman_8cpp_source.html#l00337">byteman::parseMerge()</a>, and <a class="el" href="byteman_8cpp_source.html#l00209">byteman::parseRegion()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacestr_1_1parse_a0b2fd42b74ce3f482b4f1ece5f24881e_icgraph.png" border="0" usemap="#namespacestr_1_1parse_a0b2fd42b74ce3f482b4f1ece5f24881e_icgraph" alt=""/></div>
 <map name="namespacestr_1_1parse_a0b2fd42b74ce3f482b4f1ece5f24881e_icgraph" id="namespacestr_1_1parse_a0b2fd42b74ce3f482b4f1ece5f24881e_icgraph">
-<area shape="rect" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,81,408,108"/>
-<area shape="rect" href="classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0" title=" " alt="" coords="9,5,171,32"/>
-<area shape="rect" href="classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="5,56,175,83"/>
-<area shape="rect" href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="7,107,173,133"/>
-<area shape="rect" href="classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="5,157,175,184"/>
+<area shape="rect" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,56,408,83"/>
+<area shape="rect" href="classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="5,5,175,32"/>
+<area shape="rect" href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="7,56,173,83"/>
+<area shape="rect" href="classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="5,107,175,133"/>
 </map>
 </div>
 
@@ -228,7 +238,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00304">byteman::parseInput()</a>, and <a class="el" href="byteman_8cpp_source.html#l00355">byteman::parseOutput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00308">byteman::parseInput()</a>, and <a class="el" href="byteman_8cpp_source.html#l00359">byteman::parseOutput()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -381,7 +391,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> ret;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00075">XilinxSeries7::assemblerParseHeader()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00075">XilinxUltraScalePlus::assemblerParseHeader()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00075">XilinxUltraScale::assemblerParseHeader()</a>, <a class="el" href="byteman_8cpp_source.html#l00304">byteman::parseInput()</a>, and <a class="el" href="byteman_8cpp_source.html#l00355">byteman::parseOutput()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00075">XilinxSeries7::assemblerParseHeader()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00075">XilinxUltraScalePlus::assemblerParseHeader()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00075">XilinxUltraScale::assemblerParseHeader()</a>, <a class="el" href="byteman_8cpp_source.html#l00308">byteman::parseInput()</a>, and <a class="el" href="byteman_8cpp_source.html#l00359">byteman::parseOutput()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -436,13 +446,13 @@ template&lt;typename ... Args&gt; </div>
 
 <p>Parses string <code>s</code> for integer values, that are returned into <code>args</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00229">229</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            stringstream ss(s);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f">multipleInts</a>(ss, args...);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00225">225</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            stringstream ss(s);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f">multipleInts</a>(ss, args...);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="parse_8h_source.html#l00200">multipleInts()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parse_8h_source.html#l00199">multipleInts()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -481,26 +491,38 @@ template&lt;typename ... Rest&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00195">195</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00194">194</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00093">XilinxSeries7::assemblerAsmToBit()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00093">XilinxUltraScalePlus::assemblerAsmToBit()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00093">XilinxUltraScale::assemblerAsmToBit()</a>, <a class="el" href="byteman_8cpp_source.html#l00333">byteman::parseMerge()</a>, <a class="el" href="byteman_8cpp_source.html#l00355">byteman::parseOutput()</a>, <a class="el" href="byteman_8cpp_source.html#l00205">byteman::parseRegion()</a>, <a class="el" href="byteman_8cpp_source.html#l00157">byteman::parseVerbose()</a>, and <a class="el" href="byteman_8cpp_source.html#l00181">byteman::parseWarn()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00093">XilinxSeries7::assemblerAsmToBit()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00093">XilinxUltraScalePlus::assemblerAsmToBit()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00093">XilinxUltraScale::assemblerAsmToBit()</a>, <a class="el" href="byteman_8cpp_source.html#l00337">byteman::parseMerge()</a>, <a class="el" href="byteman_8cpp_source.html#l00359">byteman::parseOutput()</a>, <a class="el" href="inlineParseParams_8h_source.html#l00032">parseParams()</a>, <a class="el" href="byteman_8cpp_source.html#l00209">byteman::parseRegion()</a>, <a class="el" href="byteman_8cpp_source.html#l00161">byteman::parseVerbose()</a>, and <a class="el" href="byteman_8cpp_source.html#l00185">byteman::parseWarn()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacestr_1_1parse_a9f14cc7345a3fc0591a6afaf8033e6d1_icgraph.png" border="0" usemap="#namespacestr_1_1parse_a9f14cc7345a3fc0591a6afaf8033e6d1_icgraph" alt=""/></div>
 <map name="namespacestr_1_1parse_a9f14cc7345a3fc0591a6afaf8033e6d1_icgraph" id="namespacestr_1_1parse_a9f14cc7345a3fc0591a6afaf8033e6d1_icgraph">
-<area shape="rect" title=" " alt="" coords="256,227,425,254"/>
-<area shape="rect" href="classXilinxSeries7.html#a639a90ea02209c56a78ca7748265e842" title=" " alt="" coords="15,5,198,47"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="27,71,186,112"/>
-<area shape="rect" href="classXilinxUltraScale.html#ae59064108c5ceddce061542356c05a41" title=" " alt="" coords="5,136,208,177"/>
-<area shape="rect" href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="24,202,189,229"/>
-<area shape="rect" href="classbyteman.html#a2ff1e5c9e9b542e9f74768b296ace32f" title=" " alt="" coords="23,253,191,279"/>
-<area shape="rect" href="classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="22,303,191,330"/>
-<area shape="rect" href="classbyteman.html#a991b1f28f673d304d827d9777338cf04" title=" " alt="" coords="19,354,195,381"/>
-<area shape="rect" href="classbyteman.html#a232d2d7614b161a9bca019371bafc373" title=" " alt="" coords="28,405,185,431"/>
+<area shape="rect" title=" " alt="" coords="637,253,807,279"/>
+<area shape="rect" href="classXilinxSeries7.html#a639a90ea02209c56a78ca7748265e842" title=" " alt="" coords="397,5,579,47"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="409,71,567,112"/>
+<area shape="rect" href="classXilinxUltraScale.html#ae59064108c5ceddce061542356c05a41" title=" " alt="" coords="387,136,589,177"/>
+<area shape="rect" href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="405,202,571,229"/>
+<area shape="rect" href="classbyteman.html#a2ff1e5c9e9b542e9f74768b296ace32f" title=" " alt="" coords="404,253,572,279"/>
+<area shape="rect" href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056" title=" " alt="" coords="435,303,541,330"/>
+<area shape="rect" href="classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="403,354,573,381"/>
+<area shape="rect" href="classbyteman.html#a991b1f28f673d304d827d9777338cf04" title=" " alt="" coords="400,405,576,431"/>
+<area shape="rect" href="classbyteman.html#a232d2d7614b161a9bca019371bafc373" title=" " alt="" coords="409,455,567,482"/>
+<area shape="rect" href="classXilinxSeries7.html#a7b5e5ff123d54639e4c3b2c03300c3f5" title=" " alt="" coords="148,45,299,71"/>
+<area shape="rect" href="classXilinxUltraScale.html#aefd9670bda072f396ec1b02916288b8f" title=" " alt="" coords="138,95,309,122"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a15434be327a556f42ae679ad8715f876" title=" " alt="" coords="147,147,300,188"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="147,212,300,253"/>
+<area shape="rect" href="classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d" title=" " alt="" coords="145,278,302,305"/>
+<area shape="rect" href="classXilinxUltraScale.html#a6b42cd68a7bb4727c5f3c9076c21bdf1" title=" " alt="" coords="135,329,311,355"/>
+<area shape="rect" href="classbyteman.html#a0ce0e992678e3f8b51cc5e01cea14ddb" title=" " alt="" coords="161,379,285,406"/>
+<area shape="rect" href="classXilinxSeries7.html#a57013b15c1c846d96d7732ad5c0e0201" title=" " alt="" coords="117,430,329,457"/>
+<area shape="rect" href="classXilinxUltraScale.html#ae7bdd2bbb29cb3ef06c611605d997287" title=" " alt="" coords="108,481,339,507"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a7f2a7c34766d004adc6f1cfe1bdd62e7" title=" " alt="" coords="147,532,300,573"/>
+<area shape="rect" href="byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,379,60,406"/>
 </map>
 </div>
 
@@ -550,36 +572,33 @@ template&lt;typename ... Rest&gt; </div>
 
 <p>Parses stringstream <code>ss</code> for integer values, that are returned into <code>x</code>, <code>args</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00200">200</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordtype">int</span> numArgs = <span class="keyword">sizeof</span>...(args);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordtype">string</span> temp;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">int</span> intFound;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordtype">bool</span> intWasFound = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keywordflow">while</span> ((!ss.eof()) &amp;&amp; (!intWasFound)) {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                ss &gt;&gt; quoted(temp);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">if</span>(temp.empty()) <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                <span class="keywordflow">try</span>{</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    <span class="keywordtype">size_t</span> sz;</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    intFound = stoi(temp, &amp;sz, 0);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                    <span class="keywordflow">if</span>(temp.size() != sz)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                        <span class="keywordflow">throw</span> exception();</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    x = intFound;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    intWasFound = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e) {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    e;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                temp.clear();</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            }</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            <span class="keywordflow">if</span>(ss.eof() &amp;&amp; (!intWasFound))</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            <span class="keywordflow">if</span> (numArgs == 0)</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;            <span class="keywordflow">else</span> </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f">multipleInts</a>(ss, args...);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        }</div>
+<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00199">199</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            <span class="keywordtype">int</span> numArgs = <span class="keyword">sizeof</span>...(args);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            <span class="keywordtype">string</span> temp;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            <span class="keywordtype">int</span> intFound;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">bool</span> intWasFound = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keywordflow">while</span> ((!ss.eof()) &amp;&amp; (!intWasFound)) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                ss &gt;&gt; quoted(temp);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                <span class="keywordflow">if</span>(temp.empty()) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordtype">size_t</span> sz;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    intFound = stoi(temp, &amp;sz, 0);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="keywordflow">if</span>(temp.size() != sz)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        <span class="keywordflow">throw</span> exception();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    x = intFound;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    intWasFound = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e) {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    e;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                temp.clear();</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;            }</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">if</span>(ss.eof() &amp;&amp; (!intWasFound))</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f">multipleInts</a>(ss, args...);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00229">multipleInts()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00225">multipleInts()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -587,6 +606,193 @@ Here is the call graph for this function:</div>
 <map name="namespacestr_1_1parse_ae904b82922b5258d5337625539cb58ba_cgraph" id="namespacestr_1_1parse_ae904b82922b5258d5337625539cb58ba_cgraph">
 <area shape="rect" title="Parses stringstream ss for integer values, that are returned into x, args." alt="" coords="5,5,175,32"/>
 <area shape="rect" href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f" title="Parses string s for integer values, that are returned into args." alt="" coords="223,5,392,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8">&#9670;&nbsp;</a></span>multipleUints() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool str::parse::multipleUints </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses string <code>s</code> for uint32_t values, that are returned into <code>args</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00262">262</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            stringstream ss(s);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1parse.html#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8">multipleUints</a>(ss, args...);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="parse_8h_source.html#l00236">multipleUints()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacestr_1_1parse_a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8_icgraph.png" border="0" usemap="#namespacestr_1_1parse_a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8_icgraph" alt=""/></div>
+<map name="namespacestr_1_1parse_a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8_icgraph" id="namespacestr_1_1parse_a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8_icgraph">
+<area shape="rect" title="Parses string s for uint32_t values, that are returned into args." alt="" coords="232,5,411,32"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a787409d03f6cc90479ee0db55ebe61d9" title="Parses stringstream ss for uint32_t values, that are returned into x, args." alt="" coords="5,5,184,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af68ae3f2c28f832a262dbd7f5add8456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af68ae3f2c28f832a262dbd7f5add8456">&#9670;&nbsp;</a></span>multipleUints() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool str::parse::multipleUints </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&#160;</td>
+          <td class="paramname"><em>ss</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00231">231</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00093">XilinxSeries7::assemblerAsmToBit()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00093">XilinxUltraScalePlus::assemblerAsmToBit()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00093">XilinxUltraScale::assemblerAsmToBit()</a>, and <a class="el" href="byteman_8cpp_source.html#l00408">byteman::parseTest()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacestr_1_1parse_af68ae3f2c28f832a262dbd7f5add8456_icgraph.png" border="0" usemap="#namespacestr_1_1parse_af68ae3f2c28f832a262dbd7f5add8456_icgraph" alt=""/></div>
+<map name="namespacestr_1_1parse_af68ae3f2c28f832a262dbd7f5add8456_icgraph" id="namespacestr_1_1parse_af68ae3f2c28f832a262dbd7f5add8456_icgraph">
+<area shape="rect" title=" " alt="" coords="256,111,435,138"/>
+<area shape="rect" href="classXilinxSeries7.html#a639a90ea02209c56a78ca7748265e842" title=" " alt="" coords="15,5,198,47"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a058802c627c4177c6fd88ca079551207" title=" " alt="" coords="27,71,186,112"/>
+<area shape="rect" href="classXilinxUltraScale.html#ae59064108c5ceddce061542356c05a41" title=" " alt="" coords="5,136,208,177"/>
+<area shape="rect" href="classbyteman.html#a67e59b56fdea8a075ccaabb1d3510c3b" title=" " alt="" coords="31,202,182,229"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a787409d03f6cc90479ee0db55ebe61d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787409d03f6cc90479ee0db55ebe61d9">&#9670;&nbsp;</a></span>multipleUints() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... Rest&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool str::parse::multipleUints </td>
+          <td>(</td>
+          <td class="paramtype">stringstream &amp;&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Rest &amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses stringstream <code>ss</code> for uint32_t values, that are returned into <code>x</code>, <code>args</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="parse_8h_source.html#l00236">236</a> of file <a class="el" href="parse_8h_source.html">parse.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keywordtype">int</span> numArgs = <span class="keyword">sizeof</span>...(args);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="keywordtype">string</span> temp;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> uintFound;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordtype">bool</span> intWasFound = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">while</span> ((!ss.eof()) &amp;&amp; (!intWasFound)) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                ss &gt;&gt; quoted(temp);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="keywordflow">if</span>(temp.empty()) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    <span class="keywordtype">size_t</span> sz;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    uintFound = stoul(temp, &amp;sz, 0);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    <span class="keywordflow">if</span>(temp.size() != sz)</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                        <span class="keywordflow">throw</span> exception();</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    x = (uint32_t)uintFound;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    intWasFound = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                } <span class="keywordflow">catch</span> (<span class="keyword">const</span> exception &amp;e) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                    e;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                temp.clear();</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">if</span>(ss.eof() &amp;&amp; (!intWasFound))</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr_1_1parse.html#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8">multipleUints</a>(ss, args...);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00262">multipleUints()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacestr_1_1parse_a787409d03f6cc90479ee0db55ebe61d9_cgraph.png" border="0" usemap="#namespacestr_1_1parse_a787409d03f6cc90479ee0db55ebe61d9_cgraph" alt=""/></div>
+<map name="namespacestr_1_1parse_a787409d03f6cc90479ee0db55ebe61d9_cgraph" id="namespacestr_1_1parse_a787409d03f6cc90479ee0db55ebe61d9_cgraph">
+<area shape="rect" title="Parses stringstream ss for uint32_t values, that are returned into x, args." alt="" coords="5,5,184,32"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8" title="Parses string s for uint32_t values, that are returned into args." alt="" coords="232,5,411,32"/>
 </map>
 </div>
 
@@ -723,7 +929,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> string(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00386">byteman::parseAssembly()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00390">byteman::parseAssembly()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -737,10 +943,11 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="anamespacestr_1_1parse_html_aac4b039c75c811c43284f1524f05891f"><div class="ttname"><a href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(string s, Args &amp;... args)</div><div class="ttdoc">Parses string s for integer values, that are returned into args.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00229">parse.h:229</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8"><div class="ttname"><a href="namespacestr_1_1parse.html#a1fdd4c3fa9d9d361f1d0a1aa0f8a04d8">str::parse::multipleUints</a></div><div class="ttdeci">bool multipleUints(string s, Args &amp;... args)</div><div class="ttdoc">Parses string s for uint32_t values, that are returned into args.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00262">parse.h:262</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_aac4b039c75c811c43284f1524f05891f"><div class="ttname"><a href="namespacestr_1_1parse.html#aac4b039c75c811c43284f1524f05891f">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(string s, Args &amp;... args)</div><div class="ttdoc">Parses string s for integer values, that are returned into args.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00225">parse.h:225</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:42 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

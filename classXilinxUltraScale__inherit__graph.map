@@ -1,6 +1,6 @@
 <map id="XilinxUltraScale" name="XilinxUltraScale">
-<area shape="rect" id="node1" title=" " alt="" coords="703,44,829,71"/>
-<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="180,44,324,71"/>
-<area shape="rect" id="node4" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,32,655,206"/>
-<area shape="rect" id="node3" href="$classCommonDevice.html" title=" " alt="" coords="5,44,132,71"/>
+<area shape="rect" id="node1" title=" " alt="" coords="797,49,924,76"/>
+<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="180,49,324,76"/>
+<area shape="rect" id="node4" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,37,749,211"/>
+<area shape="rect" id="node3" href="$classCommonDevice.html" title=" " alt="" coords="5,49,132,76"/>
 </map>

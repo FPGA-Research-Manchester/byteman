@@ -1,7 +1,6 @@
 <map id="str::parse::allStringWords" name="str::parse::allStringWords">
-<area shape="rect" id="node1" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,81,408,108"/>
-<area shape="rect" id="node2" href="$classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0" title=" " alt="" coords="9,5,171,32"/>
-<area shape="rect" id="node3" href="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="5,56,175,83"/>
-<area shape="rect" id="node4" href="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="7,107,173,133"/>
-<area shape="rect" id="node5" href="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="5,157,175,184"/>
+<area shape="rect" id="node1" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,56,408,83"/>
+<area shape="rect" id="node2" href="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45" title=" " alt="" coords="5,5,175,32"/>
+<area shape="rect" id="node3" href="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef" title=" " alt="" coords="7,56,173,83"/>
+<area shape="rect" id="node4" href="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286" title=" " alt="" coords="5,107,175,133"/>
 </map>

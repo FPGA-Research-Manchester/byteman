@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #147)</span>
+   &#160;<span id="projectnumber">1.1 (Build #148)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -104,38 +104,39 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a17c8efb1756624e078d4e93a7bb61613">   30</a></span>&#160;<span class="preprocessor">    #define XUS_MAX_BRAM_COLS 16</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad78f7053e139f2444d4e6191e73ad723">   33</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_LOGIC 0</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a2291c366e436d6af12c0726b401980d0">   34</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_BLOCKRAM 1</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">   36</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_BEFORE_CLK 60</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad01272ba0d76261e42a8b023b422906c">   37</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_AT_CLK 3</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad09286c846c9a9b9c1546bef005b28dc">   38</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_AFTER_CLK 60</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a6e8704d4a39526836bb5171b357ece64">   39</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_PER_FRAME (XUS_WORDS_BEFORE_CLK+XUS_WORDS_AT_CLK+XUS_WORDS_AFTER_CLK)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a19f35a19e334af26252750537dbf380d">   40</a></span>&#160;<span class="preprocessor">    #define XUS_FRAMES_PER_BRAM_CONTENT_COLUMN 128</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a1d8ba353268ff4316ea751b57b57d6ca">   41</a></span>&#160;<span class="preprocessor">    #define XUS_CLB_PER_CLOCK_REGION 60</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a8fe44139a1739b94992d8bf608637ba8">   42</a></span>&#160;<span class="preprocessor">    #define XUS_BRAM_PER_CLOCK_REGION 12</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a8402f388dc1be4bdfae0207eed456ef0">   44</a></span>&#160;<span class="preprocessor">    #define XUS_EXTRA_FRAMES_PER_ROW 2</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a15163155cfc2f0d3f67192623997605f">   46</a></span>&#160;<span class="preprocessor">    #define XUS_USESTOPBOTTOM 0</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad01b6906a9d4a50be3b0c8fe1020b4c5">   47</a></span>&#160;<span class="preprocessor">    #define XUS_TOPBOTTOM_SHIFT 0</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a86aa3c49ee4165f209f65341fe8229c7">   49</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_SHIFT 23</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a3941f9594117b3eb38b044add56408c3">   50</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_MASK 0x7</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a683bcccf8ca9aed22bebb50aa5527c73">   51</a></span>&#160;<span class="preprocessor">    #define XUS_ROWADDRESS_SHIFT 17</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ac0af10c616dc4877b3cc47bed40b26bd">   52</a></span>&#160;<span class="preprocessor">    #define XUS_ROWADDRESS_MASK 0x3F</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a93035b757750920157243b393d1237dd">   53</a></span>&#160;<span class="preprocessor">    #define XUS_COLUMNADDRESS_SHIFT 7</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a6ae3964416b2672bd47a299f60175bf7">   54</a></span>&#160;<span class="preprocessor">    #define XUS_COLUMNADDRESS_MASK 0x3FF</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a5ece106108075e6c206e05b5bc0de032">   55</a></span>&#160;<span class="preprocessor">    #define XUS_MINORADDRESS_SHIFT 0</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ae7cd7392c4e10de658e2828f1c4dae9f">   56</a></span>&#160;<span class="preprocessor">    #define XUS_MINORADDRESS_MASK 0x7F</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#af7977c0b96b2e14fe56bfa7388f59b96">   58</a></span>&#160;<span class="preprocessor">    #define archXUStemplate FABRIC_TEMPLATE(XUS_MAX_SLRS, XUS_MAX_ROWS, XUS_MAX_COLS, XUS_MAX_BRAM_COLS, XUS_BLOCKTYPE_LOGIC, XUS_BLOCKTYPE_BLOCKRAM,XUS_WORDS_BEFORE_CLK, XUS_WORDS_AT_CLK, XUS_WORDS_AFTER_CLK, XUS_WORDS_PER_FRAME,XUS_FRAMES_PER_BRAM_CONTENT_COLUMN, XUS_CLB_PER_CLOCK_REGION, XUS_BRAM_PER_CLOCK_REGION, XUS_EXTRA_FRAMES_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM_SHIFT, XUS_BLOCKTYPE_SHIFT, XUS_BLOCKTYPE_MASK, XUS_ROWADDRESS_SHIFT, XUS_ROWADDRESS_MASK, XUS_COLUMNADDRESS_SHIFT, XUS_COLUMNADDRESS_MASK, XUS_MINORADDRESS_SHIFT, XUS_MINORADDRESS_MASK)</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif//XUS_FABRIC_H</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a7972afabc11e3b2bdb87129ad7cafaa9">   33</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_MAX 2</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad78f7053e139f2444d4e6191e73ad723">   34</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_LOGIC 0</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a2291c366e436d6af12c0726b401980d0">   35</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_BLOCKRAM 1</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">   37</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_BEFORE_CLK 60</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad01272ba0d76261e42a8b023b422906c">   38</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_AT_CLK 3</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad09286c846c9a9b9c1546bef005b28dc">   39</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_AFTER_CLK 60</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a6e8704d4a39526836bb5171b357ece64">   40</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_PER_FRAME (XUS_WORDS_BEFORE_CLK+XUS_WORDS_AT_CLK+XUS_WORDS_AFTER_CLK)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a19f35a19e334af26252750537dbf380d">   41</a></span>&#160;<span class="preprocessor">    #define XUS_FRAMES_PER_BRAM_CONTENT_COLUMN 128</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a1d8ba353268ff4316ea751b57b57d6ca">   42</a></span>&#160;<span class="preprocessor">    #define XUS_CLB_PER_CLOCK_REGION 60</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a8fe44139a1739b94992d8bf608637ba8">   43</a></span>&#160;<span class="preprocessor">    #define XUS_BRAM_PER_CLOCK_REGION 12</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a8402f388dc1be4bdfae0207eed456ef0">   45</a></span>&#160;<span class="preprocessor">    #define XUS_EXTRA_FRAMES_PER_ROW 2</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a15163155cfc2f0d3f67192623997605f">   47</a></span>&#160;<span class="preprocessor">    #define XUS_USESTOPBOTTOM 0</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad01b6906a9d4a50be3b0c8fe1020b4c5">   48</a></span>&#160;<span class="preprocessor">    #define XUS_TOPBOTTOM_SHIFT 0</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a86aa3c49ee4165f209f65341fe8229c7">   50</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_SHIFT 23</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a3941f9594117b3eb38b044add56408c3">   51</a></span>&#160;<span class="preprocessor">    #define XUS_BLOCKTYPE_MASK 0x7</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a683bcccf8ca9aed22bebb50aa5527c73">   52</a></span>&#160;<span class="preprocessor">    #define XUS_ROWADDRESS_SHIFT 17</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ac0af10c616dc4877b3cc47bed40b26bd">   53</a></span>&#160;<span class="preprocessor">    #define XUS_ROWADDRESS_MASK 0x3F</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a93035b757750920157243b393d1237dd">   54</a></span>&#160;<span class="preprocessor">    #define XUS_COLUMNADDRESS_SHIFT 7</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a6ae3964416b2672bd47a299f60175bf7">   55</a></span>&#160;<span class="preprocessor">    #define XUS_COLUMNADDRESS_MASK 0x3FF</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a5ece106108075e6c206e05b5bc0de032">   56</a></span>&#160;<span class="preprocessor">    #define XUS_MINORADDRESS_SHIFT 0</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ae7cd7392c4e10de658e2828f1c4dae9f">   57</a></span>&#160;<span class="preprocessor">    #define XUS_MINORADDRESS_MASK 0x7F</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#af7977c0b96b2e14fe56bfa7388f59b96">   59</a></span>&#160;<span class="preprocessor">    #define archXUStemplate FABRIC_TEMPLATE(XUS_MAX_SLRS, XUS_MAX_ROWS, XUS_MAX_COLS, XUS_MAX_BRAM_COLS, XUS_BLOCKTYPE_MAX, XUS_BLOCKTYPE_LOGIC, XUS_BLOCKTYPE_BLOCKRAM,XUS_WORDS_BEFORE_CLK, XUS_WORDS_AT_CLK, XUS_WORDS_AFTER_CLK, XUS_WORDS_PER_FRAME,XUS_FRAMES_PER_BRAM_CONTENT_COLUMN, XUS_CLB_PER_CLOCK_REGION, XUS_BRAM_PER_CLOCK_REGION, XUS_EXTRA_FRAMES_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM_SHIFT, XUS_BLOCKTYPE_SHIFT, XUS_BLOCKTYPE_MASK, XUS_ROWADDRESS_SHIFT, XUS_ROWADDRESS_MASK, XUS_COLUMNADDRESS_SHIFT, XUS_COLUMNADDRESS_MASK, XUS_MINORADDRESS_SHIFT, XUS_MINORADDRESS_MASK)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif//XUS_FABRIC_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 28 2022 16:27:11 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jun 29 2022 19:04:41 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
