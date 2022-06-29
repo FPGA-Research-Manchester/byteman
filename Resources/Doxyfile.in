@@ -14,7 +14,7 @@
 # limitations under the License.
 ###############################################################################
 PROJECT_NAME = "byteman"
-PROJECT_NUMBER = "1.1 (Build #158)"
+PROJECT_NUMBER = "1.1 (Build #159)"
 PROJECT_BRIEF = "Bitstream relocation and manipulation tool"
 PROJECT_LOGO = Resources/icon64.png
 INPUT = src/
