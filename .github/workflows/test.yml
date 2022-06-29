@@ -41,5 +41,25 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}/testBuild --config Debug
 
+    - name: Test: go to test directory
+      run: cd ${{github.workspace}}/testBuild
+
+    - name: Check decompressed files
+      id: run_ls1
+      run: ls
+
+    - name: Output results
+      run: echo "LS output: ${{steps.run_ls1.outputs.ls}}"
+
+    - name: Test: go to test directory2
+      run: cd ${{github.workspace}}/testBuild/tests/Xilinx/Series7
+
+    - name: Check decompressed files2
+      id: run_ls2
+      run: ls
+
+    - name: Output results2
+      run: echo "LS output: ${{steps.run_ls2.outputs.ls}}"
+
     - name: Test
       run: ctest -C Debug --test-dir ${{github.workspace}}/testBuild --output-on-failure
