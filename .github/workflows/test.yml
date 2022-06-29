@@ -49,9 +49,9 @@ jobs:
       run: ls
 
     - name: Output results
-      run: echo "LS output: ${{steps.run_ls1.outputs.ls}}"
+      run: echo "LS output ${{steps.run_ls1.outputs.ls}}"
 
-    - name: Test: go to test directory2
+    - name: Test go to test directory2
       run: cd ${{github.workspace}}/testBuild/tests/Xilinx/Series7
 
     - name: Check decompressed files2
@@ -59,7 +59,7 @@ jobs:
       run: ls
 
     - name: Output results2
-      run: echo "LS output: ${{steps.run_ls2.outputs.ls}}"
+      run: echo "LS output ${{steps.run_ls2.outputs.ls}}"
 
     - name: Test
       run: ctest -C Debug --test-dir ${{github.workspace}}/testBuild --output-on-failure
