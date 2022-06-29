@@ -179,7 +179,6 @@ void findBitstreamSync(ifstream& fin, Endianness e)
 inline void readBitstreamMain(ifstream& fin)
 {
 	int slr = 0;
-	
 	XCAP::Register regAddr = XCAP::Register::UNDEFINED;
 	int wordCount = 0;
 	char shadowFrame[WORDS_PER_FRAME*4];
@@ -208,23 +207,30 @@ inline void readBitstreamMain(ifstream& fin)
 						uint32_t farValue = FileIO::read32(fin, loadedBitstreamEndianness);
 						wordCount--;
 						XCAP_parseFAR(farValue, slr, b, r, c, m);
+						/*
 						if(shadowFrameValid){
 							if(b == BLOCKTYPE_LOGIC){
-								memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME] ,&shadowFrame, WORDS_PER_FRAME*4);
+								memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 							} else if(b == BLOCKTYPE_BLOCKRAM) {
-								memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME] ,&shadowFrame, WORDS_PER_FRAME*4);
+								memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 							}
 							XCAP_IncrementFAR(slr, b, r, c, m);
 							shadowFrameValid = false;
 						}
+						*/
 					} else if(regAddr == XCAP::Register::FDRI){
 						if(wordCount % WORDS_PER_FRAME != 0)
 							throw runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
 						if(shadowFrameValid){
+							assert(b < BLOCKTYPE_MAX);
+							assert(r < numberOfRows);
+							assert(c < numberOfCols[r]);
 							if(b == BLOCKTYPE_LOGIC){
-								memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME] ,&shadowFrame, WORDS_PER_FRAME*4);
+								assert(m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);
+								memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 							} else if(b == BLOCKTYPE_BLOCKRAM) {
-								memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME] ,&shadowFrame, WORDS_PER_FRAME*4);
+								assert(m < FRAMES_PER_BRAM_CONTENT_COLUMN);
+								memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 							}
 							XCAP_IncrementFAR(slr, b, r, c, m);
 						}

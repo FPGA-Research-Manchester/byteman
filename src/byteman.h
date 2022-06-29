@@ -23,6 +23,7 @@
  * function parses the command line arguments.
  *
  * A list of currently implemented FPGA architectures:
+ * - Xilinx Series 7 (XilinxSeries7, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * - Xilinx UltraScale (XilinxUltraScale, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * - Xilinx UltraScale+ (XilinxUltraScalePlus, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * 
@@ -112,6 +113,10 @@ class byteman
 		void helpHelp();
 		void helpEnd();
 		void helpStdin();
+		
+		#if !defined(NDEBUG)
+		void parseTest(string, SelectedOptions);
+		#endif
 };
 
 

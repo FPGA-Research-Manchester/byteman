@@ -53,7 +53,7 @@ class CommonDevice
 		inline void log(string message) {
 			#ifdef ENABLELOGS
 				if(enableLog)
-					CommonDevice::printMessage(string("	info: ").append(message));
+					CommonDevice::printMessage(string("  info  : ").append(message));
 			#endif
 		}
 };

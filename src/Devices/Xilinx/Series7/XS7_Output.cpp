@@ -149,7 +149,7 @@ void XilinxSeries7::writeBitstream(string filename, string params, Rect2D cmdRec
 		throw runtime_error(string("Invalid file name: \"").append(filename).append("\"!\n"));
 	designName = filename.substr(0, dotpos);
 	
-	log("Writing Xilinx UltraScale+ bitstream to file \"" + filename + "\":");
+	log("Writing Xilinx Series 7 bitstream to file \"" + filename + "\":");
 	
 	parseParams(params);
 	
@@ -168,6 +168,6 @@ void XilinxSeries7::writeBitstream(string filename, string params, Rect2D cmdRec
 	else if(str::iff::stringEndsWith(filename, ".bin"))
 		writeBitstreamBIN(fout, cmdRect);
 	else
-		throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be written.\n"));
+		throw runtime_error(string("Unknown Xilinx Series 7 file format tried to be written.\n"));
 	fout.close();
 }

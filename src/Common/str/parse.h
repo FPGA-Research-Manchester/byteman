@@ -190,8 +190,7 @@ namespace str{
 			}
 			return true;   //success
 		}
-			
-		// fix for error LNK2019: unresolved external symbol, keep this function in the header
+		
 		template<typename ... Rest> inline bool multipleInts(stringstream & ss)
 		{
 			return true;
@@ -220,16 +219,50 @@ namespace str{
 			}
 			if(ss.eof() && (!intWasFound))
 				return false;
-			if (numArgs == 0)
-				return true;
-			else 
-				return multipleInts(ss, args...);
+			return multipleInts(ss, args...);
 		}
 		/// Parses string @c s for integer values, that are returned into @c args
 		template<typename ... Args> inline bool multipleInts(string s, Args & ... args)	
 		{
 			stringstream ss(s);
 			return multipleInts(ss, args...);
+		}
+		
+		template<typename ... Rest> inline bool multipleUints(stringstream & ss)
+		{
+			return true;
+		}
+		/// Parses stringstream @c ss for uint32_t values, that are returned into @c x, @c args
+		template<typename ... Rest> inline bool multipleUints(stringstream & ss, uint32_t & x, Rest & ... args)	
+		{
+			int numArgs = sizeof...(args);
+			string temp;
+			unsigned long uintFound;
+			bool intWasFound = false;
+			while ((!ss.eof()) && (!intWasFound)) {
+				ss >> quoted(temp);
+				if(temp.empty()) break;
+				try{
+					size_t sz;
+					uintFound = stoul(temp, &sz, 0);
+					if(temp.size() != sz)
+						throw exception();
+					x = (uint32_t)uintFound;
+					intWasFound = true;
+				} catch (const exception &e) {
+					e;
+				}
+				temp.clear();
+			}
+			if(ss.eof() && (!intWasFound))
+				return false;
+			return multipleUints(ss, args...);
+		}
+		/// Parses string @c s for uint32_t values, that are returned into @c args
+		template<typename ... Args> inline bool multipleUints(string s, Args & ... args)	
+		{
+			stringstream ss(s);
+			return multipleUints(ss, args...);
 		}
 	}
 }

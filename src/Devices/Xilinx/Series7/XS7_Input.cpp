@@ -29,7 +29,7 @@ void XilinxSeries7::readBitstream(string filename)
 	ifstream fin (filename, ifstream::binary);
 	if(!fin.good())
 		throw runtime_error(string("Could not open file: \"").append(filename).append("\" .\n"));
-	log("Reading Xilinx UltraScale+ bitstream from file \"" + filename + "\"");
+	log("Reading Xilinx Series 7 bitstream from file \"" + filename + "\"");
 	
 	loadedBitstreamEndianness = parseBitstreamEndianness(fin);
 	
@@ -38,6 +38,6 @@ void XilinxSeries7::readBitstream(string filename)
 	else if(str::iff::stringEndsWith(filename, ".bin"))
 		readBitstreamBIN(fin);
 	else
-		throw runtime_error(string("Unknown Xilinx UltraScale+ file format tried to be read.\n"));
+		throw runtime_error(string("Unknown Xilinx Series 7 file format tried to be read.\n"));
 	fin.close();
 }

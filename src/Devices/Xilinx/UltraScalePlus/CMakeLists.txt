@@ -24,6 +24,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Merge.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Blank.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Devices.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Assembler.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Test.cpp
 )
 
 #build byteman natively (without the library)

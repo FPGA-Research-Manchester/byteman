@@ -24,6 +24,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/XUS_Merge.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUS_Blank.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUS_Devices.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUS_Assembler.cpp
+${CMAKE_CURRENT_SOURCE_DIR}/XUS_Test.cpp
 )
 
 #build byteman natively (without the library)

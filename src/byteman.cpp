@@ -123,6 +123,10 @@ void byteman::parse(string command)
 		parseOutput(params, options);
 	else if(str::iff::firstStringWordIs(command, "a", "assembly"))
 		parseAssembly(params, options);
+	#if !defined(NDEBUG)
+	else if(str::iff::firstStringWordIs(command, "t", "test"))
+		parseTest(params, options);
+	#endif
 	else if(str::iff::firstStringWordIs(command, "e", "end"))
 		exit(0);
 	else
@@ -234,7 +238,7 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 }
 void byteman::parseBlank(string blankCmd, SelectedOptions options)
 {
-	string params = str::parse::allStringWords(blankCmd);
+	string params = blankCmd;
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -400,6 +404,36 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 			mainXUSP.assembler(filenameIn, filenameOut);
 	#endif
 }
+#if !defined(NDEBUG)
+void byteman::parseTest(string testCmd, SelectedOptions options)
+{
+	uint32_t testValue;
+	if(!str::parse::multipleUints(testCmd, testValue))
+		testValue = 0;
+	
+	testCmd = str::stringToLower(testCmd);
+	bool usableFramesOnly = false;
+	if(str::iff::stringContains(testCmd, "usableframes", "mappedframes"))
+		usableFramesOnly = true;
+	
+	bool testValueEqual = true;
+	if(str::iff::stringContains(testCmd, "notequal"))
+		testValueEqual = false;
+	
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture)
+			mainXS7.test(usableFramesOnly, testValueEqual, testValue);
+	#endif
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture)
+			mainXUS.test(usableFramesOnly, testValueEqual, testValue);
+	#endif
+	#ifdef XUSP
+		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
+			mainXUSP.test(usableFramesOnly, testValueEqual, testValue);
+	#endif
+}
+#endif
 
 void byteman::setArchitecture(string arch)
 {

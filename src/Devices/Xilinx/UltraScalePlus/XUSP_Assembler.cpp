@@ -115,8 +115,8 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 			XCAP_writeSYNQ(fout, Endianness::BE);
 		}
 		else if(str::iff::stringContains(line, ".WORD")){
-			int wordValue;
-			if(!str::parse::multipleInts(line, wordValue))wordValue = 0;
+			uint32_t wordValue;
+			if(!str::parse::multipleUints(line, wordValue))wordValue = 0;
 			FileIO::write32(fout, wordValue, Endianness::BE);
 		}
 		else if(str::iff::stringContains(line, "NOP")){
@@ -190,8 +190,8 @@ void XilinxUltraScalePlus::assemblerAsmToBit(ifstream& fin, ofstream& fout)
 					uint32_t farValue = XCAP_getFAR(slr, b, r, c, m);
 					XCAP_writeRegister(fout, XCAP::Register::FAR, farValue, Endianness::BE);
 				} else {
-					int newValue;
-					if(!str::parse::multipleInts(line, newValue))
+					uint32_t newValue;
+					if(!str::parse::multipleUints(line, newValue))
 						throw runtime_error(string("Could not parse the new register value: \"").append(line).append("\"!"));
 					XCAP_writeRegister(fout, newRegAddr, newValue, Endianness::BE);
 				}

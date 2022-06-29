@@ -90,6 +90,11 @@ class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigur
 		// Info 
 		string getFrameType(int, int, int) override;
 		
+		//Test
+		#if !defined(NDEBUG)
+		void test(bool, bool, uint32_t);
+		#endif
+		
 		void initFabric();
 };
 

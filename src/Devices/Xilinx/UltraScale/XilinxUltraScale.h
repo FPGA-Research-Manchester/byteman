@@ -90,6 +90,11 @@ class XilinxUltraScale: virtual public CommonDevice2D, public XilinxConfiguratio
 		// Info 
 		string getFrameType(int, int, int) override;
 		
+		//Test
+		#if !defined(NDEBUG)
+		void test(bool, bool, uint32_t);
+		#endif
+		
 		void initFabric();
 };
 

@@ -48,6 +48,8 @@ inline void parseParams(string params){
 		if(param == "and")selectedOptions.op = MergeOP::AND;
 		param.clear();
 	}
+	if(!str::parse::multipleInts(params, selectedOptions.intParam))
+		selectedOptions.intParam = 0; //default 0 if there is nothing
 	if(selectedOptions.clk == 0 && selectedOptions.clb == 0 && selectedOptions.bram == 0){ // by default, choose all
 		selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = 1;
 	}

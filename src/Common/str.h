@@ -76,5 +76,13 @@ namespace str{
 			str.erase(str.end()-1);
 		return str;
 	}
+	inline void findAndReplace(string &str, string toFind, string toReplaceWith)
+	{
+		size_t pos = str.find(toFind);
+		while( pos != std::string::npos) {
+			str.replace(pos, toFind.size(), toReplaceWith);
+			pos = str.find(toFind, pos + toReplaceWith.size());
+		}
+	}
 }
 #endif //STR_H
