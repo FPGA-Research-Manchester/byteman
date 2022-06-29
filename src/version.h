@@ -19,6 +19,6 @@
 
 //Any changes to version numbers should be done only in the global CMakeLists.txt, not here!
 #define VERSION "1.1"
-#define VERSION_BUILD "156"
+#define VERSION_BUILD "157"
 
 #endif //VERSION_H
