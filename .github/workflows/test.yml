@@ -23,7 +23,7 @@ on:
       - completed
 
 jobs:
-  build-linux:
+  build-and-test:
     runs-on: ubuntu-latest
         
     steps:
@@ -41,22 +41,16 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}/testBuild --config Debug
 
-    - name: Test go to test directory
-      run: cd ${{github.workspace}}/testBuild
-
     - name: Check decompressed files
       id: run_ls1
-      run: ls
+      run: cd ${{github.workspace}}/testBuild | ls
 
     - name: Output results
       run: echo "LS output ${{steps.run_ls1.outputs.ls}}"
 
-    - name: Test go to test directory2
-      run: cd ${{github.workspace}}/testBuild/tests/Xilinx/Series7
-
     - name: Check decompressed files2
       id: run_ls2
-      run: ls
+      run: cd ${{github.workspace}}/testBuild/tests/Xilinx/Series7 | ls
 
     - name: Output results2
       run: echo "LS output ${{steps.run_ls2.outputs.ls}}"
