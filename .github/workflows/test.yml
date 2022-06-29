@@ -41,15 +41,5 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}/testBuild --config Debug
 
-    - name: Check decompressed files
-      working-directory: ${{github.workspace}}/testBuild
-      run: |
-        ls -la
-
-    - name: Check decompressed files2
-      working-directory: ${{github.workspace}}/testBuild/tests/Xilinx/Series7
-      run: |
-        ls -la
-
     - name: Test
       run: ctest -C Debug --test-dir ${{github.workspace}}/testBuild --output-on-failure
