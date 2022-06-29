@@ -39,7 +39,7 @@ jobs:
       run: cmake -B ${{github.workspace}}/testBuild -DENABLE_TESTS=true
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/testBuild --config Debug
+      run: cmake --build ${{github.workspace}}/testBuild -D CMAKE_BUILD_TYPE=Debug
 
     - name: Test
       run: ctest -C Debug --test-dir ${{github.workspace}}/testBuild --output-on-failure
