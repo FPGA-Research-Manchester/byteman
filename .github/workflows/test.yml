@@ -41,7 +41,7 @@ jobs:
     - name: Build
       run: cmake --build ${{github.workspace}}/testBuild --config Debug
 
-    - name: Test: go to test directory
+    - name: Test go to test directory
       run: cd ${{github.workspace}}/testBuild
 
     - name: Check decompressed files
