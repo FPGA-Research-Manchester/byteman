@@ -33,7 +33,7 @@ jobs:
         ref: main
 
     - name: Uncompress bitstreams
-      run: 7z x ${{github.workspace}}/tests/testBitstreams.zip -o ${{github.workspace}}/testBuild/
+      run: 7z x ${{github.workspace}}/tests/testBitstreams.zip -o${{github.workspace}}/testBuild/
 
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/testBuild -DENABLE_TESTS=true
