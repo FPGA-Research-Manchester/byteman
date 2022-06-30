@@ -71,17 +71,6 @@ inline void parseBITheader(ifstream& fin, Endianness e)
 			}
 		}
 	}
-	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
-	//However we don't care about reading those
-
-	//Find sync
-	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
-		int word = FileIO::read32(fin, e);
-		if(XCAP_getSyncInstruction() == word)
-			syncDetectionDone++;
-		else
-			fin.seekg(-3,ios::cur);
-	}
 }
 
 /**************************************************************************//**
@@ -163,17 +152,20 @@ inline uint32_t parseBitstreamIDCODE(ifstream& fin, Endianness e)
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
 
-void findBitstreamSync(ifstream& fin, Endianness e)
+bool findBitstreamSync(ifstream& fin, Endianness e)
 {
+	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
+	//However we don't care about reading those
 	for( ; ; ){
 		if(!fin.good())
-			throw runtime_error("Was unable to find input bitstream's SYNC command.");
+			return false;
 		int word = FileIO::read32(fin, e);
 		if(XCAP_getSyncInstruction() == word){
-			return;
+			return true;
 		} else
 			fin.seekg(-3,ios::cur);
 	}
+	return true; //not going to be reached.
 }
 
 inline void readBitstreamMain(ifstream& fin)
@@ -184,89 +176,103 @@ inline void readBitstreamMain(ifstream& fin)
 	char shadowFrame[WORDS_PER_FRAME*4];
 	bool shadowFrameValid = false;
 	int b = 7, r = 0, c = 0, m = 0;
+	bool synched = false;
 	//Parse bitstream
 	for( ; ; ){
-		uint32_t instruction = FileIO::read32(fin, loadedBitstreamEndianness);
-		if(!fin.good()){
-			break; // done with the bitstream
-		} else {
-			int instructionType = XCAP_getInstructionType(instruction);
-			XCAP::Operation instructionOPCODE = XCAP_getInstructionOperation(instruction);
-			int instructionPayload = XCAP_getInstructionPayload(instruction);
-			if(instructionType == 1) {
-				regAddr = XCAP_getInstructionRegister(instruction);
-				wordCount = XCAP_getInstructionWordCount(instruction);
-			} else if(instructionType == 2) {
-				wordCount = instructionPayload;
+		if(!synched){
+			if(findBitstreamSync(fin, loadedBitstreamEndianness)){
+				synched = true;
 			} else {
-				throw runtime_error("Bitstream has invalid instruction (invalid type).");
+				break; // done with the bitstream
 			}
-			if(instructionOPCODE == XCAP::Operation::WRITE){ //Write register
-				for( ; wordCount > 0 ; ){
-					if(regAddr == XCAP::Register::FAR){
-						uint32_t farValue = FileIO::read32(fin, loadedBitstreamEndianness);
-						wordCount--;
-						XCAP_parseFAR(farValue, slr, b, r, c, m);
-						/*
-						if(shadowFrameValid){
-							if(b == BLOCKTYPE_LOGIC){
-								memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
-							} else if(b == BLOCKTYPE_BLOCKRAM) {
-								memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+		} else {
+			uint32_t instruction = FileIO::read32(fin, loadedBitstreamEndianness);
+			if(!fin.good()){
+				break; // done with the bitstream
+			} else {
+				int instructionType = XCAP_getInstructionType(instruction);
+				XCAP::Operation instructionOPCODE = XCAP_getInstructionOperation(instruction);
+				int instructionPayload = XCAP_getInstructionPayload(instruction);
+				if(instructionType == 1) {
+					regAddr = XCAP_getInstructionRegister(instruction);
+					wordCount = XCAP_getInstructionWordCount(instruction);
+				} else if(instructionType == 2) {
+					wordCount = instructionPayload;
+				} else {
+					throw runtime_error("Bitstream has invalid instruction ("+to_string(instruction)+" @ "+to_string(fin.tellg())+") (invalid type).");
+				}
+				if(regAddr == XCAP::Register::MAGIC1){
+					slr++;
+					wordCount = 0;
+					shadowFrameValid = false;
+					synched = false;	//TODO: do this recursively and not rely on large continous blocks of MAGIC1 command
+				}
+				if(instructionOPCODE == XCAP::Operation::WRITE){ //Write register
+					for( ; wordCount > 0 ; ){
+						if(regAddr == XCAP::Register::FAR){
+							uint32_t farValue = FileIO::read32(fin, loadedBitstreamEndianness);
+							wordCount--;
+							XCAP_parseFAR(farValue, slr, b, r, c, m);
+							/*
+							if(shadowFrameValid){
+								if(b == BLOCKTYPE_LOGIC){
+									memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+								} else if(b == BLOCKTYPE_BLOCKRAM) {
+									memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+								}
+								XCAP_IncrementFAR(slr, b, r, c, m);
+								shadowFrameValid = false;
 							}
-							XCAP_IncrementFAR(slr, b, r, c, m);
-							shadowFrameValid = false;
-						}
-						*/
-					} else if(regAddr == XCAP::Register::FDRI){
-						if(wordCount % WORDS_PER_FRAME != 0)
-							throw runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
-						if(shadowFrameValid){
-							assert(b < BLOCKTYPE_MAX);
-							assert(r < numberOfRows);
-							assert(c < numberOfCols[r]);
-							if(b == BLOCKTYPE_LOGIC){
-								assert(m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);
-								memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
-							} else if(b == BLOCKTYPE_BLOCKRAM) {
-								assert(m < FRAMES_PER_BRAM_CONTENT_COLUMN);
-								memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
-							}
-							XCAP_IncrementFAR(slr, b, r, c, m);
-						}
-						int forwardShadowReg = (wordCount/WORDS_PER_FRAME) - 1;//skip shadow reg for certain number of frames
-						if(forwardShadowReg > 0){
-							if(b == BLOCKTYPE_LOGIC){ // CLB
-								fin.read((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
-							} else if(b == BLOCKTYPE_BLOCKRAM){
-								fin.read((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
-							}
-							for(int i = 0 ; i < forwardShadowReg ; i++){
+							*/
+						} else if(regAddr == XCAP::Register::FDRI){
+							if(wordCount % WORDS_PER_FRAME != 0)
+								throw runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
+							if(shadowFrameValid){
+								assert(b < BLOCKTYPE_MAX);
+								assert(r < numberOfRows);
+								assert(c < numberOfCols[r]);
+								if(b == BLOCKTYPE_LOGIC){
+									assert(m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);
+									memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+								} else if(b == BLOCKTYPE_BLOCKRAM) {
+									assert(m < FRAMES_PER_BRAM_CONTENT_COLUMN);
+									memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+								}
 								XCAP_IncrementFAR(slr, b, r, c, m);
 							}
-						}
-						wordCount -= forwardShadowReg * WORDS_PER_FRAME;
-						shadowFrameValid = true;
-						fin.read((char*)&shadowFrame, WORDS_PER_FRAME*4);
-						wordCount -= WORDS_PER_FRAME;
+							int forwardShadowReg = (wordCount/WORDS_PER_FRAME) - 1;//skip shadow reg for certain number of frames
+							if(forwardShadowReg > 0){
+								if(b == BLOCKTYPE_LOGIC){ // CLB
+									fin.read((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
+								} else if(b == BLOCKTYPE_BLOCKRAM){
+									fin.read((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
+								}
+								for(int i = 0 ; i < forwardShadowReg ; i++){
+									XCAP_IncrementFAR(slr, b, r, c, m);
+								}
+							}
+							wordCount -= forwardShadowReg * WORDS_PER_FRAME;
+							shadowFrameValid = true;
+							fin.read((char*)&shadowFrame, WORDS_PER_FRAME*4);
+							wordCount -= WORDS_PER_FRAME;
 
-					} else if(regAddr == XCAP::Register::CMD){
-						XCAP::Command command = static_cast<XCAP::Command>(FileIO::read32(fin, loadedBitstreamEndianness));
-						wordCount--;
-						if(command == XCAP::Command::WCFG){
-							shadowFrameValid = false;
+						} else if(regAddr == XCAP::Register::CMD){
+							XCAP::Command command = static_cast<XCAP::Command>(FileIO::read32(fin, loadedBitstreamEndianness));
+							wordCount--;
+							if(command == XCAP::Command::WCFG){
+								shadowFrameValid = false;
+							}
+							if(command == XCAP::Command::DESYNC){
+								synched = false;
+							}
+						} else {
+							uint32_t scrap = FileIO::read32(fin, loadedBitstreamEndianness);
+							wordCount--;
 						}
-					} else if(regAddr == XCAP::Register::MAGIC1){
-						slr++;
-						wordCount = 0;
-						shadowFrameValid = false;
-					} else {
-						uint32_t scrap = FileIO::read32(fin, loadedBitstreamEndianness);
-						wordCount--;
-					}
-				}//Write register count for loop
-			}//Write register instruction
-		}// not end of file
+					}//Write register count for loop
+				}//Write register instruction
+			}// not end of file
+		}
 	}// for loop parsing the rest of the bitstream
 }
 
@@ -285,6 +291,5 @@ inline void readBitstreamBIN(ifstream& fin)
 	setDeviceByIDCODEOrThrow(idcode);
 	ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
 	
-	findBitstreamSync(fin, loadedBitstreamEndianness);
 	readBitstreamMain(fin);
 }
