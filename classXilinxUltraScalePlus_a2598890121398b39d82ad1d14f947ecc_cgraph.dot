@@ -10,4 +10,6 @@ digraph "XilinxUltraScalePlus::test"
   Node2 [label="ensureFramesAre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineTest_8h.html#a38aadd629bd2ab8241e670ee8102dfc2",tooltip=" "];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="XilinxUltraScalePlus\l::ensureInitializedBitstream\lArrays",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a96d1607f720750cee0905e331dce0353",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Endian::to_string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc",tooltip=" "];
 }
