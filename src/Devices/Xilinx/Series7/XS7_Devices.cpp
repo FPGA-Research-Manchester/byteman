@@ -649,7 +649,7 @@ void XilinxSeries7::setDevice(int deviceID, string customPartName)
 		if(customPartName != "")// if not empty string
 			partName = customPartName;
 	
-	log("Initialized device as \"" + partName + "\""); 
+	log("Initialized device resource string for \"" + partName + "\""); 
 }
 
 void XilinxSeries7::deviceHelp()

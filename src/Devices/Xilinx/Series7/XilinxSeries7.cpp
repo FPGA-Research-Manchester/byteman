@@ -133,6 +133,7 @@ void XilinxSeries7::ensureInitializedBitstreamArrays(){
 		}
 		
 		bitstreamEnd = &bitstreamBegin[offset];
+		log("Reserved "+to_string(clbPlaneSize + bramPlaneSize)+" words for the bitstream buffers of device \""+partName+"\"");
 	}
 }
 
