@@ -37,7 +37,7 @@ XilinxUltraScale::~XilinxUltraScale()
 {
 }
 inline bool isCharBlockRAM(char testCharacter){
-	if(str::iff::charIs(testCharacter, 'A', 'B', 'C', 'D', '1')) //A-D are BlockRAM columns, '1' is empty blockram column
+	if(str::iff::charIs(testCharacter, 'A', 'B', 'C', 'D', '2')) //A-D are BlockRAM columns, '2' is empty blockram column
 		return true;
 	return false;
 }
