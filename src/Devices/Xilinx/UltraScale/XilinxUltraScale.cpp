@@ -91,7 +91,7 @@ void XilinxUltraScale::ensureInitializedBitstreamArrays(){
 		initializeResourceStringParameters();
 		//Allocate
 		int clbPlaneSize = numberOfRows * numberOfWordsPerRow[0];
-		int bramPlaneSize = numberOfRows * (XUS_EXTRA_FRAMES_PER_ROW + maxNumberOfBRAMCols * XUS_FRAMES_PER_BRAM_CONTENT_COLUMN * XUS_WORDS_PER_FRAME);
+		int bramPlaneSize = numberOfRows * XUS_WORDS_PER_FRAME * (XUS_EXTRA_FRAMES_PER_ROW + maxNumberOfBRAMCols * XUS_FRAMES_PER_BRAM_CONTENT_COLUMN);
 		
 		bitstreamBegin = new uint32_t[clbPlaneSize + bramPlaneSize];
 		
