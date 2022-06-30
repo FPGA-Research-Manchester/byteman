@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #165)</span>
+   &#160;<span id="projectnumber">1.1 (Build #166)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -314,35 +314,36 @@ $(function() {
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                            }</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                            <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::Command::DESYNC</a>){</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                synched = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                            }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                            uint32_t scrap = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                            wordCount--;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                        }</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                    }<span class="comment">//Write register count for loop</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                }<span class="comment">//Write register instruction</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            }<span class="comment">// not end of file</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        }</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    }<span class="comment">// for loop parsing the rest of the bitstream</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;}</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">  279</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a>(ifstream&amp; fin)</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;{</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <a class="code" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    setDeviceByPartNameOrThrow();</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">  288</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a>(ifstream&amp; fin)</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;{</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    uint32_t idcode = <a class="code" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    setDeviceByIDCODEOrThrow(idcode);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                            }</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                            uint32_t scrap = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                            wordCount--;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                        }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    }<span class="comment">//Write register count for loop</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                }<span class="comment">//Write register instruction</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            }<span class="comment">// not end of file</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }<span class="comment">// for loop parsing the rest of the bitstream</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;}</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">  280</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a>(ifstream&amp; fin)</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;{</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <a class="code" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    setDeviceByPartNameOrThrow();</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">  289</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a>(ifstream&amp; fin)</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;{</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    uint32_t idcode = <a class="code" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    setDeviceByIDCODEOrThrow(idcode);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a></div><div class="ttdeci">Register</div><div class="ttdef"><b>Definition:</b> <a href="XCAP_8h_source.html#l00034">XCAP.h:34</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a5cf5745a3f7598d27061688cf9785f26"><div class="ttname"><a href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26">XCAP_IDCODEInstruction</a></div><div class="ttdeci">uint32_t XCAP_IDCODEInstruction()</div><div class="ttdoc">Generate and return the encoding for a IDCODE writing instruction.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00424">inlineCAP.h:424</a></div></div>
@@ -374,20 +375,20 @@ $(function() {
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a></div><div class="ttdeci">@ MAGIC1</div></div>
 <div class="ttc" id="anamespaceEndian_html_a7cd80b2cb2ed674196a68549c8489f88"><div class="ttname"><a href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a></div><div class="ttdeci">uint32_t NativeToBigEndian32(uint32_t x)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00152">Endianness.h:152</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a></div><div class="ttdeci">@ FDRI</div></div>
-<div class="ttc" id="ainlineInput_8h_html_ada7d4f59a2b9aa44680a400d5bd37ec5"><div class="ttname"><a href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a></div><div class="ttdeci">void readBitstreamBIN(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00288">inlineInput.h:288</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_ada7d4f59a2b9aa44680a400d5bd37ec5"><div class="ttname"><a href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5">readBitstreamBIN</a></div><div class="ttdeci">void readBitstreamBIN(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00289">inlineInput.h:289</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_aaca4e37f11bf6f869a9f1296b5b0182a"><div class="ttname"><a href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a></div><div class="ttdeci">uint32_t parseBitstreamIDCODE(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00127">inlineInput.h:127</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
 <div class="ttc" id="ainlineInput_8h_html_a28adcfbf629a14df2fab79e403e9f098"><div class="ttname"><a href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098">findBitstreamSync</a></div><div class="ttdeci">bool findBitstreamSync(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00155">inlineInput.h:155</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_ae4a16190bddd38b1508e472f1323bd06"><div class="ttname"><a href="namespaceFileIO.html#ae4a16190bddd38b1508e472f1323bd06">FileIO::read16</a></div><div class="ttdeci">uint16_t read16(ifstream &amp;fin, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00145">FileIO.h:145</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d"><div class="ttname"><a href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::Command::DESYNC</a></div><div class="ttdeci">@ DESYNC</div></div>
-<div class="ttc" id="ainlineInput_8h_html_a2015af67475241b52cb4fdd54ab6577e"><div class="ttname"><a href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a></div><div class="ttdeci">void readBitstreamBIT(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00279">inlineInput.h:279</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_a2015af67475241b52cb4fdd54ab6577e"><div class="ttname"><a href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e">readBitstreamBIT</a></div><div class="ttdeci">void readBitstreamBIT(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00280">inlineInput.h:280</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cab"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a></div><div class="ttdeci">Endianness</div><div class="ttdoc">&lt; Endianness in byteman is represented not only by big/little endian, but also by potential bit swapp...</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00046">Endianness.h:46</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_ac0e8d10f67fbe4b89886a2f5be7c690c"><div class="ttname"><a href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a></div><div class="ttdeci">void parseBITheader(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00024">inlineInput.h:24</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200"><div class="ttname"><a href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a></div><div class="ttdeci">@ WCFG</div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a445d56f4c0c7afb68ecfa18087a6af31"><div class="ttname"><a href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a></div><div class="ttdeci">uint32_t XCAP_getSyncInstruction()</div><div class="ttdoc">Generate and return the encoding for a SYNC instruction.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00430">inlineCAP.h:430</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 30 2022 14:09:52 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 30 2022 15:03:28 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
