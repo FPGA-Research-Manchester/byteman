@@ -7,7 +7,9 @@ digraph "str::iff::charIs"
   rankdir="RL";
   Node1 [label="str::iff::charIs",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Returns false. End of recursion for template."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="isCharBlockRAM",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$XilinxSeries7_8cpp.html#a1260c3fe176d73cb2f30b642c1c273f3",tooltip=" "];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxSeries7::initialize\lResourceStringParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10",tooltip=" "];
+  Node2 [label="XilinxSeries7::initialize\lResourceStringParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="XilinxUltraScale::initialize\lResourceStringParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a5b099277c768a1fc55a573e2118e04f6",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="XilinxUltraScalePlus\l::initializeResourceStringParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a871cdd6311a28677781ce340d4cb248e",tooltip=" "];
 }

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #166)</span>
+   &#160;<span id="projectnumber">1.1 (Build #167)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -110,135 +110,129 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#aaac9670dfb75f7ac38e2d2bf60415d6f">   36</a></span>&#160;<a class="code" href="classXilinxSeries7.html#aaac9670dfb75f7ac38e2d2bf60415d6f">XilinxSeries7::~XilinxSeries7</a>()</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XilinxSeries7_8cpp.html#a1260c3fe176d73cb2f30b642c1c273f3">   39</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="XilinxSeries7_8cpp.html#a1260c3fe176d73cb2f30b642c1c273f3">isCharBlockRAM</a>(<span class="keywordtype">char</span> testCharacter){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a>(testCharacter, <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;4&#39;</span>)) <span class="comment">//A-G are BlockRAM columns, &#39;4&#39; is empty blockram column</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10">XilinxSeries7::initializeResourceStringParameters</a>(){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(partName == <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;The target device needs to be known, before you can manipulate any bitstream!&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(initializedResourceParamsPartName != partName){<span class="comment">//The device is changed</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        initializedResourceParamsPartName = partName;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 0 ; r &lt; numberOfRows ; r++){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">for</span>((numberOfCols[r] = 0, numberOfFramesBeforeCol[r][0] = 0, numberOfBRAMCols[r] = 0) ; (uint8_t)resourceString[r][numberOfCols[r]] ; numberOfCols[r]++){</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                numberOfFramesBeforeCol[r][numberOfCols[r]+1] = numberOfFramesBeforeCol[r][numberOfCols[r]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][numberOfCols[r]]];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                numberOfBRAMsBeforeCol[r][numberOfCols[r]] = numberOfBRAMCols[r];</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="XilinxSeries7_8cpp.html#a1260c3fe176d73cb2f30b642c1c273f3">isCharBlockRAM</a>(resourceString[r][numberOfCols[r]]))</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    numberOfBRAMCols[r]++;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10">XilinxSeries7::initializeResourceStringParameters</a>(){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(initializedResourceStringShortPartName == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;The target device needs to be known, before you can manipulate any bitstream!&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(initializedBitstreamParamsShortPartName != initializedResourceStringShortPartName){<span class="comment">//The device is changed</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 0 ; r &lt; numberOfRows ; r++){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">for</span>((numberOfCols[r] = 0, numberOfFramesBeforeCol[r][0] = 0, numberOfBRAMCols[r] = 0) ; (uint8_t)resourceString[r][numberOfCols[r]] ; numberOfCols[r]++){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                numberOfFramesBeforeCol[r][numberOfCols[r]+1] = numberOfFramesBeforeCol[r][numberOfCols[r]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][numberOfCols[r]]];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                numberOfBRAMsBeforeCol[r][numberOfCols[r]] = numberOfBRAMCols[r];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a>(resourceString[r][numberOfCols[r]], <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;E&#39;</span>, <span class="charliteral">&#39;F&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;4&#39;</span>)) <span class="comment">//A-G are BlockRAM columns, &#39;4&#39; is empty blockram column</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    numberOfBRAMCols[r]++;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            numberOfFramesPerRow[r] = numberOfFramesBeforeCol[r][numberOfCols[r]];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            numberOfWordsPerRow[r] = numberOfFramesPerRow[r] * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a36946966363ef00d4ac8da7118713a51">XS7_MAX_COLS</a> ; c++){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[r][c - 1];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            numberOfFramesPerRow[r] = numberOfFramesBeforeCol[r][numberOfCols[r]];</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            numberOfWordsPerRow[r] = numberOfFramesPerRow[r] * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a36946966363ef00d4ac8da7118713a51">XS7_MAX_COLS</a> ; c++){</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[r][c - 1];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a24f9d7098dc8011dbf3f25bf5952231e">XS7_MAX_BRAM_COLS</a> ; c++){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                numberOfBRAMsBeforeCol[r][c] = numberOfBRAMsBeforeCol[r][c - 1];</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        maxNumberOfCols = numberOfCols[0];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        maxNumberOfBRAMCols = numberOfBRAMCols[0];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 1 ; r &lt; numberOfRows ; r++){</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span>(maxNumberOfCols &lt; numberOfCols[r])</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                maxNumberOfCols = numberOfCols[r];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">if</span>(maxNumberOfBRAMCols &lt; numberOfBRAMCols[r])</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                maxNumberOfBRAMCols = numberOfBRAMCols[r];</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25">XilinxSeries7::ensureInitializedBitstreamArrays</a>(){</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(partName == <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;The target device needs to be known, before you can manipulate any bitstream!&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(initializedBitstreamPartName != partName){<span class="comment">//The device is changed</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        initializedBitstreamPartName = partName;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span>(bitstreamBegin != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keyword">delete</span> bitstreamBegin;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        initializeResourceStringParameters();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="comment">//Allocate</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> bramPlaneSize = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">int</span> clbPlaneSize = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 0 ; r &lt; numberOfRows ; r++){</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            bramPlaneSize += <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a> * (<a class="code" href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a> + numberOfBRAMCols[r] * <a class="code" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            clbPlaneSize += numberOfWordsPerRow[r];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        bitstreamBegin = <span class="keyword">new</span> uint32_t[clbPlaneSize + bramPlaneSize];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//Calc pointers</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordtype">int</span> offset = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> slr = 0 ; slr &lt; numberOfSLRs ; slr++){</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">int</span> fromGlobalRowTop = SLRinfo[slr].fromRow + SLRinfo[slr].rowsInBottomHalf;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordtype">int</span> toGlobalRowTop = SLRinfo[slr].toRow;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">int</span> fromGlobalRowBottom = SLRinfo[slr].fromRow + SLRinfo[slr].rowsInBottomHalf - 1;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordtype">int</span> toGlobalRowBottom = SLRinfo[slr].fromRow;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowTop ; r &lt;= toGlobalRowTop ; r++){</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfCols[r] ; c++){</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                    bitstreamCLB[r][c] = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    offset += LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]] * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowBottom ; r &gt;= toGlobalRowBottom ; r--){</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfCols[r] ; c++){</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                    bitstreamCLB[r][c] = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    offset += LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]] * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowTop ; r &lt;= toGlobalRowTop ; r++){</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfBRAMCols[r] ; c++){</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                    bitstreamBRAM[r][c] = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                    offset += <a class="code" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a>*<a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                bitstreamBRAM[r][numberOfBRAMCols[r]] = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                offset += <a class="code" href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a> * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            }</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowBottom ; r &gt;= toGlobalRowBottom ; r--){</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfBRAMCols[r] ; c++){</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                    bitstreamBRAM[r][c] = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                    offset += <a class="code" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a>*<a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                bitstreamBRAM[r][numberOfBRAMCols[r]] = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                offset += <a class="code" href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a> * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        bitstreamEnd = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        log(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+partName+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">  140</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">XilinxSeries7::getFrameType</a>(<span class="keywordtype">int</span> blockType, <span class="keywordtype">int</span> rowAddress, <span class="keywordtype">int</span> columnAddress){</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="XS7__Fabric_8h.html#ae593f547eda758f2031cca27c2ad5d43">XS7_BLOCKTYPE_BLOCKRAM</a> == blockType)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;BlockRAM Contents&quot;</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="XS7__Fabric_8h.html#aee5922f65b1fcd6d7400ceb2a826fca3">XS7_BLOCKTYPE_LOGIC</a> == blockType)</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">return</span> LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a24f9d7098dc8011dbf3f25bf5952231e">XS7_MAX_BRAM_COLS</a> ; c++){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                numberOfBRAMsBeforeCol[r][c] = numberOfBRAMsBeforeCol[r][c - 1];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        maxNumberOfCols = numberOfCols[0];</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        maxNumberOfBRAMCols = numberOfBRAMCols[0];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 1 ; r &lt; numberOfRows ; r++){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span>(maxNumberOfCols &lt; numberOfCols[r])</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                maxNumberOfCols = numberOfCols[r];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span>(maxNumberOfBRAMCols &lt; numberOfBRAMCols[r])</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                maxNumberOfBRAMCols = numberOfBRAMCols[r];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25">XilinxSeries7::ensureInitializedBitstreamArrays</a>(){</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span>(initializedResourceStringShortPartName == <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;The target device needs to be known, before you can manipulate any bitstream!&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span>(initializedBitstreamShortPartName != initializedResourceStringShortPartName){<span class="comment">//The device is changed</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        initializedBitstreamShortPartName = initializedResourceStringShortPartName;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span>(bitstreamBegin != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keyword">delete</span> bitstreamBegin;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        initializeResourceStringParameters();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">//Allocate</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">int</span> bramPlaneSize = 0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">int</span> clbPlaneSize = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = 0 ; r &lt; numberOfRows ; r++){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            bramPlaneSize += <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a> * (<a class="code" href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a> + numberOfBRAMCols[r] * <a class="code" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            clbPlaneSize += numberOfWordsPerRow[r];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        bitstreamBegin = <span class="keyword">new</span> uint32_t[clbPlaneSize + bramPlaneSize];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">//Calc pointers</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">int</span> offset = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> slr = 0 ; slr &lt; numberOfSLRs ; slr++){</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordtype">int</span> fromGlobalRowTop = SLRinfo[slr].fromRow + SLRinfo[slr].rowsInBottomHalf;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordtype">int</span> toGlobalRowTop = SLRinfo[slr].toRow;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordtype">int</span> fromGlobalRowBottom = SLRinfo[slr].fromRow + SLRinfo[slr].rowsInBottomHalf - 1;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordtype">int</span> toGlobalRowBottom = SLRinfo[slr].fromRow;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowTop ; r &lt;= toGlobalRowTop ; r++){</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfCols[r] ; c++){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    bitstreamCLB[r][c] = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    offset += LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]] * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowBottom ; r &gt;= toGlobalRowBottom ; r--){</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfCols[r] ; c++){</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                    bitstreamCLB[r][c] = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                    offset += LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]] * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowTop ; r &lt;= toGlobalRowTop ; r++){</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfBRAMCols[r] ; c++){</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                    bitstreamBRAM[r][c] = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    offset += <a class="code" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a>*<a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                bitstreamBRAM[r][numberOfBRAMCols[r]] = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                offset += <a class="code" href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a> * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> r = fromGlobalRowBottom ; r &gt;= toGlobalRowBottom ; r--){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; numberOfBRAMCols[r] ; c++){</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    bitstreamBRAM[r][c] = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    offset += <a class="code" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a>*<a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                bitstreamBRAM[r][numberOfBRAMCols[r]] = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                offset += <a class="code" href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a> * <a class="code" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        bitstreamEnd = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        log(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+partName+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">  135</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">XilinxSeries7::getFrameType</a>(<span class="keywordtype">int</span> blockType, <span class="keywordtype">int</span> rowAddress, <span class="keywordtype">int</span> columnAddress){</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="XS7__Fabric_8h.html#ae593f547eda758f2031cca27c2ad5d43">XS7_BLOCKTYPE_BLOCKRAM</a> == blockType)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;BlockRAM Contents&quot;</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="XS7__Fabric_8h.html#aee5922f65b1fcd6d7400ceb2a826fca3">XS7_BLOCKTYPE_LOGIC</a> == blockType)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">return</span> LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacestr_1_1iff_html_a13e4e72af819f11af13d70eaabd75344"><div class="ttname"><a href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a></div><div class="ttdeci">bool charIs(char checkedChar)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00103">iff.h:103</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_a36946966363ef00d4ac8da7118713a51"><div class="ttname"><a href="XS7__Fabric_8h.html#a36946966363ef00d4ac8da7118713a51">XS7_MAX_COLS</a></div><div class="ttdeci">#define XS7_MAX_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00027">XS7_Fabric.h:27</a></div></div>
-<div class="ttc" id="aclassXilinxSeries7_html_aac5e9625d788f518700d194fe0fb4a10"><div class="ttname"><a href="classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10">XilinxSeries7::initializeResourceStringParameters</a></div><div class="ttdeci">void initializeResourceStringParameters() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00045">XilinxSeries7.cpp:45</a></div></div>
+<div class="ttc" id="aclassXilinxSeries7_html_aac5e9625d788f518700d194fe0fb4a10"><div class="ttname"><a href="classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10">XilinxSeries7::initializeResourceStringParameters</a></div><div class="ttdeci">void initializeResourceStringParameters() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00040">XilinxSeries7.cpp:40</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html_a6d96680def5dec0bf77a9b5b9f73abd9"><div class="ttname"><a href="classXilinxSeries7.html#a6d96680def5dec0bf77a9b5b9f73abd9">XilinxSeries7::XilinxSeries7</a></div><div class="ttdeci">XilinxSeries7()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00031">XilinxSeries7.cpp:31</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html_aaac9670dfb75f7ac38e2d2bf60415d6f"><div class="ttname"><a href="classXilinxSeries7.html#aaac9670dfb75f7ac38e2d2bf60415d6f">XilinxSeries7::~XilinxSeries7</a></div><div class="ttdeci">virtual ~XilinxSeries7()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00036">XilinxSeries7.cpp:36</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_ab98cb5d71e8fcc44dd5961249305ec5b"><div class="ttname"><a href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</a></div><div class="ttdeci">#define XS7_FRAMES_PER_BRAM_CONTENT_COLUMN</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00042">XS7_Fabric.h:42</a></div></div>
 <div class="ttc" id="aXilinxSeries7_8h_html"><div class="ttname"><a href="XilinxSeries7_8h.html">XilinxSeries7.h</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_ac9f4873f9a0c23291fa47d68dff6fbbc"><div class="ttname"><a href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00056">Endianness.h:56</a></div></div>
-<div class="ttc" id="aXilinxSeries7_8cpp_html_a1260c3fe176d73cb2f30b642c1c273f3"><div class="ttname"><a href="XilinxSeries7_8cpp.html#a1260c3fe176d73cb2f30b642c1c273f3">isCharBlockRAM</a></div><div class="ttdeci">bool isCharBlockRAM(char testCharacter)</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00039">XilinxSeries7.cpp:39</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_a49ba542c7ce5bd80e881969010e18608"><div class="ttname"><a href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a></div><div class="ttdeci">#define XS7_EXTRA_FRAMES_PER_ROW</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00046">XS7_Fabric.h:46</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_a24f9d7098dc8011dbf3f25bf5952231e"><div class="ttname"><a href="XS7__Fabric_8h.html#a24f9d7098dc8011dbf3f25bf5952231e">XS7_MAX_BRAM_COLS</a></div><div class="ttdeci">#define XS7_MAX_BRAM_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00030">XS7_Fabric.h:30</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_aee5922f65b1fcd6d7400ceb2a826fca3"><div class="ttname"><a href="XS7__Fabric_8h.html#aee5922f65b1fcd6d7400ceb2a826fca3">XS7_BLOCKTYPE_LOGIC</a></div><div class="ttdeci">#define XS7_BLOCKTYPE_LOGIC</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00034">XS7_Fabric.h:34</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_a4fec5e0993b3a8f951d22a68a445ec27"><div class="ttname"><a href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a></div><div class="ttdeci">#define XS7_WORDS_PER_FRAME</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00041">XS7_Fabric.h:41</a></div></div>
-<div class="ttc" id="aclassXilinxSeries7_html_a15f15f6cdc09ebfc383d4d6c5473f0c5"><div class="ttname"><a href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">XilinxSeries7::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00140">XilinxSeries7.cpp:140</a></div></div>
-<div class="ttc" id="aclassXilinxSeries7_html_a48e8af97afd87fb913bb399474901f25"><div class="ttname"><a href="classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25">XilinxSeries7::ensureInitializedBitstreamArrays</a></div><div class="ttdeci">void ensureInitializedBitstreamArrays() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00079">XilinxSeries7.cpp:79</a></div></div>
+<div class="ttc" id="aclassXilinxSeries7_html_a15f15f6cdc09ebfc383d4d6c5473f0c5"><div class="ttname"><a href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">XilinxSeries7::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00135">XilinxSeries7.cpp:135</a></div></div>
+<div class="ttc" id="aclassXilinxSeries7_html_a48e8af97afd87fb913bb399474901f25"><div class="ttname"><a href="classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25">XilinxSeries7::ensureInitializedBitstreamArrays</a></div><div class="ttdeci">void ensureInitializedBitstreamArrays() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00074">XilinxSeries7.cpp:74</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_ae593f547eda758f2031cca27c2ad5d43"><div class="ttname"><a href="XS7__Fabric_8h.html#ae593f547eda758f2031cca27c2ad5d43">XS7_BLOCKTYPE_BLOCKRAM</a></div><div class="ttdeci">#define XS7_BLOCKTYPE_BLOCKRAM</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00035">XS7_Fabric.h:35</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 30 2022 15:03:28 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 30 2022 16:09:26 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
