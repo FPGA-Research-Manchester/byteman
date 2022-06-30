@@ -14,10 +14,10 @@
 # limitations under the License.
 ###############################################################################
 
-add_test(NAME Test_XUSP_Artix_10 COMMAND byteman xusp -d xcau10p -b 0xff -i xckau10p.bit -test notequal 0xffffffff)
-add_test(NAME Test_XUSP_Artix_15 COMMAND byteman xusp -d xcau15p -b 0xff -i xckau15p.bit -test notequal 0xffffffff)
-add_test(NAME Test_XUSP_Artix_20 COMMAND byteman xusp -d xcau20p -b 0xff -i xckau20p.bit -test notequal 0xffffffff)
-add_test(NAME Test_XUSP_Artix_25 COMMAND byteman xusp -d xcau25p -b 0xff -i xckau25p.bit -test notequal 0xffffffff)
+add_test(NAME Test_XUSP_Artix_10 COMMAND byteman xusp -d xcau10p -b 0xff -i xcau10p.bit -test notequal 0xffffffff)
+add_test(NAME Test_XUSP_Artix_15 COMMAND byteman xusp -d xcau15p -b 0xff -i xcau15p.bit -test notequal 0xffffffff)
+add_test(NAME Test_XUSP_Artix_20 COMMAND byteman xusp -d xcau20p -b 0xff -i xcau20p.bit -test notequal 0xffffffff)
+add_test(NAME Test_XUSP_Artix_25 COMMAND byteman xusp -d xcau25p -b 0xff -i xcau25p.bit -test notequal 0xffffffff)
 
 add_test(NAME Test_XUSP_Zynq_1 COMMAND byteman xusp -d xczu1 -b 0xff -i xczu1.bit -test notequal 0xffffffff)
 add_test(NAME Test_XUSP_Zynq_2 COMMAND byteman xusp -d xczu2 -b 0xff -i xczu2.bit -test notequal 0xffffffff)
@@ -26,7 +26,7 @@ add_test(NAME Test_XUSP_Zynq_4 COMMAND byteman xusp -d xczu4 -b 0xff -i xczu4.bi
 add_test(NAME Test_XUSP_Zynq_5 COMMAND byteman xusp -d xczu5 -b 0xff -i xczu5.bit -test notequal 0xffffffff)
 add_test(NAME Test_XUSP_Zynq_6 COMMAND byteman xusp -d xczu6 -b 0xff -i xczu6.bit -test notequal 0xffffffff)
 add_test(NAME Test_XUSP_Zynq_7 COMMAND byteman xusp -d xczu7 -b 0xff -i xczu7.bit -test notequal 0xffffffff)
-add_test(NAME Test_XUSP_Zynq_17 COMMAND byteman xusp -d xczu17 -b 0xff -i xczu17.bit -test notequal 0xffffffff)
+add_test(NAME Test_XUSP_Zynq_17 COMMAND byteman xusp -d xczu17 -b 0xff -i xczu17eg.bit -test notequal 0xffffffff)
 
 add_test(NAME Test_XUSP_RFSoC_21 COMMAND byteman xusp -d xczu21dr -b 0xff -i xczu21dr.bit -test notequal 0xffffffff)
 add_test(NAME Test_XUSP_RFSoC_25 COMMAND byteman xusp -d xczu25dr -b 0xff -i xczu25dr.bit -test notequal 0xffffffff)
