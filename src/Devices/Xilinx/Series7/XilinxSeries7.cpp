@@ -36,22 +36,17 @@ XilinxSeries7::XilinxSeries7()
 XilinxSeries7::~XilinxSeries7()
 {
 }
-inline bool isCharBlockRAM(char testCharacter){
-	if(str::iff::charIs(testCharacter, 'A', 'B', 'C', 'D', 'E', 'F', 'G', '4')) //A-G are BlockRAM columns, '4' is empty blockram column
-		return true;
-	return false;
-}
 
 void XilinxSeries7::initializeResourceStringParameters(){
-	if(partName == "")
+	if(initializedResourceStringShortPartName == "")
 		throw runtime_error("The target device needs to be known, before you can manipulate any bitstream!");
-	if(initializedResourceParamsPartName != partName){//The device is changed
-		initializedResourceParamsPartName = partName;
+	if(initializedBitstreamParamsShortPartName != initializedResourceStringShortPartName){//The device is changed
+		initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;
 		for(int r = 0 ; r < numberOfRows ; r++){
 			for((numberOfCols[r] = 0, numberOfFramesBeforeCol[r][0] = 0, numberOfBRAMCols[r] = 0) ; (uint8_t)resourceString[r][numberOfCols[r]] ; numberOfCols[r]++){
 				numberOfFramesBeforeCol[r][numberOfCols[r]+1] = numberOfFramesBeforeCol[r][numberOfCols[r]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][numberOfCols[r]]];
 				numberOfBRAMsBeforeCol[r][numberOfCols[r]] = numberOfBRAMCols[r];
-				if(isCharBlockRAM(resourceString[r][numberOfCols[r]]))
+				if(str::iff::charIs(resourceString[r][numberOfCols[r]], 'A', 'B', 'C', 'D', 'E', 'F', 'G', '4')) //A-G are BlockRAM columns, '4' is empty blockram column
 					numberOfBRAMCols[r]++;
 			}
 			numberOfFramesPerRow[r] = numberOfFramesBeforeCol[r][numberOfCols[r]];
@@ -77,10 +72,10 @@ void XilinxSeries7::initializeResourceStringParameters(){
 }
 
 void XilinxSeries7::ensureInitializedBitstreamArrays(){
-	if(partName == "")
+	if(initializedResourceStringShortPartName == "")
 		throw runtime_error("The target device needs to be known, before you can manipulate any bitstream!");
-	if(initializedBitstreamPartName != partName){//The device is changed
-		initializedBitstreamPartName = partName;
+	if(initializedBitstreamShortPartName != initializedResourceStringShortPartName){//The device is changed
+		initializedBitstreamShortPartName = initializedResourceStringShortPartName;
 		if(bitstreamBegin != nullptr)
 			delete bitstreamBegin;
 
