@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #162)</span>
+   &#160;<span id="projectnumber">1.1 (Build #163)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -302,7 +302,7 @@ $(function() {
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    disassemblerWriteHeader(fout);</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    </div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a> regAddr = <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::Register::UNDEFINED</a>;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">bool</span> synched = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">bool</span> synched = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">int</span> wordCount = 0;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">int</span> shadowFrameValid = 0;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">int</span> slr = 0, b = 7, r = 0, c = 0, m = 0;</div>
@@ -317,7 +317,7 @@ $(function() {
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                    synched = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    fout &lt;&lt; <span class="stringliteral">&quot;SYNC&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    fout &lt;&lt; <span class="stringliteral">&quot;.word &quot;</span> &lt;&lt;<span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; instruction &lt;&lt; endl;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                    fout &lt;&lt; <span class="stringliteral">&quot;.word &quot;</span> &lt;&lt;<span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; instruction &lt;&lt; endl;</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                }</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <span class="keywordtype">int</span> instructionType = <a class="code" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece">XCAP_getInstructionType</a>(instruction);</div>
@@ -329,7 +329,7 @@ $(function() {
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(instructionType == 2) {</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                    wordCount = instructionPayload;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    fout &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; instruction &lt;&lt; <span class="stringliteral">&quot; (Invalid instruction [invalid type])&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                    fout &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; instruction &lt;&lt; <span class="stringliteral">&quot; (Invalid instruction [invalid type])&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                }</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                </div>
@@ -366,14 +366,14 @@ $(function() {
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                            }</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                            fout&lt;&lt;<span class="stringliteral">&quot;CLOCK: &quot;</span>;</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> w = <a class="code" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">XUS_WORDS_BEFORE_CLK</a> ; w &lt; (<a class="code" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">XUS_WORDS_BEFORE_CLK</a> + <a class="code" href="XUS__Fabric_8h.html#ad01272ba0d76261e42a8b023b422906c">XUS_WORDS_AT_CLK</a>) ; w++){</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                fout&lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>  &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; frameData[w] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                fout&lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>  &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; frameData[w] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                            }</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                            fout&lt;&lt;<span class="stringliteral">&quot; ;DATA: &quot;</span>;</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> w = 0 ; w &lt; <a class="code" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">XUS_WORDS_BEFORE_CLK</a> ; w++){</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                fout&lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>  &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; frameData[w] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                fout&lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>  &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; frameData[w] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                            }</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> w = (<a class="code" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">XUS_WORDS_BEFORE_CLK</a> + <a class="code" href="XUS__Fabric_8h.html#ad01272ba0d76261e42a8b023b422906c">XUS_WORDS_AT_CLK</a>) ; w &lt; <a class="code" href="XUS__Fabric_8h.html#a6e8704d4a39526836bb5171b357ece64">XUS_WORDS_PER_FRAME</a> ; w++){</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                fout&lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>  &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; frameData[w] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                                fout&lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>  &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; frameData[w] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                            }</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                            fout &lt;&lt; endl;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                            <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
@@ -416,10 +416,10 @@ $(function() {
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                            <a class="code" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688">XCAP_parseFAR</a>(writeData, slr, b, r, c, m);</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                            fout &lt;&lt; <span class="stringliteral">&quot; = BlockType=&quot;</span> &lt;&lt; dec &lt;&lt;b&lt;&lt;<span class="stringliteral">&quot; RowAddress=&quot;</span>&lt;&lt;(r-SLRinfo[slr].fromRow)&lt;&lt;<span class="stringliteral">&quot; MajorAddress=&quot;</span>&lt;&lt;c&lt;&lt;<span class="stringliteral">&quot; MinorAddress=&quot;</span>&lt;&lt;m&lt;&lt; endl;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                            fout &lt;&lt; <span class="stringliteral">&quot; = 0x&quot;</span> &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; writeData &lt;&lt; endl;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                            fout &lt;&lt; <span class="stringliteral">&quot; = 0x&quot;</span> &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; writeData &lt;&lt; endl;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                        }</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                        fout &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>&lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; instruction &lt;&lt; <span class="stringliteral">&quot;(Bad instruction)&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                        fout &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span>&lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; instruction &lt;&lt; <span class="stringliteral">&quot;(Bad instruction)&quot;</span> &lt;&lt; endl;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                    }</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                } <span class="comment">// OP_WRITE</span></div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            }<span class="comment">// if synched</span></div>
@@ -491,7 +491,7 @@ $(function() {
 <div class="ttc" id="ainlineOutput_8h_html_ab9c09236ab751ee544bc377711a68f2d"><div class="ttname"><a href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a></div><div class="ttdeci">void outputBITheaderLengthField(ofstream &amp;fout, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00052">inlineOutput.h:52</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 30 2022 11:14:10 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 30 2022 12:28:59 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
