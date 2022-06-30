@@ -143,9 +143,10 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
     }
 	
 	//XCKU085 is a software-limitted version of XCKU115 with one die missing a row
+	//it has 9 actual rows, but 10 rows in the bitstream, yeah, Xilinx..
     #define XCKU085_NAME "xcku085"
     #define XCKU085_SLRNUM 2
-    #define XCKU085_ROWNUM 9
+    #define XCKU085_ROWNUM 10
     #define XCKU085_IDCODE 0x380F093
     #define XCKU085_IDCODE1 0x3802093
     #define XCKU085_SLR0_START 0
@@ -160,11 +161,12 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
     #define XCKU085_STRING6 XCKU085_STRING1
     #define XCKU085_STRING7 XCKU085_STRING2
     #define XCKU085_STRING8 XCKU085_STRING3
-    #define XCKU085_SLR1_END 8
+    #define XCKU085_STRING9 "055445425445745445425445745445745445745445425445345445425445745445425445745445445445745445425445305544542544574544542544574544574544574544542544534544542544574544542544574544544544574544542544530554454254457454454254457454457454457454454254453454454454254454254453154454254454454454454454\x01"
+    #define XCKU085_SLR1_END 9
     #define XCKU085() {                                                                           \
         XUS_SETUP_DEVICE(XCKU085_);                                                               \
         XUS_SETUP_SLRs_2(XCKU085_);                                                               \
-        XUS_STRING_CAT_9(XCKU085_);                                                               \
+        XUS_STRING_CAT_10(XCKU085_);                                                              \
     }
 	
 	//XCKU095 is a software-limitted version of XCVU095
