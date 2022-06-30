@@ -73,4 +73,10 @@ void XilinxUltraScale::initFabric(){
 
 	//Also in the fabric exist frames that are mapped in bitstreams, but do not physically exist on the device. We encode these as follows:
 	setFabricChar('0', 10, "EMPTY10", true);
+	setFabricChar('1', 2,  "EMPTY2",  true);
+	setFabricChar('2', 4,  "EMPTY4",  true);
+	setFabricChar('3', 6,  "EMPTY6",  true);
+	setFabricChar('4', 12, "EMPTY12", true);
+	setFabricChar('5', 16, "EMPTY16", true);
+	setFabricChar('6', 58, "EMPTY58", true);
 }
