@@ -230,7 +230,7 @@ inline void readBitstreamMain(ifstream& fin)
 							if(shadowFrameValid){
 								//cout << "MANUAL DEBUG: b=" << b << "; r=" << r << "; c=" << c << "; m=" << m << endl;
 								assert(b < BLOCKTYPE_MAX);
-								assert(r < numberOfRows);
+								assert(r <= (SLRinfo[slr].toRow - SLRinfo[slr].fromRow));
 								assert(c < numberOfCols[r]);
 								if(b == BLOCKTYPE_LOGIC){
 									assert(m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);

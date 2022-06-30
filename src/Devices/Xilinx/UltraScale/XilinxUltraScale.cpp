@@ -85,9 +85,8 @@ void XilinxUltraScale::ensureInitializedBitstreamArrays(){
 		//Allocate
 		int clbPlaneSize = numberOfRows * numberOfWordsPerRow[0];
 		int bramPlaneSize = numberOfRows * XUS_WORDS_PER_FRAME * (XUS_EXTRA_FRAMES_PER_ROW + maxNumberOfBRAMCols * XUS_FRAMES_PER_BRAM_CONTENT_COLUMN);
-		
+
 		bitstreamBegin = new uint32_t[clbPlaneSize + bramPlaneSize];
-		
 		//Calc pointers
 		int offset = 0;
 		
@@ -107,7 +106,6 @@ void XilinxUltraScale::ensureInitializedBitstreamArrays(){
 				offset += XUS_EXTRA_FRAMES_PER_ROW * XUS_WORDS_PER_FRAME;
 			}
 		}
-		
 		bitstreamEnd = &bitstreamBegin[offset];
 		log("Reserved "+to_string(clbPlaneSize + bramPlaneSize)+" words for the bitstream buffers of device \""+partName+"\"");
 	}
