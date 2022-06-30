@@ -26,8 +26,8 @@
 	//max 581 cols in UltraScale
 	#define XUS_MAX_COLS 1024
 
-	//max 14 bram cols in UltraScale
-	#define XUS_MAX_BRAM_COLS 16
+	//max 21 bram cols in UltraScale
+	#define XUS_MAX_BRAM_COLS 32
 	
 	
 	#define XUS_BLOCKTYPE_MAX 2
