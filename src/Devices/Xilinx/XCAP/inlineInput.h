@@ -264,6 +264,7 @@ inline void readBitstreamMain(ifstream& fin)
 							}
 							if(command == XCAP::Command::DESYNC){
 								synched = false;
+								shadowFrameValid = false;
 							}
 						} else {
 							uint32_t scrap = FileIO::read32(fin, loadedBitstreamEndianness);
