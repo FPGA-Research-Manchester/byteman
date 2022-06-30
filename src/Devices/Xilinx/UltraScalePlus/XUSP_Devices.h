@@ -1018,10 +1018,10 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
         XUSP_STRING_CAT_7(XCZU15_);                                                               \
     }
 
-    //XCZU17 is software-limited version of XCZU19
+    //XCZU17 is software-limited version of XCZU19(XCKU15P without PS)
     #define XCZU17_NAME "xczu17"
-    #define XCZU17_SLRNUM 1
-    #define XCZU17_ROWNUM 11
+    #define XCZU17_SLRNUM XCKU15P_SLRNUM
+    #define XCZU17_ROWNUM XCKU15P_ROWNUM
     #define XCZU17_IDCODE 0x4A57093
     #define XCZU17_STRING0 XCKU15P_STRING0
     #define XCZU17_STRING1 XCKU15P_STRING1
@@ -1044,17 +1044,17 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
     #define XCZU19_SLRNUM XCKU15P_SLRNUM
     #define XCZU19_ROWNUM XCKU15P_ROWNUM
     #define XCZU19_IDCODE XCKU15P_IDCODE
-    #define XCZU19_STRING0 XCZU17_STRING0
-    #define XCZU19_STRING1 XCZU17_STRING1
-    #define XCZU19_STRING2 XCZU17_STRING2
-    #define XCZU19_STRING3 XCZU17_STRING3
-    #define XCZU19_STRING4 XCZU17_STRING4
-    #define XCZU19_STRING5 XCZU17_STRING5
-    #define XCZU19_STRING6 XCZU17_STRING6
-    #define XCZU19_STRING7 XCZU17_STRING7
-    #define XCZU19_STRING8 XCZU17_STRING8
-    #define XCZU19_STRING9 XCZU17_STRING9
-    #define XCZU19_STRING10 XCZU17_STRING10
+    #define XCZU19_STRING0 XCKU15P_STRING0
+    #define XCZU19_STRING1 XCKU15P_STRING1
+    #define XCZU19_STRING2 XCKU15P_STRING2
+    #define XCZU19_STRING3 XCKU15P_STRING3
+    #define XCZU19_STRING4 XCKU15P_STRING4
+    #define XCZU19_STRING5 XCKU15P_STRING5
+    #define XCZU19_STRING6 XCKU15P_STRING6
+    #define XCZU19_STRING7 XCKU15P_STRING7
+    #define XCZU19_STRING8 XCKU15P_STRING8
+    #define XCZU19_STRING9 XCKU15P_STRING9
+    #define XCZU19_STRING10 XCKU15P_STRING10
     #define XCZU19() {                                                                            \
         XUSP_SETUP_DEVICE(XCZU19_);                                                               \
         XUSP_STRING_CAT_11(XCZU19_);                                                              \
