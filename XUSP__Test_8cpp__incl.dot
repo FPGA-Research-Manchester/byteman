@@ -94,6 +94,8 @@ digraph "src/Devices/Xilinx/UltraScalePlus/XUSP_Test.cpp"
   Node34 [label="XCAP/inlineSetFabric.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineSetFabric_8h.html",tooltip=" "];
   Node6 -> Node35 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node35 [label="XCAP/inlineTest.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineTest_8h.html",tooltip=" "];
+  Node6 -> Node36 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="XCAP/inlinePrintResource\lStringInfo.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlinePrintResourceStringInfo_8h.html",tooltip=" "];
   Node2 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

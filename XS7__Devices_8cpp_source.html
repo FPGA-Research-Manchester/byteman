@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #161)</span>
+   &#160;<span id="projectnumber">1.1 (Build #162)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -728,38 +728,42 @@ $(function() {
 <div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
 <div class="line"><a name="l00655"></a><span class="lineno"><a class="line" href="classXilinxSeries7.html#aeb57c8998c061a0b2e4da83cb64c7af9">  655</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classXilinxSeries7.html#aeb57c8998c061a0b2e4da83cb64c7af9">XilinxSeries7::deviceHelp</a>()</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;{</div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;A list of currently recognized Series 7 devices: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="preprocessor">    #ifdef XS7SPARTAN</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Spartan: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="preprocessor">    #ifdef XS7ARTIX</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Artix: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50,&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7A75, XA7A75, XC7A100, XQ7A100, XA7A100, XC7A200, XQ7A200&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="preprocessor">    #ifdef XS7ZYNQ</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Zynq: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020,&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7Z030, XQ7Z030, XA7Z030, XC7Z035, XC7Z045, XQ7Z045, XC7Z100, XQ7Z100&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="preprocessor">    #ifdef XS7KINTEX</span></div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Kintex: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7K70, XC7K160, XA7K160, XC7K325, XQ7K325, XC7K355, XC7K410, XQ7K410, XC7K420, XC7K480&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="preprocessor">    #ifdef XS7VIRTEX</span></div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Virtex: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550,&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7VX690, XQ7VX690, XC7VX980, XQ7VX980, XC7VX1140&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="preprocessor">    #ifdef XS7BOARDS</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Boards: &quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tWizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20,&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tArty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15,&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tCmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME,&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\t\tVC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;<span class="preprocessor">}</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordflow">if</span>(initializedResourceStringPartName == <span class="stringliteral">&quot;&quot;</span>) {<span class="comment">//if no device is initialized</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;A list of currently recognized Series 7 devices: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;<span class="preprocessor">        #ifdef XS7SPARTAN</span></div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Spartan: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;<span class="preprocessor">        #ifdef XS7ARTIX</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Artix: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50,&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7A75, XA7A75, XC7A100, XQ7A100, XA7A100, XC7A200, XQ7A200&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="preprocessor">        #ifdef XS7ZYNQ</span></div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Zynq: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020,&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7Z030, XQ7Z030, XA7Z030, XC7Z035, XC7Z045, XQ7Z045, XC7Z100, XQ7Z100&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="preprocessor">        #ifdef XS7KINTEX</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Kintex: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7K70, XC7K160, XA7K160, XC7K325, XQ7K325, XC7K355, XC7K410, XQ7K410, XC7K420, XC7K480&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;<span class="preprocessor">        #ifdef XS7VIRTEX</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Virtex: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550,&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tXC7VX690, XQ7VX690, XC7VX980, XQ7VX980, XC7VX1140&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;<span class="preprocessor">        #ifdef XS7BOARDS</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\tSeries 7 Boards: &quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tWizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20,&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tArty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15,&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tCmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME,&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;\t\tVC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;<span class="preprocessor">        #endif</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;        <a class="code" href="inlinePrintResourceStringInfo_8h.html#a6f2b13a8fc2a6d13cb4c3113171a3423">printResourceStringInfo</a>();</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    }</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aXS7__Devices_8h_html_a8234eeb8a97ad04f78fce9346c67c8c9"><div class="ttname"><a href="XS7__Devices_8h.html#a8234eeb8a97ad04f78fce9346c67c8c9">XC7Z020_IDCODE</a></div><div class="ttdeci">#define XC7Z020_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00438">XS7_Devices.h:438</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_afc75b55aad3dc0adfa952e9d7c3d6e7b"><div class="ttname"><a href="XS7__Devices_8h.html#afc75b55aad3dc0adfa952e9d7c3d6e7b">XC7Z015</a></div><div class="ttdeci">#define XC7Z015()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00430">XS7_Devices.h:430</a></div></div>
@@ -934,7 +938,7 @@ $(function() {
 <div class="ttc" id="aXS7__Devices_8h_html_a3aa0795f69b154c9b288e2e120e3e4c1"><div class="ttname"><a href="XS7__Devices_8h.html#a3aa0795f69b154c9b288e2e120e3e4c1">XC7S50</a></div><div class="ttdeci">#define XC7S50()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00208">XS7_Devices.h:208</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a0a21158e4d42a69bc444c2dbf01a190f"><div class="ttname"><a href="XS7__Devices_8h.html#a0a21158e4d42a69bc444c2dbf01a190f">XC7S75_IDCODE</a></div><div class="ttdeci">#define XC7S75_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00217">XS7_Devices.h:217</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a6ed35ddb434fc9090e231ee51856a1a6ae8f706b53b16eebbede455827b381382"><div class="ttname"><a href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6ae8f706b53b16eebbede455827b381382">XS7_DEVICE_ECLYPSE_Z7</a></div><div class="ttdeci">@ XS7_DEVICE_ECLYPSE_Z7</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00113">XS7_Devices.h:113</a></div></div>
-<div class="ttc" id="aclassXilinxSeries7_html_aeb57c8998c061a0b2e4da83cb64c7af9"><div class="ttname"><a href="classXilinxSeries7.html#aeb57c8998c061a0b2e4da83cb64c7af9">XilinxSeries7::deviceHelp</a></div><div class="ttdeci">static void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8cpp_source.html#l00655">XS7_Devices.cpp:655</a></div></div>
+<div class="ttc" id="aclassXilinxSeries7_html_aeb57c8998c061a0b2e4da83cb64c7af9"><div class="ttname"><a href="classXilinxSeries7.html#aeb57c8998c061a0b2e4da83cb64c7af9">XilinxSeries7::deviceHelp</a></div><div class="ttdeci">void deviceHelp()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8cpp_source.html#l00655">XS7_Devices.cpp:655</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a4a3f25dd421405a6e5c0cad1cd495a8b"><div class="ttname"><a href="XS7__Devices_8h.html#a4a3f25dd421405a6e5c0cad1cd495a8b">XC7K355_NAME</a></div><div class="ttdeci">#define XC7K355_NAME</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00569">XS7_Devices.h:569</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a6ed35ddb434fc9090e231ee51856a1a6a9a9a679b61262795965f09d43dd36a4d"><div class="ttname"><a href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6a9a9a679b61262795965f09d43dd36a4d">XS7_DEVICE_XC7Z100</a></div><div class="ttdeci">@ XS7_DEVICE_XC7Z100</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00065">XS7_Devices.h:65</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a6ed35ddb434fc9090e231ee51856a1a6a2ac58da9bf0c142fd2b7f5e2eec91dc3"><div class="ttname"><a href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6a2ac58da9bf0c142fd2b7f5e2eec91dc3">XS7_DEVICE_CORA_Z10</a></div><div class="ttdeci">@ XS7_DEVICE_CORA_Z10</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00110">XS7_Devices.h:110</a></div></div>
@@ -960,6 +964,7 @@ $(function() {
 <div class="ttc" id="aXS7__Devices_8h_html_af12fe1c9e218253a909c713f194e7549"><div class="ttname"><a href="XS7__Devices_8h.html#af12fe1c9e218253a909c713f194e7549">XC7K325</a></div><div class="ttdeci">#define XC7K325()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00564">XS7_Devices.h:564</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a00e3c2cd591c96edcc277caa82ad1a0a"><div class="ttname"><a href="XS7__Devices_8h.html#a00e3c2cd591c96edcc277caa82ad1a0a">XC7VH580_IDCODE</a></div><div class="ttdeci">#define XC7VH580_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00704">XS7_Devices.h:704</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_ae7996b050e409505eb5634b277e47b44"><div class="ttname"><a href="XS7__Devices_8h.html#ae7996b050e409505eb5634b277e47b44">XC7V585_IDCODE</a></div><div class="ttdeci">#define XC7V585_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00647">XS7_Devices.h:647</a></div></div>
+<div class="ttc" id="ainlinePrintResourceStringInfo_8h_html_a6f2b13a8fc2a6d13cb4c3113171a3423"><div class="ttname"><a href="inlinePrintResourceStringInfo_8h.html#a6f2b13a8fc2a6d13cb4c3113171a3423">printResourceStringInfo</a></div><div class="ttdeci">void printResourceStringInfo()</div><div class="ttdef"><b>Definition:</b> <a href="inlinePrintResourceStringInfo_8h_source.html#l00017">inlinePrintResourceStringInfo.h:17</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a6fc856572e0be07745b177eebc68b44a"><div class="ttname"><a href="XS7__Devices_8h.html#a6fc856572e0be07745b177eebc68b44a">XC7VX980</a></div><div class="ttdeci">#define XC7VX980()</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00867">XS7_Devices.h:867</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html_a2be7b3ced5eae4d9ae5ace09ced281af"><div class="ttname"><a href="classXilinxSeries7.html#a2be7b3ced5eae4d9ae5ace09ced281af">XilinxSeries7::setDeviceByPartNameOrThrow</a></div><div class="ttdeci">void setDeviceByPartNameOrThrow() override</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8cpp_source.html#l00044">XS7_Devices.cpp:44</a></div></div>
 <div class="ttc" id="aXS7__Devices_8h_html_a245b5c8498fba16eb363d31049d1e975"><div class="ttname"><a href="XS7__Devices_8h.html#a245b5c8498fba16eb363d31049d1e975">XC7A35_IDCODE</a></div><div class="ttdeci">#define XC7A35_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00291">XS7_Devices.h:291</a></div></div>
@@ -984,7 +989,7 @@ $(function() {
 <div class="ttc" id="aXS7__Devices_8h_html_a6f1231e25f5ac755567d605353463354"><div class="ttname"><a href="XS7__Devices_8h.html#a6f1231e25f5ac755567d605353463354">XC7S100_IDCODE</a></div><div class="ttdeci">#define XC7S100_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00232">XS7_Devices.h:232</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 30 2022 10:22:30 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 30 2022 11:14:10 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
