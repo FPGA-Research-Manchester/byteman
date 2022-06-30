@@ -181,7 +181,7 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
 
 #define TODO 0
 //Functions how to build devices
-#define XUSP_PARTNAME(value) {initializedResourceStringPartName = partName = value;}
+#define XUSP_PARTNAME(value) {initializedResourceStringShortPartName = partName = value;}
 #define XUSP_SLRFROMROW(slrID,value) {SLRinfo[slrID].fromRow = value;}
 #define XUSP_SLRTOROW(slrID,value) {SLRinfo[slrID].toRow = value;}
 #define XUSP_ROWNUM(value) {numberOfRows = value;}

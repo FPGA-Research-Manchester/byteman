@@ -20,6 +20,8 @@ inline void ensureFramesAre(bool usableFramesOnly, bool testValueEqual, uint32_t
 	for(int r = 0 ; r < numberOfRows ; r++){
 		for(int c = 0 ; c < numberOfCols[r] ; c++){
 			uint8_t frameLetter = (uint8_t)resourceString[r][c];
+			if(frameLetter <= 1) //don't include the extra frames on each row in the test
+				continue;
 			if(!usableFramesOnly || (!LUT_isFrameUnusedForResourceLetter[frameLetter])){
 				for(int m = 0 ; m < LUT_numberOfFramesForResourceLetter[frameLetter] ; m++){
 					for(int f = 0 ; f < WORDS_PER_FRAME ; f++){

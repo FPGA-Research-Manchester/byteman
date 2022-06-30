@@ -36,22 +36,16 @@ XilinxUltraScale::XilinxUltraScale()
 XilinxUltraScale::~XilinxUltraScale()
 {
 }
-inline bool isCharBlockRAM(char testCharacter){
-	if(str::iff::charIs(testCharacter, 'A', 'B', 'C', 'D', '2')) //A-D are BlockRAM columns, '2' is empty blockram column
-		return true;
-	return false;
-}
 
 void XilinxUltraScale::initializeResourceStringParameters(){
-	if(partName == "")
+	if(initializedResourceStringShortPartName == "")
 		throw runtime_error("The target device needs to be known, before you can manipulate any bitstream!");
-	if(initializedResourceParamsPartName != partName){//The device is changed
-		initializedResourceParamsPartName = partName;
-
+	if(initializedBitstreamParamsShortPartName != initializedResourceStringShortPartName){//The device is changed
+		initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;
 		for((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; (uint8_t)resourceString[0][numberOfCols[0]] ; numberOfCols[0]++){
 			numberOfFramesBeforeCol[0][numberOfCols[0]+1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];
 			numberOfBRAMsBeforeCol[0][numberOfCols[0]] = numberOfBRAMCols[0];
-			if(isCharBlockRAM(resourceString[0][numberOfCols[0]]))
+			if(str::iff::charIs(resourceString[0][numberOfCols[0]], 'A', 'B', 'C', 'D', '2')) //A-D are BlockRAM columns, '2' is empty blockram column
 				numberOfBRAMCols[0]++;
 		}
 		for(int c = numberOfCols[0] + 1 ; c < XUS_MAX_COLS ; c++){
@@ -81,13 +75,12 @@ void XilinxUltraScale::initializeResourceStringParameters(){
 }
 
 void XilinxUltraScale::ensureInitializedBitstreamArrays(){
-	if(partName == "")
+	if(initializedResourceStringShortPartName == "")
 		throw runtime_error("The target device needs to be known, before you can manipulate any bitstream!");
-	if(initializedBitstreamPartName != partName){//The device is changed
-		initializedBitstreamPartName = partName;
+	if(initializedBitstreamShortPartName != initializedResourceStringShortPartName){//The device is changed
+		initializedBitstreamShortPartName = initializedResourceStringShortPartName;
 		if(bitstreamBegin != nullptr)
 			delete bitstreamBegin;
-
 		initializeResourceStringParameters();
 		//Allocate
 		int clbPlaneSize = numberOfRows * numberOfWordsPerRow[0];

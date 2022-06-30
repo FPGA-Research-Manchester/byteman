@@ -228,6 +228,7 @@ inline void readBitstreamMain(ifstream& fin)
 							if(wordCount % WORDS_PER_FRAME != 0)
 								throw runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
 							if(shadowFrameValid){
+								//cout << "MANUAL DEBUG: b=" << b << "; r=" << r << "; c=" << c << "; m=" << m << endl;
 								assert(b < BLOCKTYPE_MAX);
 								assert(r < numberOfRows);
 								assert(c < numberOfCols[r]);

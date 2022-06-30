@@ -20,6 +20,5 @@
 void XilinxUltraScale::blank(string params){
 	ensureInitializedBitstreamArrays();
 	parseParams(params);
-	
 	blankBuffers();
 }

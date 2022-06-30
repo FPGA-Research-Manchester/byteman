@@ -649,12 +649,12 @@ void XilinxSeries7::setDevice(int deviceID, string customPartName)
 		if(customPartName != "")// if not empty string
 			partName = customPartName;
 	
-	log("Initialized device resource string for \"" + partName + "\""); 
+	log("Initialized device resource string for \"" + initializedResourceStringShortPartName + "\""); 
 }
 
 void XilinxSeries7::deviceHelp()
 {
-	if(initializedResourceStringPartName == "") {//if no device is initialized
+	if(initializedResourceStringShortPartName == "") {//if no device is initialized
 		cout << "A list of currently recognized Series 7 devices: " << endl;
 		#ifdef XS7SPARTAN
 		cout << "\tSeries 7 Spartan: " << endl;

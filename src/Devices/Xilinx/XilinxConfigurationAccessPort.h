@@ -72,8 +72,9 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		XilinxConfigurationAccessPort()
 		{
 			bitstreamBegin = nullptr;
-			initializedBitstreamPartName = "";
-			initializedResourceStringPartName = "";
+			initializedBitstreamShortPartName = "";
+			initializedBitstreamParamsShortPartName = "";
+			initializedResourceStringShortPartName = "";
 			loadedBitstreamEndianness = Endianness::BE;
 			SLRinfo[0] = {0, 0, 0};
 			numberOfRows = 0;
@@ -110,7 +111,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		string fileTime;
 
 	//bitstream structure
-		string initializedBitstreamPartName; 		///< The partName of currently initialized bitstream buffers
+		string initializedBitstreamShortPartName; 		///< The partName of currently initialized bitstream buffers
 		Endianness loadedBitstreamEndianness;   		///< The endianess of the currently loaded bitstream.
 		uint32_t* bitstreamBegin;
 		uint32_t* bitstreamCLB[MAX_ROWS][MAX_COLS];
@@ -118,7 +119,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		uint32_t* bitstreamEnd;
 
 	//resource string parameters
-		string initializedResourceParamsPartName; ///< the partName of currently initialized resource string parameters
+		string initializedBitstreamParamsShortPartName; ///< the partName of currently initialized resource string parameters
 		int numberOfSLRs;
 		int numberOfRows;
 		int numberOfBRAMCols[MAX_ROWS];
@@ -131,7 +132,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		int numberOfWordsPerRow[MAX_ROWS];
 
 	//SLR data and resource string
-		string initializedResourceStringPartName; ///< the partName of currently initialized resource string parameters
+		string initializedResourceStringShortPartName; ///< the partName of currently initialized resource string parameters
 		char resourceString[MAX_ROWS][MAX_COLS];
 		struct {
 			uint32_t IDCODE;

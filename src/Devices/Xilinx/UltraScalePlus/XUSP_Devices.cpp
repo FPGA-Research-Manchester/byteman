@@ -1086,11 +1086,11 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			partName = customPartName;
 	
 	
-	log("Initialized device resource string for \"" + partName + "\""); 
+	log("Initialized device resource string for \"" + initializedResourceStringShortPartName + "\""); 
 }
 void XilinxUltraScalePlus::deviceHelp()
 {
-	if(initializedResourceStringPartName == "") {//if no device is initialized
+	if(initializedResourceStringShortPartName == "") {//if no device is initialized
 		cout << "A list of currently recognized US+ devices: " << endl;
 		#ifdef XUSPARTIX
 		cout << "\tUltraScale+ Artix: " << endl;
