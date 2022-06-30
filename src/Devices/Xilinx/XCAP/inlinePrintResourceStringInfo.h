@@ -24,7 +24,7 @@ inline void printResourceStringInfo(){
 			if(resourceLetter <= 1)
 				break;
 			if(LUT_isFrameUnusedForResourceLetter[resourceLetter])
-				cout << "\t\t" << c << ": This column is unused" << endl;
+				cout << "\t\t" << c << ": Unused/hidden resource" << endl;
 			else
 				cout << "\t\t" << c << ": " << LUT_typeOfFrameForResourceLetter[resourceLetter] << endl;
 		}
