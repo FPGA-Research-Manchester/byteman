@@ -228,7 +228,7 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 	disassemblerWriteHeader(fout);
 	
 	XCAP::Register regAddr = XCAP::Register::UNDEFINED;
-	bool synched = true;
+	bool synched = false;
 	int wordCount = 0;
 	int shadowFrameValid = 0;
 	int slr = 0, b = 7, r = 0, c = 0, m = 0;
@@ -243,7 +243,7 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 					synched = true;
 					fout << "SYNC" << endl;
 				} else {
-					fout << ".word " <<"0x" << hex << setw(8) << setfill('0') << instruction << endl;
+					fout << ".word " <<"0x" << uppercase << hex << setw(8) << setfill('0') << instruction << endl;
 				}
 			} else {
 				int instructionType = XCAP_getInstructionType(instruction);
@@ -255,7 +255,7 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 				} else if(instructionType == 2) {
 					wordCount = instructionPayload;
 				} else {
-					fout << "0x" << hex << setw(8) << setfill('0') << instruction << " (Invalid instruction [invalid type])" << endl;
+					fout << "0x" << uppercase << hex << setw(8) << setfill('0') << instruction << " (Invalid instruction [invalid type])" << endl;
 					continue;
 				}
 				
@@ -292,14 +292,14 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 							}
 							fout<<"CLOCK: ";
 							for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++){
-								fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+								fout<< "0x"  << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
 							}
 							fout<<" ;DATA: ";
 							for(int w = 0 ; w < XUSP_WORDS_BEFORE_CLK ; w++){
-								fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+								fout<< "0x"  << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
 							}
 							for(int w = (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w < XUSP_WORDS_PER_FRAME ; w++){
-								fout<< "0x"  << hex << setw(8) << setfill('0') << frameData[w] << " ";
+								fout<< "0x"  << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
 							}
 							fout << endl;
 							XCAP_IncrementFAR(slr, b, r, c, m);
@@ -342,10 +342,10 @@ void XilinxUltraScalePlus::disassemblerBitToAsm(ifstream& fin, ofstream& fout)
 							XCAP_parseFAR(writeData, slr, b, r, c, m);
 							fout << " = BlockType=" << dec <<b<<" RowAddress="<<(r-SLRinfo[slr].fromRow)<<" MajorAddress="<<c<<" MinorAddress="<<m<< endl;
 						} else {
-							fout << " = 0x" << hex << setw(8) << setfill('0') << writeData << endl;
+							fout << " = 0x" << uppercase << hex << setw(8) << setfill('0') << writeData << endl;
 						}
 					} else {
-						fout << "0x"<< hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
+						fout << "0x"<< uppercase << hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
 					}
 				} // OP_WRITE
 			}// if synched
