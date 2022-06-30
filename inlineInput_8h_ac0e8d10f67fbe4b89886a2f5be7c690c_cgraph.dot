@@ -71,6 +71,4 @@ digraph "parseBITheader"
   Node25 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 [label="FileIO::readStringIntoChar\lArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a5860a0c03441d5786067ac7a8165269b",tooltip=" "];
   Node24 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node1 -> Node28 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node28 [label="XCAP_getSyncInstruction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31",tooltip="Generate and return the encoding for a SYNC instruction."];
 }

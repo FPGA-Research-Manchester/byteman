@@ -17,6 +17,6 @@ digraph "readBitstreamMain"
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="readBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e",tooltip=" "];
   Node6 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }
