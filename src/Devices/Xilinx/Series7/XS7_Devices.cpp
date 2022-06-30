@@ -654,35 +654,39 @@ void XilinxSeries7::setDevice(int deviceID, string customPartName)
 
 void XilinxSeries7::deviceHelp()
 {
-	cout << "A list of currently recognized Series 7 devices: " << endl;
-	#ifdef XS7SPARTAN
-	cout << "\tSeries 7 Spartan: " << endl;
-	cout << "\t\tXC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100" << endl;
-	#endif
-	#ifdef XS7ARTIX
-	cout << "\tSeries 7 Artix: " << endl;
-	cout << "\t\tXC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50," << endl;
-	cout << "\t\tXC7A75, XA7A75, XC7A100, XQ7A100, XA7A100, XC7A200, XQ7A200" << endl;
-	#endif
-	#ifdef XS7ZYNQ
-	cout << "\tSeries 7 Zynq: " << endl;
-	cout << "\t\tXC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020," << endl;
-	cout << "\t\tXC7Z030, XQ7Z030, XA7Z030, XC7Z035, XC7Z045, XQ7Z045, XC7Z100, XQ7Z100" << endl;
-	#endif
-	#ifdef XS7KINTEX
-	cout << "\tSeries 7 Kintex: " << endl;
-	cout << "\t\tXC7K70, XC7K160, XA7K160, XC7K325, XQ7K325, XC7K355, XC7K410, XQ7K410, XC7K420, XC7K480" << endl;
-	#endif
-	#ifdef XS7VIRTEX
-	cout << "\tSeries 7 Virtex: " << endl;
-	cout << "\t\tXC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550," << endl;
-	cout << "\t\tXC7VX690, XQ7VX690, XC7VX980, XQ7VX980, XC7VX1140" << endl;
-	#endif
-	#ifdef XS7BOARDS
-	cout << "\tSeries 7 Boards: " << endl;
-	cout << "\t\tWizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20," << endl;
-	cout << "\t\tArty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15," << endl;
-	cout << "\t\tCmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME," << endl;
-	cout << "\t\tVC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706" << endl;
-	#endif
+	if(initializedResourceStringPartName == "") {//if no device is initialized
+		cout << "A list of currently recognized Series 7 devices: " << endl;
+		#ifdef XS7SPARTAN
+		cout << "\tSeries 7 Spartan: " << endl;
+		cout << "\t\tXC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100" << endl;
+		#endif
+		#ifdef XS7ARTIX
+		cout << "\tSeries 7 Artix: " << endl;
+		cout << "\t\tXC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50," << endl;
+		cout << "\t\tXC7A75, XA7A75, XC7A100, XQ7A100, XA7A100, XC7A200, XQ7A200" << endl;
+		#endif
+		#ifdef XS7ZYNQ
+		cout << "\tSeries 7 Zynq: " << endl;
+		cout << "\t\tXC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020," << endl;
+		cout << "\t\tXC7Z030, XQ7Z030, XA7Z030, XC7Z035, XC7Z045, XQ7Z045, XC7Z100, XQ7Z100" << endl;
+		#endif
+		#ifdef XS7KINTEX
+		cout << "\tSeries 7 Kintex: " << endl;
+		cout << "\t\tXC7K70, XC7K160, XA7K160, XC7K325, XQ7K325, XC7K355, XC7K410, XQ7K410, XC7K420, XC7K480" << endl;
+		#endif
+		#ifdef XS7VIRTEX
+		cout << "\tSeries 7 Virtex: " << endl;
+		cout << "\t\tXC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550," << endl;
+		cout << "\t\tXC7VX690, XQ7VX690, XC7VX980, XQ7VX980, XC7VX1140" << endl;
+		#endif
+		#ifdef XS7BOARDS
+		cout << "\tSeries 7 Boards: " << endl;
+		cout << "\t\tWizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20," << endl;
+		cout << "\t\tArty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15," << endl;
+		cout << "\t\tCmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME," << endl;
+		cout << "\t\tVC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706" << endl;
+		#endif
+	} else {
+		printResourceStringInfo();
+	}
 }

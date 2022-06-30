@@ -16,6 +16,7 @@
 
 inline void clearResourceStringArrays()
 {
+	initializedResourceStringPartName = "";
 	memset(&resourceString, 0, MAX_ROWS * MAX_COLS * sizeof(char));
 }
 

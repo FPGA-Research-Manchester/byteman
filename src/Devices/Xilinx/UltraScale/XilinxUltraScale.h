@@ -61,7 +61,7 @@ class XilinxUltraScale: virtual public CommonDevice2D, public XilinxConfiguratio
 		void outputBitstreamEmptySLRWrapUpSequence(ofstream&, int, bool, Endianness) override;
 		
 		//Info
-		static void deviceHelp();
+		void deviceHelp();
 		
 		//file IO
 		
@@ -84,7 +84,7 @@ class XilinxUltraScale: virtual public CommonDevice2D, public XilinxConfiguratio
 		void disassemblerWriteHeader(ofstream&);
 		void disassemblerBitToAsm(ifstream&, ofstream&);
 		
-		static void assemblerHelp();
+		void assemblerHelp();
 		void assembler(string, string);
 		
 		// Info 

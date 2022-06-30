@@ -61,7 +61,7 @@ void byteman::help()
 }
 void byteman::help(string param)
 {
-		 if(str::iff::stringIs(param, "v", "verbose"))
+	if(str::iff::stringIs(param, "v", "verbose"))
 		byteman::helpVerbose();
 	else if(str::iff::stringIs(param, "w", "warn"))
 		byteman::helpWarn();
@@ -111,20 +111,17 @@ void byteman::helpChange()
 }
 void byteman::helpDevice()
 {
-	cout<<"TODO helpDevice" << endl;
-	
-	cout << "Available devices:" <<endl;
 	#ifdef XS7
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)
-			XilinxSeries7::deviceHelp();
+			mainXS7.deviceHelp();
 	#endif
 	#ifdef XUS
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)
-			XilinxUltraScale::deviceHelp();
+			mainXUS.deviceHelp();
 	#endif
 	#ifdef XUSP
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
-			XilinxUltraScalePlus::deviceHelp();
+			mainXUSP.deviceHelp();
 	#endif
 }
 void byteman::helpHelp()
@@ -152,15 +149,15 @@ void byteman::helpAssembly()
 	cout<<"TODO usage_assembly" << endl;
 	#ifdef XS7
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)
-			XilinxSeries7::assemblerHelp();
+			mainXS7.assemblerHelp();
 	#endif
 	#ifdef XUS
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScale == selectedArchitecture)
-			XilinxUltraScale::assemblerHelp();
+			mainXUS.assemblerHelp();
 	#endif
 	#ifdef XUSP
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_UltraScalePlus == selectedArchitecture)
-			XilinxUltraScalePlus::assemblerHelp();
+			mainXUSP.assemblerHelp();
 	#endif
 }
 void byteman::helpEnd()

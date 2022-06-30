@@ -114,7 +114,7 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
 //Functions how to build devices
 #define XS7_TOPROWS(slrID,value) {SLRinfo[slrID].rowsInTopHalf = value;}
 #define XS7_BOTROWS(slrID,value) {SLRinfo[slrID].rowsInBottomHalf = value;}
-#define XS7_PARTNAME(value) {partName = value;}
+#define XS7_PARTNAME(value) {initializedResourceStringPartName = partName = value;}
 #define XS7_SLRFROMROW(slrID,value) {SLRinfo[slrID].fromRow = value;}
 #define XS7_SLRTOROW(slrID,value) {SLRinfo[slrID].toRow = value;}
 #define XS7_ROWNUM(value) {numberOfRows = value;}

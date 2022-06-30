@@ -73,6 +73,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		{
 			bitstreamBegin = nullptr;
 			initializedBitstreamPartName = "";
+			initializedResourceStringPartName = "";
 			loadedBitstreamEndianness = Endianness::BE;
 			SLRinfo[0] = {0, 0, 0};
 			numberOfRows = 0;
@@ -130,6 +131,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		int numberOfWordsPerRow[MAX_ROWS];
 
 	//SLR data and resource string
+		string initializedResourceStringPartName; ///< the partName of currently initialized resource string parameters
 		char resourceString[MAX_ROWS][MAX_COLS];
 		struct {
 			uint32_t IDCODE;
@@ -152,6 +154,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		#include "XCAP/inlineFAR.h"
 		#include "XCAP/inlineSetFabric.h"
 		#include "XCAP/inlineTest.h"
+		#include "XCAP/inlinePrintResourceStringInfo.h"
 
 //Some functions that will need to be implemented by each architecture
 	//get/set device type

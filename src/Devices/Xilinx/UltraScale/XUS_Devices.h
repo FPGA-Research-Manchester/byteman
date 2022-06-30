@@ -44,7 +44,7 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
   
 #define TODO 0
 //Functions how to build devices
-#define XUS_PARTNAME(value) {partName = value;}
+#define XUS_PARTNAME(value) {initializedResourceStringPartName = partName = value;}
 #define XUS_SLRFROMROW(slrID,value) {SLRinfo[slrID].fromRow = value;}
 #define XUS_SLRTOROW(slrID,value) {SLRinfo[slrID].toRow = value;}
 #define XUS_ROWNUM(value) {numberOfRows = value;}
