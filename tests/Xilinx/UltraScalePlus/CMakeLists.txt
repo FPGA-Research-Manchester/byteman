@@ -71,7 +71,7 @@ add_test(NAME Test_XUSP_Virtex_45 COMMAND byteman xusp -d xcvu45p -b 0xff -i xcv
 add_test(NAME Test_XUSP_Virtex_47 COMMAND byteman xusp -d xcvu47p -b 0xff -i xcvu47p.bit -test notequal 0xffffffff)
 add_test(NAME Test_XUSP_Virtex_57 COMMAND byteman xusp -d xcvu57p -b 0xff -i xcvu57p.bit -test notequal 0xffffffff)
 
-add_test(NAME Test_XUSP_Kria COMMAND byteman xusp -d xck26 -b 0xff -i xck26.bit -test notequal 0xffffffff)
+add_test(NAME Test_XUSP_Kria COMMAND byteman xusp -d Kria 26C -b 0xff -i xck26.bit -test notequal 0xffffffff)
 
 add_test(NAME Test_XUSP_Alveo_25 COMMAND byteman xusp -d Alveo U25 -b 0xff -i xcu25.bit -test notequal 0xffffffff)
 add_test(NAME Test_XUSP_Alveo_26 COMMAND byteman xusp -d Alveo U26 -b 0xff -i xcu26.bit -test notequal 0xffffffff)
