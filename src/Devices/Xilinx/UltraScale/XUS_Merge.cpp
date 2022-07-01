@@ -24,6 +24,15 @@ using namespace std;
 void XilinxUltraScale::merge(XilinxUltraScale* srcBitstream, string params, Rect2D src, Coord2D dst){
 	//This function uses a pointer to the second XUSP instance, but this pointer should get optimized as it is statically provided in the main function
 	parseParams(params);
+	
+	if(!selectedOptions.partialNotFull){
+		log("Merging the whole FPGA");
+		src.position = {0, 0};
+		dst = {0, 0};
+		src.size.row = numberOfRows * XUS_CLB_PER_CLOCK_REGION;
+		src.size.col = maxNumberOfCols;
+	}
+	
 	ensureRegionCompatibility(src, dst);
 	
 	if(src.position.row%XUS_CLB_PER_CLOCK_REGION != 0)

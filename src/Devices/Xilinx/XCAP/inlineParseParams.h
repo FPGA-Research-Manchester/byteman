@@ -31,17 +31,25 @@
  *****************************************************************************/
 inline void parseParams(string params){
 	selectedOptions = SelectedOptions();
+	selectedOptions.clk = false;
+	selectedOptions.clb = false;
+	selectedOptions.bram = false;
+	selectedOptions.blank = false;
+	selectedOptions.partialNotFull = true;
+	selectedOptions.op = MergeOP::SET;
+	selectedOptions.skipUnused = true;
+	selectedOptions.intParam = 0;
 	replace(params.begin(), params.end(), ',', ' ');
 	stringstream ss(params);
 	string param;
 	while (!ss.eof()) {
 		ss >> param;
-		if(param == "clock" || param == "clk")selectedOptions.clk++;
-		if(param == "logic" || param == "clb")selectedOptions.clb++;
-		if(param == "blockram" || param == "bram")selectedOptions.bram++;
+		if(param == "clock" || param == "clk")selectedOptions.clk = true;
+		if(param == "logic" || param == "clb")selectedOptions.clb = true;
+		if(param == "blockram" || param == "bram")selectedOptions.bram = true;
 		if(param == "blank")selectedOptions.blank++;
-		if(param == "full")selectedOptions.partial = 0;
-		if(param == "partial")selectedOptions.partial = 1;
+		if(param == "full")selectedOptions.partialNotFull = false;
+		if(param == "partial")selectedOptions.partialNotFull = true;
 		if(param == "set")selectedOptions.op = MergeOP::SET;
 		if(param == "xor")selectedOptions.op = MergeOP::XOR;
 		if(param == "or")selectedOptions.op = MergeOP::OR;
@@ -50,8 +58,8 @@ inline void parseParams(string params){
 	}
 	if(!str::parse::multipleInts(params, selectedOptions.intParam))
 		selectedOptions.intParam = 0; //default 0 if there is nothing
-	if(selectedOptions.clk == 0 && selectedOptions.clb == 0 && selectedOptions.bram == 0){ // by default, choose all
-		selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = 1;
+	if(!selectedOptions.clk && !selectedOptions.clb && !selectedOptions.bram){ // by default, choose all
+		selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = true;
 	}
 }
 

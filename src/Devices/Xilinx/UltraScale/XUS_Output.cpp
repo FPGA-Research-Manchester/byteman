@@ -168,7 +168,7 @@ void XilinxUltraScale::writeBitstream(string filename, string params, Rect2D cmd
 	
 	parseParams(params);
 	
-	if(selectedOptions.partial) {
+	if(selectedOptions.partialNotFull) {
 		if((cmdRect.position.row % XUS_CLB_PER_CLOCK_REGION != 0) || (cmdRect.size.row % XUS_CLB_PER_CLOCK_REGION != 0))
 			throw runtime_error(string("Currently only full clock region height relocations are supported (use row numbers multiple of ").append(to_string(XUS_CLB_PER_CLOCK_REGION)).append("."));
 		if(cmdRect.size.row <= 0 || cmdRect.size.col <= 0)

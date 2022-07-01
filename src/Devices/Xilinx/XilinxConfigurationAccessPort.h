@@ -24,13 +24,13 @@
 #include<string>
 #include<sstream>
 #include<cstring> //memset
-#include<assert.h>
 
 #include "XCAP/XCAP.h"
 
 #include "../CommonDevice2D.h"
 #include "../../Common/Endianness.h"
 
+#include "../../Common/assert.h"
 #include "../../Common/FileIO.h"
 #include "../../Common/str.h"
 #include "../../version.h" // To get byteman version
@@ -94,10 +94,9 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 
 		struct SelectedOptions
 		{
-			int clk, clb, bram, blank, partial, skipUnused;
+			bool clk, clb, bram, blank, partialNotFull, skipUnused;
 			MergeOP op;
 			int intParam;
-			SelectedOptions():clk(0),clb(0),bram(0),blank(0),partial(1),op(MergeOP::SET),skipUnused(1),intParam(0){}
 		} selectedOptions;
 
 //Base variables

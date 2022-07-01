@@ -228,15 +228,15 @@ inline void readBitstreamMain(ifstream& fin)
 							if(wordCount % WORDS_PER_FRAME != 0)
 								throw runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
 							if(shadowFrameValid){
-								//cout << "MANUAL DEBUG: b=" << b << "; r=" << r << "; c=" << c << "; m=" << m << endl;
-								assert(b < BLOCKTYPE_MAX);
-								assert(r >= SLRinfo[slr].fromRow && r <= SLRinfo[slr].toRow);
-								assert(c < numberOfCols[r]);
+								throwingAssert(b, <, BLOCKTYPE_MAX);
+								throwingAssertPrintVar_1(r, >=, SLRinfo[slr].fromRow, slr);
+								throwingAssertPrintVar_1(r, <=, SLRinfo[slr].toRow, slr);
+								throwingAssertPrintVar_1(c, <, numberOfCols[r], r);
 								if(b == BLOCKTYPE_LOGIC){
-									assert(m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);
+									throwingAssertPrintVar_3(m, <, LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]], r, c, (int)resourceString[r][c]);
 									memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								} else if(b == BLOCKTYPE_BLOCKRAM) {
-									assert(m < FRAMES_PER_BRAM_CONTENT_COLUMN);
+									throwingAssert(m, <, FRAMES_PER_BRAM_CONTENT_COLUMN);
 									memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								}
 								XCAP_IncrementFAR(slr, b, r, c, m);

@@ -419,7 +419,6 @@ void byteman::parseTest(string testCmd, SelectedOptions options)
 	bool testValueEqual = true;
 	if(str::iff::stringContains(testCmd, "notequal"))
 		testValueEqual = false;
-	
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture)
 			mainXS7.test(usableFramesOnly, testValueEqual, testValue);

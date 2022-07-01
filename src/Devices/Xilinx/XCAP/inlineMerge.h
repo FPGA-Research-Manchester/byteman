@@ -49,6 +49,7 @@ inline void ensureRegionCompatibility(Rect2D src, Coord2D dst){
  * operation, fastMerge is the way to go. 
  *****************************************************************************/
 inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, Coord2D dst){
+	log("fastMerge function called");
 	int srcRA = src.position.row  / CLB_PER_CLOCK_REGION;
 	int sizeR = src.size.row / CLB_PER_CLOCK_REGION;
 	int dstRA = dst.row  / CLB_PER_CLOCK_REGION;
@@ -60,14 +61,14 @@ inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, C
 					memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME], WORDS_PER_FRAME*4);
 				} else {
 					if(selectedOptions.clb){
-						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,										(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME],										 WORDS_BEFORE_CLK*4);
+						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,							(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME],									WORDS_BEFORE_CLK*4);
 						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME+WORDS_BEFORE_CLK+WORDS_AT_CLK] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME+WORDS_BEFORE_CLK+WORDS_AT_CLK], WORDS_AFTER_CLK*4);
-					}//-if(reloCLB)
+					}
 					if(selectedOptions.clk){
 						for(int w = WORDS_BEFORE_CLK ; w < (WORDS_BEFORE_CLK + WORDS_AT_CLK) ; w++)
 							bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME + w] = srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME + w];
-					}//-if(reloCLK)
-				}//-if(reloCLB && reloCLK)
+					}
+				}
 			}
 		}
 	}
@@ -78,10 +79,11 @@ inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, C
 			int dstCol = numberOfBRAMsBeforeCol[r][dst.col];
 			memcpy((char*)&bitstreamBRAM[dstRA+r][dstCol][0] ,(char*)&srcBitstream->bitstreamBRAM[srcRA+r][srcCol], bramCols * FRAMES_PER_BRAM_CONTENT_COLUMN * WORDS_PER_FRAME * 4);
 		}
-	}//-if(reloBRAM)
+	}
 }
 
 inline void flexiMerge(XilinxConfigurationAccessPort* srcBitstream, Endianness endianConversionNeeded, Rect2D src, Coord2D dst){
+	log("flexiMerge function called");
 	int srcRA = src.position.row  / CLB_PER_CLOCK_REGION;
 	int sizeR = src.size.row / CLB_PER_CLOCK_REGION;
 	int dstRA = dst.row  / CLB_PER_CLOCK_REGION;

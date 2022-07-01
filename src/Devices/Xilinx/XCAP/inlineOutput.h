@@ -134,9 +134,9 @@ inline void writeBitstreamMainSingleSLR(ofstream& fout, int slr, Rect2D cmdRect)
 	slrCoordsRect.size.col = maxNumberOfCols;
 	
 	outputCAPheaderConstant(fout, loadedBitstreamEndianness);
-	outputBitstreamSLRHeaderBitstreamSequence(fout, slr, (!selectedOptions.partial), loadedBitstreamEndianness);
+	outputBitstreamSLRHeaderBitstreamSequence(fout, slr, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 	
-	if(selectedOptions.partial){
+	if(selectedOptions.partialNotFull){
 		for (Rect2D selRect : regionSelection) {
 			writeBitstreamMainSingleRegion(fout, slr, rect::getOverlap(selRect, slrCoordsRect));
 		}
@@ -145,8 +145,8 @@ inline void writeBitstreamMainSingleSLR(ofstream& fout, int slr, Rect2D cmdRect)
 		writeBitstreamMainSingleRegion(fout, slr, slrCoordsRect);
 	}
 	
-	outputBitstreamSLRFooterBitstreamSequence(fout, slr, (!selectedOptions.partial), loadedBitstreamEndianness);
-	outputBitstreamSLRHeaderAfterBitstreamSequence(fout, slr, (!selectedOptions.partial), loadedBitstreamEndianness);
+	outputBitstreamSLRFooterBitstreamSequence(fout, slr, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
+	outputBitstreamSLRHeaderAfterBitstreamSequence(fout, slr, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 }
 
 inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
@@ -159,7 +159,7 @@ inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
 		slrCoordsRect.size.row = (SLRinfo[slr].toRow - SLRinfo[slr].fromRow + 1) * CLB_PER_CLOCK_REGION;
 		slrCoordsRect.size.col = maxNumberOfCols;
 		overlap[slr] = false;
-		if(selectedOptions.partial){
+		if(selectedOptions.partialNotFull){
 			for (Rect2D selRect : regionSelection) {
 				if(!rect::empty(rect::getOverlap(selRect, slrCoordsRect))){
 					overlap[slr] = true;
@@ -180,7 +180,7 @@ inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
 	}
 	for(int slr = numberOfSLRs - 2 ; slr >= 0 ; slr--){
 		if(overlap[slr])
-			outputBitstreamSLRWrapUpSequence(fout, slr, (!selectedOptions.partial), loadedBitstreamEndianness);
+			outputBitstreamSLRWrapUpSequence(fout, slr, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 		else 
 			outputBitstreamEmptySLRWrapUpSequence(fout, slr, false, loadedBitstreamEndianness);
 	}
@@ -188,23 +188,23 @@ inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
 
 inline void writeBitstreamBIT(ofstream& fout, Rect2D cmdRect)
 {
-	if(selectedOptions.partial)
+	if(selectedOptions.partialNotFull)
 		designName.append(";PARTIAL=TRUE");
 	designName.append(";bytemanVersion=").append(VERSION).append(":").append(VERSION_BUILD);
 	
 	updateDateAndTime();
 	outputBITheader(fout, Endianness::BE);//.bit always big endian
 	
-	outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partial), loadedBitstreamEndianness);
+	outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 	writeBitstreamMain(fout, cmdRect);
-	outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partial), loadedBitstreamEndianness);
+	outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 	
 	outputBITheaderLengthField(fout, loadedBitstreamEndianness);
 }
 
 inline void writeBitstreamBIN(ofstream& fout, Rect2D cmdRect)
 {
-	outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partial), loadedBitstreamEndianness);
+	outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 	writeBitstreamMain(fout, cmdRect);
-	outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partial), loadedBitstreamEndianness);
+	outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 }

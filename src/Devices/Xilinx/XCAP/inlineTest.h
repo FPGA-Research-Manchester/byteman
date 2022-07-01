@@ -25,10 +25,11 @@ inline void ensureFramesAre(bool usableFramesOnly, bool testValueEqual, uint32_t
 			if(!usableFramesOnly || (!LUT_isFrameUnusedForResourceLetter[frameLetter])){
 				for(int m = 0 ; m < LUT_numberOfFramesForResourceLetter[frameLetter] ; m++){
 					for(int f = 0 ; f < WORDS_PER_FRAME ; f++){
-						if(testValueEqual)
-							assert(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f] == testValue);
-						else
-							assert(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f] != testValue);
+						if(testValueEqual) {
+							throwingAssertPrintVar_5(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f], ==, testValue, r, c, m, WORDS_PER_FRAME, f);
+						} else {
+							throwingAssertPrintVar_5(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f], !=, testValue, r, c, m, WORDS_PER_FRAME, f);
+						}
 					}
 				}
 			}
@@ -36,10 +37,11 @@ inline void ensureFramesAre(bool usableFramesOnly, bool testValueEqual, uint32_t
 		for(int c = 0 ; c < numberOfBRAMCols[r] ; c++){
 			for(int m = 0 ; m < FRAMES_PER_BRAM_CONTENT_COLUMN ; m++){
 				for(int f = 0 ; f < WORDS_PER_FRAME ; f++){
-					if(testValueEqual)
-						assert(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f] == testValue);
-					else
-						assert(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f] != testValue);
+					if(testValueEqual){
+						throwingAssertPrintVar_5(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f], ==, testValue, r, c, m, WORDS_PER_FRAME, f);
+					} else {
+						throwingAssertPrintVar_5(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f], !=, testValue, r, c, m, WORDS_PER_FRAME, f);
+					}
 				}
 			}
 		}
