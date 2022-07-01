@@ -311,8 +311,6 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 	#endif
 	//US+ Zynq
 	#ifdef XUSPZYNQMP
-		if(str::iff::stringContains(name, XCZU1_NAME,  "xazu1",  "xqzu1"))
-			return XUSP_DEVICE_XCZU1;
 		if(str::iff::stringContains(name, XCZU2_NAME,  "xazu2",  "xqzu2"))
 			return XUSP_DEVICE_XCZU2;
 		if(str::iff::stringContains(name, XCZU3_NAME,  "xazu3",  "xqzu3"))
@@ -335,6 +333,8 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_XCZU17;
 		if(str::iff::stringContains(name, XCZU19_NAME, "xazu19", "xqzu19"))
 			return XUSP_DEVICE_XCZU19;
+		if(str::iff::stringContains(name, XCZU1_NAME,  "xazu1",  "xqzu1"))
+			return XUSP_DEVICE_XCZU1;
 	#endif
 
 
