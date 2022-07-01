@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #168)</span>
+   &#160;<span id="projectnumber">1.1 (Build #169)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -280,7 +280,7 @@ $(function() {
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                            <span class="keywordflow">if</span>(shadowFrameValid){</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                <span class="comment">//cout &lt;&lt; &quot;MANUAL DEBUG: b=&quot; &lt;&lt; b &lt;&lt; &quot;; r=&quot; &lt;&lt; r &lt;&lt; &quot;; c=&quot; &lt;&lt; c &lt;&lt; &quot;; m=&quot; &lt;&lt; m &lt;&lt; endl;</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                assert(b &lt; BLOCKTYPE_MAX);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                assert(r &lt;= (SLRinfo[slr].toRow - SLRinfo[slr].fromRow));</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                assert(r &gt;= SLRinfo[slr].fromRow &amp;&amp; r &lt;= SLRinfo[slr].toRow);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                                assert(c &lt; numberOfCols[r]);</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                                <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                                    assert(m &lt; LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]]);</div>
@@ -389,7 +389,7 @@ $(function() {
 <div class="ttc" id="ainlineCAP_8h_html_a445d56f4c0c7afb68ecfa18087a6af31"><div class="ttname"><a href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a></div><div class="ttdeci">uint32_t XCAP_getSyncInstruction()</div><div class="ttdoc">Generate and return the encoding for a SYNC instruction.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00430">inlineCAP.h:430</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 30 2022 20:47:04 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 08:28:34 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

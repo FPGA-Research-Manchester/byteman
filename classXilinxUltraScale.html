@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #168)</span>
+   &#160;<span id="projectnumber">1.1 (Build #169)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -1117,9 +1117,10 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classXilinxConfigurationAccessPort.html#ac2e7d2e3c9e934d1a11d541ab5c6a10d">bitstreamEnd</a> = &amp;<a class="code" href="classXilinxConfigurationAccessPort.html#a8e00c9c10a038bae2c31cff971ac065f">bitstreamBegin</a>[offset];</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+<a class="code" href="classXilinxConfigurationAccessPort.html#a98253cb094277d6e7b8614742eb58c2b">partName</a>+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478">log</a>(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+<a class="code" href="classXilinxConfigurationAccessPort.html#a98253cb094277d6e7b8614742eb58c2b">partName</a>+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="Endianness_8h_source.html#l00056">Endian::to_string()</a>, <a class="el" href="XUS__Fabric_8h_source.html#l00045">XUS_EXTRA_FRAMES_PER_ROW</a>, <a class="el" href="XUS__Fabric_8h_source.html#l00041">XUS_FRAMES_PER_BRAM_CONTENT_COLUMN</a>, and <a class="el" href="XUS__Fabric_8h_source.html#l00040">XUS_WORDS_PER_FRAME</a>.</p>
 
@@ -1427,15 +1428,15 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classXilinxConfigurationAccessPort.html#ad1a0f0d5972a5b66a866ad2185ddf313">XilinxConfigurationAccessPort&lt; 3, 15, 1024, 32, 2, 0, 1, 60, XUS_WORDS_AT_CLK, XUS_WORDS_AFTER_CLK,(XUS_WORDS_BEFORE_CLK+XUS_WORDS_AT_CLK+XUS_WORDS_AFTER_CLK), 128, XUS_CLB_PER_CLOCK_REGION, 12, XUS_EXTRA_FRAMES_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM_SHIFT, 23, 0x7, 17, 0x3F, 7, 0x3FF, XUS_MINORADDRESS_SHIFT, 0x7F &gt;</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="XilinxUltraScale_8cpp_source.html#l00114">114</a> of file <a class="el" href="XilinxUltraScale_8cpp_source.html">XilinxUltraScale.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                                                                                     {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="XUS__Fabric_8h.html#a2291c366e436d6af12c0726b401980d0">XUS_BLOCKTYPE_BLOCKRAM</a> == blockType)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;BlockRAM Contents&quot;</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="XUS__Fabric_8h.html#ad78f7053e139f2444d4e6191e73ad723">XUS_BLOCKTYPE_LOGIC</a> == blockType)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classXilinxConfigurationAccessPort.html#aee83e8b58304afea7835ff83ed25b0cb">LUT_typeOfFrameForResourceLetter</a>[(uint8_t)<a class="code" href="classXilinxConfigurationAccessPort.html#ab53ac05156b809ac76a16c93712ca45a">resourceString</a>[rowAddress][columnAddress]];</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="XilinxUltraScale_8cpp_source.html#l00115">115</a> of file <a class="el" href="XilinxUltraScale_8cpp_source.html">XilinxUltraScale.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                                                                     {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="XUS__Fabric_8h.html#a2291c366e436d6af12c0726b401980d0">XUS_BLOCKTYPE_BLOCKRAM</a> == blockType)</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;BlockRAM Contents&quot;</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="XUS__Fabric_8h.html#ad78f7053e139f2444d4e6191e73ad723">XUS_BLOCKTYPE_LOGIC</a> == blockType)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classXilinxConfigurationAccessPort.html#aee83e8b58304afea7835ff83ed25b0cb">LUT_typeOfFrameForResourceLetter</a>[(uint8_t)<a class="code" href="classXilinxConfigurationAccessPort.html#ab53ac05156b809ac76a16c93712ca45a">resourceString</a>[rowAddress][columnAddress]];</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="XUS__Fabric_8h_source.html#l00035">XUS_BLOCKTYPE_BLOCKRAM</a>, and <a class="el" href="XUS__Fabric_8h_source.html#l00034">XUS_BLOCKTYPE_LOGIC</a>.</p>
 
@@ -3090,7 +3091,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructCoord2D_html_a446bd3f197a1052f8d99f0a6d22406fc"><div class="ttname"><a href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">Coord2D::row</a></div><div class="ttdeci">int row</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00026">Coords.h:26</a></div></div>
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_afc0c131f35bea71183c1b8fa08cfd195"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#afc0c131f35bea71183c1b8fa08cfd195">XilinxConfigurationAccessPort&lt; 3, 15, 1024, 32, 2, 0, 1, 60, XUS_WORDS_AT_CLK, XUS_WORDS_AFTER_CLK,(XUS_WORDS_BEFORE_CLK+XUS_WORDS_AT_CLK+XUS_WORDS_AFTER_CLK), 128, XUS_CLB_PER_CLOCK_REGION, 12, XUS_EXTRA_FRAMES_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM_SHIFT, 23, 0x7, 17, 0x3F, 7, 0x3FF, XUS_MINORADDRESS_SHIFT, 0x7F &gt;::numberOfBRAMCols</a></div><div class="ttdeci">int numberOfBRAMCols[MAX_ROWS]</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00125">XilinxConfigurationAccessPort.h:125</a></div></div>
 <div class="ttc" id="aXUS__Devices_8h_html_affebc1a0115261df37bd275f6c5d3d8d"><div class="ttname"><a href="XUS__Devices_8h.html#affebc1a0115261df37bd275f6c5d3d8d">XCKU115_NAME</a></div><div class="ttdeci">#define XCKU115_NAME</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Devices_8h_source.html#l00191">XUS_Devices.h:191</a></div></div>
-<div class="ttc" id="aclassXilinxUltraScale_html_a529c5929560f66c9c489498112613028"><div class="ttname"><a href="classXilinxUltraScale.html#a529c5929560f66c9c489498112613028">XilinxUltraScale::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8cpp_source.html#l00114">XilinxUltraScale.cpp:114</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScale_html_a529c5929560f66c9c489498112613028"><div class="ttname"><a href="classXilinxUltraScale.html#a529c5929560f66c9c489498112613028">XilinxUltraScale::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8cpp_source.html#l00115">XilinxUltraScale.cpp:115</a></div></div>
 <div class="ttc" id="aXUS__Devices_8h_html_a442246a207411a526fe6d8a4d1287969"><div class="ttname"><a href="XUS__Devices_8h.html#a442246a207411a526fe6d8a4d1287969">XCKU035_IDCODE</a></div><div class="ttdeci">#define XCKU035_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Devices_8h_source.html#l00106">XUS_Devices.h:106</a></div></div>
 <div class="ttc" id="aXUS__Devices_8h_html_a92fc1169b6a19e284be8a8778ba38c71"><div class="ttname"><a href="XUS__Devices_8h.html#a92fc1169b6a19e284be8a8778ba38c71">XCKU040</a></div><div class="ttdeci">#define XCKU040()</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Devices_8h_source.html#l00126">XUS_Devices.h:126</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_ab3df52182d59a5aef4a805c6f19bf326"><div class="ttname"><a href="inlineCAP_8h.html#ab3df52182d59a5aef4a805c6f19bf326">XCAP_writeMaskAndRegister</a></div><div class="ttdeci">void XCAP_writeMaskAndRegister(ofstream &amp;fout, XCAP::Register reg, int writeMask, int writeValue, Endianness e)</div><div class="ttdoc">Generate the encoding for writing a CAP register with a mask and write it to file ofstream.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00396">inlineCAP.h:396</a></div></div>
@@ -3189,7 +3190,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="ainlineOutput_8h_html_ab9c09236ab751ee544bc377711a68f2d"><div class="ttname"><a href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a></div><div class="ttdeci">void outputBITheaderLengthField(ofstream &amp;fout, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00052">inlineOutput.h:52</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 30 2022 20:47:04 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 08:28:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
