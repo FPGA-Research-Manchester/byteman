@@ -204,10 +204,10 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 		return XUSP_DEVICE_XCU30;
 	if(IDCODE == XCU25_IDCODE)
 		return XUSP_DEVICE_XCU25;
+	//Kria
 	if(IDCODE == XCK26_IDCODE)
 		return XUSP_DEVICE_XCK26;
 	#endif
-	
 	return XUSP_DEVICE_NULL;
 }
 int XilinxUltraScalePlus::getDeviceByName(string name)
@@ -226,6 +226,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCAU25P_NAME))
 			return XUSP_DEVICE_XCAU25P;
 	#endif
+	
 	//US+ Kintex
 	#ifdef XUSPKINTEX
 		if(str::iff::stringContains(name, XCKU3P_NAME,  "xqku3p"))
@@ -243,6 +244,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCKU19P_NAME, "xqku19p"))
 			return XUSP_DEVICE_XCKU19P;
 	#endif
+	
 	//US+ Virtex
 	#ifdef XUSPVIRTEX
 		if(str::iff::stringContains(name, XCVU3P_NAME,  "xqvu3p"))
@@ -280,6 +282,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCVU57P_NAME, "xqvu57p"))
 			return XUSP_DEVICE_XCVU57P;
 	#endif
+	
 	//US+ RFSoC (RFSOC BEFORE MPSOC, since names collide!)
 	#ifdef XUSPZYNQRF
 		if(str::iff::stringContains(name, XCZU21DR_NAME, "xqzu21dr"))
@@ -311,6 +314,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCZU67DR_NAME))
 			return XUSP_DEVICE_XCZU67DR;
 	#endif
+	
 	//US+ Zynq
 	#ifdef XUSPZYNQMP
 		if(str::iff::stringContains(name, XCZU2_NAME,  "xazu2",  "xqzu2"))
@@ -338,8 +342,7 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 		if(str::iff::stringContains(name, XCZU1_NAME,  "xazu1",  "xqzu1"))
 			return XUSP_DEVICE_XCZU1;
 	#endif
-
-
+	
 	//Alveo rebranding
 	#ifdef XUSPALVEO
 		if(str::iff::stringContains(name, XCU200_NAME, "alveou200"))
@@ -362,10 +365,17 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_XCU30;
 		if(str::iff::stringContains(name, XCU25_NAME, "alveou25"))
 			return XUSP_DEVICE_XCU25;
+		//Kria
 		if(str::iff::stringContains(name, XCK26_NAME))
 			return XUSP_DEVICE_XCK26;
+		if(str::iff::stringContains(name, "k26c", "kria26c"))
+			return XUSP_DEVICE_K26C;
+		if(str::iff::stringContains(name, "k26i", "kria26i"))
+			return XUSP_DEVICE_K26I;
+		if(str::iff::stringContains(name, "kv260"))
+			return XUSP_DEVICE_KV260;
 	#endif
-
+	
 	//Some boards for easier use
 	#ifdef XUSPBOARDS
 		if(str::iff::stringContains(name, "zcu102", "zu-gmsl2"))
@@ -454,12 +464,6 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_ZCU670;
 		if(str::iff::stringContains(name, "ultra96"))
 			return XUSP_DEVICE_ULTRA96;
-		if(str::iff::stringContains(name, "k26c", "kria26c"))
-			return XUSP_DEVICE_K26C;
-		if(str::iff::stringContains(name, "k26i", "kria26i"))
-			return XUSP_DEVICE_K26I;
-		if(str::iff::stringContains(name, "kv260"))
-			return XUSP_DEVICE_KV260;
 		if(str::iff::stringContains(name, "amc584"))
 			return XUSP_DEVICE_AMC584;
 		if(str::iff::stringContains(name, "htg-960"))
@@ -557,6 +561,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCAU25P();
 			break;
 		#endif
+		
 		//XUSP Kintex
 		#ifdef XUSPKINTEX
 		case XUSP_DEVICE_XCKU3P:
@@ -581,6 +586,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCKU19P();
 			break;
 		#endif
+		
 		//XUSP Virtex
 		#ifdef XUSPVIRTEX
 		case XUSP_DEVICE_XCVU3P:
@@ -635,6 +641,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCVU57P();
 			break;
 		#endif
+		
 		//XUSP RFSoC
 		#ifdef XUSPZYNQRF
 		case XUSP_DEVICE_XCZU21DR:
@@ -680,6 +687,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCZU67DR();
 			break;
 		#endif
+		
 		//XUSP MPSoC
 		#ifdef XUSPZYNQMP
 		case XUSP_DEVICE_XCZU1:
@@ -719,6 +727,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			XCZU19();
 			break;
 		#endif
+		
 		//XUSP Alveo
 		#ifdef XUSPALVEO
 		case XUSP_DEVICE_XCU200:
@@ -756,10 +765,24 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 		case XUSP_DEVICE_XCU25:
 			XCU25();
 			break;
+		//Kria
 		case XUSP_DEVICE_XCK26:
 			XCK26(); 
 			break;
+		case XUSP_DEVICE_K26C:
+			XCK26(); 
+			setCustomPartName("xck26-sfvc784-2lv-c");
+			break;
+		case XUSP_DEVICE_K26I:
+			XCK26(); 
+			setCustomPartName("xck26-sfvc784-2lv-i");
+			break;
+		case XUSP_DEVICE_KV260:
+			XCK26(); 
+			setCustomPartName("xck26-sfvc784-2lv-c");
+			break;
 		#endif
+		
 		//XUSP Boards
 		#ifdef XUSPBOARDS
 		case XUSP_DEVICE_ZCU102:
@@ -932,18 +955,6 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 		case XUSP_DEVICE_ULTRA96:
 			XCZU3(); 
 			setCustomPartName("xczu3eg-sbva484-1-i");
-			break;
-		case XUSP_DEVICE_K26C:
-			XCK26(); 
-			setCustomPartName("xck26-sfvc784-2lv-c");
-			break;
-		case XUSP_DEVICE_K26I:
-			XCK26(); 
-			setCustomPartName("xck26-sfvc784-2lv-i");
-			break;
-		case XUSP_DEVICE_KV260:
-			XCK26(); 
-			setCustomPartName("xck26-sfvc784-2lv-c");
 			break;
 		case XUSP_DEVICE_AMC584:
 			XCVU13P();
