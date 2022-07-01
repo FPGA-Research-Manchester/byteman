@@ -54,7 +54,7 @@ void XilinxSeries7::initializeResourceStringParameters(){
 			for(int c = numberOfCols[r] + 1 ; c < XS7_MAX_COLS ; c++){
 				numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[r][c - 1];
 			}
-			for(int c = numberOfBRAMCols[r] + 1 ; c < XS7_MAX_BRAM_COLS ; c++){
+			for(int c = numberOfBRAMCols[r] + 1 ; c < XS7_MAX_COLS ; c++){
 				numberOfBRAMsBeforeCol[r][c] = numberOfBRAMsBeforeCol[r][c - 1];
 			}
 		}

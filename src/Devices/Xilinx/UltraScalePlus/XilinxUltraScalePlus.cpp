@@ -52,7 +52,7 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 		for(int c = numberOfCols[0] + 1 ; c < XUSP_MAX_COLS ; c++){
 			numberOfFramesBeforeCol[0][c] = numberOfFramesBeforeCol[0][c - 1];
 		}
-		for(int c = numberOfBRAMCols[0] + 1 ; c < XUSP_MAX_BRAM_COLS ; c++){
+		for(int c = numberOfBRAMCols[0] + 1 ; c < XUSP_MAX_COLS ; c++){
 			numberOfBRAMsBeforeCol[0][c] = numberOfBRAMsBeforeCol[0][c - 1];
 		}
 		numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]];
@@ -68,7 +68,7 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 			for(int c = 0 ; c < XUSP_MAX_COLS ; c++){
 				numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[0][c];
 			}
-			for(int c = 0 ; c < XUSP_MAX_BRAM_COLS ; c++){
+			for(int c = 0 ; c < XUSP_MAX_COLS ; c++){
 				numberOfBRAMsBeforeCol[r][c]  = numberOfBRAMsBeforeCol[0][c];
 			}
 		}
