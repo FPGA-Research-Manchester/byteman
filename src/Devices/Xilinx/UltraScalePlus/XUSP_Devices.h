@@ -1082,10 +1082,12 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
         XUSP_SETUP_DEVICE(XCZU21DR_);                                                             \
         XUSP_STRING_CAT_8(XCZU21DR_);                                                             \
     }
-
+	
+	//XCZU25DR is the same chip as XCZU21DR with 2 disabled rows (6 of 8)
+	//the two disabled rows are again still present in the bitstream
     #define XCZU25DR_NAME "xczu25dr"
     #define XCZU25DR_SLRNUM 1
-    #define XCZU25DR_ROWNUM 6
+    #define XCZU25DR_ROWNUM 8
     #define XCZU25DR_IDCODE 0x4A87093
     #define XCZU25DR_STRING0 XCZU21DR_STRING0
     #define XCZU25DR_STRING1 XCZU21DR_STRING1
@@ -1093,9 +1095,11 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
     #define XCZU25DR_STRING3 XCZU21DR_STRING3
     #define XCZU25DR_STRING4 XCZU21DR_STRING4
     #define XCZU25DR_STRING5 XCZU21DR_STRING5
+	#define XCZU25DR_STRING6 "2076676676672676676176670407667617667667376672676672676176672676672676176672676672807667667267617667267667667617667267667667667267667617667267667267667617667267667267620507667267617667267667267617667267667267667667667267617667040766726766726766761766702\x01"
+	#define XCZU25DR_STRING7 XCZU25DR_STRING6
     #define XCZU25DR() {                                                                          \
         XUSP_SETUP_DEVICE(XCZU25DR_);                                                             \
-        XUSP_STRING_CAT_6(XCZU25DR_);                                                             \
+        XUSP_STRING_CAT_8(XCZU25DR_);                                                             \
     }
 
     //Same as ZU21DR
