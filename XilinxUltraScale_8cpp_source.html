@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #173)</span>
+   &#160;<span id="projectnumber">1.1 (Build #174)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -125,7 +125,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[0] + 1 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a23676340a1d62beca6fea3c52ca138aa">XUS_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            numberOfFramesBeforeCol[0][c] = numberOfFramesBeforeCol[0][c - 1];</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[0] + 1 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a17c8efb1756624e078d4e93a7bb61613">XUS_MAX_BRAM_COLS</a> ; c++){</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[0] + 1 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a23676340a1d62beca6fea3c52ca138aa">XUS_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            numberOfBRAMsBeforeCol[0][c] = numberOfBRAMsBeforeCol[0][c - 1];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]];</div>
@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a23676340a1d62beca6fea3c52ca138aa">XUS_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[0][c];</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a17c8efb1756624e078d4e93a7bb61613">XUS_MAX_BRAM_COLS</a> ; c++){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a23676340a1d62beca6fea3c52ca138aa">XUS_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                numberOfBRAMsBeforeCol[r][c]  = numberOfBRAMsBeforeCol[0][c];</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
@@ -204,7 +204,6 @@ $(function() {
 <div class="ttc" id="anamespaceEndian_html_ac9f4873f9a0c23291fa47d68dff6fbbc"><div class="ttname"><a href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00056">Endianness.h:56</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScale_html_a529c5929560f66c9c489498112613028"><div class="ttname"><a href="classXilinxUltraScale.html#a529c5929560f66c9c489498112613028">XilinxUltraScale::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8cpp_source.html#l00115">XilinxUltraScale.cpp:115</a></div></div>
 <div class="ttc" id="aXUS__Fabric_8h_html_a6e8704d4a39526836bb5171b357ece64"><div class="ttname"><a href="XUS__Fabric_8h.html#a6e8704d4a39526836bb5171b357ece64">XUS_WORDS_PER_FRAME</a></div><div class="ttdeci">#define XUS_WORDS_PER_FRAME</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00040">XUS_Fabric.h:40</a></div></div>
-<div class="ttc" id="aXUS__Fabric_8h_html_a17c8efb1756624e078d4e93a7bb61613"><div class="ttname"><a href="XUS__Fabric_8h.html#a17c8efb1756624e078d4e93a7bb61613">XUS_MAX_BRAM_COLS</a></div><div class="ttdeci">#define XUS_MAX_BRAM_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00030">XUS_Fabric.h:30</a></div></div>
 <div class="ttc" id="aXUS__Fabric_8h_html_a8402f388dc1be4bdfae0207eed456ef0"><div class="ttname"><a href="XUS__Fabric_8h.html#a8402f388dc1be4bdfae0207eed456ef0">XUS_EXTRA_FRAMES_PER_ROW</a></div><div class="ttdeci">#define XUS_EXTRA_FRAMES_PER_ROW</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00045">XUS_Fabric.h:45</a></div></div>
 <div class="ttc" id="aXUS__Fabric_8h_html_a2291c366e436d6af12c0726b401980d0"><div class="ttname"><a href="XUS__Fabric_8h.html#a2291c366e436d6af12c0726b401980d0">XUS_BLOCKTYPE_BLOCKRAM</a></div><div class="ttdeci">#define XUS_BLOCKTYPE_BLOCKRAM</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00035">XUS_Fabric.h:35</a></div></div>
 <div class="ttc" id="aXUS__Fabric_8h_html_a19f35a19e334af26252750537dbf380d"><div class="ttname"><a href="XUS__Fabric_8h.html#a19f35a19e334af26252750537dbf380d">XUS_FRAMES_PER_BRAM_CONTENT_COLUMN</a></div><div class="ttdeci">#define XUS_FRAMES_PER_BRAM_CONTENT_COLUMN</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00041">XUS_Fabric.h:41</a></div></div>
@@ -212,7 +211,7 @@ $(function() {
 <div class="ttc" id="aXUS__Fabric_8h_html_ad78f7053e139f2444d4e6191e73ad723"><div class="ttname"><a href="XUS__Fabric_8h.html#ad78f7053e139f2444d4e6191e73ad723">XUS_BLOCKTYPE_LOGIC</a></div><div class="ttdeci">#define XUS_BLOCKTYPE_LOGIC</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00034">XUS_Fabric.h:34</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 1 2022 10:24:23 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 12:58:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

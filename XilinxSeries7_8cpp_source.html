@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #173)</span>
+   &#160;<span id="projectnumber">1.1 (Build #174)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a36946966363ef00d4ac8da7118713a51">XS7_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[r][c - 1];</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a24f9d7098dc8011dbf3f25bf5952231e">XS7_MAX_BRAM_COLS</a> ; c++){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[r] + 1 ; c &lt; <a class="code" href="XS7__Fabric_8h.html#a36946966363ef00d4ac8da7118713a51">XS7_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                numberOfBRAMsBeforeCol[r][c] = numberOfBRAMsBeforeCol[r][c - 1];</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
@@ -224,7 +224,6 @@ $(function() {
 <div class="ttc" id="aXilinxSeries7_8h_html"><div class="ttname"><a href="XilinxSeries7_8h.html">XilinxSeries7.h</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_ac9f4873f9a0c23291fa47d68dff6fbbc"><div class="ttname"><a href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00056">Endianness.h:56</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_a49ba542c7ce5bd80e881969010e18608"><div class="ttname"><a href="XS7__Fabric_8h.html#a49ba542c7ce5bd80e881969010e18608">XS7_EXTRA_FRAMES_PER_ROW</a></div><div class="ttdeci">#define XS7_EXTRA_FRAMES_PER_ROW</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00046">XS7_Fabric.h:46</a></div></div>
-<div class="ttc" id="aXS7__Fabric_8h_html_a24f9d7098dc8011dbf3f25bf5952231e"><div class="ttname"><a href="XS7__Fabric_8h.html#a24f9d7098dc8011dbf3f25bf5952231e">XS7_MAX_BRAM_COLS</a></div><div class="ttdeci">#define XS7_MAX_BRAM_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00030">XS7_Fabric.h:30</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_aee5922f65b1fcd6d7400ceb2a826fca3"><div class="ttname"><a href="XS7__Fabric_8h.html#aee5922f65b1fcd6d7400ceb2a826fca3">XS7_BLOCKTYPE_LOGIC</a></div><div class="ttdeci">#define XS7_BLOCKTYPE_LOGIC</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00034">XS7_Fabric.h:34</a></div></div>
 <div class="ttc" id="aXS7__Fabric_8h_html_a4fec5e0993b3a8f951d22a68a445ec27"><div class="ttname"><a href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">XS7_WORDS_PER_FRAME</a></div><div class="ttdeci">#define XS7_WORDS_PER_FRAME</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00041">XS7_Fabric.h:41</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html_a15f15f6cdc09ebfc383d4d6c5473f0c5"><div class="ttname"><a href="classXilinxSeries7.html#a15f15f6cdc09ebfc383d4d6c5473f0c5">XilinxSeries7::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8cpp_source.html#l00135">XilinxSeries7.cpp:135</a></div></div>
@@ -232,7 +231,7 @@ $(function() {
 <div class="ttc" id="aXS7__Fabric_8h_html_ae593f547eda758f2031cca27c2ad5d43"><div class="ttname"><a href="XS7__Fabric_8h.html#ae593f547eda758f2031cca27c2ad5d43">XS7_BLOCKTYPE_BLOCKRAM</a></div><div class="ttdeci">#define XS7_BLOCKTYPE_BLOCKRAM</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Fabric_8h_source.html#l00035">XS7_Fabric.h:35</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 1 2022 10:24:23 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 12:58:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #173)</span>
+   &#160;<span id="projectnumber">1.1 (Build #174)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[0] + 1 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            numberOfFramesBeforeCol[0][c] = numberOfFramesBeforeCol[0][c - 1];</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[0] + 1 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#af22e3aecc29cbe8adfd14e27a09ebb46">XUSP_MAX_BRAM_COLS</a> ; c++){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[0] + 1 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            numberOfBRAMsBeforeCol[0][c] = numberOfBRAMsBeforeCol[0][c - 1];</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]];</div>
@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                numberOfFramesBeforeCol[r][c] = numberOfFramesBeforeCol[0][c];</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#af22e3aecc29cbe8adfd14e27a09ebb46">XUSP_MAX_BRAM_COLS</a> ; c++){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = 0 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                numberOfBRAMsBeforeCol[r][c]  = numberOfBRAMsBeforeCol[0][c];</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
@@ -208,14 +208,13 @@ $(function() {
 <div class="ttc" id="aclassXilinxUltraScalePlus_html_a96d1607f720750cee0905e331dce0353"><div class="ttname"><a href="classXilinxUltraScalePlus.html#a96d1607f720750cee0905e331dce0353">XilinxUltraScalePlus::ensureInitializedBitstreamArrays</a></div><div class="ttdeci">void ensureInitializedBitstreamArrays() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00078">XilinxUltraScalePlus.cpp:78</a></div></div>
 <div class="ttc" id="aXUSP__Fabric_8h_html_a775235d81c097b48fec3076dffc7992f"><div class="ttname"><a href="XUSP__Fabric_8h.html#a775235d81c097b48fec3076dffc7992f">XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</a></div><div class="ttdeci">#define XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00040">XUSP_Fabric.h:40</a></div></div>
 <div class="ttc" id="aXUSP__Fabric_8h_html_a51b7aec907550b0cbdb9086e32e6302b"><div class="ttname"><a href="XUSP__Fabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a></div><div class="ttdeci">#define XUSP_EXTRA_FRAMES_PER_ROW</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00044">XUSP_Fabric.h:44</a></div></div>
-<div class="ttc" id="aXUSP__Fabric_8h_html_af22e3aecc29cbe8adfd14e27a09ebb46"><div class="ttname"><a href="XUSP__Fabric_8h.html#af22e3aecc29cbe8adfd14e27a09ebb46">XUSP_MAX_BRAM_COLS</a></div><div class="ttdeci">#define XUSP_MAX_BRAM_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00030">XUSP_Fabric.h:30</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScalePlus_html_a871cdd6311a28677781ce340d4cb248e"><div class="ttname"><a href="classXilinxUltraScalePlus.html#a871cdd6311a28677781ce340d4cb248e">XilinxUltraScalePlus::initializeResourceStringParameters</a></div><div class="ttdeci">void initializeResourceStringParameters() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00040">XilinxUltraScalePlus.cpp:40</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlus_8h_html"><div class="ttname"><a href="XilinxUltraScalePlus_8h.html">XilinxUltraScalePlus.h</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScalePlus_html_a33ffd944743c89e78963634c6ae09996"><div class="ttname"><a href="classXilinxUltraScalePlus.html#a33ffd944743c89e78963634c6ae09996">XilinxUltraScalePlus::~XilinxUltraScalePlus</a></div><div class="ttdeci">virtual ~XilinxUltraScalePlus()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00036">XilinxUltraScalePlus.cpp:36</a></div></div>
 <div class="ttc" id="aXUSP__Fabric_8h_html_a4b915af6c17d4c85911e619f19286caa"><div class="ttname"><a href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">XUSP_WORDS_PER_FRAME</a></div><div class="ttdeci">#define XUSP_WORDS_PER_FRAME</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00039">XUSP_Fabric.h:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 1 2022 10:24:23 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 12:58:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #173)</span>
+   &#160;<span id="projectnumber">1.1 (Build #174)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -479,59 +479,58 @@ $(function() {
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="keywordtype">bool</span> testValueEqual = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(testCmd, <span class="stringliteral">&quot;notequal&quot;</span>))</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        testValueEqual = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_Series7 == selectedArchitecture)</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            mainXS7.test(usableFramesOnly, testValueEqual, testValue);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScale == selectedArchitecture)</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            mainXUS.test(usableFramesOnly, testValueEqual, testValue);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture)</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;            mainXUSP.test(usableFramesOnly, testValueEqual, testValue);</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;}</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
-<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0">  438</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0">byteman::setArchitecture</a>(<span class="keywordtype">string</span> arch)</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;{</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    arch = <a class="code" href="namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5">str::stringToLower</a>(arch);</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xusp&quot;</span>)</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>,<span class="stringliteral">&quot;+&quot;</span>)</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            )</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        ) {</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            selectedArchitecture = Architecture::Xilinx_UltraScalePlus;</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        }</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor">    #endif//XUSP</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xus&quot;</span>)</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            )</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        ) {</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            selectedArchitecture = Architecture::Xilinx_UltraScale;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;        }</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="preprocessor">    #endif//XUS</span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xs7&quot;</span>)</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;series&quot;</span>)</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;7&quot;</span>)</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;            )</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;        ) {</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            selectedArchitecture = Architecture::Xilinx_Series7;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        }</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="preprocessor">    #endif//XS7</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown architecture: \&quot;&quot;</span>).append(arch).append(<span class="stringliteral">&quot;\&quot;.&quot;</span>));</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;}</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_Series7 == selectedArchitecture)</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            mainXS7.test(usableFramesOnly, testValueEqual, testValue);</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScale == selectedArchitecture)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            mainXUS.test(usableFramesOnly, testValueEqual, testValue);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture)</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            mainXUSP.test(usableFramesOnly, testValueEqual, testValue);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;}</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno"><a class="line" href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0">  437</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0">byteman::setArchitecture</a>(<span class="keywordtype">string</span> arch)</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;{</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    arch = <a class="code" href="namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5">str::stringToLower</a>(arch);</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xusp&quot;</span>)</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>,<span class="stringliteral">&quot;+&quot;</span>)</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;            )</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        ) {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            selectedArchitecture = Architecture::Xilinx_UltraScalePlus;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        }</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="preprocessor">    #endif//XUSP</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xus&quot;</span>)</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            )</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;        ) {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;            selectedArchitecture = Architecture::Xilinx_UltraScale;</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;        }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="preprocessor">    #endif//XUS</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xs7&quot;</span>)</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;series&quot;</span>)</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;7&quot;</span>)</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;            )</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;        ) {</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;            selectedArchitecture = Architecture::Xilinx_Series7;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        }</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="preprocessor">    #endif//XS7</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown architecture: \&quot;&quot;</span>).append(arch).append(<span class="stringliteral">&quot;\&quot;.&quot;</span>));</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacestr_1_1parse_html_a6b918a3515ff512b9e181d2cf3cf2563"><div class="ttname"><a href="namespacestr_1_1parse.html#a6b918a3515ff512b9e181d2cf3cf2563">str::parse::allStringWordsWithoutLastStringWord</a></div><div class="ttdeci">string allStringWordsWithoutLastStringWord(string s)</div><div class="ttdoc">Parses a string s, removes all integers and the last string word. Returns the rest.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00107">parse.h:107</a></div></div>
 <div class="ttc" id="astructCoord2D_html"><div class="ttname"><a href="structCoord2D.html">Coord2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00024">Coords.h:24</a></div></div>
@@ -557,7 +556,7 @@ $(function() {
 <div class="ttc" id="aclassbyteman_html_a012f7c0279dac10df52f2e7927a8bfef"><div class="ttname"><a href="classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef">byteman::parseMerge</a></div><div class="ttdeci">void parseMerge(string, SelectedOptions)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00337">byteman.cpp:337</a></div></div>
 <div class="ttc" id="anamespacerect_html"><div class="ttname"><a href="namespacerect.html">rect</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00035">Coords.h:35</a></div></div>
 <div class="ttc" id="aclassbyteman_html_afb42b36016cdfadc1ef23800d674f9c0"><div class="ttname"><a href="classbyteman.html#afb42b36016cdfadc1ef23800d674f9c0">byteman::parseBlank</a></div><div class="ttdeci">void parseBlank(string, SelectedOptions)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00239">byteman.cpp:239</a></div></div>
-<div class="ttc" id="aclassbyteman_html_a035f9f0419ab25a7463ff44117c1f5e0"><div class="ttname"><a href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0">byteman::setArchitecture</a></div><div class="ttdeci">void setArchitecture(string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00438">byteman.cpp:438</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a035f9f0419ab25a7463ff44117c1f5e0"><div class="ttname"><a href="classbyteman.html#a035f9f0419ab25a7463ff44117c1f5e0">byteman::setArchitecture</a></div><div class="ttdeci">void setArchitecture(string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00437">byteman.cpp:437</a></div></div>
 <div class="ttc" id="anamespacestr_html_a664d127caf0e35994e01d38d9c0fc16c"><div class="ttname"><a href="namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c">str::findStringAndGetAllAfter</a></div><div class="ttdeci">string findStringAndGetAllAfter(string checkedString, string searchString)</div><div class="ttdoc">Finds string searchString inside checkedString and returns all to the right inside checkedString....</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00035">str.h:35</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html">byteman::SelectedOptions</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00077">byteman.h:77</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aee627bcad1c698d2d81e035edb9d32ca"><div class="ttname"><a href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">byteman::byteman</a></div><div class="ttdeci">byteman()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00074">byteman.cpp:74</a></div></div>
@@ -577,7 +576,7 @@ $(function() {
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_a907c4807d4101f1827e93971ef83ea15"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">byteman::SelectedOptions::mainBufferSelected</a></div><div class="ttdeci">int mainBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 1 2022 10:24:23 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 12:58:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
