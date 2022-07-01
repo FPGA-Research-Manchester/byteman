@@ -204,6 +204,8 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 		return XUSP_DEVICE_XCU30;
 	if(IDCODE == XCU25_IDCODE)
 		return XUSP_DEVICE_XCU25;
+	if(IDCODE == XCK26_IDCODE)
+		return XUSP_DEVICE_XCK26;
 	#endif
 	
 	return XUSP_DEVICE_NULL;
@@ -360,6 +362,8 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_XCU30;
 		if(str::iff::stringContains(name, XCU25_NAME, "alveou25"))
 			return XUSP_DEVICE_XCU25;
+		if(str::iff::stringContains(name, XCK26_NAME))
+			return XUSP_DEVICE_XCK26;
 	#endif
 
 	//Some boards for easier use
@@ -751,6 +755,9 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 			break;
 		case XUSP_DEVICE_XCU25:
 			XCU25();
+			break;
+		case XUSP_DEVICE_XCK26:
+			XCK26(); 
 			break;
 		#endif
 		//XUSP Boards
