@@ -80,9 +80,13 @@ class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigur
 		//assembler
 		void assemblerParseHeader(ifstream&);
 		void assemblerAsmToBit(ifstream&, ofstream&);
+		void assemblerAsmToBin(ifstream&, ofstream&);
+		void assemblerAsmTo(ifstream&, ofstream&);
 		
 		void disassemblerWriteHeader(ofstream&);
 		void disassemblerBitToAsm(ifstream&, ofstream&);
+		void disassemblerBinToAsm(string, ifstream&, ofstream&);
+		void disassemblerToAsm(ifstream&, ofstream&);
 		
 		void assemblerHelp();
 		void assembler(string, string);
