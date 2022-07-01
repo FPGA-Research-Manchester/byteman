@@ -7,9 +7,7 @@ digraph "str::parse::allStringWords"
   rankdir="RL";
   Node1 [label="str::parse::allStringWords",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Parses a string s, removes all integers and returns the rest."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="byteman::parseDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#ae08e2c9557d8266f20780e1c14cf9f45",tooltip=" "];
+  Node2 [label="byteman::parseMerge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="byteman::parseMerge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef",tooltip=" "];
-  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286",tooltip=" "];
+  Node3 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286",tooltip=" "];
 }

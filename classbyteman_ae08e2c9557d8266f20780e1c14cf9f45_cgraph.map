@@ -1,4 +1,4 @@
 <map id="byteman::parseDevice" name="byteman::parseDevice">
 <area shape="rect" id="node1" title=" " alt="" coords="5,5,175,32"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0b2fd42b74ce3f482b4f1ece5f24881e" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,5,408,32"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a518e4e06532584a6856409eaf9872922" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="223,5,409,32"/>
 </map>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #174)</span>
+   &#160;<span id="projectnumber">1.1 (Build #175)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -99,9 +99,9 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    uint8_t blankByte = selectedOptions.intParam % 256;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span>(regionSelection.empty()) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span>(selectedOptions.clb)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            memset(&amp;bitstreamCLB[0][0][0], blankByte, (&amp;bitstreamBRAM[0][0][0]-&amp;bitstreamCLB[0][0][0]));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            memset(&amp;bitstreamBegin[0], blankByte, ((uint64_t)&amp;bitstreamBRAM[0][0][0]-(uint64_t)&amp;bitstreamBegin[0]));</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">if</span>(selectedOptions.bram)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            memset(&amp;bitstreamBRAM[0][0][0], blankByte, (bitstreamEnd-&amp;bitstreamBRAM[0][0][0]));</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            memset(&amp;bitstreamBRAM[0][0][0], blankByte, ((uint64_t)&amp;bitstreamEnd[0]-(uint64_t)&amp;bitstreamBRAM[0][0][0]));</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span>(selectedOptions.clb)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">for</span> (<a class="code" href="structRect2D.html">Rect2D</a> &amp;selRect : regionSelection) {</div>
@@ -127,7 +127,7 @@ $(function() {
 <div class="ttc" id="ainlineBlank_8h_html_a91a412528b3bd935888320cef1f2f0ce"><div class="ttname"><a href="inlineBlank_8h.html#a91a412528b3bd935888320cef1f2f0ce">clearResourceStringArrays</a></div><div class="ttdeci">void clearResourceStringArrays()</div><div class="ttdef"><b>Definition:</b> <a href="inlineBlank_8h_source.html#l00017">inlineBlank.h:17</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 1 2022 12:58:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 22:48:31 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

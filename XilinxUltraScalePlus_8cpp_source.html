@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #174)</span>
+   &#160;<span id="projectnumber">1.1 (Build #175)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -117,7 +117,7 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(initializedBitstreamParamsShortPartName != initializedResourceStringShortPartName){<span class="comment">//The device is changed</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span>((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; (uint8_t)resourceString[0][numberOfCols[0]] ; numberOfCols[0]++){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span>((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; resourceString[0][numberOfCols[0]] != <span class="charliteral">&#39;\0&#39;</span> ; numberOfCols[0]++){</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            numberOfFramesBeforeCol[0][numberOfCols[0]+1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            numberOfBRAMsBeforeCol[0][numberOfCols[0]] = numberOfBRAMCols[0];</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a>(resourceString[0][numberOfCols[0]], <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;1&#39;</span>)) <span class="comment">//A-C are BlockRAM columns, &#39;1&#39; is empty blockram column</span></div>
@@ -126,10 +126,10 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[0] + 1 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            numberOfFramesBeforeCol[0][c] = numberOfFramesBeforeCol[0][c - 1];</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfBRAMCols[0] + 1 ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[0] ; c &lt; <a class="code" href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a> ; c++){</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            numberOfBRAMsBeforeCol[0][c] = numberOfBRAMsBeforeCol[0][c - 1];</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]+1];</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        numberOfWordsPerRow[0] = numberOfFramesPerRow[0] * <a class="code" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">XUSP_WORDS_PER_FRAME</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        maxNumberOfCols = numberOfCols[0];</div>
@@ -162,7 +162,7 @@ $(function() {
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">int</span> clbPlaneSize = numberOfRows * numberOfWordsPerRow[0];</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> bramPlaneSize = numberOfRows * <a class="code" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">XUSP_WORDS_PER_FRAME</a> * (<a class="code" href="XUSP__Fabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a> + maxNumberOfBRAMCols * <a class="code" href="XUSP__Fabric_8h.html#a775235d81c097b48fec3076dffc7992f">XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN</a>);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        bitstreamBegin = <span class="keyword">new</span> uint32_t[clbPlaneSize + bramPlaneSize];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        bitstreamBegin = <span class="keyword">new</span> uint32_t[clbPlaneSize + bramPlaneSize + 100];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//Calc pointers</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">int</span> offset = 0;</div>
@@ -183,24 +183,23 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                offset += <a class="code" href="XUSP__Fabric_8h.html#a51b7aec907550b0cbdb9086e32e6302b">XUSP_EXTRA_FRAMES_PER_ROW</a> * <a class="code" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">XUSP_WORDS_PER_FRAME</a>;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        bitstreamEnd = &amp;bitstreamBegin[offset];</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        log(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+partName+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760">  118</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760">XilinxUltraScalePlus::getFrameType</a>(<span class="keywordtype">int</span> blockType, <span class="keywordtype">int</span> rowAddress, <span class="keywordtype">int</span> columnAddress){</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="XUSP__Fabric_8h.html#acdc1bf21787c174f2230b19234543826">XUSP_BLOCKTYPE_BLOCKRAM</a> == blockType)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;BlockRAM Contents&quot;</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="XUSP__Fabric_8h.html#ad2f5f77de0b6e3399878c873d694862b">XUSP_BLOCKTYPE_LOGIC</a> == blockType)</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">return</span> LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        bitstreamEnd = &amp;bitstreamBegin[offset];</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        log(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+partName+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760">  117</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760">XilinxUltraScalePlus::getFrameType</a>(<span class="keywordtype">int</span> blockType, <span class="keywordtype">int</span> rowAddress, <span class="keywordtype">int</span> columnAddress){</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="XUSP__Fabric_8h.html#acdc1bf21787c174f2230b19234543826">XUSP_BLOCKTYPE_BLOCKRAM</a> == blockType)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;BlockRAM Contents&quot;</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="XUSP__Fabric_8h.html#ad2f5f77de0b6e3399878c873d694862b">XUSP_BLOCKTYPE_LOGIC</a> == blockType)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[rowAddress][columnAddress]];</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Unknown&quot;</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespacestr_1_1iff_html_a13e4e72af819f11af13d70eaabd75344"><div class="ttname"><a href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a></div><div class="ttdeci">bool charIs(char checkedChar)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00103">iff.h:103</a></div></div>
 <div class="ttc" id="aXUSP__Fabric_8h_html_ad2f5f77de0b6e3399878c873d694862b"><div class="ttname"><a href="XUSP__Fabric_8h.html#ad2f5f77de0b6e3399878c873d694862b">XUSP_BLOCKTYPE_LOGIC</a></div><div class="ttdeci">#define XUSP_BLOCKTYPE_LOGIC</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00033">XUSP_Fabric.h:33</a></div></div>
-<div class="ttc" id="aclassXilinxUltraScalePlus_html_ad880e96bb59e8fefd49605ca2164d760"><div class="ttname"><a href="classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760">XilinxUltraScalePlus::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00118">XilinxUltraScalePlus.cpp:118</a></div></div>
+<div class="ttc" id="aclassXilinxUltraScalePlus_html_ad880e96bb59e8fefd49605ca2164d760"><div class="ttname"><a href="classXilinxUltraScalePlus.html#ad880e96bb59e8fefd49605ca2164d760">XilinxUltraScalePlus::getFrameType</a></div><div class="ttdeci">string getFrameType(int, int, int) override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00117">XilinxUltraScalePlus.cpp:117</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScalePlus_html_ac1aac4d66efbf2d4502a2916f3de5cc5"><div class="ttname"><a href="classXilinxUltraScalePlus.html#ac1aac4d66efbf2d4502a2916f3de5cc5">XilinxUltraScalePlus::XilinxUltraScalePlus</a></div><div class="ttdeci">XilinxUltraScalePlus()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8cpp_source.html#l00031">XilinxUltraScalePlus.cpp:31</a></div></div>
 <div class="ttc" id="aXUSP__Fabric_8h_html_ab2dc9d2836c4b586e49ebd166f43c727"><div class="ttname"><a href="XUSP__Fabric_8h.html#ab2dc9d2836c4b586e49ebd166f43c727">XUSP_MAX_COLS</a></div><div class="ttdeci">#define XUSP_MAX_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00027">XUSP_Fabric.h:27</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_ac9f4873f9a0c23291fa47d68dff6fbbc"><div class="ttname"><a href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00056">Endianness.h:56</a></div></div>
@@ -214,7 +213,7 @@ $(function() {
 <div class="ttc" id="aXUSP__Fabric_8h_html_a4b915af6c17d4c85911e619f19286caa"><div class="ttname"><a href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">XUSP_WORDS_PER_FRAME</a></div><div class="ttdeci">#define XUSP_WORDS_PER_FRAME</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Fabric_8h_source.html#l00039">XUSP_Fabric.h:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 1 2022 12:58:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 1 2022 22:48:31 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
