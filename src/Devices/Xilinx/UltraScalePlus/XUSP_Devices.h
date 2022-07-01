@@ -226,6 +226,7 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
 
 
 //Xilinx UltraScale+ Artix
+	//XCAU10 is software-limitted version of XCAU15
     #define XCAU10P_NAME "xcau10p"
     #define XCAU10P_SLRNUM 1
     #define XCAU10P_ROWNUM 3
@@ -250,7 +251,7 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
         XUSP_STRING_CAT_3(XCAU15P_);                                                               \
     }
 	
-	//SW-limitted version of AU25P, same FPGA as KU3P, KU5P
+	//SW-limitted version of AU25P (which is same FPGA as KU3P, KU5P)
     #define XCAU20P_NAME "xcau20p"
     #define XCAU20P_SLRNUM 1
     #define XCAU20P_ROWNUM 4
