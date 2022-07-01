@@ -38,7 +38,7 @@ void byteman::help(string param, int exitCode)
 }
 void byteman::help()
 {
-	cout << "byteman " << VERSION << " (Build " << VERSION_BUILD << ") usage:" << endl;
+	cout << "byteman " << VERSION << " (Build #" << VERSION_BUILD << ", compiled on " << __DATE__ << " " << __TIME__ << ") usage:" << endl;
 	cout << "byteman ARCH [-command...]* [-stdin]" << endl;
 	cout << "\tCommands:    [Default] : [Description]                                    " << endl;
 	cout << "\t-a (assembly)          : (de)compile bitstream assembly files. See \"byteman -h assembly\"" << endl;
