@@ -1,7 +1,7 @@
 # ![byteman icon](./Resources/icon32.png) byteman
 ## *Open-source high-performance bitstream relocation and manipulation tool.*
 [![byteman project](https://img.shields.io/badge/byteman-v1.1-blue)](https://github.com/FPGA-Research-Manchester/byteman)
-[![byteman build](https://img.shields.io/badge/Build%20169-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
+[![byteman build](https://img.shields.io/badge/Build%20170-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
 [![Apache license](https://img.shields.io/github/license/FPGA-Research-Manchester/byteman)](https://opensource.org/licenses/Apache-2.0)
 [![C++ Standard](https://img.shields.io/badge/C%2B%2B-14-green.svg)](https://en.wikipedia.org/wiki/C%2B%2B14)
 [![Reports from automated testing](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml/badge.svg)](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml)
