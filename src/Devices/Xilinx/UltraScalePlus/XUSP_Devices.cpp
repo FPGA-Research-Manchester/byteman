@@ -450,9 +450,9 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 			return XUSP_DEVICE_ZCU670;
 		if(str::iff::stringContains(name, "ultra96"))
 			return XUSP_DEVICE_ULTRA96;
-		if(str::iff::stringContains(name, "k26c"))
+		if(str::iff::stringContains(name, "k26c", "kria26c"))
 			return XUSP_DEVICE_K26C;
-		if(str::iff::stringContains(name, "k26i"))
+		if(str::iff::stringContains(name, "k26i", "kria26i"))
 			return XUSP_DEVICE_K26I;
 		if(str::iff::stringContains(name, "kv260"))
 			return XUSP_DEVICE_KV260;
