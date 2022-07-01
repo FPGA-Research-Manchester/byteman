@@ -279,7 +279,7 @@ void byteman::parseChange(string changeCmd, SelectedOptions options)
 }
 void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 {
-	string deviceName = str::parse::allStringWords(deviceCmd);
+	string deviceName = str::parse::lastStringWord(deviceCmd);
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
 			if(options.mainBufferSelected)

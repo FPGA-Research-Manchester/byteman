@@ -58,11 +58,11 @@ inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, C
 		for(int c = 0 ; c < src.size.col ; c++){//relocate dst[dstRA+r][dst.col+c] <= src[srcRA+r][src.position.col+c]
 			for(int m = 0 ; m < LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[dstRA+r][dst.col+c]] ; m++){
 				if(selectedOptions.clb && selectedOptions.clk){
-					memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME], WORDS_PER_FRAME*4);
+					memcpy(&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME], WORDS_PER_FRAME*4);
 				} else {
 					if(selectedOptions.clb){
-						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,							(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME],									WORDS_BEFORE_CLK*4);
-						memcpy((char*)&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME+WORDS_BEFORE_CLK+WORDS_AT_CLK] ,(char*)&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME+WORDS_BEFORE_CLK+WORDS_AT_CLK], WORDS_AFTER_CLK*4);
+						memcpy(&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME] ,							&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME],									WORDS_BEFORE_CLK*4);
+						memcpy(&bitstreamCLB[dstRA+r][dst.col+c][m*WORDS_PER_FRAME+WORDS_BEFORE_CLK+WORDS_AT_CLK] ,&srcBitstream->bitstreamCLB[srcRA+r][src.position.col+c][m*WORDS_PER_FRAME+WORDS_BEFORE_CLK+WORDS_AT_CLK], WORDS_AFTER_CLK*4);
 					}
 					if(selectedOptions.clk){
 						for(int w = WORDS_BEFORE_CLK ; w < (WORDS_BEFORE_CLK + WORDS_AT_CLK) ; w++)
@@ -77,7 +77,7 @@ inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, C
 			int bramCols = numberOfBRAMsBeforeCol[r][src.position.col + src.size.col] - numberOfBRAMsBeforeCol[r][src.position.col];
 			int srcCol = numberOfBRAMsBeforeCol[r][src.position.col];
 			int dstCol = numberOfBRAMsBeforeCol[r][dst.col];
-			memcpy((char*)&bitstreamBRAM[dstRA+r][dstCol][0] ,(char*)&srcBitstream->bitstreamBRAM[srcRA+r][srcCol], bramCols * FRAMES_PER_BRAM_CONTENT_COLUMN * WORDS_PER_FRAME * 4);
+			memcpy(&bitstreamBRAM[dstRA+r][dstCol][0] ,&srcBitstream->bitstreamBRAM[srcRA+r][srcCol][0], bramCols * FRAMES_PER_BRAM_CONTENT_COLUMN * WORDS_PER_FRAME * 4);
 		}
 	}
 }
@@ -126,16 +126,16 @@ inline void flexiMerge(XilinxConfigurationAccessPort* srcBitstream, Endianness e
 				for(int w = 0 ; w < WORDS_PER_FRAME * FRAMES_PER_BRAM_CONTENT_COLUMN ; w++){
 					switch(selectedOptions.op){
 						case MergeOP::SET:
-							bitstreamBRAM[dstRA+r][dstCol+c][w]  = Endian::NativeToAnyEndianness32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+							bitstreamBRAM[dstRA+r][dstCol+c][w]  = Endian::NativeToAnyEndianness32(srcBitstream->bitstreamBRAM[srcRA+r][srcCol+c][w], endianConversionNeeded);
 							break;
 						case MergeOP::XOR:
-							bitstreamBRAM[dstRA+r][dstCol+c][w] ^= Endian::NativeToAnyEndianness32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+							bitstreamBRAM[dstRA+r][dstCol+c][w] ^= Endian::NativeToAnyEndianness32(srcBitstream->bitstreamBRAM[srcRA+r][srcCol+c][w], endianConversionNeeded);
 							break;
 						case MergeOP::OR:
-							bitstreamBRAM[dstRA+r][dstCol+c][w] |= Endian::NativeToAnyEndianness32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+							bitstreamBRAM[dstRA+r][dstCol+c][w] |= Endian::NativeToAnyEndianness32(srcBitstream->bitstreamBRAM[srcRA+r][srcCol+c][w], endianConversionNeeded);
 							break;
 						case MergeOP::AND:
-							bitstreamBRAM[dstRA+r][dstCol+c][w] &= Endian::NativeToAnyEndianness32(srcBitstream->bitstreamCLB[srcRA+r][srcCol+c][w], endianConversionNeeded);
+							bitstreamBRAM[dstRA+r][dstCol+c][w] &= Endian::NativeToAnyEndianness32(srcBitstream->bitstreamBRAM[srcRA+r][srcCol+c][w], endianConversionNeeded);
 							break;
 					}
 				}

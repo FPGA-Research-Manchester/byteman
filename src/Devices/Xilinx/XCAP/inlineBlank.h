@@ -25,9 +25,9 @@ inline void blankBuffers()
 	uint8_t blankByte = selectedOptions.intParam % 256;
 	if(regionSelection.empty()) {
 		if(selectedOptions.clb)
-			memset(&bitstreamCLB[0][0][0], blankByte, (&bitstreamBRAM[0][0][0]-&bitstreamCLB[0][0][0]));
+			memset(&bitstreamBegin[0], blankByte, ((uint64_t)&bitstreamBRAM[0][0][0]-(uint64_t)&bitstreamBegin[0]));
 		if(selectedOptions.bram)
-			memset(&bitstreamBRAM[0][0][0], blankByte, (bitstreamEnd-&bitstreamBRAM[0][0][0]));
+			memset(&bitstreamBRAM[0][0][0], blankByte, ((uint64_t)&bitstreamEnd[0]-(uint64_t)&bitstreamBRAM[0][0][0]));
 	} else {
 		if(selectedOptions.clb)
 			for (Rect2D &selRect : regionSelection) {

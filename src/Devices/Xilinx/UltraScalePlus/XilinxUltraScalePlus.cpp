@@ -43,7 +43,7 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 	if(initializedBitstreamParamsShortPartName != initializedResourceStringShortPartName){//The device is changed
 		initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;
 
-		for((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; (uint8_t)resourceString[0][numberOfCols[0]] ; numberOfCols[0]++){
+		for((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; resourceString[0][numberOfCols[0]] != '\0' ; numberOfCols[0]++){
 			numberOfFramesBeforeCol[0][numberOfCols[0]+1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];
 			numberOfBRAMsBeforeCol[0][numberOfCols[0]] = numberOfBRAMCols[0];
 			if(str::iff::charIs(resourceString[0][numberOfCols[0]], 'A', 'B', 'C', '1')) //A-C are BlockRAM columns, '1' is empty blockram column
@@ -52,10 +52,10 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 		for(int c = numberOfCols[0] + 1 ; c < XUSP_MAX_COLS ; c++){
 			numberOfFramesBeforeCol[0][c] = numberOfFramesBeforeCol[0][c - 1];
 		}
-		for(int c = numberOfBRAMCols[0] + 1 ; c < XUSP_MAX_COLS ; c++){
+		for(int c = numberOfCols[0] ; c < XUSP_MAX_COLS ; c++){
 			numberOfBRAMsBeforeCol[0][c] = numberOfBRAMsBeforeCol[0][c - 1];
 		}
-		numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]];
+		numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]+1];
 		numberOfWordsPerRow[0] = numberOfFramesPerRow[0] * XUSP_WORDS_PER_FRAME;
 		
 		maxNumberOfCols = numberOfCols[0];
@@ -88,7 +88,7 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 		int clbPlaneSize = numberOfRows * numberOfWordsPerRow[0];
 		int bramPlaneSize = numberOfRows * XUSP_WORDS_PER_FRAME * (XUSP_EXTRA_FRAMES_PER_ROW + maxNumberOfBRAMCols * XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN);
 		
-		bitstreamBegin = new uint32_t[clbPlaneSize + bramPlaneSize];
+		bitstreamBegin = new uint32_t[clbPlaneSize + bramPlaneSize + 100];
 		
 		//Calc pointers
 		int offset = 0;
@@ -109,7 +109,6 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 				offset += XUSP_EXTRA_FRAMES_PER_ROW * XUSP_WORDS_PER_FRAME;
 			}
 		}
-		
 		bitstreamEnd = &bitstreamBegin[offset];
 		log("Reserved "+to_string(clbPlaneSize + bramPlaneSize)+" words for the bitstream buffers of device \""+partName+"\"");
 	}

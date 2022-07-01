@@ -46,6 +46,7 @@ inline void ensureFramesAre(bool usableFramesOnly, bool testValueEqual, uint32_t
 			}
 		}
 	}
+	log("Test finished successfully.");
 }
 #endif
 

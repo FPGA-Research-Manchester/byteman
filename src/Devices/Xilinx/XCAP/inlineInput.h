@@ -216,9 +216,9 @@ inline void readBitstreamMain(ifstream& fin)
 							/*
 							if(shadowFrameValid){
 								if(b == BLOCKTYPE_LOGIC){
-									memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+									memcpy(&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								} else if(b == BLOCKTYPE_BLOCKRAM) {
-									memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+									memcpy(&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								}
 								XCAP_IncrementFAR(slr, b, r, c, m);
 								shadowFrameValid = false;
@@ -234,10 +234,12 @@ inline void readBitstreamMain(ifstream& fin)
 								throwingAssertPrintVar_1(c, <, numberOfCols[r], r);
 								if(b == BLOCKTYPE_LOGIC){
 									throwingAssertPrintVar_3(m, <, LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]], r, c, (int)resourceString[r][c]);
-									memcpy((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+									memcpy(&bitstreamCLB[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								} else if(b == BLOCKTYPE_BLOCKRAM) {
 									throwingAssert(m, <, FRAMES_PER_BRAM_CONTENT_COLUMN);
-									memcpy((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+									memcpy(&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
+								} else {
+									throw runtime_error("Unknown BlockType written while reading bitstream file.");
 								}
 								XCAP_IncrementFAR(slr, b, r, c, m);
 							}
@@ -247,6 +249,8 @@ inline void readBitstreamMain(ifstream& fin)
 									fin.read((char*)&bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
 								} else if(b == BLOCKTYPE_BLOCKRAM){
 									fin.read((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
+								} else {
+									throw runtime_error("Unknown BlockType written while reading bitstream file.");
 								}
 								for(int i = 0 ; i < forwardShadowReg ; i++){
 									XCAP_IncrementFAR(slr, b, r, c, m);
@@ -256,7 +260,6 @@ inline void readBitstreamMain(ifstream& fin)
 							shadowFrameValid = true;
 							fin.read((char*)&shadowFrame, WORDS_PER_FRAME*4);
 							wordCount -= WORDS_PER_FRAME;
-
 						} else if(regAddr == XCAP::Register::CMD){
 							XCAP::Command command = static_cast<XCAP::Command>(FileIO::read32(fin, loadedBitstreamEndianness));
 							wordCount--;
