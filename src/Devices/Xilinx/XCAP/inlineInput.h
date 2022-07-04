@@ -239,7 +239,7 @@ inline void readBitstreamMain(ifstream& fin)
 									throwingAssert(m, <, FRAMES_PER_BRAM_CONTENT_COLUMN);
 									memcpy(&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								} else {
-									throw runtime_error("Unknown BlockType written while reading bitstream file.");
+									warn("Unknown BlockType("+to_string(b)+") written while reading bitstream file.");
 								}
 								XCAP_IncrementFAR(slr, b, r, c, m);
 							}
@@ -250,7 +250,8 @@ inline void readBitstreamMain(ifstream& fin)
 								} else if(b == BLOCKTYPE_BLOCKRAM){
 									fin.read((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
 								} else {
-									throw runtime_error("Unknown BlockType written while reading bitstream file.");
+									fin.ignore(forwardShadowReg * WORDS_PER_FRAME * 4);
+									warn("Unknown BlockType("+to_string(b)+") written while reading bitstream file.");
 								}
 								for(int i = 0 ; i < forwardShadowReg ; i++){
 									XCAP_IncrementFAR(slr, b, r, c, m);
