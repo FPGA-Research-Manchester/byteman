@@ -111,7 +111,7 @@ class byteman
 		void helpWarn();
 		void helpVerbose();
 		void helpHelp();
-		void helpEnd();
+		void helpExit();
 		void helpStdin();
 		
 		#if !defined(NDEBUG)

@@ -88,7 +88,6 @@ class XilinxSeries7: virtual public CommonDevice2D, public XilinxConfigurationAc
 		void disassemblerBinToAsm(string, ifstream&, ofstream&);
 		void disassemblerToAsm(ifstream&, ofstream&);
 		
-		void assemblerHelp();
 		void assembler(string, string);
 		
 		// Info 

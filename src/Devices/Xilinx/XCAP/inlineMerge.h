@@ -21,7 +21,7 @@ inline void ensureRowCompatibility(Coord2D src, int offsetRow, int sizeCol, Coor
 		if(resourceString[srcRA][src.col+c] != resourceString[dstRA][dst.col+c]){//if any two letters are different
 			if(LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]] != LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]){
 				//also the number of frames is different?!
-				throw runtime_error(string("Tried to relocate to an incompatible location(").append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]).append(" to frame type ").append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]).append(")."));
+				throw runtime_error(string("Please check your merge coordinates. Tried to merge incompatible resources (from \"").append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]).append("\" to \"").append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]).append("\")."));
 			} else {
 				//okay, different col, but same width. Throw warning?
 				warn("Relocating from frame type " + string(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.col+c]]) + " to frame type " + string(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.col+c]]) + ".");

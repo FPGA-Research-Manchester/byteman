@@ -49,7 +49,7 @@ int main(int argc, char * argv[])
 				command.append(argv[argi]);
 			else 
 				command.append(" ").append(argv[argi]);
-			if(command == "-stdin"){
+			if(command == "-stdin" || command == "-s"){
 				readSTDIN = true;
 				command.clear();
 			}
@@ -127,7 +127,7 @@ void byteman::parse(string command)
 	else if(str::iff::firstStringWordIs(command, "t", "test"))
 		parseTest(params, options);
 	#endif
-	else if(str::iff::firstStringWordIs(command, "e", "end"))
+	else if(str::iff::firstStringWordIs(command, "e", "exit"))
 		exit(0);
 	else
 		throw runtime_error("Could not parse command. Consider checking out \"bytemap -help\".");
@@ -213,26 +213,20 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 	str::parse::multipleInts(regionCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXS7.region(params, rect);
-			if(options.tempBufferSelected)
-				tempXS7.region(params, rect);
+			mainXS7.region(params, rect);
+			tempXS7.region(params, rect);
 		}
 	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXUS.region(params, rect);
-			if(options.tempBufferSelected)
-				tempXUS.region(params, rect);
+			mainXUS.region(params, rect);
+			tempXUS.region(params, rect);
 		}
 	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXUSP.region(params, rect);
-			if(options.tempBufferSelected)
-				tempXUSP.region(params, rect);
+			mainXUSP.region(params, rect);
+			tempXUSP.region(params, rect);
 		}
 	#endif
 }
@@ -364,26 +358,17 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 	str::parse::multipleInts(outputCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col);
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXS7.writeBitstream(filename, params, rect);
-			if(options.tempBufferSelected)
-				tempXS7.writeBitstream(filename, params, rect);
+			mainXS7.writeBitstream(filename, params, rect);
 		}
 	#endif
 	#ifdef XUS
 		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXUS.writeBitstream(filename, params, rect);
-			if(options.tempBufferSelected)
-				tempXUS.writeBitstream(filename, params, rect);
+			mainXUS.writeBitstream(filename, params, rect);
 		}
 	#endif
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			if(options.mainBufferSelected)
-				mainXUSP.writeBitstream(filename, params, rect);
-			if(options.tempBufferSelected)
-				tempXUSP.writeBitstream(filename, params, rect);
+			mainXUSP.writeBitstream(filename, params, rect);
 		}
 	#endif
 }

@@ -13,7 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
+
 PROJECT_NAME = "byteman"
+#To change the version, edit the "VERSION" file.
 PROJECT_NUMBER = "1.1 (Build #177)"
 PROJECT_BRIEF = "Bitstream relocation and manipulation tool"
 PROJECT_LOGO = Resources/icon64.png

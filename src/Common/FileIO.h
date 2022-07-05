@@ -322,19 +322,19 @@ namespace FileIO {
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedLittleEndian), sizeof(writeValueByteSwappedLittleEndian));
 	}
 
-	inline void writeCharArray(ofstream& fout, char* writeCharArray, int outputSize = 0)
+	inline void writeCharArray(ofstream& fout, char* writeCharArray, size_t outputSize = 0)
 	{
 		uint8_t nullChar = 0;
-		int charArraySize = 1;
+		size_t charArraySize = 1;
 		for( ; (0 != writeCharArray[charArraySize-1] && charArraySize != outputSize); charArraySize++);
 		fout.write(writeCharArray, charArraySize);
 		for( ; charArraySize < outputSize ; charArraySize++)
 			fout.write(reinterpret_cast<char*>(&nullChar), 1);
 	}
-	inline void writeString(ofstream& fout, string writeString, int outputSize = 0)
+	inline void writeString(ofstream& fout, string writeString, size_t outputSize = 0)
 	{
 		uint8_t nullChar = 0;
-		int stringSize = writeString.size() + 1;
+		size_t stringSize = writeString.size() + 1;
 		if((0 == outputSize) || (outputSize >= stringSize))
 			fout.write(writeString.c_str(), stringSize);
 		else
@@ -343,12 +343,12 @@ namespace FileIO {
 			fout.write(reinterpret_cast<char*>(&nullChar), 1);
 	}
 
-	inline void writeBitSwappedCharArray(ofstream& fout, char* writeCharArray, int outputSize = 0)
+	inline void writeBitSwappedCharArray(ofstream& fout, char* writeCharArray, size_t outputSize = 0)
 	{
 		uint8_t nextChar = 0;
-		int charArraySize = 1;
+		size_t charArraySize = 1;
 		for( ; (0 != writeCharArray[charArraySize-1] && charArraySize != outputSize); charArraySize++);
-		for(int i = 0 ; i < charArraySize ; i++){
+		for(size_t i = 0 ; i < charArraySize ; i++){
 			nextChar = Endian::BitSwap8(writeCharArray[i]);
 			fout.write(reinterpret_cast<char*>(&nextChar), 1);
 		}
@@ -356,17 +356,17 @@ namespace FileIO {
 		for( ; charArraySize < outputSize ; charArraySize++)
 			fout.write(reinterpret_cast<char*>(&nextChar), 1);
 	}
-	inline void writeBitSwappedString(ofstream& fout, string writeString, int outputSize = 0)
+	inline void writeBitSwappedString(ofstream& fout, string writeString, size_t outputSize = 0)
 	{
 		uint8_t nextChar = 0;
-		int stringSize = writeString.size() + 1;
+		size_t stringSize = writeString.size() + 1;
 		if((0 == outputSize) || (outputSize >= stringSize)) {
-			for(int i = 0 ; i < stringSize ; i++){
+			for(size_t i = 0 ; i < stringSize ; i++){
 				nextChar = Endian::BitSwap8(writeString.at(i));
 				fout.write(reinterpret_cast<char*>(&nextChar), 1);
 			}
 		} else {
-			for(int i = 0 ; i < outputSize ; i++){
+			for(size_t i = 0 ; i < outputSize ; i++){
 				nextChar = Endian::BitSwap8(writeString.at(i));
 				fout.write(reinterpret_cast<char*>(&nextChar), 1);
 			}
@@ -376,14 +376,14 @@ namespace FileIO {
 			fout.write(reinterpret_cast<char*>(&nextChar), 1);
 	}
 
-	inline void writeCharArray(ofstream& fout, char* writeCharArray, int outputSize, Endianness e)
+	inline void writeCharArray(ofstream& fout, char* writeCharArray, size_t outputSize, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::writeBitSwappedCharArray(fout, writeCharArray, outputSize);
 		else
 			return FileIO::writeCharArray(fout, writeCharArray, outputSize);
 	}
-	inline void writeString(ofstream& fout, string writeString, int outputSize, Endianness e)
+	inline void writeString(ofstream& fout, string writeString, size_t outputSize, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::writeBitSwappedString(fout, writeString, outputSize);

@@ -29,11 +29,6 @@
 
 using namespace std;
 
-void XilinxUltraScalePlus::assemblerHelp()
-{
-	cout<<"Supported file formats are \".bit\" and \".bit.asm\" at the moment." << endl;
-}
-
 void XilinxUltraScalePlus::assembler(string filenameIn, string filenameOut)
 {
 	enum FILEFORMAT {FILE_NULL = 0, FILE_BIT, FILE_BIN, FILE_BIT_ASM};

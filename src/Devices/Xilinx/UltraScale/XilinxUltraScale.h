@@ -88,7 +88,6 @@ class XilinxUltraScale: virtual public CommonDevice2D, public XilinxConfiguratio
 		void disassemblerBinToAsm(string, ifstream&, ofstream&);
 		void disassemblerToAsm(ifstream&, ofstream&);
 		
-		void assemblerHelp();
 		void assembler(string, string);
 		
 		// Info 

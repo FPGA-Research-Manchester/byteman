@@ -33,7 +33,7 @@
 #include "../../Common/assert.h"
 #include "../../Common/FileIO.h"
 #include "../../Common/str.h"
-#include "../../version.h" // To get byteman version
+#include "../../../VERSION" // To get byteman version
 
 using namespace std;
 
