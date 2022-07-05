@@ -9,9 +9,9 @@ digraph "Endian::to_string"
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="XilinxSeries7::assembler\lAsmTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#add24644bcb25c9d2832e08ee151419c5",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScalePlus\l::assemblerAsmTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a3759d31f6e02c6d8fc6b8e46aec7b071",tooltip=" "];
+  Node3 [label="XilinxUltraScale::assembler\lAsmTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a5fc4f1606f3f0943ea92809c1632b47c",tooltip=" "];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="XilinxUltraScale::assembler\lAsmTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a5fc4f1606f3f0943ea92809c1632b47c",tooltip=" "];
+  Node4 [label="XilinxUltraScalePlus\l::assemblerAsmTo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a3759d31f6e02c6d8fc6b8e46aec7b071",tooltip=" "];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="XilinxSeries7::ensureInitialized\lBitstreamArrays",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#a48e8af97afd87fb913bb399474901f25",tooltip=" "];
   Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -31,11 +31,11 @@ digraph "Endian::to_string"
   Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node13 [label="XilinxUltraScale::test",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a3e4be4a980b2530bc05f0bc5d625db64",tooltip=" "];
   Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node14 [label="XilinxUltraScalePlus\l::getDeviceByIDCODEorThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a92388a7fd1d5f5256cb01fa011d46199",tooltip=" "];
+  Node14 [label="XilinxSeries7::getDevice\lByIDCODEorThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#a31507049c12396e7d83a36507e6d16a2",tooltip=" "];
   Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node15 [label="XilinxUltraScale::getDevice\lByIDCODEorThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a25b4faa957ea0f214a1c21bb982572d1",tooltip=" "];
+  Node15 [label="XilinxUltraScalePlus\l::getDeviceByIDCODEorThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a92388a7fd1d5f5256cb01fa011d46199",tooltip=" "];
   Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="XilinxSeries7::getDevice\lByIDCODEorThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#a31507049c12396e7d83a36507e6d16a2",tooltip=" "];
+  Node16 [label="XilinxUltraScale::getDevice\lByIDCODEorThrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a25b4faa957ea0f214a1c21bb982572d1",tooltip=" "];
   Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 [label="XilinxSeries7::merge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d",tooltip=" "];
   Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -90,6 +90,9 @@ digraph "Endian::to_string"
   Node40 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node40 -> Node37 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node40 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node41 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node41 [label="writeXCAPcommandName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a24d4525a0a5b08911e7582b66f5570dc",tooltip=" "];

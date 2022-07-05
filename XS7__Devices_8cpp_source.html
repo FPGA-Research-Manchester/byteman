@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #176)</span>
+   &#160;<span id="projectnumber">1.1 (Build #177)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -103,7 +103,7 @@ $(function() {
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> deviceID = getDeviceByIDCODE(IDCODE);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(deviceID == <a class="code" href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6abff2adeebc555f332d98d660914d8936">XS7_DEVICE_NULL</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown device with IDCODE = &quot;</span>).append(<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(IDCODE)).append(<span class="stringliteral">&quot; .&quot;</span>));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown device with IDCODE = &quot;</span>).append(<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(IDCODE)).append(<span class="stringliteral">&quot; . Maybe the device is not Xilinx Series 7 device?&quot;</span>));</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">return</span> deviceID;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> deviceID = getDeviceByName(name);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span>(deviceID == <a class="code" href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6abff2adeebc555f332d98d660914d8936">XS7_DEVICE_NULL</a>)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown device: &quot;</span>).append(name).append(<span class="stringliteral">&quot;.&quot;</span>));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown device: &quot;</span>).append(name).append(<span class="stringliteral">&quot;. Maybe the device is not Xilinx Series 7 device?&quot;</span>));</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> deviceID;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
@@ -989,7 +989,7 @@ $(function() {
 <div class="ttc" id="aXS7__Devices_8h_html_a6f1231e25f5ac755567d605353463354"><div class="ttname"><a href="XS7__Devices_8h.html#a6f1231e25f5ac755567d605353463354">XC7S100_IDCODE</a></div><div class="ttdeci">#define XC7S100_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00232">XS7_Devices.h:232</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 4 2022 14:36:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 5 2022 15:11:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

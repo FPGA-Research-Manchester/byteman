@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #176)</span>
+   &#160;<span id="projectnumber">1.1 (Build #177)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="inlineOutput_8h.html#a91979dffab085f36666aabd8b3b62934">   34</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineOutput_8h.html#a91979dffab085f36666aabd8b3b62934">outputBITheader</a>(ofstream&amp; fout, <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> e)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    log(<span class="stringliteral">&quot;Generating header in &quot;</span> + <a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a>(e));</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    log(<span class="stringliteral">&quot;Generating bitstream header in &quot;</span> + <a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a>(e) + <span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="inlineOutput_8h.html#aaa6c2b6118fc7ead31645081b43ff737">outputBITheader16bString</a>(fout, e, <span class="keywordtype">string</span>(<span class="stringliteral">&quot;\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0&quot;</span>));</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="namespaceFileIO.html#ad1f1d0f27f31758bf9e62d4461cc22e4">FileIO::write16</a>(fout, 1, e);<span class="comment">//16-bit BE value = 1</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="namespaceFileIO.html#add682aedd139b75be682127cf68ab49d">FileIO::write8</a>(fout, <span class="charliteral">&#39;a&#39;</span>, e);</div>
@@ -167,7 +167,7 @@ $(function() {
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span>(selectedOptions.clb){</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordtype">int</span> framesToWrite = numberOfFramesBeforeCol[r][toCol]-numberOfFramesBeforeCol[r][fromCol];</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            uint32_t farValue = <a class="code" href="inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615">XCAP_getFAR</a>(BLOCKTYPE_LOGIC, slr, srcR+r, fromCol, 0);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            uint32_t farValue = <a class="code" href="inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615">XCAP_getFAR</a>(slr, BLOCKTYPE_LOGIC, srcR+r, fromCol, 0);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span>(selectedOptions.blank){</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <a class="code" href="inlineCAP_8h.html#af3002274ef7f925f95bfc3f928e8978b">XCAP_writeRegister</a>(fout, <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a>, farValue, loadedBitstreamEndianness);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <a class="code" href="inlineCAP_8h.html#a4ad6e8544f23f9a22e46204b59d07b3d">XCAP_writeCommand</a>(fout, <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a>, loadedBitstreamEndianness);</div>
@@ -187,7 +187,7 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">if</span>(selectedOptions.bram){</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordtype">int</span> framesToWrite = FRAMES_PER_BRAM_CONTENT_COLUMN * (numberOfBRAMsBeforeCol[r][toCol]-numberOfBRAMsBeforeCol[r][fromCol]);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            <span class="keywordflow">if</span>(framesToWrite &gt; 0) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                uint32_t farValue = <a class="code" href="inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615">XCAP_getFAR</a>(BLOCKTYPE_BLOCKRAM, slr, srcR+r, numberOfBRAMsBeforeCol[r][fromCol], 0);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                uint32_t farValue = <a class="code" href="inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615">XCAP_getFAR</a>(slr, BLOCKTYPE_BLOCKRAM, srcR+r, numberOfBRAMsBeforeCol[r][fromCol], 0);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <a class="code" href="inlineCAP_8h.html#af3002274ef7f925f95bfc3f928e8978b">XCAP_writeRegister</a>(fout, <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a>, farValue, loadedBitstreamEndianness);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <a class="code" href="inlineCAP_8h.html#a4ad6e8544f23f9a22e46204b59d07b3d">XCAP_writeCommand</a>(fout, <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a>, loadedBitstreamEndianness);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="inlineCAP_8h.html#acc8717a0d78a08bd44e2ce66ac286a9d">XCAP_writeNOP</a>(fout, 1, 0, loadedBitstreamEndianness);</div>
@@ -320,7 +320,7 @@ $(function() {
 <div class="ttc" id="ainlineOutput_8h_html_ab9c09236ab751ee544bc377711a68f2d"><div class="ttname"><a href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a></div><div class="ttdeci">void outputBITheaderLengthField(ofstream &amp;fout, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00052">inlineOutput.h:52</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jul 4 2022 14:36:58 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 5 2022 15:11:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
