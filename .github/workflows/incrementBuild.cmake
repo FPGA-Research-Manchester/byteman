@@ -37,7 +37,7 @@ file(WRITE commitVersion
 "#!/usr/bin/env bash
 git config --local user.email \"action@github.com\"
 git config --local user.name \"GitHub Action\"
-git add src/version.h
+git add VERSION
 git add CMakeLists.txt
 git add Resources/Doxyfile.in
 git add README.md
