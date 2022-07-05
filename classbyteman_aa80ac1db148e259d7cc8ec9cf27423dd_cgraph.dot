@@ -15,7 +15,7 @@ digraph "byteman::help"
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="byteman::helpDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a71cff3e5fdf872ab4191272e8093e251",tooltip=" "];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="byteman::helpEnd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#ac6a29d60a9ec9c660ae3f0b5738ddc04",tooltip=" "];
+  Node6 [label="byteman::helpExit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a0adc5bd32da2163f57b939c6b87e47a0",tooltip=" "];
   Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="byteman::helpHelp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a241d8ba46adc36207705d5d8bbaa5789",tooltip=" "];
   Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

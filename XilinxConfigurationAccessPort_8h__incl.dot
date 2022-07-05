@@ -68,7 +68,7 @@ digraph "src/Devices/Xilinx/XilinxConfigurationAccessPort.h"
   Node22 [label="iomanip",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node21 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 [label="../../version.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$version_8h.html",tooltip=" "];
+  Node23 [label="../../../VERSION",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node24 [label="XCAP/inlineBlank.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineBlank_8h.html",tooltip=" "];
   Node1 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.1 (Build #177)</span>
+   &#160;<span id="projectnumber">1.2 (Build #177)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -200,7 +200,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="inlineOutput_8h_source.html#l00029">outputBITheader16bString()</a>, <a class="el" href="Endianness_8h_source.html#l00056">Endian::to_string()</a>, <a class="el" href="FileIO_8h_source.html#l00434">FileIO::write16()</a>, <a class="el" href="FileIO_8h_source.html#l00421">FileIO::write32()</a>, and <a class="el" href="FileIO_8h_source.html#l00447">FileIO::write8()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00094">XilinxSeries7::assemblerAsmToBit()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00094">XilinxUltraScale::assemblerAsmToBit()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00094">XilinxUltraScalePlus::assemblerAsmToBit()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00189">writeBitstreamBIT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00089">XilinxSeries7::assemblerAsmToBit()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00089">XilinxUltraScale::assemblerAsmToBit()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00089">XilinxUltraScalePlus::assemblerAsmToBit()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00189">writeBitstreamBIT()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -212,7 +212,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="215,427,345,453"/>
 <area shape="rect" href="namespaceFileIO.html#a0bbdf3656f5e5f6a4e82e06a27bc5233" title=" " alt="" coords="222,529,338,556"/>
 <area shape="rect" href="namespaceFileIO.html#add682aedd139b75be682127cf68ab49d" title=" " alt="" coords="741,401,849,428"/>
-<area shape="rect" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0" title=" " alt="" coords="460,289,599,316"/>
+<area shape="rect" href="namespaceFileIO.html#abee4f271354bc8186486fbade0b50d3e" title=" " alt="" coords="460,289,599,316"/>
 <area shape="rect" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb" title=" " alt="" coords="704,5,885,32"/>
 <area shape="rect" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579" title=" " alt="" coords="695,57,894,98"/>
 <area shape="rect" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35" title=" " alt="" coords="689,122,900,163"/>
@@ -225,7 +225,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="955,147,1179,173"/>
 <area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="1227,135,1451,161"/>
 <area shape="rect" href="namespaceFileIO.html#af77aeb3037baa6ef4a8daddb2895fc42" title=" " alt="" coords="725,289,864,316"/>
-<area shape="rect" href="namespaceFileIO.html#aaf4f6a73076432b1faddd4d63f0b0c86" title=" " alt="" coords="959,247,1174,273"/>
+<area shape="rect" href="namespaceFileIO.html#abc51ccd93bda9bfcaf349b6bbb2f06c9" title=" " alt="" coords="959,247,1174,273"/>
 <area shape="rect" href="namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1271,356,1406,383"/>
 <area shape="rect" href="namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="439,439,620,465"/>
 <area shape="rect" href="namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="430,490,629,531"/>
@@ -308,7 +308,7 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="inlineOutput_8h_source.html#l00029">29</a> of file <a class="el" href="inlineOutput_8h_source.html">inlineOutput.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                                                            {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="namespaceFileIO.html#ad1f1d0f27f31758bf9e62d4461cc22e4">FileIO::write16</a>(fout, <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(s.size()+1), e);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0">FileIO::writeString</a>(fout, s, e);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="namespaceFileIO.html#abee4f271354bc8186486fbade0b50d3e">FileIO::writeString</a>(fout, s, e);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="FileIO_8h_source.html#l00434">FileIO::write16()</a>, and <a class="el" href="FileIO_8h_source.html#l00334">FileIO::writeString()</a>.</p>
@@ -321,7 +321,7 @@ Here is the call graph for this function:</div>
 <map name="inlineOutput_8h_aaa6c2b6118fc7ead31645081b43ff737_cgraph" id="inlineOutput_8h_aaa6c2b6118fc7ead31645081b43ff737_cgraph">
 <area shape="rect" title=" " alt="" coords="5,239,197,265"/>
 <area shape="rect" href="namespaceFileIO.html#ad1f1d0f27f31758bf9e62d4461cc22e4" title=" " alt="" coords="257,159,373,185"/>
-<area shape="rect" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0" title=" " alt="" coords="245,289,384,316"/>
+<area shape="rect" href="namespaceFileIO.html#abee4f271354bc8186486fbade0b50d3e" title=" " alt="" coords="245,289,384,316"/>
 <area shape="rect" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb" title=" " alt="" coords="447,5,628,32"/>
 <area shape="rect" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579" title=" " alt="" coords="438,57,637,98"/>
 <area shape="rect" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35" title=" " alt="" coords="432,122,643,163"/>
@@ -334,7 +334,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="691,148,915,175"/>
 <area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="963,123,1187,149"/>
 <area shape="rect" href="namespaceFileIO.html#af77aeb3037baa6ef4a8daddb2895fc42" title=" " alt="" coords="468,289,607,316"/>
-<area shape="rect" href="namespaceFileIO.html#aaf4f6a73076432b1faddd4d63f0b0c86" title=" " alt="" coords="695,289,910,316"/>
+<area shape="rect" href="namespaceFileIO.html#abc51ccd93bda9bfcaf349b6bbb2f06c9" title=" " alt="" coords="695,289,910,316"/>
 <area shape="rect" href="namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1007,289,1142,316"/>
 </map>
 </div>
@@ -401,7 +401,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="FileIO_8h_source.html#l00421">FileIO::write32()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00130">XilinxSeries7::assemblerAsmTo()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00130">XilinxUltraScale::assemblerAsmTo()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00130">XilinxUltraScalePlus::assemblerAsmTo()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00189">writeBitstreamBIT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00125">XilinxSeries7::assemblerAsmTo()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00125">XilinxUltraScale::assemblerAsmTo()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00125">XilinxUltraScalePlus::assemblerAsmTo()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00189">writeBitstreamBIT()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -487,7 +487,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="FileIO_8h_source.html#l00421">FileIO::write32()</a>, and <a class="el" href="inlineCAP_8h_source.html#l00430">XCAP_getSyncInstruction()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00130">XilinxSeries7::assemblerAsmTo()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00130">XilinxUltraScale::assemblerAsmTo()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00130">XilinxUltraScalePlus::assemblerAsmTo()</a>, <a class="el" href="inlineOutput_8h_source.html#l00071">writeBitstreamMainEmptySLR()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00129">writeBitstreamMainSingleSLR()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00125">XilinxSeries7::assemblerAsmTo()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00125">XilinxUltraScale::assemblerAsmTo()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00125">XilinxUltraScalePlus::assemblerAsmTo()</a>, <a class="el" href="inlineOutput_8h_source.html#l00071">writeBitstreamMainEmptySLR()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00129">writeBitstreamMainSingleSLR()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -566,7 +566,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    fileTime = string(buf);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00077">XilinxSeries7::disassemblerBinToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00077">XilinxUltraScale::disassemblerBinToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00077">XilinxUltraScalePlus::disassemblerBinToAsm()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00189">writeBitstreamBIT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00072">XilinxSeries7::disassemblerBinToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00072">XilinxUltraScale::disassemblerBinToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00072">XilinxUltraScalePlus::disassemblerBinToAsm()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00189">writeBitstreamBIT()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -722,7 +722,7 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.partialNotFull)</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        designName.append(<span class="stringliteral">&quot;;PARTIAL=TRUE&quot;</span>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    designName.append(<span class="stringliteral">&quot;;bytemanVersion=&quot;</span>).append(<a class="code" href="version_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a>).append(<span class="stringliteral">&quot;:&quot;</span>).append(<a class="code" href="version_8h.html#a88c2f137526b274b84cf311aa8c68f3a">VERSION_BUILD</a>);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    designName.append(<span class="stringliteral">&quot;;bytemanVersion=&quot;</span>).append(VERSION).append(<span class="stringliteral">&quot;:&quot;</span>).append(VERSION_BUILD);</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    </div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="inlineOutput_8h.html#a194a87f62d6a57dbed34257f5a6037bf">updateDateAndTime</a>();</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="inlineOutput_8h.html#a91979dffab085f36666aabd8b3b62934">outputBITheader</a>(fout, <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a>);<span class="comment">//.bit always big endian</span></div>
@@ -734,7 +734,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a>(fout, loadedBitstreamEndianness);</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">BE</a>, <a class="el" href="inlineOutput_8h_source.html#l00034">outputBITheader()</a>, <a class="el" href="inlineOutput_8h_source.html#l00052">outputBITheaderLengthField()</a>, <a class="el" href="inlineOutput_8h_source.html#l00017">updateDateAndTime()</a>, <a class="el" href="version_8h_source.html#l00021">VERSION</a>, <a class="el" href="version_8h_source.html#l00022">VERSION_BUILD</a>, and <a class="el" href="inlineOutput_8h_source.html#l00152">writeBitstreamMain()</a>.</p>
+<p class="reference">References <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">BE</a>, <a class="el" href="inlineOutput_8h_source.html#l00034">outputBITheader()</a>, <a class="el" href="inlineOutput_8h_source.html#l00052">outputBITheaderLengthField()</a>, <a class="el" href="inlineOutput_8h_source.html#l00017">updateDateAndTime()</a>, and <a class="el" href="inlineOutput_8h_source.html#l00152">writeBitstreamMain()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="XS7__Output_8cpp_source.html#l00145">XilinxSeries7::writeBitstream()</a>, <a class="el" href="XUS__Output_8cpp_source.html#l00160">XilinxUltraScale::writeBitstream()</a>, and <a class="el" href="XUSP__Output_8cpp_source.html#l00137">XilinxUltraScalePlus::writeBitstream()</a>.</p>
 <div class="dynheader">
@@ -752,7 +752,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="490,392,621,419"/>
 <area shape="rect" href="namespaceFileIO.html#a0bbdf3656f5e5f6a4e82e06a27bc5233" title=" " alt="" coords="1539,773,1655,800"/>
 <area shape="rect" href="namespaceFileIO.html#add682aedd139b75be682127cf68ab49d" title=" " alt="" coords="1005,443,1113,469"/>
-<area shape="rect" href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0" title=" " alt="" coords="739,289,878,316"/>
+<area shape="rect" href="namespaceFileIO.html#abee4f271354bc8186486fbade0b50d3e" title=" " alt="" coords="739,289,878,316"/>
 <area shape="rect" href="namespaceFileIO.html#aebd151d7c49816539cdf5bc4810e16eb" title=" " alt="" coords="968,5,1149,32"/>
 <area shape="rect" href="namespaceFileIO.html#ab9ba90afc8f12d350f74a0c8bdc6b579" title=" " alt="" coords="959,107,1158,149"/>
 <area shape="rect" href="namespaceFileIO.html#ac8d0bf27e959dcb5ff6dc46f4a084f35" title=" " alt="" coords="953,173,1164,214"/>
@@ -765,7 +765,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="1212,195,1436,221"/>
 <area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="1485,183,1709,209"/>
 <area shape="rect" href="namespaceFileIO.html#af77aeb3037baa6ef4a8daddb2895fc42" title=" " alt="" coords="989,289,1128,316"/>
-<area shape="rect" href="namespaceFileIO.html#aaf4f6a73076432b1faddd4d63f0b0c86" title=" " alt="" coords="1217,275,1431,301"/>
+<area shape="rect" href="namespaceFileIO.html#abc51ccd93bda9bfcaf349b6bbb2f06c9" title=" " alt="" coords="1217,275,1431,301"/>
 <area shape="rect" href="namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1530,333,1665,360"/>
 <area shape="rect" href="namespaceFileIO.html#a0b69d50fa3cb892a02baca2296f1c54d" title=" " alt="" coords="1773,843,1955,869"/>
 <area shape="rect" href="namespaceFileIO.html#af08039fd5e011e286b216b67140959ea" title=" " alt="" coords="1765,777,1963,818"/>
@@ -1309,20 +1309,18 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Big endian (&quot;BE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess wor...</div></div>
 <div class="ttc" id="anamespacerect_html_a97b9449bf7fcfe1754ad8383a82995ed"><div class="ttname"><a href="namespacerect.html#a97b9449bf7fcfe1754ad8383a82995ed">rect::getOverlap</a></div><div class="ttdeci">Rect2D getOverlap(Rect2D r1, Rect2D r2)</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00036">Coords.h:36</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a></div><div class="ttdeci">@ FAR</div></div>
-<div class="ttc" id="anamespaceFileIO_html_af3354ec506fedaa1272ca02c6da08cd0"><div class="ttname"><a href="namespaceFileIO.html#af3354ec506fedaa1272ca02c6da08cd0">FileIO::writeString</a></div><div class="ttdeci">void writeString(ofstream &amp;fout, string writeString, int outputSize=0)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00334">FileIO.h:334</a></div></div>
-<div class="ttc" id="aversion_8h_html_a88c2f137526b274b84cf311aa8c68f3a"><div class="ttname"><a href="version_8h.html#a88c2f137526b274b84cf311aa8c68f3a">VERSION_BUILD</a></div><div class="ttdeci">#define VERSION_BUILD</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00022">version.h:22</a></div></div>
 <div class="ttc" id="ainlineFAR_8h_html_a5880cb28ac341c8171af1b777c51e615"><div class="ttname"><a href="inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615">XCAP_getFAR</a></div><div class="ttdeci">uint32_t XCAP_getFAR(int slr, int blockType, int globalRowAddress, int columnAddress, int minorAddress)</div><div class="ttdef"><b>Definition:</b> <a href="inlineFAR_8h_source.html#l00173">inlineFAR.h:173</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_acc8717a0d78a08bd44e2ce66ac286a9d"><div class="ttname"><a href="inlineCAP_8h.html#acc8717a0d78a08bd44e2ce66ac286a9d">XCAP_writeNOP</a></div><div class="ttdeci">void XCAP_writeNOP(ofstream &amp;fout, int cnt, int payload, Endianness e)</div><div class="ttdoc">Generate the encoding for NOP instructions and write them to file ofstream.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00352">inlineCAP.h:352</a></div></div>
 <div class="ttc" id="ainlineOutput_8h_html_a4f26be8274b2acf0c33b7bf7c0223550"><div class="ttname"><a href="inlineOutput_8h.html#a4f26be8274b2acf0c33b7bf7c0223550">writeBitstreamMainSingleRegion</a></div><div class="ttdeci">void writeBitstreamMainSingleRegion(ofstream &amp;fout, int slr, Rect2D writeRect)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00077">inlineOutput.h:77</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_a0bbdf3656f5e5f6a4e82e06a27bc5233"><div class="ttname"><a href="namespaceFileIO.html#a0bbdf3656f5e5f6a4e82e06a27bc5233">FileIO::write32</a></div><div class="ttdeci">void write32(ofstream &amp;fout, uint32_t writeValue, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00421">FileIO.h:421</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_ac9f4873f9a0c23291fa47d68dff6fbbc"><div class="ttname"><a href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00056">Endianness.h:56</a></div></div>
 <div class="ttc" id="astructCoord2D_html_a446bd3f197a1052f8d99f0a6d22406fc"><div class="ttname"><a href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">Coord2D::row</a></div><div class="ttdeci">int row</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00026">Coords.h:26</a></div></div>
-<div class="ttc" id="aversion_8h_html_a1c6d5de492ac61ad29aec7aa9a436bbf"><div class="ttname"><a href="version_8h.html#a1c6d5de492ac61ad29aec7aa9a436bbf">VERSION</a></div><div class="ttdeci">#define VERSION</div><div class="ttdef"><b>Definition:</b> <a href="version_8h_source.html#l00021">version.h:21</a></div></div>
 <div class="ttc" id="ainlineOutput_8h_html_a250a7beb3f145ab072377c264b49cfcd"><div class="ttname"><a href="inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd">writeBitstreamMain</a></div><div class="ttdeci">void writeBitstreamMain(ofstream &amp;fout, Rect2D cmdRect)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00152">inlineOutput.h:152</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_af3002274ef7f925f95bfc3f928e8978b"><div class="ttname"><a href="inlineCAP_8h.html#af3002274ef7f925f95bfc3f928e8978b">XCAP_writeRegister</a></div><div class="ttdeci">void XCAP_writeRegister(ofstream &amp;fout, XCAP::Register reg, int writeValue, Endianness e)</div><div class="ttdoc">Generate the encoding for writing a CAP register and write it to file ofstream.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00382">inlineCAP.h:382</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a2d7dc5c2fe039371ced2389c09012a92"><div class="ttname"><a href="inlineCAP_8h.html#a2d7dc5c2fe039371ced2389c09012a92">XCAP_writeFDRI</a></div><div class="ttdeci">void XCAP_writeFDRI(ofstream &amp;fout, int wordCount, Endianness e)</div><div class="ttdoc">Generate and write an FDRI command. Always uses type 2 command for simplicity.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00417">inlineCAP.h:417</a></div></div>
 <div class="ttc" id="astructCoord2D_html_a2c86b6f3509b769d25a7b363bceab8f1"><div class="ttname"><a href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">Coord2D::col</a></div><div class="ttdeci">int col</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00027">Coords.h:27</a></div></div>
 <div class="ttc" id="astructRect2D_html_ae5afd98d6745784930feac5136640a85"><div class="ttname"><a href="structRect2D.html#ae5afd98d6745784930feac5136640a85">Rect2D::position</a></div><div class="ttdeci">Coord2D position</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00032">Coords.h:32</a></div></div>
+<div class="ttc" id="anamespaceFileIO_html_abee4f271354bc8186486fbade0b50d3e"><div class="ttname"><a href="namespaceFileIO.html#abee4f271354bc8186486fbade0b50d3e">FileIO::writeString</a></div><div class="ttdeci">void writeString(ofstream &amp;fout, string writeString, size_t outputSize=0)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00334">FileIO.h:334</a></div></div>
 <div class="ttc" id="ainlineOutput_8h_html_aaa6c2b6118fc7ead31645081b43ff737"><div class="ttname"><a href="inlineOutput_8h.html#aaa6c2b6118fc7ead31645081b43ff737">outputBITheader16bString</a></div><div class="ttdeci">void outputBITheader16bString(ofstream &amp;fout, Endianness e, string s)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00029">inlineOutput.h:29</a></div></div>
 <div class="ttc" id="ainlineOutput_8h_html_a194a87f62d6a57dbed34257f5a6037bf"><div class="ttname"><a href="inlineOutput_8h.html#a194a87f62d6a57dbed34257f5a6037bf">updateDateAndTime</a></div><div class="ttdeci">void updateDateAndTime()</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00017">inlineOutput.h:17</a></div></div>
 <div class="ttc" id="astructRect2D_html"><div class="ttname"><a href="structRect2D.html">Rect2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00030">Coords.h:30</a></div></div>
@@ -1336,7 +1334,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="ainlineOutput_8h_html_ab9c09236ab751ee544bc377711a68f2d"><div class="ttname"><a href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a></div><div class="ttdeci">void outputBITheaderLengthField(ofstream &amp;fout, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00052">inlineOutput.h:52</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 5 2022 15:11:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 5 2022 20:15:36 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

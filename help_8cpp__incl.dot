@@ -17,7 +17,7 @@ digraph "src/help.cpp"
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="version.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$version_8h.html",tooltip=" "];
+  Node7 [label="../VERSION",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 [label="Common/str.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$str_8h.html",tooltip=" "];
   Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
