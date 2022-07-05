@@ -42,4 +42,5 @@ void XilinxUltraScale::readBitstream(string filename)
 	else
 		throw runtime_error(string("Unknown Xilinx UltraScale file format tried to be read.\n"));
 	fin.close();
+	log("Xilinx UltraScale bitstream file \"" + filename + "\" read successfully.");
 }

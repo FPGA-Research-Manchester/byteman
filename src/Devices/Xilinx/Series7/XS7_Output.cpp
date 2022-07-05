@@ -170,4 +170,5 @@ void XilinxSeries7::writeBitstream(string filename, string params, Rect2D cmdRec
 	else
 		throw runtime_error(string("Unknown Xilinx Series 7 file format tried to be written.\n"));
 	fout.close();
+	log("Xilinx Series 7 bitstream file \"" + filename + "\" written successfully.");
 }

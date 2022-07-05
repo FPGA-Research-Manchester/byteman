@@ -185,4 +185,5 @@ void XilinxUltraScale::writeBitstream(string filename, string params, Rect2D cmd
 	else
 		throw runtime_error(string("Unknown Xilinx UltraScale file format tried to be written.\n"));
 	fout.close();
+	log("Xilinx UltraScale bitstream file \"" + filename + "\" written successfully.");
 }

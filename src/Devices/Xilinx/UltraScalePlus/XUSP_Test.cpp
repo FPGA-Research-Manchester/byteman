@@ -18,7 +18,9 @@
 #include "XilinxUltraScalePlus.h"
 
 void XilinxUltraScalePlus::test(bool usableFramesOnly, bool testValueEqual, uint32_t testValue){
+	log("Testing bitstream against value" + to_string(testValue) + ".");
 	ensureInitializedBitstreamArrays();
 	ensureFramesAre(usableFramesOnly, testValueEqual, testValue);
+	log("Testing finished successfully.");
 }
 #endif

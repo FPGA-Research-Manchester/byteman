@@ -22,6 +22,7 @@
 using namespace std;
 
 void XilinxSeries7::merge(XilinxSeries7* srcBitstream, string params, Rect2D src, Coord2D dst){
+	log("Merging bitstreams.");
 	//This function uses a pointer to the second XUSP instance, but this pointer should get optimized as it is statically provided in the main function
 	parseParams(params);
 	
@@ -48,5 +49,6 @@ void XilinxSeries7::merge(XilinxSeries7* srcBitstream, string params, Rect2D src
 		fastMerge(srcBitstream, src, dst);
 	else
 		flexiMerge(srcBitstream, endianDifference, src, dst);
+	log("Merging bitstreams complete.");
 }
 

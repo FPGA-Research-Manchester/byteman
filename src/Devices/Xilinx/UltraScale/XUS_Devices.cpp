@@ -29,7 +29,7 @@ int XilinxUltraScale::getDeviceByIDCODEorThrow(int IDCODE)
 {
 	int deviceID = getDeviceByIDCODE(IDCODE);
 	if(deviceID == XUS_DEVICE_NULL)
-		throw runtime_error(string("Unknown device with IDCODE = ").append(to_string(IDCODE)).append(" ."));
+		throw runtime_error(string("Unknown device with IDCODE = ").append(to_string(IDCODE)).append(" . Maybe the device is not Xilinx UltraScale device?"));
 	return deviceID;
 }
 
@@ -37,7 +37,7 @@ int XilinxUltraScale::getDeviceByNameOrThrow(string name)
 {
 	int deviceID = getDeviceByName(name);
 	if(deviceID == XUS_DEVICE_NULL)
-		throw runtime_error(string("Unknown device: ").append(name).append("."));
+		throw runtime_error(string("Unknown device: ").append(name).append(". Maybe the device is not Xilinx UltraScale device?"));
 	return deviceID;
 }
 

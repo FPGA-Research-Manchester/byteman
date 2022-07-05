@@ -40,4 +40,5 @@ void XilinxSeries7::readBitstream(string filename)
 	else
 		throw runtime_error(string("Unknown Xilinx Series 7 file format tried to be read.\n"));
 	fin.close();
+	log("Xilinx Series 7 bitstream file \"" + filename + "\" read successfully.");
 }

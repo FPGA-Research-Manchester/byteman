@@ -33,7 +33,7 @@ inline void outputBITheader16bString(ofstream& fout, Endianness e, string s){
 
 inline void outputBITheader(ofstream& fout, Endianness e)
 {
-	log("Generating header in " + Endian::to_string(e));
+	log("Generating bitstream header in " + Endian::to_string(e) + ".");
 	outputBITheader16bString(fout, e, string("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0"));
 	FileIO::write16(fout, 1, e);//16-bit BE value = 1
 	FileIO::write8(fout, 'a', e);
@@ -93,7 +93,7 @@ inline void writeBitstreamMainSingleRegion(ofstream& fout, int slr, Rect2D write
 		}
 		if(selectedOptions.clb){
 			int framesToWrite = numberOfFramesBeforeCol[r][toCol]-numberOfFramesBeforeCol[r][fromCol];
-			uint32_t farValue = XCAP_getFAR(BLOCKTYPE_LOGIC, slr, srcR+r, fromCol, 0);
+			uint32_t farValue = XCAP_getFAR(slr, BLOCKTYPE_LOGIC, srcR+r, fromCol, 0);
 			if(selectedOptions.blank){
 				XCAP_writeRegister(fout, XCAP::Register::FAR, farValue, loadedBitstreamEndianness);
 				XCAP_writeCommand(fout, XCAP::Command::WCFG, loadedBitstreamEndianness);
@@ -113,7 +113,7 @@ inline void writeBitstreamMainSingleRegion(ofstream& fout, int slr, Rect2D write
 		if(selectedOptions.bram){
 			int framesToWrite = FRAMES_PER_BRAM_CONTENT_COLUMN * (numberOfBRAMsBeforeCol[r][toCol]-numberOfBRAMsBeforeCol[r][fromCol]);
 			if(framesToWrite > 0) {
-				uint32_t farValue = XCAP_getFAR(BLOCKTYPE_BLOCKRAM, slr, srcR+r, numberOfBRAMsBeforeCol[r][fromCol], 0);
+				uint32_t farValue = XCAP_getFAR(slr, BLOCKTYPE_BLOCKRAM, srcR+r, numberOfBRAMsBeforeCol[r][fromCol], 0);
 				XCAP_writeRegister(fout, XCAP::Register::FAR, farValue, loadedBitstreamEndianness);
 				XCAP_writeCommand(fout, XCAP::Command::WCFG, loadedBitstreamEndianness);
 				XCAP_writeNOP(fout, 1, 0, loadedBitstreamEndianness);
