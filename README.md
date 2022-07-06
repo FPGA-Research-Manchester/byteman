@@ -13,7 +13,7 @@
 
 ## $> byteman.exe -help
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
@@ -49,19 +49,23 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Assembly
-  Assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
-    byteman.exe ARCH -assembly bitstreamFile.(bit|bin) bitstreamAssemblyFile.bitasm
-    byteman.exe ARCH -assembly bitstreamAssemblyFile.bitasm bitstreamFile.(bit|bin)
+    byteman.exe -assembly <InputBitstreamFileName> <OutputAssemblyFileName>
+    byteman.exe -assembly <InputAssemblyFileName> <OutputBitstreamFileName>
+  Args:
+    <InputBitstreamFileName>: name of the input bitstream file. supports ".bit" and ".bin" file formats.
+    <OutputBitstreamFileName>: name of the output bitstream file. supports ".bit" and ".bin" file formats.
+    <InputAssemblyFileName>: name of the input assembly file. supports ".bitasm" file format.
+    <OutputAssemblyFileName>: name of the output assembly file. supports ".bitasm" file format.
 
-  The bitstream assembly files can be edited and converted back to valid bitstreams.
-  In bitstream assembly file format:
-    Every line that doesn't start with '#' is editable.
-    Bitstream commands are written one per line and have the format "<COMMAND NAME>;"
-    Bitstream register writesare one per line and have the format "@<REGNAME> = <NEW REG VALUE>"
+  the bitstream assembly files can be edited and converted back to valid bitstreams.
+  in bitstream assembly file format:
+    every line that doesn't start with '#' is editable.
+    bitstream commands are written one per line and have the format "<COMMAND NAME>;"
+    bitstream register writesare one per line and have the format "@<REGNAME> = <NEW REG VALUE>"
 
   Examples:
     byteman.exe XUSP -assembly bitstream.bit bitstream.bitasm
@@ -75,19 +79,18 @@ byteman: Assembly
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Blank
-  Erases/sets the bitstream in the buffers. Uses the list of selected regions (see "-help region"). If the list is empty, works on the whole chip.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
-    byteman.exe ARCH -blank [first] [second] [logic] [BlockRAM] [blankValue]
+    byteman.exe -blank [First] [Second] [Logic] [BlockRAM] [<BlankValue>]
 
-  Options:
-    [first]: Blanks in the first of the two buffers. Enabled by default if no buffer is explicitly specified.
-    [second]: Blanks in the second of the two buffers.
-    [logic]: Will blank logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.
-    [BlockRAM]: Will blank BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
-    [blankValue]: Byte value (0-0xFF) to be written in the selected bitstream location. Default is 0.
+  Args:
+    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
+    [Second]: selects the second of the two bitstream buffers.
+    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.
+    [BlockRAM]: selects the blockram contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
+    [<BlankValue>]: byte value (0-255) to be written in the selected bitstream location. Default is 0.
 
   Examples:
     # Blanks the bitstream's logic plane to zeroes:
@@ -103,30 +106,28 @@ byteman: Blank
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Change
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
   Not public at this point.
 ```
 
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Device
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
   Sets the target device manually.
 
   Usage:
-    byteman.exe ARCH -device [first] [second] <deviceName>
+    byteman.exe -device [First] [Second] <deviceName>
 
-  Options:
-    [first]: Sets the device for the first of the two buffers. Enabled by default if no buffer is explicitly specified.
-    [second]: Sets the device for the second of the two buffers.
-    [<deviceName>]: Name of the target FPGA chip or board.
+  Args:
+    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
+    [Second]: selects the second of the two bitstream buffers.
+    <deviceName>: name of the target chip, package, or board.
 
   Examples:
     byteman.exe XUSP -device AlveoU200
     byteman.exe Xilinx Series 7 -d xc7z045
-    byteman.exe Xilinx US -d XCVU440
+    byteman.exe Xilinx US -d xcvu440
 
 A list of currently recognized Series 7 devices: 
   Series 7 Spartan: 
@@ -186,23 +187,21 @@ A list of currently recognized US+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Exit
-  Finishes execution of byteman. Used with STDin mode (see "-help stdin") to identify the end of command sequence.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Help
-  Prints these messages... Help messages can change if architecture and/or specific device is selected to incorporate more information!
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
-    byteman.exe ARCH -help [command]
+    byteman.exe -help [command]
 
-  Options:
-    [command]: Prints extra information about the usage of a command.
+  Arg:
+    [command]: prints extra information about the usage of a specific command.
 
   Examples:
     byteman.exe Xilinx US+ -device AlveoU200  -help device #will print extra information about the selected device
@@ -228,16 +227,16 @@ byteman: Help
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Input
-  Reads a bitstream from a file.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  reads a bitstream from a file.
 
   Usage:
-    byteman.exe ARCH -input [first] [second] bitstreamFile.(bit|bin)
+    byteman.exe -input [First] [Second] <InputFileName>
 
-  Options:
-    [first]: Reads the bitstream file into the first of the two buffers. Enabled by default if no buffer is explicitly specified.
-    [second]: Reads the bitstream file into the second of the two buffers.
+  Args:
+    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
+    [Second]: selects the second of the two bitstream buffers.
+    <InputFileName>: name of the input file. supports ".bit" and ".bin" file formats.
 
   Examples:
     byteman.exe XUSP -i main zcu102bitstream.bit
@@ -248,22 +247,20 @@ byteman: Input
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Merge
-  Merges portion of the bitstream in the second buffer into the first buffer.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
-    byteman.exe ARCH -merge [logic] [BlockRAM] [clock] [set,xor,or,and] [full,<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]
+    byteman.exe -merge [Logic] [BlockRAM] [Clock] [SET,XOR,OR,AND] [Full,<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]
 
-  Options:
-    [logic]: Will merge the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
-    [clock]: Will merge the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
-    [BlockRAM]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
-    [set,xor,or,and]: Performed merge operation. XOR, OR, AND are bitwise operations. Default is "set".
-    [full]: Merges the full device bitstreams.
-    [<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]: Alternatively, a rectangle could be selected for merging. A source rectangle
-                                                 : (<srcY> <srcX> <sizeY> <sizeX>) from the second bitstream buffer is merged
-                                                 : into destination rectangle (<dstY> <dstX> <sizeY> <sizeX>) in first bitstream buffer.
+  Args:
+    [Logic]: selects the data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
+    [Clock]: selects the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
+    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
+    [SET,XOR,OR,AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is "SET".
+    [Full]: selects the full device bitstream.
+    [<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]: selects a rect (<SrcY> <SrcX> <SizeY> <SizeX>) from the second bitstream buffer to be merged
+                                                 : into destination rect (<DstY> <DstX> <SizeY> <SizeX>) in first bitstream buffer.
 
   Examples:
     # Copies second bitstream into first bitstream's buffer:
@@ -280,20 +277,20 @@ byteman: Merge
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Output
-  Creates a bitstream file output from the first bitstream buffer in byteman.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
-    byteman.exe ARCH -output [logic] [BlockRAM] [blank] [full,<startY> <startX> <sizeY> <sizeX>] bitstreamFile.(bit|bin)
+    byteman.exe -output [Logic] [BlockRAM] [Blank] [Full,<StartY> <StartX> <SizeY> <SizeX>] <OutputFileName>
 
-  Options:
-    [logic]: Will output the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.
-    [BlockRAM]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
-    [blank]: Blank the selected regions to zeroes before writing the actual bitstream to them.
-    [full]: Outputs the bitstream for all frames in the FPGA.
-    [<startY> <startX> <sizeY> <sizeX>]: Alternatively, a rectangle (<startY> <startX> <sizeY> <sizeX>) could be selected for output.
-                                       : In this mode, also the list of selected regions will be output (see "byteman -help region").
+  Args:
+    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.
+    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
+    [Blank]: blanks the selected regions to zeroes before writing the actual bitstream to them.
+    [Full]: selects all frames in the FPGA.
+    [<StartY> <StartX> <SizeY> <SizeX>]: selects a rect (<StartY> <StartX> <SizeY> <SizeX>) for output.
+                                       : also the list of selected regions will be output (see "byteman -help Region").
+    <OutputFileName>: name of the output file. supports ".bit" and ".bin" file formats.
 
   Examples:
     # Output only the blockram contents to the whole FPGA:
@@ -309,16 +306,15 @@ byteman: Output
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Region
-  Modifies the list of selected regions.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  modifies the list of selected regions.
 
   Usage:
-    byteman.exe ARCH -region [clear,add <srcY> <srcX> <sizeY> <sizeX>]
+    byteman.exe -region [Clear,Add <SrcY> <SrcX> <SizeY> <SizeX>]
 
-  Options:
-    [clear]: Clears the selected regions list.
-    [add]: Adds a new rectangle in the selected regions list. The rectangle is described by coordinates <srcY>:<srcX> and rectangle size of <sizeY>:<sizeX>.
+  Args:
+    [Clear]: clears the selected regions list.
+    [Add]: adds a new rect (<SrcY>:<SrcX> <SizeY>:<SizeX>) in the selected regions list.
 
   Examples:
     # Clears the list:
@@ -334,16 +330,15 @@ byteman: Region
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: STDin
-  Continues reading commands from standard input rather than command line arguments. This way commands can be entered by hand or streamed in by another program or file.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
-    byteman.exe ARCH [commands]* -stdin
+    byteman.exe [commands]* -stdin
 
-  The input supports the following format rules:
-    All commands are the same as their command line argument counterparts.
-    One command (with its arguments) per line.
+  the input supports the following format rules:
+    all commands are the same as their command line argument counterparts.
+    one command (with its arguments) per line.
     '-' at the beginning of a command can be skipped.
     '#' starts a comments until a new line is seen.
     The command "Exit" will end reading the input stream and close byteman.
@@ -352,15 +347,14 @@ byteman: STDin
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Verbose
-  Enables/disables logging messages. They are disabled by default.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  enables/disables logging messages. they are disabled by default.
 
   Usage:
-    byteman.exe ARCH -verbose [verboseValue]
+    byteman.exe -verbose [VerboseValue]
 
-  Options:
-    [verboseValue]: Accepted values are 0 to disable and 1 to enable. Default is 1.
+  Arg:
+    [VerboseValue]: accepted values are 0 to disable and 1 to enable. Default is 1.
 
   Examples:
     # Enable logging:
@@ -376,15 +370,14 @@ byteman: Verbose
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
-byteman: Warn
-  Enables/disables warning messages. They are enabled by default.
+byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+  enables/disables warning messages. they are enabled by default.
 
   Usage:
-    byteman.exe ARCH -warn [warnValue]
+    byteman.exe -warn [WarnValue]
 
-  Options:
-    [warnValue]: Accepted values are 0 to disable and 1 to enable. Default is 1.
+  Arg:
+    [WarnValue]: accepted values are 0 to disable and 1 to enable. Default is 1.
 
   Examples:
     # Enable warnings, but they were enabled by default anyway:
