@@ -1,7 +1,7 @@
 # ![byteman icon](./Resources/icon32.png) byteman
 ## *Open-source high-performance bitstream relocation and manipulation tool.*
 [![byteman project](https://img.shields.io/badge/byteman-v1.2-blue)](https://github.com/FPGA-Research-Manchester/byteman)
-[![byteman build](https://img.shields.io/badge/Build%20196-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
+[![byteman build](https://img.shields.io/badge/Build%20197-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
 [![Apache license](https://img.shields.io/github/license/FPGA-Research-Manchester/byteman)](https://opensource.org/licenses/Apache-2.0)
 [![C++ Standard](https://img.shields.io/badge/C%2B%2B-14-green.svg)](https://en.wikipedia.org/wiki/C%2B%2B14)
 [![Reports from automated testing](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml/badge.svg)](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml)
@@ -11,8 +11,8 @@
 ## ![byteman icon](./Resources/icon16.png) Check documentation: [![Browse generated docs](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/generateDocs.yml/badge.svg)](https://FPGA-Research-Manchester.github.io/byteman/)
 
 
-## $> byteman.exe -help
-```PowerShell
+## $> byteman.exe -help
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
@@ -44,12 +44,12 @@ Need more help? Try one of these:
   byteman.exe Xilinx Series 7 -help all
   byteman.exe Xilinx UltraScale -help all
   byteman.exe Xilinx UltraScale+ -help all
-
+
 ```
 
 
-## $> byteman.exe -help assembly
-```PowerShell
+## $> byteman.exe -help assembly
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Assembly
   Assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
@@ -73,12 +73,12 @@ byteman: Assembly
     byteman.exe Xilinx US -... -o bitstreamOut.bit -a bitstreamOut.bit bitstreamOut.bitasm
 
 
-
+
 ```
 
 
-## $> byteman.exe -help blank
-```PowerShell
+## $> byteman.exe -help blank
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Blank
   Erases/sets the bitstream in the buffers. Uses the list of selected regions (see "-help region"). If the list is empty, works on the whole chip.
@@ -104,23 +104,23 @@ byteman: Blank
     byteman.exe Xilinx US -b
 
 
-
+
 ```
 
 
-## $> byteman.exe -help change
-```PowerShell
+## $> byteman.exe -help change
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Change
   Not public at this point.
 
 
-
+
 ```
 
 
-## $> byteman.exe -help device
-```PowerShell
+## $> byteman.exe -help device
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Device
   Sets the target device manually.
@@ -193,23 +193,23 @@ A list of currently recognized US+ devices:
     ZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111
 
 
-
+
 ```
 
 
-## $> byteman.exe -help exit
-```PowerShell
+## $> byteman.exe -help exit
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Exit
   Finishes execution of byteman. Used with STDin mode (see "-help stdin") to identify the end of command sequence.
 
 
-
+
 ```
 
 
-## $> byteman.exe -help help
-```PowerShell
+## $> byteman.exe -help help
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Help
   Prints these messages... Help messages can change if architecture and/or specific device is selected to incorporate more information!
@@ -241,12 +241,12 @@ byteman: Help
     byteman.exe -help device
 
 
-
+
 ```
 
 
-## $> byteman.exe -help input
-```PowerShell
+## $> byteman.exe -help input
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Input
   Reads a bitstream from a file.
@@ -264,12 +264,12 @@ byteman: Input
     byteman.exe Xilinx US -i xcvu440Bitstream.bit
 
 
-
+
 ```
 
 
-## $> byteman.exe -help merge
-```PowerShell
+## $> byteman.exe -help merge
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Merge
   Merges portion of the bitstream in the second buffer into the first buffer.
@@ -299,12 +299,12 @@ byteman: Merge
     byteman.exe Xilinx US -... -m full,logic
 
 
-
+
 ```
 
 
-## $> byteman.exe -help output
-```PowerShell
+## $> byteman.exe -help output
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Output
   Creates a bitstream file output from the first bitstream buffer in byteman.
@@ -331,12 +331,12 @@ byteman: Output
     byteman.exe XUS -... -r add 60:10 120:20 -o blank 180:30 240:40 fo.bit
 
 
-
+
 ```
 
 
-## $> byteman.exe -help region
-```PowerShell
+## $> byteman.exe -help region
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Region
   Modifies the list of selected regions.
@@ -359,12 +359,12 @@ byteman: Region
     byteman.exe Xilinx US -r add 120:7 60:15.
 
 
-
+
 ```
 
 
-## $> byteman.exe -help stdin
-```PowerShell
+## $> byteman.exe -help stdin
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: STDin
   Continues reading commands from standard input rather than command line arguments. This way commands can be entered by hand or streamed in by another program or file.
@@ -380,12 +380,12 @@ byteman: STDin
     The command "Exit" will end reading the input stream and close byteman.
 
 
-
+
 ```
 
 
-## $> byteman.exe -help verbose
-```PowerShell
+## $> byteman.exe -help verbose
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Verbose
   Enables/disables logging messages. They are disabled by default.
@@ -407,12 +407,12 @@ byteman: Verbose
     byteman.exe Xilinx Series 7 -v -... -v=0
 
 
-
+
 ```
 
 
-## $> byteman.exe -help warn
-```PowerShell
+## $> byteman.exe -help warn
+```PowerShell
 byteman 1.2 (Build #196, compiled on Jul  6 2022 17:15:04)
 byteman: Warn
   Enables/disables warning messages. They are enabled by default.
@@ -434,6 +434,6 @@ byteman: Warn
     byteman.exe Xilinx Series 7 -w=0 -... -w
 
 
-
+
 ```
 
