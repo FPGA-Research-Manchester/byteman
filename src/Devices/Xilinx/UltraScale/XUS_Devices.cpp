@@ -209,12 +209,12 @@ void XilinxUltraScale::deviceHelp()
 	if(initializedResourceStringShortPartName == "") {//if no device is initialized
 		cout << "A list of currently recognized US devices: " << endl;
 		#ifdef XUSKINTEX
-		cout << "\tUltraScale Kintex: " << endl;
-		cout << "\t\tXCKU025, XCKU035, XCKU040, XQKU040, XCKU060, XQKU060, XQRKU060, XCKU085, XCKU095, XQKU095, XCKU115, XQKU0115" << endl;
+		cout << "  UltraScale Kintex: " << endl;
+		cout << "    XCKU025, XCKU035, XCKU040, XQKU040, XCKU060, XQKU060, XQRKU060, XCKU085, XCKU095, XQKU095, XCKU115, XQKU0115" << endl;
 		#endif
 		#ifdef XUSVIRTEX
-		cout << "\tUltraScale Virtex: " << endl;
-		cout << "\t\tXCVU065, XCVU080, XCVU095, XCVU125, XCVU160, XCVU190, XCVU440" << endl;
+		cout << "  UltraScale Virtex: " << endl;
+		cout << "    XCVU065, XCVU080, XCVU095, XCVU125, XCVU160, XCVU190, XCVU440" << endl;
 		#endif
 	} else {
 		printResourceStringInfo();

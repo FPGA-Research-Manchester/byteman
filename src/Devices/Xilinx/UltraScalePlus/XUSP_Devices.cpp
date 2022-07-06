@@ -1111,46 +1111,46 @@ void XilinxUltraScalePlus::deviceHelp()
 	if(initializedResourceStringShortPartName == "") {//if no device is initialized
 		cout << "A list of currently recognized US+ devices: " << endl;
 		#ifdef XUSPARTIX
-		cout << "\tUltraScale+ Artix: " << endl;
-		cout << "\t\tXCAU10P, XCAU15P, XCAU20P, XCAU25P" << endl;
+		cout << "  UltraScale+ Artix: " << endl;
+		cout << "    XCAU10P, XCAU15P, XCAU20P, XCAU25P" << endl;
 		#endif
 		#ifdef XUSPKINTEX
-		cout << "\tUltraScale+ Kintex: " << endl;
-		cout << "\t\tXCKU3P, XQKU3P, XCKU5P, XQKU5P, XCKU9P, XQKU9P, XCKU11P, XQKU11P, XCKU13P, XQKU13P, XCKU15P, XQKU15P, XCKU19P, XQKU19P" << endl;
+		cout << "  UltraScale+ Kintex: " << endl;
+		cout << "    XCKU3P, XQKU3P, XCKU5P, XQKU5P, XCKU9P, XQKU9P, XCKU11P, XQKU11P, XCKU13P, XQKU13P, XCKU15P, XQKU15P, XCKU19P, XQKU19P" << endl;
 		#endif
 		#ifdef XUSPVIRTEX
-		cout << "\tUltraScale+ Virtex: " << endl;
-		cout << "\t\tXCVU3P, XQVU3P, XCVU5P, XQVU5P, XCVU7P, XQVU7P, XCVU9P, XQVU9P, XCVU11P, XQVU11P, XCVU13P, XQVU13P," << endl;
-		cout << "\t\tXCVU19P, XQVU19P, XCVU23P, XQVU23P, XCVU27P, XQVU27P, XCVU29P, XQVU29P, XCVU31P, XQVU31P, XCVU33P," << endl;
-		cout << "\t\tXQVU33P, XCVU35P, XQVU35P, XCVU37P, XQVU37P, XCVU45P, XQVU45P, XCVU47P, XQVU47P, XCVU57P, XQVU57P" << endl;
+		cout << "  UltraScale+ Virtex: " << endl;
+		cout << "    XCVU3P, XQVU3P, XCVU5P, XQVU5P, XCVU7P, XQVU7P, XCVU9P, XQVU9P, XCVU11P, XQVU11P, XCVU13P, XQVU13P," << endl;
+		cout << "    XCVU19P, XQVU19P, XCVU23P, XQVU23P, XCVU27P, XQVU27P, XCVU29P, XQVU29P, XCVU31P, XQVU31P, XCVU33P," << endl;
+		cout << "    XQVU33P, XCVU35P, XQVU35P, XCVU37P, XQVU37P, XCVU45P, XQVU45P, XCVU47P, XQVU47P, XCVU57P, XQVU57P" << endl;
 		#endif
 		#ifdef XUSPZYNQRF
-		cout << "\tUltraScale+ Zynq RFSoC: " << endl;
-		cout << "\t\tXCZU21DR, XQZU21DR, XCZU25DR, XCZU27DR, XCZU28DR, XQZU28DR, XCZU29DR, XQZU29DR, XCZU39DR, XCZU42DR," << endl;
-		cout << "\t\tXCZU43DR, XCZU46DR, XQZU48DR, XQZU49DR, XCZU47DR, XCZU48DR, XCZU49DR" << endl;
+		cout << "  UltraScale+ Zynq RFSoC: " << endl;
+		cout << "    XCZU21DR, XQZU21DR, XCZU25DR, XCZU27DR, XCZU28DR, XQZU28DR, XCZU29DR, XQZU29DR, XCZU39DR, XCZU42DR," << endl;
+		cout << "    XCZU43DR, XCZU46DR, XQZU48DR, XQZU49DR, XCZU47DR, XCZU48DR, XCZU49DR" << endl;
 		#endif
 		#ifdef XUSPZYNQMP
-		cout << "\tUltraScale+ Zynq MPSoC: " << endl;
-		cout << "\t\tXCZU1, XAZU1, XQZU1, XCZU2, XAZU2, XQZU2, XCZU3, XAZU3, XQZU3, XCZU4, XAZU4, XQZU4," << endl;
-		cout << "\t\tXCZU5, XAZU5, XQZU5, XCZU6, XAZU6, XQZU6, XCZU7, XAZU7, XQZU7, XCZU9, XAZU9, XQZU9," << endl;
-		cout << "\t\tXCZU11, XAZU11, XQZU11, XCZU15, XAZU15, XQZU15, XCZU17, XAZU17, XQZU17, XCZU19, XAZU19, XQZU19" << endl;
+		cout << "  UltraScale+ Zynq MPSoC: " << endl;
+		cout << "    XCZU1, XAZU1, XQZU1, XCZU2, XAZU2, XQZU2, XCZU3, XAZU3, XQZU3, XCZU4, XAZU4, XQZU4," << endl;
+		cout << "    XCZU5, XAZU5, XQZU5, XCZU6, XAZU6, XQZU6, XCZU7, XAZU7, XQZU7, XCZU9, XAZU9, XQZU9," << endl;
+		cout << "    XCZU11, XAZU11, XQZU11, XCZU15, XAZU15, XQZU15, XCZU17, XAZU17, XQZU17, XCZU19, XAZU19, XQZU19" << endl;
 		#endif
 		#ifdef XUSPALVEO
-		cout << "\tUltraScale+ Alveo: " << endl;
-		cout << "\t\tXCU200, Alveo U200, XCU250, Alveo U250, XCU26, Alveo U26, XCUX35, Alveo U35, XCU50, Alveo U50," << endl;
-		cout << "\t\tXCU55N, Alveo U55N, XCU55C, Alveo U55C, XCU280, Alveo U280, XCU30, Alveo U30, XCU25, Alveo U25" << endl;
+		cout << "  UltraScale+ Alveo: " << endl;
+		cout << "    XCU200, Alveo U200, XCU250, Alveo U250, XCU26, Alveo U26, XCUX35, Alveo U35, XCU50, Alveo U50," << endl;
+		cout << "    XCU55N, Alveo U55N, XCU55C, Alveo U55C, XCU280, Alveo U280, XCU30, Alveo U30, XCU25, Alveo U25" << endl;
 		#endif
 		#ifdef XUSPBOARDS
-		cout << "\tMisc UltraScale+ Boards: " << endl;
-		cout << "\t\tZCU 102, ZU-GMSL2, ZCU104, ZCU106, AXU15EG, AXU2CG, AXU3EG, AXU4EV, AXU5EV, AXU9EG, ULTRAZED-EV, CHAMP-XD1S, ZU-3EG," << endl;
-		cout << "\t\tZU-5EV, HTG-Z999-06, HTG-Z999-09, HTG-Z999-15, HTG-930-9-3, HTG-930-9, HTG-930-13-3, HTG-930-13, HTG-937-37P, HTG-937-47P," << endl;
-		cout << "\t\tHTG-Z922-11, HTG-Z922-19-DG, HTG-Z922-19, CZU3EG, CZU4EV, TE0802, TE0803-04-3BE11, TE0807-03-7DE21, TE0808-05-9BE21," << endl;
-		cout << "\t\tTE0808-05-9GI21, TE0808-05-BBE21, TE0812, TEB0911, TEB0912, TYSOM-3-ZU7EV, XPEDITE2600, AMC574, ZCU208, ZCU216, ZCU670," << endl;
-		cout << "\t\tUltra96, K26C, K26I, KV260, AMC584, HTG-960, VCU1525, VCU118, VCU128, VCU129, HTG-940-9-3, HTG-940-9, HTG-940-13-3," << endl;
-		cout << "\t\tHTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13," << endl;
-		cout << "\t\tHTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3," << endl;
-		cout << "\t\tHTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48" << endl;
-		cout << "\t\tZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111" << endl;
+		cout << "  Misc UltraScale+ Boards: " << endl;
+		cout << "    ZCU 102, ZU-GMSL2, ZCU104, ZCU106, AXU15EG, AXU2CG, AXU3EG, AXU4EV, AXU5EV, AXU9EG, ULTRAZED-EV, CHAMP-XD1S, ZU-3EG," << endl;
+		cout << "    ZU-5EV, HTG-Z999-06, HTG-Z999-09, HTG-Z999-15, HTG-930-9-3, HTG-930-9, HTG-930-13-3, HTG-930-13, HTG-937-37P, HTG-937-47P," << endl;
+		cout << "    HTG-Z922-11, HTG-Z922-19-DG, HTG-Z922-19, CZU3EG, CZU4EV, TE0802, TE0803-04-3BE11, TE0807-03-7DE21, TE0808-05-9BE21," << endl;
+		cout << "    TE0808-05-9GI21, TE0808-05-BBE21, TE0812, TEB0911, TEB0912, TYSOM-3-ZU7EV, XPEDITE2600, AMC574, ZCU208, ZCU216, ZCU670," << endl;
+		cout << "    Ultra96, K26C, K26I, KV260, AMC584, HTG-960, VCU1525, VCU118, VCU128, VCU129, HTG-940-9-3, HTG-940-9, HTG-940-13-3," << endl;
+		cout << "    HTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13," << endl;
+		cout << "    HTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3," << endl;
+		cout << "    HTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48" << endl;
+		cout << "    ZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111" << endl;
 		#endif
 	} else {
 		printResourceStringInfo();

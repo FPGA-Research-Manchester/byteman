@@ -73,6 +73,7 @@ void byteman::help()
 void byteman::help(string param)
 {
 	if(str::iff::stringIs(param, "all")){
+		help();
 		byteman::helpAssembly();
 		byteman::helpBlank();
 		byteman::helpChange();
@@ -194,13 +195,13 @@ void byteman::helpBlank()
 	cout << "  Erases/sets the bitstream in the buffers. Uses the list of selected regions (see \"-help region\"). If the list is empty, works on the whole chip." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -blank [main|first] [temp|second] [logic|clb] [bram|blockram] [blankValue]" << endl;
+	cout << "    " EXECUTABLE " ARCH -blank [first] [second] [logic] [BlockRAM] [blankValue]" << endl;
 	cout << endl;
 	cout << "  Options:" << endl;
-	cout << "    [main|first]: Blanks in the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
-	cout << "    [temp|second]: Blanks in the second of the two buffers." << endl;
-	cout << "    [logic|clb]: Will blank logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [bram|blockram]: Will blank BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [first]: Blanks in the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [second]: Blanks in the second of the two buffers." << endl;
+	cout << "    [logic]: Will blank logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [BlockRAM]: Will blank BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
 	cout << "    [blankValue]: Byte value (0-0xFF) to be written in the selected bitstream location. Default is 0." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
@@ -228,11 +229,11 @@ void byteman::helpDevice()
 	cout << "  Sets the target device manually." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -device [main|first] [temp|second] <deviceName>" << endl;
+	cout << "    " EXECUTABLE " ARCH -device [first] [second] <deviceName>" << endl;
 	cout << endl;
 	cout << "  Options:" << endl;
-	cout << "    [main|first]: Sets the device for the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
-	cout << "    [temp|second]: Sets the device for the second of the two buffers." << endl;
+	cout << "    [first]: Sets the device for the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [second]: Sets the device for the second of the two buffers." << endl;
 	cout << "    [<deviceName>]: Name of the target FPGA chip or board." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
@@ -294,11 +295,11 @@ void byteman::helpInput()
 	cout << "  Reads a bitstream from a file." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -input [main|first] [temp|second] bitstreamFile.(bit|bin)" << endl;
+	cout << "    " EXECUTABLE " ARCH -input [first] [second] bitstreamFile.(bit|bin)" << endl;
 	cout << endl;
 	cout << "  Options:" << endl;
-	cout << "    [main|first]: Reads the bitstream file into the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
-	cout << "    [temp|second]: Reads the bitstream file into the second of the two buffers." << endl;
+	cout << "    [first]: Reads the bitstream file into the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [second]: Reads the bitstream file into the second of the two buffers." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    " EXECUTABLE " XUSP -i main zcu102bitstream.bit" << endl;
@@ -313,12 +314,12 @@ void byteman::helpMerge()
 	cout << "  Merges portion of the bitstream in the second buffer into the first buffer." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -merge [clb|logic] [bram|blockram] [clk|clock] [set,xor,or,and] [full,<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]" << endl;
+	cout << "    " EXECUTABLE " ARCH -merge [logic] [BlockRAM] [clock] [set,xor,or,and] [full,<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]" << endl;
 	cout << endl;
 	cout << "  Options:" << endl;
-	cout << "    [clb|logic]: Will merge the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [clk|clock]: Will merge the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [bram|blockram]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [logic]: Will merge the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [clock]: Will merge the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [BlockRAM]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
 	cout << "    [set,xor,or,and]: Performed merge operation. XOR, OR, AND are bitwise operations. Default is \"set\"." << endl;
 	cout << "    [full]: Merges the full device bitstreams." << endl;
 	cout << "    [<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]: Alternatively, a rectangle could be selected for merging. A source rectangle" << endl; 
@@ -344,11 +345,11 @@ void byteman::helpOutput()
 	cout << "  Creates a bitstream file output from the first bitstream buffer in byteman." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -output [clb|logic] [bram|blockram] [blank] [full,<startY> <startX> <sizeY> <sizeX>] bitstreamFile.(bit|bin)" << endl;
+	cout << "    " EXECUTABLE " ARCH -output [logic] [BlockRAM] [blank] [full,<startY> <startX> <sizeY> <sizeX>] bitstreamFile.(bit|bin)" << endl;
 	cout << endl;
 	cout << "  Options:" << endl;
-	cout << "    [clb|logic]: Will output the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [bram|blockram]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [logic]: Will output the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [BlockRAM]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
 	cout << "    [blank]: Blank the selected regions to zeroes before writing the actual bitstream to them." << endl;
 	cout << "    [full]: Outputs the bitstream for all frames in the FPGA." << endl;
 	cout << "    [<startY> <startX> <sizeY> <sizeX>]: Alternatively, a rectangle (<startY> <startX> <sizeY> <sizeX>) could be selected for output." << endl;
@@ -359,7 +360,7 @@ void byteman::helpOutput()
 	cout << "    " EXECUTABLE " XUSP -input bitstream.bit -... -output bram,full bitfil.bit" << endl;
 	cout << endl;
 	cout << "    # The rectangle describing Y from 50 to 99 and X from 10 to 29 is zeroed and then the logic plane bitstream data is written:" << endl;
-	cout << "    " EXECUTABLE " Xilinx Series 7 -... -o clb,blank 50:10 50:20 bitstream.bin" << endl;
+	cout << "    " EXECUTABLE " Xilinx Series 7 -... -o logic,blank 50:10 50:20 bitstream.bin" << endl;
 	cout << endl;
 	cout << "    # The rectangles (60:10 120:20 and 180:30 240:40) are zeroed and the logic & blockram content planes are written:" << endl;
 	cout << "    " EXECUTABLE " XUS -... -r add 60:10 120:20 -o blank 180:30 240:40 fo.bit"<< endl;

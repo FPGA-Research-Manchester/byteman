@@ -25,7 +25,7 @@ on:
 jobs:
   build-windows:
     runs-on: windows-latest
-        
+
     steps:
     - uses: actions/checkout@v3
       with:
@@ -46,20 +46,32 @@ jobs:
       run: move "${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe" "${{github.workspace}}\Binaries\Windows-x86\"
 
     - name: Commit binary
+      shell: bash
+      run: |
+        cmake -P ${{github.workspace}}/.github/workflows/generateBinaryCommit.cmake ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
+        chmod +x commitBinary && ./commitBinary
+
+    - name: Generate byteman help messages
       shell: pwsh
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
-        git commit -m "Binaries"
-        git push 3>$null
-        while($LASTEXITCODE -ne 0)
-        {
-          while($LASTEXITCODE -ne 0)
-          {
-            Start-Sleep -s 1
-            git status
-            git pull --rebase 3>$null
-          }
-          git push 3>$null
-        }
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help > helpOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help assembly > helpAssemblyOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help blank > helpBlankOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help change > helpChangeOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help device > helpDeviceOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help exit > helpExitOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help help > helpHelpOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help input > helpInputOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help merge > helpMergeOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help output > helpOutputOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help region > helpRegionOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help stdin > helpStdinOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help verbose > helpVerboseOutput.log
+      ./${{github.workspace}}\Binaries\Windows-x86\Release\byteman.exe -help warn > helpWarnOutput.log
+
+    - name: Update README with help outputs
+      shell: bash
+      run: cmake -P ${{github.workspace}}/.github/workflows/moveHelpToReadme.cmake
+
+    - name: Commit help message
+      run: chmod +x commitHelpMessage && ./commitHelpMessage
