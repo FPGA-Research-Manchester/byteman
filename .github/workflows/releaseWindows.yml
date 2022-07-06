@@ -48,7 +48,7 @@ jobs:
     - name: Commit binary
       shell: bash
       run: |
-        cmake -P ${{github.workspace}}/.github/workflows/generateBinaryCommit.cmake ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
+        cmake -P ${{github.workspace}}\.github\workflows\generateBinaryCommit.cmake ${{github.workspace}}\Binaries\Windows-x86\byteman.exe
         chmod +x commitBinary && ./commitBinary
 
     - name: Generate byteman help messages

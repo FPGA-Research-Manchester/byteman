@@ -14,13 +14,9 @@
 # limitations under the License.
 ###############################################################################
 
-#file(READ "VERSION" BytemanVersionHeader) 
-string(REGEX MATCH "#define VERSION \"([0-9]+).([0-9]+)\"" FIRST_LINE "${BytemanVersionHeader}")
-set(NEW_VER_MAJOR ${CMAKE_MATCH_1})
-set(NEW_VER_MINOR ${CMAKE_MATCH_2})
+file(READ "VERSION" BytemanVersionHeader)
 string(REGEX MATCH "#define VERSION_BUILD \"([0-9]+)\"" FIRST_LINE "${BytemanVersionHeader}")
 set(NEW_VER_BUILD ${CMAKE_MATCH_1})
-message(STATUS "cmake arg is: ${CMAKE_ARGV3}")
 
 file(WRITE commitBinary
 "#!/usr/bin/env bash
