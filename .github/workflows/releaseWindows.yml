@@ -56,24 +56,24 @@ jobs:
     - name: Generate byteman help messages
       shell: pwsh
       run: |
-        ./Binaries\Windows-x86\byteman.exe -help > helpOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help assembly > helpAssemblyOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help blank > helpBlankOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help change > helpChangeOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help device > helpDeviceOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help exit > helpExitOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help help > helpHelpOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help input > helpInputOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help merge > helpMergeOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help output > helpOutputOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help region > helpRegionOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help stdin > helpStdinOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help verbose > helpVerboseOutput.log
-        ./Binaries\Windows-x86\byteman.exe -help warn > helpWarnOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help | Set-Content -Encoding ascii helpOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help assembly | Set-Content -Encoding ascii helpAssemblyOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help blank | Set-Content -Encoding ascii helpBlankOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help change | Set-Content -Encoding ascii helpChangeOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help device | Set-Content -Encoding ascii helpDeviceOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help exit | Set-Content -Encoding ascii helpExitOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help help | Set-Content -Encoding ascii helpHelpOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help input | Set-Content -Encoding ascii helpInputOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help merge | Set-Content -Encoding ascii helpMergeOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help output | Set-Content -Encoding ascii helpOutputOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help region | Set-Content -Encoding ascii helpRegionOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help stdin | Set-Content -Encoding ascii helpStdinOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help verbose | Set-Content -Encoding ascii helpVerboseOutput.log
+        ./Binaries\Windows-x86\byteman.exe -help warn | Set-Content -Encoding ascii helpWarnOutput.log
 
     - name: Update README with help outputs
-      shell: bash
-      run: cmake -P ${{github.workspace}}/.github/workflows/moveHelpToReadme.cmake
+      shell: pwsh
+      run: cmake -P ${{github.workspace}}\.github\workflows\moveHelpToReadme.cmake
 
     - name: Commit help message
       run: chmod +x commitHelpMessage && ./commitHelpMessage
