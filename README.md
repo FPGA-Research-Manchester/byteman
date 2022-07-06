@@ -11,85 +11,85 @@
 ## ![byteman icon](./Resources/icon16.png) Check documentation: [![Browse generated docs](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/generateDocs.yml/badge.svg)](https://FPGA-Research-Manchester.github.io/byteman/)
 
 
-##$> byteman.exe -help
+## $> byteman.exe -help
 ```
 test
 ```
 
 
-##$> byteman.exe -help assembly
+## $> byteman.exe -help assembly
 ```
 test
 ```
 
 
-##$> byteman.exe -help blank
+## $> byteman.exe -help blank
 ```
 test
 ```
 
 
-##$> byteman.exe -help change
+## $> byteman.exe -help change
 ```
 test
 ```
 
 
-##$> byteman.exe -help device
+## $> byteman.exe -help device
 ```
 test
 ```
 
 
-##$> byteman.exe -help exit
+## $> byteman.exe -help exit
 ```
 test
 ```
 
 
-##$> byteman.exe -help help
+## $> byteman.exe -help help
 ```
 test
 ```
 
 
-##$> byteman.exe -help input
+## $> byteman.exe -help input
 ```
 test
 ```
 
 
-##$> byteman.exe -help merge
+## $> byteman.exe -help merge
 ```
 test
 ```
 
 
-##$> byteman.exe -help output
+## $> byteman.exe -help output
 ```
 test
 ```
 
 
-##$> byteman.exe -help region
+## $> byteman.exe -help region
 ```
 test
 ```
 
 
-##$> byteman.exe -help stdin
+## $> byteman.exe -help stdin
 ```
 test
 ```
 
 
-##$> byteman.exe -help verbose
+## $> byteman.exe -help verbose
 ```
 test
 ```
 
 
-##$> byteman.exe -help warn
+## $> byteman.exe -help warn
 ```
 test
 ```
