@@ -19,6 +19,6 @@
 
 //Any changes to version numbers should be done only here!
 #define VERSION "1.2"
-#define VERSION_BUILD "189"
+#define VERSION_BUILD "190"
 
 #endif //VERSION_H
