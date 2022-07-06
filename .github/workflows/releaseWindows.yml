@@ -56,20 +56,20 @@ jobs:
     - name: Generate byteman help messages
       shell: pwsh
       run: |
-        ./Binaries\Windows-x86\Release\byteman.exe -help > helpOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help assembly > helpAssemblyOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help blank > helpBlankOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help change > helpChangeOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help device > helpDeviceOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help exit > helpExitOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help help > helpHelpOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help input > helpInputOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help merge > helpMergeOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help output > helpOutputOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help region > helpRegionOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help stdin > helpStdinOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help verbose > helpVerboseOutput.log
-        ./Binaries\Windows-x86\Release\byteman.exe -help warn > helpWarnOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help > helpOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help assembly > helpAssemblyOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help blank > helpBlankOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help change > helpChangeOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help device > helpDeviceOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help exit > helpExitOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help help > helpHelpOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help input > helpInputOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help merge > helpMergeOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help output > helpOutputOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help region > helpRegionOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help stdin > helpStdinOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help verbose > helpVerboseOutput.log
+        ./\Binaries\Windows-x86\Release\byteman.exe -help warn > helpWarnOutput.log
 
     - name: Update README with help outputs
       shell: bash
