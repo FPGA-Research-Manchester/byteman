@@ -13,26 +13,26 @@
 
 ## $> byteman.exe -help
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
-  ARCH = {Xilinx Series 7, Xilinx UltraScale, Xilinx UltraScale+}
+  ARCH = {"Xilinx Series 7", "Xilinx UltraScale", "Xilinx UltraScale+"}
 
 Commands:        : [Description]                                    
-  -a (assembly)  : (de)compile bitstream assembly files. See "-help assembly"
-  -b (blank)     : Erases bitstream buffers. See "-help blank"
-  -c (change)    : Modify primitives (i.e., LUT contents). See "-help change"
-  -d (device)    : Manually select target device. See "-help device"
-  -e (exit)      : Exit byteman. Useful during stdin. See "-help exit"
-  -h (help)      : Get help. See "-help help"
-  -i (input)     : Input bitstream. See "-help input"
-  -m (merge)     : Merge bitstreams. See "-help merge"
-  -o (output)    : Output bitstream. See "-help output"
-  -r (region)    : Modify region selection. See "-help region"
-  -s (stdin)     : Continue using standard input. See "-help stdin"
-  -v (verbose)   : Enable/disable spam. See "-help verbose"
-  -w (warn)      : Enable/disable warnings. See "-help warn"
+  -a (Assembly)  : (de)assemble bitstreams.       see "-help assembly"
+  -b (Blank)     : erases bitstream buffers.      see "-help blank"
+  -c (Change)    : modify primitives.             see "-help change"
+  -d (Device)    : manually select target device. see "-help device"
+  -e (Exit)      : exit byteman. used with stdin. see "-help exit"
+  -h (Help)      : get help.                      see "-help help"
+  -i (Input)     : input bitstream.               see "-help input"
+  -m (Merge)     : merge bitstreams.              see "-help merge"
+  -o (Output)    : output bitstream.              see "-help output"
+  -r (Region)    : modify region selection.       see "-help region"
+  -s (Stdin)     : continue using standard input. see "-help stdin"
+  -v (Verbose)   : enable/disable spam.           see "-help verbose"
+  -w (Warn)      : enable/disable warnings.       see "-help warn"
 
 Examples: 
   byteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit
@@ -49,7 +49,7 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
@@ -79,7 +79,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
@@ -106,23 +106,23 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   Not public at this point.
 ```
 
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   Sets the target device manually.
 
   Usage:
-    byteman.exe -device [First] [Second] <deviceName>
+    byteman.exe -device [First] [Second] <DeviceName>
 
   Args:
     [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
     [Second]: selects the second of the two bitstream buffers.
-    <deviceName>: name of the target chip, package, or board.
+    <DeviceName>: name of the target chip, package, or board.
 
   Examples:
     byteman.exe XUSP -device AlveoU200
@@ -187,21 +187,21 @@ A list of currently recognized US+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
-    byteman.exe -help [command]
+    byteman.exe -help [Command]
 
   Arg:
-    [command]: prints extra information about the usage of a specific command.
+    [Command]: prints extra information about the usage of a specific command.
 
   Examples:
     byteman.exe Xilinx US+ -device AlveoU200  -help device #will print extra information about the selected device
@@ -227,7 +227,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   reads a bitstream from a file.
 
   Usage:
@@ -247,7 +247,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
@@ -277,7 +277,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
@@ -306,7 +306,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   modifies the list of selected regions.
 
   Usage:
@@ -330,7 +330,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
@@ -341,13 +341,13 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
     one command (with its arguments) per line.
     '-' at the beginning of a command can be skipped.
     '#' starts a comments until a new line is seen.
-    The command "Exit" will end reading the input stream and close byteman.
+    the command Exit will end reading the input stream and close byteman.
 ```
 
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   enables/disables logging messages. they are disabled by default.
 
   Usage:
@@ -370,7 +370,7 @@ byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.2 (Build #198, compiled on Jul  6 2022 20:25:47)
+byteman 1.2 (Build #199, compiled on Jul  6 2022 20:33:14)
   enables/disables warning messages. they are enabled by default.
 
   Usage:
