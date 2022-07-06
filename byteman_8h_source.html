@@ -160,19 +160,19 @@ $(function() {
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> help(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordtype">void</span> help();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> helpAssembly();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> helpOutput();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> helpMerge();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">void</span> helpInput();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">void</span> helpDevice();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> helpChange();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">void</span> helpBlank();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">void</span> helpRegion();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">void</span> helpWarn();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> helpVerbose();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">void</span> helpHelp();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">void</span> helpExit();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">void</span> helpStdin();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordtype">void</span> helpAssembly(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> helpOutput(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordtype">void</span> helpMerge(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">void</span> helpInput(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">void</span> helpDevice(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> helpChange(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">void</span> helpBlank(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">void</span> helpRegion(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordtype">void</span> helpWarn(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordtype">void</span> helpVerbose(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">void</span> helpHelp(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">void</span> helpExit(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordtype">void</span> helpStdin(<span class="keywordtype">bool</span>=<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        </div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">        #if !defined(NDEBUG)</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">void</span> parseTest(<span class="keywordtype">string</span>, SelectedOptions);</div>
@@ -196,7 +196,7 @@ $(function() {
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5">byteman::Architecture</a></div><div class="ttdeci">Architecture</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00069">byteman.h:69</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 6 2022 17:37:51 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 6 2022 20:24:44 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
