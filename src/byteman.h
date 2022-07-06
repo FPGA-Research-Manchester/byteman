@@ -100,19 +100,19 @@ class byteman
 		void help(string);
 		void help();
 
-		void helpAssembly();
-		void helpOutput();
-		void helpMerge();
-		void helpInput();
-		void helpDevice();
-		void helpChange();
-		void helpBlank();
-		void helpRegion();
-		void helpWarn();
-		void helpVerbose();
-		void helpHelp();
-		void helpExit();
-		void helpStdin();
+		void helpAssembly(bool=false);
+		void helpOutput(bool=false);
+		void helpMerge(bool=false);
+		void helpInput(bool=false);
+		void helpDevice(bool=false);
+		void helpChange(bool=false);
+		void helpBlank(bool=false);
+		void helpRegion(bool=false);
+		void helpWarn(bool=false);
+		void helpVerbose(bool=false);
+		void helpHelp(bool=false);
+		void helpExit(bool=false);
+		void helpStdin(bool=false);
 		
 		#if !defined(NDEBUG)
 		void parseTest(string, SelectedOptions);

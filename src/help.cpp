@@ -74,19 +74,19 @@ void byteman::help(string param)
 {
 	if(str::iff::stringIs(param, "all")){
 		help();
-		byteman::helpAssembly();
-		byteman::helpBlank();
-		byteman::helpChange();
-		byteman::helpDevice();
-		byteman::helpExit();
-		byteman::helpHelp();
-		byteman::helpInput();
-		byteman::helpMerge();
-		byteman::helpOutput();
-		byteman::helpRegion();
-		byteman::helpStdin();
-		byteman::helpVerbose();
-		byteman::helpWarn();
+		byteman::helpAssembly(true);
+		byteman::helpBlank(true);
+		byteman::helpChange(true);
+		byteman::helpDevice(true);
+		byteman::helpExit(true);
+		byteman::helpHelp(true);
+		byteman::helpInput(true);
+		byteman::helpMerge(true);
+		byteman::helpOutput(true);
+		byteman::helpRegion(true);
+		byteman::helpStdin(true);
+		byteman::helpVerbose(true);
+		byteman::helpWarn(true);
 	} else if(str::iff::stringIs(param, "v", "verbose"))
 		byteman::helpVerbose();
 	else if(str::iff::stringIs(param, "w", "warn"))
@@ -119,16 +119,17 @@ void byteman::help(string param)
 		cout << endl;
 	}
 }
-void byteman::helpVerbose()
+void byteman::helpVerbose(bool selectedAll)
 {
-	cout << "byteman: Verbose" << endl;
-	cout << "  Enables/disables logging messages. They are disabled by default." << endl;
+	if(selectedAll)
+		cout << "byteman: Verbose" << endl;
+	cout << "  enables/disables logging messages. they are disabled by default." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -verbose [verboseValue]" << endl;
+	cout << "    " EXECUTABLE " -verbose [VerboseValue]" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [verboseValue]: Accepted values are 0 to disable and 1 to enable. Default is 1." << endl;
+	cout << "  Arg:" << endl;
+	cout << "    [VerboseValue]: accepted values are 0 to disable and 1 to enable. Default is 1." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    # Enable logging:" << endl;
@@ -142,16 +143,17 @@ void byteman::helpVerbose()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpWarn()
+void byteman::helpWarn(bool selectedAll)
 {
-	cout << "byteman: Warn" << endl;
-	cout << "  Enables/disables warning messages. They are enabled by default." << endl;
+	if(selectedAll)
+		cout << "byteman: Warn" << endl;
+	cout << "  enables/disables warning messages. they are enabled by default." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -warn [warnValue]" << endl;
+	cout << "    " EXECUTABLE " -warn [WarnValue]" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [warnValue]: Accepted values are 0 to disable and 1 to enable. Default is 1." << endl;
+	cout << "  Arg:" << endl;
+	cout << "    [WarnValue]: accepted values are 0 to disable and 1 to enable. Default is 1." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    # Enable warnings, but they were enabled by default anyway:" << endl;
@@ -165,17 +167,18 @@ void byteman::helpWarn()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpRegion()
+void byteman::helpRegion(bool selectedAll)
 {
-	cout << "byteman: Region" << endl;
-	cout << "  Modifies the list of selected regions." << endl;
+	if(selectedAll)
+		cout << "byteman: Region" << endl;
+	cout << "  modifies the list of selected regions." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -region [clear,add <srcY> <srcX> <sizeY> <sizeX>]" << endl;
+	cout << "    " EXECUTABLE " -region [Clear,Add <SrcY> <SrcX> <SizeY> <SizeX>]" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [clear]: Clears the selected regions list." << endl;
-	cout << "    [add]: Adds a new rectangle in the selected regions list. The rectangle is described by coordinates <srcY>:<srcX> and rectangle size of <sizeY>:<sizeX>." << endl;
+	cout << "  Args:" << endl;
+	cout << "    [Clear]: clears the selected regions list." << endl;
+	cout << "    [Add]: adds a new rect (<SrcY>:<SrcX> <SizeY>:<SizeX>) in the selected regions list." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    # Clears the list:" << endl;
@@ -189,20 +192,21 @@ void byteman::helpRegion()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpBlank()
+void byteman::helpBlank(bool selectedAll)
 {
-	cout << "byteman: Blank" << endl;
-	cout << "  Erases/sets the bitstream in the buffers. Uses the list of selected regions (see \"-help region\"). If the list is empty, works on the whole chip." << endl;
+	if(selectedAll)
+		cout << "byteman: Blank" << endl;
+	cout << "  erases/sets the bitstream in the buffers. uses the list of selected regions (see \"-help Region\"). if the list is empty, works on the whole chip." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -blank [first] [second] [logic] [BlockRAM] [blankValue]" << endl;
+	cout << "    " EXECUTABLE " -blank [First] [Second] [Logic] [BlockRAM] [<BlankValue>]" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [first]: Blanks in the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
-	cout << "    [second]: Blanks in the second of the two buffers." << endl;
-	cout << "    [logic]: Will blank logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [BlockRAM]: Will blank BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [blankValue]: Byte value (0-0xFF) to be written in the selected bitstream location. Default is 0." << endl;
+	cout << "  Args:" << endl;
+	cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [Second]: selects the second of the two bitstream buffers." << endl;
+	cout << "    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [BlockRAM]: selects the blockram contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [<BlankValue>]: byte value (0-255) to be written in the selected bitstream location. Default is 0." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    # Blanks the bitstream's logic plane to zeroes:" << endl;
@@ -216,30 +220,32 @@ void byteman::helpBlank()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpChange()
+void byteman::helpChange(bool selectedAll)
 {
-	cout << "byteman: Change" << endl;
+	if(selectedAll)
+		cout << "byteman: Change" << endl;
 	cout << "  Not public at this point." << endl;
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpDevice()
+void byteman::helpDevice(bool selectedAll)
 {
-	cout << "byteman: Device" << endl;
+	if(selectedAll)
+		cout << "byteman: Device" << endl;
 	cout << "  Sets the target device manually." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -device [first] [second] <deviceName>" << endl;
+	cout << "    " EXECUTABLE " -device [First] [Second] <deviceName>" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [first]: Sets the device for the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
-	cout << "    [second]: Sets the device for the second of the two buffers." << endl;
-	cout << "    [<deviceName>]: Name of the target FPGA chip or board." << endl;
+	cout << "  Args:" << endl;
+	cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [Second]: selects the second of the two bitstream buffers." << endl;
+	cout << "    <deviceName>: name of the target chip, package, or board." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    " EXECUTABLE " XUSP -device AlveoU200" << endl;
 	cout << "    " EXECUTABLE " Xilinx Series 7 -d xc7z045" << endl;
-	cout << "    " EXECUTABLE " Xilinx US -d XCVU440" << endl;
+	cout << "    " EXECUTABLE " Xilinx US -d xcvu440" << endl;
 	cout << endl;
 	#ifdef XS7
 		if(Architecture::Unknown == selectedArchitecture || Architecture::Xilinx_Series7 == selectedArchitecture)
@@ -256,16 +262,17 @@ void byteman::helpDevice()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpHelp()
+void byteman::helpHelp(bool selectedAll)
 {
-	cout << "byteman: Help" << endl;
-	cout << "  Prints these messages... Help messages can change if architecture and/or specific device is selected to incorporate more information!" << endl;
+	if(selectedAll)
+		cout << "byteman: Help" << endl;
+	cout << "  prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!" << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -help [command]" << endl;
+	cout << "    " EXECUTABLE " -help [command]" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [command]: Prints extra information about the usage of a command." << endl;
+	cout << "  Arg:" << endl;
+	cout << "    [command]: prints extra information about the usage of a specific command." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    " EXECUTABLE " Xilinx US+ -device AlveoU200  -help device #will print extra information about the selected device" << endl;
@@ -289,17 +296,19 @@ void byteman::helpHelp()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpInput()
+void byteman::helpInput(bool selectedAll)
 {
-	cout << "byteman: Input" << endl;
-	cout << "  Reads a bitstream from a file." << endl;
+	if(selectedAll)
+		cout << "byteman: Input" << endl;
+	cout << "  reads a bitstream from a file." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -input [first] [second] bitstreamFile.(bit|bin)" << endl;
+	cout << "    " EXECUTABLE " -input [First] [Second] <InputFileName>" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [first]: Reads the bitstream file into the first of the two buffers. Enabled by default if no buffer is explicitly specified." << endl;
-	cout << "    [second]: Reads the bitstream file into the second of the two buffers." << endl;
+	cout << "  Args:" << endl;
+	cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [Second]: selects the second of the two bitstream buffers." << endl;
+	cout << "    <InputFileName>: name of the input file. supports \".bit\" and \".bin\" file formats." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    " EXECUTABLE " XUSP -i main zcu102bitstream.bit" << endl;
@@ -308,23 +317,23 @@ void byteman::helpInput()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpMerge()
+void byteman::helpMerge(bool selectedAll)
 {
-	cout << "byteman: Merge" << endl;
-	cout << "  Merges portion of the bitstream in the second buffer into the first buffer." << endl;
+	if(selectedAll)
+		cout << "byteman: Merge" << endl;
+	cout << "  merges portion of the bitstream in the second buffer into the first buffer." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -merge [logic] [BlockRAM] [clock] [set,xor,or,and] [full,<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]" << endl;
+	cout << "    " EXECUTABLE " -merge [Logic] [BlockRAM] [Clock] [SET,XOR,OR,AND] [Full,<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [logic]: Will merge the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [clock]: Will merge the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [BlockRAM]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [set,xor,or,and]: Performed merge operation. XOR, OR, AND are bitwise operations. Default is \"set\"." << endl;
-	cout << "    [full]: Merges the full device bitstreams." << endl;
-	cout << "    [<srcY> <srcX> <sizeY> <sizeX> <dstY> <dstX>]: Alternatively, a rectangle could be selected for merging. A source rectangle" << endl; 
-	cout << "                                                 : (<srcY> <srcX> <sizeY> <sizeX>) from the second bitstream buffer is merged" << endl;
-	cout << "                                                 : into destination rectangle (<dstY> <dstX> <sizeY> <sizeX>) in first bitstream buffer." << endl;
+	cout << "  Args:" << endl;
+	cout << "    [Logic]: selects the data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [Clock]: selects the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [SET,XOR,OR,AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is \"SET\"." << endl;
+	cout << "    [Full]: selects the full device bitstream." << endl;
+	cout << "    [<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]: selects a rect (<SrcY> <SrcX> <SizeY> <SizeX>) from the second bitstream buffer to be merged" << endl; 
+	cout << "                                                 : into destination rect (<DstY> <DstX> <SizeY> <SizeX>) in first bitstream buffer." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    # Copies second bitstream into first bitstream's buffer:" << endl;
@@ -339,21 +348,23 @@ void byteman::helpMerge()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpOutput()
+void byteman::helpOutput(bool selectedAll)
 {
-	cout << "byteman: Output" << endl;
-	cout << "  Creates a bitstream file output from the first bitstream buffer in byteman." << endl;
+	if(selectedAll)
+		cout << "byteman: Output" << endl;
+	cout << "  creates a bitstream file output from the first bitstream buffer in byteman." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -output [logic] [BlockRAM] [blank] [full,<startY> <startX> <sizeY> <sizeX>] bitstreamFile.(bit|bin)" << endl;
+	cout << "    " EXECUTABLE " -output [Logic] [BlockRAM] [Blank] [Full,<StartY> <StartX> <SizeY> <SizeX>] <OutputFileName>" << endl;
 	cout << endl;
-	cout << "  Options:" << endl;
-	cout << "    [logic]: Will output the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [BlockRAM]: Will merge the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
-	cout << "    [blank]: Blank the selected regions to zeroes before writing the actual bitstream to them." << endl;
-	cout << "    [full]: Outputs the bitstream for all frames in the FPGA." << endl;
-	cout << "    [<startY> <startX> <sizeY> <sizeX>]: Alternatively, a rectangle (<startY> <startX> <sizeY> <sizeX>) could be selected for output." << endl;
-	cout << "                                       : In this mode, also the list of selected regions will be output (see \"byteman -help region\")." << endl;
+	cout << "  Args:" << endl;
+	cout << "    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
+	cout << "    [Blank]: blanks the selected regions to zeroes before writing the actual bitstream to them." << endl;
+	cout << "    [Full]: selects all frames in the FPGA." << endl;
+	cout << "    [<StartY> <StartX> <SizeY> <SizeX>]: selects a rect (<StartY> <StartX> <SizeY> <SizeX>) for output." << endl;
+	cout << "                                       : also the list of selected regions will be output (see \"byteman -help Region\")." << endl;
+	cout << "    <OutputFileName>: name of the output file. supports \".bit\" and \".bin\" file formats." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    # Output only the blockram contents to the whole FPGA:" << endl;
@@ -367,20 +378,26 @@ void byteman::helpOutput()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpAssembly()
+void byteman::helpAssembly(bool selectedAll)
 {
-	cout << "byteman: Assembly" << endl;
-	cout << "  Assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format." << endl;
+	if(selectedAll)
+		cout << "byteman: Assembly" << endl;
+	cout << "  assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH -assembly bitstreamFile.(bit|bin) bitstreamAssemblyFile.bitasm" << endl;
-	cout << "    " EXECUTABLE " ARCH -assembly bitstreamAssemblyFile.bitasm bitstreamFile.(bit|bin)" << endl;
+	cout << "    " EXECUTABLE " -assembly <InputBitstreamFileName> <OutputAssemblyFileName>" << endl;
+	cout << "    " EXECUTABLE " -assembly <InputAssemblyFileName> <OutputBitstreamFileName>" << endl;
+	cout << "  Args:" << endl;
+	cout << "    <InputBitstreamFileName>: name of the input bitstream file. supports \".bit\" and \".bin\" file formats." << endl;
+	cout << "    <OutputBitstreamFileName>: name of the output bitstream file. supports \".bit\" and \".bin\" file formats." << endl;
+	cout << "    <InputAssemblyFileName>: name of the input assembly file. supports \".bitasm\" file format." << endl;
+	cout << "    <OutputAssemblyFileName>: name of the output assembly file. supports \".bitasm\" file format." << endl;
 	cout << endl;
-	cout << "  The bitstream assembly files can be edited and converted back to valid bitstreams." << endl;
-	cout << "  In bitstream assembly file format:" << endl;
-	cout << "    Every line that doesn't start with '#' is editable." << endl;
-	cout << "    Bitstream commands are written one per line and have the format \"<COMMAND NAME>;\"" << endl;
-	cout << "    Bitstream register writesare one per line and have the format \"@<REGNAME> = <NEW REG VALUE>\"" << endl;
+	cout << "  the bitstream assembly files can be edited and converted back to valid bitstreams." << endl;
+	cout << "  in bitstream assembly file format:" << endl;
+	cout << "    every line that doesn't start with '#' is editable." << endl;
+	cout << "    bitstream commands are written one per line and have the format \"<COMMAND NAME>;\"" << endl;
+	cout << "    bitstream register writesare one per line and have the format \"@<REGNAME> = <NEW REG VALUE>\"" << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
 	cout << "    " EXECUTABLE " XUSP -assembly bitstream.bit bitstream.bitasm" << endl;
@@ -392,24 +409,26 @@ void byteman::helpAssembly()
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpExit()
+void byteman::helpExit(bool selectedAll)
 {
-	cout << "byteman: Exit" << endl;
-	cout << "  Finishes execution of byteman. Used with STDin mode (see \"-help stdin\") to identify the end of command sequence." << endl;
+	if(selectedAll)
+		cout << "byteman: Exit" << endl;
+	cout << "  finishes execution of byteman. used with STDin mode (see \"-help STDin\") to identify the end of command sequence." << endl;
 	cout << endl;
 	cout << endl;
 }
-void byteman::helpStdin()
+void byteman::helpStdin(bool selectedAll)
 {
-	cout << "byteman: STDin" << endl;
-	cout << "  Continues reading commands from standard input rather than command line arguments. This way commands can be entered by hand or streamed in by another program or file." << endl;
+	if(selectedAll)
+		cout << "byteman: STDin" << endl;
+	cout << "  continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file." << endl;
 	cout << endl;
 	cout << "  Usage:" << endl;
-	cout << "    " EXECUTABLE " ARCH [commands]* -stdin" << endl;
+	cout << "    " EXECUTABLE " [commands]* -stdin" << endl;
 	cout << endl;
-	cout << "  The input supports the following format rules:" << endl;
-	cout << "    All commands are the same as their command line argument counterparts." << endl;
-	cout << "    One command (with its arguments) per line." << endl;
+	cout << "  the input supports the following format rules:" << endl;
+	cout << "    all commands are the same as their command line argument counterparts." << endl;
+	cout << "    one command (with its arguments) per line." << endl;
 	cout << "    '-' at the beginning of a command can be skipped." << endl;
 	cout << "    '#' starts a comments until a new line is seen." << endl;
 	cout << "    The command \"Exit\" will end reading the input stream and close byteman." << endl;

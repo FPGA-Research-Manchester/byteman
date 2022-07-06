@@ -12,7 +12,7 @@
 
 
 ## $> byteman.exe -help
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
@@ -48,7 +48,7 @@ Need more help? Try one of these:
 
 
 ## $> byteman.exe -help assembly
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Assembly
   Assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
@@ -74,7 +74,7 @@ byteman: Assembly
 
 
 ## $> byteman.exe -help blank
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Blank
   Erases/sets the bitstream in the buffers. Uses the list of selected regions (see "-help region"). If the list is empty, works on the whole chip.
@@ -102,7 +102,7 @@ byteman: Blank
 
 
 ## $> byteman.exe -help change
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Change
   Not public at this point.
@@ -110,7 +110,7 @@ byteman: Change
 
 
 ## $> byteman.exe -help device
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Device
   Sets the target device manually.
@@ -185,7 +185,7 @@ A list of currently recognized US+ devices:
 
 
 ## $> byteman.exe -help exit
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Exit
   Finishes execution of byteman. Used with STDin mode (see "-help stdin") to identify the end of command sequence.
@@ -193,7 +193,7 @@ byteman: Exit
 
 
 ## $> byteman.exe -help help
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Help
   Prints these messages... Help messages can change if architecture and/or specific device is selected to incorporate more information!
@@ -227,7 +227,7 @@ byteman: Help
 
 
 ## $> byteman.exe -help input
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Input
   Reads a bitstream from a file.
@@ -247,7 +247,7 @@ byteman: Input
 
 
 ## $> byteman.exe -help merge
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Merge
   Merges portion of the bitstream in the second buffer into the first buffer.
@@ -279,7 +279,7 @@ byteman: Merge
 
 
 ## $> byteman.exe -help output
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Output
   Creates a bitstream file output from the first bitstream buffer in byteman.
@@ -308,7 +308,7 @@ byteman: Output
 
 
 ## $> byteman.exe -help region
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Region
   Modifies the list of selected regions.
@@ -333,7 +333,7 @@ byteman: Region
 
 
 ## $> byteman.exe -help stdin
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: STDin
   Continues reading commands from standard input rather than command line arguments. This way commands can be entered by hand or streamed in by another program or file.
@@ -351,7 +351,7 @@ byteman: STDin
 
 
 ## $> byteman.exe -help verbose
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Verbose
   Enables/disables logging messages. They are disabled by default.
@@ -375,7 +375,7 @@ byteman: Verbose
 
 
 ## $> byteman.exe -help warn
-```PowerShell
+```python
 byteman 1.2 (Build #197, compiled on Jul  6 2022 17:43:43)
 byteman: Warn
   Enables/disables warning messages. They are enabled by default.
