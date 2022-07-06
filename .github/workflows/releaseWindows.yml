@@ -76,4 +76,5 @@ jobs:
       run: cmake -P ${{github.workspace}}\.github\workflows\moveHelpToReadme.cmake
 
     - name: Commit help message
+      shell: bash
       run: chmod +x commitHelpMessage && ./commitHelpMessage
