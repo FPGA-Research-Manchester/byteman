@@ -136,24 +136,24 @@ $(function() {
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        } selectedArchitecture = Architecture::Unknown;</div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structbyteman_1_1SelectedOptions.html">   77</a></span>&#160;        <span class="keyword">struct </span><a class="code" href="structbyteman_1_1SelectedOptions.html">SelectedOptions</a></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">   79</a></span>&#160;            <span class="keywordtype">int</span> mainBufferSelected, <a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">   80</a></span>&#160;            <a class="code" href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">SelectedOptions</a>():mainBufferSelected(0),tempBufferSelected(0){}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        };</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">   79</a></span>&#160;            <span class="keywordtype">bool</span> mainBufferSelected, <a class="code" href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">tempBufferSelected</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">   80</a></span>&#160;            <a class="code" href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">SelectedOptions</a>():mainBufferSelected(false),tempBufferSelected(false){}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        } options;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//parse</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        SelectedOptions <a class="code" href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">parseParams</a>(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">string</span> parseParamsAndRemoveThemFromString(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">void</span> parse(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">void</span> setArchitecture(<span class="keywordtype">string</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> parseAssembly(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> parseOutput(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> parseMerge(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> parseInput(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">void</span> parseDevice(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> parseChange(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">void</span> parseBlank(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> parseRegion(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> parseWarn(<span class="keywordtype">string</span>, SelectedOptions);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> parseVerbose(<span class="keywordtype">string</span>, SelectedOptions);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">void</span> parseAssembly(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> parseOutput(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">void</span> parseMerge(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">void</span> parseInput(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">void</span> parseDevice(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">void</span> parseChange(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordtype">void</span> parseBlank(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">void</span> parseRegion(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">void</span> parseWarn(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordtype">void</span> parseVerbose(<span class="keywordtype">string</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordtype">void</span> help(<span class="keywordtype">string</span>, <span class="keywordtype">int</span>);</div>
@@ -185,18 +185,17 @@ $(function() {
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_ae408f6df57e2f54e9063e9a451962718"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#ae408f6df57e2f54e9063e9a451962718">byteman::SelectedOptions::SelectedOptions</a></div><div class="ttdeci">SelectedOptions()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00080">byteman.h:80</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScale_html"><div class="ttname"><a href="classXilinxUltraScale.html">XilinxUltraScale</a></div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8h_source.html#l00031">XilinxUltraScale.h:31</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScalePlus_html"><div class="ttname"><a href="classXilinxUltraScalePlus.html">XilinxUltraScalePlus</a></div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScalePlus_8h_source.html#l00031">XilinxUltraScalePlus.h:31</a></div></div>
-<div class="ttc" id="ainlineParseParams_8h_html_a7f22499069a08d35dfe2ec4697d03056"><div class="ttname"><a href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">parseParams</a></div><div class="ttdeci">void parseParams(string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineParseParams_8h_source.html#l00032">inlineParseParams.h:32</a></div></div>
-<div class="ttc" id="astructbyteman_1_1SelectedOptions_html_aa90ed95b00c2ef09cc141a9f2fa88eac"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">byteman::SelectedOptions::tempBufferSelected</a></div><div class="ttdeci">int tempBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html"><div class="ttname"><a href="classXilinxSeries7.html">XilinxSeries7</a></div><div class="ttdef"><b>Definition:</b> <a href="XilinxSeries7_8h_source.html#l00031">XilinxSeries7.h:31</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html">byteman::SelectedOptions</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00077">byteman.h:77</a></div></div>
 <div class="ttc" id="aXilinxUltraScale_8h_html"><div class="ttname"><a href="XilinxUltraScale_8h.html">XilinxUltraScale.h</a></div></div>
 <div class="ttc" id="aXilinxSeries7_8h_html"><div class="ttname"><a href="XilinxSeries7_8h.html">XilinxSeries7.h</a></div></div>
+<div class="ttc" id="astructbyteman_1_1SelectedOptions_html_a3016870bd46ab8cf1444fa30522e80e5"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">byteman::SelectedOptions::tempBufferSelected</a></div><div class="ttdeci">bool tempBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
 <div class="ttc" id="aclassbyteman_html"><div class="ttname"><a href="classbyteman.html">byteman</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00052">byteman.h:52</a></div></div>
 <div class="ttc" id="aXilinxUltraScalePlus_8h_html"><div class="ttname"><a href="XilinxUltraScalePlus_8h.html">XilinxUltraScalePlus.h</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5">byteman::Architecture</a></div><div class="ttdeci">Architecture</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00069">byteman.h:69</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 6 2022 20:31:55 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 18 2022 15:15:02 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

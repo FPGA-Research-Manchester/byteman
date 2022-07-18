@@ -7,7 +7,7 @@ digraph "str::parse::allStringWords"
   rankdir="RL";
   Node1 [label="str::parse::allStringWords",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Parses a string s, removes all integers and returns the rest."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="byteman::parseMerge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a012f7c0279dac10df52f2e7927a8bfef",tooltip=" "];
+  Node2 [label="byteman::parseMerge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a6f666d09224ad867d463d98f3dbdfb53",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a1455d24c97a2b5c3564201dd76df5286",tooltip=" "];
+  Node3 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#a54f9848f562b02eba10e30c4dab3b6f7",tooltip=" "];
 }

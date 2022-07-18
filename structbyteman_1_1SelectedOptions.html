@@ -86,10 +86,10 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a907c4807d4101f1827e93971ef83ea15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a></td></tr>
-<tr class="separator:a907c4807d4101f1827e93971ef83ea15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa90ed95b00c2ef09cc141a9f2fa88eac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a></td></tr>
-<tr class="separator:aa90ed95b00c2ef09cc141a9f2fa88eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ae52d9260d7c8eacd414e0927f1d2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f">mainBufferSelected</a></td></tr>
+<tr class="separator:aa7ae52d9260d7c8eacd414e0927f1d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3016870bd46ab8cf1444fa30522e80e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">tempBufferSelected</a></td></tr>
+<tr class="separator:a3016870bd46ab8cf1444fa30522e80e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -119,44 +119,40 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="byteman_8h_source.html#l00080">80</a> of file <a class="el" href="byteman_8h_source.html">byteman.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;:<a class="code" href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">mainBufferSelected</a>(0),<a class="code" href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">tempBufferSelected</a>(0){}</div>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;:<a class="code" href="structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f">mainBufferSelected</a>(<span class="keyword">false</span>),<a class="code" href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">tempBufferSelected</a>(<span class="keyword">false</span>){}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a907c4807d4101f1827e93971ef83ea15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a907c4807d4101f1827e93971ef83ea15">&#9670;&nbsp;</a></span>mainBufferSelected</h2>
+<a id="aa7ae52d9260d7c8eacd414e0927f1d2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ae52d9260d7c8eacd414e0927f1d2f">&#9670;&nbsp;</a></span>mainBufferSelected</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int byteman::SelectedOptions::mainBufferSelected</td>
+          <td class="memname">bool byteman::SelectedOptions::mainBufferSelected</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="byteman_8h_source.html#l00079">79</a> of file <a class="el" href="byteman_8h_source.html">byteman.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00233">byteman::parseBlank()</a>, <a class="el" href="byteman_8cpp_source.html#l00274">byteman::parseDevice()</a>, <a class="el" href="byteman_8cpp_source.html#l00302">byteman::parseInput()</a>, and <a class="el" href="byteman_8cpp_source.html#l00144">byteman::parseParams()</a>.</p>
-
 </div>
 </div>
-<a id="aa90ed95b00c2ef09cc141a9f2fa88eac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa90ed95b00c2ef09cc141a9f2fa88eac">&#9670;&nbsp;</a></span>tempBufferSelected</h2>
+<a id="a3016870bd46ab8cf1444fa30522e80e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3016870bd46ab8cf1444fa30522e80e5">&#9670;&nbsp;</a></span>tempBufferSelected</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int byteman::SelectedOptions::tempBufferSelected</td>
+          <td class="memname">bool byteman::SelectedOptions::tempBufferSelected</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="byteman_8h_source.html#l00079">79</a> of file <a class="el" href="byteman_8h_source.html">byteman.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00233">byteman::parseBlank()</a>, <a class="el" href="byteman_8cpp_source.html#l00274">byteman::parseDevice()</a>, <a class="el" href="byteman_8cpp_source.html#l00302">byteman::parseInput()</a>, and <a class="el" href="byteman_8cpp_source.html#l00144">byteman::parseParams()</a>.</p>
 
 </div>
 </div>
@@ -164,11 +160,11 @@ Public Attributes</h2></td></tr>
 <li>src/<a class="el" href="byteman_8h_source.html">byteman.h</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="astructbyteman_1_1SelectedOptions_html_aa90ed95b00c2ef09cc141a9f2fa88eac"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#aa90ed95b00c2ef09cc141a9f2fa88eac">byteman::SelectedOptions::tempBufferSelected</a></div><div class="ttdeci">int tempBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
-<div class="ttc" id="astructbyteman_1_1SelectedOptions_html_a907c4807d4101f1827e93971ef83ea15"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15">byteman::SelectedOptions::mainBufferSelected</a></div><div class="ttdeci">int mainBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
+<div class="ttc" id="astructbyteman_1_1SelectedOptions_html_a3016870bd46ab8cf1444fa30522e80e5"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">byteman::SelectedOptions::tempBufferSelected</a></div><div class="ttdeci">bool tempBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
+<div class="ttc" id="astructbyteman_1_1SelectedOptions_html_aa7ae52d9260d7c8eacd414e0927f1d2f"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f">byteman::SelectedOptions::mainBufferSelected</a></div><div class="ttdeci">bool mainBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 6 2022 20:31:56 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jul 18 2022 15:15:02 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

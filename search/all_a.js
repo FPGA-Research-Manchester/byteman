@@ -4,7 +4,7 @@ var searchData=
   ['magic1_168',['MAGIC1',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370',1,'XCAP']]],
   ['magic2_169',['MAGIC2',['../namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca24d6ea421597acfbcdc2d07a5b27aea6',1,'XCAP']]],
   ['main_170',['main',['../byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'byteman.cpp']]],
-  ['mainbufferselected_171',['mainBufferSelected',['../structbyteman_1_1SelectedOptions.html#a907c4807d4101f1827e93971ef83ea15',1,'byteman::SelectedOptions']]],
+  ['mainbufferselected_171',['mainBufferSelected',['../structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f',1,'byteman::SelectedOptions']]],
   ['mask_172',['MASK',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0a9501840acacfc8efe7522f5340000c',1,'XCAP']]],
   ['match_5fcycle_173',['MATCH_CYCLE',['../inlineCAP_8h.html#a2ebac8820e49338e761ddf947b6f4961',1,'inlineCAP.h']]],
   ['maxnumberofbramcols_174',['maxNumberOfBRAMCols',['../classXilinxConfigurationAccessPort.html#a823b9c0377ffa9ebe668dcfd51ea5fd3',1,'XilinxConfigurationAccessPort']]],
