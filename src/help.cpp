@@ -42,7 +42,7 @@ void byteman::help()
 	cout << "Usage:" << endl;
 	cout << "  " EXECUTABLE " ARCH [-command...]* [-stdin]" << endl;
 	cout << endl;
-	cout << "  ARCH = {\"Xilinx Series 7\", \"Xilinx UltraScale\", \"Xilinx UltraScale+\"}" << endl;
+	cout << "  ARCH = {\"Xilinx Series 7\"/\"XS7\", \"Xilinx UltraScale\"/\"XUS\", \"Xilinx UltraScale+\"/\"XUSP\"}" << endl;
 	cout << endl;
 	cout << "Commands:        : [Description]                                    " << endl;
 	cout << "  -a (Assembly)  : (de)assemble bitstreams.       see \"-help assembly\"" << endl;
@@ -61,7 +61,7 @@ void byteman::help()
 	cout << endl;
 	cout << "Examples: " << endl;
 	cout << "  " EXECUTABLE " Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit" << endl;
-	cout << "  " EXECUTABLE " XUSP -w -d zcu102 -blank main logic blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit" << endl;
+	cout << "  " EXECUTABLE " XUSP -w -d ZCU 102 -b main,logic,blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit" << endl;
 	cout << endl;
 	cout << "Need more help? Try one of these:" << endl;
 	cout << "  " EXECUTABLE " -help <command>" << endl;
@@ -243,8 +243,8 @@ void byteman::helpDevice(bool selectedAll)
 	cout << "    <DeviceName>: name of the target chip, package, or board." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
-	cout << "    " EXECUTABLE " XUSP -device AlveoU200" << endl;
-	cout << "    " EXECUTABLE " Xilinx Series 7 -d xc7z045" << endl;
+	cout << "    " EXECUTABLE " XUSP -device Alveo U200" << endl;
+	cout << "    " EXECUTABLE " Xilinx Series 7 -d Wizarde" << endl;
 	cout << "    " EXECUTABLE " Xilinx US -d xcvu440" << endl;
 	cout << endl;
 	#ifdef XS7
@@ -275,7 +275,7 @@ void byteman::helpHelp(bool selectedAll)
 	cout << "    [Command]: prints extra information about the usage of a specific command." << endl;
 	cout << endl;
 	cout << "  Examples:" << endl;
-	cout << "    " EXECUTABLE " Xilinx US+ -device AlveoU200  -help device #will print extra information about the selected device" << endl;
+	cout << "    " EXECUTABLE " Xilinx US+ -device Alveo U200 -help device #will print extra information about the selected device" << endl;
 	cout << "    " EXECUTABLE " Xilinx US+ -input bitfile.bit -help device #will print extra information about the bitstream device" << endl;
 	cout << "    " EXECUTABLE " -help" << endl;
 	cout << "    " EXECUTABLE " XUSP -h" << endl;
@@ -361,7 +361,7 @@ void byteman::helpOutput(bool selectedAll)
 	cout << "    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
 	cout << "    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << endl;
 	cout << "    [Blank]: blanks the selected regions to zeroes before writing the actual bitstream to them." << endl;
-	cout << "    [Full]: selects all frames in the FPGA." << endl;
+	cout << "    [Full]: selects all frames in the chip." << endl;
 	cout << "    [<StartY> <StartX> <SizeY> <SizeX>]: selects a rect (<StartY> <StartX> <SizeY> <SizeX>) for output." << endl;
 	cout << "                                       : also the list of selected regions will be output (see \"byteman -help Region\")." << endl;
 	cout << "    <OutputFileName>: name of the output file. supports \".bit\" and \".bin\" file formats." << endl;

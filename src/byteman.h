@@ -76,24 +76,24 @@ class byteman
 		} selectedArchitecture = Architecture::Unknown;
 		struct SelectedOptions
 		{
-			int mainBufferSelected, tempBufferSelected;
-			SelectedOptions():mainBufferSelected(0),tempBufferSelected(0){}
-		};
+			bool mainBufferSelected, tempBufferSelected;
+			SelectedOptions():mainBufferSelected(false),tempBufferSelected(false){}
+		} options;
 		//parse
-		SelectedOptions parseParams(string);
+		string parseParamsAndRemoveThemFromString(string);
 		
 		void parse(string);
 		void setArchitecture(string);
-		void parseAssembly(string, SelectedOptions);
-		void parseOutput(string, SelectedOptions);
-		void parseMerge(string, SelectedOptions);
-		void parseInput(string, SelectedOptions);
-		void parseDevice(string, SelectedOptions);
-		void parseChange(string, SelectedOptions);
-		void parseBlank(string, SelectedOptions);
-		void parseRegion(string, SelectedOptions);
-		void parseWarn(string, SelectedOptions);
-		void parseVerbose(string, SelectedOptions);
+		void parseAssembly(string);
+		void parseOutput(string);
+		void parseMerge(string);
+		void parseInput(string);
+		void parseDevice(string);
+		void parseChange(string);
+		void parseBlank(string);
+		void parseRegion(string);
+		void parseWarn(string);
+		void parseVerbose(string);
 		
 		
 		void help(string, int);

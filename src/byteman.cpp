@@ -97,35 +97,34 @@ void byteman::parse(string command)
 	command = str::replace(command, ':', ' ');
 	if (command.at(0) == '-') command.erase(0, 1);
 	string params = str::findStringAndGetAllAfter(command, " ");
-	SelectedOptions options = parseParams(params);
 	
 	if(str::iff::firstStringWordIs(command, "h", "help"))//check if help first
 		help(params, 0);
 	else if(Architecture::Unknown == selectedArchitecture) //then check if architecture
 		setArchitecture(command);
 	else if(str::iff::firstStringWordIs(command, "v", "verbose")) //check the rest of commands
-		parseVerbose(params, options);
+		parseVerbose(params);
 	else if(str::iff::firstStringWordIs(command, "w", "warn"))
-		parseWarn(params, options);
+		parseWarn(params);
 	else if(str::iff::firstStringWordIs(command, "r", "region"))
-		parseRegion(params, options);
+		parseRegion(params);
 	else if(str::iff::firstStringWordIs(command, "b", "blank"))
-		parseBlank(params, options);
+		parseBlank(params);
 	else if(str::iff::firstStringWordIs(command, "c", "change"))
-		parseChange(params, options);
+		parseChange(params);
 	else if(str::iff::firstStringWordIs(command, "d", "device"))
-		parseDevice(params, options);
+		parseDevice(params);
 	else if(str::iff::firstStringWordIs(command, "i", "input"))
-		parseInput(params, options);
+		parseInput(params);
 	else if(str::iff::firstStringWordIs(command, "m", "merge"))
-		parseMerge(params, options);
+		parseMerge(params);
 	else if(str::iff::firstStringWordIs(command, "o", "output"))
-		parseOutput(params, options);
+		parseOutput(params);
 	else if(str::iff::firstStringWordIs(command, "a", "assembly"))
-		parseAssembly(params, options);
+		parseAssembly(params);
 	#if !defined(NDEBUG)
 	else if(str::iff::firstStringWordIs(command, "t", "test"))
-		parseTest(params, options);
+		parseTest(params);
 	#endif
 	else if(str::iff::firstStringWordIs(command, "e", "exit"))
 		exit(0);
@@ -139,26 +138,28 @@ void byteman::parse(string command)
  * @arg @c params A list of parameters to control behavior:
  * - "main" or "first" : Selects the main bitstream buffer as target for the operation
  * - "temp" or "second" : Selects the temp bitstream buffer as target for the operation
- *
+ * @returns the string without the valid parameters
  *****************************************************************************/
-byteman::SelectedOptions byteman::parseParams(string params)
+string byteman::parseParamsAndRemoveThemFromString(string params)
 {
-	SelectedOptions options = SelectedOptions();
+	string commandWithoutTheValidParams = "";
+	options = SelectedOptions();
 	params = str::replace(params, ',', ' ');
 	stringstream ss(params);
 	string param;
 	while (!ss.eof()) {
 		ss >> param;
-		if("main" == param || "first"  == param)options.mainBufferSelected++;
-		if("temp" == param || "second" == param)options.tempBufferSelected++;
+		if("main" == param || "first"  == param)options.mainBufferSelected = true;
+		else if("temp" == param || "second" == param)options.tempBufferSelected = true;
+		else commandWithoutTheValidParams.append(param);
 		param.clear();
 	}
-	if(0 == options.mainBufferSelected && 0 == options.tempBufferSelected) // by default, choose the main buffer
-		options.mainBufferSelected = 1;
-	return options;
+	if(!options.mainBufferSelected && !options.tempBufferSelected) // by default, choose the main buffer
+		options.mainBufferSelected = true;
+	return  commandWithoutTheValidParams;
 }
 
-void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
+void byteman::parseVerbose(string verboseCmd)
 {
 	int verboseValue;
 	if(!str::parse::multipleInts(verboseCmd, verboseValue))verboseValue = 1; // if nothing was given, default to 1
@@ -182,7 +183,7 @@ void byteman::parseVerbose(string verboseCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseWarn(string warnCmd, SelectedOptions options)
+void byteman::parseWarn(string warnCmd)
 {
 	int warnValue;
 	if(!str::parse::multipleInts(warnCmd, warnValue))warnValue = 1; // if nothing was given, default to 1
@@ -206,7 +207,7 @@ void byteman::parseWarn(string warnCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseRegion(string regionCmd, SelectedOptions options)
+void byteman::parseRegion(string regionCmd)
 {
 	string params = str::parse::allStringWords(regionCmd);
 	Rect2D rect;
@@ -230,9 +231,9 @@ void byteman::parseRegion(string regionCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseBlank(string blankCmd, SelectedOptions options)
+void byteman::parseBlank(string blankCmd)
 {
-	string params = blankCmd;
+	string params = parseParamsAndRemoveThemFromString(blankCmd);
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -258,7 +259,7 @@ void byteman::parseBlank(string blankCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseChange(string changeCmd, SelectedOptions options)
+void byteman::parseChange(string changeCmd)
 {
 	//TODO lut,ff,wires,bram,uram modifications
 	#ifdef XS7
@@ -271,9 +272,9 @@ void byteman::parseChange(string changeCmd, SelectedOptions options)
 		;
 	#endif
 }
-void byteman::parseDevice(string deviceCmd, SelectedOptions options)
+void byteman::parseDevice(string deviceCmd)
 {
-	string deviceName = str::parse::lastStringWord(deviceCmd);
+	string deviceName = parseParamsAndRemoveThemFromString(deviceCmd);
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -299,10 +300,10 @@ void byteman::parseDevice(string deviceCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseInput(string inputCmd, SelectedOptions options)
+void byteman::parseInput(string inputCmd)
 {
-	string params = str::parse::allStringWordsWithoutLastStringWord(inputCmd);
-	string filename = str::parse::lastStringWord(inputCmd);
+	string params = parseParamsAndRemoveThemFromString(inputCmd);
+	string filename = str::parse::lastStringWord(params);
 	#ifdef XS7
 		if(Architecture::Xilinx_Series7 == selectedArchitecture){
 			if(options.mainBufferSelected)
@@ -328,7 +329,7 @@ void byteman::parseInput(string inputCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseMerge(string mergeCmd, SelectedOptions options)
+void byteman::parseMerge(string mergeCmd)
 {
 	string params = str::parse::allStringWords(mergeCmd);
 	Rect2D rect;
@@ -350,7 +351,7 @@ void byteman::parseMerge(string mergeCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseOutput(string outputCmd, SelectedOptions options)
+void byteman::parseOutput(string outputCmd)
 {
 	string params = str::parse::allStringWordsWithoutLastStringWord(outputCmd);
 	string filename = str::parse::lastStringWord(outputCmd);
@@ -372,7 +373,7 @@ void byteman::parseOutput(string outputCmd, SelectedOptions options)
 		}
 	#endif
 }
-void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
+void byteman::parseAssembly(string assemblyCmd)
 {
 	string filenameIn = str::parse::nthStringWord(assemblyCmd, 0);
 	string filenameOut = str::parse::nthStringWord(assemblyCmd, 1);
@@ -390,7 +391,7 @@ void byteman::parseAssembly(string assemblyCmd, SelectedOptions options)
 	#endif
 }
 #if !defined(NDEBUG)
-void byteman::parseTest(string testCmd, SelectedOptions options)
+void byteman::parseTest(string testCmd)
 {
 	uint32_t testValue;
 	if(!str::parse::multipleUints(testCmd, testValue))

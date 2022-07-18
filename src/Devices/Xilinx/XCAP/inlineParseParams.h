@@ -47,7 +47,7 @@ inline void parseParams(string params){
 		if(param == "clock" || param == "clk")selectedOptions.clk = true;
 		if(param == "logic" || param == "clb")selectedOptions.clb = true;
 		if(param == "blockram" || param == "bram")selectedOptions.bram = true;
-		if(param == "blank")selectedOptions.blank++;
+		if(param == "blank")selectedOptions.blank = true;
 		if(param == "full")selectedOptions.partialNotFull = false;
 		if(param == "partial")selectedOptions.partialNotFull = true;
 		if(param == "set")selectedOptions.op = MergeOP::SET;
