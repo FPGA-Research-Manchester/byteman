@@ -32,8 +32,11 @@ jobs:
         fetch-depth: 0
         ref: main
 
+    - name: Cmake: Check available visual studio versions
+      run: cmake --help
+
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\ -G "Visual Studio 16 2019" -A "Win32"
+      run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\ -A "Win32"
 
     - name: Build
       run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --target ALL_BUILD --config Release
