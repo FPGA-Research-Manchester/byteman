@@ -39,7 +39,7 @@ jobs:
       run: cmake -B ${{github.workspace}}/Binaries/Linux-ARM -DCMAKE_C_COMPILER=arm-linux-gnueabi-gcc -DCMAKE_CXX_COMPILER=arm-linux-gnueabi-g++ -DCMAKE_AR=arm-linux-gnueabi-ar -DCMAKE_LINKER=arm-linux-gnueabi-ld -DCMAKE_OBJCOPY=arm-linux-gnueabi-objcopy -DCMAKE_RANLIB=arm-linux-gnueabi-ranlib -DCMAKE_DLLTOOL=arm-linux-gnueabi-dlltool
 
     - name: Build
-      run: cmake --build ${{github.workspace}}/Binaries/Linux-ARM
+      run: cmake --build ${{github.workspace}}/Binaries/Linux-ARM -v
 
     - name: Commit binary
       run: |
