@@ -33,7 +33,7 @@ jobs:
         ref: main
 
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\
+      run: cmake -B ${{github.workspace}}\Binaries\Windows-x86\ -G "Visual Studio 16 2019" -A "Win32"
 
     - name: Build
       run: cmake --build ${{github.workspace}}\Binaries\Windows-x86 --target ALL_BUILD --config Release
