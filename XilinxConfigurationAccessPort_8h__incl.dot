@@ -89,4 +89,6 @@ digraph "src/Devices/Xilinx/XilinxConfigurationAccessPort.h"
   Node32 [label="XCAP/inlineTest.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineTest_8h.html",tooltip=" "];
   Node1 -> Node33 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node33 [label="XCAP/inlinePrintResource\lStringInfo.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlinePrintResourceStringInfo_8h.html",tooltip=" "];
+  Node1 -> Node34 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node34 [label="XCAP/inlineAssembly.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineAssembly_8h.html",tooltip=" "];
 }

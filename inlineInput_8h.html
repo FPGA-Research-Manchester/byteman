@@ -122,8 +122,10 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a28adcfbf629a14df2fab79e403e9f098"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098">findBitstreamSync</a> (ifstream &amp;fin, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> e)</td></tr>
-<tr class="separator:a28adcfbf629a14df2fab79e403e9f098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377dbea0e75938e53bfa4e6bfd7c36c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9">findBitstreamSyncSequence</a> (ifstream &amp;fin, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> e)</td></tr>
+<tr class="separator:a377dbea0e75938e53bfa4e6bfd7c36c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83bf9e6c1b2005e37114d7573e79ace3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineInput_8h.html#a83bf9e6c1b2005e37114d7573e79ace3">findBitstreamSyncWord</a> (ifstream &amp;fin, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> e)</td></tr>
+<tr class="separator:a83bf9e6c1b2005e37114d7573e79ace3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0e8d10f67fbe4b89886a2f5be7c690c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a> (ifstream &amp;fin, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> e)</td></tr>
 <tr class="separator:ac0e8d10f67fbe4b89886a2f5be7c690c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afecbc7d2f0175cd665f732ec0c5b93bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineInput_8h.html#afecbc7d2f0175cd665f732ec0c5b93bf">parseBitstreamEndianness</a> (ifstream &amp;fin)</td></tr>
@@ -138,14 +140,110 @@ Functions</h2></td></tr>
 <tr class="separator:a0487f8d718905360038fc67d9cfbe63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a28adcfbf629a14df2fab79e403e9f098"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28adcfbf629a14df2fab79e403e9f098">&#9670;&nbsp;</a></span>findBitstreamSync()</h2>
+<a id="a377dbea0e75938e53bfa4e6bfd7c36c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377dbea0e75938e53bfa4e6bfd7c36c9">&#9670;&nbsp;</a></span>findBitstreamSyncSequence()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool findBitstreamSync </td>
+          <td class="memname">bool findBitstreamSyncSequence </td>
+          <td>(</td>
+          <td class="paramtype">ifstream &amp;&#160;</td>
+          <td class="paramname"><em>fin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reads a bitstream header until and including the sync sequence.</p>
+<ul>
+<li><code>fin</code> input file stream. Moves the stream pointer to after the SYNC command and in a word-aligned position with the following instructions. </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00154">154</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">//Follow some 0xFF&#39;s and the bus width detection c0nstant &quot;\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF&quot;</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">//However we don&#39;t care about reading those</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">for</span>( ; ; ){</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span>(!fin.good())</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordtype">int</span> wordOld4 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordtype">int</span> wordOld3 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordtype">int</span> wordOld2 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">int</span> wordOld1 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordtype">int</span> word = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span>(wordOld4 == 0x000000BB &amp;&amp; wordOld3 == 0x11220044 &amp;&amp; wordOld2 == 0xFFFFFFFF &amp;&amp; wordOld1 == 0xFFFFFFFF &amp;&amp; word == <a class="code" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a>()){</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            fin.seekg(-19,ios::cur);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//not going to be reached.</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, and <a class="el" href="inlineCAP_8h_source.html#l00430">XCAP_getSyncInstruction()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00252">XilinxSeries7::disassemblerToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00252">XilinxUltraScale::disassemblerToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00252">XilinxUltraScalePlus::disassemblerToAsm()</a>, <a class="el" href="inlineInput_8h_source.html#l00181">parseBitstreamIDCODE()</a>, and <a class="el" href="inlineInput_8h_source.html#l00203">readBitstreamMain()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_cgraph.png" border="0" usemap="#inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_cgraph" alt=""/></div>
+<map name="inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_cgraph" id="inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,124,209,150"/>
+<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="293,98,405,125"/>
+<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="257,149,441,176"/>
+<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="750,200,927,226"/>
+<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1016,98,1171,125"/>
+<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="495,150,690,191"/>
+<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="489,32,696,74"/>
+<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="744,42,933,69"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="987,174,1199,201"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1253,124,1413,150"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="767,149,910,176"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="981,46,1205,73"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_icgraph.png" border="0" usemap="#inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_icgraph" alt=""/></div>
+<map name="inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_icgraph" id="inlineInput_8h_a377dbea0e75938e53bfa4e6bfd7c36c9_icgraph">
+<area shape="rect" title=" " alt="" coords="819,143,1023,170"/>
+<area shape="rect" href="classXilinxSeries7.html#aa6da18ed4bf918300a7c9e3a4a3774dc" title=" " alt="" coords="559,5,761,47"/>
+<area shape="rect" href="classXilinxUltraScale.html#a264013d66d97bec19b0e2623c8d4efc2" title=" " alt="" coords="549,71,771,112"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#ad7bffcc7c5a3ac96a7efac2212983429" title=" " alt="" coords="580,136,740,177"/>
+<area shape="rect" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a" title=" " alt="" coords="573,202,747,229"/>
+<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="587,261,733,287"/>
+<area shape="rect" href="classXilinxSeries7.html#a84088520559c05409ffe2526e77fcdf0" title=" " alt="" coords="289,64,492,105"/>
+<area shape="rect" href="classXilinxUltraScale.html#a470d66f10ef1212ea12b319f56ab1e07" title=" " alt="" coords="280,129,501,171"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a9e8e5752150904ec460d01861957997f" title=" " alt="" coords="300,195,481,236"/>
+<area shape="rect" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="321,261,460,287"/>
+<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,227,223,254"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,279,195,320"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,345,232,371"/>
+<area shape="rect" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="323,311,459,338"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a83bf9e6c1b2005e37114d7573e79ace3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83bf9e6c1b2005e37114d7573e79ace3">&#9670;&nbsp;</a></span>findBitstreamSyncWord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool findBitstreamSyncWord </td>
           <td>(</td>
           <td class="paramtype">ifstream &amp;&#160;</td>
           <td class="paramname"><em>fin</em>, </td>
@@ -175,57 +273,52 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span>( ; ; ){</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span>(!fin.good())</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">int</span> wordOld4 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordtype">int</span> wordOld3 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">int</span> wordOld2 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordtype">int</span> wordOld1 = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">int</span> word = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span>(wordOld4 == 0x000000BB &amp;&amp; wordOld3 == 0x11220044 &amp;&amp; wordOld2 == 0xFFFFFFFF &amp;&amp; wordOld1 == 0xFFFFFFFF &amp;&amp; word == <a class="code" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a>()){</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            fin.seekg(-19,ios::cur);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//not going to be reached.</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordtype">int</span> word = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">if</span>(word == <a class="code" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a>()){</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            fin.seekg(-3,ios::cur);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//not going to be reached.</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, and <a class="el" href="inlineCAP_8h_source.html#l00430">XCAP_getSyncInstruction()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="inlineInput_8h_source.html#l00158">parseBitstreamIDCODE()</a>, and <a class="el" href="inlineInput_8h_source.html#l00180">readBitstreamMain()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00252">XilinxSeries7::disassemblerToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00252">XilinxUltraScale::disassemblerToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00252">XilinxUltraScalePlus::disassemblerToAsm()</a>, and <a class="el" href="inlineInput_8h_source.html#l00203">readBitstreamMain()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_cgraph.png" border="0" usemap="#inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_cgraph" alt=""/></div>
-<map name="inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_cgraph" id="inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_cgraph">
-<area shape="rect" title=" " alt="" coords="5,124,147,150"/>
-<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="231,98,343,125"/>
-<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="195,149,379,176"/>
-<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="687,200,865,226"/>
-<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="953,98,1108,125"/>
-<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="433,150,627,191"/>
-<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="427,32,633,74"/>
-<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="681,42,871,69"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="925,174,1137,201"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1191,124,1351,150"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="705,149,847,176"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="919,46,1143,73"/>
+<div class="center"><img src="inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_cgraph.png" border="0" usemap="#inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_cgraph" alt=""/></div>
+<map name="inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_cgraph" id="inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,124,180,150"/>
+<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="264,98,376,125"/>
+<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="228,149,412,176"/>
+<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="721,200,898,226"/>
+<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="987,98,1141,125"/>
+<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="466,150,661,191"/>
+<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="460,32,667,74"/>
+<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="715,42,904,69"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="958,174,1170,201"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1224,124,1384,150"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="738,149,881,176"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="952,46,1176,73"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_icgraph.png" border="0" usemap="#inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_icgraph" alt=""/></div>
-<map name="inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_icgraph" id="inlineInput_8h_a28adcfbf629a14df2fab79e403e9f098_icgraph">
-<area shape="rect" title=" " alt="" coords="771,173,912,199"/>
-<area shape="rect" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a" title=" " alt="" coords="549,143,723,170"/>
-<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="563,202,709,229"/>
-<area shape="rect" href="classXilinxSeries7.html#a84088520559c05409ffe2526e77fcdf0" title=" " alt="" coords="289,5,492,47"/>
-<area shape="rect" href="classXilinxUltraScale.html#a470d66f10ef1212ea12b319f56ab1e07" title=" " alt="" coords="280,71,501,112"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a9e8e5752150904ec460d01861957997f" title=" " alt="" coords="300,136,481,177"/>
-<area shape="rect" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="321,202,460,229"/>
-<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,169,223,195"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,220,195,261"/>
-<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,286,232,313"/>
-<area shape="rect" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="323,253,459,279"/>
+<div class="center"><img src="inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_icgraph.png" border="0" usemap="#inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_icgraph" alt=""/></div>
+<map name="inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_icgraph" id="inlineInput_8h_a83bf9e6c1b2005e37114d7573e79ace3_icgraph">
+<area shape="rect" title=" " alt="" coords="736,111,911,138"/>
+<area shape="rect" href="classXilinxSeries7.html#aa6da18ed4bf918300a7c9e3a4a3774dc" title=" " alt="" coords="476,5,679,47"/>
+<area shape="rect" href="classXilinxUltraScale.html#a264013d66d97bec19b0e2623c8d4efc2" title=" " alt="" coords="467,71,688,112"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#ad7bffcc7c5a3ac96a7efac2212983429" title=" " alt="" coords="497,136,657,177"/>
+<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="504,202,651,229"/>
+<area shape="rect" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="280,177,419,203"/>
+<area shape="rect" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="281,227,417,254"/>
+<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,151,223,178"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,202,232,229"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,253,195,295"/>
 </map>
 </div>
 
@@ -323,7 +416,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="FileIO_8h_source.html#l00145">FileIO::read16()</a>, <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, <a class="el" href="FileIO_8h_source.html#l00048">FileIO::readNative8()</a>, and <a class="el" href="FileIO_8h_source.html#l00178">FileIO::readString()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00082">XilinxSeries7::disassemblerBitToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00082">XilinxUltraScale::disassemblerBitToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00082">XilinxUltraScalePlus::disassemblerBitToAsm()</a>, and <a class="el" href="inlineInput_8h_source.html#l00294">readBitstreamBIT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00082">XilinxSeries7::disassemblerBitToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00082">XilinxUltraScale::disassemblerBitToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00082">XilinxUltraScalePlus::disassemblerBitToAsm()</a>, and <a class="el" href="inlineInput_8h_source.html#l00328">readBitstreamBIT()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -368,9 +461,9 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classXilinxUltraScale.html#a1e74fd2f5f3122339373ac7e571c0743" title=" " alt="" coords="280,71,501,112"/>
 <area shape="rect" href="classXilinxUltraScalePlus.html#a54f9af4b6723a99c0b9e8e9c9b424d00" title=" " alt="" coords="301,136,480,177"/>
 <area shape="rect" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="323,202,459,229"/>
-<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,151,223,178"/>
-<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,202,232,229"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,253,195,295"/>
+<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,143,223,170"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,195,195,236"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,261,232,287"/>
 </map>
 </div>
 
@@ -526,53 +619,53 @@ Here is the caller graph for this function:</div>
 <li><code>fin</code> input file stream. Gets fixed back to the original value before leaving this function! </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00158">158</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    streamoff fileOffset = fin.tellg();</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">//Optional bitstream header</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098">findBitstreamSync</a>(fin, e);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    uint32_t returnVal;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="comment">//Find sync</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> syncDetectionDone = 0 ; !syncDetectionDone ; ){</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">if</span>(!fin.good())</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Was unable to find input bitstream&#39;s IDCODE command.&quot;</span>);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordtype">int</span> word = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26">XCAP_IDCODEInstruction</a>() == word){</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            returnVal = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            syncDetectionDone++;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        } <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            fin.seekg(-3,ios::cur);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    fin.seekg(fileOffset, fin.beg);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">return</span> returnVal;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00181">181</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    streamoff fileOffset = fin.tellg();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">//Optional bitstream header</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9">findBitstreamSyncSequence</a>(fin, e);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    uint32_t returnVal;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">//Find sync</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> syncDetectionDone = 0 ; !syncDetectionDone ; ){</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordflow">if</span>(!fin.good())</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Was unable to find input bitstream&#39;s IDCODE command.&quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordtype">int</span> word = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26">XCAP_IDCODEInstruction</a>() == word){</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            returnVal = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, e);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            syncDetectionDone++;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            fin.seekg(-3,ios::cur);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    fin.seekg(fileOffset, fin.beg);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">return</span> returnVal;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="inlineInput_8h_source.html#l00131">findBitstreamSync()</a>, <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, and <a class="el" href="inlineCAP_8h_source.html#l00424">XCAP_IDCODEInstruction()</a>.</p>
+<p class="reference">References <a class="el" href="inlineInput_8h_source.html#l00154">findBitstreamSyncSequence()</a>, <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, and <a class="el" href="inlineCAP_8h_source.html#l00424">XCAP_IDCODEInstruction()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00072">XilinxSeries7::disassemblerBinToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00072">XilinxUltraScale::disassemblerBinToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00072">XilinxUltraScalePlus::disassemblerBinToAsm()</a>, and <a class="el" href="inlineInput_8h_source.html#l00303">readBitstreamBIN()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Assembler_8cpp_source.html#l00072">XilinxSeries7::disassemblerBinToAsm()</a>, <a class="el" href="XUS__Assembler_8cpp_source.html#l00072">XilinxUltraScale::disassemblerBinToAsm()</a>, <a class="el" href="XUSP__Assembler_8cpp_source.html#l00072">XilinxUltraScalePlus::disassemblerBinToAsm()</a>, and <a class="el" href="inlineInput_8h_source.html#l00337">readBitstreamBIN()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_aaca4e37f11bf6f869a9f1296b5b0182a_cgraph.png" border="0" usemap="#inlineInput_8h_aaca4e37f11bf6f869a9f1296b5b0182a_cgraph" alt=""/></div>
 <map name="inlineInput_8h_aaca4e37f11bf6f869a9f1296b5b0182a_cgraph" id="inlineInput_8h_aaca4e37f11bf6f869a9f1296b5b0182a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,180,179,207"/>
-<area shape="rect" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098" title=" " alt="" coords="247,180,389,207"/>
-<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="515,130,627,156"/>
-<area shape="rect" href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="227,231,409,258"/>
-<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="479,180,663,207"/>
-<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="993,202,1170,228"/>
-<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1259,100,1413,127"/>
-<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="738,152,933,193"/>
-<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="732,34,939,76"/>
-<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="987,44,1176,71"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1230,176,1442,203"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1496,126,1656,152"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1010,151,1153,178"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1224,48,1448,75"/>
-<area shape="rect" href="inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="457,235,684,262"/>
-<area shape="rect" href="inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="740,268,931,295"/>
-<area shape="rect" href="inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1005,268,1158,295"/>
+<area shape="rect" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9" title=" " alt="" coords="227,180,431,207"/>
+<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="536,130,648,156"/>
+<area shape="rect" href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="237,231,420,258"/>
+<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="500,180,684,207"/>
+<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="1014,202,1191,228"/>
+<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1280,100,1435,127"/>
+<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="759,152,954,193"/>
+<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="753,34,960,76"/>
+<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="1008,44,1197,71"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1251,176,1463,203"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1517,126,1677,152"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1031,151,1174,178"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1245,48,1469,75"/>
+<area shape="rect" href="inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="479,235,705,262"/>
+<area shape="rect" href="inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="761,268,952,295"/>
+<area shape="rect" href="inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1026,268,1179,295"/>
 </map>
 </div>
 <div class="dynheader">
@@ -585,9 +678,9 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="classXilinxUltraScale.html#a470d66f10ef1212ea12b319f56ab1e07" title=" " alt="" coords="280,71,501,112"/>
 <area shape="rect" href="classXilinxUltraScalePlus.html#a9e8e5752150904ec460d01861957997f" title=" " alt="" coords="300,136,481,177"/>
 <area shape="rect" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="321,202,460,229"/>
-<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,151,223,178"/>
-<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,202,232,229"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,253,195,295"/>
+<area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,143,223,170"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,195,195,236"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,261,232,287"/>
 </map>
 </div>
 
@@ -617,56 +710,57 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00303">303</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;{</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    uint32_t idcode = <a class="code" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    setDeviceByIDCODEOrThrow(idcode);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00337">337</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;{</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    uint32_t idcode = <a class="code" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    setDeviceByIDCODEOrThrow(idcode);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="inlineInput_8h_source.html#l00158">parseBitstreamIDCODE()</a>, and <a class="el" href="inlineInput_8h_source.html#l00180">readBitstreamMain()</a>.</p>
+<p class="reference">References <a class="el" href="inlineInput_8h_source.html#l00181">parseBitstreamIDCODE()</a>, and <a class="el" href="inlineInput_8h_source.html#l00203">readBitstreamMain()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Input_8cpp_source.html#l00027">XilinxSeries7::readBitstream()</a>, <a class="el" href="XUSP__Input_8cpp_source.html#l00030">XilinxUltraScalePlus::readBitstream()</a>, and <a class="el" href="XUS__Input_8cpp_source.html#l00029">XilinxUltraScale::readBitstream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Input_8cpp_source.html#l00027">XilinxSeries7::readBitstream()</a>, <a class="el" href="XUS__Input_8cpp_source.html#l00029">XilinxUltraScale::readBitstream()</a>, and <a class="el" href="XUSP__Input_8cpp_source.html#l00030">XilinxUltraScalePlus::readBitstream()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_cgraph.png" border="0" usemap="#inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_cgraph" alt=""/></div>
 <map name="inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_cgraph" id="inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,220,144,247"/>
-<area shape="rect" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a" title=" " alt="" coords="192,93,365,120"/>
-<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="205,321,352,348"/>
-<area shape="rect" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098" title=" " alt="" coords="455,119,596,145"/>
-<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="747,169,859,196"/>
-<area shape="rect" href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="434,9,617,36"/>
-<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="711,119,895,145"/>
-<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="1290,72,1467,99"/>
-<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1556,173,1711,200"/>
-<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="1005,107,1199,149"/>
-<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="999,225,1205,266"/>
-<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="1284,229,1473,256"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1527,97,1739,124"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1793,175,1953,201"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1307,123,1450,149"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1521,225,1745,252"/>
-<area shape="rect" href="inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="689,8,916,35"/>
+<area shape="rect" title=" " alt="" coords="5,240,144,267"/>
+<area shape="rect" href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a" title=" " alt="" coords="192,88,365,115"/>
+<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="205,341,352,368"/>
+<area shape="rect" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9" title=" " alt="" coords="423,113,627,140"/>
+<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="747,164,859,191"/>
+<area shape="rect" href="inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="434,8,617,35"/>
+<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="711,367,895,393"/>
+<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="1290,227,1467,253"/>
+<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1556,107,1711,133"/>
+<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="1005,223,1199,265"/>
+<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="999,158,1205,199"/>
+<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="1284,56,1473,83"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1527,189,1739,216"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1793,139,1953,165"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1307,172,1450,199"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1521,56,1745,83"/>
+<area shape="rect" href="inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="689,7,916,33"/>
 <area shape="rect" href="inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="1007,5,1197,32"/>
 <area shape="rect" href="inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1302,5,1455,32"/>
-<area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="460,220,591,247"/>
-<area shape="rect" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="417,271,634,297"/>
-<area shape="rect" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="423,321,627,348"/>
-<area shape="rect" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="422,372,629,399"/>
-<area shape="rect" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="434,423,617,449"/>
-<area shape="rect" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="413,473,637,500"/>
-<area shape="rect" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="449,575,602,601"/>
-<area shape="rect" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="464,524,587,551"/>
-<area shape="rect" href="inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="685,549,920,576"/>
-<area shape="rect" href="inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="685,600,920,627"/>
-<area shape="rect" href="inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="968,549,1236,576"/>
-<area shape="rect" href="inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="971,499,1233,525"/>
-<area shape="rect" href="inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="968,651,1236,677"/>
-<area shape="rect" href="inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="971,600,1233,627"/>
+<area shape="rect" href="inlineInput_8h.html#a83bf9e6c1b2005e37114d7573e79ace3" title=" " alt="" coords="438,519,613,545"/>
+<area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="460,215,591,241"/>
+<area shape="rect" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="417,265,634,292"/>
+<area shape="rect" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="423,316,627,343"/>
+<area shape="rect" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="422,367,629,393"/>
+<area shape="rect" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="434,417,617,444"/>
+<area shape="rect" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="413,468,637,495"/>
+<area shape="rect" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="449,620,602,647"/>
+<area shape="rect" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="464,569,587,596"/>
+<area shape="rect" href="inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="685,595,920,621"/>
+<area shape="rect" href="inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="685,645,920,672"/>
+<area shape="rect" href="inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="968,595,1236,621"/>
+<area shape="rect" href="inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="971,544,1233,571"/>
+<area shape="rect" href="inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="968,696,1236,723"/>
+<area shape="rect" href="inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="971,645,1233,672"/>
 </map>
 </div>
 <div class="dynheader">
@@ -674,10 +768,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_icgraph.png" border="0" usemap="#inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_icgraph" alt=""/></div>
 <map name="inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_icgraph" id="inlineInput_8h_ada7d4f59a2b9aa44680a400d5bd37ec5_icgraph">
-<area shape="rect" title=" " alt="" coords="280,56,419,83"/>
+<area shape="rect" title=" " alt="" coords="280,64,419,91"/>
 <area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,5,223,32"/>
-<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,56,232,83"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,107,195,149"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,57,195,98"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,123,232,149"/>
 </map>
 </div>
 
@@ -707,68 +801,69 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00294">294</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <a class="code" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    setDeviceByPartNameOrThrow();</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00328">328</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;{</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <a class="code" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    setDeviceByPartNameOrThrow();</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before writing</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <a class="code" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a>(fin);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="inlineInput_8h_source.html#l00024">parseBITheader()</a>, and <a class="el" href="inlineInput_8h_source.html#l00180">readBitstreamMain()</a>.</p>
+<p class="reference">References <a class="el" href="inlineInput_8h_source.html#l00024">parseBITheader()</a>, and <a class="el" href="inlineInput_8h_source.html#l00203">readBitstreamMain()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Input_8cpp_source.html#l00027">XilinxSeries7::readBitstream()</a>, <a class="el" href="XUSP__Input_8cpp_source.html#l00030">XilinxUltraScalePlus::readBitstream()</a>, and <a class="el" href="XUS__Input_8cpp_source.html#l00029">XilinxUltraScale::readBitstream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Input_8cpp_source.html#l00027">XilinxSeries7::readBitstream()</a>, <a class="el" href="XUS__Input_8cpp_source.html#l00029">XilinxUltraScale::readBitstream()</a>, and <a class="el" href="XUSP__Input_8cpp_source.html#l00030">XilinxUltraScalePlus::readBitstream()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_cgraph.png" border="0" usemap="#inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_cgraph" alt=""/></div>
 <map name="inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_cgraph" id="inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,430,141,457"/>
-<area shape="rect" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c" title=" " alt="" coords="201,278,325,305"/>
-<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="189,582,336,609"/>
-<area shape="rect" href="namespaceFileIO.html#ae4a16190bddd38b1508e472f1323bd06" title=" " alt="" coords="440,227,552,254"/>
-<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="717,417,829,443"/>
-<area shape="rect" href="namespaceFileIO.html#ae6d460c7fbb05e4104490c4ee18f7d84" title=" " alt="" coords="423,278,569,305"/>
-<area shape="rect" href="namespaceFileIO.html#ad41f7dbc9c1ed8a51accfadf6c8fc978" title=" " alt="" coords="429,114,563,141"/>
-<area shape="rect" href="namespaceFileIO.html#a085994f39dbf647129a14e7b0c3e8051" title=" " alt="" coords="984,278,1161,305"/>
+<area shape="rect" title=" " alt="" coords="5,402,141,429"/>
+<area shape="rect" href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c" title=" " alt="" coords="201,225,325,251"/>
+<area shape="rect" href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="189,554,336,581"/>
+<area shape="rect" href="namespaceFileIO.html#ae4a16190bddd38b1508e472f1323bd06" title=" " alt="" coords="440,225,552,251"/>
+<area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="717,443,829,470"/>
+<area shape="rect" href="namespaceFileIO.html#ae6d460c7fbb05e4104490c4ee18f7d84" title=" " alt="" coords="423,174,569,201"/>
+<area shape="rect" href="namespaceFileIO.html#ad41f7dbc9c1ed8a51accfadf6c8fc978" title=" " alt="" coords="429,90,563,117"/>
+<area shape="rect" href="namespaceFileIO.html#a085994f39dbf647129a14e7b0c3e8051" title=" " alt="" coords="984,282,1161,309"/>
 <area shape="rect" href="namespaceFileIO.html#adc737b05c8f0ac44e5034835c6cf836c" title=" " alt="" coords="1289,227,1444,254"/>
 <area shape="rect" href="namespaceFileIO.html#a7ff728cecb8bbf042b408a8d5bb4f003" title=" " alt="" coords="676,279,871,320"/>
 <area shape="rect" href="namespaceFileIO.html#ad7317fb7deef65dddb8b12103fde926f" title=" " alt="" coords="670,161,877,203"/>
 <area shape="rect" href="namespaceFileIO.html#a80c5593d0aec390026ffc092f36aa1a0" title=" " alt="" coords="978,126,1167,153"/>
-<area shape="rect" href="namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="1261,278,1473,305"/>
-<area shape="rect" href="namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="1559,205,1719,231"/>
+<area shape="rect" href="namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="1261,281,1473,307"/>
+<area shape="rect" href="namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="1559,281,1719,307"/>
 <area shape="rect" href="namespaceEndian.html#a299b13501873eba82fbb3df182a26414" title=" " alt="" coords="1001,177,1144,203"/>
 <area shape="rect" href="namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="1255,153,1479,179"/>
-<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="1278,499,1455,526"/>
-<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1561,379,1716,406"/>
-<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="975,496,1170,537"/>
-<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="969,431,1176,472"/>
-<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="1272,329,1461,355"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1533,462,1745,489"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1799,411,1959,438"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1295,445,1438,471"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1527,329,1751,355"/>
+<area shape="rect" href="namespaceFileIO.html#a5094057ac3e48a146c33a8bddeaae60f" title=" " alt="" coords="1278,505,1455,531"/>
+<area shape="rect" href="namespaceFileIO.html#ab253c19d57dd469687a36fe5b097eb34" title=" " alt="" coords="1561,385,1716,411"/>
+<area shape="rect" href="namespaceFileIO.html#a5f45a6b86516466bf524cb04b333eade" title=" " alt="" coords="975,501,1170,543"/>
+<area shape="rect" href="namespaceFileIO.html#a2fd6138a1888683dec937c2f97c24972" title=" " alt="" coords="969,436,1176,477"/>
+<area shape="rect" href="namespaceFileIO.html#a993f428d792c535bc6455ac6e4eb0e26" title=" " alt="" coords="1272,334,1461,361"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1533,467,1745,494"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1799,417,1959,443"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1295,450,1438,477"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1527,334,1751,361"/>
 <area shape="rect" href="namespaceFileIO.html#a17b5ea8e749675ecdb32439b2054e69e" title=" " alt="" coords="679,44,868,85"/>
 <area shape="rect" href="namespaceFileIO.html#a4378c85d423dceeae5c5a3456a3b2e0a" title=" " alt="" coords="967,5,1178,47"/>
 <area shape="rect" href="namespaceFileIO.html#a5860a0c03441d5786067ac7a8165269b" title=" " alt="" coords="1272,64,1461,105"/>
 <area shape="rect" href="namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1299,13,1434,39"/>
-<area shape="rect" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098" title=" " alt="" coords="425,683,567,710"/>
-<area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="431,785,561,811"/>
-<area shape="rect" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="387,835,605,862"/>
-<area shape="rect" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="394,430,598,457"/>
-<area shape="rect" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="393,481,599,507"/>
-<area shape="rect" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="405,531,587,558"/>
-<area shape="rect" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="384,582,608,609"/>
-<area shape="rect" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="419,734,573,761"/>
-<area shape="rect" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="435,633,557,659"/>
-<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="681,683,865,710"/>
-<area shape="rect" href="inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="656,785,891,811"/>
-<area shape="rect" href="inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="656,734,891,761"/>
-<area shape="rect" href="inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="939,835,1207,862"/>
-<area shape="rect" href="inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="942,785,1203,811"/>
-<area shape="rect" href="inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="939,734,1207,761"/>
-<area shape="rect" href="inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="942,683,1203,710"/>
+<area shape="rect" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9" title=" " alt="" coords="394,579,598,606"/>
+<area shape="rect" href="inlineInput_8h.html#a83bf9e6c1b2005e37114d7573e79ace3" title=" " alt="" coords="409,630,583,657"/>
+<area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="431,731,561,758"/>
+<area shape="rect" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="387,782,605,809"/>
+<area shape="rect" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="394,833,598,859"/>
+<area shape="rect" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="393,377,599,403"/>
+<area shape="rect" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="405,427,587,454"/>
+<area shape="rect" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="384,478,608,505"/>
+<area shape="rect" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="419,681,573,707"/>
+<area shape="rect" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="435,529,557,555"/>
+<area shape="rect" href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="681,605,865,631"/>
+<area shape="rect" href="inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="656,729,891,755"/>
+<area shape="rect" href="inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="656,678,891,705"/>
+<area shape="rect" href="inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="939,779,1207,806"/>
+<area shape="rect" href="inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="942,729,1203,755"/>
+<area shape="rect" href="inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="939,678,1207,705"/>
+<area shape="rect" href="inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="942,627,1203,654"/>
 </map>
 </div>
 <div class="dynheader">
@@ -776,10 +871,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_icgraph.png" border="0" usemap="#inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_icgraph" alt=""/></div>
 <map name="inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_icgraph" id="inlineInput_8h_a2015af67475241b52cb4fdd54ab6577e_icgraph">
-<area shape="rect" title=" " alt="" coords="280,56,416,83"/>
+<area shape="rect" title=" " alt="" coords="280,64,416,91"/>
 <area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,5,223,32"/>
-<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,56,232,83"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,107,195,149"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,57,195,98"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,123,232,149"/>
 </map>
 </div>
 
@@ -809,131 +904,143 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00180">180</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">int</span> slr = 0;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a> regAddr = <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::Register::UNDEFINED</a>;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">int</span> wordCount = 0;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">char</span> shadowFrame[WORDS_PER_FRAME*4];</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">bool</span> shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">int</span> b = 7, r = 0, c = 0, m = 0;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">bool</span> synched = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">//Parse bitstream</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">for</span>( ; ; ){</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordflow">if</span>(!synched){</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098">findBitstreamSync</a>(fin, loadedBitstreamEndianness)){</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                synched = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                <span class="keywordflow">break</span>; <span class="comment">// done with the bitstream</span></div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            uint32_t instruction = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordflow">if</span>(!fin.good()){</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="keywordflow">break</span>; <span class="comment">// done with the bitstream</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordtype">int</span> instructionType = <a class="code" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece">XCAP_getInstructionType</a>(instruction);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383">XCAP::Operation</a> instructionOPCODE = <a class="code" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04">XCAP_getInstructionOperation</a>(instruction);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordtype">int</span> instructionPayload = <a class="code" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f">XCAP_getInstructionPayload</a>(instruction);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">if</span>(instructionType == 1) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    regAddr = <a class="code" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464">XCAP_getInstructionRegister</a>(instruction);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    wordCount = <a class="code" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8">XCAP_getInstructionWordCount</a>(instruction);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(instructionType == 2) {</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    wordCount = instructionPayload;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                    <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Bitstream has invalid instruction (&quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(instruction)+<span class="stringliteral">&quot; @ &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(fin.tellg())+<span class="stringliteral">&quot;) (invalid type).&quot;</span>);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a>){</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                    slr++;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                    wordCount = 0;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                    shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    synched = <span class="keyword">false</span>;    <span class="comment">//TODO: do this recursively and not rely on large continous blocks of MAGIC1 command</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                <span class="keywordflow">if</span>(instructionOPCODE == <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383ad4b9e47f65b6e79b010582f15785867e">XCAP::Operation::WRITE</a>){ <span class="comment">//Write register</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                    <span class="keywordflow">for</span>( ; wordCount &gt; 0 ; ){</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a>){</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                            uint32_t farValue = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                            wordCount--;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                            <a class="code" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688">XCAP_parseFAR</a>(farValue, slr, b, r, c, m);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                            <span class="comment">/*</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">                            if(shadowFrameValid){</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">                                if(b == BLOCKTYPE_LOGIC){</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">                                    memcpy(&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">                                } else if(b == BLOCKTYPE_BLOCKRAM) {</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">                                    memcpy(&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">                                }</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">                                XCAP_IncrementFAR(slr, b, r, c, m);</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">                                shadowFrameValid = false;</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">                            }</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">                            */</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a>){</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                            <span class="keywordflow">if</span>(wordCount % WORDS_PER_FRAME != 0)</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;FDRI write of a partial frame was detected, which is currently not supported.&quot;</span>);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                            <span class="keywordflow">if</span>(shadowFrameValid){</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                <a class="code" href="assert_8h.html#a553961c39a97ce96f2643265f7416673">throwingAssert</a>(b, &lt;, BLOCKTYPE_MAX);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                <a class="code" href="assert_8h.html#a75a35780efa727dc6fa3464abb984df9">throwingAssertPrintVar_1</a>(r, &gt;=, SLRinfo[slr].fromRow, slr);</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                <a class="code" href="assert_8h.html#a75a35780efa727dc6fa3464abb984df9">throwingAssertPrintVar_1</a>(r, &lt;=, SLRinfo[slr].toRow, slr);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                <a class="code" href="assert_8h.html#a75a35780efa727dc6fa3464abb984df9">throwingAssertPrintVar_1</a>(c, &lt;, numberOfCols[r], r);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                    <a class="code" href="assert_8h.html#a44e1a1535b7cf5a3c025290def759d4d">throwingAssertPrintVar_3</a>(m, &lt;, LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]], r, c, (<span class="keywordtype">int</span>)resourceString[r][c]);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                    memcpy(&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                    <a class="code" href="assert_8h.html#a553961c39a97ce96f2643265f7416673">throwingAssert</a>(m, &lt;, FRAMES_PER_BRAM_CONTENT_COLUMN);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                    memcpy(&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                                    warn(<span class="stringliteral">&quot;Unknown BlockType(&quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(b)+<span class="stringliteral">&quot;) written while reading bitstream file.&quot;</span>);</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                                }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                            }</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                            <span class="keywordtype">int</span> forwardShadowReg = (wordCount/WORDS_PER_FRAME) - 1;<span class="comment">//skip shadow reg for certain number of frames</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                            <span class="keywordflow">if</span>(forwardShadowReg &gt; 0){</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                                <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){ <span class="comment">// CLB</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                                    fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM){</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                                    fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                                    fin.ignore(forwardShadowReg * WORDS_PER_FRAME * 4);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                                    warn(<span class="stringliteral">&quot;Unknown BlockType(&quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(b)+<span class="stringliteral">&quot;) written while reading bitstream file.&quot;</span>);</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                                }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;                                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; forwardShadowReg ; i++){</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                                    <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                                }</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                            }</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                            wordCount -= forwardShadowReg * WORDS_PER_FRAME;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                            shadowFrameValid = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                            fin.read((<span class="keywordtype">char</span>*)&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                            wordCount -= WORDS_PER_FRAME;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514aa28966bac17b8eef99c5afa5eb594130">XCAP::Register::CMD</a>){</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                            <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a> command = <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a><span class="keyword">&gt;</span>(<a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness));</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                            wordCount--;</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                            <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a>){</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                            }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                            <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::Command::DESYNC</a>){</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                synched = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                shadowFrameValid = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                            }</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                            uint32_t scrap = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                            wordCount--;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                        }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                    }<span class="comment">//Write register count for loop</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                }<span class="comment">//Write register instruction</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;            }<span class="comment">// not end of file</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    }<span class="comment">// for loop parsing the rest of the bitstream</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="inlineInput_8h_source.html#l00203">203</a> of file <a class="el" href="inlineInput_8h_source.html">inlineInput.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">int</span> slr = 0;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514">XCAP::Register</a> regAddr = <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::Register::UNDEFINED</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">int</span> wordCount = 0;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordtype">char</span> shadowFrame[WORDS_PER_FRAME*4];</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordtype">bool</span> shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordtype">int</span> b = 7, r = 0, c = 0, m = 0;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">bool</span> aligned = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">bool</span> synched = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">//Parse bitstream</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordflow">for</span>( ; ; ){</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        <span class="keywordflow">if</span>(!synched){</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keywordflow">if</span>(!aligned){<span class="comment">//if not aligned, we search for the whole sync sequence, otherwise, just the sync word</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9">findBitstreamSyncSequence</a>(fin, loadedBitstreamEndianness)){</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    synched = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    aligned = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                    <span class="keywordflow">break</span>;<span class="comment">// done with the bitstream</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="inlineInput_8h.html#a83bf9e6c1b2005e37114d7573e79ace3">findBitstreamSyncWord</a>(fin, loadedBitstreamEndianness)){</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                    synched = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                    <span class="keywordflow">break</span>;<span class="comment">// done with the bitstream</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            uint32_t instruction = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            <span class="keywordflow">if</span>(!fin.good()){</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                <span class="keywordflow">break</span>; <span class="comment">// done with the bitstream</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                <span class="keywordtype">int</span> instructionType = <a class="code" href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece">XCAP_getInstructionType</a>(instruction);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383">XCAP::Operation</a> instructionOPCODE = <a class="code" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04">XCAP_getInstructionOperation</a>(instruction);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                <span class="keywordtype">int</span> instructionPayload = <a class="code" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f">XCAP_getInstructionPayload</a>(instruction);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">if</span>(instructionType == 1) {</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    regAddr = <a class="code" href="inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464">XCAP_getInstructionRegister</a>(instruction);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                    wordCount = <a class="code" href="inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8">XCAP_getInstructionWordCount</a>(instruction);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(instructionType == 2) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                    wordCount = instructionPayload;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                    <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Bitstream has invalid instruction (&quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(instruction)+<span class="stringliteral">&quot; @ &quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(fin.tellg())+<span class="stringliteral">&quot;) (invalid type).&quot;</span>);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                }</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a>){</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                    slr++;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    wordCount = 0;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    synched = <span class="keyword">false</span>;    <span class="comment">//TODO: do this recursively and not rely on large continous blocks of MAGIC1 command</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                    aligned = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                <span class="keywordflow">if</span>(instructionOPCODE == <a class="code" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383ad4b9e47f65b6e79b010582f15785867e">XCAP::Operation::WRITE</a>){ <span class="comment">//Write register</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                    <span class="keywordflow">for</span>( ; wordCount &gt; 0 ; ){</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                        <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a>){</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;                            uint32_t farValue = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                            wordCount--;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                            <a class="code" href="inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688">XCAP_parseFAR</a>(farValue, slr, b, r, c, m);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                            <span class="comment">/*</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="comment">                            if(shadowFrameValid){</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">                                if(b == BLOCKTYPE_LOGIC){</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment">                                    memcpy(&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">                                } else if(b == BLOCKTYPE_BLOCKRAM) {</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">                                    memcpy(&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">                                }</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment">                                XCAP_IncrementFAR(slr, b, r, c, m);</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="comment">                                shadowFrameValid = false;</span></div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="comment">                            }</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">                            */</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a>){</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                            <span class="keywordflow">if</span>(wordCount % WORDS_PER_FRAME != 0)</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                                <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;FDRI write of a partial frame was detected, which is currently not supported.&quot;</span>);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                            <span class="keywordflow">if</span>(shadowFrameValid){</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                                <a class="code" href="assert_8h.html#a553961c39a97ce96f2643265f7416673">throwingAssert</a>(b, &lt;, BLOCKTYPE_MAX);</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;                                <a class="code" href="assert_8h.html#a75a35780efa727dc6fa3464abb984df9">throwingAssertPrintVar_1</a>(r, &gt;=, SLRinfo[slr].fromRow, slr);</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                                <a class="code" href="assert_8h.html#a75a35780efa727dc6fa3464abb984df9">throwingAssertPrintVar_1</a>(r, &lt;=, SLRinfo[slr].toRow, slr);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                                <a class="code" href="assert_8h.html#a75a35780efa727dc6fa3464abb984df9">throwingAssertPrintVar_1</a>(c, &lt;, numberOfCols[r], r);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                                <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                                    <a class="code" href="assert_8h.html#a44e1a1535b7cf5a3c025290def759d4d">throwingAssertPrintVar_3</a>(m, &lt;, LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][c]], r, c, (<span class="keywordtype">int</span>)resourceString[r][c]);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                                    memcpy(&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                                    <a class="code" href="assert_8h.html#a553961c39a97ce96f2643265f7416673">throwingAssert</a>(m, &lt;, FRAMES_PER_BRAM_CONTENT_COLUMN);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                                    memcpy(&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &amp;shadowFrame, WORDS_PER_FRAME*4);</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                                    warn(<span class="stringliteral">&quot;Unknown BlockType(&quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(b)+<span class="stringliteral">&quot;) written while reading bitstream file.&quot;</span>);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                                }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                                <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                            }</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                            <span class="keywordtype">int</span> forwardShadowReg = (wordCount/WORDS_PER_FRAME) - 1;<span class="comment">//skip shadow reg for certain number of frames</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                            <span class="keywordflow">if</span>(forwardShadowReg &gt; 0){</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                                <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){ <span class="comment">// CLB</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                                    fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamCLB[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                                } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM){</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                                    fin.read((<span class="keywordtype">char</span>*)&amp;bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                                    fin.ignore(forwardShadowReg * WORDS_PER_FRAME * 4);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                                    warn(<span class="stringliteral">&quot;Unknown BlockType(&quot;</span>+<a class="code" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">to_string</a>(b)+<span class="stringliteral">&quot;) written while reading bitstream file.&quot;</span>);</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                                }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0 ; i &lt; forwardShadowReg ; i++){</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                                    <a class="code" href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a>(slr, b, r, c, m);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                            }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                            wordCount -= forwardShadowReg * WORDS_PER_FRAME;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                            shadowFrameValid = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                            fin.read((<span class="keywordtype">char</span>*)&amp;shadowFrame, WORDS_PER_FRAME*4);</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                            wordCount -= WORDS_PER_FRAME;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(regAddr == <a class="code" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514aa28966bac17b8eef99c5afa5eb594130">XCAP::Register::CMD</a>){</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                            <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a> command = <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abc">XCAP::Command</a><span class="keyword">&gt;</span>(<a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness));</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                            wordCount--;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                            <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a>){</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                            }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                            <span class="keywordflow">if</span>(command == <a class="code" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::Command::DESYNC</a>){</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                                synched = <span class="keyword">false</span>;<span class="comment">//but aligned remains true</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                                shadowFrameValid = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                            }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                            uint32_t scrap = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                            wordCount--;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        }</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                    }<span class="comment">//Write register count for loop</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                }<span class="comment">//Write register instruction</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            }<span class="comment">// not end of file</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    }<span class="comment">// for loop parsing the rest of the bitstream</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514aa28966bac17b8eef99c5afa5eb594130">XCAP::CMD</a>, <a class="el" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::DESYNC</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::FAR</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::FDRI</a>, <a class="el" href="inlineInput_8h_source.html#l00131">findBitstreamSync()</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::MAGIC1</a>, <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, <a class="el" href="assert_8h_source.html#l00032">throwingAssert</a>, <a class="el" href="assert_8h_source.html#l00033">throwingAssertPrintVar_1</a>, <a class="el" href="assert_8h_source.html#l00035">throwingAssertPrintVar_3</a>, <a class="el" href="Endianness_8h_source.html#l00056">Endian::to_string()</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::UNDEFINED</a>, <a class="el" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::WCFG</a>, <a class="el" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383ad4b9e47f65b6e79b010582f15785867e">XCAP::WRITE</a>, <a class="el" href="inlineCAP_8h_source.html#l00259">XCAP_getInstructionOperation()</a>, <a class="el" href="inlineCAP_8h_source.html#l00265">XCAP_getInstructionPayload()</a>, <a class="el" href="inlineCAP_8h_source.html#l00271">XCAP_getInstructionRegister()</a>, <a class="el" href="inlineCAP_8h_source.html#l00253">XCAP_getInstructionType()</a>, <a class="el" href="inlineCAP_8h_source.html#l00277">XCAP_getInstructionWordCount()</a>, <a class="el" href="inlineFAR_8h_source.html#l00143">XCAP_IncrementFAR()</a>, and <a class="el" href="inlineFAR_8h_source.html#l00152">XCAP_parseFAR()</a>.</p>
+<p class="reference">References <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514aa28966bac17b8eef99c5afa5eb594130">XCAP::CMD</a>, <a class="el" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::DESYNC</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::FAR</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::FDRI</a>, <a class="el" href="inlineInput_8h_source.html#l00154">findBitstreamSyncSequence()</a>, <a class="el" href="inlineInput_8h_source.html#l00131">findBitstreamSyncWord()</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::MAGIC1</a>, <a class="el" href="FileIO_8h_source.html#l00133">FileIO::read32()</a>, <a class="el" href="assert_8h_source.html#l00032">throwingAssert</a>, <a class="el" href="assert_8h_source.html#l00033">throwingAssertPrintVar_1</a>, <a class="el" href="assert_8h_source.html#l00035">throwingAssertPrintVar_3</a>, <a class="el" href="Endianness_8h_source.html#l00056">Endian::to_string()</a>, <a class="el" href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::UNDEFINED</a>, <a class="el" href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::WCFG</a>, <a class="el" href="namespaceXCAP.html#a057edbf687197cd74cd20d4d6fc2d383ad4b9e47f65b6e79b010582f15785867e">XCAP::WRITE</a>, <a class="el" href="inlineCAP_8h_source.html#l00259">XCAP_getInstructionOperation()</a>, <a class="el" href="inlineCAP_8h_source.html#l00265">XCAP_getInstructionPayload()</a>, <a class="el" href="inlineCAP_8h_source.html#l00271">XCAP_getInstructionRegister()</a>, <a class="el" href="inlineCAP_8h_source.html#l00253">XCAP_getInstructionType()</a>, <a class="el" href="inlineCAP_8h_source.html#l00277">XCAP_getInstructionWordCount()</a>, <a class="el" href="inlineFAR_8h_source.html#l00143">XCAP_IncrementFAR()</a>, and <a class="el" href="inlineFAR_8h_source.html#l00152">XCAP_parseFAR()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="inlineInput_8h_source.html#l00303">readBitstreamBIN()</a>, and <a class="el" href="inlineInput_8h_source.html#l00294">readBitstreamBIT()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="inlineInput_8h_source.html#l00337">readBitstreamBIN()</a>, and <a class="el" href="inlineInput_8h_source.html#l00328">readBitstreamBIT()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_cgraph.png" border="0" usemap="#inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_cgraph" alt=""/></div>
 <map name="inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_cgraph" id="inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,322,152,349"/>
-<area shape="rect" href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098" title=" " alt="" coords="241,145,383,172"/>
+<area shape="rect" title=" " alt="" coords="5,297,152,324"/>
+<area shape="rect" href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9" title=" " alt="" coords="210,94,414,121"/>
 <area shape="rect" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6" title=" " alt="" coords="533,94,645,121"/>
+<area shape="rect" href="inlineInput_8h.html#a83bf9e6c1b2005e37114d7573e79ace3" title=" " alt="" coords="225,145,399,172"/>
 <area shape="rect" href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="247,196,377,222"/>
 <area shape="rect" href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="203,246,421,273"/>
 <area shape="rect" href="inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="210,297,414,324"/>
@@ -965,12 +1072,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_icgraph.png" border="0" usemap="#inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_icgraph" alt=""/></div>
 <map name="inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_icgraph" id="inlineInput_8h_a0487f8d718905360038fc67d9cfbe63c_icgraph">
-<area shape="rect" title=" " alt="" coords="467,64,613,91"/>
-<area shape="rect" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="280,39,419,65"/>
-<area shape="rect" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="281,89,417,116"/>
+<area shape="rect" title=" " alt="" coords="467,56,613,83"/>
+<area shape="rect" href="inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="280,31,419,57"/>
+<area shape="rect" href="inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="281,81,417,108"/>
 <area shape="rect" href="classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="15,5,223,32"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,57,195,98"/>
-<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,123,232,149"/>
+<area shape="rect" href="classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="5,56,232,83"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="42,107,195,149"/>
 </map>
 </div>
 
@@ -996,11 +1103,12 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a0db45d2a4141101bdfe48e3314cfbca3">XCAP::Register::UNDEFINED</a></div><div class="ttdeci">@ UNDEFINED</div></div>
 <div class="ttc" id="anamespaceFileIO_html_ae6d460c7fbb05e4104490c4ee18f7d84"><div class="ttname"><a href="namespaceFileIO.html#ae6d460c7fbb05e4104490c4ee18f7d84">FileIO::readNative8</a></div><div class="ttdeci">uint8_t readNative8(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00048">FileIO.h:48</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_aaccfcd823f22c4f98df1cb587fcd74e6"><div class="ttname"><a href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a></div><div class="ttdeci">uint32_t read32(ifstream &amp;fin, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00133">FileIO.h:133</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_a83bf9e6c1b2005e37114d7573e79ace3"><div class="ttname"><a href="inlineInput_8h.html#a83bf9e6c1b2005e37114d7573e79ace3">findBitstreamSyncWord</a></div><div class="ttdeci">bool findBitstreamSyncWord(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00131">inlineInput.h:131</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a1eb75ca7e22180ac716ad8209daadb04"><div class="ttname"><a href="inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04">XCAP_getInstructionOperation</a></div><div class="ttdeci">XCAP::Operation XCAP_getInstructionOperation(uint32_t instruction)</div><div class="ttdoc">Parses and returns instruction operation. Most Xil instructions will NOP or write.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00259">inlineCAP.h:259</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_abaf85e5d8d9641e35ffb4a5bcfc37f84"><div class="ttname"><a href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84">Endian::BitSwap32</a></div><div class="ttdeci">uint32_t BitSwap32(uint32_t x)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00220">Endianness.h:220</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">Endianness::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Little endian (&quot;LE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess ...</div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a9ba7438c226da96455dffd27d8a3dece"><div class="ttname"><a href="inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece">XCAP_getInstructionType</a></div><div class="ttdeci">uint32_t XCAP_getInstructionType(uint32_t instruction)</div><div class="ttdoc">Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00253">inlineCAP.h:253</a></div></div>
-<div class="ttc" id="ainlineInput_8h_html_a0487f8d718905360038fc67d9cfbe63c"><div class="ttname"><a href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a></div><div class="ttdeci">void readBitstreamMain(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00180">inlineInput.h:180</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_a0487f8d718905360038fc67d9cfbe63c"><div class="ttname"><a href="inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c">readBitstreamMain</a></div><div class="ttdeci">void readBitstreamMain(ifstream &amp;fin)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00203">inlineInput.h:203</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_ac9f4873f9a0c23291fa47d68dff6fbbc"><div class="ttname"><a href="namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc">Endian::to_string</a></div><div class="ttdeci">string to_string(Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00056">Endianness.h:56</a></div></div>
 <div class="ttc" id="ainlineFAR_8h_html_ada71464c75787bcd2a2de5a2e7743a3d"><div class="ttname"><a href="inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d">XCAP_IncrementFAR</a></div><div class="ttdeci">void XCAP_IncrementFAR(int slrID, int &amp;blockType, int &amp;globalRowAddress, int &amp;columnAddress, int &amp;minorAddress)</div><div class="ttdef"><b>Definition:</b> <a href="inlineFAR_8h_source.html#l00143">inlineFAR.h:143</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">Endianness::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Big endian with bit swaps inside each byte.</div></div>
@@ -1008,19 +1116,19 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a7c5693628f8cc575ce93b5c30a1d2370">XCAP::Register::MAGIC1</a></div><div class="ttdeci">@ MAGIC1</div></div>
 <div class="ttc" id="anamespaceEndian_html_a7cd80b2cb2ed674196a68549c8489f88"><div class="ttname"><a href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a></div><div class="ttdeci">uint32_t NativeToBigEndian32(uint32_t x)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00152">Endianness.h:152</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ac9b0993109b5ca599fa108e02df7420d">XCAP::Register::FDRI</a></div><div class="ttdeci">@ FDRI</div></div>
-<div class="ttc" id="ainlineInput_8h_html_aaca4e37f11bf6f869a9f1296b5b0182a"><div class="ttname"><a href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a></div><div class="ttdeci">uint32_t parseBitstreamIDCODE(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00158">inlineInput.h:158</a></div></div>
+<div class="ttc" id="ainlineInput_8h_html_aaca4e37f11bf6f869a9f1296b5b0182a"><div class="ttname"><a href="inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a">parseBitstreamIDCODE</a></div><div class="ttdeci">uint32_t parseBitstreamIDCODE(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00181">inlineInput.h:181</a></div></div>
 <div class="ttc" id="aassert_8h_html_a553961c39a97ce96f2643265f7416673"><div class="ttname"><a href="assert_8h.html#a553961c39a97ce96f2643265f7416673">throwingAssert</a></div><div class="ttdeci">#define throwingAssert(left, operator, right)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00032">assert.h:32</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
-<div class="ttc" id="ainlineInput_8h_html_a28adcfbf629a14df2fab79e403e9f098"><div class="ttname"><a href="inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098">findBitstreamSync</a></div><div class="ttdeci">bool findBitstreamSync(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00131">inlineInput.h:131</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_ae4a16190bddd38b1508e472f1323bd06"><div class="ttname"><a href="namespaceFileIO.html#ae4a16190bddd38b1508e472f1323bd06">FileIO::read16</a></div><div class="ttdeci">uint16_t read16(ifstream &amp;fin, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00145">FileIO.h:145</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d"><div class="ttname"><a href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abca63682cbceb0b416aa034c4da2f2f745d">XCAP::Command::DESYNC</a></div><div class="ttdeci">@ DESYNC</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cab"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a></div><div class="ttdeci">Endianness</div><div class="ttdoc">&lt; Endianness in byteman is represented not only by big/little endian, but also by potential bit swapp...</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00046">Endianness.h:46</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_ac0e8d10f67fbe4b89886a2f5be7c690c"><div class="ttname"><a href="inlineInput_8h.html#ac0e8d10f67fbe4b89886a2f5be7c690c">parseBITheader</a></div><div class="ttdeci">void parseBITheader(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00024">inlineInput.h:24</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200"><div class="ttname"><a href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a></div><div class="ttdeci">@ WCFG</div></div>
+<div class="ttc" id="ainlineInput_8h_html_a377dbea0e75938e53bfa4e6bfd7c36c9"><div class="ttname"><a href="inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9">findBitstreamSyncSequence</a></div><div class="ttdeci">bool findBitstreamSyncSequence(ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00154">inlineInput.h:154</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a445d56f4c0c7afb68ecfa18087a6af31"><div class="ttname"><a href="inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31">XCAP_getSyncInstruction</a></div><div class="ttdeci">uint32_t XCAP_getSyncInstruction()</div><div class="ttdoc">Generate and return the encoding for a SYNC instruction.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00430">inlineCAP.h:430</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 26 2022 13:14:07 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Jul 26 2022 17:53:30 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

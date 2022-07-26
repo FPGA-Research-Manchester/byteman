@@ -7,7 +7,7 @@ digraph "parseBitstreamIDCODE"
   rankdir="LR";
   Node1 [label="parseBitstreamIDCODE",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="findBitstreamSync",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098",tooltip=" "];
+  Node2 [label="findBitstreamSyncSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#a377dbea0e75938e53bfa4e6bfd7c36c9",tooltip=" "];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="FileIO::read32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6",tooltip=" "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
