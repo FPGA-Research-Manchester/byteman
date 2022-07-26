@@ -144,6 +144,12 @@ void XilinxUltraScale::assemblerAsmTo(ifstream& fin, ofstream& fout)
 			if(!str::parse::multipleUints(line, wordValue))wordValue = 0;
 			FileIO::write32(fout, wordValue, loadedBitstreamEndianness);
 		}
+		else if(str::iff::stringContains(line, ".BYTE")){
+			uint32_t value;
+			if(!str::parse::multipleUints(line, value))value = 0;
+			uint32_t byteValue = value % 256;
+			FileIO::write8(fout, byteValue, loadedBitstreamEndianness);
+		}
 		else if(str::iff::stringContains(line, "NOP")){
 			int nopHiddenValue;
 			if(!str::parse::multipleInts(line, nopHiddenValue))nopHiddenValue = 0;
