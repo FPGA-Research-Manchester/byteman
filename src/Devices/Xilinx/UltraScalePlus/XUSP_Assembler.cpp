@@ -261,8 +261,18 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 		} else {
 			if(! synched){
 				if(0xAA995566 == instruction){
-					synched = true;
-					fout << "SYNC" << endl;
+					fin.seekg(-20,ios::cur); //sync only if we had the full sync sequence
+					int wordOld4 = FileIO::read32(fin, loadedBitstreamEndianness);
+					int wordOld3 = FileIO::read32(fin, loadedBitstreamEndianness);
+					int wordOld2 = FileIO::read32(fin, loadedBitstreamEndianness);
+					int wordOld1 = FileIO::read32(fin, loadedBitstreamEndianness);
+					instruction = FileIO::read32(fin, loadedBitstreamEndianness);
+					if(wordOld4 == 0x000000BB && wordOld3 == 0x11220044 && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF){
+						synched = true;
+						fout << "SYNC" << endl;
+					} else {
+						fout << ".word " <<"0x" << uppercase << hex << setw(8) << setfill('0') << instruction << endl;
+					}
 				} else {
 					fout << ".word " <<"0x" << uppercase << hex << setw(8) << setfill('0') << instruction << endl;
 				}

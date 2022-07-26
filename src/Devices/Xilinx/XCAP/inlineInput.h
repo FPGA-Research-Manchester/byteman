@@ -92,54 +92,30 @@ inline Endianness parseBitstreamEndianness(ifstream& fin)
 	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
 		if(!fin.good())
 			throw runtime_error("Was unable to find input bitstream's SYNC command.");
+		int wordOld4 = FileIO::read32(fin, Endianness::NATIVE);
+		int wordOld3 = FileIO::read32(fin, Endianness::NATIVE);
+		int wordOld2 = FileIO::read32(fin, Endianness::NATIVE);
+		int wordOld1 = FileIO::read32(fin, Endianness::NATIVE);
 		int word = FileIO::read32(fin, Endianness::NATIVE);
-		if(XCAP_getSyncInstruction() == word){
+		if(wordOld4 == 0x000000BB && wordOld3 == 0x11220044 && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == XCAP_getSyncInstruction()){
 			returnVal = Endianness::NATIVE;
 			syncDetectionDone++;
-		} else if(XCAP_getSyncInstruction() == (Endian::NativeToBigEndian32(word))){
+		} else if(wordOld4 == (Endian::NativeToBigEndian32(0x000000BB)) && wordOld3 == (Endian::NativeToBigEndian32(0x11220044)) && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == (Endian::NativeToBigEndian32(XCAP_getSyncInstruction()))){
 			returnVal = Endianness::BE;
 			syncDetectionDone++;
-		} else if(XCAP_getSyncInstruction() == (Endian::NativeToLittleEndian32(word))){
+		} else if(wordOld4 == (Endian::NativeToLittleEndian32(0x000000BB)) && wordOld3 == (Endian::NativeToLittleEndian32(0x11220044)) && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == (Endian::NativeToLittleEndian32(XCAP_getSyncInstruction()))){
 			returnVal = Endianness::LE;
 			syncDetectionDone++;
-		} else if(XCAP_getSyncInstruction() == Endian::BitSwap32(Endian::NativeToBigEndian32(word))){
+		} else if(wordOld4 == (Endian::NativeToBigEndian32(0x000000BB)) && wordOld3 == (Endian::NativeToBigEndian32(0x11220044)) && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == (Endian::NativeToBigEndian32(XCAP_getSyncInstruction()))){
 			returnVal = Endianness::BE_BS;
 			syncDetectionDone++;
-		} else if(XCAP_getSyncInstruction() == Endian::BitSwap32(Endian::NativeToLittleEndian32(word))){
+		} else if(wordOld4 == Endian::BitSwap32((Endian::NativeToLittleEndian32(0x000000BB))) && wordOld3 == Endian::BitSwap32((Endian::NativeToLittleEndian32(0x11220044))) && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == Endian::BitSwap32((Endian::NativeToLittleEndian32(XCAP_getSyncInstruction())))){
 			returnVal = Endianness::LE_BS;
 			syncDetectionDone++;
 		} else
-			fin.seekg(-3,ios::cur);
+			fin.seekg(-19,ios::cur);
 	}
 	log("Detected file endianess: " + Endian::to_string(returnVal));
-	
-	fin.seekg(fileOffset, fin.beg);
-	return returnVal;
-}
-
-/**************************************************************************//**
- * Reads a bitstream until and including the first IDCODE command and returns
- * the first SLRs IDCODE.
- * 
- * @arg @c fin input file stream. Gets fixed back to the original value before
- * leaving this function!
- *****************************************************************************/
-inline uint32_t parseBitstreamIDCODE(ifstream& fin, Endianness e)
-{
-	streamoff fileOffset = fin.tellg();
-	//Optional bitstream header
-	uint32_t returnVal;
-	//Find sync
-	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
-		if(!fin.good())
-			throw runtime_error("Was unable to find input bitstream's IDCODE command.");
-		int word = FileIO::read32(fin, e);
-		if(XCAP_IDCODEInstruction() == word){
-			returnVal = FileIO::read32(fin, e);
-			syncDetectionDone++;
-		} else
-			fin.seekg(-3,ios::cur);
-	}
 	
 	fin.seekg(fileOffset, fin.beg);
 	return returnVal;
@@ -159,13 +135,46 @@ bool findBitstreamSync(ifstream& fin, Endianness e)
 	for( ; ; ){
 		if(!fin.good())
 			return false;
+		int wordOld4 = FileIO::read32(fin, e);
+		int wordOld3 = FileIO::read32(fin, e);
+		int wordOld2 = FileIO::read32(fin, e);
+		int wordOld1 = FileIO::read32(fin, e);
 		int word = FileIO::read32(fin, e);
-		if(XCAP_getSyncInstruction() == word){
+		if(wordOld4 == 0x000000BB && wordOld3 == 0x11220044 && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == XCAP_getSyncInstruction()){
 			return true;
+		} else
+			fin.seekg(-19,ios::cur);
+	}
+	return false; //not going to be reached.
+}
+
+/**************************************************************************//**
+ * Reads a bitstream until and including the first IDCODE command and returns
+ * the first SLRs IDCODE.
+ * 
+ * @arg @c fin input file stream. Gets fixed back to the original value before
+ * leaving this function!
+ *****************************************************************************/
+inline uint32_t parseBitstreamIDCODE(ifstream& fin, Endianness e)
+{
+	streamoff fileOffset = fin.tellg();
+	//Optional bitstream header
+	findBitstreamSync(fin, e);
+	uint32_t returnVal;
+	//Find sync
+	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
+		if(!fin.good())
+			throw runtime_error("Was unable to find input bitstream's IDCODE command.");
+		int word = FileIO::read32(fin, e);
+		if(XCAP_IDCODEInstruction() == word){
+			returnVal = FileIO::read32(fin, e);
+			syncDetectionDone++;
 		} else
 			fin.seekg(-3,ios::cur);
 	}
-	return true; //not going to be reached.
+	
+	fin.seekg(fileOffset, fin.beg);
+	return returnVal;
 }
 
 inline void readBitstreamMain(ifstream& fin)
