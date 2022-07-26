@@ -22,4 +22,6 @@ digraph "main"
   Node8 [label="str::iff::stringBeginsWith",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6",tooltip="Returns true if string checkedString's first characters match fully any of strings nextString or rest..."];
   Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69",tooltip="Replaces all instances of oldChar in string str with newChar and returns the resulting string."];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="str::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5",tooltip="Replaces all uppercase characters in str with lowercase and returns the resulting string."];
 }

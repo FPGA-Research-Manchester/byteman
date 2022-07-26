@@ -1,33 +1,34 @@
 <map id="XCAP_getSyncInstruction" name="XCAP_getSyncInstruction">
-<area shape="rect" id="node1" title="Generate and return the encoding for a SYNC instruction." alt="" coords="1344,332,1528,359"/>
-<area shape="rect" id="node2" href="$inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098" title=" " alt="" coords="1129,155,1270,181"/>
-<area shape="rect" id="node9" href="$inlineOutput_8h.html#a13f794352157bc16d9bf43e50062d008" title=" " alt="" coords="1103,608,1296,635"/>
-<area shape="rect" id="node21" href="$inlineInput_8h.html#afecbc7d2f0175cd665f732ec0c5b93bf" title=" " alt="" coords="559,236,755,263"/>
-<area shape="rect" id="node28" href="$inlineCAP_8h.html#a319647794ca23b959a622a180feb15b0" title="Generate and write an SYNQ command." alt="" coords="1133,437,1265,464"/>
-<area shape="rect" id="node3" href="$inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="855,115,1002,141"/>
-<area shape="rect" id="node4" href="$inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="587,64,726,91"/>
-<area shape="rect" id="node8" href="$inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="589,115,725,141"/>
-<area shape="rect" id="node5" href="$classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="293,5,501,32"/>
-<area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="321,57,474,98"/>
-<area shape="rect" id="node7" href="$classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="284,123,511,149"/>
-<area shape="rect" id="node10" href="$classXilinxSeries7.html#add24644bcb25c9d2832e08ee151419c5" title=" " alt="" coords="837,503,1020,545"/>
-<area shape="rect" id="node11" href="$classXilinxUltraScale.html#a5fc4f1606f3f0943ea92809c1632b47c" title=" " alt="" coords="827,569,1030,610"/>
-<area shape="rect" id="node12" href="$classXilinxUltraScalePlus.html#a3759d31f6e02c6d8fc6b8e46aec7b071" title=" " alt="" coords="852,634,1005,675"/>
-<area shape="rect" id="node13" href="$inlineOutput_8h.html#a05bec3a0deb8010a85f094fe3b4ea2f1" title=" " alt="" coords="820,700,1037,727"/>
-<area shape="rect" id="node20" href="$inlineOutput_8h.html#a27282583d01db3246c1282b0da502e96" title=" " alt="" coords="821,751,1036,777"/>
-<area shape="rect" id="node14" href="$inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd" title=" " alt="" coords="581,725,732,752"/>
-<area shape="rect" id="node15" href="$inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b" title=" " alt="" coords="326,700,469,727"/>
-<area shape="rect" id="node19" href="$inlineOutput_8h.html#a7fb90fced1a719d94263f1c2e812ddb7" title=" " alt="" coords="327,751,467,777"/>
-<area shape="rect" id="node16" href="$classXilinxSeries7.html#a57013b15c1c846d96d7732ad5c0e0201" title=" " alt="" coords="15,675,227,701"/>
-<area shape="rect" id="node17" href="$classXilinxUltraScale.html#ae7bdd2bbb29cb3ef06c611605d997287" title=" " alt="" coords="5,725,236,752"/>
-<area shape="rect" id="node18" href="$classXilinxUltraScalePlus.html#a7f2a7c34766d004adc6f1cfe1bdd62e7" title=" " alt="" coords="44,777,197,818"/>
-<area shape="rect" id="node22" href="$classXilinxSeries7.html#a84088520559c05409ffe2526e77fcdf0" title=" " alt="" coords="296,370,499,411"/>
-<area shape="rect" id="node23" href="$classXilinxUltraScale.html#a470d66f10ef1212ea12b319f56ab1e07" title=" " alt="" coords="287,435,508,477"/>
-<area shape="rect" id="node24" href="$classXilinxUltraScalePlus.html#a9e8e5752150904ec460d01861957997f" title=" " alt="" coords="307,501,488,542"/>
-<area shape="rect" id="node25" href="$classXilinxSeries7.html#a4239ae4d300adffe6005349f64d8e6ff" title=" " alt="" coords="296,174,499,215"/>
-<area shape="rect" id="node26" href="$classXilinxUltraScalePlus.html#a54f9af4b6723a99c0b9e8e9c9b424d00" title=" " alt="" coords="308,239,487,281"/>
-<area shape="rect" id="node27" href="$classXilinxUltraScale.html#a1e74fd2f5f3122339373ac7e571c0743" title=" " alt="" coords="287,305,508,346"/>
-<area shape="rect" id="node29" href="$classXilinxUltraScale.html#a55ead0a9663bd461a7cd4abd8f5684f2" title=" " alt="" coords="803,276,1055,332"/>
-<area shape="rect" id="node30" href="$classXilinxSeries7.html#afbaf18de3f60ea14a482474b16851642" title=" " alt="" coords="803,357,1054,398"/>
-<area shape="rect" id="node31" href="$classXilinxUltraScalePlus.html#abf41976c5eb3bbc44974db8ffad594e9" title=" " alt="" coords="809,423,1048,479"/>
+<area shape="rect" id="node1" title="Generate and return the encoding for a SYNC instruction." alt="" coords="1369,436,1553,463"/>
+<area shape="rect" id="node2" href="$inlineInput_8h.html#a28adcfbf629a14df2fab79e403e9f098" title=" " alt="" coords="1154,148,1295,175"/>
+<area shape="rect" id="node13" href="$inlineOutput_8h.html#a13f794352157bc16d9bf43e50062d008" title=" " alt="" coords="1128,712,1321,739"/>
+<area shape="rect" id="node25" href="$inlineInput_8h.html#afecbc7d2f0175cd665f732ec0c5b93bf" title=" " alt="" coords="856,329,1052,356"/>
+<area shape="rect" id="node29" href="$inlineCAP_8h.html#a319647794ca23b959a622a180feb15b0" title="Generate and write an SYNQ command." alt="" coords="1159,541,1291,568"/>
+<area shape="rect" id="node3" href="$inlineInput_8h.html#aaca4e37f11bf6f869a9f1296b5b0182a" title=" " alt="" coords="867,148,1041,175"/>
+<area shape="rect" id="node11" href="$inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c" title=" " alt="" coords="881,56,1027,83"/>
+<area shape="rect" id="node4" href="$classXilinxSeries7.html#a84088520559c05409ffe2526e77fcdf0" title=" " alt="" coords="568,238,771,279"/>
+<area shape="rect" id="node5" href="$classXilinxUltraScale.html#a470d66f10ef1212ea12b319f56ab1e07" title=" " alt="" coords="559,107,780,149"/>
+<area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html#a9e8e5752150904ec460d01861957997f" title=" " alt="" coords="579,173,760,214"/>
+<area shape="rect" id="node7" href="$inlineInput_8h.html#ada7d4f59a2b9aa44680a400d5bd37ec5" title=" " alt="" coords="600,56,739,83"/>
+<area shape="rect" id="node8" href="$classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8" title=" " alt="" coords="293,5,501,32"/>
+<area shape="rect" id="node9" href="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2" title=" " alt="" coords="321,107,474,149"/>
+<area shape="rect" id="node10" href="$classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a" title=" " alt="" coords="284,56,511,83"/>
+<area shape="rect" id="node12" href="$inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e" title=" " alt="" coords="601,5,737,32"/>
+<area shape="rect" id="node14" href="$classXilinxSeries7.html#add24644bcb25c9d2832e08ee151419c5" title=" " alt="" coords="863,673,1045,714"/>
+<area shape="rect" id="node15" href="$classXilinxUltraScale.html#a5fc4f1606f3f0943ea92809c1632b47c" title=" " alt="" coords="853,738,1055,779"/>
+<area shape="rect" id="node16" href="$classXilinxUltraScalePlus.html#a3759d31f6e02c6d8fc6b8e46aec7b071" title=" " alt="" coords="877,607,1031,649"/>
+<area shape="rect" id="node17" href="$inlineOutput_8h.html#a05bec3a0deb8010a85f094fe3b4ea2f1" title=" " alt="" coords="845,804,1063,831"/>
+<area shape="rect" id="node24" href="$inlineOutput_8h.html#a27282583d01db3246c1282b0da502e96" title=" " alt="" coords="847,855,1061,881"/>
+<area shape="rect" id="node18" href="$inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd" title=" " alt="" coords="594,829,745,856"/>
+<area shape="rect" id="node19" href="$inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b" title=" " alt="" coords="326,804,469,831"/>
+<area shape="rect" id="node23" href="$inlineOutput_8h.html#a7fb90fced1a719d94263f1c2e812ddb7" title=" " alt="" coords="327,855,467,881"/>
+<area shape="rect" id="node20" href="$classXilinxSeries7.html#a57013b15c1c846d96d7732ad5c0e0201" title=" " alt="" coords="15,829,227,856"/>
+<area shape="rect" id="node21" href="$classXilinxUltraScale.html#ae7bdd2bbb29cb3ef06c611605d997287" title=" " alt="" coords="5,880,236,907"/>
+<area shape="rect" id="node22" href="$classXilinxUltraScalePlus.html#a7f2a7c34766d004adc6f1cfe1bdd62e7" title=" " alt="" coords="44,763,197,805"/>
+<area shape="rect" id="node26" href="$classXilinxSeries7.html#a4239ae4d300adffe6005349f64d8e6ff" title=" " alt="" coords="568,523,771,565"/>
+<area shape="rect" id="node27" href="$classXilinxUltraScalePlus.html#a54f9af4b6723a99c0b9e8e9c9b424d00" title=" " alt="" coords="580,589,759,630"/>
+<area shape="rect" id="node28" href="$classXilinxUltraScale.html#a1e74fd2f5f3122339373ac7e571c0743" title=" " alt="" coords="559,406,780,447"/>
+<area shape="rect" id="node30" href="$classXilinxUltraScale.html#a55ead0a9663bd461a7cd4abd8f5684f2" title=" " alt="" coords="828,380,1080,436"/>
+<area shape="rect" id="node31" href="$classXilinxSeries7.html#afbaf18de3f60ea14a482474b16851642" title=" " alt="" coords="829,461,1079,502"/>
+<area shape="rect" id="node32" href="$classXilinxUltraScalePlus.html#abf41976c5eb3bbc44974db8ffad594e9" title=" " alt="" coords="835,527,1073,583"/>
 </map>

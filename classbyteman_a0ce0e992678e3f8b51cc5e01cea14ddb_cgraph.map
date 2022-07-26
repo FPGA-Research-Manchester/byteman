@@ -1,8 +1,9 @@
 <map id="byteman::parse" name="byteman::parse">
-<area shape="rect" id="node1" title=" " alt="" coords="5,71,129,98"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,97,129,123"/>
 <area shape="rect" id="node2" href="$namespacestr.html#a664d127caf0e35994e01d38d9c0fc16c" title="Finds string searchString inside checkedString and returns all to the right inside checkedString...." alt="" coords="177,5,352,47"/>
 <area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a06c9e283ff14a39e32af47c1b1ca699b" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="177,71,352,98"/>
 <area shape="rect" id="node6" href="$namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="217,122,312,149"/>
+<area shape="rect" id="node7" href="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="196,173,333,199"/>
 <area shape="rect" id="node4" href="$namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="400,71,549,98"/>
 <area shape="rect" id="node5" href="$namespacestr_1_1iff.html#a6d3613fc3d6e8d86b3041d6d225aa6b6" title="Returns true if string checkedString&#39;s first characters match fully any of strings nextString or rest..." alt="" coords="597,71,776,98"/>
 </map>
