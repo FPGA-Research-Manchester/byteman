@@ -256,33 +256,44 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 	
 	XCAP::Register regAddr = XCAP::Register::UNDEFINED;
 	bool synched = false;
+	bool aligned = false;
 	int wordCount = 0;
 	int shadowFrameValid = 0;
 	int slr = 0, b = 7, r = 0, c = 0, m = 0;
 	//Parse bitstream
 	for( ; ; ){
-		uint32_t instruction = FileIO::read32(fin, loadedBitstreamEndianness);
 		if(!fin.good()){
 			break; // done with the bitstream
 		} else {
-			if(! synched){
-				if(0xAA995566 == instruction){
-					fin.seekg(-20,ios::cur); //sync only if we had the full sync sequence
-					int wordOld4 = FileIO::read32(fin, loadedBitstreamEndianness);
-					int wordOld3 = FileIO::read32(fin, loadedBitstreamEndianness);
-					int wordOld2 = FileIO::read32(fin, loadedBitstreamEndianness);
-					int wordOld1 = FileIO::read32(fin, loadedBitstreamEndianness);
-					instruction = FileIO::read32(fin, loadedBitstreamEndianness);
-					if(wordOld4 == 0x000000BB && wordOld3 == 0x11220044 && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF){
+			if(!synched){
+				streamoff startFileOffset = fin.tellg();
+				streamoff endFileOffset;
+				if(!aligned){
+					if(findBitstreamSyncSequence(fin, loadedBitstreamEndianness)){
+						endFileOffset = fin.tellg() - (streamoff)4;
 						synched = true;
-						fout << "SYNC" << endl;
-					} else {
-						fout << ".word " <<"0x" << uppercase << hex << setw(8) << setfill('0') << instruction << endl;
+						aligned = true;
+					} else {//end of bitstream
+						endFileOffset = fin.tellg();
 					}
+				} else { //already aligned
+					if(findBitstreamSyncWord(fin, loadedBitstreamEndianness)){
+						endFileOffset = fin.tellg() - (streamoff)4;
+						synched = true;
+					} else {//end of bitstream
+						endFileOffset = fin.tellg();
+					}
+				}
+				fin.seekg(startFileOffset, fin.beg);
+				assemblyOutputData(fin, fout, (endFileOffset - startFileOffset));
+				if(synched){
+					FileIO::read32(fin);//discard sync command
+					fout << "SYNC" << endl;
 				} else {
-					fout << ".word " <<"0x" << uppercase << hex << setw(8) << setfill('0') << instruction << endl;
+					break; //if still not synched, then we reached end of file
 				}
 			} else {
+				uint32_t instruction = FileIO::read32(fin, loadedBitstreamEndianness);
 				int instructionType = XCAP_getInstructionType(instruction);
 				XCAP::Operation instructionOPCODE = XCAP_getInstructionOperation(instruction);
 				int instructionPayload = XCAP_getInstructionPayload(instruction);
@@ -362,6 +373,7 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 						if(2 == nextInstrType && XCAP::Operation::WRITE == nextInstrOP && 0 < nextInstrPayload){
 							slr++;
 							synched = false;
+							aligned = false;
 							fout << "Select next SLR for the next #"<<dec<<nextInstrPayload<<" words." << endl;
 						} else {
 							fout << "Bad MAGIC1 instruction" << endl;

@@ -155,6 +155,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		#include "XCAP/inlineSetFabric.h"
 		#include "XCAP/inlineTest.h"
 		#include "XCAP/inlinePrintResourceStringInfo.h"
+		#include "XCAP/inlineAssembly.h"
 
 //Some functions that will need to be implemented by each architecture
 	//get/set device type

@@ -128,7 +128,30 @@ inline Endianness parseBitstreamEndianness(ifstream& fin)
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
 
-bool findBitstreamSync(ifstream& fin, Endianness e)
+bool findBitstreamSyncWord(ifstream& fin, Endianness e)
+{
+	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
+	//However we don't care about reading those
+	for( ; ; ){
+		if(!fin.good())
+			return false;
+		int word = FileIO::read32(fin, e);
+		if(word == XCAP_getSyncInstruction()){
+			return true;
+		} else
+			fin.seekg(-3,ios::cur);
+	}
+	return false; //not going to be reached.
+}
+
+/**************************************************************************//**
+ * Reads a bitstream header until and including the sync sequence.
+ * 
+ * @arg @c fin input file stream. Moves the stream pointer to after the SYNC
+ * command and in a word-aligned position with the following instructions.
+ *****************************************************************************/
+
+bool findBitstreamSyncSequence(ifstream& fin, Endianness e)
 {
 	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
 	//However we don't care about reading those
@@ -159,7 +182,7 @@ inline uint32_t parseBitstreamIDCODE(ifstream& fin, Endianness e)
 {
 	streamoff fileOffset = fin.tellg();
 	//Optional bitstream header
-	findBitstreamSync(fin, e);
+	findBitstreamSyncSequence(fin, e);
 	uint32_t returnVal;
 	//Find sync
 	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
@@ -185,14 +208,24 @@ inline void readBitstreamMain(ifstream& fin)
 	char shadowFrame[WORDS_PER_FRAME*4];
 	bool shadowFrameValid = false;
 	int b = 7, r = 0, c = 0, m = 0;
+	bool aligned = false;
 	bool synched = false;
 	//Parse bitstream
 	for( ; ; ){
 		if(!synched){
-			if(findBitstreamSync(fin, loadedBitstreamEndianness)){
-				synched = true;
+			if(!aligned){//if not aligned, we search for the whole sync sequence, otherwise, just the sync word
+				if(findBitstreamSyncSequence(fin, loadedBitstreamEndianness)){
+					synched = true;
+					aligned = true;
+				} else {
+					break;// done with the bitstream
+				}
 			} else {
-				break; // done with the bitstream
+				if(findBitstreamSyncWord(fin, loadedBitstreamEndianness)){
+					synched = true;
+				} else {
+					break;// done with the bitstream
+				}
 			}
 		} else {
 			uint32_t instruction = FileIO::read32(fin, loadedBitstreamEndianness);
@@ -215,6 +248,7 @@ inline void readBitstreamMain(ifstream& fin)
 					wordCount = 0;
 					shadowFrameValid = false;
 					synched = false;	//TODO: do this recursively and not rely on large continous blocks of MAGIC1 command
+					aligned = false;
 				}
 				if(instructionOPCODE == XCAP::Operation::WRITE){ //Write register
 					for( ; wordCount > 0 ; ){
@@ -277,7 +311,7 @@ inline void readBitstreamMain(ifstream& fin)
 								shadowFrameValid = false;
 							}
 							if(command == XCAP::Command::DESYNC){
-								synched = false;
+								synched = false;//but aligned remains true
 								shadowFrameValid = false;
 							}
 						} else {
