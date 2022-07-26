@@ -95,6 +95,7 @@ void byteman::parse(string command)
 {
 	command = str::replace(command, '=', ' ');
 	command = str::replace(command, ':', ' ');
+	command = str::stringToLower(command);
 	if (command.at(0) == '-') command.erase(0, 1);
 	string params = str::findStringAndGetAllAfter(command, " ");
 	
