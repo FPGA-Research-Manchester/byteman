@@ -70,7 +70,7 @@ add_test(NAME Test_XS7_Virtex_X1140 COMMAND byteman xs7 -d xc7vx1140 -b 0xff -te
 add_test(NAME Test_XS7_Merge_XOR_Spartan_6 COMMAND byteman xs7 -d first,second xc7s6 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
 add_test(NAME Test_XS7_Merge_XOR_Spartan_15 COMMAND byteman xs7 -d first,second xc7s15 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
 add_test(NAME Test_XS7_Merge_XOR_Spartan_25 COMMAND byteman xs7 -d first,second xc7s25 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
-add_test(NAME Test_XS7_Merge_XOR_Spartan_50 COMMAND byteman xs7 -d first,second xc7s5 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
+add_test(NAME Test_XS7_Merge_XOR_Spartan_50 COMMAND byteman xs7 -d first,second xc7s50 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
 add_test(NAME Test_XS7_Merge_XOR_Spartan_75 COMMAND byteman xs7 -d first,second xc7s75 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
 add_test(NAME Test_XS7_Merge_XOR_Spartan_100 COMMAND byteman xs7 -d first,second xc7s100 -b 0x55 -b second 0xF0 -test notEqual 0xA5A5A5A5 -merge full,xor -test equal 0xA5A5A5A5)
 
