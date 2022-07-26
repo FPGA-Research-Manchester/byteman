@@ -655,7 +655,7 @@ void XilinxSeries7::setDevice(int deviceID, string customPartName)
 void XilinxSeries7::deviceHelp()
 {
 	if(initializedResourceStringShortPartName == "") {//if no device is initialized
-		cout << "A list of currently recognized Series 7 devices: " << endl;
+		cout << "A list of currently supported Xilinx Series 7 devices: " << endl;
 		#ifdef XS7SPARTAN
 		cout << "  Series 7 Spartan: " << endl;
 		cout << "    XC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100" << endl;

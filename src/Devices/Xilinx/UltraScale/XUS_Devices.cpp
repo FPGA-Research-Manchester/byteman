@@ -207,7 +207,7 @@ void XilinxUltraScale::setDevice(int deviceID, string customPartName)
 void XilinxUltraScale::deviceHelp()
 {
 	if(initializedResourceStringShortPartName == "") {//if no device is initialized
-		cout << "A list of currently recognized US devices: " << endl;
+		cout << "A list of currently supported Xilinx UltraScale devices: " << endl;
 		#ifdef XUSKINTEX
 		cout << "  UltraScale Kintex: " << endl;
 		cout << "    XCKU025, XCKU035, XCKU040, XQKU040, XCKU060, XQKU060, XQRKU060, XCKU085, XCKU095, XQKU095, XCKU115, XQKU0115" << endl;

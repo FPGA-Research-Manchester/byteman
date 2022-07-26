@@ -1109,7 +1109,7 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 void XilinxUltraScalePlus::deviceHelp()
 {
 	if(initializedResourceStringShortPartName == "") {//if no device is initialized
-		cout << "A list of currently recognized US+ devices: " << endl;
+		cout << "A list of currently supported Xilinx UltraScale+ devices: " << endl;
 		#ifdef XUSPARTIX
 		cout << "  UltraScale+ Artix: " << endl;
 		cout << "    XCAU10P, XCAU15P, XCAU20P, XCAU25P" << endl;
