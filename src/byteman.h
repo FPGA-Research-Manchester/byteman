@@ -115,7 +115,7 @@ class byteman
 		void helpStdin(bool=false);
 		
 		#if !defined(NDEBUG)
-		void parseTest(string, SelectedOptions);
+		void parseTest(string);
 		#endif
 };
 
