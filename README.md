@@ -13,7 +13,7 @@
 
 ## $> byteman.exe -help
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
@@ -49,7 +49,7 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
@@ -79,7 +79,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
@@ -106,14 +106,14 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   Not public at this point.
 ```
 
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   Sets the target device manually.
 
   Usage:
@@ -129,7 +129,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
     byteman.exe Xilinx Series 7 -d Wizarde
     byteman.exe Xilinx US -d xcvu440
 
-A list of currently recognized Series 7 devices: 
+A list of currently supported Xilinx Series 7 devices: 
   Series 7 Spartan: 
     XC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100
   Series 7 Artix: 
@@ -148,12 +148,12 @@ A list of currently recognized Series 7 devices:
     Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15,
     Cmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME,
     VC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706
-A list of currently recognized US devices: 
+A list of currently supported Xilinx UltraScale devices: 
   UltraScale Kintex: 
     XCKU025, XCKU035, XCKU040, XQKU040, XCKU060, XQKU060, XQRKU060, XCKU085, XCKU095, XQKU095, XCKU115, XQKU0115
   UltraScale Virtex: 
     XCVU065, XCVU080, XCVU095, XCVU125, XCVU160, XCVU190, XCVU440
-A list of currently recognized US+ devices: 
+A list of currently supported Xilinx UltraScale+ devices: 
   UltraScale+ Artix: 
     XCAU10P, XCAU15P, XCAU20P, XCAU25P
   UltraScale+ Kintex: 
@@ -187,14 +187,14 @@ A list of currently recognized US+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
@@ -227,7 +227,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   reads a bitstream from a file.
 
   Usage:
@@ -247,7 +247,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
@@ -277,7 +277,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
@@ -306,7 +306,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   modifies the list of selected regions.
 
   Usage:
@@ -330,7 +330,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
@@ -347,7 +347,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   enables/disables logging messages. they are disabled by default.
 
   Usage:
@@ -370,7 +370,7 @@ byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.2 (Build #202, compiled on Jul 18 2022 15:34:24)
+byteman 1.2 (Build #203, compiled on Jul 26 2022 12:30:58)
   enables/disables warning messages. they are enabled by default.
 
   Usage:
