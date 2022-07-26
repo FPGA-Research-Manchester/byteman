@@ -58,6 +58,8 @@ int main(int argc, char * argv[])
 			bytemanInstance.parse(command);
 		while(readSTDIN){
 			getline(cin,command);
+			if(!cin.good())
+				return 0;
 			if(command.at(command.find_first_not_of(" \t")) != '#'){//parse the command only if it doesnt start with '#'
 				if(string::npos != command.find("#"))
 					command = command.substr(0, command.find("#"));//if there is a comment in the current line, remove it
