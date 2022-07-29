@@ -37,11 +37,11 @@ digraph "FileIO::readBitSwappedLittleEndian32"
   Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node13 [label="XilinxSeries7::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8",tooltip=" "];
   Node12 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node14 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2",tooltip=" "];
+  Node14 [label="XilinxUltraScale::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a",tooltip=" "];
   Node12 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node15 [label="XilinxUltraScale::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a",tooltip=" "];
+  Node15 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2",tooltip=" "];
   Node7 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="readBitstreamMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#a0487f8d718905360038fc67d9cfbe63c",tooltip=" "];
+  Node16 [label="readBitstreamMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#ae37309efbdbcae93d546c545e342c2c5",tooltip=" "];
   Node16 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node17 [label="readBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#a2015af67475241b52cb4fdd54ab6577e",tooltip=" "];
@@ -66,14 +66,13 @@ digraph "FileIO::readBitSwappedLittleEndian32"
   Node2 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 [label="parseBitstreamEndianness",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#afecbc7d2f0175cd665f732ec0c5b93bf",tooltip=" "];
   Node23 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node23 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node23 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

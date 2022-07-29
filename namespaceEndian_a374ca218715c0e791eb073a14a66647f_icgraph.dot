@@ -55,9 +55,9 @@ digraph "Endian::swapbytes16"
   Node23 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node24 [label="XilinxSeries7::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#a81a5d771b3230f2442613574c522f7c8",tooltip=" "];
   Node23 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node25 [label="XilinxUltraScale::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a",tooltip=" "];
+  Node25 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2",tooltip=" "];
   Node23 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node26 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#a0e5d08a2e5c37a29a1a04d50b48739d2",tooltip=" "];
+  Node26 [label="XilinxUltraScale::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a8d9e8e7846e7af191060d73b21024d8a",tooltip=" "];
   Node17 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node27 [label="FileIO::readBitSwappedBig\lEndian16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a7ff728cecb8bbf042b408a8d5bb4f003",tooltip=" "];
   Node27 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #208)</span>
+   &#160;<span id="projectnumber">1.3 (Build #210)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -262,32 +262,33 @@ $(function() {
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
 <div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="inlineOutput_8h.html#a7fb90fced1a719d94263f1c2e812ddb7">  189</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineOutput_8h.html#a7fb90fced1a719d94263f1c2e812ddb7">writeBitstreamBIT</a>(ofstream&amp; fout, <a class="code" href="structRect2D.html">Rect2D</a> cmdRect)</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;{</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.partialNotFull)</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        designName.append(<span class="stringliteral">&quot;;PARTIAL=TRUE&quot;</span>);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    designName.append(<span class="stringliteral">&quot;;bytemanVersion=&quot;</span>).append(VERSION).append(<span class="stringliteral">&quot;:&quot;</span>).append(VERSION_BUILD);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    </div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="inlineOutput_8h.html#a194a87f62d6a57dbed34257f5a6037bf">updateDateAndTime</a>();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="inlineOutput_8h.html#a91979dffab085f36666aabd8b3b62934">outputBITheader</a>(fout, <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a>);<span class="comment">//.bit always big endian</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd">writeBitstreamMain</a>(fout, cmdRect);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <a class="code" href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a>(fout, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b">  205</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b">writeBitstreamBIN</a>(ofstream&amp; fout, <a class="code" href="structRect2D.html">Rect2D</a> cmdRect)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;{</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <a class="code" href="inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd">writeBitstreamMain</a>(fout, cmdRect);</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">//if needing to ensure all .bit files MUST be bigendian, uncomment next line</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">//ensureSelectedEndianness(Endianness::BE);</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.partialNotFull)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        designName.append(<span class="stringliteral">&quot;;PARTIAL=TRUE&quot;</span>);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    designName.append(<span class="stringliteral">&quot;;bytemanVersion=&quot;</span>).append(VERSION).append(<span class="stringliteral">&quot;:&quot;</span>).append(VERSION_BUILD);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="inlineOutput_8h.html#a194a87f62d6a57dbed34257f5a6037bf">updateDateAndTime</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <a class="code" href="inlineOutput_8h.html#a91979dffab085f36666aabd8b3b62934">outputBITheader</a>(fout, loadedBitstreamEndianness);<span class="comment">//.bit always big endian</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd">writeBitstreamMain</a>(fout, cmdRect);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <a class="code" href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a>(fout, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;}</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b">  207</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b">writeBitstreamBIN</a>(ofstream&amp; fout, <a class="code" href="structRect2D.html">Rect2D</a> cmdRect)</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;{</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <a class="code" href="inlineOutput_8h.html#a250a7beb3f145ab072377c264b49cfcd">writeBitstreamMain</a>(fout, cmdRect);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    outputBitstreamGlobalFooterSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="ainlineOutput_8h_html_a13f794352157bc16d9bf43e50062d008"><div class="ttname"><a href="inlineOutput_8h.html#a13f794352157bc16d9bf43e50062d008">outputCAPheaderConstant</a></div><div class="ttdeci">void outputCAPheaderConstant(ofstream &amp;fout, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00060">inlineOutput.h:60</a></div></div>
 <div class="ttc" id="astructRect2D_html_a5d621868d788e999caada275e9c0cbc6"><div class="ttname"><a href="structRect2D.html#a5d621868d788e999caada275e9c0cbc6">Rect2D::size</a></div><div class="ttdeci">Coord2D size</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00033">Coords.h:33</a></div></div>
 <div class="ttc" id="ainlineOutput_8h_html_a27282583d01db3246c1282b0da502e96"><div class="ttname"><a href="inlineOutput_8h.html#a27282583d01db3246c1282b0da502e96">writeBitstreamMainSingleSLR</a></div><div class="ttdeci">void writeBitstreamMainSingleSLR(ofstream &amp;fout, int slr, Rect2D cmdRect)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00129">inlineOutput.h:129</a></div></div>
 <div class="ttc" id="anamespacerect_html_a3fe341fa09e2c523a6dc3eda4118f050"><div class="ttname"><a href="namespacerect.html#a3fe341fa09e2c523a6dc3eda4118f050">rect::empty</a></div><div class="ttdeci">bool empty(Rect2D r)</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00050">Coords.h:50</a></div></div>
-<div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Big endian (&quot;BE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess wor...</div></div>
 <div class="ttc" id="anamespacerect_html_a97b9449bf7fcfe1754ad8383a82995ed"><div class="ttname"><a href="namespacerect.html#a97b9449bf7fcfe1754ad8383a82995ed">rect::getOverlap</a></div><div class="ttdeci">Rect2D getOverlap(Rect2D r1, Rect2D r2)</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00036">Coords.h:36</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b"><div class="ttname"><a href="namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514a31234537adb52d5df18dc9596010708b">XCAP::Register::FAR</a></div><div class="ttdeci">@ FAR</div></div>
 <div class="ttc" id="ainlineFAR_8h_html_a5880cb28ac341c8171af1b777c51e615"><div class="ttname"><a href="inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615">XCAP_getFAR</a></div><div class="ttdeci">uint32_t XCAP_getFAR(int slr, int blockType, int globalRowAddress, int columnAddress, int minorAddress)</div><div class="ttdef"><b>Definition:</b> <a href="inlineFAR_8h_source.html#l00173">inlineFAR.h:173</a></div></div>
@@ -310,7 +311,7 @@ $(function() {
 <div class="ttc" id="anamespaceFileIO_html_add682aedd139b75be682127cf68ab49d"><div class="ttname"><a href="namespaceFileIO.html#add682aedd139b75be682127cf68ab49d">FileIO::write8</a></div><div class="ttdeci">void write8(ofstream &amp;fout, uint8_t writeValue, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00447">FileIO.h:447</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cab"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a></div><div class="ttdeci">Endianness</div><div class="ttdoc">&lt; Endianness in byteman is represented not only by big/little endian, but also by potential bit swapp...</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00046">Endianness.h:46</a></div></div>
 <div class="ttc" id="anamespaceFileIO_html_ad1f1d0f27f31758bf9e62d4461cc22e4"><div class="ttname"><a href="namespaceFileIO.html#ad1f1d0f27f31758bf9e62d4461cc22e4">FileIO::write16</a></div><div class="ttdeci">void write16(ofstream &amp;fout, uint16_t writeValue, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00434">FileIO.h:434</a></div></div>
-<div class="ttc" id="ainlineOutput_8h_html_a39e70cb7cc285893490fa5cf3eb8585b"><div class="ttname"><a href="inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b">writeBitstreamBIN</a></div><div class="ttdeci">void writeBitstreamBIN(ofstream &amp;fout, Rect2D cmdRect)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00205">inlineOutput.h:205</a></div></div>
+<div class="ttc" id="ainlineOutput_8h_html_a39e70cb7cc285893490fa5cf3eb8585b"><div class="ttname"><a href="inlineOutput_8h.html#a39e70cb7cc285893490fa5cf3eb8585b">writeBitstreamBIN</a></div><div class="ttdeci">void writeBitstreamBIN(ofstream &amp;fout, Rect2D cmdRect)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00207">inlineOutput.h:207</a></div></div>
 <div class="ttc" id="anamespaceXCAP_html_aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200"><div class="ttname"><a href="namespaceXCAP.html#aa680f0a3f74cdbf59449247a7c774abcacf8cc37584ffb836c257445004df5200">XCAP::Command::WCFG</a></div><div class="ttdeci">@ WCFG</div></div>
 <div class="ttc" id="ainlineOutput_8h_html_a05bec3a0deb8010a85f094fe3b4ea2f1"><div class="ttname"><a href="inlineOutput_8h.html#a05bec3a0deb8010a85f094fe3b4ea2f1">writeBitstreamMainEmptySLR</a></div><div class="ttdeci">void writeBitstreamMainEmptySLR(ofstream &amp;fout, int slr)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00071">inlineOutput.h:71</a></div></div>
 <div class="ttc" id="ainlineCAP_8h_html_a4ad6e8544f23f9a22e46204b59d07b3d"><div class="ttname"><a href="inlineCAP_8h.html#a4ad6e8544f23f9a22e46204b59d07b3d">XCAP_writeCommand</a></div><div class="ttdeci">void XCAP_writeCommand(ofstream &amp;fout, XCAP::Command cmd, Endianness e)</div><div class="ttdoc">Generate the encoding for writing a CAP command and write it to file ofstream.</div><div class="ttdef"><b>Definition:</b> <a href="inlineCAP_8h_source.html#l00390">inlineCAP.h:390</a></div></div>
@@ -318,7 +319,7 @@ $(function() {
 <div class="ttc" id="ainlineOutput_8h_html_ab9c09236ab751ee544bc377711a68f2d"><div class="ttname"><a href="inlineOutput_8h.html#ab9c09236ab751ee544bc377711a68f2d">outputBITheaderLengthField</a></div><div class="ttdeci">void outputBITheaderLengthField(ofstream &amp;fout, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineOutput_8h_source.html#l00052">inlineOutput.h:52</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 27 2022 15:36:35 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jul 29 2022 11:52:15 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

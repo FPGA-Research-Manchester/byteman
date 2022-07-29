@@ -100,6 +100,8 @@ digraph "src/Devices/Xilinx/UltraScale/XUS_Merge.cpp"
   Node36 [label="XCAP/inlinePrintResource\lStringInfo.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlinePrintResourceStringInfo_8h.html",tooltip=" "];
   Node6 -> Node37 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node37 [label="XCAP/inlineAssembly.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineAssembly_8h.html",tooltip=" "];
+  Node6 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 [label="XCAP/inlineChange.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineChange_8h.html",tooltip=" "];
   Node3 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
