@@ -61,7 +61,7 @@ add_test(NAME Test_XS7_Virtex_X690 COMMAND byteman xs7 -d xc7vx690 -b 0xff -test
 add_test(NAME Test_XS7_Virtex_X980 COMMAND byteman xs7 -d xc7vx980 -b 0xff -test equal 0xffffffff -i xc7vx980t.bit -test notequal 0xffffffff)
 add_test(NAME Test_XS7_Virtex_X1140 COMMAND byteman xs7 -d xc7vx1140 -b 0xff -test equal 0xffffffff -i xc7vx1140t.bit -test notequal 0xffffffff)
 
-#The following tests test merging
+#The following tests test XOR merging
 #first they set main buffer to 0x55555555s everywhere.
 #then the second bitstream is all initialized to 0xFCFCFCFC
 #The first bitstream is tested to != 0xA5A5A5A5

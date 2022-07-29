@@ -34,8 +34,6 @@ void XilinxUltraScalePlus::readBitstream(string filename)
 		throw runtime_error(string("Could not open file: \"").append(filename).append("\" .\n"));
 	log("Reading Xilinx UltraScale+ bitstream from file \"" + filename + "\"");
 	
-	loadedBitstreamEndianness = parseBitstreamEndianness(fin);
-	
 	if(str::iff::stringEndsWith(filename, ".bit"))
 		readBitstreamBIT(fin);
 	else if(str::iff::stringEndsWith(filename, ".bin"))

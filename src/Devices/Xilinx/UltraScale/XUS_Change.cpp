@@ -16,29 +16,15 @@
 
 #include<iostream>
 #include<string>
-#include<stdexcept>
-#include<fstream>
-#include<cstring>
 
 #include "XilinxUltraScale.h"
-#include "../../../Common/FileIO.h"
-#include "../../../Common/str.h"
+#include "../../../Common/Endianness.h"
 
 using namespace std;
 
-void XilinxUltraScale::readBitstream(string filename)
+void XilinxUltraScale::change(string params)
 {
-	ifstream fin (filename, ifstream::binary);
-	if(!fin.good())
-		throw runtime_error(string("Could not open file: \"").append(filename).append("\" .\n"));
-	log("Reading Xilinx UltraScale bitstream from file \"" + filename + "\"");
-	
-	if(str::iff::stringEndsWith(filename, ".bit"))
-		readBitstreamBIT(fin);
-	else if(str::iff::stringEndsWith(filename, ".bin"))
-		readBitstreamBIN(fin);
-	else
-		throw runtime_error(string("Unknown Xilinx UltraScale file format tried to be read.\n"));
-	fin.close();
-	log("Xilinx UltraScale bitstream file \"" + filename + "\" read successfully.");
+	parseParams(params);
+	if(selectedOptions.forceEndianness)
+		ensureSelectedEndianness(selectedOptions.forcedEndianness);
 }

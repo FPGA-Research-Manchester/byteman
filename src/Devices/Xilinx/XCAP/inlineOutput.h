@@ -188,12 +188,14 @@ inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
 
 inline void writeBitstreamBIT(ofstream& fout, Rect2D cmdRect)
 {
+	//if needing to ensure all .bit files MUST be bigendian, uncomment next line
+	//ensureSelectedEndianness(Endianness::BE);
 	if(selectedOptions.partialNotFull)
 		designName.append(";PARTIAL=TRUE");
 	designName.append(";bytemanVersion=").append(VERSION).append(":").append(VERSION_BUILD);
 	
 	updateDateAndTime();
-	outputBITheader(fout, Endianness::BE);//.bit always big endian
+	outputBITheader(fout, loadedBitstreamEndianness);//.bit always big endian
 	
 	outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 	writeBitstreamMain(fout, cmdRect);

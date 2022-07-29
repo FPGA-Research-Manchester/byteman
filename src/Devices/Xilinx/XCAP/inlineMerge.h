@@ -80,6 +80,7 @@ inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, C
 			memcpy(&bitstreamBRAM[dstRA+r][dstCol][0] ,&srcBitstream->bitstreamBRAM[srcRA+r][srcCol][0], bramCols * FRAMES_PER_BRAM_CONTENT_COLUMN * WORDS_PER_FRAME * 4);
 		}
 	}
+	bitstreamHasValidData = true;
 }
 
 inline void flexiMerge(XilinxConfigurationAccessPort* srcBitstream, Endianness endianConversionNeeded, Rect2D src, Coord2D dst){
@@ -142,4 +143,5 @@ inline void flexiMerge(XilinxConfigurationAccessPort* srcBitstream, Endianness e
 			}
 		}
 	}//-if(reloBRAM)
+	bitstreamHasValidData = true;
 }

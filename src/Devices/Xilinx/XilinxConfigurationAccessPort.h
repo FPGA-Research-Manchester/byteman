@@ -94,9 +94,10 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 
 		struct SelectedOptions
 		{
-			bool clk, clb, bram, blank, partialNotFull, skipUnused;
+			bool clk, clb, bram, blank, partialNotFull, skipUnused, forceEndianness;
 			MergeOP op;
 			int intParam;
+			Endianness forcedEndianness;
 		} selectedOptions;
 
 //Base variables
@@ -112,6 +113,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 	//bitstream structure
 		string initializedBitstreamShortPartName; 		///< The partName of currently initialized bitstream buffers
 		Endianness loadedBitstreamEndianness;   		///< The endianess of the currently loaded bitstream.
+		bool bitstreamHasValidData;
 		uint32_t* bitstreamBegin;
 		uint32_t* bitstreamCLB[MAX_ROWS][MAX_COLS];
 		uint32_t* bitstreamBRAM[MAX_ROWS][MAX_BRAM_COLS];
@@ -156,6 +158,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		#include "XCAP/inlineTest.h"
 		#include "XCAP/inlinePrintResourceStringInfo.h"
 		#include "XCAP/inlineAssembly.h"
+		#include "XCAP/inlineChange.h"
 
 //Some functions that will need to be implemented by each architecture
 	//get/set device type

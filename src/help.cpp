@@ -47,7 +47,7 @@ void byteman::help()
 	cout << "Commands:        : [Description]                                    " << endl;
 	cout << "  -a (Assembly)  : (de)assemble bitstreams.       see \"-help assembly\"" << endl;
 	cout << "  -b (Blank)     : erases bitstream buffers.      see \"-help blank\"" << endl;
-	cout << "  -c (Change)    : modify primitives.             see \"-help change\"" << endl;
+	cout << "  -c (Change)    : modify bitstream.              see \"-help change\"" << endl;
 	cout << "  -d (Device)    : manually select target device. see \"-help device\"" << endl;
 	cout << "  -e (Exit)      : exit byteman. used with stdin. see \"-help exit\"" << endl;
 	cout << "  -h (Help)      : get help.                      see \"-help help\"" << endl;
@@ -224,7 +224,26 @@ void byteman::helpChange(bool selectedAll)
 {
 	if(selectedAll)
 		cout << "byteman: Change" << endl;
-	cout << "  Not public at this point." << endl;
+	cout << "  modifies bitstream data." << endl;
+	cout << endl;
+	cout << "  Usage:" << endl;
+	cout << "    " EXECUTABLE " -change [First] [Second] [BigEndian,LittleEndian,BigEndianWithBitSwap,LittleEndianWithBitSwap,NativeEndian]" << endl;
+	cout << endl;
+	cout << "  Args:" << endl;
+	cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << endl;
+	cout << "    [Second]: selects the second of the two bitstream buffers." << endl;
+	cout << "    [BigEndian]: forces the stored bitstream data is in Big Endian format. any future operations will inherit the endianness (such as -Output)" << endl;
+	cout << "    [LittleEndian]: forces the stored bitstream data is in Little Endian format. any future operations will inherit the endianness (such as -Output)" << endl;
+	cout << "    [BigEndianWithBitSwap]: forces the stored bitstream data is in Big Endian with Bit Swap format. any future operations will inherit the endianness (such as -Output)" << endl;
+	cout << "    [LittleEndianWithBitSwap]: forces the stored bitstream data is in Little Endian with Bit Swap format. any future operations will inherit the endianness (such as -Output)" << endl;
+	cout << "    [NativeEndian]: forces the stored bitstream data is in the native endianness of the system. any future operations will inherit the endianness (such as -Output)" << endl;
+	cout << endl;
+	cout << "  Examples:" << endl;
+	cout << "    # reads a bitstream, forces big endianness, writes back the bitstream in the new endianness:" << endl;
+	cout << "    " EXECUTABLE " XUSP -input bitstream.bit -change bigEndian -output full bitstream.bit" << endl;
+	cout << "    # reads a bitstream, forces big endianness, writes back the bitstream in the new endianness:" << endl;
+	cout << "    " EXECUTABLE " xilinx series 7 -input boot.bin -change LITTLEendian -output full boot.bin" << endl;
+	cout << endl;
 	cout << endl;
 	cout << endl;
 }

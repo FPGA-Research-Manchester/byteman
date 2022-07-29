@@ -46,4 +46,5 @@ inline void blankBuffers()
 				}
 			}
 	}
+	bitstreamHasValidData = true;
 }

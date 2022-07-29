@@ -264,15 +264,30 @@ void byteman::parseBlank(string blankCmd)
 }
 void byteman::parseChange(string changeCmd)
 {
-	//TODO lut,ff,wires,bram,uram modifications
+	string changeParams = parseParamsAndRemoveThemFromString(changeCmd);
 	#ifdef XS7
-		;
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXS7.change(changeParams);
+			if(options.tempBufferSelected)
+				tempXS7.change(changeParams);
+		}
 	#endif
 	#ifdef XUS
-		;
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUS.change(changeParams);
+			if(options.tempBufferSelected)
+				tempXUS.change(changeParams);
+		}
 	#endif
 	#ifdef XUSP
-		;
+		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
+			if(options.mainBufferSelected)
+				mainXUSP.change(changeParams);
+			if(options.tempBufferSelected)
+				tempXUSP.change(changeParams);
+		}
 	#endif
 }
 void byteman::parseDevice(string deviceCmd)

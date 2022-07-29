@@ -110,6 +110,7 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 			}
 		}
 		bitstreamEnd = &bitstreamBegin[offset];
+		bitstreamHasValidData = false;
 		log("Reserved "+to_string(clbPlaneSize + bramPlaneSize)+" words for the bitstream buffers of device \""+partName+"\"");
 	}
 }

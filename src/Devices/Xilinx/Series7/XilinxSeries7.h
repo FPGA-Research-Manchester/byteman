@@ -97,6 +97,8 @@ class XilinxSeries7: virtual public CommonDevice2D, public XilinxConfigurationAc
 		#if !defined(NDEBUG)
 		void test(bool, bool, uint32_t);
 		#endif
+		//change
+		void change(string);
 		
 		void initFabric();
 };

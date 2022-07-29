@@ -200,7 +200,7 @@ inline uint32_t parseBitstreamIDCODE(ifstream& fin, Endianness e)
 	return returnVal;
 }
 
-inline void readBitstreamMain(ifstream& fin)
+inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
 {
 	int slr = 0;
 	XCAP::Register regAddr = XCAP::Register::UNDEFINED;
@@ -210,6 +210,11 @@ inline void readBitstreamMain(ifstream& fin)
 	int b = 7, r = 0, c = 0, m = 0;
 	bool aligned = false;
 	bool synched = false;
+	
+	if(bitstreamHasValidData){
+		ensureSelectedEndianness(bitstreamFileEndianness);
+	}
+	loadedBitstreamEndianness = bitstreamFileEndianness;
 	//Parse bitstream
 	for( ; ; ){
 		if(!synched){
@@ -323,22 +328,27 @@ inline void readBitstreamMain(ifstream& fin)
 			}// not end of file
 		}
 	}// for loop parsing the rest of the bitstream
+	bitstreamHasValidData = true;
 }
 
 inline void readBitstreamBIT(ifstream& fin)
 {
-	parseBITheader(fin, loadedBitstreamEndianness);
+	Endianness bitstreamFileEndianness = parseBitstreamEndianness(fin);
+	
+	parseBITheader(fin, bitstreamFileEndianness);
 	setDeviceByPartNameOrThrow();
 	ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
 	
-	readBitstreamMain(fin);
+	readBitstreamMain(fin, bitstreamFileEndianness);
 }
 
 inline void readBitstreamBIN(ifstream& fin)
 {
-	uint32_t idcode = parseBitstreamIDCODE(fin, loadedBitstreamEndianness);
+	Endianness bitstreamFileEndianness = parseBitstreamEndianness(fin);
+	
+	uint32_t idcode = parseBitstreamIDCODE(fin, bitstreamFileEndianness);
 	setDeviceByIDCODEOrThrow(idcode);
 	ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
 	
-	readBitstreamMain(fin);
+	readBitstreamMain(fin, bitstreamFileEndianness);
 }

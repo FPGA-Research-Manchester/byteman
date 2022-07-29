@@ -97,6 +97,8 @@ class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigur
 		#if !defined(NDEBUG)
 		void test(bool, bool, uint32_t);
 		#endif
+		//change
+		void change(string);
 		
 		void initFabric();
 };

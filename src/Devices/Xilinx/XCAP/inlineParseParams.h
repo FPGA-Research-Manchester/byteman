@@ -38,6 +38,7 @@ inline void parseParams(string params){
 	selectedOptions.partialNotFull = true;
 	selectedOptions.op = MergeOP::SET;
 	selectedOptions.skipUnused = true;
+	selectedOptions.forceEndianness = false;
 	selectedOptions.intParam = 0;
 	replace(params.begin(), params.end(), ',', ' ');
 	stringstream ss(params);
@@ -54,6 +55,26 @@ inline void parseParams(string params){
 		if(param == "xor")selectedOptions.op = MergeOP::XOR;
 		if(param == "or")selectedOptions.op = MergeOP::OR;
 		if(param == "and")selectedOptions.op = MergeOP::AND;
+		if(param == "bigendian"){
+			selectedOptions.forceEndianness = true;
+			selectedOptions.forcedEndianness = Endianness::BE;
+		}
+		if(param == "littleendian"){
+			selectedOptions.forceEndianness = true;
+			selectedOptions.forcedEndianness = Endianness::LE;
+		}
+		if(param == "bigendianwithbitswap"){
+			selectedOptions.forceEndianness = true;
+			selectedOptions.forcedEndianness = Endianness::BE_BS;
+		}
+		if(param == "littleendianwithbitswap"){
+			selectedOptions.forceEndianness = true;
+			selectedOptions.forcedEndianness = Endianness::LE_BS;
+		}
+		if(param == "nativeendian"){
+			selectedOptions.forceEndianness = true;
+			selectedOptions.forcedEndianness = Endianness::NATIVE;
+		}
 		param.clear();
 	}
 	if(!str::parse::multipleInts(params, selectedOptions.intParam))
