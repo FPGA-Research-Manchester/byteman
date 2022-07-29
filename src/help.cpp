@@ -241,7 +241,7 @@ void byteman::helpChange(bool selectedAll)
 	cout << "  Examples:" << endl;
 	cout << "    # reads a bitstream, forces big endianness, writes back the bitstream in the new endianness:" << endl;
 	cout << "    " EXECUTABLE " XUSP -input bitstream.bit -change bigEndian -output full bitstream.bit" << endl;
-	cout << "    # reads a bitstream, forces big endianness, writes back the bitstream in the new endianness:" << endl;
+	cout << "    # reads a bitstream, forces little endianness, writes back the bitstream in the new endianness:" << endl;
 	cout << "    " EXECUTABLE " xilinx series 7 -input boot.bin -change LITTLEendian -output full boot.bin" << endl;
 	cout << endl;
 	cout << endl;
