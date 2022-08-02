@@ -13,11 +13,11 @@
 
 ## $> byteman.exe -help
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
-  ARCH = {"Xilinx Series 7"/"XS7", "Xilinx UltraScale"/"XUS", "Xilinx UltraScale+"/"XUSP"}
+  ARCH = {"Xilinx Series 7"/"XS7", "Xilinx UltraScale"/"XUS", "Xilinx UltraScale+ "/"XUSP"}
 
 Commands:        : [Description]                                    
   -a (Assembly)  : (de)assemble bitstreams.       see "-help assembly"
@@ -36,7 +36,7 @@ Commands:        : [Description]
 
 Examples: 
   byteman.exe Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit
-  byteman.exe XUSP -w -d ZCU 102 -b main,logic,blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit
+  byteman.exe XUSP -w -d ZCU 102 -b main, logic, blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit
 
 Need more help? Try one of these:
   byteman.exe -help <command>
@@ -49,7 +49,7 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
@@ -79,7 +79,7 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
@@ -106,11 +106,11 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   modifies bitstream data.
 
   Usage:
-    byteman.exe -change [First] [Second] [BigEndian,LittleEndian,BigEndianWithBitSwap,LittleEndianWithBitSwap,NativeEndian]
+    byteman.exe -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian]
 
   Args:
     [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
@@ -131,7 +131,7 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   Sets the target device manually.
 
   Usage:
@@ -151,20 +151,20 @@ A list of currently supported Xilinx Series 7 devices:
   Series 7 Spartan: 
     XC7S6, XA7S6, XC7S15, XA7S15, XC7S25, XA7S25, XC7S50, XA7S50, XC7S75, XA7S75, XC7S100, XA7S100
   Series 7 Artix: 
-    XC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50,
+    XC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50, 
     XC7A75, XA7A75, XC7A100, XQ7A100, XA7A100, XC7A200, XQ7A200
   Series 7 Zynq: 
-    XC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020,
+    XC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020, 
     XC7Z030, XQ7Z030, XA7Z030, XC7Z035, XC7Z045, XQ7Z045, XC7Z100, XQ7Z100
   Series 7 Kintex: 
     XC7K70, XC7K160, XA7K160, XC7K325, XQ7K325, XC7K355, XC7K410, XQ7K410, XC7K420, XC7K480
   Series 7 Virtex: 
-    XC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550,
+    XC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550, 
     XC7VX690, XQ7VX690, XC7VX980, XQ7VX980, XC7VX1140
   Series 7 Boards: 
-    Wizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20,
-    Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15,
-    Cmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME,
+    Wizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20, 
+    Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15, 
+    Cmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME, 
     VC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706
 A list of currently supported Xilinx UltraScale devices: 
   UltraScale Kintex: 
@@ -177,27 +177,27 @@ A list of currently supported Xilinx UltraScale+ devices:
   UltraScale+ Kintex: 
     XCKU3P, XQKU3P, XCKU5P, XQKU5P, XCKU9P, XQKU9P, XCKU11P, XQKU11P, XCKU13P, XQKU13P, XCKU15P, XQKU15P, XCKU19P, XQKU19P
   UltraScale+ Virtex: 
-    XCVU3P, XQVU3P, XCVU5P, XQVU5P, XCVU7P, XQVU7P, XCVU9P, XQVU9P, XCVU11P, XQVU11P, XCVU13P, XQVU13P,
-    XCVU19P, XQVU19P, XCVU23P, XQVU23P, XCVU27P, XQVU27P, XCVU29P, XQVU29P, XCVU31P, XQVU31P, XCVU33P,
+    XCVU3P, XQVU3P, XCVU5P, XQVU5P, XCVU7P, XQVU7P, XCVU9P, XQVU9P, XCVU11P, XQVU11P, XCVU13P, XQVU13P, 
+    XCVU19P, XQVU19P, XCVU23P, XQVU23P, XCVU27P, XQVU27P, XCVU29P, XQVU29P, XCVU31P, XQVU31P, XCVU33P, 
     XQVU33P, XCVU35P, XQVU35P, XCVU37P, XQVU37P, XCVU45P, XQVU45P, XCVU47P, XQVU47P, XCVU57P, XQVU57P
   UltraScale+ Zynq RFSoC: 
-    XCZU21DR, XQZU21DR, XCZU25DR, XCZU27DR, XCZU28DR, XQZU28DR, XCZU29DR, XQZU29DR, XCZU39DR, XCZU42DR,
+    XCZU21DR, XQZU21DR, XCZU25DR, XCZU27DR, XCZU28DR, XQZU28DR, XCZU29DR, XQZU29DR, XCZU39DR, XCZU42DR, 
     XCZU43DR, XCZU46DR, XQZU48DR, XQZU49DR, XCZU47DR, XCZU48DR, XCZU49DR
   UltraScale+ Zynq MPSoC: 
-    XCZU1, XAZU1, XQZU1, XCZU2, XAZU2, XQZU2, XCZU3, XAZU3, XQZU3, XCZU4, XAZU4, XQZU4,
-    XCZU5, XAZU5, XQZU5, XCZU6, XAZU6, XQZU6, XCZU7, XAZU7, XQZU7, XCZU9, XAZU9, XQZU9,
+    XCZU1, XAZU1, XQZU1, XCZU2, XAZU2, XQZU2, XCZU3, XAZU3, XQZU3, XCZU4, XAZU4, XQZU4, 
+    XCZU5, XAZU5, XQZU5, XCZU6, XAZU6, XQZU6, XCZU7, XAZU7, XQZU7, XCZU9, XAZU9, XQZU9, 
     XCZU11, XAZU11, XQZU11, XCZU15, XAZU15, XQZU15, XCZU17, XAZU17, XQZU17, XCZU19, XAZU19, XQZU19
   UltraScale+ Alveo: 
-    XCU200, Alveo U200, XCU250, Alveo U250, XCU26, Alveo U26, XCUX35, Alveo U35, XCU50, Alveo U50,
+    XCU200, Alveo U200, XCU250, Alveo U250, XCU26, Alveo U26, XCUX35, Alveo U35, XCU50, Alveo U50, 
     XCU55N, Alveo U55N, XCU55C, Alveo U55C, XCU280, Alveo U280, XCU30, Alveo U30, XCU25, Alveo U25
   Misc UltraScale+ Boards: 
-    ZCU 102, ZU-GMSL2, ZCU104, ZCU106, AXU15EG, AXU2CG, AXU3EG, AXU4EV, AXU5EV, AXU9EG, ULTRAZED-EV, CHAMP-XD1S, ZU-3EG,
-    ZU-5EV, HTG-Z999-06, HTG-Z999-09, HTG-Z999-15, HTG-930-9-3, HTG-930-9, HTG-930-13-3, HTG-930-13, HTG-937-37P, HTG-937-47P,
-    HTG-Z922-11, HTG-Z922-19-DG, HTG-Z922-19, CZU3EG, CZU4EV, TE0802, TE0803-04-3BE11, TE0807-03-7DE21, TE0808-05-9BE21,
-    TE0808-05-9GI21, TE0808-05-BBE21, TE0812, TEB0911, TEB0912, TYSOM-3-ZU7EV, XPEDITE2600, AMC574, ZCU208, ZCU216, ZCU670,
-    Ultra96, K26C, K26I, KV260, AMC584, HTG-960, VCU1525, VCU118, VCU128, VCU129, HTG-940-9-3, HTG-940-9, HTG-940-13-3,
-    HTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13,
-    HTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3,
+    ZCU 102, ZU-GMSL2, ZCU104, ZCU106, AXU15EG, AXU2CG, AXU3EG, AXU4EV, AXU5EV, AXU9EG, ULTRAZED-EV, CHAMP-XD1S, ZU-3EG, 
+    ZU-5EV, HTG-Z999-06, HTG-Z999-09, HTG-Z999-15, HTG-930-9-3, HTG-930-9, HTG-930-13-3, HTG-930-13, HTG-937-37P, HTG-937-47P, 
+    HTG-Z922-11, HTG-Z922-19-DG, HTG-Z922-19, CZU3EG, CZU4EV, TE0802, TE0803-04-3BE11, TE0807-03-7DE21, TE0808-05-9BE21, 
+    TE0808-05-9GI21, TE0808-05-BBE21, TE0812, TEB0911, TEB0912, TYSOM-3-ZU7EV, XPEDITE2600, AMC574, ZCU208, ZCU216, ZCU670, 
+    Ultra96, K26C, K26I, KV260, AMC584, HTG-960, VCU1525, VCU118, VCU128, VCU129, HTG-940-9-3, HTG-940-9, HTG-940-13-3, 
+    HTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13, 
+    HTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3, 
     HTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48
     ZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111
 ```
@@ -205,14 +205,14 @@ A list of currently supported Xilinx UltraScale+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
@@ -245,7 +245,7 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   reads a bitstream from a file.
 
   Usage:
@@ -265,17 +265,17 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
-    byteman.exe -merge [Logic] [BlockRAM] [Clock] [SET,XOR,OR,AND] [Full,<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]
+    byteman.exe -merge [Logic] [BlockRAM] [Clock] [SET, XOR, OR, AND] [Full, <SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]
 
   Args:
     [Logic]: selects the data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
     [Clock]: selects the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
     [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
-    [SET,XOR,OR,AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is "SET".
+    [SET, XOR, OR, AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is "SET".
     [Full]: selects the full device bitstream.
     [<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]: selects a rect (<SrcY> <SrcX> <SizeY> <SizeX>) from the second bitstream buffer to be merged
                                                  : into destination rect (<DstY> <DstX> <SizeY> <SizeX>) in first bitstream buffer.
@@ -286,20 +286,20 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
     # A rect in second buffer (Y from 50 to 99 and X from 10 to 29) is bitwise XORed in the clock and blockram
     # contents planes into a rect in 1st buffer describing Y from 100 to 149 and X from 30 to 49:
-    byteman.exe Xilinx Series 7 -... -merge clock,bram,xor 50:10 50:20 100:30
+    byteman.exe Xilinx Series 7 -... -merge clock, bram, xor 50:10 50:20 100:30
 
     # Copies the logic plane from buffer 2 into buffer 1:
-    byteman.exe Xilinx US -... -m full,logic
+    byteman.exe Xilinx US -... -m full, logic
 ```
 
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
-    byteman.exe -output [Logic] [BlockRAM] [Blank] [Full,<StartY> <StartX> <SizeY> <SizeX>] <OutputFileName>
+    byteman.exe -output [Logic] [BlockRAM] [Blank] [Full, <StartY> <StartX> <SizeY> <SizeX>] <OutputFileName>
 
   Args:
     [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.
@@ -312,10 +312,10 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
   Examples:
     # Output only the blockram contents to the whole FPGA:
-    byteman.exe XUSP -input bitstream.bit -... -output bram,full bitfil.bit
+    byteman.exe XUSP -input bitstream.bit -... -output bram, full bitfil.bit
 
     # The rectangle describing Y from 50 to 99 and X from 10 to 29 is zeroed and then the logic plane bitstream data is written:
-    byteman.exe Xilinx Series 7 -... -o logic,blank 50:10 50:20 bitstream.bin
+    byteman.exe Xilinx Series 7 -... -o logic, blank 50:10 50:20 bitstream.bin
 
     # The rectangles (60:10 120:20 and 180:30 240:40) are zeroed and the logic & blockram content planes are written:
     byteman.exe XUS -... -r add 60:10 120:20 -o blank 180:30 240:40 fo.bit
@@ -324,11 +324,11 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   modifies the list of selected regions.
 
   Usage:
-    byteman.exe -region [Clear,Add <SrcY> <SrcX> <SizeY> <SizeX>]
+    byteman.exe -region [Clear, Add <SrcY> <SrcX> <SizeY> <SizeX>]
 
   Args:
     [Clear]: clears the selected regions list.
@@ -348,7 +348,7 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
@@ -365,7 +365,7 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   enables/disables logging messages. they are disabled by default.
 
   Usage:
@@ -388,7 +388,7 @@ byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.3 (Build #211, compiled on Aug  2 2022 10:24:16)
+byteman 1.3 (Build #212, compiled on Aug  2 2022 10:42:39)
   enables/disables warning messages. they are enabled by default.
 
   Usage:
