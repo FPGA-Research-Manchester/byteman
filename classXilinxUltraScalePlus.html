@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #215)</span>
+   &#160;<span id="projectnumber">1.3 (Build #216)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -869,28 +869,33 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">parseParams</a>(params);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classXilinxConfigurationAccessPort.html#aff7096654689d8e1c587765ec77d55b0">selectedOptions</a>.<a class="code" href="structXilinxConfigurationAccessPort_1_1SelectedOptions.html#ae19be6b6727755149f0568b2cc236ea7">forceEndianness</a>)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b">ensureSelectedEndianness</a>(<a class="code" href="classXilinxConfigurationAccessPort.html#aff7096654689d8e1c587765ec77d55b0">selectedOptions</a>.<a class="code" href="structXilinxConfigurationAccessPort_1_1SelectedOptions.html#a5354f9a7e1b7a8e528d8c8afa92deb90">forcedEndianness</a>);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classXilinxConfigurationAccessPort.html#aff7096654689d8e1c587765ec77d55b0">selectedOptions</a>.<a class="code" href="structXilinxConfigurationAccessPort_1_1SelectedOptions.html#a147002356f061736b6a8e9af66b91df8">word</a>)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">setBitstreamWord</a>(params);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="inlineChange_8h_source.html#l00017">ensureSelectedEndianness()</a>, and <a class="el" href="inlineParseParams_8h_source.html#l00032">parseParams()</a>.</p>
+<p class="reference">References <a class="el" href="inlineChange_8h_source.html#l00017">ensureSelectedEndianness()</a>, <a class="el" href="inlineParseParams_8h_source.html#l00032">parseParams()</a>, and <a class="el" href="inlineChange_8h_source.html#l00043">setBitstreamWord()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classXilinxUltraScalePlus_a8d1c488a56dac4290a90e5718ce2e0be_cgraph.png" border="0" usemap="#classXilinxUltraScalePlus_a8d1c488a56dac4290a90e5718ce2e0be_cgraph" alt=""/></div>
 <map name="classXilinxUltraScalePlus_a8d1c488a56dac4290a90e5718ce2e0be_cgraph" id="classXilinxUltraScalePlus_a8d1c488a56dac4290a90e5718ce2e0be_cgraph">
-<area shape="rect" title=" " alt="" coords="5,201,159,242"/>
-<area shape="rect" href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b" title=" " alt="" coords="207,157,403,184"/>
-<area shape="rect" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c" title=" " alt="" coords="251,259,358,285"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="491,56,634,83"/>
-<area shape="rect" href="namespaceEndian.html#adb5a175333bfc81edaee46e216cce009" title=" " alt="" coords="515,107,610,133"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="457,157,669,184"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="451,208,675,235"/>
-<area shape="rect" href="namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e" title=" " alt="" coords="759,5,898,32"/>
-<area shape="rect" href="namespaceEndian.html#a2908cb68d06425c31c71fae71797cded" title=" " alt="" coords="779,56,879,83"/>
-<area shape="rect" href="namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629" title=" " alt="" coords="723,107,935,133"/>
-<area shape="rect" href="namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="734,157,923,184"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="749,208,909,235"/>
-<area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="478,259,647,285"/>
-<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="515,309,610,336"/>
+<area shape="rect" title=" " alt="" coords="5,226,159,267"/>
+<area shape="rect" href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b" title=" " alt="" coords="419,157,615,184"/>
+<area shape="rect" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c" title=" " alt="" coords="223,309,329,336"/>
+<area shape="rect" href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6" title=" " alt="" coords="207,233,345,260"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="729,259,871,285"/>
+<area shape="rect" href="namespaceEndian.html#adb5a175333bfc81edaee46e216cce009" title=" " alt="" coords="753,107,847,133"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="694,157,906,184"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="688,208,912,235"/>
+<area shape="rect" href="namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e" title=" " alt="" coords="997,157,1135,184"/>
+<area shape="rect" href="namespaceEndian.html#a2908cb68d06425c31c71fae71797cded" title=" " alt="" coords="1016,5,1116,32"/>
+<area shape="rect" href="namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629" title=" " alt="" coords="960,56,1172,83"/>
+<area shape="rect" href="namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="971,107,1161,133"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="986,208,1146,235"/>
+<area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="432,360,601,387"/>
+<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="469,309,564,336"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a654d50b4a95fff1bab5647f7b96b885c" title=" " alt="" coords="427,259,606,285"/>
+<area shape="rect" href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847" title=" " alt="" coords="393,208,640,235"/>
 </map>
 </div>
 
@@ -2418,25 +2423,26 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classXilinxUltraScalePlus_adafdd0860f1961c32eb34a363a62e74d_cgraph.png" border="0" usemap="#classXilinxUltraScalePlus_adafdd0860f1961c32eb34a363a62e74d_cgraph" alt=""/></div>
 <map name="classXilinxUltraScalePlus_adafdd0860f1961c32eb34a363a62e74d_cgraph" id="classXilinxUltraScalePlus_adafdd0860f1961c32eb34a363a62e74d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,251,159,293"/>
+<area shape="rect" title=" " alt="" coords="5,287,159,329"/>
 <area shape="rect" href="namespaceEndian.html#adb5a175333bfc81edaee46e216cce009" title=" " alt="" coords="259,107,353,133"/>
-<area shape="rect" href="inlineMerge_8h.html#a21b2f80d255010a452775ec6630ace63" title=" " alt="" coords="207,183,405,209"/>
-<area shape="rect" href="inlineMerge_8h.html#a60e696e93576686d147a4e08f3f8832c" title=" " alt="" coords="262,233,350,260"/>
-<area shape="rect" href="inlineMerge_8h.html#a9084d1ae1d290296542b624c5fd2fa1d" title=" " alt="" coords="261,284,351,311"/>
-<area shape="rect" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c" title=" " alt="" coords="253,335,359,361"/>
-<area shape="rect" href="namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="241,385,371,412"/>
+<area shape="rect" href="inlineMerge_8h.html#a21b2f80d255010a452775ec6630ace63" title=" " alt="" coords="207,212,405,239"/>
+<area shape="rect" href="inlineMerge_8h.html#a60e696e93576686d147a4e08f3f8832c" title=" " alt="" coords="262,269,350,296"/>
+<area shape="rect" href="inlineMerge_8h.html#a9084d1ae1d290296542b624c5fd2fa1d" title=" " alt="" coords="261,320,351,347"/>
+<area shape="rect" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c" title=" " alt="" coords="253,385,359,412"/>
+<area shape="rect" href="namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="241,436,371,463"/>
 <area shape="rect" href="namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e" title=" " alt="" coords="507,5,646,32"/>
 <area shape="rect" href="namespaceEndian.html#a2908cb68d06425c31c71fae71797cded" title=" " alt="" coords="527,56,627,83"/>
 <area shape="rect" href="namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629" title=" " alt="" coords="471,107,683,133"/>
 <area shape="rect" href="namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="482,157,671,184"/>
 <area shape="rect" href="inlineMerge_8h.html#ae484ad8fc3755dab5e1b60c1c8fe9a49" title=" " alt="" coords="485,208,668,235"/>
-<area shape="rect" href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847" title=" " alt="" coords="453,284,700,311"/>
-<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="789,233,931,260"/>
-<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="754,284,966,311"/>
-<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="748,335,972,361"/>
-<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1020,309,1180,336"/>
-<area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="492,335,661,361"/>
-<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="529,385,624,412"/>
+<area shape="rect" href="classXilinxConfigurationAccessPort.html#a01d42591500beefb4272c47c63fb5d43" title=" " alt="" coords="463,259,691,315"/>
+<area shape="rect" href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847" title=" " alt="" coords="453,339,700,365"/>
+<area shape="rect" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="789,288,931,315"/>
+<area shape="rect" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="754,339,966,365"/>
+<area shape="rect" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="748,389,972,416"/>
+<area shape="rect" href="namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1020,364,1180,391"/>
+<area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="492,389,661,416"/>
+<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="529,440,624,467"/>
 </map>
 </div>
 
@@ -4415,6 +4421,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a1dd2b780ae0f8faa5ba43c7086e3f1ff"><div class="ttname"><a href="XUSP__Devices_8h.html#a1dd2b780ae0f8faa5ba43c7086e3f1ff">XCVU5P</a></div><div class="ttdeci">#define XCVU5P()</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00437">XUSP_Devices.h:437</a></div></div>
 <div class="ttc" id="ainlineInput_8h_html_a646785be1b63453b24d7e92fd4a1c452"><div class="ttname"><a href="inlineInput_8h.html#a646785be1b63453b24d7e92fd4a1c452">parseBITheader</a></div><div class="ttdeci">void parseBITheader(std::ifstream &amp;fin, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="inlineInput_8h_source.html#l00024">inlineInput.h:24</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a42deec54cea3606903bdd3f35dd92bce"><div class="ttname"><a href="XUSP__Devices_8h.html#a42deec54cea3606903bdd3f35dd92bce">XCKU19P</a></div><div class="ttdeci">#define XCKU19P()</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00397">XUSP_Devices.h:397</a></div></div>
+<div class="ttc" id="astructXilinxConfigurationAccessPort_1_1SelectedOptions_html_a147002356f061736b6a8e9af66b91df8"><div class="ttname"><a href="structXilinxConfigurationAccessPort_1_1SelectedOptions.html#a147002356f061736b6a8e9af66b91df8">XilinxConfigurationAccessPort::SelectedOptions::word</a></div><div class="ttdeci">bool word</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00095">XilinxConfigurationAccessPort.h:95</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_af6f032f3f441e8bc75889693ce31f8b1"><div class="ttname"><a href="XUSP__Devices_8h.html#af6f032f3f441e8bc75889693ce31f8b1">XCZU28DR</a></div><div class="ttdeci">#define XCZU28DR()</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l01118">XUSP_Devices.h:1118</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a7b5e8eb0c44c117657aa143eeb59fab3"><div class="ttname"><a href="XUSP__Devices_8h.html#a7b5e8eb0c44c117657aa143eeb59fab3">XCZU42DR_IDCODE</a></div><div class="ttdeci">#define XCZU42DR_IDCODE</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l01145">XUSP_Devices.h:1145</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754a7b16738eb81626db39122fe2abc8ae69"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754a7b16738eb81626db39122fe2abc8ae69">XUSP_DEVICE_XCVU7P</a></div><div class="ttdeci">@ XUSP_DEVICE_XCVU7P</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00055">XUSP_Devices.h:55</a></div></div>
@@ -4650,6 +4657,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754aa3eb7738aba1f6ef8fef0797d7753169"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754aa3eb7738aba1f6ef8fef0797d7753169">XUSP_DEVICE_XCZU65DR</a></div><div class="ttdeci">@ XUSP_DEVICE_XCZU65DR</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00083">XUSP_Devices.h:83</a></div></div>
 <div class="ttc" id="ainlinePrintResourceStringInfo_8h_html_a6f2b13a8fc2a6d13cb4c3113171a3423"><div class="ttname"><a href="inlinePrintResourceStringInfo_8h.html#a6f2b13a8fc2a6d13cb4c3113171a3423">printResourceStringInfo</a></div><div class="ttdeci">void printResourceStringInfo()</div><div class="ttdef"><b>Definition:</b> <a href="inlinePrintResourceStringInfo_8h_source.html#l00017">inlinePrintResourceStringInfo.h:17</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cab"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a></div><div class="ttdeci">Endianness</div><div class="ttdoc">&lt; Endianness in byteman is represented not only by big/little endian, but also by potential bit swapp...</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00046">Endianness.h:46</a></div></div>
+<div class="ttc" id="ainlineChange_8h_html_ab5065ae8dd1a442d7056c84f70642bd6"><div class="ttname"><a href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">setBitstreamWord</a></div><div class="ttdeci">void setBitstreamWord(std::string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineChange_8h_source.html#l00043">inlineChange.h:43</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754a9259574941042b275b2f670a6753372a"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754a9259574941042b275b2f670a6753372a">XUSP_DEVICE_TEB0912</a></div><div class="ttdeci">@ XUSP_DEVICE_TEB0912</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00149">XUSP_Devices.h:149</a></div></div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a5719ead2a4554d820fe31edf294f38a5"><div class="ttname"><a href="XUSP__Devices_8h.html#a5719ead2a4554d820fe31edf294f38a5">XCVU33P</a></div><div class="ttdeci">#define XCVU33P()</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00732">XUSP_Devices.h:732</a></div></div>
 <div class="ttc" id="astructXilinxConfigurationAccessPort_1_1SelectedOptions_html_ae19be6b6727755149f0568b2cc236ea7"><div class="ttname"><a href="structXilinxConfigurationAccessPort_1_1SelectedOptions.html#ae19be6b6727755149f0568b2cc236ea7">XilinxConfigurationAccessPort::SelectedOptions::forceEndianness</a></div><div class="ttdeci">bool forceEndianness</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00095">XilinxConfigurationAccessPort.h:95</a></div></div>
@@ -4701,7 +4709,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aXUSP__Devices_8h_html_a4367d92c255a06ef3daed7619eb37754ace03d42723608df77e380fb5ab8d1a32"><div class="ttname"><a href="XUSP__Devices_8h.html#a4367d92c255a06ef3daed7619eb37754ace03d42723608df77e380fb5ab8d1a32">XUSP_DEVICE_XCU25</a></div><div class="ttdeci">@ XUSP_DEVICE_XCU25</div><div class="ttdef"><b>Definition:</b> <a href="XUSP__Devices_8h_source.html#l00108">XUSP_Devices.h:108</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 11:22:07 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 20:21:37 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

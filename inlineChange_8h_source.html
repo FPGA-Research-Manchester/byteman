@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #215)</span>
+   &#160;<span id="projectnumber">1.3 (Build #216)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -89,30 +89,44 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b">   17</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b">ensureSelectedEndianness</a>(<a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> newEndianness){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> endiannessConvertion = <a class="code" href="namespaceEndian.html#adb5a175333bfc81edaee46e216cce009">Endian::diff</a>(loadedBitstreamEndianness, newEndianness);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743">Endianness::NATIVE</a>)<span class="comment">// if there is no actual convertion needed</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> bitstreamSize = bitstreamEnd - bitstreamBegin;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a>)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a>(bitstreamBegin[i]);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">Endianness::LE</a>)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb">Endian::NativeToLittleEndian32</a>(bitstreamBegin[i]);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">Endianness::BE_BS</a>)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84">Endian::BitSwap32</a>(<a class="code" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a>(bitstreamBegin[i]));</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a>)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84">Endian::BitSwap32</a>(<a class="code" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb">Endian::NativeToLittleEndian32</a>(bitstreamBegin[i]));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    loadedBitstreamEndianness = newEndianness;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before modifications</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a> endiannessConvertion = <a class="code" href="namespaceEndian.html#adb5a175333bfc81edaee46e216cce009">Endian::diff</a>(loadedBitstreamEndianness, newEndianness);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743">Endianness::NATIVE</a>)<span class="comment">// if there is no actual convertion needed</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> bitstreamSize = bitstreamEnd - bitstreamBegin;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a>)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a>(bitstreamBegin[i]);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">Endianness::LE</a>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb">Endian::NativeToLittleEndian32</a>(bitstreamBegin[i]);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">Endianness::BE_BS</a>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84">Endian::BitSwap32</a>(<a class="code" href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a>(bitstreamBegin[i]));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(endiannessConvertion == <a class="code" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">for</span>( <span class="keywordtype">int</span> i = 0 ; i &lt; bitstreamSize ; i++)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            bitstreamBegin[i] = <a class="code" href="namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84">Endian::BitSwap32</a>(<a class="code" href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb">Endian::NativeToLittleEndian32</a>(bitstreamBegin[i]));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    loadedBitstreamEndianness = newEndianness;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">   43</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">setBitstreamWord</a>(std::string params){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ensureInitializedBitstreamArrays();<span class="comment">//initialize bitstream arrays before modifications</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint32_t r, y, c, b, m, w, newVal;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#a654d50b4a95fff1bab5647f7b96b885c">str::parse::multipleUints</a>(params, y, c, b, m, w, newVal);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    r = y / CLB_PER_CLOCK_REGION;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(b == BLOCKTYPE_LOGIC){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        bitstreamCLB[r][c][m*WORDS_PER_FRAME + w] = <a class="code" href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847">Endian::NativeToAnyEndianness32</a>(newVal, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(b == BLOCKTYPE_BLOCKRAM){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w] = <a class="code" href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847">Endian::NativeToAnyEndianness32</a>(newVal, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    bitstreamHasValidData = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Big endian (&quot;BE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess wor...</div></div>
 <div class="ttc" id="anamespaceEndian_html_a4ef36a4fee2f667cf8ac3f67017716bb"><div class="ttname"><a href="namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb">Endian::NativeToLittleEndian32</a></div><div class="ttdeci">uint32_t NativeToLittleEndian32(uint32_t x)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00169">Endianness.h:169</a></div></div>
@@ -122,12 +136,15 @@ $(function() {
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">Endianness::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Little endian (&quot;LE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess ...</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">Endianness::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Big endian with bit swaps inside each byte.</div></div>
 <div class="ttc" id="anamespaceEndian_html_a7cd80b2cb2ed674196a68549c8489f88"><div class="ttname"><a href="namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88">Endian::NativeToBigEndian32</a></div><div class="ttdeci">uint32_t NativeToBigEndian32(uint32_t x)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00152">Endianness.h:152</a></div></div>
+<div class="ttc" id="anamespaceEndian_html_a6e3f14d2195a9979513e9a7b87e24847"><div class="ttname"><a href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847">Endian::NativeToAnyEndianness32</a></div><div class="ttdeci">uint32_t NativeToAnyEndianness32(uint32_t x, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00246">Endianness.h:246</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cab"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cab">Endianness</a></div><div class="ttdeci">Endianness</div><div class="ttdoc">&lt; Endianness in byteman is represented not only by big/little endian, but also by potential bit swapp...</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00046">Endianness.h:46</a></div></div>
+<div class="ttc" id="ainlineChange_8h_html_ab5065ae8dd1a442d7056c84f70642bd6"><div class="ttname"><a href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">setBitstreamWord</a></div><div class="ttdeci">void setBitstreamWord(std::string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineChange_8h_source.html#l00043">inlineChange.h:43</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_adb5a175333bfc81edaee46e216cce009"><div class="ttname"><a href="namespaceEndian.html#adb5a175333bfc81edaee46e216cce009">Endian::diff</a></div><div class="ttdeci">Endianness diff(Endianness e1, Endianness e2)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00117">Endianness.h:117</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_a654d50b4a95fff1bab5647f7b96b885c"><div class="ttname"><a href="namespacestr_1_1parse.html#a654d50b4a95fff1bab5647f7b96b885c">str::parse::multipleUints</a></div><div class="ttdeci">bool multipleUints(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00257">parse.h:257</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 11:22:07 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 20:21:36 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

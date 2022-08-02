@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #215)</span>
+   &#160;<span id="projectnumber">1.3 (Build #216)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -100,15 +100,18 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">parseParams</a>(params);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.forceEndianness)</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b">ensureSelectedEndianness</a>(selectedOptions.forcedEndianness);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span>(selectedOptions.word)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">setBitstreamWord</a>(params);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="ainlineChange_8h_html_ae6a0714a04036157d8ed82cbbf724b8b"><div class="ttname"><a href="inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b">ensureSelectedEndianness</a></div><div class="ttdeci">void ensureSelectedEndianness(Endianness newEndianness)</div><div class="ttdef"><b>Definition:</b> <a href="inlineChange_8h_source.html#l00017">inlineChange.h:17</a></div></div>
 <div class="ttc" id="aXilinxSeries7_8h_html"><div class="ttname"><a href="XilinxSeries7_8h.html">XilinxSeries7.h</a></div></div>
 <div class="ttc" id="aclassXilinxSeries7_html_a341729914076ebc445699425c51037ba"><div class="ttname"><a href="classXilinxSeries7.html#a341729914076ebc445699425c51037ba">XilinxSeries7::change</a></div><div class="ttdeci">void change(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Change_8cpp_source.html#l00024">XS7_Change.cpp:24</a></div></div>
 <div class="ttc" id="ainlineParseParams_8h_html_a967f262c6d693437c133031f378de01c"><div class="ttname"><a href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">parseParams</a></div><div class="ttdeci">void parseParams(std::string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineParseParams_8h_source.html#l00032">inlineParseParams.h:32</a></div></div>
+<div class="ttc" id="ainlineChange_8h_html_ab5065ae8dd1a442d7056c84f70642bd6"><div class="ttname"><a href="inlineChange_8h.html#ab5065ae8dd1a442d7056c84f70642bd6">setBitstreamWord</a></div><div class="ttdeci">void setBitstreamWord(std::string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineChange_8h_source.html#l00043">inlineChange.h:43</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 11:22:07 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 20:21:36 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
