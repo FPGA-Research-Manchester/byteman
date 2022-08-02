@@ -1,8 +1,0 @@
-<map id="CommonDevice::printMessage" name="CommonDevice::printMessage">
-<area shape="rect" id="node1" title=" " alt="" coords="427,89,649,116"/>
-<area shape="rect" id="node2" href="$classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478" title=" " alt="" coords="218,64,373,91"/>
-<area shape="rect" id="node6" href="$classCommonDevice.html#aff50b99a44e085a1edb93cc9be817b8f" title=" " alt="" coords="212,115,379,141"/>
-<area shape="rect" id="node3" href="$classXilinxSeries7.html#a73abeaae240b21bea1673ef733d78944" title=" " alt="" coords="15,5,155,32"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a2598890121398b39d82ad1d14f947ecc" title=" " alt="" coords="8,57,161,98"/>
-<area shape="rect" id="node5" href="$classXilinxUltraScale.html#a3e4be4a980b2530bc05f0bc5d625db64" title=" " alt="" coords="5,123,164,149"/>
-</map>

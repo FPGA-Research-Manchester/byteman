@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #210)</span>
+   &#160;<span id="projectnumber">1.3 (Build #211)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">   32</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">parseParams</a>(<span class="keywordtype">string</span> params){</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">   32</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">parseParams</a>(std::string params){</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    selectedOptions = SelectedOptions();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    selectedOptions.clk = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    selectedOptions.clb = <span class="keyword">false</span>;</div>
@@ -100,9 +100,9 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    selectedOptions.skipUnused = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    selectedOptions.forceEndianness = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    selectedOptions.intParam = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69">replace</a>(params.begin(), params.end(), <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    stringstream ss(params);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">string</span> param;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">replace</a>(params.begin(), params.end(), <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::stringstream ss(params);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::string param;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">while</span> (!ss.eof()) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ss &gt;&gt; param;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span>(param == <span class="stringliteral">&quot;clock&quot;</span> || param == <span class="stringliteral">&quot;clk&quot;</span>)selectedOptions.clk = <span class="keyword">true</span>;</div>
@@ -137,7 +137,7 @@ $(function() {
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        param.clear();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a>(params, selectedOptions.intParam))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(params, selectedOptions.intParam))</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        selectedOptions.intParam = 0; <span class="comment">//default 0 if there is nothing</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(!selectedOptions.clk &amp;&amp; !selectedOptions.clb &amp;&amp; !selectedOptions.bram){ <span class="comment">// by default, choose all</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = <span class="keyword">true</span>;</div>
@@ -147,15 +147,15 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Big endian (&quot;BE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess wor...</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743">Endianness::NATIVE</a></div><div class="ttdeci">@ NATIVE</div><div class="ttdoc">System native will always be the fastest endianess to process.</div></div>
-<div class="ttc" id="ainlineParseParams_8h_html_a7f22499069a08d35dfe2ec4697d03056"><div class="ttname"><a href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">parseParams</a></div><div class="ttdeci">void parseParams(string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineParseParams_8h_source.html#l00032">inlineParseParams.h:32</a></div></div>
-<div class="ttc" id="anamespacestr_html_ac23568893d7dd0123ecfc9105c9f3a69"><div class="ttname"><a href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69">str::replace</a></div><div class="ttdeci">string replace(string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in string str with newChar and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00043">str.h:43</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">Endianness::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Little endian (&quot;LE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess ...</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">Endianness::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Big endian with bit swaps inside each byte.</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_a9f14cc7345a3fc0591a6afaf8033e6d1"><div class="ttname"><a href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00194">parse.h:194</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_af4246fb05f8a85ef7316146a8fc49276"><div class="ttname"><a href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00222">parse.h:222</a></div></div>
+<div class="ttc" id="ainlineParseParams_8h_html_a967f262c6d693437c133031f378de01c"><div class="ttname"><a href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">parseParams</a></div><div class="ttdeci">void parseParams(std::string params)</div><div class="ttdef"><b>Definition:</b> <a href="inlineParseParams_8h_source.html#l00032">inlineParseParams.h:32</a></div></div>
+<div class="ttc" id="anamespacestr_html_a2d2adf32604f4236cf7b7ca879653fec"><div class="ttname"><a href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a></div><div class="ttdeci">std::string replace(std::string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri...</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00057">str.h:57</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 29 2022 11:52:15 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

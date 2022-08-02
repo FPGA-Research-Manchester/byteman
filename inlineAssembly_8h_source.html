@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #210)</span>
+   &#160;<span id="projectnumber">1.3 (Build #211)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -88,25 +88,25 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *****************************************************************************/</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="inlineAssembly_8h.html#ab0e5b3e393eb1a90c5174f75f593be6d">   17</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineAssembly_8h.html#ab0e5b3e393eb1a90c5174f75f593be6d">assemblyOutputData</a>(ifstream&amp; fin, ofstream&amp; fout, streamoff sizeInBytes)</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="inlineAssembly_8h.html#a05897dda367e60264f83de37fe7f9546">   17</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="inlineAssembly_8h.html#a05897dda367e60264f83de37fe7f9546">assemblyOutputData</a>(std::ifstream&amp; fin, std::ofstream&amp; fout, std::streamoff sizeInBytes)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    streamoff numOfWords = sizeInBytes/(streamoff)4;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span>(streamoff i = 0 ; i &lt; numOfWords ; i++){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        uint32_t aWord = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        fout &lt;&lt; <span class="stringliteral">&quot;.word &quot;</span> &lt;&lt;<span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(8) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; aWord &lt;&lt; endl;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::streamoff numOfWords = sizeInBytes/(std::streamoff)4;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span>(std::streamoff i = 0 ; i &lt; numOfWords ; i++){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        uint32_t aWord = <a class="code" href="namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        fout &lt;&lt; <span class="stringliteral">&quot;.word &quot;</span> &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; std::uppercase &lt;&lt; std::hex &lt;&lt; std::setw(8) &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; aWord &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    streamoff numOfBytes = sizeInBytes % (streamoff)4;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span>(streamoff i = 0 ; i &lt; numOfBytes ; i++){</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        uint8_t aByte = <a class="code" href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        fout &lt;&lt; <span class="stringliteral">&quot;.byte &quot;</span> &lt;&lt;<span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; uppercase &lt;&lt; hex &lt;&lt; setw(2) &lt;&lt; setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; aByte &lt;&lt; endl;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::streamoff numOfBytes = sizeInBytes % (std::streamoff)4;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">for</span>(std::streamoff i = 0 ; i &lt; numOfBytes ; i++){</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        uint8_t aByte = <a class="code" href="namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace">FileIO::read32</a>(fin, loadedBitstreamEndianness);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        fout &lt;&lt; <span class="stringliteral">&quot;.byte &quot;</span> &lt;&lt; <span class="stringliteral">&quot;0x&quot;</span> &lt;&lt; std::uppercase &lt;&lt; std::hex &lt;&lt; std::setw(2) &lt;&lt; std::setfill(<span class="charliteral">&#39;0&#39;</span>) &lt;&lt; aByte &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="ainlineAssembly_8h_html_ab0e5b3e393eb1a90c5174f75f593be6d"><div class="ttname"><a href="inlineAssembly_8h.html#ab0e5b3e393eb1a90c5174f75f593be6d">assemblyOutputData</a></div><div class="ttdeci">void assemblyOutputData(ifstream &amp;fin, ofstream &amp;fout, streamoff sizeInBytes)</div><div class="ttdef"><b>Definition:</b> <a href="inlineAssembly_8h_source.html#l00017">inlineAssembly.h:17</a></div></div>
-<div class="ttc" id="anamespaceFileIO_html_aaccfcd823f22c4f98df1cb587fcd74e6"><div class="ttname"><a href="namespaceFileIO.html#aaccfcd823f22c4f98df1cb587fcd74e6">FileIO::read32</a></div><div class="ttdeci">uint32_t read32(ifstream &amp;fin, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00133">FileIO.h:133</a></div></div>
+<div class="ttc" id="ainlineAssembly_8h_html_a05897dda367e60264f83de37fe7f9546"><div class="ttname"><a href="inlineAssembly_8h.html#a05897dda367e60264f83de37fe7f9546">assemblyOutputData</a></div><div class="ttdeci">void assemblyOutputData(std::ifstream &amp;fin, std::ofstream &amp;fout, std::streamoff sizeInBytes)</div><div class="ttdef"><b>Definition:</b> <a href="inlineAssembly_8h_source.html#l00017">inlineAssembly.h:17</a></div></div>
+<div class="ttc" id="anamespaceFileIO_html_ad34c7f82a6493b2badf319599f79cace"><div class="ttname"><a href="namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace">FileIO::read32</a></div><div class="ttdeci">uint32_t read32(std::ifstream &amp;fin, Endianness e=Endianness::NATIVE)</div><div class="ttdef"><b>Definition:</b> <a href="FileIO_8h_source.html#l00147">FileIO.h:147</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 29 2022 11:52:15 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

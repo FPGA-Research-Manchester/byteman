@@ -1,0 +1,31 @@
+<map id="readBitstreamMain" name="readBitstreamMain">
+<area shape="rect" id="node1" title=" " alt="" coords="5,436,152,463"/>
+<area shape="rect" id="node2" href="$inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b" title=" " alt="" coords="214,157,410,184"/>
+<area shape="rect" id="node12" href="$inlineInput_8h.html#a7a336065cf356dcd13baf6e7ee541d60" title=" " alt="" coords="210,259,414,285"/>
+<area shape="rect" id="node13" href="$namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace" title=" " alt="" coords="533,259,645,285"/>
+<area shape="rect" id="node15" href="$inlineInput_8h.html#a9ac869b5d7471fdfec80cc95402bb5d5" title=" " alt="" coords="225,309,399,336"/>
+<area shape="rect" id="node16" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="247,360,377,387"/>
+<area shape="rect" id="node17" href="$inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="203,411,421,437"/>
+<area shape="rect" id="node18" href="$inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="210,461,414,488"/>
+<area shape="rect" id="node19" href="$inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="209,512,415,539"/>
+<area shape="rect" id="node20" href="$inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="221,563,403,589"/>
+<area shape="rect" id="node21" href="$inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="200,613,424,640"/>
+<area shape="rect" id="node22" href="$inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="235,664,389,691"/>
+<area shape="rect" id="node29" href="$inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="251,715,373,741"/>
+<area shape="rect" id="node3" href="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="518,56,661,83"/>
+<area shape="rect" id="node4" href="$namespaceEndian.html#adb5a175333bfc81edaee46e216cce009" title=" " alt="" coords="542,107,637,133"/>
+<area shape="rect" id="node9" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="483,157,695,184"/>
+<area shape="rect" id="node11" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="477,208,701,235"/>
+<area shape="rect" id="node5" href="$namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e" title=" " alt="" coords="819,157,958,184"/>
+<area shape="rect" id="node6" href="$namespaceEndian.html#a2908cb68d06425c31c71fae71797cded" title=" " alt="" coords="839,5,939,32"/>
+<area shape="rect" id="node7" href="$namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629" title=" " alt="" coords="783,56,995,83"/>
+<area shape="rect" id="node8" href="$namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="794,107,983,133"/>
+<area shape="rect" id="node10" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="809,208,969,235"/>
+<area shape="rect" id="node14" href="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="497,309,681,336"/>
+<area shape="rect" id="node23" href="$inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="472,639,707,665"/>
+<area shape="rect" id="node26" href="$inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="472,689,707,716"/>
+<area shape="rect" id="node24" href="$inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="755,639,1023,665"/>
+<area shape="rect" id="node25" href="$inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="758,588,1019,615"/>
+<area shape="rect" id="node27" href="$inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="755,740,1023,767"/>
+<area shape="rect" id="node28" href="$inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="758,689,1019,716"/>
+</map>

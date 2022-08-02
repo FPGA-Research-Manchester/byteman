@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #210)</span>
+   &#160;<span id="projectnumber">1.3 (Build #211)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -184,7 +184,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="inlineMerge_8h.html#ae484ad8fc3755dab5e1b60c1c8fe9a49">ensureRowCompatibility</a>(src.<a class="code" href="structRect2D.html#ae5afd98d6745784930feac5136640a85">position</a>, src.<a class="code" href="structRect2D.html#a5d621868d788e999caada275e9c0cbc6">size</a>.<a class="code" href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">row</a>-1, src.<a class="code" href="structRect2D.html#a5d621868d788e999caada275e9c0cbc6">size</a>.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>, dst); <span class="comment">//iterate north border as well</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Coords_8h_source.html#l00027">Coord2D::col</a>, <a class="el" href="inlineMerge_8h_source.html#l00017">ensureRowCompatibility()</a>, <a class="el" href="Coords_8h_source.html#l00032">Rect2D::position</a>, <a class="el" href="Coords_8h_source.html#l00026">Coord2D::row</a>, and <a class="el" href="Coords_8h_source.html#l00033">Rect2D::size</a>.</p>
+<p class="reference">References <a class="el" href="Coords_8h_source.html#l00041">Coord2D::col</a>, <a class="el" href="inlineMerge_8h_source.html#l00017">ensureRowCompatibility()</a>, <a class="el" href="Coords_8h_source.html#l00032">Rect2D::position</a>, <a class="el" href="Coords_8h_source.html#l00040">Coord2D::row</a>, and <a class="el" href="Coords_8h_source.html#l00033">Rect2D::size</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="XS7__Merge_8cpp_source.html#l00024">XilinxSeries7::merge()</a>, <a class="el" href="XUSP__Merge_8cpp_source.html#l00024">XilinxUltraScalePlus::merge()</a>, and <a class="el" href="XUS__Merge_8cpp_source.html#l00024">XilinxUltraScale::merge()</a>.</p>
 <div class="dynheader">
@@ -202,9 +202,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="inlineMerge_8h_a21b2f80d255010a452775ec6630ace63_icgraph.png" border="0" usemap="#inlineMerge_8h_a21b2f80d255010a452775ec6630ace63_icgraph" alt=""/></div>
 <map name="inlineMerge_8h_a21b2f80d255010a452775ec6630ace63_icgraph" id="inlineMerge_8h_a21b2f80d255010a452775ec6630ace63_icgraph">
 <area shape="rect" title=" " alt="" coords="229,56,428,83"/>
-<area shape="rect" href="classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d" title=" " alt="" coords="15,5,172,32"/>
-<area shape="rect" href="classXilinxUltraScale.html#a6b42cd68a7bb4727c5f3c9076c21bdf1" title=" " alt="" coords="5,56,181,83"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="17,107,170,149"/>
+<area shape="rect" href="classXilinxSeries7.html#aff92193475dd3bc2b62be8e744a7e42e" title=" " alt="" coords="15,5,172,32"/>
+<area shape="rect" href="classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6" title=" " alt="" coords="5,56,181,83"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d" title=" " alt="" coords="17,107,170,149"/>
 </map>
 </div>
 
@@ -264,16 +264,16 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">if</span>(resourceString[srcRA][src.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c] != resourceString[dstRA][dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]){<span class="comment">//if any two letters are different</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">if</span>(LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[srcRA][src.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]] != LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[dstRA][dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]){</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="comment">//also the number of frames is different?!</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Please check your merge coordinates. Tried to merge incompatible resources (from \&quot;&quot;</span>).append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]).append(<span class="stringliteral">&quot;\&quot; to \&quot;&quot;</span>).append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]).append(<span class="stringliteral">&quot;\&quot;).&quot;</span>));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="keywordflow">throw</span> std::runtime_error(std::string(<span class="stringliteral">&quot;Please check your merge coordinates. Tried to merge incompatible resources (from \&quot;&quot;</span>).append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]).append(<span class="stringliteral">&quot;\&quot; to \&quot;&quot;</span>).append(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]).append(<span class="stringliteral">&quot;\&quot;).&quot;</span>));</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="comment">//okay, different col, but same width. Throw warning?</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                warn(<span class="stringliteral">&quot;Relocating from frame type &quot;</span> + <span class="keywordtype">string</span>(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]) + <span class="stringliteral">&quot; to frame type &quot;</span> + <span class="keywordtype">string</span>(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]) + <span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                warn(<span class="stringliteral">&quot;Relocating from frame type &quot;</span> + std::string(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[srcRA][src.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]) + <span class="stringliteral">&quot; to frame type &quot;</span> + std::string(LUT_typeOfFrameForResourceLetter[(uint8_t)resourceString[dstRA][dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>+c]]) + <span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Coords_8h_source.html#l00027">Coord2D::col</a>, and <a class="el" href="Coords_8h_source.html#l00026">Coord2D::row</a>.</p>
+<p class="reference">References <a class="el" href="Coords_8h_source.html#l00041">Coord2D::col</a>, and <a class="el" href="Coords_8h_source.html#l00040">Coord2D::row</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="inlineMerge_8h_source.html#l00033">ensureRegionCompatibility()</a>.</p>
 <div class="dynheader">
@@ -283,9 +283,9 @@ Here is the caller graph for this function:</div>
 <map name="inlineMerge_8h_ae484ad8fc3755dab5e1b60c1c8fe9a49_icgraph" id="inlineMerge_8h_ae484ad8fc3755dab5e1b60c1c8fe9a49_icgraph">
 <area shape="rect" title=" " alt="" coords="476,64,659,91"/>
 <area shape="rect" href="inlineMerge_8h.html#a21b2f80d255010a452775ec6630ace63" title=" " alt="" coords="229,64,428,91"/>
-<area shape="rect" href="classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d" title=" " alt="" coords="15,5,172,32"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="17,57,170,98"/>
-<area shape="rect" href="classXilinxUltraScale.html#a6b42cd68a7bb4727c5f3c9076c21bdf1" title=" " alt="" coords="5,123,181,149"/>
+<area shape="rect" href="classXilinxSeries7.html#aff92193475dd3bc2b62be8e744a7e42e" title=" " alt="" coords="15,5,172,32"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d" title=" " alt="" coords="17,57,170,98"/>
+<area shape="rect" href="classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6" title=" " alt="" coords="5,123,181,149"/>
 </map>
 </div>
 
@@ -368,7 +368,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    bitstreamHasValidData = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00119">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamBRAM</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00118">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamCLB</a>, <a class="el" href="Coords_8h_source.html#l00027">Coord2D::col</a>, <a class="el" href="Coords_8h_source.html#l00032">Rect2D::position</a>, <a class="el" href="Coords_8h_source.html#l00026">Coord2D::row</a>, and <a class="el" href="Coords_8h_source.html#l00033">Rect2D::size</a>.</p>
+<p class="reference">References <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00119">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamBRAM</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00118">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamCLB</a>, <a class="el" href="Coords_8h_source.html#l00041">Coord2D::col</a>, <a class="el" href="Coords_8h_source.html#l00032">Rect2D::position</a>, <a class="el" href="Coords_8h_source.html#l00040">Coord2D::row</a>, and <a class="el" href="Coords_8h_source.html#l00033">Rect2D::size</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="XS7__Merge_8cpp_source.html#l00024">XilinxSeries7::merge()</a>, <a class="el" href="XUSP__Merge_8cpp_source.html#l00024">XilinxUltraScalePlus::merge()</a>, and <a class="el" href="XUS__Merge_8cpp_source.html#l00024">XilinxUltraScale::merge()</a>.</p>
 <div class="dynheader">
@@ -377,9 +377,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="inlineMerge_8h_a60e696e93576686d147a4e08f3f8832c_icgraph.png" border="0" usemap="#inlineMerge_8h_a60e696e93576686d147a4e08f3f8832c_icgraph" alt=""/></div>
 <map name="inlineMerge_8h_a60e696e93576686d147a4e08f3f8832c_icgraph" id="inlineMerge_8h_a60e696e93576686d147a4e08f3f8832c_icgraph">
 <area shape="rect" title=" " alt="" coords="229,56,317,83"/>
-<area shape="rect" href="classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d" title=" " alt="" coords="15,5,172,32"/>
-<area shape="rect" href="classXilinxUltraScale.html#a6b42cd68a7bb4727c5f3c9076c21bdf1" title=" " alt="" coords="5,56,181,83"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="17,107,170,149"/>
+<area shape="rect" href="classXilinxSeries7.html#aff92193475dd3bc2b62be8e744a7e42e" title=" " alt="" coords="15,5,172,32"/>
+<area shape="rect" href="classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6" title=" " alt="" coords="5,56,181,83"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d" title=" " alt="" coords="17,107,170,149"/>
 </map>
 </div>
 
@@ -495,7 +495,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    bitstreamHasValidData = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00119">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamBRAM</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00118">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamCLB</a>, <a class="el" href="Coords_8h_source.html#l00027">Coord2D::col</a>, <a class="el" href="Endianness_8h_source.html#l00246">Endian::NativeToAnyEndianness32()</a>, <a class="el" href="Coords_8h_source.html#l00032">Rect2D::position</a>, <a class="el" href="Coords_8h_source.html#l00026">Coord2D::row</a>, and <a class="el" href="Coords_8h_source.html#l00033">Rect2D::size</a>.</p>
+<p class="reference">References <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00119">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamBRAM</a>, <a class="el" href="XilinxConfigurationAccessPort_8h_source.html#l00118">XilinxConfigurationAccessPort&lt; MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, FAR_ENABLE_TOP_BOTTOM_BIT, FAR_TOP_BOTTOM_BIT_SHIFT, FAR_BLOCKTYPE_SHIFT, FAR_BLOCKTYPE_MASK, FAR_ROWADDRESS_SHIFT, FAR_ROWADDRESS_MASK, FAR_COLUMNADDRESS_SHIFT, FAR_COLUMNADDRESS_MASK, FAR_MINORADDRESS_SHIFT, FAR_MINORADDRESS_MASK &gt;::bitstreamCLB</a>, <a class="el" href="Coords_8h_source.html#l00041">Coord2D::col</a>, <a class="el" href="Endianness_8h_source.html#l00246">Endian::NativeToAnyEndianness32()</a>, <a class="el" href="Coords_8h_source.html#l00032">Rect2D::position</a>, <a class="el" href="Coords_8h_source.html#l00040">Coord2D::row</a>, and <a class="el" href="Coords_8h_source.html#l00033">Rect2D::size</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="XS7__Merge_8cpp_source.html#l00024">XilinxSeries7::merge()</a>, <a class="el" href="XUSP__Merge_8cpp_source.html#l00024">XilinxUltraScalePlus::merge()</a>, and <a class="el" href="XUS__Merge_8cpp_source.html#l00024">XilinxUltraScale::merge()</a>.</p>
 <div class="dynheader">
@@ -517,9 +517,9 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="inlineMerge_8h_a9084d1ae1d290296542b624c5fd2fa1d_icgraph.png" border="0" usemap="#inlineMerge_8h_a9084d1ae1d290296542b624c5fd2fa1d_icgraph" alt=""/></div>
 <map name="inlineMerge_8h_a9084d1ae1d290296542b624c5fd2fa1d_icgraph" id="inlineMerge_8h_a9084d1ae1d290296542b624c5fd2fa1d_icgraph">
 <area shape="rect" title=" " alt="" coords="229,56,320,83"/>
-<area shape="rect" href="classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d" title=" " alt="" coords="15,5,172,32"/>
-<area shape="rect" href="classXilinxUltraScale.html#a6b42cd68a7bb4727c5f3c9076c21bdf1" title=" " alt="" coords="5,56,181,83"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="17,107,170,149"/>
+<area shape="rect" href="classXilinxSeries7.html#aff92193475dd3bc2b62be8e744a7e42e" title=" " alt="" coords="15,5,172,32"/>
+<area shape="rect" href="classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6" title=" " alt="" coords="5,56,181,83"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d" title=" " alt="" coords="17,107,170,149"/>
 </map>
 </div>
 
@@ -529,14 +529,14 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructRect2D_html_a5d621868d788e999caada275e9c0cbc6"><div class="ttname"><a href="structRect2D.html#a5d621868d788e999caada275e9c0cbc6">Rect2D::size</a></div><div class="ttdeci">Coord2D size</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00033">Coords.h:33</a></div></div>
 <div class="ttc" id="ainlineMerge_8h_html_ae484ad8fc3755dab5e1b60c1c8fe9a49"><div class="ttname"><a href="inlineMerge_8h.html#ae484ad8fc3755dab5e1b60c1c8fe9a49">ensureRowCompatibility</a></div><div class="ttdeci">void ensureRowCompatibility(Coord2D src, int offsetRow, int sizeCol, Coord2D dst)</div><div class="ttdef"><b>Definition:</b> <a href="inlineMerge_8h_source.html#l00017">inlineMerge.h:17</a></div></div>
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a22d27d6d8c3a92c298e23531b1808deb"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a22d27d6d8c3a92c298e23531b1808deb">XilinxConfigurationAccessPort::bitstreamCLB</a></div><div class="ttdeci">uint32_t * bitstreamCLB[MAX_ROWS][MAX_COLS]</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00118">XilinxConfigurationAccessPort.h:118</a></div></div>
-<div class="ttc" id="astructCoord2D_html_a446bd3f197a1052f8d99f0a6d22406fc"><div class="ttname"><a href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">Coord2D::row</a></div><div class="ttdeci">int row</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00026">Coords.h:26</a></div></div>
+<div class="ttc" id="astructCoord2D_html_a446bd3f197a1052f8d99f0a6d22406fc"><div class="ttname"><a href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">Coord2D::row</a></div><div class="ttdeci">int row</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00040">Coords.h:40</a></div></div>
 <div class="ttc" id="aclassXilinxConfigurationAccessPort_html_a3a2e39b9f0b799cf1adf950af4b1370b"><div class="ttname"><a href="classXilinxConfigurationAccessPort.html#a3a2e39b9f0b799cf1adf950af4b1370b">XilinxConfigurationAccessPort::bitstreamBRAM</a></div><div class="ttdeci">uint32_t * bitstreamBRAM[MAX_ROWS][MAX_BRAM_COLS]</div><div class="ttdef"><b>Definition:</b> <a href="XilinxConfigurationAccessPort_8h_source.html#l00119">XilinxConfigurationAccessPort.h:119</a></div></div>
-<div class="ttc" id="astructCoord2D_html_a2c86b6f3509b769d25a7b363bceab8f1"><div class="ttname"><a href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">Coord2D::col</a></div><div class="ttdeci">int col</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00027">Coords.h:27</a></div></div>
+<div class="ttc" id="astructCoord2D_html_a2c86b6f3509b769d25a7b363bceab8f1"><div class="ttname"><a href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">Coord2D::col</a></div><div class="ttdeci">int col</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00041">Coords.h:41</a></div></div>
 <div class="ttc" id="anamespaceEndian_html_a6e3f14d2195a9979513e9a7b87e24847"><div class="ttname"><a href="namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847">Endian::NativeToAnyEndianness32</a></div><div class="ttdeci">uint32_t NativeToAnyEndianness32(uint32_t x, Endianness e)</div><div class="ttdef"><b>Definition:</b> <a href="Endianness_8h_source.html#l00246">Endianness.h:246</a></div></div>
 <div class="ttc" id="astructRect2D_html_ae5afd98d6745784930feac5136640a85"><div class="ttname"><a href="structRect2D.html#ae5afd98d6745784930feac5136640a85">Rect2D::position</a></div><div class="ttdeci">Coord2D position</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00032">Coords.h:32</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 29 2022 11:52:15 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

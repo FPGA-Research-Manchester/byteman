@@ -1,0 +1,10 @@
+<map id="parseBitstreamIDCODE" name="parseBitstreamIDCODE">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,179,83"/>
+<area shape="rect" id="node2" href="$inlineInput_8h.html#a7a336065cf356dcd13baf6e7ee541d60" title=" " alt="" coords="227,56,431,83"/>
+<area shape="rect" id="node3" href="$namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace" title=" " alt="" coords="536,5,648,32"/>
+<area shape="rect" id="node5" href="$inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="237,107,420,133"/>
+<area shape="rect" id="node4" href="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="500,56,684,83"/>
+<area shape="rect" id="node6" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="479,107,705,133"/>
+<area shape="rect" id="node7" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="753,107,944,133"/>
+<area shape="rect" id="node8" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="992,107,1145,133"/>
+</map>

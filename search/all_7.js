@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['headerlocationofremainingfilelength_119',['headerLocationOfRemainingFileLength',['../classXilinxConfigurationAccessPort.html#a17d62493a70902fed5cc2eca587a79c8',1,'XilinxConfigurationAccessPort']]],
-  ['help_120',['help',['../classbyteman.html#a71bcdc1d03effacbe62b91a337710e39',1,'byteman::help(string, int)'],['../classbyteman.html#aa80ac1db148e259d7cc8ec9cf27423dd',1,'byteman::help(string)'],['../classbyteman.html#aacff84465ee63b374e85acf9f5f96338',1,'byteman::help()']]],
+  ['headerlocationofremainingfilelength_119',['headerLocationOfRemainingFileLength',['../classXilinxConfigurationAccessPort.html#a27432fa0c4bf4c65aea3ae67b6b456fe',1,'XilinxConfigurationAccessPort']]],
+  ['help_120',['help',['../classbyteman.html#a865b1b77969156eef90584612dae6614',1,'byteman::help(std::string, int)'],['../classbyteman.html#aef603360084a181b29b4f2142290d4ba',1,'byteman::help(std::string)'],['../classbyteman.html#aacff84465ee63b374e85acf9f5f96338',1,'byteman::help()']]],
   ['help_2ecpp_121',['help.cpp',['../help_8cpp.html',1,'']]],
   ['helpassembly_122',['helpAssembly',['../classbyteman.html#ac2aa63203e15597c3a0d30485dc06100',1,'byteman']]],
   ['helpblank_123',['helpBlank',['../classbyteman.html#a2801436e293cd1fb9c7855acde6a6c63',1,'byteman']]],

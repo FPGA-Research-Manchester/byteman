@@ -1,7 +1,0 @@
-<map id="str::iff::stringBeginsWith" name="str::iff::stringBeginsWith">
-<area shape="rect" id="node1" title="Returns true if string checkedString&#39;s first characters match fully any of strings nextString or rest..." alt="" coords="700,5,879,32"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1iff.html#ab3d5fdd04adcc9952bcf512260c06d8f" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="503,5,652,32"/>
-<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a06c9e283ff14a39e32af47c1b1ca699b" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="280,5,455,32"/>
-<area shape="rect" id="node4" href="$classbyteman.html#a0ce0e992678e3f8b51cc5e01cea14ddb" title=" " alt="" coords="108,5,232,32"/>
-<area shape="rect" id="node5" href="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
-</map>

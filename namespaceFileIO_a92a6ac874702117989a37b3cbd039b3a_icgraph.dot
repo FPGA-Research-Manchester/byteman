@@ -1,0 +1,13 @@
+digraph "FileIO::readBigEndian64"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="FileIO::readBigEndian64",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="FileIO::readLittleEndian32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a363ebd239278bddc0b95787d86ae2412",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="FileIO::readBitSwappedBig\lEndian16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#aeff6ee4a9b7216151a4e4783dfe65089",tooltip=" "];
+}

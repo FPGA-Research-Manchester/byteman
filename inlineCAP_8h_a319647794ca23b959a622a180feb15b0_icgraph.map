@@ -1,9 +1,0 @@
-<map id="XCAP_writeSYNQ" name="XCAP_writeSYNQ">
-<area shape="rect" id="node1" title="Generate and write an SYNQ command." alt="" coords="305,181,437,207"/>
-<area shape="rect" id="node2" href="$classXilinxSeries7.html#add24644bcb25c9d2832e08ee151419c5" title=" " alt="" coords="40,5,223,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScalePlus.html#a3759d31f6e02c6d8fc6b8e46aec7b071" title=" " alt="" coords="55,71,208,112"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScale.html#a5fc4f1606f3f0943ea92809c1632b47c" title=" " alt="" coords="30,136,233,177"/>
-<area shape="rect" id="node5" href="$classXilinxUltraScale.html#a55ead0a9663bd461a7cd4abd8f5684f2" title=" " alt="" coords="5,202,257,258"/>
-<area shape="rect" id="node6" href="$classXilinxSeries7.html#afbaf18de3f60ea14a482474b16851642" title=" " alt="" coords="6,283,257,324"/>
-<area shape="rect" id="node7" href="$classXilinxUltraScalePlus.html#abf41976c5eb3bbc44974db8ffad594e9" title=" " alt="" coords="12,349,251,405"/>
-</map>

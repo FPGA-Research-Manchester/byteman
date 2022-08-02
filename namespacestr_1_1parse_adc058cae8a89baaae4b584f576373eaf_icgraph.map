@@ -1,0 +1,4 @@
+<map id="str::parse::allStringWordsWithoutLastStringWord" name="str::parse::allStringWordsWithoutLastStringWord">
+<area shape="rect" id="node1" title="Parses a std::string s, removes all integers and the last std::string word. Returns the rest." alt="" coords="221,5,407,47"/>
+<area shape="rect" id="node2" href="$classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2" title=" " alt="" coords="5,13,173,39"/>
+</map>

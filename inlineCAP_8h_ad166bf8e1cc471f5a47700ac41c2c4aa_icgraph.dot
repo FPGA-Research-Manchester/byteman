@@ -7,7 +7,7 @@ digraph "XCAP_getCOR0value"
   rankdir="RL";
   Node1 [label="XCAP_getCOR0value",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate COR0 register write value."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XilinxUltraScale::output\lBitstreamEmptySLRHeaderSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a676481c1fb0e90d6b11b8848cfc1cfa4",tooltip=" "];
+  Node2 [label="XilinxUltraScale::output\lBitstreamEmptySLRHeaderSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#ae14390ee28e7fb6f68e83b6c712b5a43",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="XilinxUltraScale::output\lBitstreamSLRHeaderBitstreamSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#ad03f8a5324c34bb865ba30d1316492f2",tooltip=" "];
+  Node3 [label="XilinxUltraScale::output\lBitstreamSLRHeaderBitstreamSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#af02eeea33625e348469cb6e4957f4632",tooltip=" "];
 }

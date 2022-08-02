@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['help_2612',['help',['../classbyteman.html#a71bcdc1d03effacbe62b91a337710e39',1,'byteman::help(string, int)'],['../classbyteman.html#aa80ac1db148e259d7cc8ec9cf27423dd',1,'byteman::help(string)'],['../classbyteman.html#aacff84465ee63b374e85acf9f5f96338',1,'byteman::help()']]],
+  ['help_2612',['help',['../classbyteman.html#a865b1b77969156eef90584612dae6614',1,'byteman::help(std::string, int)'],['../classbyteman.html#aef603360084a181b29b4f2142290d4ba',1,'byteman::help(std::string)'],['../classbyteman.html#aacff84465ee63b374e85acf9f5f96338',1,'byteman::help()']]],
   ['helpassembly_2613',['helpAssembly',['../classbyteman.html#ac2aa63203e15597c3a0d30485dc06100',1,'byteman']]],
   ['helpblank_2614',['helpBlank',['../classbyteman.html#a2801436e293cd1fb9c7855acde6a6c63',1,'byteman']]],
   ['helpchange_2615',['helpChange',['../classbyteman.html#ac64836ef34f97e826b8508ace2d6deda',1,'byteman']]],

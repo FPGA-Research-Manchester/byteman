@@ -1,8 +1,5 @@
 <map id="XilinxUltraScale::test" name="XilinxUltraScale::test">
-<area shape="rect" id="node1" title=" " alt="" coords="5,93,164,120"/>
-<area shape="rect" id="node2" href="$inlineTest_8h.html#a38aadd629bd2ab8241e670ee8102dfc2" title=" " alt="" coords="240,5,376,32"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScale.html#a90eabbb61cf23c68e7bc960b720d620e" title=" " alt="" coords="212,57,404,98"/>
-<area shape="rect" id="node4" href="$namespaceEndian.html#ac9f4873f9a0c23291fa47d68dff6fbbc" title=" " alt="" coords="498,93,629,120"/>
-<area shape="rect" id="node5" href="$classCommonDevice.html#aa42337dfb4b5ff34a063c2145ab87478" title=" " alt="" coords="231,173,385,200"/>
-<area shape="rect" id="node6" href="$classCommonDevice.html#af047ea6fd9b60bae9fcc94a7d8859657" title=" " alt="" coords="452,173,675,200"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,164,57"/>
+<area shape="rect" id="node2" href="$inlineTest_8h.html#a38aadd629bd2ab8241e670ee8102dfc2" title=" " alt="" coords="212,5,348,32"/>
+<area shape="rect" id="node3" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="215,56,345,83"/>
 </map>

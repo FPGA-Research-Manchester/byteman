@@ -5,5 +5,5 @@ var searchData=
   ['size_2887',['size',['../structRect2D.html#a5d621868d788e999caada275e9c0cbc6',1,'Rect2D']]],
   ['skipunused_2888',['skipUnused',['../structXilinxConfigurationAccessPort_1_1SelectedOptions.html#a6b102d72a4e3825114326df4ef977524',1,'XilinxConfigurationAccessPort::SelectedOptions']]],
   ['slrinfo_2889',['SLRinfo',['../classXilinxConfigurationAccessPort.html#ab9f12953097e2fc5fd70ac3166291b96',1,'XilinxConfigurationAccessPort']]],
-  ['slrmagicinstrlocation_2890',['slrMagicInstrLocation',['../classXilinxSeries7.html#a7f11297ea0836caaf3a170a5e2f5c926',1,'XilinxSeries7::slrMagicInstrLocation()'],['../classXilinxUltraScale.html#ae4c91468e5a51ccf1168ffe9e9038775',1,'XilinxUltraScale::slrMagicInstrLocation()'],['../classXilinxUltraScalePlus.html#a5fe2efe6fc13ce718d51541baff7f6ad',1,'XilinxUltraScalePlus::slrMagicInstrLocation()']]]
+  ['slrmagicinstrlocation_2890',['slrMagicInstrLocation',['../classXilinxSeries7.html#a8fbbbe81c6861a91ff2b897122d65e7a',1,'XilinxSeries7::slrMagicInstrLocation()'],['../classXilinxUltraScale.html#a5ef556784691a26440eccc258a42fe8c',1,'XilinxUltraScale::slrMagicInstrLocation()'],['../classXilinxUltraScalePlus.html#a12592ef5b1f4e758956d034e162cdaef',1,'XilinxUltraScalePlus::slrMagicInstrLocation()']]]
 ];

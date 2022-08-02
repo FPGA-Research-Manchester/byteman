@@ -1,6 +1,0 @@
-<map id="XilinxSeries7::getDeviceByName" name="XilinxSeries7::getDeviceByName">
-<area shape="rect" id="node1" title=" " alt="" coords="5,49,187,90"/>
-<area shape="rect" id="node2" href="$namespacestr.html#ac4f5b41b8703cf37f9eb80813b0d01cc" title="Removes all space chars of str returns the resulting string." alt="" coords="245,5,387,32"/>
-<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a1f19550a10f93dcfadd366fedf6bec90" title="Returns false. End of recursion for template." alt="" coords="235,56,397,83"/>
-<area shape="rect" id="node4" href="$namespacestr.html#a105c2a28a97e18e146cd18c000d2ecf5" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="247,107,385,133"/>
-</map>

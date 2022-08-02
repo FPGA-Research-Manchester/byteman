@@ -7,5 +7,5 @@ digraph "byteman::helpOutput"
   rankdir="RL";
   Node1 [label="byteman::helpOutput",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="byteman::help",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#aa80ac1db148e259d7cc8ec9cf27423dd",tooltip=" "];
+  Node2 [label="byteman::help",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classbyteman.html#aef603360084a181b29b4f2142290d4ba",tooltip=" "];
 }

@@ -1,4 +1,0 @@
-<map id="str::parse::multipleUints" name="str::parse::multipleUints">
-<area shape="rect" id="node1" title="Parses string s for uint32_t values, that are returned into args." alt="" coords="232,5,411,32"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a787409d03f6cc90479ee0db55ebe61d9" title="Parses stringstream ss for uint32_t values, that are returned into x, args." alt="" coords="5,5,184,32"/>
-</map>

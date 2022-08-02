@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #210)</span>
+   &#160;<span id="projectnumber">1.3 (Build #211)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -125,12 +125,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7f22499069a08d35dfe2ec4697d03056"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineParseParams_8h.html#a7f22499069a08d35dfe2ec4697d03056">parseParams</a> (string params)</td></tr>
-<tr class="separator:a7f22499069a08d35dfe2ec4697d03056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967f262c6d693437c133031f378de01c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c">parseParams</a> (std::string params)</td></tr>
+<tr class="separator:a967f262c6d693437c133031f378de01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a7f22499069a08d35dfe2ec4697d03056"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f22499069a08d35dfe2ec4697d03056">&#9670;&nbsp;</a></span>parseParams()</h2>
+<a id="a967f262c6d693437c133031f378de01c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967f262c6d693437c133031f378de01c">&#9670;&nbsp;</a></span>parseParams()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -141,7 +141,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void parseParams </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
         </tr>
@@ -170,7 +170,7 @@ Functions</h2></td></tr>
 </ul>
 
 <p class="definition">Definition at line <a class="el" href="inlineParseParams_8h_source.html#l00032">32</a> of file <a class="el" href="inlineParseParams_8h_source.html">inlineParseParams.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                      {</div>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                         {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    selectedOptions = SelectedOptions();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    selectedOptions.clk = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    selectedOptions.clb = <span class="keyword">false</span>;</div>
@@ -181,9 +181,9 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    selectedOptions.skipUnused = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    selectedOptions.forceEndianness = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    selectedOptions.intParam = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69">replace</a>(params.begin(), params.end(), <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    stringstream ss(params);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">string</span> param;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">replace</a>(params.begin(), params.end(), <span class="charliteral">&#39;,&#39;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::stringstream ss(params);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::string param;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">while</span> (!ss.eof()) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        ss &gt;&gt; param;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span>(param == <span class="stringliteral">&quot;clock&quot;</span> || param == <span class="stringliteral">&quot;clk&quot;</span>)selectedOptions.clk = <span class="keyword">true</span>;</div>
@@ -218,44 +218,44 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        param.clear();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a>(params, selectedOptions.intParam))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(params, selectedOptions.intParam))</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        selectedOptions.intParam = 0; <span class="comment">//default 0 if there is nothing</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(!selectedOptions.clk &amp;&amp; !selectedOptions.clb &amp;&amp; !selectedOptions.bram){ <span class="comment">// by default, choose all</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        selectedOptions.clk = selectedOptions.bram = selectedOptions.clb = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">BE</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">BE_BS</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">LE</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">LE_BS</a>, <a class="el" href="parse_8h_source.html#l00194">str::parse::multipleInts()</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743">NATIVE</a>, and <a class="el" href="str_8h_source.html#l00043">str::replace()</a>.</p>
+<p class="reference">References <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">BE</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">BE_BS</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">LE</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">LE_BS</a>, <a class="el" href="parse_8h_source.html#l00222">str::parse::multipleInts()</a>, <a class="el" href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743">NATIVE</a>, and <a class="el" href="str_8h_source.html#l00057">str::replace()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="XS7__Blank_8cpp_source.html#l00020">XilinxSeries7::blank()</a>, <a class="el" href="XUS__Blank_8cpp_source.html#l00020">XilinxUltraScale::blank()</a>, <a class="el" href="XUSP__Blank_8cpp_source.html#l00020">XilinxUltraScalePlus::blank()</a>, <a class="el" href="XS7__Change_8cpp_source.html#l00024">XilinxSeries7::change()</a>, <a class="el" href="XUSP__Change_8cpp_source.html#l00026">XilinxUltraScalePlus::change()</a>, <a class="el" href="XUS__Change_8cpp_source.html#l00025">XilinxUltraScale::change()</a>, <a class="el" href="XUS__Merge_8cpp_source.html#l00024">XilinxUltraScale::merge()</a>, <a class="el" href="XUSP__Merge_8cpp_source.html#l00024">XilinxUltraScalePlus::merge()</a>, <a class="el" href="XS7__Merge_8cpp_source.html#l00024">XilinxSeries7::merge()</a>, <a class="el" href="XUSP__Output_8cpp_source.html#l00137">XilinxUltraScalePlus::writeBitstream()</a>, <a class="el" href="XS7__Output_8cpp_source.html#l00145">XilinxSeries7::writeBitstream()</a>, and <a class="el" href="XUS__Output_8cpp_source.html#l00160">XilinxUltraScale::writeBitstream()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="XS7__Blank_8cpp_source.html#l00022">XilinxSeries7::blank()</a>, <a class="el" href="XUS__Blank_8cpp_source.html#l00022">XilinxUltraScale::blank()</a>, <a class="el" href="XUSP__Blank_8cpp_source.html#l00022">XilinxUltraScalePlus::blank()</a>, <a class="el" href="XS7__Change_8cpp_source.html#l00024">XilinxSeries7::change()</a>, <a class="el" href="XUSP__Change_8cpp_source.html#l00025">XilinxUltraScalePlus::change()</a>, <a class="el" href="XUS__Change_8cpp_source.html#l00025">XilinxUltraScale::change()</a>, <a class="el" href="XUS__Merge_8cpp_source.html#l00024">XilinxUltraScale::merge()</a>, <a class="el" href="XUSP__Merge_8cpp_source.html#l00024">XilinxUltraScalePlus::merge()</a>, <a class="el" href="XS7__Merge_8cpp_source.html#l00024">XilinxSeries7::merge()</a>, <a class="el" href="XUSP__Output_8cpp_source.html#l00137">XilinxUltraScalePlus::writeBitstream()</a>, <a class="el" href="XS7__Output_8cpp_source.html#l00144">XilinxSeries7::writeBitstream()</a>, and <a class="el" href="XUS__Output_8cpp_source.html#l00160">XilinxUltraScale::writeBitstream()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_cgraph.png" border="0" usemap="#inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_cgraph" alt=""/></div>
-<map name="inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_cgraph" id="inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_cgraph">
+<div class="center"><img src="inlineParseParams_8h_a967f262c6d693437c133031f378de01c_cgraph.png" border="0" usemap="#inlineParseParams_8h_a967f262c6d693437c133031f378de01c_cgraph" alt=""/></div>
+<map name="inlineParseParams_8h_a967f262c6d693437c133031f378de01c_cgraph" id="inlineParseParams_8h_a967f262c6d693437c133031f378de01c_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,112,57"/>
-<area shape="rect" href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1" title=" " alt="" coords="160,5,329,32"/>
-<area shape="rect" href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="197,56,292,83"/>
+<area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="160,5,329,32"/>
+<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..." alt="" coords="197,56,292,83"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_icgraph.png" border="0" usemap="#inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_icgraph" alt=""/></div>
-<map name="inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_icgraph" id="inlineParseParams_8h_a7f22499069a08d35dfe2ec4697d03056_icgraph">
+<div class="center"><img src="inlineParseParams_8h_a967f262c6d693437c133031f378de01c_icgraph.png" border="0" usemap="#inlineParseParams_8h_a967f262c6d693437c133031f378de01c_icgraph" alt=""/></div>
+<map name="inlineParseParams_8h_a967f262c6d693437c133031f378de01c_icgraph" id="inlineParseParams_8h_a967f262c6d693437c133031f378de01c_icgraph">
 <area shape="rect" title=" " alt="" coords="284,316,391,343"/>
-<area shape="rect" href="classXilinxSeries7.html#a7b5e5ff123d54639e4c3b2c03300c3f5" title=" " alt="" coords="45,5,196,32"/>
-<area shape="rect" href="classXilinxUltraScale.html#aefd9670bda072f396ec1b02916288b8f" title=" " alt="" coords="35,56,206,83"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a15434be327a556f42ae679ad8715f876" title=" " alt="" coords="44,107,197,149"/>
-<area shape="rect" href="classXilinxSeries7.html#ac6b5702c32a61b2e26560d0ced1815ca" title=" " alt="" coords="39,173,202,200"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a5a775d67c27876d7b300106d96cd0cd0" title=" " alt="" coords="44,225,197,266"/>
-<area shape="rect" href="classXilinxUltraScale.html#a5149b80ec8bc9020c5d00ef28f2621d8" title=" " alt="" coords="30,291,211,317"/>
-<area shape="rect" href="classXilinxSeries7.html#a423f1f884089884a06a47724b5abc90d" title=" " alt="" coords="42,341,199,368"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#aa0e0292dad364e72a422f4733f5ca207" title=" " alt="" coords="44,393,197,434"/>
-<area shape="rect" href="classXilinxUltraScale.html#a6b42cd68a7bb4727c5f3c9076c21bdf1" title=" " alt="" coords="33,459,209,485"/>
-<area shape="rect" href="classXilinxUltraScale.html#ae7bdd2bbb29cb3ef06c611605d997287" title=" " alt="" coords="5,509,236,536"/>
-<area shape="rect" href="classXilinxUltraScalePlus.html#a7f2a7c34766d004adc6f1cfe1bdd62e7" title=" " alt="" coords="44,561,197,602"/>
-<area shape="rect" href="classXilinxSeries7.html#a57013b15c1c846d96d7732ad5c0e0201" title=" " alt="" coords="15,627,227,653"/>
+<area shape="rect" href="classXilinxSeries7.html#af06b3f1431e4427220a6a4fb47c3839a" title=" " alt="" coords="45,5,196,32"/>
+<area shape="rect" href="classXilinxUltraScale.html#a1c962e29a35da180b42eac830510678a" title=" " alt="" coords="35,56,206,83"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a71b9a5da9d06c78b46c986b2c201c8be" title=" " alt="" coords="44,107,197,149"/>
+<area shape="rect" href="classXilinxSeries7.html#a341729914076ebc445699425c51037ba" title=" " alt="" coords="39,173,202,200"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a8d1c488a56dac4290a90e5718ce2e0be" title=" " alt="" coords="44,225,197,266"/>
+<area shape="rect" href="classXilinxUltraScale.html#a6fd473ac494b897805e5628817b833ba" title=" " alt="" coords="30,291,211,317"/>
+<area shape="rect" href="classXilinxSeries7.html#aff92193475dd3bc2b62be8e744a7e42e" title=" " alt="" coords="42,341,199,368"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d" title=" " alt="" coords="44,393,197,434"/>
+<area shape="rect" href="classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6" title=" " alt="" coords="33,459,209,485"/>
+<area shape="rect" href="classXilinxUltraScale.html#af163f68ca538a15deb895f71c18e29f1" title=" " alt="" coords="5,509,236,536"/>
+<area shape="rect" href="classXilinxUltraScalePlus.html#a9ccfa49a6f644294caee371fec039174" title=" " alt="" coords="44,561,197,602"/>
+<area shape="rect" href="classXilinxSeries7.html#a8e89db38dbb60abae6aeec780fff5015" title=" " alt="" coords="15,627,227,653"/>
 </map>
 </div>
 
@@ -264,14 +264,14 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabad3dcf429c679f9af82eb9a3b31c4df44">Endianness::BE</a></div><div class="ttdeci">@ BE</div><div class="ttdoc">Big endian (&quot;BE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess wor...</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaf78504d96ba7177dc0c6784905ac8743">Endianness::NATIVE</a></div><div class="ttdeci">@ NATIVE</div><div class="ttdoc">System native will always be the fastest endianess to process.</div></div>
-<div class="ttc" id="anamespacestr_html_ac23568893d7dd0123ecfc9105c9f3a69"><div class="ttname"><a href="namespacestr.html#ac23568893d7dd0123ecfc9105c9f3a69">str::replace</a></div><div class="ttdeci">string replace(string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in string str with newChar and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00043">str.h:43</a></div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabacfe6055d2e0503be378bb63449ec7ba6">Endianness::LE</a></div><div class="ttdeci">@ LE</div><div class="ttdoc">Little endian (&quot;LE&quot; instead of full-er name, so it does not conflict with linux's reserved endianess ...</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627caba11461c19bfb4108fb25f239e710ba799">Endianness::BE_BS</a></div><div class="ttdeci">@ BE_BS</div><div class="ttdoc">Big endian with bit swaps inside each byte.</div></div>
 <div class="ttc" id="aEndianness_8h_html_a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7"><div class="ttname"><a href="Endianness_8h.html#a4f3ee12da30a1e47c52dc137b4627cabaa50da08642d2718a10763e19bd0c06b7">Endianness::LE_BS</a></div><div class="ttdeci">@ LE_BS</div><div class="ttdoc">Little endian with bit swaps inside each byte.</div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_a9f14cc7345a3fc0591a6afaf8033e6d1"><div class="ttname"><a href="namespacestr_1_1parse.html#a9f14cc7345a3fc0591a6afaf8033e6d1">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00194">parse.h:194</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_af4246fb05f8a85ef7316146a8fc49276"><div class="ttname"><a href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00222">parse.h:222</a></div></div>
+<div class="ttc" id="anamespacestr_html_a2d2adf32604f4236cf7b7ca879653fec"><div class="ttname"><a href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a></div><div class="ttdeci">std::string replace(std::string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri...</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00057">str.h:57</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 29 2022 11:52:15 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
