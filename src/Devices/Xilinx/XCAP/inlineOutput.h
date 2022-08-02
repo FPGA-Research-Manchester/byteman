@@ -27,7 +27,7 @@ inline void updateDateAndTime()
 }
 
 inline void outputBITheader16bString(std::ofstream& fout, Endianness e, std::string s){
-	FileIO::write16(fout, static_cast<uint16_t>(s.size()+1), e);
+	FileIO::write16(fout, static_cast<uint16_t>(s.size() + 1), e);
 	FileIO::writeString(fout, s, e);
 }
 
@@ -84,42 +84,42 @@ inline void writeBitstreamMainSingleRegion(std::ofstream& fout, int slr, Rect2D 
 	int sizeR = writeRect.size.row / CLB_PER_CLOCK_REGION;
 	for(int r = 0 ; r < sizeR ; r++){
 		int fromCol = writeRect.position.col;
-		int toCol = writeRect.position.col+writeRect.size.col;
+		int toCol = writeRect.position.col + writeRect.size.col;
 		if(selectedOptions.skipUnused){
-			for( ; (fromCol < numberOfCols[r] && LUT_isFrameUnusedForResourceLetter[(uint8_t)resourceString[srcR+r][fromCol]]) ; fromCol++);
-			for( ; (toCol > 0 && LUT_isFrameUnusedForResourceLetter[(uint8_t)resourceString[srcR+r][toCol]]) ; toCol--);
+			for( ; (fromCol < numberOfCols[r] && LUT_isFrameUnusedForResourceLetter[(uint8_t)resourceString[srcR + r][fromCol]]) ; fromCol++);
+			for( ; (toCol > 0 && LUT_isFrameUnusedForResourceLetter[(uint8_t)resourceString[srcR + r][toCol]]) ; toCol--);
 			if(fromCol >= toCol)
 				continue;
 		}
 		if(selectedOptions.clb){
 			int framesToWrite = numberOfFramesBeforeCol[r][toCol]-numberOfFramesBeforeCol[r][fromCol];
-			uint32_t farValue = XCAP_getFAR(slr, BLOCKTYPE_LOGIC, srcR+r, fromCol, 0);
+			uint32_t farValue = XCAP_getFAR(slr, BLOCKTYPE_LOGIC, srcR + r, fromCol, 0);
 			if(selectedOptions.blank){
 				XCAP_writeRegister(fout, XCAP::Register::FAR, farValue, loadedBitstreamEndianness);
 				XCAP_writeCommand(fout, XCAP::Command::WCFG, loadedBitstreamEndianness);
 				XCAP_writeNOP(fout, 1, 0, loadedBitstreamEndianness);
-				XCAP_writeFDRI(fout, ((framesToWrite+1)*WORDS_PER_FRAME), loadedBitstreamEndianness);
+				XCAP_writeFDRI(fout, ((framesToWrite + 1)*WORDS_PER_FRAME), loadedBitstreamEndianness);
 				for(int i = 0 ; i <= framesToWrite ; i++)
 					fout.write((char*)blankFrame, WORDS_PER_FRAME * 4);
 			}//selectedOptions.blank
 			XCAP_writeRegister(fout, XCAP::Register::FAR, farValue, loadedBitstreamEndianness);
 			XCAP_writeCommand(fout, XCAP::Command::WCFG, loadedBitstreamEndianness);
 			XCAP_writeNOP(fout, 1, 0, loadedBitstreamEndianness);
-			XCAP_writeFDRI(fout, ((framesToWrite+1)*WORDS_PER_FRAME), loadedBitstreamEndianness);
+			XCAP_writeFDRI(fout, ((framesToWrite + 1)*WORDS_PER_FRAME), loadedBitstreamEndianness);
 			
-			fout.write((char*)&bitstreamCLB[srcR+r][fromCol][0], framesToWrite * WORDS_PER_FRAME * 4);
+			fout.write((char*)&bitstreamCLB[srcR + r][fromCol][0], framesToWrite * WORDS_PER_FRAME * 4);
 			fout.write((char*)blankFrame, WORDS_PER_FRAME * 4);
 		}//selectedOptions.clb
 		if(selectedOptions.bram){
 			int framesToWrite = FRAMES_PER_BRAM_CONTENT_COLUMN * (numberOfBRAMsBeforeCol[r][toCol]-numberOfBRAMsBeforeCol[r][fromCol]);
 			if(framesToWrite > 0) {
-				uint32_t farValue = XCAP_getFAR(slr, BLOCKTYPE_BLOCKRAM, srcR+r, numberOfBRAMsBeforeCol[r][fromCol], 0);
+				uint32_t farValue = XCAP_getFAR(slr, BLOCKTYPE_BLOCKRAM, srcR + r, numberOfBRAMsBeforeCol[r][fromCol], 0);
 				XCAP_writeRegister(fout, XCAP::Register::FAR, farValue, loadedBitstreamEndianness);
 				XCAP_writeCommand(fout, XCAP::Command::WCFG, loadedBitstreamEndianness);
 				XCAP_writeNOP(fout, 1, 0, loadedBitstreamEndianness);
-				XCAP_writeFDRI(fout, ((framesToWrite+1)*WORDS_PER_FRAME), loadedBitstreamEndianness);
+				XCAP_writeFDRI(fout, ((framesToWrite + 1)*WORDS_PER_FRAME), loadedBitstreamEndianness);
 				
-				fout.write((char*)&bitstreamBRAM[srcR+r][numberOfBRAMsBeforeCol[r][fromCol]][0], framesToWrite * WORDS_PER_FRAME * 4);
+				fout.write((char*)&bitstreamBRAM[srcR + r][numberOfBRAMsBeforeCol[r][fromCol]][0], framesToWrite * WORDS_PER_FRAME * 4);
 				fout.write((char*)blankFrame, WORDS_PER_FRAME * 4);
 			}
 		}//selectedOptions.bram
@@ -175,13 +175,13 @@ inline void writeBitstreamMain(std::ofstream& fout, Rect2D cmdRect)
 	for(int slr = 0 ; slr < numberOfSLRs ; slr++){
 		if(overlap[slr])
 			writeBitstreamMainSingleSLR(fout, slr, cmdRect);
-		else 
+		else
 			writeBitstreamMainEmptySLR(fout, slr);
 	}
 	for(int slr = numberOfSLRs - 2 ; slr >= 0 ; slr--){
 		if(overlap[slr])
 			outputBitstreamSLRWrapUpSequence(fout, slr, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
-		else 
+		else
 			outputBitstreamEmptySLRWrapUpSequence(fout, slr, false, loadedBitstreamEndianness);
 	}
 }

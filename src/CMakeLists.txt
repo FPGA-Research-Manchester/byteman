@@ -15,7 +15,7 @@
 ###############################################################################
 
 #byteman top sources
-set(MAIN_SRC 
+set(MAIN_SRC
 ${CMAKE_CURRENT_SOURCE_DIR}/byteman.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/help.cpp
 )

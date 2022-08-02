@@ -90,7 +90,7 @@ class XilinxSeries7: virtual public CommonDevice2D, public XilinxConfigurationAc
 		
 		void assembler(std::string, std::string);
 		
-		// Info 
+		// Info
 		std::string getFrameType(int, int, int) override;
 		
 		//Test

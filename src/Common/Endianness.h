@@ -182,11 +182,11 @@ namespace Endian {
 	inline uint16_t BigEndianToNative16(uint16_t x)
 	{
 		return NativeToBigEndian16(x);
-	} 
+	}
 	inline uint32_t BigEndianToNative32(uint32_t x)
 	{
 		return NativeToBigEndian32(x);
-	} 
+	}
 	inline uint64_t BigEndianToNative64(uint64_t x)
 	{
 		return NativeToBigEndian64(x);
@@ -198,15 +198,15 @@ namespace Endian {
 	inline uint16_t LittleEndianToNative16(uint16_t x)
 	{
 		return NativeToLittleEndian16(x);
-	} 
+	}
 	inline uint32_t LittleEndianToNative32(uint32_t x)
 	{
 		return NativeToLittleEndian32(x);
-	} 
+	}
 	inline uint64_t LittleEndianToNative64(uint64_t x)
 	{
 		return NativeToLittleEndian64(x);
-	} 
+	}
 
 	//BitSwaps: swap bit order within the bytes
 	inline uint8_t  BitSwap8(uint8_t  x)
@@ -216,11 +216,11 @@ namespace Endian {
 	inline uint16_t BitSwap16(uint16_t x)
 	{
 		return (((x & 0x8080)>>7) | ((x & 0x4040)>>5) | ((x & 0x2020)>>3) | ((x & 0x1010)>>1) | ((x & 0x0808) << 1) | ((x & 0x0404) << 3) | ((x & 0x0202) << 5) | ((x & 0x0101) << 7));
-	} 
+	}
 	inline uint32_t BitSwap32(uint32_t x)
 	{
 		return (((x & 0x80808080)>>7) | ((x & 0x40404040)>>5) | ((x & 0x20202020)>>3) | ((x & 0x10101010)>>1) | ((x & 0x08080808) << 1) | ((x & 0x04040404) << 3) | ((x & 0x02020202) << 5) | ((x & 0x01010101) << 7));
-	} 
+	}
 	inline uint64_t BitSwap64(uint64_t x)
 	{
 		return (((x & 0x8080808080808080)>>7) | ((x & 0x4040404040404040)>>5) | ((x & 0x2020202020202020)>>3) | ((x & 0x1010101010101010)>>1) | ((x & 0x0808080808080808) << 1) | ((x & 0x0404040404040404) << 3) | ((x & 0x0202020202020202) << 5) | ((x & 0x0101010101010101) << 7));
@@ -242,7 +242,7 @@ namespace Endian {
 			return BitSwap16(NativeToLittleEndian16(x));
 		//Native then
 		return ((uint16_t)(x));
-	} 
+	}
 	inline uint32_t NativeToAnyEndianness32(uint32_t x, Endianness e)
 	{
 		if(Endianness::BE == e)
@@ -255,7 +255,7 @@ namespace Endian {
 			return BitSwap32(NativeToLittleEndian32(x));
 		//Native then
 		return ((uint32_t)(x));
-	} 
+	}
 	inline uint64_t NativeToAnyEndianness64(uint64_t x, Endianness e)
 	{
 		if(Endianness::BE == e)
@@ -268,6 +268,6 @@ namespace Endian {
 			return BitSwap64(NativeToLittleEndian64(x));
 		//Native then
 		return ((uint64_t)(x));
-	} 
+	}
 }
 #endif //ENDIANESS_H

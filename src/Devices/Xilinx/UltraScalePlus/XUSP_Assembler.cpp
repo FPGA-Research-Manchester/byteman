@@ -109,7 +109,7 @@ void XilinxUltraScalePlus::assemblerParseHeader(ifstream& fin)
 	for (string line; getline(fin, line); ) {
 		auto firstEqPos = line.find_first_of('=');
 		if(firstEqPos != string::npos)
-			line.replace(firstEqPos, 1, '=', ' ');
+			line.replace(firstEqPos, 1, '=',' ');
 		
 		if(str::iff::stringContains(line, "Name"))designName = str::parse::lastStringWord(line);
 		if(str::iff::stringContains(line, "FPGA"))partName = str::parse::lastStringWord(line);
@@ -132,9 +132,9 @@ void XilinxUltraScalePlus::assemblerAsmTo(ifstream& fin, ofstream& fout)
 	for (string line; getline(fin, line); ) {
 		if(line.at(line.find_first_not_of(" \t")) == '#')// if #, skip that line as comment
 			continue;
-		transform(line.begin(), line.end(),line.begin(), ::toupper);
-		replace(line.begin(), line.end(), '=', ' ');
-		replace(line.begin(), line.end(), '#', ' ');
+		transform(line.begin(), line.end(), line.begin(), ::toupper);
+		replace(line.begin(), line.end(), '=',' ');
+		replace(line.begin(), line.end(), '#',' ');
 		replace(line.begin(), line.end(), ',', ' ');
 		if(str::iff::stringContains(line, "SYNC") && (!str::iff::stringContains(line, "DESYNC"))){
 			XCAP_writeSYNQ(fout, loadedBitstreamEndianness);
@@ -231,7 +231,7 @@ void XilinxUltraScalePlus::assemblerAsmTo(ifstream& fin, ofstream& fout)
 		} else {// ! str::iff::stringContains(line, "@")
 			//must have been a command then
 			XCAP::Command cmdID = getXCAPcommand(line);
-			if(cmdID == XCAP::Command::UNDEFINED) 
+			if(cmdID == XCAP::Command::UNDEFINED)
 				throw runtime_error(string("Couldn't parse assembly command: \"").append(line).append("\"!"));
 			XCAP_writeCommand(fout, cmdID, loadedBitstreamEndianness);
 		}
@@ -310,12 +310,12 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 				if(instructionOPCODE == XCAP::Operation::NOP) {
 					if(instructionPayload != 0)
 						fout << "NOP #" << instructionPayload << endl;
-					else 
+					else
 						fout << "NOP" << endl;
 				} else if(instructionOPCODE == XCAP::Operation::RESERVED) {
 					if(instructionPayload != 0)
 						fout << "RESERVED #" << instructionPayload << endl;
-					else 
+					else
 						fout << "RESERVED" << endl;
 				} else if(instructionOPCODE == XCAP::Operation::READ) {
 					fout << "Read Reg @";
@@ -324,7 +324,7 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 				} else { // XCAP::Operation::WRITE
 					if((regAddr == XCAP::Register::FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
 						if(shadowFrameValid) {
-							fout << dec << "# Shadow register contents are written to frame (BlockType=" << b << ", GlobalRowAddress=" << r << ", MajorAddress=" << c << ", MinorAddress=" << m << ") (Frame type: " << getFrameType(b,r,c) << ")." << endl;
+							fout << dec << "# Shadow register contents are written to frame (BlockType=" << b << ", GlobalRowAddress=" << r << ", MajorAddress=" << c << ", MinorAddress=" << m << ") (Frame type: " << getFrameType(b, r, c) << ")." << endl;
 							XCAP_IncrementFAR(slr, b, r, c, m);
 						}
 						shadowFrameValid = 1;
@@ -333,7 +333,7 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 						for(int i = 0 ; i < frameCount ; i++){
 							fout << "# ";
 							if(i == (frameCount-1)) fout << "(This frame data is written to shadow register!)";
-							fout << dec << "Writing frame #" << i << " (BlockType=" << b << ", GlobalRowAddress=" << r << ", MajorAddress=" << c << ", MinorAddress=" << m << ") (Frame type: " << getFrameType(b,r,c) << ") hex data:" << endl;
+							fout << dec << "Writing frame #" << i << " (BlockType=" << b << ", GlobalRowAddress=" << r << ", MajorAddress=" << c << ", MinorAddress=" << m << ") (Frame type: " << getFrameType(b, r, c) << ") hex data:" << endl;
 							uint32_t frameData[XUSP_WORDS_PER_FRAME];
 							for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
 								frameData[w] = FileIO::read32(fin, loadedBitstreamEndianness);
@@ -377,7 +377,7 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 							fout << "Select next SLR for the next #" << dec << nextInstrPayload << " words." << endl;
 						} else {
 							fout << "Bad MAGIC1 instruction" << endl;
-							fin.seekg(-4,ios::cur);//rewind next instruction if not
+							fin.seekg(-4, ios::cur);//rewind next instruction if not
 						}
 					} else if((instructionType == 1) && (wordCount == 0)){
 						fout << "Select register @";

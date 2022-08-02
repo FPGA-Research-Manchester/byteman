@@ -36,8 +36,8 @@ int main(int argc, char * argv[])
 {
 	byteman bytemanInstance;
 	string command;
-	if(argc <= 1) 
-		bytemanInstance.help("",1);//show usage and terminate with an error code
+	if(argc <= 1)
+		bytemanInstance.help("", 1);//show usage and terminate with an error code
 	try {
 		bool readSTDIN = false;
 		for(int argi = 1 ; argi < argc ; argi++) {
@@ -47,7 +47,7 @@ int main(int argc, char * argv[])
 			}
 			if(command.empty())
 				command.append(argv[argi]);
-			else 
+			else
 				command.append(" ").append(argv[argi]);
 			if(command == "-stdin" || command == "-s"){
 				readSTDIN = true;
@@ -57,7 +57,7 @@ int main(int argc, char * argv[])
 		if(!command.empty())
 			bytemanInstance.parse(command);
 		while(readSTDIN){
-			getline(cin,command);
+			getline(cin, command);
 			if(!cin.good())
 				return 0;
 			if(command.at(command.find_first_not_of(" \t")) != '#'){//parse the command only if it doesnt start with '#'
@@ -85,8 +85,8 @@ byteman::byteman(){
 	#endif //XUS
 	
 	#ifdef XUSP
-		mainXUSP.instanceName = "Main Xil US+";
-		tempXUSP.instanceName = "Temp Xil US+";
+		mainXUSP.instanceName = "Main Xil US+ ";
+		tempXUSP.instanceName = "Temp Xil US+ ";
 	#endif //XUSP
 }
 byteman::~byteman(){
@@ -95,8 +95,8 @@ byteman::~byteman(){
 
 void byteman::parse(string command)
 {
-	command = str::replace(command, '=', ' ');
-	command = str::replace(command, ':', ' ');
+	command = str::replace(command, '=',' ');
+	command = str::replace(command, ':',' ');
 	command = str::stringToLower(command);
 	if (command.at(0) == '-') command.erase(0, 1);
 	string params = str::findStringAndGetAllAfter(command, " ");
@@ -445,7 +445,7 @@ void byteman::setArchitecture(string arch)
 		if(str::iff::stringContains(arch, "xusp")
 		||	(	str::iff::stringContains(arch, "xilinx")
 			&&	str::iff::stringContains(arch, "ultrascale", "us")
-			&&	str::iff::stringContains(arch, "plus","+")
+			&&	str::iff::stringContains(arch, "plus", " + ")
 			)
 		) {
 			selectedArchitecture = Architecture::Xilinx_UltraScalePlus;

@@ -649,7 +649,7 @@ void XilinxSeries7::setDevice(int deviceID, string customPartName)
 		if(customPartName != "")// if not empty string
 			partName = customPartName;
 	
-	log("Initialized device resource string for \"" + initializedResourceStringShortPartName + "\""); 
+	log("Initialized device resource string for \"" + initializedResourceStringShortPartName + "\"");
 }
 
 void XilinxSeries7::deviceHelp()
@@ -662,12 +662,12 @@ void XilinxSeries7::deviceHelp()
 		#endif
 		#ifdef XS7ARTIX
 		cout << "  Series 7 Artix: " << endl;
-		cout << "    XC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50," << endl;
+		cout << "    XC7A12, XA7A12, XC7A15, XA7A15, XC7A25, XA7A25, XC7A35, XA7A35, XC7A50, XQ7A50, XA7A50, " << endl;
 		cout << "    XC7A75, XA7A75, XC7A100, XQ7A100, XA7A100, XC7A200, XQ7A200" << endl;
 		#endif
 		#ifdef XS7ZYNQ
 		cout << "  Series 7 Zynq: " << endl;
-		cout << "    XC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020," << endl;
+		cout << "    XC7Z007, XC7Z010, XA7Z010, XC7Z012, XC7Z014, XC7Z015, XC7Z020, XQ7Z020, XA7Z020, " << endl;
 		cout << "    XC7Z030, XQ7Z030, XA7Z030, XC7Z035, XC7Z045, XQ7Z045, XC7Z100, XQ7Z100" << endl;
 		#endif
 		#ifdef XS7KINTEX
@@ -676,14 +676,14 @@ void XilinxSeries7::deviceHelp()
 		#endif
 		#ifdef XS7VIRTEX
 		cout << "  Series 7 Virtex: " << endl;
-		cout << "    XC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550," << endl;
+		cout << "    XC7V585, XQ7V585, XC7V2000, XC7VX330, XQ7VX330, XC7VX415, XC7VX485, XQ7VX485, XC7VX550, " << endl;
 		cout << "    XC7VX690, XQ7VX690, XC7VX980, XQ7VX980, XC7VX1140" << endl;
 		#endif
 		#ifdef XS7BOARDS
 		cout << "  Series 7 Boards: " << endl;
-		cout << "    Wizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20," << endl;
-		cout << "    Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15," << endl;
-		cout << "    Cmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME," << endl;
+		cout << "    Wizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20, " << endl;
+		cout << "    Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15, " << endl;
+		cout << "    Cmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME, " << endl;
 		cout << "    VC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706" << endl;
 		#endif
 	} else {

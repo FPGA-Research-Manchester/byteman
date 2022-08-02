@@ -44,9 +44,9 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 		initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;
 
 		for((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; resourceString[0][numberOfCols[0]] != '\0' ; numberOfCols[0]++){
-			numberOfFramesBeforeCol[0][numberOfCols[0]+1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];
+			numberOfFramesBeforeCol[0][numberOfCols[0] + 1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];
 			numberOfBRAMsBeforeCol[0][numberOfCols[0]] = numberOfBRAMCols[0];
-			if(str::iff::charIs(resourceString[0][numberOfCols[0]], 'A', 'B', 'C', '1')) //A-C are BlockRAM columns, '1' is empty blockram column
+			if(str::iff::charIs(resourceString[0][numberOfCols[0]], 'A','B','C','1')) //A-C are BlockRAM columns, '1' is empty blockram column
 				numberOfBRAMCols[0]++;
 		}
 		for(int c = numberOfCols[0] + 1 ; c < XUSP_MAX_COLS ; c++){
@@ -55,7 +55,7 @@ void XilinxUltraScalePlus::initializeResourceStringParameters(){
 		for(int c = numberOfCols[0] ; c < XUSP_MAX_COLS ; c++){
 			numberOfBRAMsBeforeCol[0][c] = numberOfBRAMsBeforeCol[0][c - 1];
 		}
-		numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0]+1];
+		numberOfFramesPerRow[0] = numberOfFramesBeforeCol[0][numberOfCols[0] + 1];
 		numberOfWordsPerRow[0] = numberOfFramesPerRow[0] * XUSP_WORDS_PER_FRAME;
 		
 		maxNumberOfCols = numberOfCols[0];
@@ -111,7 +111,7 @@ void XilinxUltraScalePlus::ensureInitializedBitstreamArrays(){
 		}
 		bitstreamEnd = &bitstreamBegin[offset];
 		bitstreamHasValidData = false;
-		log("Reserved "+to_string(clbPlaneSize + bramPlaneSize)+" words for the bitstream buffers of device \""+partName+"\"");
+		log("Reserved " + to_string(clbPlaneSize + bramPlaneSize) + " words for the bitstream buffers of device \"" + partName + "\"");
 	}
 }
 

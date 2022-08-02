@@ -24,8 +24,6 @@
 #include "CommonDevice.h"
 #include "../Common/Coords.h"
 
-
-
 class CommonDevice2D: virtual public CommonDevice
 {
 	public:

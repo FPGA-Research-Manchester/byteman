@@ -22,16 +22,14 @@
 #include<iomanip> //quoted
 #include<sstream>
 
-
-
 /**************************************************************************//**
- * The str::parse:: namespace holds some custom and/or shorter functions for std::string
+ * The str::parse:: namespace holds some custom and/or shorter functions for string
  * parsing.
- * 
+ *
  *****************************************************************************/
 namespace str{
 	namespace parse {
-		/// Parses a std::string @c s, returns the n-th std::string word that is not an integer
+		/// Parses a string @c s, returns the n-th string word that is not an integer
 		inline std::string nthStringWord(std::string s, int n)	
 		{
 			std::stringstream ss(s);
@@ -55,7 +53,7 @@ namespace str{
 			}
 			return std::string("");
 		}
-		/// Parses a std::string @c s, removes all integers and returns the rest
+		/// Parses a string @c s, removes all integers and returns the rest
 		inline std::string allStringWords(std::string s)	
 		{
 			std::stringstream ss(s);
@@ -79,7 +77,7 @@ namespace str{
 			}
 			return ret;
 		}
-		/// Parses a std::string @c s, removes all integers and returns the last of all std::string words
+		/// Parses a string @c s, removes all integers and returns the last of all string words
 		inline std::string lastStringWord(std::string s)	
 		{
 			std::stringstream ss(s);
@@ -103,7 +101,7 @@ namespace str{
 			}
 			return ret;
 		}
-		/// Parses a std::string @c s, removes all integers and the last std::string word. Returns the rest
+		/// Parses a string @c s, removes all integers and the last string word. Returns the rest
 		inline std::string allStringWordsWithoutLastStringWord(std::string s)	
 		{
 			std::stringstream ss(s);
@@ -131,7 +129,7 @@ namespace str{
 			}
 			return ret;
 		}
-		/// Parses a std::string @c s, returns the n-th integer
+		/// Parses a string @c s, returns the n-th integer
 		inline bool nthInteger(std::string s, int n, int &x)	
 		{
 			std::stringstream ss(s);
@@ -158,7 +156,7 @@ namespace str{
 			}
 			return false;
 		}
-		/// Removes all std::string words from a given std::string @c s and returns the parsed @c arrsize number of integers into @c arr
+		/// Removes all string words from a given string @c s and returns the parsed @c arrsize number of integers into @c arr
 		inline bool arrayOfUints(std::string s, int arrsize, uint32_t* arr)	
 		{
 			if (arrsize == 0)
@@ -195,7 +193,7 @@ namespace str{
 		{
 			return true;
 		}
-		/// Parses std::stringstream @c ss for integer values, that are returned into @c x, @c args
+		/// Parses stringstream @c ss for integer values, that are returned into @c x, @c args
 		template<typename ... Rest> inline bool multipleInts(std::stringstream & ss, int & x, Rest & ... args)	
 		{
 			int numArgs = sizeof...(args);
@@ -221,7 +219,7 @@ namespace str{
 				return false;
 			return multipleInts(ss, args...);
 		}
-		/// Parses std::string @c s for integer values, that are returned into @c args
+		/// Parses string @c s for integer values, that are returned into @c args
 		template<typename ... Args> inline bool multipleInts(std::string s, Args & ... args)	
 		{
 			std::stringstream ss(s);
@@ -232,7 +230,7 @@ namespace str{
 		{
 			return true;
 		}
-		/// Parses std::stringstream @c ss for uint32_t values, that are returned into @c x, @c args
+		/// Parses stringstream @c ss for uint32_t values, that are returned into @c x, @c args
 		template<typename ... Rest> inline bool multipleUints(std::stringstream & ss, uint32_t & x, Rest & ... args)	
 		{
 			int numArgs = sizeof...(args);
@@ -258,7 +256,7 @@ namespace str{
 				return false;
 			return multipleUints(ss, args...);
 		}
-		/// Parses std::string @c s for uint32_t values, that are returned into @c args
+		/// Parses string @c s for uint32_t values, that are returned into @c args
 		template<typename ... Args> inline bool multipleUints(std::string s, Args & ... args)	
 		{
 			std::stringstream ss(s);

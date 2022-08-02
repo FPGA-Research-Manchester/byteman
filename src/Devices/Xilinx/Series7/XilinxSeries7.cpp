@@ -44,9 +44,9 @@ void XilinxSeries7::initializeResourceStringParameters(){
 		initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;
 		for(int r = 0 ; r < numberOfRows ; r++){
 			for((numberOfCols[r] = 0, numberOfFramesBeforeCol[r][0] = 0, numberOfBRAMCols[r] = 0) ; (uint8_t)resourceString[r][numberOfCols[r]] ; numberOfCols[r]++){
-				numberOfFramesBeforeCol[r][numberOfCols[r]+1] = numberOfFramesBeforeCol[r][numberOfCols[r]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][numberOfCols[r]]];
+				numberOfFramesBeforeCol[r][numberOfCols[r] + 1] = numberOfFramesBeforeCol[r][numberOfCols[r]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[r][numberOfCols[r]]];
 				numberOfBRAMsBeforeCol[r][numberOfCols[r]] = numberOfBRAMCols[r];
-				if(str::iff::charIs(resourceString[r][numberOfCols[r]], 'A', 'B', 'C', 'D', 'E', 'F', 'G', '4')) //A-G are BlockRAM columns, '4' is empty blockram column
+				if(str::iff::charIs(resourceString[r][numberOfCols[r]], 'A','B','C','D','E','F','G','4')) //A-G are BlockRAM columns, '4' is empty blockram column
 					numberOfBRAMCols[r]++;
 			}
 			numberOfFramesPerRow[r] = numberOfFramesBeforeCol[r][numberOfCols[r]];
@@ -129,7 +129,7 @@ void XilinxSeries7::ensureInitializedBitstreamArrays(){
 		
 		bitstreamEnd = &bitstreamBegin[offset];
 		bitstreamHasValidData = false;
-		log("Reserved " + to_string(clbPlaneSize + bramPlaneSize) + " words for the bitstream buffers of device \""+partName+"\"");
+		log("Reserved " + to_string(clbPlaneSize + bramPlaneSize) + " words for the bitstream buffers of device \"" + partName + "\"");
 	}
 }
 

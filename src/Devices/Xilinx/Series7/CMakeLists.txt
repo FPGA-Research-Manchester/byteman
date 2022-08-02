@@ -15,7 +15,7 @@
 ###############################################################################
 
 #Add all sources for Xilinx Series 7
-set(XS7_SRC 
+set(XS7_SRC
 ${CMAKE_CURRENT_SOURCE_DIR}/XilinxSeries7.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XS7_Fabric.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XS7_Input.cpp

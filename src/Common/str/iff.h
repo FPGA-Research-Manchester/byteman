@@ -21,12 +21,10 @@
 #include<string>
 #include<sstream>
 
-
-
 /**************************************************************************//**
- * The str::iff:: namespace holds some custom and/or shorter functions for std::string
+ * The str::iff:: namespace holds some custom and/or shorter functions for string
  * conditionals (searching/matching).
- * 
+ *
  *****************************************************************************/
 namespace str{
 	namespace iff {
@@ -35,7 +33,7 @@ namespace str{
 		{
 			return false;
 		}
-		/// Returns true if std::string @c checkedString's final characters match fully any of std::strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString's final characters match fully any of strings @c nextString or @c restStrings
 		template<typename ... Rest> inline bool stringEndsWith(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(checkedString.length() >= nextString.length())
@@ -48,7 +46,7 @@ namespace str{
 		{
 			return false;
 		}
-		/// Returns true if std::string @c checkedString matches fully any of std::strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
 		template<typename ... Rest> inline bool stringIs(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(checkedString == nextString)
@@ -60,7 +58,7 @@ namespace str{
 		{
 			return false;
 		}
-		/// Returns true if std::string @c checkedString contains any of std::strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString contains any of strings @c nextString or @c restStrings
 		template<typename ... Rest> inline bool stringContains(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(std::string::npos != checkedString.rfind(nextString))
@@ -72,7 +70,7 @@ namespace str{
 		{
 			return false;
 		}
-		/// Returns true if std::string @c checkedString's first characters match fully any of std::strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString's first characters match fully any of strings @c nextString or @c restStrings
 		template<typename ... Rest> inline bool stringBeginsWith(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(0 == checkedString.rfind(nextString, 0))
@@ -84,14 +82,14 @@ namespace str{
 		{
 			return false;
 		}
-		/// Returns true if std::string @c checkedString matches fully any of std::strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
 		template<typename ... Rest> inline bool stringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(checkedString == nextString)
 				return true;
 			return stringBeginsWith(checkedString, restStrings...);
 		}
-		/// Returns true if std::string @c checkedString's first word matches fully any of std::strings @c nextString or @c restStrings
+		/// Returns true if string @c checkedString's first word matches fully any of strings @c nextString or @c restStrings
 		template<typename ... Rest> inline bool firstStringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			std::stringstream ss(checkedString);

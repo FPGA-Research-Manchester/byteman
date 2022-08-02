@@ -129,7 +129,7 @@ void XilinxUltraScalePlus::outputBitstreamEmptySLRWrapUpSequence(ofstream& fout,
 
 /**************************************************************************//**
  * Creates a new bitstream file and writes the selected regions in it.
- * 
+ *
  *
  * @arg @c filename Name of the output file.
  * @throws runtime_error if args don't define a correct region.

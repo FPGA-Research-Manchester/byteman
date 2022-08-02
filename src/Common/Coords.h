@@ -17,9 +17,7 @@
 #ifndef COORDS_H
 #define COORDS_H
 
-#include<algorithm>   // min,max
-
-
+#include<algorithm>   // min, max
 
 struct Coord2D
 {
@@ -36,12 +34,12 @@ namespace rect {
 	inline Rect2D getOverlap(Rect2D r1, Rect2D r2){
 		Rect2D retRect;
 		retRect.position.col = std::max(r1.position.col, r2.position.col);
-		retRect.size.col = std::min((r1.position.col+r1.size.col), (r2.position.col+r2.size.col)) - retRect.position.col;
+		retRect.size.col = std::min((r1.position.col + r1.size.col), (r2.position.col + r2.size.col)) - retRect.position.col;
 		if(0 > retRect.size.col)
 			retRect.size.col = 0;
 		
 		retRect.position.row = std::max(r1.position.row, r2.position.row);
-		retRect.size.row = std::min((r1.position.row+r1.size.row), (r2.position.row+r2.size.row)) - retRect.position.row;
+		retRect.size.row = std::min((r1.position.row + r1.size.row), (r2.position.row + r2.size.row)) - retRect.position.row;
 		if(0 > retRect.size.row)
 			retRect.size.row = 0;
 		

@@ -201,7 +201,7 @@ void XilinxUltraScale::setDevice(int deviceID, string customPartName)
 			partName = customPartName;
 	
 	
-	log("Initialized device resource string for \"" + initializedResourceStringShortPartName + "\""); 
+	log("Initialized device resource string for \"" + initializedResourceStringShortPartName + "\"");
 }
 
 void XilinxUltraScale::deviceHelp()

@@ -106,50 +106,50 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
 	XS7_DEVICE_VC7222,
 	XS7_DEVICE_ZC702,
 	XS7_DEVICE_ZC706,
-    
+   
     XS7_DEVICE_MAX
 };
 
 #define TODO 0
 //Functions how to build devices
-#define XS7_TOPROWS(slrID,value) {SLRinfo[slrID].rowsInTopHalf = value;}
-#define XS7_BOTROWS(slrID,value) {SLRinfo[slrID].rowsInBottomHalf = value;}
+#define XS7_TOPROWS(slrID, value) {SLRinfo[slrID].rowsInTopHalf = value;}
+#define XS7_BOTROWS(slrID, value) {SLRinfo[slrID].rowsInBottomHalf = value;}
 #define XS7_PARTNAME(value) {initializedResourceStringShortPartName = partName = value;}
-#define XS7_SLRFROMROW(slrID,value) {SLRinfo[slrID].fromRow = value;}
-#define XS7_SLRTOROW(slrID,value) {SLRinfo[slrID].toRow = value;}
+#define XS7_SLRFROMROW(slrID, value) {SLRinfo[slrID].fromRow = value;}
+#define XS7_SLRTOROW(slrID, value) {SLRinfo[slrID].toRow = value;}
 #define XS7_ROWNUM(value) {numberOfRows = value;}
 #define XS7_SLRNUM(value) {numberOfSLRs = value;}
-#define XS7_IDCODE(slrID,value) {SLRinfo[slrID].IDCODE = value;}
-#define XS7_STRING(rowID,value) {strcpy(resourceString[rowID],value);}
-#define XS7_STRING_CAT(x,y)  {XS7_STRING(y, x##STRING##y);}
-#define XS7_STRING_CAT_1(x)  {XS7_STRING_CAT(x,0);}
-#define XS7_STRING_CAT_2(x)  {XS7_STRING_CAT(x,0);  XS7_STRING_CAT(x,1);}
-#define XS7_STRING_CAT_3(x)  {XS7_STRING_CAT_2(x);  XS7_STRING_CAT(x,2);}
-#define XS7_STRING_CAT_4(x)  {XS7_STRING_CAT_3(x);  XS7_STRING_CAT(x,3);}
-#define XS7_STRING_CAT_5(x)  {XS7_STRING_CAT_4(x);  XS7_STRING_CAT(x,4);}
-#define XS7_STRING_CAT_6(x)  {XS7_STRING_CAT_5(x);  XS7_STRING_CAT(x,5);}
-#define XS7_STRING_CAT_7(x)  {XS7_STRING_CAT_6(x);  XS7_STRING_CAT(x,6);}
-#define XS7_STRING_CAT_8(x)  {XS7_STRING_CAT_7(x);  XS7_STRING_CAT(x,7);}
-#define XS7_STRING_CAT_9(x)  {XS7_STRING_CAT_8(x);  XS7_STRING_CAT(x,8);}
-#define XS7_STRING_CAT_10(x) {XS7_STRING_CAT_9(x);  XS7_STRING_CAT(x,9);}
-#define XS7_STRING_CAT_11(x) {XS7_STRING_CAT_10(x); XS7_STRING_CAT(x,10);}
-#define XS7_STRING_CAT_12(x) {XS7_STRING_CAT_11(x); XS7_STRING_CAT(x,11);}
+#define XS7_IDCODE(slrID, value) {SLRinfo[slrID].IDCODE = value;}
+#define XS7_STRING(rowID, value) {strcpy(resourceString[rowID], value);}
+#define XS7_STRING_CAT(x, y)  {XS7_STRING(y, x##STRING##y);}
+#define XS7_STRING_CAT_1(x)  {XS7_STRING_CAT(x, 0);}
+#define XS7_STRING_CAT_2(x)  {XS7_STRING_CAT(x, 0);  XS7_STRING_CAT(x, 1);}
+#define XS7_STRING_CAT_3(x)  {XS7_STRING_CAT_2(x);  XS7_STRING_CAT(x, 2);}
+#define XS7_STRING_CAT_4(x)  {XS7_STRING_CAT_3(x);  XS7_STRING_CAT(x, 3);}
+#define XS7_STRING_CAT_5(x)  {XS7_STRING_CAT_4(x);  XS7_STRING_CAT(x, 4);}
+#define XS7_STRING_CAT_6(x)  {XS7_STRING_CAT_5(x);  XS7_STRING_CAT(x, 5);}
+#define XS7_STRING_CAT_7(x)  {XS7_STRING_CAT_6(x);  XS7_STRING_CAT(x, 6);}
+#define XS7_STRING_CAT_8(x)  {XS7_STRING_CAT_7(x);  XS7_STRING_CAT(x, 7);}
+#define XS7_STRING_CAT_9(x)  {XS7_STRING_CAT_8(x);  XS7_STRING_CAT(x, 8);}
+#define XS7_STRING_CAT_10(x) {XS7_STRING_CAT_9(x);  XS7_STRING_CAT(x, 9);}
+#define XS7_STRING_CAT_11(x) {XS7_STRING_CAT_10(x); XS7_STRING_CAT(x, 10);}
+#define XS7_STRING_CAT_12(x) {XS7_STRING_CAT_11(x); XS7_STRING_CAT(x, 11);}
 
-#define XS7_SETUP_SLR_EXPANDED(slrID,idcodeVal,fromRowVal,toRowVal) {XS7_IDCODE(slrID,idcodeVal);XS7_SLRFROMROW(slrID,fromRowVal);XS7_SLRTOROW(slrID,toRowVal);}
+#define XS7_SETUP_SLR_EXPANDED(slrID, idcodeVal, fromRowVal, toRowVal) {XS7_IDCODE(slrID, idcodeVal);XS7_SLRFROMROW(slrID, fromRowVal);XS7_SLRTOROW(slrID, toRowVal);}
 #define XS7_SETUP_SLR0(prefix) {XS7_SETUP_SLR_EXPANDED(0, prefix##IDCODE, prefix##SLR0_START, prefix##SLR0_END);}
-#define XS7_SETUP_SLR(slrID, prefix) {XS7_TOPROWS(slrID,prefix##TOPROWS);XS7_BOTROWS(slrID,prefix##BOTROWS);XS7_SETUP_SLR_EXPANDED(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}
-#define XS7_SETUP_SLRs_2(prefix) {XS7_SETUP_SLR0(prefix); XS7_SETUP_SLR(1,prefix);}
-#define XS7_SETUP_SLRs_3(prefix) {XS7_SETUP_SLRs_2(prefix); XS7_SETUP_SLR(2,prefix);}
-#define XS7_SETUP_SLRs_4(prefix) {XS7_SETUP_SLRs_3(prefix); XS7_SETUP_SLR(3,prefix);}
+#define XS7_SETUP_SLR(slrID, prefix) {XS7_TOPROWS(slrID, prefix##TOPROWS);XS7_BOTROWS(slrID, prefix##BOTROWS);XS7_SETUP_SLR_EXPANDED(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}
+#define XS7_SETUP_SLRs_2(prefix) {XS7_SETUP_SLR0(prefix); XS7_SETUP_SLR(1, prefix);}
+#define XS7_SETUP_SLRs_3(prefix) {XS7_SETUP_SLRs_2(prefix); XS7_SETUP_SLR(2, prefix);}
+#define XS7_SETUP_SLRs_4(prefix) {XS7_SETUP_SLRs_3(prefix); XS7_SETUP_SLR(3, prefix);}
 #define XS7_SETUP_DEVICE(prefix) {                                                                \
     XS7_PARTNAME(prefix##NAME);                                                                   \
     XS7_SLRNUM(prefix##SLRNUM);                                                                   \
     XS7_ROWNUM(prefix##ROWNUM);                                                                   \
-    XS7_TOPROWS(0,prefix##TOPROWS);                                                                   \
-    XS7_BOTROWS(0,prefix##BOTROWS);                                                                   \
-    XS7_SLRFROMROW(0,0);                                                                          \
-    XS7_SLRTOROW(0,prefix##ROWNUM-1);                                                             \
-    XS7_IDCODE(0,prefix##IDCODE);                                                                 \
+    XS7_TOPROWS(0, prefix##TOPROWS);                                                                   \
+    XS7_BOTROWS(0, prefix##BOTROWS);                                                                   \
+    XS7_SLRFROMROW(0, 0);                                                                          \
+    XS7_SLRTOROW(0, prefix##ROWNUM-1);                                                             \
+    XS7_IDCODE(0, prefix##IDCODE);                                                                 \
 }
 
 
@@ -181,7 +181,7 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
         XS7_STRING_CAT_1(XC7S15_);                                                                \
     }
 	
-	//XC7S25 is XC7A25 with disabled transceivers 
+	//XC7S25 is XC7A25 with disabled transceivers
     #define XC7S25_NAME "7s25"
     #define XC7S25_SLRNUM 1
     #define XC7S25_ROWNUM 2
@@ -195,7 +195,7 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
         XS7_STRING_CAT_2(XC7S25_);                                                                \
     }
 	
-	//XC7S50 is XC7A50 with disabled transceivers 
+	//XC7S50 is XC7A50 with disabled transceivers
     #define XC7S50_NAME "7s50"
     #define XC7S50_SLRNUM 1
     #define XC7S50_ROWNUM 3
@@ -361,7 +361,7 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
     }
 
 //Xilinx Series7 Zynq
-	//XC7Z007 is software-limitted version of XC7Z010 with one ARM core disabled 
+	//XC7Z007 is software-limitted version of XC7Z010 with one ARM core disabled
     #define XC7Z007_NAME "7z007"
     #define XC7Z007_SLRNUM 1
     #define XC7Z007_ROWNUM 2
@@ -388,7 +388,7 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
         XS7_STRING_CAT_2(XC7Z010_);                                                               \
     }
 	
-	//XC7Z012 is software-limitted version of XC7Z015 with one ARM core disabled 
+	//XC7Z012 is software-limitted version of XC7Z015 with one ARM core disabled
     #define XC7Z012_NAME "7z012"
     #define XC7Z012_SLRNUM 1
     #define XC7Z012_ROWNUM 3
@@ -403,7 +403,7 @@ enum XS7_DEVICE_ENUM    ///< Enumeration of recognized Xilinx Series 7 devices a
         XS7_STRING_CAT_3(XC7Z012_);                                                               \
     }
 	
-	//XC7Z014 is software-limitted version of XC7Z020 with one ARM core disabled 
+	//XC7Z014 is software-limitted version of XC7Z020 with one ARM core disabled
     #define XC7Z014_NAME "7z014"
     #define XC7Z014_SLRNUM 1
     #define XC7Z014_ROWNUM 3

@@ -17,8 +17,8 @@
 /**************************************************************************//**
  * @mainpage
  * byteman is a high-throughput bitstream relocation and manipulation tool.
- * 
- * 
+ *
+ *
  * A good starting point to explore the code is byteman.cpp where the main()
  * function parses the command line arguments.
  *
@@ -26,7 +26,7 @@
  * - Xilinx Series 7 (XilinxSeries7, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * - Xilinx UltraScale (XilinxUltraScale, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
  * - Xilinx UltraScale+ (XilinxUltraScalePlus, which implements a CommonDevice2D and XilinxConfigurationAccessPort)
- * 
+ *
  *****************************************************************************/
 
 #ifndef BYTEMAN_H
@@ -77,7 +77,7 @@ class byteman
 		struct SelectedOptions
 		{
 			bool mainBufferSelected, tempBufferSelected;
-			SelectedOptions():mainBufferSelected(false),tempBufferSelected(false){}
+			SelectedOptions():mainBufferSelected(false), tempBufferSelected(false){}
 		} options;
 		//parse
 		std::string parseParamsAndRemoveThemFromString(std::string);

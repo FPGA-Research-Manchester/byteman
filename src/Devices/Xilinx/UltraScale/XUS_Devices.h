@@ -41,44 +41,44 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
 	
     XUS_DEVICE_MAX
 };
-  
+ 
 #define TODO 0
 //Functions how to build devices
 #define XUS_PARTNAME(value) {initializedResourceStringShortPartName = partName = value;}
-#define XUS_SLRFROMROW(slrID,value) {SLRinfo[slrID].fromRow = value;}
-#define XUS_SLRTOROW(slrID,value) {SLRinfo[slrID].toRow = value;}
+#define XUS_SLRFROMROW(slrID, value) {SLRinfo[slrID].fromRow = value;}
+#define XUS_SLRTOROW(slrID, value) {SLRinfo[slrID].toRow = value;}
 #define XUS_ROWNUM(value) {numberOfRows = value;}
 #define XUS_SLRNUM(value) {numberOfSLRs = value;}
-#define XUS_IDCODE(slrID,value) {SLRinfo[slrID].IDCODE = value;}
-#define XUS_STRING(rowID,value) {strcpy(resourceString[rowID],value);}
-#define XUS_STRING_CAT(x,y)  {XUS_STRING(y, x##STRING##y);}
-#define XUS_STRING_CAT_2(x)  {XUS_STRING_CAT(x,0);  XUS_STRING_CAT(x,1);}
-#define XUS_STRING_CAT_3(x)  {XUS_STRING_CAT_2(x);  XUS_STRING_CAT(x,2);}
-#define XUS_STRING_CAT_4(x)  {XUS_STRING_CAT_3(x);  XUS_STRING_CAT(x,3);}
-#define XUS_STRING_CAT_5(x)  {XUS_STRING_CAT_4(x);  XUS_STRING_CAT(x,4);}
-#define XUS_STRING_CAT_6(x)  {XUS_STRING_CAT_5(x);  XUS_STRING_CAT(x,5);}
-#define XUS_STRING_CAT_7(x)  {XUS_STRING_CAT_6(x);  XUS_STRING_CAT(x,6);}
-#define XUS_STRING_CAT_8(x)  {XUS_STRING_CAT_7(x);  XUS_STRING_CAT(x,7);}
-#define XUS_STRING_CAT_9(x)  {XUS_STRING_CAT_8(x);  XUS_STRING_CAT(x,8);}
-#define XUS_STRING_CAT_10(x) {XUS_STRING_CAT_9(x);  XUS_STRING_CAT(x,9);}
-#define XUS_STRING_CAT_11(x) {XUS_STRING_CAT_10(x); XUS_STRING_CAT(x,10);}
-#define XUS_STRING_CAT_12(x) {XUS_STRING_CAT_11(x); XUS_STRING_CAT(x,11);}
-#define XUS_STRING_CAT_13(x) {XUS_STRING_CAT_12(x); XUS_STRING_CAT(x,12);}
-#define XUS_STRING_CAT_14(x) {XUS_STRING_CAT_13(x); XUS_STRING_CAT(x,13);}
-#define XUS_STRING_CAT_15(x) {XUS_STRING_CAT_14(x); XUS_STRING_CAT(x,14);}
+#define XUS_IDCODE(slrID, value) {SLRinfo[slrID].IDCODE = value;}
+#define XUS_STRING(rowID, value) {strcpy(resourceString[rowID], value);}
+#define XUS_STRING_CAT(x, y)  {XUS_STRING(y, x##STRING##y);}
+#define XUS_STRING_CAT_2(x)  {XUS_STRING_CAT(x, 0);  XUS_STRING_CAT(x, 1);}
+#define XUS_STRING_CAT_3(x)  {XUS_STRING_CAT_2(x);  XUS_STRING_CAT(x, 2);}
+#define XUS_STRING_CAT_4(x)  {XUS_STRING_CAT_3(x);  XUS_STRING_CAT(x, 3);}
+#define XUS_STRING_CAT_5(x)  {XUS_STRING_CAT_4(x);  XUS_STRING_CAT(x, 4);}
+#define XUS_STRING_CAT_6(x)  {XUS_STRING_CAT_5(x);  XUS_STRING_CAT(x, 5);}
+#define XUS_STRING_CAT_7(x)  {XUS_STRING_CAT_6(x);  XUS_STRING_CAT(x, 6);}
+#define XUS_STRING_CAT_8(x)  {XUS_STRING_CAT_7(x);  XUS_STRING_CAT(x, 7);}
+#define XUS_STRING_CAT_9(x)  {XUS_STRING_CAT_8(x);  XUS_STRING_CAT(x, 8);}
+#define XUS_STRING_CAT_10(x) {XUS_STRING_CAT_9(x);  XUS_STRING_CAT(x, 9);}
+#define XUS_STRING_CAT_11(x) {XUS_STRING_CAT_10(x); XUS_STRING_CAT(x, 10);}
+#define XUS_STRING_CAT_12(x) {XUS_STRING_CAT_11(x); XUS_STRING_CAT(x, 11);}
+#define XUS_STRING_CAT_13(x) {XUS_STRING_CAT_12(x); XUS_STRING_CAT(x, 12);}
+#define XUS_STRING_CAT_14(x) {XUS_STRING_CAT_13(x); XUS_STRING_CAT(x, 13);}
+#define XUS_STRING_CAT_15(x) {XUS_STRING_CAT_14(x); XUS_STRING_CAT(x, 14);}
 
-#define XUS_SETUP_SLR_EXPANDED(slrID,idcodeVal,fromRowVal,toRowVal) {XUS_IDCODE(slrID,idcodeVal);XUS_SLRFROMROW(slrID,fromRowVal);XUS_SLRTOROW(slrID,toRowVal);}
+#define XUS_SETUP_SLR_EXPANDED(slrID, idcodeVal, fromRowVal, toRowVal) {XUS_IDCODE(slrID, idcodeVal);XUS_SLRFROMROW(slrID, fromRowVal);XUS_SLRTOROW(slrID, toRowVal);}
 #define XUS_SETUP_SLR0(prefix) {XUS_SETUP_SLR_EXPANDED(0, prefix##IDCODE, prefix##SLR0_START, prefix##SLR0_END);}
 #define XUS_SETUP_SLR(slrID, prefix) {XUS_SETUP_SLR_EXPANDED(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}
-#define XUS_SETUP_SLRs_2(prefix) {XUS_SETUP_SLR0(prefix); XUS_SETUP_SLR(1,prefix);}
-#define XUS_SETUP_SLRs_3(prefix) {XUS_SETUP_SLRs_2(prefix); XUS_SETUP_SLR(2,prefix);}
+#define XUS_SETUP_SLRs_2(prefix) {XUS_SETUP_SLR0(prefix); XUS_SETUP_SLR(1, prefix);}
+#define XUS_SETUP_SLRs_3(prefix) {XUS_SETUP_SLRs_2(prefix); XUS_SETUP_SLR(2, prefix);}
 #define XUS_SETUP_DEVICE(prefix) {                                                                \
     XUS_PARTNAME(prefix##NAME);                                                                   \
     XUS_SLRNUM(prefix##SLRNUM);                                                                   \
     XUS_ROWNUM(prefix##ROWNUM);                                                                   \
-    XUS_SLRFROMROW(0,0);                                                                          \
-    XUS_SLRTOROW(0,prefix##ROWNUM-1);                                                             \
-    XUS_IDCODE(0,prefix##IDCODE);                                                                 \
+    XUS_SLRFROMROW(0, 0);                                                                          \
+    XUS_SLRTOROW(0, prefix##ROWNUM-1);                                                             \
+    XUS_IDCODE(0, prefix##IDCODE);                                                                 \
 }
 
 
@@ -314,10 +314,10 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
     #define XCVU160_SLR0_END 9
 	#define XCVU160_SLR2_START 10
 	#define XCVU160_STRING10 XCVU065_STRING0
-    #define XCVU160_STRING11 XCVU065_STRING1 
-    #define XCVU160_STRING12 XCVU065_STRING2 
-    #define XCVU160_STRING13 XCVU065_STRING3 
-    #define XCVU160_STRING14 XCVU065_STRING4 
+    #define XCVU160_STRING11 XCVU065_STRING1
+    #define XCVU160_STRING12 XCVU065_STRING2
+    #define XCVU160_STRING13 XCVU065_STRING3
+    #define XCVU160_STRING14 XCVU065_STRING4
     #define XCVU160_SLR2_END 14
 	#define XCVU160() {                                                                           \
         XUS_SETUP_DEVICE(XCVU160_);                                                               \
@@ -347,11 +347,11 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
     #define XCVU190_STRING9 XCVU065_STRING4
     #define XCVU190_SLR0_END 9
 	#define XCVU190_SLR2_START 10
-	#define XCVU190_STRING10 XCVU065_STRING0 
-    #define XCVU190_STRING11 XCVU065_STRING1 
-    #define XCVU190_STRING12 XCVU065_STRING2 
-    #define XCVU190_STRING13 XCVU065_STRING3 
-    #define XCVU190_STRING14 XCVU065_STRING4 
+	#define XCVU190_STRING10 XCVU065_STRING0
+    #define XCVU190_STRING11 XCVU065_STRING1
+    #define XCVU190_STRING12 XCVU065_STRING2
+    #define XCVU190_STRING13 XCVU065_STRING3
+    #define XCVU190_STRING14 XCVU065_STRING4
     #define XCVU190_SLR2_END 14
 	#define XCVU190() {                                                                           \
         XUS_SETUP_DEVICE(XCVU190_);                                                               \
@@ -380,11 +380,11 @@ enum XUS_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale devices
     #define XCVU440_STRING9 XCVU440_STRING4
     #define XCVU440_SLR0_END 9
 	#define XCVU440_SLR2_START 10
-	#define XCVU440_STRING10 XCVU440_STRING0 
-    #define XCVU440_STRING11 XCVU440_STRING1 
-    #define XCVU440_STRING12 XCVU440_STRING2 
-    #define XCVU440_STRING13 XCVU440_STRING3 
-    #define XCVU440_STRING14 XCVU440_STRING4 
+	#define XCVU440_STRING10 XCVU440_STRING0
+    #define XCVU440_STRING11 XCVU440_STRING1
+    #define XCVU440_STRING12 XCVU440_STRING2
+    #define XCVU440_STRING13 XCVU440_STRING3
+    #define XCVU440_STRING14 XCVU440_STRING4
     #define XCVU440_SLR2_END 14
 	#define XCVU440() {                                                                           \
         XUS_SETUP_DEVICE(XCVU440_);                                                               \

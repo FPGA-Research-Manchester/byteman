@@ -20,18 +20,16 @@
 #include<algorithm> //replace
 #include<string>
 
-
-
 #include "str/iff.h"
 #include "str/parse.h"
 
 /**************************************************************************//**
- * The str:: namespace holds some custom and/or shorter functions including std::string
- * std::string parsing and std::string manipulation.
- * 
+ * The str:: namespace holds some custom and/or shorter functions including string
+ * string parsing and string manipulation.
+ *
  *****************************************************************************/
 namespace str{
-	/// Finds std::string @c searchString inside @c checkedString and returns all to the right inside @c checkedString. If can't be found, returns empty std::string.
+	/// Finds string @c searchString inside @c checkedString and returns all to the right inside @c checkedString. If can't be found, returns empty string.
 	inline std::string findStringAndGetAllAfter(std::string checkedString, std::string searchString)
 	{
 		size_t loc = checkedString.find(searchString);
@@ -39,31 +37,31 @@ namespace str{
 			return std::string("");
 		return checkedString.substr(loc + searchString.size());
 	}
-	/// Replaces all instances of @c oldChar in std::string @c str with @c newChar and returns the resulting std::string.
+	/// Replaces all instances of @c oldChar in string @c str with @c newChar and returns the resulting string.
 	inline std::string replace(std::string str, char oldChar, char newChar)	
 	{
 		replace(str.begin(), str.end(), oldChar, newChar);
 		return str;
 	}
-	/// Removes all space chars of @c str returns the resulting std::string.
+	/// Removes all space chars of @c str returns the resulting string.
 	inline std::string removeSpaces(std::string str)	
 	{
 		str.erase(remove_if(str.begin(), str.end(), ::isspace), str.end());
 		return str;
 	}
-	/// Replaces all lowercase characters in @c str with uppercase and returns the resulting std::string.
+	/// Replaces all lowercase characters in @c str with uppercase and returns the resulting string.
 	inline std::string stringToUpper(std::string str)	
 	{
-		transform(str.begin(), str.end(),str.begin(), ::toupper);
+		transform(str.begin(), str.end(), str.begin(), ::toupper);
 		return str;
 	}
-	/// Replaces all uppercase characters in @c str with lowercase and returns the resulting std::string.
+	/// Replaces all uppercase characters in @c str with lowercase and returns the resulting string.
 	inline std::string stringToLower(std::string str)	
 	{
-		transform(str.begin(), str.end(),str.begin(), ::tolower);
+		transform(str.begin(), str.end(), str.begin(), ::tolower);
 		return str;
 	}
-	/// Removes double quotes from start and end of std::string @c str and returns the resulting std::string.
+	/// Removes double quotes from start and end of string @c str and returns the resulting string.
 	inline std::string removeExternalQuotes(std::string str)	
 	{
 		if(str.empty())

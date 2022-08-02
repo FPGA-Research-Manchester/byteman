@@ -42,7 +42,7 @@ void byteman::help()
 	std::cout << "Usage:" << std::endl;
 	std::cout << "  " EXECUTABLE " ARCH [-command...]* [-stdin]" << std::endl;
 	std::cout << std::endl;
-	std::cout << "  ARCH = {\"Xilinx Series 7\"/\"XS7\", \"Xilinx UltraScale\"/\"XUS\", \"Xilinx UltraScale+\"/\"XUSP\"}" << std::endl;
+	std::cout << "  ARCH = {\"Xilinx Series 7\"/\"XS7\", \"Xilinx UltraScale\"/\"XUS\", \"Xilinx UltraScale+ \"/\"XUSP\"}" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Commands:        : [Description]                                    " << std::endl;
 	std::cout << "  -a (Assembly)  : (de)assemble bitstreams.       see \"-help assembly\"" << std::endl;
@@ -61,7 +61,7 @@ void byteman::help()
 	std::cout << std::endl;
 	std::cout << "Examples: " << std::endl;
 	std::cout << "  " EXECUTABLE " Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit" << std::endl;
-	std::cout << "  " EXECUTABLE " XUSP -w -d ZCU 102 -b main,logic,blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit" << std::endl;
+	std::cout << "  " EXECUTABLE " XUSP -w -d ZCU 102 -b main, logic, blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Need more help? Try one of these:" << std::endl;
 	std::cout << "  " EXECUTABLE " -help <command>" << std::endl;
@@ -174,7 +174,7 @@ void byteman::helpRegion(bool selectedAll)
 	std::cout << "  modifies the list of selected regions." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -region [Clear,Add <SrcY> <SrcX> <SizeY> <SizeX>]" << std::endl;
+	std::cout << "    " EXECUTABLE " -region [Clear, Add <SrcY> <SrcX> <SizeY> <SizeX>]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Args:" << std::endl;
 	std::cout << "    [Clear]: clears the selected regions list." << std::endl;
@@ -227,7 +227,7 @@ void byteman::helpChange(bool selectedAll)
 	std::cout << "  modifies bitstream data." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -change [First] [Second] [BigEndian,LittleEndian,BigEndianWithBitSwap,LittleEndianWithBitSwap,NativeEndian]" << std::endl;
+	std::cout << "    " EXECUTABLE " -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Args:" << std::endl;
 	std::cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << std::endl;
@@ -343,15 +343,15 @@ void byteman::helpMerge(bool selectedAll)
 	std::cout << "  merges portion of the bitstream in the second buffer into the first buffer." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -merge [Logic] [BlockRAM] [Clock] [SET,XOR,OR,AND] [Full,<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]" << std::endl;
+	std::cout << "    " EXECUTABLE " -merge [Logic] [BlockRAM] [Clock] [SET, XOR, OR, AND] [Full, <SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Args:" << std::endl;
 	std::cout << "    [Logic]: selects the data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
 	std::cout << "    [Clock]: selects the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
 	std::cout << "    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
-	std::cout << "    [SET,XOR,OR,AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is \"SET\"." << std::endl;
+	std::cout << "    [SET, XOR, OR, AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is \"SET\"." << std::endl;
 	std::cout << "    [Full]: selects the full device bitstream." << std::endl;
-	std::cout << "    [<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]: selects a rect (<SrcY> <SrcX> <SizeY> <SizeX>) from the second bitstream buffer to be merged" << std::endl; 
+	std::cout << "    [<SrcY> <SrcX> <SizeY> <SizeX> <DstY> <DstX>]: selects a rect (<SrcY> <SrcX> <SizeY> <SizeX>) from the second bitstream buffer to be merged" << std::endl;
 	std::cout << "                                                 : into destination rect (<DstY> <DstX> <SizeY> <SizeX>) in first bitstream buffer." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Examples:" << std::endl;
@@ -360,10 +360,10 @@ void byteman::helpMerge(bool selectedAll)
 	std::cout << std::endl;
 	std::cout << "    # A rect in second buffer (Y from 50 to 99 and X from 10 to 29) is bitwise XORed in the clock and blockram" << std::endl;
 	std::cout << "    # contents planes into a rect in 1st buffer describing Y from 100 to 149 and X from 30 to 49:" << std::endl;
-	std::cout << "    " EXECUTABLE " Xilinx Series 7 -... -merge clock,bram,xor 50:10 50:20 100:30" << std::endl;
+	std::cout << "    " EXECUTABLE " Xilinx Series 7 -... -merge clock, bram, xor 50:10 50:20 100:30" << std::endl;
 	std::cout << std::endl;
 	std::cout << "    # Copies the logic plane from buffer 2 into buffer 1:" << std::endl;
-	std::cout << "    " EXECUTABLE " Xilinx US -... -m full,logic" << std::endl;
+	std::cout << "    " EXECUTABLE " Xilinx US -... -m full, logic" << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
 }
@@ -374,7 +374,7 @@ void byteman::helpOutput(bool selectedAll)
 	std::cout << "  creates a bitstream file output from the first bitstream buffer in byteman." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -output [Logic] [BlockRAM] [Blank] [Full,<StartY> <StartX> <SizeY> <SizeX>] <OutputFileName>" << std::endl;
+	std::cout << "    " EXECUTABLE " -output [Logic] [BlockRAM] [Blank] [Full, <StartY> <StartX> <SizeY> <SizeX>] <OutputFileName>" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Args:" << std::endl;
 	std::cout << "    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
@@ -387,10 +387,10 @@ void byteman::helpOutput(bool selectedAll)
 	std::cout << std::endl;
 	std::cout << "  Examples:" << std::endl;
 	std::cout << "    # Output only the blockram contents to the whole FPGA:" << std::endl;
-	std::cout << "    " EXECUTABLE " XUSP -input bitstream.bit -... -output bram,full bitfil.bit" << std::endl;
+	std::cout << "    " EXECUTABLE " XUSP -input bitstream.bit -... -output bram, full bitfil.bit" << std::endl;
 	std::cout << std::endl;
 	std::cout << "    # The rectangle describing Y from 50 to 99 and X from 10 to 29 is zeroed and then the logic plane bitstream data is written:" << std::endl;
-	std::cout << "    " EXECUTABLE " Xilinx Series 7 -... -o logic,blank 50:10 50:20 bitstream.bin" << std::endl;
+	std::cout << "    " EXECUTABLE " Xilinx Series 7 -... -o logic, blank 50:10 50:20 bitstream.bin" << std::endl;
 	std::cout << std::endl;
 	std::cout << "    # The rectangles (60:10 120:20 and 180:30 240:40) are zeroed and the logic & blockram content planes are written:" << std::endl;
 	std::cout << "    " EXECUTABLE " XUS -... -r add 60:10 120:20 -o blank 180:30 240:40 fo.bit" << std::endl;

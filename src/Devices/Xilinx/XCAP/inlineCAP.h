@@ -348,7 +348,7 @@ inline uint32_t XCAP_getType2ReservedInstruction(int payload)
 	return XCAP_getType2Instruction(XCAP::Operation::RESERVED, payload);
 }
 
-/// Generate the encoding for NOP instructions and write them to file std::ofstream.
+/// Generate the encoding for NOP instructions and write them to file ofstream.
 inline void XCAP_writeNOP(std::ofstream& fout, int cnt, int payload, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1NopInstruction(payload);
@@ -356,7 +356,7 @@ inline void XCAP_writeNOP(std::ofstream& fout, int cnt, int payload, Endianness 
 		FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for Reserved instructions and write them to file std::ofstream.
+/// Generate the encoding for Reserved instructions and write them to file ofstream.
 inline void XCAP_writeRESERVED(std::ofstream& fout, int cnt, int payload, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1ReservedInstruction(payload);
@@ -364,21 +364,21 @@ inline void XCAP_writeRESERVED(std::ofstream& fout, int cnt, int payload, Endian
 		FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for "selecting" a CAP register and write it to file std::ofstream.
+/// Generate the encoding for "selecting" a CAP register and write it to file ofstream.
 inline void XCAP_writeSelectRegister(std::ofstream& fout, XCAP::Register reg, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1WriteInstruction(reg, 0);
 	FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for reading a CAP register and write it to file std::ofstream.
+/// Generate the encoding for reading a CAP register and write it to file ofstream.
 inline void XCAP_writeReadRegister(std::ofstream& fout, XCAP::Register reg, int readLength, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1ReadInstruction(reg, readLength);
 	FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for writing a CAP register and write it to file std::ofstream.
+/// Generate the encoding for writing a CAP register and write it to file ofstream.
 inline void XCAP_writeRegister(std::ofstream& fout, XCAP::Register reg, int writeValue, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1WriteInstruction(reg, 1);
@@ -386,13 +386,13 @@ inline void XCAP_writeRegister(std::ofstream& fout, XCAP::Register reg, int writ
 	FileIO::write32(fout, writeValue, e);
 }
 
-/// Generate the encoding for writing a CAP command and write it to file std::ofstream.
+/// Generate the encoding for writing a CAP command and write it to file ofstream.
 inline void XCAP_writeCommand(std::ofstream& fout, XCAP::Command cmd, Endianness e)
 {
 	XCAP_writeRegister(fout, XCAP::Register::CMD, static_cast<int>(cmd), e);
 }
 
-/// Generate the encoding for writing a CAP register with a mask and write it to file std::ofstream.
+/// Generate the encoding for writing a CAP register with a mask and write it to file ofstream.
 inline void XCAP_writeMaskAndRegister(std::ofstream& fout, XCAP::Register reg, int writeMask, int writeValue, Endianness e)
 {
 	XCAP_writeRegister(fout, XCAP::Register::MASK, writeMask, e);

@@ -35,8 +35,6 @@
 #include "../../Common/str.h"
 #include "../../../VERSION" // To get byteman version
 
-
-
 //As indicator for number and types of variables in the template
 #define FABRIC_TEMPLATE(MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, ENABLE_TOP_BOTTOM, TOP_BOTTOM_BIT_SHIFT, BLOCKTYPE_SHIFT, BLOCKTYPE_MASK, ROWADDRESS_SHIFT, ROWADDRESS_MASK, COLUMNADDRESS_SHIFT, COLUMNADDRESS_MASK, MINORADDRESS_SHIFT, MINORADDRESS_MASK) MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, ENABLE_TOP_BOTTOM, TOP_BOTTOM_BIT_SHIFT, BLOCKTYPE_SHIFT, BLOCKTYPE_MASK, ROWADDRESS_SHIFT, ROWADDRESS_MASK, COLUMNADDRESS_SHIFT, COLUMNADDRESS_MASK, MINORADDRESS_SHIFT, MINORADDRESS_MASK
 
@@ -111,16 +109,16 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		std::string fileTime;
 
 	//bitstream structure
-		std::string initializedBitstreamShortPartName; 		///< The partName of currently initialized bitstream buffers
-		Endianness loadedBitstreamEndianness;   		///< The endianess of the currently loaded bitstream.
+		std::string initializedBitstreamShortPartName;		///< The partName of currently initialized bitstream buffers
+		Endianness loadedBitstreamEndianness;  		///< The endianess of the currently loaded bitstream.
 		bool bitstreamHasValidData;
 		uint32_t* bitstreamBegin;
 		uint32_t* bitstreamCLB[MAX_ROWS][MAX_COLS];
 		uint32_t* bitstreamBRAM[MAX_ROWS][MAX_BRAM_COLS];
 		uint32_t* bitstreamEnd;
 
-	//resource std::string parameters
-		std::string initializedBitstreamParamsShortPartName; ///< the partName of currently initialized resource std::string parameters
+	//resource string parameters
+		std::string initializedBitstreamParamsShortPartName; ///< the partName of currently initialized resource string parameters
 		int numberOfSLRs;
 		int numberOfRows;
 		int numberOfBRAMCols[MAX_ROWS];
@@ -132,8 +130,8 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		int numberOfFramesPerRow[MAX_ROWS];
 		int numberOfWordsPerRow[MAX_ROWS];
 
-	//SLR data and resource std::string
-		std::string initializedResourceStringShortPartName; ///< the partName of currently initialized resource std::string parameters
+	//SLR data and resource string
+		std::string initializedResourceStringShortPartName; ///< the partName of currently initialized resource string parameters
 		char resourceString[MAX_ROWS][MAX_COLS];
 		struct {
 			uint32_t IDCODE;
@@ -171,7 +169,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		virtual void setDeviceByNameOrThrow(std::string) = 0;
 		virtual void setDeviceByIDCODEOrThrow(int) = 0;
 
-	//initialize resource std::strings and bitstream buffers
+	//initialize resource strings and bitstream buffers
 		virtual void ensureInitializedBitstreamArrays() = 0;
 		virtual void initializeResourceStringParameters() = 0;
 
@@ -187,7 +185,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		virtual void outputBitstreamEmptySLRHeaderSequence(std::ofstream&, int, bool, Endianness) = 0;
 		virtual void outputBitstreamEmptySLRWrapUpSequence(std::ofstream&, int, bool, Endianness) = 0;
 
-	// Info 
+	// Info
 		virtual std::string getFrameType(int, int, int) = 0;
 
 	protected:

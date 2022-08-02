@@ -17,7 +17,7 @@
 /**************************************************************************//**
  * Reads and parses .BIT header until and including the sync command.
  * Updates "designName", "partName", "fileDate", "fileTime".
- * 
+ *
  * @arg @c fin input file stream, which is left at the position following the
  * located sync command.
  *****************************************************************************/
@@ -76,7 +76,7 @@ inline void parseBITheader(std::ifstream& fin, Endianness e)
 /**************************************************************************//**
  * Reads a bitstream header until and including the sync command and returns
  * the file's endianess.
- * 
+ *
  * @arg @c fin input file stream. Gets fixed back to the original value before
  * leaving this function!
  *****************************************************************************/
@@ -113,7 +113,7 @@ inline Endianness parseBitstreamEndianness(std::ifstream& fin)
 			returnVal = Endianness::LE_BS;
 			syncDetectionDone++;
 		} else
-			fin.seekg(-19,std::ios::cur);
+			fin.seekg(-19, std::ios::cur);
 	}
 	log("Detected file endianess: " + Endian::to_string(returnVal));
 	
@@ -123,7 +123,7 @@ inline Endianness parseBitstreamEndianness(std::ifstream& fin)
 
 /**************************************************************************//**
  * Reads a bitstream header until and including the sync command.
- * 
+ *
  * @arg @c fin input file stream. Moves the stream pointer to after the SYNC
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
@@ -139,14 +139,14 @@ bool findBitstreamSyncWord(std::ifstream& fin, Endianness e)
 		if(word == XCAP_getSyncInstruction()){
 			return true;
 		} else
-			fin.seekg(-3,std::ios::cur);
+			fin.seekg(-3, std::ios::cur);
 	}
 	return false; //not going to be reached.
 }
 
 /**************************************************************************//**
  * Reads a bitstream header until and including the sync sequence.
- * 
+ *
  * @arg @c fin input file stream. Moves the stream pointer to after the SYNC
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
@@ -166,7 +166,7 @@ bool findBitstreamSyncSequence(std::ifstream& fin, Endianness e)
 		if(wordOld4 == 0x000000BB && wordOld3 == 0x11220044 && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == XCAP_getSyncInstruction()){
 			return true;
 		} else
-			fin.seekg(-19,std::ios::cur);
+			fin.seekg(-19, std::ios::cur);
 	}
 	return false; //not going to be reached.
 }
@@ -174,7 +174,7 @@ bool findBitstreamSyncSequence(std::ifstream& fin, Endianness e)
 /**************************************************************************//**
  * Reads a bitstream until and including the first IDCODE command and returns
  * the first SLRs IDCODE.
- * 
+ *
  * @arg @c fin input file stream. Gets fixed back to the original value before
  * leaving this function!
  *****************************************************************************/
@@ -193,7 +193,7 @@ inline uint32_t parseBitstreamIDCODE(std::ifstream& fin, Endianness e)
 			returnVal = FileIO::read32(fin, e);
 			syncDetectionDone++;
 		} else
-			fin.seekg(-3,std::ios::cur);
+			fin.seekg(-3, std::ios::cur);
 	}
 	
 	fin.seekg(fileOffset, fin.beg);
@@ -246,7 +246,7 @@ inline void readBitstreamMain(std::ifstream& fin, Endianness bitstreamFileEndian
 				} else if(instructionType == 2) {
 					wordCount = instructionPayload;
 				} else {
-					throw std::runtime_error("Bitstream has invalid instruction ("+std::to_string(instruction)+" @ "+std::to_string(fin.tellg())+") (invalid type).");
+					throw std::runtime_error("Bitstream has invalid instruction (" + std::to_string(instruction) + " @ " + std::to_string(fin.tellg()) + ") (invalid type).");
 				}
 				if(regAddr == XCAP::Register::MAGIC1){
 					slr++;
@@ -287,7 +287,7 @@ inline void readBitstreamMain(std::ifstream& fin, Endianness bitstreamFileEndian
 									throwingAssert(m, <, FRAMES_PER_BRAM_CONTENT_COLUMN);
 									memcpy(&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								} else {
-									warn("Unknown BlockType("+std::to_string(b)+") written while reading bitstream file.");
+									warn("Unknown BlockType(" + std::to_string(b) + ") written while reading bitstream file.");
 								}
 								XCAP_IncrementFAR(slr, b, r, c, m);
 							}
@@ -299,7 +299,7 @@ inline void readBitstreamMain(std::ifstream& fin, Endianness bitstreamFileEndian
 									fin.read((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
 								} else {
 									fin.ignore(forwardShadowReg * WORDS_PER_FRAME * 4);
-									warn("Unknown BlockType("+std::to_string(b)+") written while reading bitstream file.");
+									warn("Unknown BlockType(" + std::to_string(b) + ") written while reading bitstream file.");
 								}
 								for(int i = 0 ; i < forwardShadowReg ; i++){
 									XCAP_IncrementFAR(slr, b, r, c, m);

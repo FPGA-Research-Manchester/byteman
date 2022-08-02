@@ -14,7 +14,7 @@
 # limitations under the License.
 ###############################################################################
 
-set(DEVICES_SHARED_SRC 
+set(DEVICES_SHARED_SRC
 ${CMAKE_CURRENT_SOURCE_DIR}/CommonDevice2D.cpp)
 
 target_sources(byteman PRIVATE ${DEVICES_SHARED_SRC})

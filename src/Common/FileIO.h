@@ -24,8 +24,6 @@
 
 #include "Endianness.h"
 
-
-
 namespace FileIO {
 	inline uint64_t readNative64(std::ifstream& fin)
 	{
@@ -170,7 +168,7 @@ namespace FileIO {
 
 	inline char* readStringIntoCharArray(std::ifstream& fin, int stringSize)
 	{
-		char* readCharArray = new char[stringSize+1];
+		char* readCharArray = new char[stringSize + 1];
 		fin.read(readCharArray, stringSize);
 		readCharArray[stringSize]='\0';
 		return readCharArray;

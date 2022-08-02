@@ -90,7 +90,7 @@ class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigur
 		
 		void assembler(std::string, std::string);
 		
-		// Info 
+		// Info
 		std::string getFrameType(int, int, int) override;
 		
 		//Test

@@ -15,7 +15,7 @@
 ###############################################################################
 
 #Add all sources for Xilinx US+
-set(XUSP_SRC 
+set(XUSP_SRC
 ${CMAKE_CURRENT_SOURCE_DIR}/XilinxUltraScalePlus.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Fabric.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/XUSP_Input.cpp

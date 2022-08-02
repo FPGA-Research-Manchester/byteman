@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *****************************************************************************/
+
 inline void XCAP_IncrementFAR_BlockType0_new(int slrID, int &blockType, int &globalRowAddress, int &columnAddress, int &minorAddress)
 {
 	uint8_t resourceLetter = (uint8_t)resourceString[globalRowAddress][columnAddress];
@@ -83,7 +84,7 @@ inline void XCAP_IncrementFAR_BlockType1_new(int slrID, int &blockType, int &glo
 	if((columnAddress == numberOfBRAMCols[0])?(minorAddress == EXTRA_FRAMES_PER_ROW):(minorAddress == FRAMES_PER_BRAM_CONTENT_COLUMN)){
 		minorAddress = 0;
 		columnAddress++;
-		if(columnAddress == (numberOfBRAMCols[0]+1)){
+		if(columnAddress == (numberOfBRAMCols[0] + 1)){
 			columnAddress = 0;
 			if(globalRowAddress == SLRinfo[slrID].toRow){
 				globalRowAddress = SLRinfo[slrID].fromRow;
@@ -192,5 +193,5 @@ inline uint32_t XCAP_getFAR(int slr, int blockType, int globalRowAddress, int co
 /// Generate and return the encoding for a Far FAR instruction.
 inline uint32_t XCAP_getFarFarInstruction()
 {
-	return XCAP_getFAR(0,7,63,0,0);
+	return XCAP_getFAR(0, 7, 63, 0, 0);
 }
