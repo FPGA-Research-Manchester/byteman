@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -252,8 +252,8 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">    #endif //XUS</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        mainXUSP.instanceName = <span class="stringliteral">&quot;Main Xil US+&quot;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        tempXUSP.instanceName = <span class="stringliteral">&quot;Temp Xil US+&quot;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        mainXUSP.instanceName = <span class="stringliteral">&quot;Main Xil US+ &quot;</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        tempXUSP.instanceName = <span class="stringliteral">&quot;Temp Xil US+ &quot;</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">    #endif //XUSP</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 </div><!-- fragment -->
@@ -310,7 +310,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Usage:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; ARCH [-command...]* [-stdin]&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  ARCH = {\&quot;Xilinx Series 7\&quot;/\&quot;XS7\&quot;, \&quot;Xilinx UltraScale\&quot;/\&quot;XUS\&quot;, \&quot;Xilinx UltraScale+\&quot;/\&quot;XUSP\&quot;}&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  ARCH = {\&quot;Xilinx Series 7\&quot;/\&quot;XS7\&quot;, \&quot;Xilinx UltraScale\&quot;/\&quot;XUS\&quot;, \&quot;Xilinx UltraScale+ \&quot;/\&quot;XUSP\&quot;}&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Commands:        : [Description]                                    &quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  -a (Assembly)  : (de)assemble bitstreams.       see \&quot;-help assembly\&quot;&quot;</span> &lt;&lt; std::endl;</div>
@@ -329,7 +329,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Examples: &quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx US+ -w -i main static.bit -i temp filter.bit -merge logic 180:67 120:30 240:37 -o logic 240:37 120:30 relocatedFilter.bit&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; XUSP -w -d ZCU 102 -b main,logic,blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; XUSP -w -d ZCU 102 -b main, logic, blockram -i temp filter.bit -merge logic 180:67 120:30 180:67 -o logic 180:67 120:30 mergedFilter.bit&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Need more help? Try one of these:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -help &lt;command&gt;&quot;</span> &lt;&lt; std::endl;</div>
@@ -421,7 +421,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="help_8cpp_source.html#l00040">help()</a>, <a class="el" href="help_8cpp_source.html#l00400">helpAssembly()</a>, <a class="el" href="help_8cpp_source.html#l00195">helpBlank()</a>, <a class="el" href="help_8cpp_source.html#l00223">helpChange()</a>, <a class="el" href="help_8cpp_source.html#l00250">helpDevice()</a>, <a class="el" href="help_8cpp_source.html#l00431">helpExit()</a>, <a class="el" href="help_8cpp_source.html#l00284">helpHelp()</a>, <a class="el" href="help_8cpp_source.html#l00318">helpInput()</a>, <a class="el" href="help_8cpp_source.html#l00339">helpMerge()</a>, <a class="el" href="help_8cpp_source.html#l00370">helpOutput()</a>, <a class="el" href="help_8cpp_source.html#l00170">helpRegion()</a>, <a class="el" href="help_8cpp_source.html#l00439">helpStdin()</a>, <a class="el" href="help_8cpp_source.html#l00122">helpVerbose()</a>, <a class="el" href="help_8cpp_source.html#l00146">helpWarn()</a>, and <a class="el" href="iff_8h_source.html#l00075">str::iff::stringIs()</a>.</p>
+<p class="reference">References <a class="el" href="help_8cpp_source.html#l00040">help()</a>, <a class="el" href="help_8cpp_source.html#l00400">helpAssembly()</a>, <a class="el" href="help_8cpp_source.html#l00195">helpBlank()</a>, <a class="el" href="help_8cpp_source.html#l00223">helpChange()</a>, <a class="el" href="help_8cpp_source.html#l00250">helpDevice()</a>, <a class="el" href="help_8cpp_source.html#l00431">helpExit()</a>, <a class="el" href="help_8cpp_source.html#l00284">helpHelp()</a>, <a class="el" href="help_8cpp_source.html#l00318">helpInput()</a>, <a class="el" href="help_8cpp_source.html#l00339">helpMerge()</a>, <a class="el" href="help_8cpp_source.html#l00370">helpOutput()</a>, <a class="el" href="help_8cpp_source.html#l00170">helpRegion()</a>, <a class="el" href="help_8cpp_source.html#l00439">helpStdin()</a>, <a class="el" href="help_8cpp_source.html#l00122">helpVerbose()</a>, <a class="el" href="help_8cpp_source.html#l00146">helpWarn()</a>, and <a class="el" href="iff_8h_source.html#l00073">str::iff::stringIs()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -654,7 +654,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  modifies bitstream data.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Usage:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -change [First] [Second] [BigEndian,LittleEndian,BigEndianWithBitSwap,LittleEndianWithBitSwap,NativeEndian]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian]&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Args:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.&quot;</span> &lt;&lt; std::endl;</div>
@@ -936,15 +936,15 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  merges portion of the bitstream in the second buffer into the first buffer.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Usage:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -merge [Logic] [BlockRAM] [Clock] [SET,XOR,OR,AND] [Full,&lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt; &lt;DstY&gt; &lt;DstX&gt;]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -merge [Logic] [BlockRAM] [Clock] [SET, XOR, OR, AND] [Full, &lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt; &lt;DstY&gt; &lt;DstX&gt;]&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Args:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [Logic]: selects the data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [Clock]: selects the global clock data from the logic plane of the bitstream. Enabled by default if no plane is explicitly specified.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [BlockRAM]: selects the BlockRAM contents plane of the bitstream. Enabled by default if no plane is explicitly specified.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [SET,XOR,OR,AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is \&quot;SET\&quot;.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [SET, XOR, OR, AND]: selects merge operation. XOR, OR, AND are bitwise operations. Default is \&quot;SET\&quot;.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [Full]: selects the full device bitstream.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [&lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt; &lt;DstY&gt; &lt;DstX&gt;]: selects a rect (&lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt;) from the second bitstream buffer to be merged&quot;</span> &lt;&lt; std::endl; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [&lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt; &lt;DstY&gt; &lt;DstX&gt;]: selects a rect (&lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt;) from the second bitstream buffer to be merged&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;                                                 : into destination rect (&lt;DstY&gt; &lt;DstX&gt; &lt;SizeY&gt; &lt;SizeX&gt;) in first bitstream buffer.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Examples:&quot;</span> &lt;&lt; std::endl;</div>
@@ -953,10 +953,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    # A rect in second buffer (Y from 50 to 99 and X from 10 to 29) is bitwise XORed in the clock and blockram&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    # contents planes into a rect in 1st buffer describing Y from 100 to 149 and X from 30 to 49:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx Series 7 -... -merge clock,bram,xor 50:10 50:20 100:30&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx Series 7 -... -merge clock, bram, xor 50:10 50:20 100:30&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    # Copies the logic plane from buffer 2 into buffer 1:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx US -... -m full,logic&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx US -... -m full, logic&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;}</div>
@@ -999,7 +999,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  creates a bitstream file output from the first bitstream buffer in byteman.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Usage:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -output [Logic] [BlockRAM] [Blank] [Full,&lt;StartY&gt; &lt;StartX&gt; &lt;SizeY&gt; &lt;SizeX&gt;] &lt;OutputFileName&gt;&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -output [Logic] [BlockRAM] [Blank] [Full, &lt;StartY&gt; &lt;StartX&gt; &lt;SizeY&gt; &lt;SizeX&gt;] &lt;OutputFileName&gt;&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Args:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.&quot;</span> &lt;&lt; std::endl;</div>
@@ -1012,10 +1012,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Examples:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    # Output only the blockram contents to the whole FPGA:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; XUSP -input bitstream.bit -... -output bram,full bitfil.bit&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; XUSP -input bitstream.bit -... -output bram, full bitfil.bit&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    # The rectangle describing Y from 50 to 99 and X from 10 to 29 is zeroed and then the logic plane bitstream data is written:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx Series 7 -... -o logic,blank 50:10 50:20 bitstream.bin&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; Xilinx Series 7 -... -o logic, blank 50:10 50:20 bitstream.bin&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    # The rectangles (60:10 120:20 and 180:30 240:40) are zeroed and the logic &amp; blockram content planes are written:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; XUS -... -r add 60:10 120:20 -o blank 180:30 240:40 fo.bit&quot;</span> &lt;&lt; std::endl;</div>
@@ -1061,7 +1061,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  modifies the list of selected regions.&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Usage:&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -region [Clear,Add &lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt;]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> <a class="code" href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a> <span class="stringliteral">&quot; -region [Clear, Add &lt;SrcY&gt; &lt;SrcX&gt; &lt;SizeY&gt; &lt;SizeX&gt;]&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    std::cout &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;  Args:&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;    [Clear]: clears the selected regions list.&quot;</span> &lt;&lt; std::endl;</div>
@@ -1275,8 +1275,8 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00096">96</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    command = <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a>(command, <span class="charliteral">&#39;=&#39;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    command = <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a>(command, <span class="charliteral">&#39;:&#39;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    command = <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a>(command, <span class="charliteral">&#39;=&#39;</span>,<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    command = <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a>(command, <span class="charliteral">&#39;:&#39;</span>,<span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    command = <a class="code" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">str::stringToLower</a>(command);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (command.at(0) == <span class="charliteral">&#39;-&#39;</span>) command.erase(0, 1);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">str::findStringAndGetAllAfter</a>(command, <span class="stringliteral">&quot; &quot;</span>);</div>
@@ -1315,7 +1315,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Could not parse command. Consider checking out \&quot;bytemap -help\&quot;.&quot;</span>);</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="str_8h_source.html#l00049">str::findStringAndGetAllAfter()</a>, <a class="el" href="iff_8h_source.html#l00123">str::iff::firstStringWordIs()</a>, <a class="el" href="str_8h_source.html#l00057">str::replace()</a>, and <a class="el" href="str_8h_source.html#l00075">str::stringToLower()</a>.</p>
+<p class="reference">References <a class="el" href="str_8h_source.html#l00047">str::findStringAndGetAllAfter()</a>, <a class="el" href="iff_8h_source.html#l00121">str::iff::firstStringWordIs()</a>, <a class="el" href="str_8h_source.html#l00055">str::replace()</a>, and <a class="el" href="str_8h_source.html#l00073">str::stringToLower()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="byteman_8cpp_source.html#l00035">main()</a>.</p>
 <div class="dynheader">
@@ -1324,10 +1324,10 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="classbyteman_ac520ea42eff6df054ee77d730fb63b37_cgraph.png" border="0" usemap="#classbyteman_ac520ea42eff6df054ee77d730fb63b37_cgraph" alt=""/></div>
 <map name="classbyteman_ac520ea42eff6df054ee77d730fb63b37_cgraph" id="classbyteman_ac520ea42eff6df054ee77d730fb63b37_cgraph">
 <area shape="rect" title=" " alt="" coords="5,97,129,123"/>
-<area shape="rect" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d" title="Finds std::string searchString inside checkedString and returns all to the right inside checkedString..." alt="" coords="177,5,352,47"/>
-<area shape="rect" href="namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4" title="Returns true if std::string checkedString&#39;s first word matches fully any of std::strings nextString o..." alt="" coords="177,71,352,98"/>
-<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..." alt="" coords="217,122,312,149"/>
-<area shape="rect" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting std::string." alt="" coords="196,173,333,199"/>
+<area shape="rect" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d" title="Finds string searchString inside checkedString and returns all to the right inside checkedString...." alt="" coords="177,5,352,47"/>
+<area shape="rect" href="namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="177,71,352,98"/>
+<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="217,122,312,149"/>
+<area shape="rect" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="196,173,333,199"/>
 </map>
 </div>
 <div class="dynheader">
@@ -1376,14 +1376,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00063">str::parse::nthStringWord()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00061">str::parse::nthStringWord()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbyteman_a05246bb3309d8f5cb2e346ae93789c7a_cgraph.png" border="0" usemap="#classbyteman_a05246bb3309d8f5cb2e346ae93789c7a_cgraph" alt=""/></div>
 <map name="classbyteman_a05246bb3309d8f5cb2e346ae93789c7a_cgraph" id="classbyteman_a05246bb3309d8f5cb2e346ae93789c7a_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,193,32"/>
-<area shape="rect" href="namespacestr_1_1parse.html#af9403a92efeee2059452578afc96dcbe" title="Parses a std::string s, returns the n&#45;th std::string word that is not an integer." alt="" coords="241,5,424,32"/>
+<area shape="rect" href="namespacestr_1_1parse.html#af9403a92efeee2059452578afc96dcbe" title="Parses a string s, returns the n&#45;th string word that is not an integer." alt="" coords="241,5,424,32"/>
 </map>
 </div>
 
@@ -1576,14 +1576,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00111">str::parse::lastStringWord()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00109">str::parse::lastStringWord()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbyteman_ad3f344f49e76466a2a71bc2cb9e6808b_cgraph.png" border="0" usemap="#classbyteman_ad3f344f49e76466a2a71bc2cb9e6808b_cgraph" alt=""/></div>
 <map name="classbyteman_ad3f344f49e76466a2a71bc2cb9e6808b_cgraph" id="classbyteman_ad3f344f49e76466a2a71bc2cb9e6808b_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,163,32"/>
-<area shape="rect" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a std::string s, removes all integers and returns the last of all std::string words." alt="" coords="211,5,397,32"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="211,5,397,32"/>
 </map>
 </div>
 
@@ -1628,14 +1628,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00087">str::parse::allStringWords()</a>, <a class="el" href="Coords_8h_source.html#l00041">Coord2D::col</a>, <a class="el" href="parse_8h_source.html#l00222">str::parse::multipleInts()</a>, and <a class="el" href="Coords_8h_source.html#l00040">Coord2D::row</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00085">str::parse::allStringWords()</a>, <a class="el" href="Coords_8h_source.html#l00039">Coord2D::col</a>, <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>, and <a class="el" href="Coords_8h_source.html#l00038">Coord2D::row</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbyteman_a83049c7135e2c9070dcc8c59d0f27a12_cgraph.png" border="0" usemap="#classbyteman_a83049c7135e2c9070dcc8c59d0f27a12_cgraph" alt=""/></div>
 <map name="classbyteman_a83049c7135e2c9070dcc8c59d0f27a12_cgraph" id="classbyteman_a83049c7135e2c9070dcc8c59d0f27a12_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,171,57"/>
-<area shape="rect" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de" title="Parses a std::string s, removes all integers and returns the rest." alt="" coords="219,5,404,32"/>
+<area shape="rect" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de" title="Parses a string s, removes all integers and returns the rest." alt="" coords="219,5,404,32"/>
 <area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="227,56,396,83"/>
 </map>
 </div>
@@ -1681,15 +1681,15 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00135">str::parse::allStringWordsWithoutLastStringWord()</a>, <a class="el" href="parse_8h_source.html#l00111">str::parse::lastStringWord()</a>, and <a class="el" href="parse_8h_source.html#l00222">str::parse::multipleInts()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00133">str::parse::allStringWordsWithoutLastStringWord()</a>, <a class="el" href="parse_8h_source.html#l00109">str::parse::lastStringWord()</a>, and <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbyteman_a946b36868ca6bb56bd61637a0430ceb2_cgraph.png" border="0" usemap="#classbyteman_a946b36868ca6bb56bd61637a0430ceb2_cgraph" alt=""/></div>
 <map name="classbyteman_a946b36868ca6bb56bd61637a0430ceb2_cgraph" id="classbyteman_a946b36868ca6bb56bd61637a0430ceb2_cgraph">
 <area shape="rect" title=" " alt="" coords="5,71,173,98"/>
-<area shape="rect" href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf" title="Parses a std::string s, removes all integers and the last std::string word. Returns the rest." alt="" coords="222,5,407,47"/>
-<area shape="rect" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a std::string s, removes all integers and returns the last of all std::string words." alt="" coords="221,71,408,98"/>
+<area shape="rect" href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf" title="Parses a string s, removes all integers and the last string word. Returns the rest." alt="" coords="222,5,407,47"/>
+<area shape="rect" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="221,71,408,98"/>
 <area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="230,122,399,149"/>
 </map>
 </div>
@@ -1740,14 +1740,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span>  commandWithoutTheValidParams;</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="str_8h_source.html#l00057">str::replace()</a>.</p>
+<p class="reference">References <a class="el" href="str_8h_source.html#l00055">str::replace()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbyteman_a859bdf4a8f0b7002b5341d093fe9e3d1_cgraph.png" border="0" usemap="#classbyteman_a859bdf4a8f0b7002b5341d093fe9e3d1_cgraph" alt=""/></div>
 <map name="classbyteman_a859bdf4a8f0b7002b5341d093fe9e3d1_cgraph" id="classbyteman_a859bdf4a8f0b7002b5341d093fe9e3d1_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,256,47"/>
-<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..." alt="" coords="304,13,399,39"/>
+<area shape="rect" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="304,13,399,39"/>
 </map>
 </div>
 
@@ -1794,14 +1794,14 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00087">str::parse::allStringWords()</a>, and <a class="el" href="parse_8h_source.html#l00222">str::parse::multipleInts()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00085">str::parse::allStringWords()</a>, and <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classbyteman_a92e859c450f22d77a8010c1774af0755_cgraph.png" border="0" usemap="#classbyteman_a92e859c450f22d77a8010c1774af0755_cgraph" alt=""/></div>
 <map name="classbyteman_a92e859c450f22d77a8010c1774af0755_cgraph" id="classbyteman_a92e859c450f22d77a8010c1774af0755_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,175,57"/>
-<area shape="rect" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de" title="Parses a std::string s, removes all integers and returns the rest." alt="" coords="223,5,408,32"/>
+<area shape="rect" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de" title="Parses a string s, removes all integers and returns the rest." alt="" coords="223,5,408,32"/>
 <area shape="rect" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="231,56,400,83"/>
 </map>
 </div>
@@ -1852,7 +1852,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00259">str::parse::multipleUints()</a>, <a class="el" href="iff_8h_source.html#l00087">str::iff::stringContains()</a>, and <a class="el" href="str_8h_source.html#l00075">str::stringToLower()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00257">str::parse::multipleUints()</a>, <a class="el" href="iff_8h_source.html#l00085">str::iff::stringContains()</a>, and <a class="el" href="str_8h_source.html#l00073">str::stringToLower()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1861,7 +1861,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,56,156,83"/>
 <area shape="rect" href="namespacestr_1_1parse.html#a654d50b4a95fff1bab5647f7b96b885c" title=" " alt="" coords="204,5,383,32"/>
 <area shape="rect" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf" title="Returns false. End of recursion for template." alt="" coords="212,56,375,83"/>
-<area shape="rect" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting std::string." alt="" coords="225,107,362,133"/>
+<area shape="rect" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="225,107,362,133"/>
 </map>
 </div>
 
@@ -1908,7 +1908,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00222">str::parse::multipleInts()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1962,7 +1962,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parse_8h_source.html#l00222">str::parse::multipleInts()</a>.</p>
+<p class="reference">References <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1998,7 +1998,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xusp&quot;</span>)</div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
 <div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>,<span class="stringliteral">&quot;+&quot;</span>)</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>, <span class="stringliteral">&quot; + &quot;</span>)</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            )</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        ) {</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a> = <a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a>;</div>
@@ -2029,7 +2029,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown architecture: \&quot;&quot;</span>).append(arch).append(<span class="stringliteral">&quot;\&quot;.&quot;</span>));</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="iff_8h_source.html#l00087">str::iff::stringContains()</a>, and <a class="el" href="str_8h_source.html#l00075">str::stringToLower()</a>.</p>
+<p class="reference">References <a class="el" href="iff_8h_source.html#l00085">str::iff::stringContains()</a>, and <a class="el" href="str_8h_source.html#l00073">str::stringToLower()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2037,7 +2037,7 @@ Here is the call graph for this function:</div>
 <map name="classbyteman_a107ce59697d0932bb45f5b4db36aec63_cgraph" id="classbyteman_a107ce59697d0932bb45f5b4db36aec63_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,192,57"/>
 <area shape="rect" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf" title="Returns false. End of recursion for template." alt="" coords="240,5,403,32"/>
-<area shape="rect" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting std::string." alt="" coords="253,56,390,83"/>
+<area shape="rect" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="253,56,390,83"/>
 </map>
 </div>
 
@@ -2081,61 +2081,61 @@ Here is the call graph for this function:</div>
 </ul>
 </div><!-- contents -->
 <div class="ttc" id="aclassbyteman_html_a83049c7135e2c9070dcc8c59d0f27a12"><div class="ttname"><a href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a></div><div class="ttdeci">void parseMerge(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00350">byteman.cpp:350</a></div></div>
-<div class="ttc" id="astructCoord2D_html"><div class="ttname"><a href="structCoord2D.html">Coord2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00024">Coords.h:24</a></div></div>
+<div class="ttc" id="astructCoord2D_html"><div class="ttname"><a href="structCoord2D.html">Coord2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00022">Coords.h:22</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ac050b5f18d6d27f17718243c88156f3d"><div class="ttname"><a href="classbyteman.html#ac050b5f18d6d27f17718243c88156f3d">byteman::helpWarn</a></div><div class="ttdeci">void helpWarn(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00146">help.cpp:146</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a7ff9beec60180e0b89c025f18d6d5179"><div class="ttname"><a href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a></div><div class="ttdeci">#define EXECUTABLE</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00029">help.cpp:29</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a4f7b4915572e137b25c7889c5c37ad1b"><div class="ttname"><a href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">byteman::selectedArchitecture</a></div><div class="ttdeci">enum byteman::Architecture selectedArchitecture</div></div>
-<div class="ttc" id="anamespacestr_html_a0bd38fabeadbabca285e6dd14d8cb1e3"><div class="ttname"><a href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">str::stringToLower</a></div><div class="ttdeci">std::string stringToLower(std::string str)</div><div class="ttdoc">Replaces all uppercase characters in str with lowercase and returns the resulting std::string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00075">str.h:75</a></div></div>
+<div class="ttc" id="anamespacestr_html_a0bd38fabeadbabca285e6dd14d8cb1e3"><div class="ttname"><a href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">str::stringToLower</a></div><div class="ttdeci">std::string stringToLower(std::string str)</div><div class="ttdoc">Replaces all uppercase characters in str with lowercase and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00073">str.h:73</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a6c94000cc7cb012e29a875e2ee687269"><div class="ttname"><a href="classbyteman.html#a6c94000cc7cb012e29a875e2ee687269">byteman::helpStdin</a></div><div class="ttdeci">void helpStdin(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00439">help.cpp:439</a></div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_ae54683f4d2e705bb339e7407b58bc3de"><div class="ttname"><a href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de">str::parse::allStringWords</a></div><div class="ttdeci">std::string allStringWords(std::string s)</div><div class="ttdoc">Parses a std::string s, removes all integers and returns the rest.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00087">parse.h:87</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_ae54683f4d2e705bb339e7407b58bc3de"><div class="ttname"><a href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de">str::parse::allStringWords</a></div><div class="ttdeci">std::string allStringWords(std::string s)</div><div class="ttdoc">Parses a string s, removes all integers and returns the rest.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00085">parse.h:85</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a941680513dbd6ecd7a3573971369539d"><div class="ttname"><a href="classbyteman.html#a941680513dbd6ecd7a3573971369539d">byteman::helpHelp</a></div><div class="ttdeci">void helpHelp(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00284">help.cpp:284</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a6d4e382b4d1ff6677b84f14c2ba7a004"><div class="ttname"><a href="classbyteman.html#a6d4e382b4d1ff6677b84f14c2ba7a004">byteman::parseBlank</a></div><div class="ttdeci">void parseBlank(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00237">byteman.cpp:237</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a2815aac7b3dea2ade69348801070d928"><div class="ttname"><a href="classbyteman.html#a2815aac7b3dea2ade69348801070d928">byteman::parseVerbose</a></div><div class="ttdeci">void parseVerbose(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00165">byteman.cpp:165</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a6f4db0b8a5d11a085e15dfa29f16e2f3"><div class="ttname"><a href="classbyteman.html#a6f4db0b8a5d11a085e15dfa29f16e2f3">byteman::helpDevice</a></div><div class="ttdeci">void helpDevice(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00250">help.cpp:250</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5aa78d1848929c56da1172030a4e85278f"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aa78d1848929c56da1172030a4e85278f">byteman::Architecture::Xilinx_UltraScale</a></div><div class="ttdeci">@ Xilinx_UltraScale</div></div>
 <div class="ttc" id="aclassbyteman_html_ad3f344f49e76466a2a71bc2cb9e6808b"><div class="ttname"><a href="classbyteman.html#ad3f344f49e76466a2a71bc2cb9e6808b">byteman::parseInput</a></div><div class="ttdeci">void parseInput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00321">byteman.cpp:321</a></div></div>
-<div class="ttc" id="anamespacestr_1_1iff_html_ae05af07c11dbccb79c738faeb1c7b2d4"><div class="ttname"><a href="namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4">str::iff::firstStringWordIs</a></div><div class="ttdeci">bool firstStringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)</div><div class="ttdoc">Returns true if std::string checkedString's first word matches fully any of std::strings nextString o...</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00123">iff.h:123</a></div></div>
+<div class="ttc" id="anamespacestr_1_1iff_html_ae05af07c11dbccb79c738faeb1c7b2d4"><div class="ttname"><a href="namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4">str::iff::firstStringWordIs</a></div><div class="ttdeci">bool firstStringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)</div><div class="ttdoc">Returns true if string checkedString's first word matches fully any of strings nextString or restStri...</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00121">iff.h:121</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a700076afbb7ae533069703fdadc0b714"><div class="ttname"><a href="classbyteman.html#a700076afbb7ae533069703fdadc0b714">byteman::helpMerge</a></div><div class="ttdeci">void helpMerge(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00339">help.cpp:339</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a73d0dd2f6e5ae00e3b1854924c8cf05b"><div class="ttname"><a href="classbyteman.html#a73d0dd2f6e5ae00e3b1854924c8cf05b">byteman::helpExit</a></div><div class="ttdeci">void helpExit(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00431">help.cpp:431</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ad8460d099fe8e5f5b2416491f5ab35f1"><div class="ttname"><a href="classbyteman.html#ad8460d099fe8e5f5b2416491f5ab35f1">byteman::parseDevice</a></div><div class="ttdeci">void parseDevice(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00293">byteman.cpp:293</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a946b36868ca6bb56bd61637a0430ceb2"><div class="ttname"><a href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a></div><div class="ttdeci">void parseOutput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00372">byteman.cpp:372</a></div></div>
-<div class="ttc" id="anamespacerect_html"><div class="ttname"><a href="namespacerect.html">rect</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00035">Coords.h:35</a></div></div>
+<div class="ttc" id="anamespacerect_html"><div class="ttname"><a href="namespacerect.html">rect</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00033">Coords.h:33</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aacff84465ee63b374e85acf9f5f96338"><div class="ttname"><a href="classbyteman.html#aacff84465ee63b374e85acf9f5f96338">byteman::help</a></div><div class="ttdeci">void help()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00040">help.cpp:40</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a859bdf4a8f0b7002b5341d093fe9e3d1"><div class="ttname"><a href="classbyteman.html#a859bdf4a8f0b7002b5341d093fe9e3d1">byteman::parseParamsAndRemoveThemFromString</a></div><div class="ttdeci">std::string parseParamsAndRemoveThemFromString(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00146">byteman.cpp:146</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a2801436e293cd1fb9c7855acde6a6c63"><div class="ttname"><a href="classbyteman.html#a2801436e293cd1fb9c7855acde6a6c63">byteman::helpBlank</a></div><div class="ttdeci">void helpBlank(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00195">help.cpp:195</a></div></div>
-<div class="ttc" id="astructCoord2D_html_a446bd3f197a1052f8d99f0a6d22406fc"><div class="ttname"><a href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">Coord2D::row</a></div><div class="ttdeci">int row</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00040">Coords.h:40</a></div></div>
+<div class="ttc" id="astructCoord2D_html_a446bd3f197a1052f8d99f0a6d22406fc"><div class="ttname"><a href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">Coord2D::row</a></div><div class="ttdeci">int row</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00038">Coords.h:38</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ae26e0eef1fd93fddc89f7b09f129e67e"><div class="ttname"><a href="classbyteman.html#ae26e0eef1fd93fddc89f7b09f129e67e">byteman::parseChange</a></div><div class="ttdeci">void parseChange(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00265">byteman.cpp:265</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_a3016870bd46ab8cf1444fa30522e80e5"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#a3016870bd46ab8cf1444fa30522e80e5">byteman::SelectedOptions::tempBufferSelected</a></div><div class="ttdeci">bool tempBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
-<div class="ttc" id="anamespacestr_1_1iff_html_aafd89106cce7b20f223e09b1aefed2ff"><div class="ttname"><a href="namespacestr_1_1iff.html#aafd89106cce7b20f223e09b1aefed2ff">str::iff::stringIs</a></div><div class="ttdeci">bool stringIs(std::string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00075">iff.h:75</a></div></div>
+<div class="ttc" id="anamespacestr_1_1iff_html_aafd89106cce7b20f223e09b1aefed2ff"><div class="ttname"><a href="namespacestr_1_1iff.html#aafd89106cce7b20f223e09b1aefed2ff">str::iff::stringIs</a></div><div class="ttdeci">bool stringIs(std::string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00073">iff.h:73</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a107e8194c9146830bc1ecf403ba5bc75"><div class="ttname"><a href="classbyteman.html#a107e8194c9146830bc1ecf403ba5bc75">byteman::helpVerbose</a></div><div class="ttdeci">void helpVerbose(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00122">help.cpp:122</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a05246bb3309d8f5cb2e346ae93789c7a"><div class="ttname"><a href="classbyteman.html#a05246bb3309d8f5cb2e346ae93789c7a">byteman::parseAssembly</a></div><div class="ttdeci">void parseAssembly(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00394">byteman.cpp:394</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a80cbf1fc8db8c830111669f9ba72312a"><div class="ttname"><a href="classbyteman.html#a80cbf1fc8db8c830111669f9ba72312a">byteman::helpOutput</a></div><div class="ttdeci">void helpOutput(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00370">help.cpp:370</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html_aa7ae52d9260d7c8eacd414e0927f1d2f"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f">byteman::SelectedOptions::mainBufferSelected</a></div><div class="ttdeci">bool mainBufferSelected</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00079">byteman.h:79</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a92e859c450f22d77a8010c1774af0755"><div class="ttname"><a href="classbyteman.html#a92e859c450f22d77a8010c1774af0755">byteman::parseRegion</a></div><div class="ttdeci">void parseRegion(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00213">byteman.cpp:213</a></div></div>
-<div class="ttc" id="astructCoord2D_html_a2c86b6f3509b769d25a7b363bceab8f1"><div class="ttname"><a href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">Coord2D::col</a></div><div class="ttdeci">int col</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00041">Coords.h:41</a></div></div>
+<div class="ttc" id="astructCoord2D_html_a2c86b6f3509b769d25a7b363bceab8f1"><div class="ttname"><a href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">Coord2D::col</a></div><div class="ttdeci">int col</div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00039">Coords.h:39</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aa45fc307adf7d0cea059ca8664c8df51"><div class="ttname"><a href="classbyteman.html#aa45fc307adf7d0cea059ca8664c8df51">byteman::parseTest</a></div><div class="ttdeci">void parseTest(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00412">byteman.cpp:412</a></div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_af9403a92efeee2059452578afc96dcbe"><div class="ttname"><a href="namespacestr_1_1parse.html#af9403a92efeee2059452578afc96dcbe">str::parse::nthStringWord</a></div><div class="ttdeci">std::string nthStringWord(std::string s, int n)</div><div class="ttdoc">Parses a std::string s, returns the n-th std::string word that is not an integer.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00063">parse.h:63</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_af9403a92efeee2059452578afc96dcbe"><div class="ttname"><a href="namespacestr_1_1parse.html#af9403a92efeee2059452578afc96dcbe">str::parse::nthStringWord</a></div><div class="ttdeci">std::string nthStringWord(std::string s, int n)</div><div class="ttdoc">Parses a string s, returns the n-th string word that is not an integer.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00061">parse.h:61</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5a5a050bf4ea731aaa7f7f5dfa1c54c121"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5a5a050bf4ea731aaa7f7f5dfa1c54c121">byteman::Architecture::Xilinx_Series7</a></div><div class="ttdeci">@ Xilinx_Series7</div></div>
 <div class="ttc" id="aclassbyteman_html_ad7c05da290d1b366f310a4c958943f19"><div class="ttname"><a href="classbyteman.html#ad7c05da290d1b366f310a4c958943f19">byteman::helpInput</a></div><div class="ttdeci">void helpInput(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00318">help.cpp:318</a></div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_af4246fb05f8a85ef7316146a8fc49276"><div class="ttname"><a href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00222">parse.h:222</a></div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_a0ce35f8ca1e3fe77627b504cc34f8d87"><div class="ttname"><a href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87">str::parse::lastStringWord</a></div><div class="ttdeci">std::string lastStringWord(std::string s)</div><div class="ttdoc">Parses a std::string s, removes all integers and returns the last of all std::string words.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00111">parse.h:111</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_af4246fb05f8a85ef7316146a8fc49276"><div class="ttname"><a href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a></div><div class="ttdeci">bool multipleInts(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00220">parse.h:220</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_a0ce35f8ca1e3fe77627b504cc34f8d87"><div class="ttname"><a href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87">str::parse::lastStringWord</a></div><div class="ttdeci">std::string lastStringWord(std::string s)</div><div class="ttdoc">Parses a string s, removes all integers and returns the last of all string words.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00109">parse.h:109</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5a88183b946cc5f0e8c96b2e66e1c74a7e">byteman::Architecture::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
 <div class="ttc" id="aclassbyteman_html_ac8b5db73d9c9ae0109477c0f19a1712c"><div class="ttname"><a href="classbyteman.html#ac8b5db73d9c9ae0109477c0f19a1712c">byteman::helpRegion</a></div><div class="ttdeci">void helpRegion(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00170">help.cpp:170</a></div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_adc058cae8a89baaae4b584f576373eaf"><div class="ttname"><a href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf">str::parse::allStringWordsWithoutLastStringWord</a></div><div class="ttdeci">std::string allStringWordsWithoutLastStringWord(std::string s)</div><div class="ttdoc">Parses a std::string s, removes all integers and the last std::string word. Returns the rest.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00135">parse.h:135</a></div></div>
-<div class="ttc" id="anamespacestr_html_ad52e17559eb9285babed0f83c11b136d"><div class="ttname"><a href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">str::findStringAndGetAllAfter</a></div><div class="ttdeci">std::string findStringAndGetAllAfter(std::string checkedString, std::string searchString)</div><div class="ttdoc">Finds std::string searchString inside checkedString and returns all to the right inside checkedString...</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00049">str.h:49</a></div></div>
-<div class="ttc" id="astructRect2D_html"><div class="ttname"><a href="structRect2D.html">Rect2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00030">Coords.h:30</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_adc058cae8a89baaae4b584f576373eaf"><div class="ttname"><a href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf">str::parse::allStringWordsWithoutLastStringWord</a></div><div class="ttdeci">std::string allStringWordsWithoutLastStringWord(std::string s)</div><div class="ttdoc">Parses a string s, removes all integers and the last string word. Returns the rest.</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00133">parse.h:133</a></div></div>
+<div class="ttc" id="anamespacestr_html_ad52e17559eb9285babed0f83c11b136d"><div class="ttname"><a href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">str::findStringAndGetAllAfter</a></div><div class="ttdeci">std::string findStringAndGetAllAfter(std::string checkedString, std::string searchString)</div><div class="ttdoc">Finds string searchString inside checkedString and returns all to the right inside checkedString....</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00047">str.h:47</a></div></div>
+<div class="ttc" id="astructRect2D_html"><div class="ttname"><a href="structRect2D.html">Rect2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00028">Coords.h:28</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1"><div class="ttname"><a href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">byteman::Architecture::Xilinx_UltraScalePlus</a></div><div class="ttdeci">@ Xilinx_UltraScalePlus</div></div>
 <div class="ttc" id="aclassbyteman_html_ac2aa63203e15597c3a0d30485dc06100"><div class="ttname"><a href="classbyteman.html#ac2aa63203e15597c3a0d30485dc06100">byteman::helpAssembly</a></div><div class="ttdeci">void helpAssembly(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00400">help.cpp:400</a></div></div>
-<div class="ttc" id="anamespacestr_html_a2d2adf32604f4236cf7b7ca879653fec"><div class="ttname"><a href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a></div><div class="ttdeci">std::string replace(std::string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri...</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00057">str.h:57</a></div></div>
+<div class="ttc" id="anamespacestr_html_a2d2adf32604f4236cf7b7ca879653fec"><div class="ttname"><a href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a></div><div class="ttdeci">std::string replace(std::string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in string str with newChar and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00055">str.h:55</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ac64836ef34f97e826b8508ace2d6deda"><div class="ttname"><a href="classbyteman.html#ac64836ef34f97e826b8508ace2d6deda">byteman::helpChange</a></div><div class="ttdeci">void helpChange(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00223">help.cpp:223</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a107ce59697d0932bb45f5b4db36aec63"><div class="ttname"><a href="classbyteman.html#a107ce59697d0932bb45f5b4db36aec63">byteman::setArchitecture</a></div><div class="ttdeci">void setArchitecture(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00441">byteman.cpp:441</a></div></div>
 <div class="ttc" id="aclassbyteman_html_afdf70f9837e97f9d91e5106c1ac58f24"><div class="ttname"><a href="classbyteman.html#afdf70f9837e97f9d91e5106c1ac58f24">byteman::parseWarn</a></div><div class="ttdeci">void parseWarn(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00189">byteman.cpp:189</a></div></div>
-<div class="ttc" id="anamespacestr_1_1parse_html_a654d50b4a95fff1bab5647f7b96b885c"><div class="ttname"><a href="namespacestr_1_1parse.html#a654d50b4a95fff1bab5647f7b96b885c">str::parse::multipleUints</a></div><div class="ttdeci">bool multipleUints(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00259">parse.h:259</a></div></div>
-<div class="ttc" id="anamespacestr_1_1iff_html_ae2f4c77f643c6f31ffa4ae0930b6d2bf"><div class="ttname"><a href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a></div><div class="ttdeci">bool stringContains(std::string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00087">iff.h:87</a></div></div>
+<div class="ttc" id="anamespacestr_1_1parse_html_a654d50b4a95fff1bab5647f7b96b885c"><div class="ttname"><a href="namespacestr_1_1parse.html#a654d50b4a95fff1bab5647f7b96b885c">str::parse::multipleUints</a></div><div class="ttdeci">bool multipleUints(std::stringstream &amp;ss)</div><div class="ttdef"><b>Definition:</b> <a href="parse_8h_source.html#l00257">parse.h:257</a></div></div>
+<div class="ttc" id="anamespacestr_1_1iff_html_ae2f4c77f643c6f31ffa4ae0930b6d2bf"><div class="ttname"><a href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a></div><div class="ttdeci">bool stringContains(std::string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00085">iff.h:85</a></div></div>
 <div class="ttc" id="aclassbyteman_html_af98bd594ba5427722390a965184a963c"><div class="ttname"><a href="classbyteman.html#af98bd594ba5427722390a965184a963c">byteman::options</a></div><div class="ttdeci">struct byteman::SelectedOptions options</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

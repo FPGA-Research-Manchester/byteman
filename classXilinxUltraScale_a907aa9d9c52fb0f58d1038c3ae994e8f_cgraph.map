@@ -1,8 +1,8 @@
 <map id="XilinxUltraScale::outputBitstreamSLRWrapUpSequence" name="XilinxUltraScale::outputBitstreamSLRWrapUpSequence">
 <area shape="rect" id="node1" title=" " alt="" coords="5,231,231,273"/>
 <area shape="rect" id="node2" href="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9" title=" " alt="" coords="743,188,859,215"/>
-<area shape="rect" id="node16" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file std::ofstream." alt="" coords="279,289,441,316"/>
-<area shape="rect" id="node21" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file std::ofstream." alt="" coords="503,239,627,265"/>
+<area shape="rect" id="node16" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="279,289,441,316"/>
+<area shape="rect" id="node21" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="503,239,627,265"/>
 <area shape="rect" id="node3" href="$namespaceFileIO.html#a2fa916aaa03f99c0a68d8a56093fea2f" title=" " alt="" coords="977,5,1159,32"/>
 <area shape="rect" id="node4" href="$namespaceFileIO.html#a2d67fb6a81fe99e987ddcfac643358e3" title=" " alt="" coords="969,57,1167,98"/>
 <area shape="rect" id="node9" href="$namespaceFileIO.html#ad3152bc558b95cb7f9c30ffac1226fc4" title=" " alt="" coords="963,122,1173,163"/>
@@ -16,7 +16,7 @@
 <area shape="rect" id="node13" href="$namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae" title=" " alt="" coords="1227,239,1439,265"/>
 <area shape="rect" id="node14" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1499,239,1711,265"/>
 <area shape="rect" id="node15" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1765,239,1925,265"/>
-<area shape="rect" id="node17" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file std::ofstream." alt="" coords="489,289,640,316"/>
+<area shape="rect" id="node17" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="489,289,640,316"/>
 <area shape="rect" id="node18" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="688,289,915,316"/>
 <area shape="rect" id="node19" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="973,289,1163,316"/>
 <area shape="rect" id="node20" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1257,289,1410,316"/>

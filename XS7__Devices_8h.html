@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -1217,17 +1217,17 @@ Macros</h2></td></tr>
 <tr class="separator:aed5f765f30204195a5924fa2348ce9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bfb8f35cb7b59d51b4232d36c5926af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a7bfb8f35cb7b59d51b4232d36c5926af">XS7_SETUP_DEVICE</a>(prefix)</td></tr>
 <tr class="separator:a7bfb8f35cb7b59d51b4232d36c5926af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8885710a5167e3d72b2d95c4f7291c5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(slrID,  prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a35645b33299ce6bae75167147a1b4d39">XS7_TOPROWS</a>(slrID,prefix##TOPROWS);<a class="el" href="XS7__Devices_8h.html#a119493227bbe1dda69c4c1b7aacf1546">XS7_BOTROWS</a>(slrID,prefix##BOTROWS);<a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}</td></tr>
+<tr class="memitem:a8885710a5167e3d72b2d95c4f7291c5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(slrID,  prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a35645b33299ce6bae75167147a1b4d39">XS7_TOPROWS</a>(slrID, prefix##TOPROWS);<a class="el" href="XS7__Devices_8h.html#a119493227bbe1dda69c4c1b7aacf1546">XS7_BOTROWS</a>(slrID, prefix##BOTROWS);<a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}</td></tr>
 <tr class="separator:a8885710a5167e3d72b2d95c4f7291c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbfb4431e8feb63a27fd928526a2f8f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#acbfb4431e8feb63a27fd928526a2f8f8">XS7_SETUP_SLR0</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(0, prefix##IDCODE, prefix##SLR0_START, prefix##SLR0_END);}</td></tr>
 <tr class="separator:acbfb4431e8feb63a27fd928526a2f8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefedca424aadaeec82a52a17db4aad94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(slrID,  idcodeVal,  fromRowVal,  toRowVal)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8c135b5f7738fd304a7c0d3a23f56ab9">XS7_IDCODE</a>(slrID,idcodeVal);<a class="el" href="XS7__Devices_8h.html#ae07022ca73a94b0e680a4f0276c3076f">XS7_SLRFROMROW</a>(slrID,fromRowVal);<a class="el" href="XS7__Devices_8h.html#ac22591e62da41c4a7ba0399963520aca">XS7_SLRTOROW</a>(slrID,toRowVal);}</td></tr>
+<tr class="memitem:aefedca424aadaeec82a52a17db4aad94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(slrID,  idcodeVal,  fromRowVal,  toRowVal)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8c135b5f7738fd304a7c0d3a23f56ab9">XS7_IDCODE</a>(slrID, idcodeVal);<a class="el" href="XS7__Devices_8h.html#ae07022ca73a94b0e680a4f0276c3076f">XS7_SLRFROMROW</a>(slrID, fromRowVal);<a class="el" href="XS7__Devices_8h.html#ac22591e62da41c4a7ba0399963520aca">XS7_SLRTOROW</a>(slrID, toRowVal);}</td></tr>
 <tr class="separator:aefedca424aadaeec82a52a17db4aad94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2018d7ad7b9b741593051786321537d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a2018d7ad7b9b741593051786321537d5">XS7_SETUP_SLRs_2</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#acbfb4431e8feb63a27fd928526a2f8f8">XS7_SETUP_SLR0</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(1,prefix);}</td></tr>
+<tr class="memitem:a2018d7ad7b9b741593051786321537d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a2018d7ad7b9b741593051786321537d5">XS7_SETUP_SLRs_2</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#acbfb4431e8feb63a27fd928526a2f8f8">XS7_SETUP_SLR0</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(1, prefix);}</td></tr>
 <tr class="separator:a2018d7ad7b9b741593051786321537d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff08a6a5db4fcf8fbf264ef097d12ff4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aff08a6a5db4fcf8fbf264ef097d12ff4">XS7_SETUP_SLRs_3</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2018d7ad7b9b741593051786321537d5">XS7_SETUP_SLRs_2</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(2,prefix);}</td></tr>
+<tr class="memitem:aff08a6a5db4fcf8fbf264ef097d12ff4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aff08a6a5db4fcf8fbf264ef097d12ff4">XS7_SETUP_SLRs_3</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2018d7ad7b9b741593051786321537d5">XS7_SETUP_SLRs_2</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(2, prefix);}</td></tr>
 <tr class="separator:aff08a6a5db4fcf8fbf264ef097d12ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ac18df10ed229c2a9b9fe8cdbb4707"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ae0ac18df10ed229c2a9b9fe8cdbb4707">XS7_SETUP_SLRs_4</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aff08a6a5db4fcf8fbf264ef097d12ff4">XS7_SETUP_SLRs_3</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(3,prefix);}</td></tr>
+<tr class="memitem:ae0ac18df10ed229c2a9b9fe8cdbb4707"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ae0ac18df10ed229c2a9b9fe8cdbb4707">XS7_SETUP_SLRs_4</a>(prefix)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aff08a6a5db4fcf8fbf264ef097d12ff4">XS7_SETUP_SLRs_3</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(3, prefix);}</td></tr>
 <tr class="separator:ae0ac18df10ed229c2a9b9fe8cdbb4707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae07022ca73a94b0e680a4f0276c3076f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ae07022ca73a94b0e680a4f0276c3076f">XS7_SLRFROMROW</a>(slrID,  value)&#160;&#160;&#160;{SLRinfo[slrID].fromRow = value;}</td></tr>
 <tr class="separator:ae07022ca73a94b0e680a4f0276c3076f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1235,33 +1235,33 @@ Macros</h2></td></tr>
 <tr class="separator:aa9c2d8618a067d377098b01b15f507a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac22591e62da41c4a7ba0399963520aca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ac22591e62da41c4a7ba0399963520aca">XS7_SLRTOROW</a>(slrID,  value)&#160;&#160;&#160;{SLRinfo[slrID].toRow = value;}</td></tr>
 <tr class="separator:ac22591e62da41c4a7ba0399963520aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3ed218f1281651fbf7637e34507c785"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ac3ed218f1281651fbf7637e34507c785">XS7_STRING</a>(rowID,  value)&#160;&#160;&#160;{strcpy(resourceString[rowID],value);}</td></tr>
+<tr class="memitem:ac3ed218f1281651fbf7637e34507c785"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ac3ed218f1281651fbf7637e34507c785">XS7_STRING</a>(rowID,  value)&#160;&#160;&#160;{strcpy(resourceString[rowID], value);}</td></tr>
 <tr class="separator:ac3ed218f1281651fbf7637e34507c785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abafeb77655a4adc8b003ffb910844a50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,  y)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ac3ed218f1281651fbf7637e34507c785">XS7_STRING</a>(y, x##STRING##y);}</td></tr>
 <tr class="separator:abafeb77655a4adc8b003ffb910844a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a501c2d3662a726e35bef795e48dcc6a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a501c2d3662a726e35bef795e48dcc6a3">XS7_STRING_CAT_1</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,0);}</td></tr>
+<tr class="memitem:a501c2d3662a726e35bef795e48dcc6a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a501c2d3662a726e35bef795e48dcc6a3">XS7_STRING_CAT_1</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 0);}</td></tr>
 <tr class="separator:a501c2d3662a726e35bef795e48dcc6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac264e699410874d5897f40d8ddd84f47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ac264e699410874d5897f40d8ddd84f47">XS7_STRING_CAT_10</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a84f5fd9f1795a77288411ba6187ab4cb">XS7_STRING_CAT_9</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,9);}</td></tr>
+<tr class="memitem:ac264e699410874d5897f40d8ddd84f47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ac264e699410874d5897f40d8ddd84f47">XS7_STRING_CAT_10</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a84f5fd9f1795a77288411ba6187ab4cb">XS7_STRING_CAT_9</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 9);}</td></tr>
 <tr class="separator:ac264e699410874d5897f40d8ddd84f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a210bb96142029775c97af2702599eae4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a210bb96142029775c97af2702599eae4">XS7_STRING_CAT_11</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ac264e699410874d5897f40d8ddd84f47">XS7_STRING_CAT_10</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,10);}</td></tr>
+<tr class="memitem:a210bb96142029775c97af2702599eae4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a210bb96142029775c97af2702599eae4">XS7_STRING_CAT_11</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ac264e699410874d5897f40d8ddd84f47">XS7_STRING_CAT_10</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 10);}</td></tr>
 <tr class="separator:a210bb96142029775c97af2702599eae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d81a63dbf5c01935b125988d8d3e7e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a9d81a63dbf5c01935b125988d8d3e7e3">XS7_STRING_CAT_12</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a210bb96142029775c97af2702599eae4">XS7_STRING_CAT_11</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,11);}</td></tr>
+<tr class="memitem:a9d81a63dbf5c01935b125988d8d3e7e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a9d81a63dbf5c01935b125988d8d3e7e3">XS7_STRING_CAT_12</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a210bb96142029775c97af2702599eae4">XS7_STRING_CAT_11</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 11);}</td></tr>
 <tr class="separator:a9d81a63dbf5c01935b125988d8d3e7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8bcb218c0ff24d328d7bdbfcdf6369"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a0d8bcb218c0ff24d328d7bdbfcdf6369">XS7_STRING_CAT_2</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,0);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,1);}</td></tr>
+<tr class="memitem:a0d8bcb218c0ff24d328d7bdbfcdf6369"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a0d8bcb218c0ff24d328d7bdbfcdf6369">XS7_STRING_CAT_2</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 0);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 1);}</td></tr>
 <tr class="separator:a0d8bcb218c0ff24d328d7bdbfcdf6369"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae49f9d36d070dcd57f58a3591023297d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ae49f9d36d070dcd57f58a3591023297d">XS7_STRING_CAT_3</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a0d8bcb218c0ff24d328d7bdbfcdf6369">XS7_STRING_CAT_2</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,2);}</td></tr>
+<tr class="memitem:ae49f9d36d070dcd57f58a3591023297d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#ae49f9d36d070dcd57f58a3591023297d">XS7_STRING_CAT_3</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a0d8bcb218c0ff24d328d7bdbfcdf6369">XS7_STRING_CAT_2</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 2);}</td></tr>
 <tr class="separator:ae49f9d36d070dcd57f58a3591023297d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec597add2ac35df9a26a7ec26528503d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aec597add2ac35df9a26a7ec26528503d">XS7_STRING_CAT_4</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ae49f9d36d070dcd57f58a3591023297d">XS7_STRING_CAT_3</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,3);}</td></tr>
+<tr class="memitem:aec597add2ac35df9a26a7ec26528503d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aec597add2ac35df9a26a7ec26528503d">XS7_STRING_CAT_4</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ae49f9d36d070dcd57f58a3591023297d">XS7_STRING_CAT_3</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 3);}</td></tr>
 <tr class="separator:aec597add2ac35df9a26a7ec26528503d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba4142eef9a5c1d366786b4f4a699240"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aba4142eef9a5c1d366786b4f4a699240">XS7_STRING_CAT_5</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aec597add2ac35df9a26a7ec26528503d">XS7_STRING_CAT_4</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,4);}</td></tr>
+<tr class="memitem:aba4142eef9a5c1d366786b4f4a699240"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#aba4142eef9a5c1d366786b4f4a699240">XS7_STRING_CAT_5</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aec597add2ac35df9a26a7ec26528503d">XS7_STRING_CAT_4</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 4);}</td></tr>
 <tr class="separator:aba4142eef9a5c1d366786b4f4a699240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53ffc97e16c3b9fc84732f74f58638a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a53ffc97e16c3b9fc84732f74f58638a5">XS7_STRING_CAT_6</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aba4142eef9a5c1d366786b4f4a699240">XS7_STRING_CAT_5</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,5);}</td></tr>
+<tr class="memitem:a53ffc97e16c3b9fc84732f74f58638a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a53ffc97e16c3b9fc84732f74f58638a5">XS7_STRING_CAT_6</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aba4142eef9a5c1d366786b4f4a699240">XS7_STRING_CAT_5</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 5);}</td></tr>
 <tr class="separator:a53ffc97e16c3b9fc84732f74f58638a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d89040eec030c5c7bf11081ce702ec6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a8d89040eec030c5c7bf11081ce702ec6">XS7_STRING_CAT_7</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a53ffc97e16c3b9fc84732f74f58638a5">XS7_STRING_CAT_6</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,6);}</td></tr>
+<tr class="memitem:a8d89040eec030c5c7bf11081ce702ec6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a8d89040eec030c5c7bf11081ce702ec6">XS7_STRING_CAT_7</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a53ffc97e16c3b9fc84732f74f58638a5">XS7_STRING_CAT_6</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 6);}</td></tr>
 <tr class="separator:a8d89040eec030c5c7bf11081ce702ec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2421b903cd8d3d961dc1fdf890076361"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a2421b903cd8d3d961dc1fdf890076361">XS7_STRING_CAT_8</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8d89040eec030c5c7bf11081ce702ec6">XS7_STRING_CAT_7</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,7);}</td></tr>
+<tr class="memitem:a2421b903cd8d3d961dc1fdf890076361"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a2421b903cd8d3d961dc1fdf890076361">XS7_STRING_CAT_8</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8d89040eec030c5c7bf11081ce702ec6">XS7_STRING_CAT_7</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 7);}</td></tr>
 <tr class="separator:a2421b903cd8d3d961dc1fdf890076361"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84f5fd9f1795a77288411ba6187ab4cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a84f5fd9f1795a77288411ba6187ab4cb">XS7_STRING_CAT_9</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2421b903cd8d3d961dc1fdf890076361">XS7_STRING_CAT_8</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,8);}</td></tr>
+<tr class="memitem:a84f5fd9f1795a77288411ba6187ab4cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a84f5fd9f1795a77288411ba6187ab4cb">XS7_STRING_CAT_9</a>(x)&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2421b903cd8d3d961dc1fdf890076361">XS7_STRING_CAT_8</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 8);}</td></tr>
 <tr class="separator:a84f5fd9f1795a77288411ba6187ab4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35645b33299ce6bae75167147a1b4d39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="XS7__Devices_8h.html#a35645b33299ce6bae75167147a1b4d39">XS7_TOPROWS</a>(slrID,  value)&#160;&#160;&#160;{SLRinfo[slrID].rowsInTopHalf = value;}</td></tr>
 <tr class="separator:a35645b33299ce6bae75167147a1b4d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -10655,11 +10655,11 @@ Enumerations</h2></td></tr>
 <div class="line">    XS7_PARTNAME(prefix##NAME);                                                                   \</div>
 <div class="line">    XS7_SLRNUM(prefix##SLRNUM);                                                                   \</div>
 <div class="line">    XS7_ROWNUM(prefix##ROWNUM);                                                                   \</div>
-<div class="line">    XS7_TOPROWS(0,prefix##TOPROWS);                                                                   \</div>
-<div class="line">    XS7_BOTROWS(0,prefix##BOTROWS);                                                                   \</div>
-<div class="line">    XS7_SLRFROMROW(0,0);                                                                          \</div>
-<div class="line">    XS7_SLRTOROW(0,prefix##ROWNUM-1);                                                             \</div>
-<div class="line">    XS7_IDCODE(0,prefix##IDCODE);                                                                 \</div>
+<div class="line">    XS7_TOPROWS(0, prefix##TOPROWS);                                                                   \</div>
+<div class="line">    XS7_BOTROWS(0, prefix##BOTROWS);                                                                   \</div>
+<div class="line">    XS7_SLRFROMROW(0, 0);                                                                          \</div>
+<div class="line">    XS7_SLRTOROW(0, prefix##ROWNUM-1);                                                             \</div>
+<div class="line">    XS7_IDCODE(0, prefix##IDCODE);                                                                 \</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="XS7__Devices_8h_source.html#l00144">144</a> of file <a class="el" href="XS7__Devices_8h_source.html">XS7_Devices.h</a>.</p>
@@ -10687,7 +10687,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a35645b33299ce6bae75167147a1b4d39">XS7_TOPROWS</a>(slrID,prefix##TOPROWS);<a class="el" href="XS7__Devices_8h.html#a119493227bbe1dda69c4c1b7aacf1546">XS7_BOTROWS</a>(slrID,prefix##BOTROWS);<a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a35645b33299ce6bae75167147a1b4d39">XS7_TOPROWS</a>(slrID, prefix##TOPROWS);<a class="el" href="XS7__Devices_8h.html#a119493227bbe1dda69c4c1b7aacf1546">XS7_BOTROWS</a>(slrID, prefix##BOTROWS);<a class="el" href="XS7__Devices_8h.html#aefedca424aadaeec82a52a17db4aad94">XS7_SETUP_SLR_EXPANDED</a>(slrID, prefix##IDCODE##slrID, prefix##SLR##slrID##_START, prefix##SLR##slrID##_END);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10749,7 +10749,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8c135b5f7738fd304a7c0d3a23f56ab9">XS7_IDCODE</a>(slrID,idcodeVal);<a class="el" href="XS7__Devices_8h.html#ae07022ca73a94b0e680a4f0276c3076f">XS7_SLRFROMROW</a>(slrID,fromRowVal);<a class="el" href="XS7__Devices_8h.html#ac22591e62da41c4a7ba0399963520aca">XS7_SLRTOROW</a>(slrID,toRowVal);}</td>
+          <td></td><td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8c135b5f7738fd304a7c0d3a23f56ab9">XS7_IDCODE</a>(slrID, idcodeVal);<a class="el" href="XS7__Devices_8h.html#ae07022ca73a94b0e680a4f0276c3076f">XS7_SLRFROMROW</a>(slrID, fromRowVal);<a class="el" href="XS7__Devices_8h.html#ac22591e62da41c4a7ba0399963520aca">XS7_SLRTOROW</a>(slrID, toRowVal);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10769,7 +10769,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">prefix</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#acbfb4431e8feb63a27fd928526a2f8f8">XS7_SETUP_SLR0</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(1,prefix);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#acbfb4431e8feb63a27fd928526a2f8f8">XS7_SETUP_SLR0</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(1, prefix);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10789,7 +10789,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">prefix</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2018d7ad7b9b741593051786321537d5">XS7_SETUP_SLRs_2</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(2,prefix);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2018d7ad7b9b741593051786321537d5">XS7_SETUP_SLRs_2</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(2, prefix);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10809,7 +10809,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">prefix</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aff08a6a5db4fcf8fbf264ef097d12ff4">XS7_SETUP_SLRs_3</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(3,prefix);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aff08a6a5db4fcf8fbf264ef097d12ff4">XS7_SETUP_SLRs_3</a>(prefix); <a class="el" href="XS7__Devices_8h.html#a8885710a5167e3d72b2d95c4f7291c5b">XS7_SETUP_SLR</a>(3, prefix);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10919,7 +10919,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;{strcpy(resourceString[rowID],value);}</td>
+          <td></td><td>&#160;&#160;&#160;{strcpy(resourceString[rowID], value);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10969,7 +10969,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,0);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 0);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10989,7 +10989,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a84f5fd9f1795a77288411ba6187ab4cb">XS7_STRING_CAT_9</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,9);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a84f5fd9f1795a77288411ba6187ab4cb">XS7_STRING_CAT_9</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 9);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11009,7 +11009,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ac264e699410874d5897f40d8ddd84f47">XS7_STRING_CAT_10</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,10);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ac264e699410874d5897f40d8ddd84f47">XS7_STRING_CAT_10</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 10);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11029,7 +11029,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a210bb96142029775c97af2702599eae4">XS7_STRING_CAT_11</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,11);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a210bb96142029775c97af2702599eae4">XS7_STRING_CAT_11</a>(x); <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 11);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11049,7 +11049,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,0);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,1);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 0);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 1);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11069,7 +11069,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a0d8bcb218c0ff24d328d7bdbfcdf6369">XS7_STRING_CAT_2</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,2);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a0d8bcb218c0ff24d328d7bdbfcdf6369">XS7_STRING_CAT_2</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 2);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11089,7 +11089,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ae49f9d36d070dcd57f58a3591023297d">XS7_STRING_CAT_3</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,3);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#ae49f9d36d070dcd57f58a3591023297d">XS7_STRING_CAT_3</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 3);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11109,7 +11109,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aec597add2ac35df9a26a7ec26528503d">XS7_STRING_CAT_4</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,4);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aec597add2ac35df9a26a7ec26528503d">XS7_STRING_CAT_4</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 4);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11129,7 +11129,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aba4142eef9a5c1d366786b4f4a699240">XS7_STRING_CAT_5</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,5);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#aba4142eef9a5c1d366786b4f4a699240">XS7_STRING_CAT_5</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 5);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11149,7 +11149,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a53ffc97e16c3b9fc84732f74f58638a5">XS7_STRING_CAT_6</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,6);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a53ffc97e16c3b9fc84732f74f58638a5">XS7_STRING_CAT_6</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 6);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11169,7 +11169,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8d89040eec030c5c7bf11081ce702ec6">XS7_STRING_CAT_7</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,7);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a8d89040eec030c5c7bf11081ce702ec6">XS7_STRING_CAT_7</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 7);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11189,7 +11189,7 @@ Enumerations</h2></td></tr>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2421b903cd8d3d961dc1fdf890076361">XS7_STRING_CAT_8</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x,8);}</td>
+          <td>&#160;&#160;&#160;{<a class="el" href="XS7__Devices_8h.html#a2421b903cd8d3d961dc1fdf890076361">XS7_STRING_CAT_8</a>(x);  <a class="el" href="XS7__Devices_8h.html#abafeb77655a4adc8b003ffb910844a50">XS7_STRING_CAT</a>(x, 8);}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11412,7 +11412,7 @@ Enumerations</h2></td></tr>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6ad0391b5168341975ca0056f91aa17f0e">XS7_DEVICE_VC7222</a>,</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6a8733e2361ca60278b4c48d4ae4e234be">XS7_DEVICE_ZC702</a>,</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6aa350d30b0f08380aa63ca7a359cb5b81">XS7_DEVICE_ZC706</a>,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;   </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6a3e848b5066bd20487eba9cdf7e0df836">XS7_DEVICE_MAX</a></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
 </div><!-- fragment -->
@@ -11501,7 +11501,7 @@ Enumerations</h2></td></tr>
 <div class="ttc" id="aXS7__Devices_8h_html_a6ed35ddb434fc9090e231ee51856a1a6ae5b2ceff43be161e33994833acbf4d31"><div class="ttname"><a href="XS7__Devices_8h.html#a6ed35ddb434fc9090e231ee51856a1a6ae5b2ceff43be161e33994833acbf4d31">XS7_DEVICE_CMOD_A35</a></div><div class="ttdeci">@ XS7_DEVICE_CMOD_A35</div><div class="ttdef"><b>Definition:</b> <a href="XS7__Devices_8h_source.html#l00106">XS7_Devices.h:106</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

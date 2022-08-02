@@ -1,5 +1,5 @@
 <map id="str::removeSpaces" name="str::removeSpaces">
-<area shape="rect" id="node1" title="Removes all space chars of str returns the resulting std::string." alt="" coords="253,78,396,105"/>
+<area shape="rect" id="node1" title="Removes all space chars of str returns the resulting string." alt="" coords="253,78,396,105"/>
 <area shape="rect" id="node2" href="$classXilinxSeries7.html#a3a86a4b901e87e80f8e1be3430ddc573" title=" " alt="" coords="15,5,196,47"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScale.html#a8373de2e75284ab358bb94d371feedc4" title=" " alt="" coords="5,71,205,112"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#aba3c5534838cd23ae706ccbc2b2c7cb6" title=" " alt="" coords="29,136,182,177"/>

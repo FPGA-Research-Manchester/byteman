@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -112,7 +112,7 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a537d04fbdfe634cc2ec57d80c6033b59">   38</a></span>&#160;<span class="preprocessor">    #define XS7_WORDS_BEFORE_CLK 50</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#ab503560d132762c37caa7d83555f4b13">   39</a></span>&#160;<span class="preprocessor">    #define XS7_WORDS_AT_CLK 1</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a54fba5cc48db3c2e00ba7f7f50043c3f">   40</a></span>&#160;<span class="preprocessor">    #define XS7_WORDS_AFTER_CLK 50</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">   41</a></span>&#160;<span class="preprocessor">    #define XS7_WORDS_PER_FRAME (XS7_WORDS_BEFORE_CLK+XS7_WORDS_AT_CLK+XS7_WORDS_AFTER_CLK)</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a4fec5e0993b3a8f951d22a68a445ec27">   41</a></span>&#160;<span class="preprocessor">    #define XS7_WORDS_PER_FRAME (XS7_WORDS_BEFORE_CLK + XS7_WORDS_AT_CLK + XS7_WORDS_AFTER_CLK)</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#ab98cb5d71e8fcc44dd5961249305ec5b">   42</a></span>&#160;<span class="preprocessor">    #define XS7_FRAMES_PER_BRAM_CONTENT_COLUMN 128</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a77d76158b312dd063831c35ab7241921">   43</a></span>&#160;<span class="preprocessor">    #define XS7_CLB_PER_CLOCK_REGION 50</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a097c054acc4fd1e53679e8d87cbd57f4">   44</a></span>&#160;<span class="preprocessor">    #define XS7_BRAM_PER_CLOCK_REGION 10</span></div>
@@ -131,13 +131,13 @@ $(function() {
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a182ca00de1f1d6fdb297cd6bef1bfc00">   57</a></span>&#160;<span class="preprocessor">    #define XS7_MINORADDRESS_SHIFT 0</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a71ddc52e486d2daca672bfe73c1143c7">   58</a></span>&#160;<span class="preprocessor">    #define XS7_MINORADDRESS_MASK 0x7F</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a4a222c84a1ee60068bd196c6b6df7839">   60</a></span>&#160;<span class="preprocessor">    #define archXS7template FABRIC_TEMPLATE(XS7_MAX_SLRS, XS7_MAX_ROWS, XS7_MAX_COLS, XS7_MAX_BRAM_COLS, XS7_BLOCKTYPE_MAX, XS7_BLOCKTYPE_LOGIC, XS7_BLOCKTYPE_BLOCKRAM,XS7_WORDS_BEFORE_CLK, XS7_WORDS_AT_CLK, XS7_WORDS_AFTER_CLK, XS7_WORDS_PER_FRAME,XS7_FRAMES_PER_BRAM_CONTENT_COLUMN, XS7_CLB_PER_CLOCK_REGION, XS7_BRAM_PER_CLOCK_REGION, XS7_EXTRA_FRAMES_PER_ROW, XS7_USESTOPBOTTOM, XS7_TOPBOTTOM_SHIFT, XS7_BLOCKTYPE_SHIFT, XS7_BLOCKTYPE_MASK, XS7_ROWADDRESS_SHIFT, XS7_ROWADDRESS_MASK, XS7_COLUMNADDRESS_SHIFT, XS7_COLUMNADDRESS_MASK, XS7_MINORADDRESS_SHIFT, XS7_MINORADDRESS_MASK)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="XS7__Fabric_8h.html#a4a222c84a1ee60068bd196c6b6df7839">   60</a></span>&#160;<span class="preprocessor">    #define archXS7template FABRIC_TEMPLATE(XS7_MAX_SLRS, XS7_MAX_ROWS, XS7_MAX_COLS, XS7_MAX_BRAM_COLS, XS7_BLOCKTYPE_MAX, XS7_BLOCKTYPE_LOGIC, XS7_BLOCKTYPE_BLOCKRAM, XS7_WORDS_BEFORE_CLK, XS7_WORDS_AT_CLK, XS7_WORDS_AFTER_CLK, XS7_WORDS_PER_FRAME, XS7_FRAMES_PER_BRAM_CONTENT_COLUMN, XS7_CLB_PER_CLOCK_REGION, XS7_BRAM_PER_CLOCK_REGION, XS7_EXTRA_FRAMES_PER_ROW, XS7_USESTOPBOTTOM, XS7_TOPBOTTOM_SHIFT, XS7_BLOCKTYPE_SHIFT, XS7_BLOCKTYPE_MASK, XS7_ROWADDRESS_SHIFT, XS7_ROWADDRESS_MASK, XS7_COLUMNADDRESS_SHIFT, XS7_COLUMNADDRESS_MASK, XS7_MINORADDRESS_SHIFT, XS7_MINORADDRESS_MASK)</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif//S7_FABRIC_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

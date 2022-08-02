@@ -1,5 +1,5 @@
 <map id="str::iff::firstStringWordIs" name="str::iff::firstStringWordIs">
-<area shape="rect" id="node1" title="Returns true if std::string checkedString&#39;s first word matches fully any of std::strings nextString o..." alt="" coords="280,5,455,32"/>
+<area shape="rect" id="node1" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="280,5,455,32"/>
 <area shape="rect" id="node2" href="$classbyteman.html#ac520ea42eff6df054ee77d730fb63b37" title=" " alt="" coords="108,5,232,32"/>
 <area shape="rect" id="node3" href="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,5,60,32"/>
 </map>

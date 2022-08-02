@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a7f957ccb62487e68e937a88173e75387">   36</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_BEFORE_CLK 45</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a3b64319fd53b310841bfd2895a2516b6">   37</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_AT_CLK 3</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a133a90b216875829c3a5fa831b18e83c">   38</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_AFTER_CLK 45</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">   39</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_PER_FRAME (XUSP_WORDS_BEFORE_CLK+XUSP_WORDS_AT_CLK+XUSP_WORDS_AFTER_CLK)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a4b915af6c17d4c85911e619f19286caa">   39</a></span>&#160;<span class="preprocessor">    #define XUSP_WORDS_PER_FRAME (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK + XUSP_WORDS_AFTER_CLK)</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a775235d81c097b48fec3076dffc7992f">   40</a></span>&#160;<span class="preprocessor">    #define XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN 256</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a8d94c1990f84570c6d4871cc956a50d1">   41</a></span>&#160;<span class="preprocessor">    #define XUSP_CLB_PER_CLOCK_REGION 60</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a1f792a46a032c65d4198fcd2ae605fbb">   42</a></span>&#160;<span class="preprocessor">    #define XUSP_BRAM_PER_CLOCK_REGION 12</span></div>
@@ -129,13 +129,13 @@ $(function() {
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a7a46363f486fd2333d1ab1701fdf8489">   55</a></span>&#160;<span class="preprocessor">    #define XUSP_MINORADDRESS_SHIFT 0</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#af6ae4abd602ad68a81361b4e55cfa73f">   56</a></span>&#160;<span class="preprocessor">    #define XUSP_MINORADDRESS_MASK 0xFF</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a760792bbca94175f6a3227154c1a0a5a">   58</a></span>&#160;<span class="preprocessor">    #define archXUSPtemplate FABRIC_TEMPLATE(XUSP_MAX_SLRS, XUSP_MAX_ROWS, XUSP_MAX_COLS, XUSP_MAX_BRAM_COLS, XUSP_BLOCKTYPE_MAX, XUSP_BLOCKTYPE_LOGIC, XUSP_BLOCKTYPE_BLOCKRAM,XUSP_WORDS_BEFORE_CLK, XUSP_WORDS_AT_CLK, XUSP_WORDS_AFTER_CLK, XUSP_WORDS_PER_FRAME,XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN, XUSP_CLB_PER_CLOCK_REGION, XUSP_BRAM_PER_CLOCK_REGION, XUSP_EXTRA_FRAMES_PER_ROW, XUSP_USESTOPBOTTOM, XUSP_TOPBOTTOM_SHIFT, XUSP_BLOCKTYPE_SHIFT, XUSP_BLOCKTYPE_MASK, XUSP_ROWADDRESS_SHIFT, XUSP_ROWADDRESS_MASK, XUSP_COLUMNADDRESS_SHIFT, XUSP_COLUMNADDRESS_MASK, XUSP_MINORADDRESS_SHIFT, XUSP_MINORADDRESS_MASK)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="XUSP__Fabric_8h.html#a760792bbca94175f6a3227154c1a0a5a">   58</a></span>&#160;<span class="preprocessor">    #define archXUSPtemplate FABRIC_TEMPLATE(XUSP_MAX_SLRS, XUSP_MAX_ROWS, XUSP_MAX_COLS, XUSP_MAX_BRAM_COLS, XUSP_BLOCKTYPE_MAX, XUSP_BLOCKTYPE_LOGIC, XUSP_BLOCKTYPE_BLOCKRAM, XUSP_WORDS_BEFORE_CLK, XUSP_WORDS_AT_CLK, XUSP_WORDS_AFTER_CLK, XUSP_WORDS_PER_FRAME, XUSP_FRAMES_PER_BRAM_CONTENT_COLUMN, XUSP_CLB_PER_CLOCK_REGION, XUSP_BRAM_PER_CLOCK_REGION, XUSP_EXTRA_FRAMES_PER_ROW, XUSP_USESTOPBOTTOM, XUSP_TOPBOTTOM_SHIFT, XUSP_BLOCKTYPE_SHIFT, XUSP_BLOCKTYPE_MASK, XUSP_ROWADDRESS_SHIFT, XUSP_ROWADDRESS_MASK, XUSP_COLUMNADDRESS_SHIFT, XUSP_COLUMNADDRESS_MASK, XUSP_MINORADDRESS_SHIFT, XUSP_MINORADDRESS_MASK)</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif//XUSP_FABRIC_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

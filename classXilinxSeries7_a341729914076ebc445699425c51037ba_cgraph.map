@@ -12,5 +12,5 @@
 <area shape="rect" id="node8" href="$namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="743,157,933,184"/>
 <area shape="rect" id="node10" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="758,208,918,235"/>
 <area shape="rect" id="node13" href="$namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="487,259,657,285"/>
-<area shape="rect" id="node14" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..." alt="" coords="525,309,619,336"/>
+<area shape="rect" id="node14" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="525,309,619,336"/>
 </map>

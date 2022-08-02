@@ -1,5 +1,5 @@
 <map id="str::findStringAndGetAllAfter" name="str::findStringAndGetAllAfter">
-<area shape="rect" id="node1" title="Finds std::string searchString inside checkedString and returns all to the right inside checkedString..." alt="" coords="280,5,455,47"/>
+<area shape="rect" id="node1" title="Finds string searchString inside checkedString and returns all to the right inside checkedString...." alt="" coords="280,5,455,47"/>
 <area shape="rect" id="node2" href="$classbyteman.html#ac520ea42eff6df054ee77d730fb63b37" title=" " alt="" coords="108,13,232,39"/>
 <area shape="rect" id="node3" href="$byteman_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,13,60,39"/>
 </map>

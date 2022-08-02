@@ -5,9 +5,9 @@ digraph "XCAP_writeMaskAndRegister"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="XCAP_writeMaskAndRegister",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate the encoding for writing a CAP register with a mask and write it to file std::ofstream."];
+  Node1 [label="XCAP_writeMaskAndRegister",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generate the encoding for writing a CAP register with a mask and write it to file ofstream."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="XCAP_writeRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96",tooltip="Generate the encoding for writing a CAP register and write it to file std::ofstream."];
+  Node2 [label="XCAP_writeRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96",tooltip="Generate the encoding for writing a CAP register and write it to file ofstream."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="FileIO::write32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9",tooltip=" "];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

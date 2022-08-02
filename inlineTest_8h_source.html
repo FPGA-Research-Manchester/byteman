@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -100,9 +100,9 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> m = 0 ; m &lt; LUT_numberOfFramesForResourceLetter[frameLetter] ; m++){</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> f = 0 ; f &lt; WORDS_PER_FRAME ; f++){</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                        <span class="keywordflow">if</span>(testValueEqual) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                            <a class="code" href="assert_8h.html#aafdfe753830f69fc14e2e178b0cf3bf7">throwingAssertPrintVar_5</a>(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f], ==, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                            <a class="code" href="assert_8h.html#a0b243a2d9b792eb78a1ce3746a1debd1">throwingAssertPrintVar_5</a>(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f], ==, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            <a class="code" href="assert_8h.html#aafdfe753830f69fc14e2e178b0cf3bf7">throwingAssertPrintVar_5</a>(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f], !=, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                            <a class="code" href="assert_8h.html#a0b243a2d9b792eb78a1ce3746a1debd1">throwingAssertPrintVar_5</a>(bitstreamCLB[r][c][m * WORDS_PER_FRAME + f], !=, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                    }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                }</div>
@@ -112,9 +112,9 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> m = 0 ; m &lt; FRAMES_PER_BRAM_CONTENT_COLUMN ; m++){</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">int</span> f = 0 ; f &lt; WORDS_PER_FRAME ; f++){</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    <span class="keywordflow">if</span>(testValueEqual){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <a class="code" href="assert_8h.html#aafdfe753830f69fc14e2e178b0cf3bf7">throwingAssertPrintVar_5</a>(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f], ==, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                        <a class="code" href="assert_8h.html#a0b243a2d9b792eb78a1ce3746a1debd1">throwingAssertPrintVar_5</a>(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f], ==, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <a class="code" href="assert_8h.html#aafdfe753830f69fc14e2e178b0cf3bf7">throwingAssertPrintVar_5</a>(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f], !=, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                        <a class="code" href="assert_8h.html#a0b243a2d9b792eb78a1ce3746a1debd1">throwingAssertPrintVar_5</a>(bitstreamBRAM[r][c][m * WORDS_PER_FRAME + f], !=, testValue, r, c, m, WORDS_PER_FRAME, f);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
@@ -126,10 +126,10 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="ainlineTest_8h_html_a38aadd629bd2ab8241e670ee8102dfc2"><div class="ttname"><a href="inlineTest_8h.html#a38aadd629bd2ab8241e670ee8102dfc2">ensureFramesAre</a></div><div class="ttdeci">void ensureFramesAre(bool usableFramesOnly, bool testValueEqual, uint32_t testValue)</div><div class="ttdef"><b>Definition:</b> <a href="inlineTest_8h_source.html#l00018">inlineTest.h:18</a></div></div>
-<div class="ttc" id="aassert_8h_html_aafdfe753830f69fc14e2e178b0cf3bf7"><div class="ttname"><a href="assert_8h.html#aafdfe753830f69fc14e2e178b0cf3bf7">throwingAssertPrintVar_5</a></div><div class="ttdeci">#define throwingAssertPrintVar_5(left, operator, right, var1, var2, var3, var4, var5)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00037">assert.h:37</a></div></div>
+<div class="ttc" id="aassert_8h_html_a0b243a2d9b792eb78a1ce3746a1debd1"><div class="ttname"><a href="assert_8h.html#a0b243a2d9b792eb78a1ce3746a1debd1">throwingAssertPrintVar_5</a></div><div class="ttdeci">#define throwingAssertPrintVar_5(left, operator,right, var1, var2, var3, var4, var5)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8h_source.html#l00037">assert.h:37</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -117,9 +117,9 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(initializedBitstreamParamsShortPartName != initializedResourceStringShortPartName){<span class="comment">//The device is changed</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        initializedBitstreamParamsShortPartName = initializedResourceStringShortPartName;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">for</span>((numberOfCols[0] = 0, numberOfFramesBeforeCol[0][0] = 0, numberOfBRAMCols[0] = 0) ; (uint8_t)resourceString[0][numberOfCols[0]] ; numberOfCols[0]++){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            numberOfFramesBeforeCol[0][numberOfCols[0]+1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            numberOfFramesBeforeCol[0][numberOfCols[0] + 1] = numberOfFramesBeforeCol[0][numberOfCols[0]] + LUT_numberOfFramesForResourceLetter[(uint8_t)resourceString[0][numberOfCols[0]]];</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            numberOfBRAMsBeforeCol[0][numberOfCols[0]] = numberOfBRAMCols[0];</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a>(resourceString[0][numberOfCols[0]], <span class="charliteral">&#39;A&#39;</span>, <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;C&#39;</span>, <span class="charliteral">&#39;D&#39;</span>, <span class="charliteral">&#39;2&#39;</span>)) <span class="comment">//A-D are BlockRAM columns, &#39;2&#39; is empty blockram column</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a>(resourceString[0][numberOfCols[0]], <span class="charliteral">&#39;A&#39;</span>,<span class="charliteral">&#39;B&#39;</span>,<span class="charliteral">&#39;C&#39;</span>,<span class="charliteral">&#39;D&#39;</span>,<span class="charliteral">&#39;2&#39;</span>)) <span class="comment">//A-D are BlockRAM columns, &#39;2&#39; is empty blockram column</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                numberOfBRAMCols[0]++;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> c = numberOfCols[0] + 1 ; c &lt; <a class="code" href="XUS__Fabric_8h.html#a23676340a1d62beca6fea3c52ca138aa">XUS_MAX_COLS</a> ; c++){</div>
@@ -183,7 +183,7 @@ $(function() {
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        bitstreamEnd = &amp;bitstreamBegin[offset];</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        bitstreamHasValidData = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        log(<span class="stringliteral">&quot;Reserved &quot;</span>+<a class="code" href="namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0">to_string</a>(clbPlaneSize + bramPlaneSize)+<span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span>+partName+<span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        log(<span class="stringliteral">&quot;Reserved &quot;</span> + <a class="code" href="namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0">to_string</a>(clbPlaneSize + bramPlaneSize) + <span class="stringliteral">&quot; words for the bitstream buffers of device \&quot;&quot;</span> + partName + <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
@@ -197,7 +197,7 @@ $(function() {
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassXilinxUltraScale_html_afbfcee7ccf3da6d19e592b8acd5c0c10"><div class="ttname"><a href="classXilinxUltraScale.html#afbfcee7ccf3da6d19e592b8acd5c0c10">XilinxUltraScale::XilinxUltraScale</a></div><div class="ttdeci">XilinxUltraScale()</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8cpp_source.html#l00031">XilinxUltraScale.cpp:31</a></div></div>
-<div class="ttc" id="anamespacestr_1_1iff_html_a13e4e72af819f11af13d70eaabd75344"><div class="ttname"><a href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a></div><div class="ttdeci">bool charIs(char checkedChar)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00131">iff.h:131</a></div></div>
+<div class="ttc" id="anamespacestr_1_1iff_html_a13e4e72af819f11af13d70eaabd75344"><div class="ttname"><a href="namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344">str::iff::charIs</a></div><div class="ttdeci">bool charIs(char checkedChar)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00129">iff.h:129</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScale_html_a90eabbb61cf23c68e7bc960b720d620e"><div class="ttname"><a href="classXilinxUltraScale.html#a90eabbb61cf23c68e7bc960b720d620e">XilinxUltraScale::ensureInitializedBitstreamArrays</a></div><div class="ttdeci">void ensureInitializedBitstreamArrays() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8cpp_source.html#l00077">XilinxUltraScale.cpp:77</a></div></div>
 <div class="ttc" id="aclassXilinxUltraScale_html_a5b099277c768a1fc55a573e2118e04f6"><div class="ttname"><a href="classXilinxUltraScale.html#a5b099277c768a1fc55a573e2118e04f6">XilinxUltraScale::initializeResourceStringParameters</a></div><div class="ttdeci">void initializeResourceStringParameters() override</div><div class="ttdef"><b>Definition:</b> <a href="XilinxUltraScale_8cpp_source.html#l00040">XilinxUltraScale.cpp:40</a></div></div>
 <div class="ttc" id="aXUS__Fabric_8h_html_a23676340a1d62beca6fea3c52ca138aa"><div class="ttname"><a href="XUS__Fabric_8h.html#a23676340a1d62beca6fea3c52ca138aa">XUS_MAX_COLS</a></div><div class="ttdeci">#define XUS_MAX_COLS</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00027">XUS_Fabric.h:27</a></div></div>
@@ -212,7 +212,7 @@ $(function() {
 <div class="ttc" id="aXUS__Fabric_8h_html_ad78f7053e139f2444d4e6191e73ad723"><div class="ttname"><a href="XUS__Fabric_8h.html#ad78f7053e139f2444d4e6191e73ad723">XUS_BLOCKTYPE_LOGIC</a></div><div class="ttdeci">#define XUS_BLOCKTYPE_LOGIC</div><div class="ttdef"><b>Definition:</b> <a href="XUS__Fabric_8h_source.html#l00034">XUS_Fabric.h:34</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -2,10 +2,10 @@
 <area shape="rect" id="node1" title=" " alt="" coords="5,206,227,247"/>
 <area shape="rect" id="node2" href="$inlineCAP_8h.html#ae8092a69273b62fab12d35355aca3940" title="Generate CTRL0 register write value." alt="" coords="299,87,461,113"/>
 <area shape="rect" id="node3" href="$inlineFAR_8h.html#a61741f875ae8335074f9a07d3b5cbc7e" title="Generate and return the encoding for a Far FAR instruction." alt="" coords="285,137,475,164"/>
-<area shape="rect" id="node5" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file std::ofstream." alt="" coords="299,340,461,367"/>
-<area shape="rect" id="node6" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file std::ofstream." alt="" coords="533,289,684,316"/>
-<area shape="rect" id="node24" href="$inlineCAP_8h.html#a82026709921b8d2c04dc152f3d6e43ce" title="Generate the encoding for writing a CAP register with a mask and write it to file std::ofstream." alt="" coords="275,239,485,265"/>
-<area shape="rect" id="node25" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file std::ofstream." alt="" coords="547,188,671,215"/>
+<area shape="rect" id="node5" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="299,340,461,367"/>
+<area shape="rect" id="node6" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="533,289,684,316"/>
+<area shape="rect" id="node24" href="$inlineCAP_8h.html#a82026709921b8d2c04dc152f3d6e43ce" title="Generate the encoding for writing a CAP register with a mask and write it to file ofstream." alt="" coords="275,239,485,265"/>
+<area shape="rect" id="node25" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="547,188,671,215"/>
 <area shape="rect" id="node4" href="$inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615" title=" " alt="" coords="555,137,663,164"/>
 <area shape="rect" id="node7" href="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9" title=" " alt="" coords="787,188,903,215"/>
 <area shape="rect" id="node21" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="732,289,959,316"/>

@@ -1,6 +1,6 @@
 <map id="XCAP_getType1ReadInstruction" name="XCAP_getType1ReadInstruction">
 <area shape="rect" id="node1" title="Generate and return the encoding for a type 1 Read instruction." alt="" coords="487,78,711,105"/>
-<area shape="rect" id="node2" href="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75" title="Generate the encoding for reading a CAP register and write it to file std::ofstream." alt="" coords="256,78,439,105"/>
+<area shape="rect" id="node2" href="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75" title="Generate the encoding for reading a CAP register and write it to file ofstream." alt="" coords="256,78,439,105"/>
 <area shape="rect" id="node3" href="$classXilinxSeries7.html#a55408605598e79ef1e48420adf6848dd" title=" " alt="" coords="15,5,198,47"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a7f5dd1945da9b8e8624369beb36c403d" title=" " alt="" coords="30,71,183,112"/>
 <area shape="rect" id="node5" href="$classXilinxUltraScale.html#afc4e9db4c8bcd178dc5cdbb383973051" title=" " alt="" coords="5,136,208,177"/>

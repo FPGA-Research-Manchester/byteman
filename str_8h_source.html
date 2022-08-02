@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -94,76 +94,74 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include&lt;algorithm&gt;</span> <span class="comment">//replace</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include&lt;string&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="iff_8h.html">str/iff.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parse_8h.html">str/parse.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/**************************************************************************/</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacestr.html">str</a>{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">findStringAndGetAllAfter</a>(std::string checkedString, std::string searchString)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">size_t</span> loc = checkedString.find(searchString);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(std::string::npos == loc)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> checkedString.substr(loc + searchString.size());</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">replace</a>(std::string <a class="code" href="namespacestr.html">str</a>, <span class="keywordtype">char</span> oldChar, <span class="keywordtype">char</span> newChar) </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">replace</a>(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(), oldChar, newChar);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">   49</a></span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead">removeSpaces</a>(std::string <a class="code" href="namespacestr.html">str</a>)    </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="namespacestr.html">str</a>.erase(remove_if(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(), ::isspace), <a class="code" href="namespacestr.html">str</a>.end());</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a21712cc67a6670df873466783b9b3fa0">stringToUpper</a>(std::string <a class="code" href="namespacestr.html">str</a>)   </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">   57</a></span>&#160;        transform(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(),<a class="code" href="namespacestr.html">str</a>.begin(), ::toupper);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">stringToLower</a>(std::string <a class="code" href="namespacestr.html">str</a>)   </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead">   63</a></span>&#160;        transform(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(),<a class="code" href="namespacestr.html">str</a>.begin(), ::tolower);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#aad7c661aca097180a22d90a4ab4710e3">removeExternalQuotes</a>(std::string <a class="code" href="namespacestr.html">str</a>)    </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="namespacestr.html#a21712cc67a6670df873466783b9b3fa0">   69</a></span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.empty())</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.front() == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="namespacestr.html">str</a>.erase(<a class="code" href="namespacestr.html">str</a>.begin());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.empty())</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">   75</a></span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.back() == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <a class="code" href="namespacestr.html">str</a>.erase(<a class="code" href="namespacestr.html">str</a>.end()-1);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacestr.html#a8d03acf9bf745c0e99da76c478c394e2">findAndReplace</a>(std::string &amp;<a class="code" href="namespacestr.html">str</a>, std::string toFind, std::string toReplaceWith)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="namespacestr.html#aad7c661aca097180a22d90a4ab4710e3">   81</a></span>&#160;        <span class="keywordtype">size_t</span> pos = <a class="code" href="namespacestr.html">str</a>.find(toFind);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">while</span>( pos != std::string::npos) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="namespacestr.html">str</a>.replace(pos, toFind.size(), toReplaceWith);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            pos = <a class="code" href="namespacestr.html">str</a>.find(toFind, pos + toReplaceWith.size());</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif //STR_H</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="iff_8h.html">str/iff.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parse_8h.html">str/parse.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">/**************************************************************************/</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacestr.html">str</a>{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">findStringAndGetAllAfter</a>(std::string checkedString, std::string searchString)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">size_t</span> loc = checkedString.find(searchString);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span>(std::string::npos == loc)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> checkedString.substr(loc + searchString.size());</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">replace</a>(std::string <a class="code" href="namespacestr.html">str</a>, <span class="keywordtype">char</span> oldChar, <span class="keywordtype">char</span> newChar) </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">replace</a>(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(), oldChar, newChar);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">   47</a></span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead">removeSpaces</a>(std::string <a class="code" href="namespacestr.html">str</a>)    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="namespacestr.html">str</a>.erase(remove_if(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(), ::isspace), <a class="code" href="namespacestr.html">str</a>.end());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a21712cc67a6670df873466783b9b3fa0">stringToUpper</a>(std::string <a class="code" href="namespacestr.html">str</a>)   </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">   55</a></span>&#160;        transform(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(), <a class="code" href="namespacestr.html">str</a>.begin(), ::toupper);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">stringToLower</a>(std::string <a class="code" href="namespacestr.html">str</a>)   </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead">   61</a></span>&#160;        transform(<a class="code" href="namespacestr.html">str</a>.begin(), <a class="code" href="namespacestr.html">str</a>.end(), <a class="code" href="namespacestr.html">str</a>.begin(), ::tolower);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacestr.html#aad7c661aca097180a22d90a4ab4710e3">removeExternalQuotes</a>(std::string <a class="code" href="namespacestr.html">str</a>)    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="namespacestr.html#a21712cc67a6670df873466783b9b3fa0">   67</a></span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.empty())</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.front() == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="namespacestr.html">str</a>.erase(<a class="code" href="namespacestr.html">str</a>.begin());</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.empty())</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">   73</a></span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr.html">str</a>.back() == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <a class="code" href="namespacestr.html">str</a>.erase(<a class="code" href="namespacestr.html">str</a>.end()-1);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacestr.html">str</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacestr.html#a8d03acf9bf745c0e99da76c478c394e2">findAndReplace</a>(std::string &amp;<a class="code" href="namespacestr.html">str</a>, std::string toFind, std::string toReplaceWith)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespacestr.html#aad7c661aca097180a22d90a4ab4710e3">   79</a></span>&#160;        <span class="keywordtype">size_t</span> pos = <a class="code" href="namespacestr.html">str</a>.find(toFind);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">while</span>( pos != std::string::npos) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="namespacestr.html">str</a>.replace(pos, toFind.size(), toReplaceWith);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            pos = <a class="code" href="namespacestr.html">str</a>.find(toFind, pos + toReplaceWith.size());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif //STR_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacestr_html_a0bd38fabeadbabca285e6dd14d8cb1e3"><div class="ttname"><a href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">str::stringToLower</a></div><div class="ttdeci">std::string stringToLower(std::string str)</div><div class="ttdoc">Replaces all uppercase characters in str with lowercase and returns the resulting std::string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00075">str.h:75</a></div></div>
-<div class="ttc" id="anamespacestr_html_a31ead85935ad1bc78eac2fea89af8ead"><div class="ttname"><a href="namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead">str::removeSpaces</a></div><div class="ttdeci">std::string removeSpaces(std::string str)</div><div class="ttdoc">Removes all space chars of str returns the resulting std::string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00063">str.h:63</a></div></div>
-<div class="ttc" id="anamespacestr_html_a8d03acf9bf745c0e99da76c478c394e2"><div class="ttname"><a href="namespacestr.html#a8d03acf9bf745c0e99da76c478c394e2">str::findAndReplace</a></div><div class="ttdeci">void findAndReplace(std::string &amp;str, std::string toFind, std::string toReplaceWith)</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00093">str.h:93</a></div></div>
+<div class="ttc" id="anamespacestr_html_a0bd38fabeadbabca285e6dd14d8cb1e3"><div class="ttname"><a href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">str::stringToLower</a></div><div class="ttdeci">std::string stringToLower(std::string str)</div><div class="ttdoc">Replaces all uppercase characters in str with lowercase and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00073">str.h:73</a></div></div>
+<div class="ttc" id="anamespacestr_html_a31ead85935ad1bc78eac2fea89af8ead"><div class="ttname"><a href="namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead">str::removeSpaces</a></div><div class="ttdeci">std::string removeSpaces(std::string str)</div><div class="ttdoc">Removes all space chars of str returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00061">str.h:61</a></div></div>
+<div class="ttc" id="anamespacestr_html_a8d03acf9bf745c0e99da76c478c394e2"><div class="ttname"><a href="namespacestr.html#a8d03acf9bf745c0e99da76c478c394e2">str::findAndReplace</a></div><div class="ttdeci">void findAndReplace(std::string &amp;str, std::string toFind, std::string toReplaceWith)</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00091">str.h:91</a></div></div>
 <div class="ttc" id="aparse_8h_html"><div class="ttname"><a href="parse_8h.html">parse.h</a></div></div>
-<div class="ttc" id="anamespacestr_html_a21712cc67a6670df873466783b9b3fa0"><div class="ttname"><a href="namespacestr.html#a21712cc67a6670df873466783b9b3fa0">str::stringToUpper</a></div><div class="ttdeci">std::string stringToUpper(std::string str)</div><div class="ttdoc">Replaces all lowercase characters in str with uppercase and returns the resulting std::string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00069">str.h:69</a></div></div>
-<div class="ttc" id="anamespacestr_html_aad7c661aca097180a22d90a4ab4710e3"><div class="ttname"><a href="namespacestr.html#aad7c661aca097180a22d90a4ab4710e3">str::removeExternalQuotes</a></div><div class="ttdeci">std::string removeExternalQuotes(std::string str)</div><div class="ttdoc">Removes double quotes from start and end of std::string str and returns the resulting std::string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00081">str.h:81</a></div></div>
-<div class="ttc" id="anamespacestr_html_ad52e17559eb9285babed0f83c11b136d"><div class="ttname"><a href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">str::findStringAndGetAllAfter</a></div><div class="ttdeci">std::string findStringAndGetAllAfter(std::string checkedString, std::string searchString)</div><div class="ttdoc">Finds std::string searchString inside checkedString and returns all to the right inside checkedString...</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00049">str.h:49</a></div></div>
-<div class="ttc" id="anamespacestr_html_a2d2adf32604f4236cf7b7ca879653fec"><div class="ttname"><a href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a></div><div class="ttdeci">std::string replace(std::string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri...</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00057">str.h:57</a></div></div>
-<div class="ttc" id="anamespacestr_html"><div class="ttname"><a href="namespacestr.html">str</a></div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00031">iff.h:31</a></div></div>
+<div class="ttc" id="anamespacestr_html_a21712cc67a6670df873466783b9b3fa0"><div class="ttname"><a href="namespacestr.html#a21712cc67a6670df873466783b9b3fa0">str::stringToUpper</a></div><div class="ttdeci">std::string stringToUpper(std::string str)</div><div class="ttdoc">Replaces all lowercase characters in str with uppercase and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00067">str.h:67</a></div></div>
+<div class="ttc" id="anamespacestr_html_aad7c661aca097180a22d90a4ab4710e3"><div class="ttname"><a href="namespacestr.html#aad7c661aca097180a22d90a4ab4710e3">str::removeExternalQuotes</a></div><div class="ttdeci">std::string removeExternalQuotes(std::string str)</div><div class="ttdoc">Removes double quotes from start and end of string str and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00079">str.h:79</a></div></div>
+<div class="ttc" id="anamespacestr_html_ad52e17559eb9285babed0f83c11b136d"><div class="ttname"><a href="namespacestr.html#ad52e17559eb9285babed0f83c11b136d">str::findStringAndGetAllAfter</a></div><div class="ttdeci">std::string findStringAndGetAllAfter(std::string checkedString, std::string searchString)</div><div class="ttdoc">Finds string searchString inside checkedString and returns all to the right inside checkedString....</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00047">str.h:47</a></div></div>
+<div class="ttc" id="anamespacestr_html_a2d2adf32604f4236cf7b7ca879653fec"><div class="ttname"><a href="namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec">str::replace</a></div><div class="ttdeci">std::string replace(std::string str, char oldChar, char newChar)</div><div class="ttdoc">Replaces all instances of oldChar in string str with newChar and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00055">str.h:55</a></div></div>
+<div class="ttc" id="anamespacestr_html"><div class="ttname"><a href="namespacestr.html">str</a></div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00029">iff.h:29</a></div></div>
 <div class="ttc" id="aiff_8h_html"><div class="ttname"><a href="iff_8h.html">iff.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

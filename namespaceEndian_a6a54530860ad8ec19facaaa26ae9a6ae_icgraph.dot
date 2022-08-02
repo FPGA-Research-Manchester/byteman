@@ -79,7 +79,7 @@ digraph "Endian::BigEndianToNative32"
   Node29 [label="writeBitstreamMainSingle\lRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineOutput_8h.html#af14ad53082c77eb7649df04c0ccd87bf",tooltip=" "];
   Node29 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node30 [label="XCAP_writeNOP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4",tooltip="Generate the encoding for NOP instructions and write them to file std::ofstream."];
+  Node30 [label="XCAP_writeNOP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4",tooltip="Generate the encoding for NOP instructions and write them to file ofstream."];
   Node30 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -121,12 +121,12 @@ digraph "Endian::BigEndianToNative32"
   Node30 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node30 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node46 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node46 [label="XCAP_writeReadRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75",tooltip="Generate the encoding for reading a CAP register and write it to file std::ofstream."];
+  Node46 [label="XCAP_writeReadRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75",tooltip="Generate the encoding for reading a CAP register and write it to file ofstream."];
   Node46 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node46 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node46 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node47 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node47 [label="XCAP_writeRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96",tooltip="Generate the encoding for writing a CAP register and write it to file std::ofstream."];
+  Node47 [label="XCAP_writeRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96",tooltip="Generate the encoding for writing a CAP register and write it to file ofstream."];
   Node47 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node47 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node47 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -141,7 +141,7 @@ digraph "Endian::BigEndianToNative32"
   Node47 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node47 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node47 -> Node48 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node48 [label="XCAP_writeCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b",tooltip="Generate the encoding for writing a CAP command and write it to file std::ofstream."];
+  Node48 [label="XCAP_writeCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b",tooltip="Generate the encoding for writing a CAP command and write it to file ofstream."];
   Node48 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node48 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node48 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -165,7 +165,7 @@ digraph "Endian::BigEndianToNative32"
   Node48 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node48 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node47 -> Node49 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node49 [label="XCAP_writeMaskAndRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a82026709921b8d2c04dc152f3d6e43ce",tooltip="Generate the encoding for writing a CAP register with a mask and write it to file std::ofstream."];
+  Node49 [label="XCAP_writeMaskAndRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a82026709921b8d2c04dc152f3d6e43ce",tooltip="Generate the encoding for writing a CAP register with a mask and write it to file ofstream."];
   Node49 -> Node39 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node49 -> Node38 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node49 -> Node37 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
@@ -173,12 +173,12 @@ digraph "Endian::BigEndianToNative32"
   Node49 -> Node45 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node49 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node50 [label="XCAP_writeRESERVED",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a7d11e6758a06aae668fed38db62a46b9",tooltip="Generate the encoding for Reserved instructions and write them to file std::ofstream."];
+  Node50 [label="XCAP_writeRESERVED",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a7d11e6758a06aae668fed38db62a46b9",tooltip="Generate the encoding for Reserved instructions and write them to file ofstream."];
   Node50 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node50 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node50 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node51 [label="XCAP_writeSelectRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a725ef00dd44fad9f8a7679ee1f0bc206",tooltip="Generate the encoding for \"selecting\" a CAP register and write it to file std::ofstream."];
+  Node51 [label="XCAP_writeSelectRegister",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineCAP_8h.html#a725ef00dd44fad9f8a7679ee1f0bc206",tooltip="Generate the encoding for \"selecting\" a CAP register and write it to file ofstream."];
   Node51 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node51 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node51 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

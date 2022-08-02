@@ -7,5 +7,5 @@ digraph "byteman::parseParamsAndRemoveThemFromString"
   rankdir="LR";
   Node1 [label="byteman::parseParamsAndRemove\lThemFromString",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec",tooltip="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..."];
+  Node2 [label="str::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec",tooltip="Replaces all instances of oldChar in string str with newChar and returns the resulting string."];
 }

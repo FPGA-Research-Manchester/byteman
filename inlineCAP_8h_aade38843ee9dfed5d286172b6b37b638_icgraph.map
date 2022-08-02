@@ -4,7 +4,7 @@
 <area shape="rect" id="node36" href="$inlineCAP_8h.html#a6f53e4d89bc4eca49b82ced4aa78e255" title="Generate and return the encoding for a type 1 Read instruction." alt="" coords="1783,429,2007,456"/>
 <area shape="rect" id="node38" href="$inlineCAP_8h.html#a7eceacafcb3e7d019fe4b8de84f39b26" title="Generate and return the encoding for a type 1 Reserved instruction." alt="" coords="1769,353,2021,380"/>
 <area shape="rect" id="node40" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="1782,480,2009,507"/>
-<area shape="rect" id="node3" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file std::ofstream." alt="" coords="1323,1112,1447,1139"/>
+<area shape="rect" id="node3" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="1323,1112,1447,1139"/>
 <area shape="rect" id="node4" href="$classXilinxSeries7.html#a55408605598e79ef1e48420adf6848dd" title=" " alt="" coords="999,371,1181,413"/>
 <area shape="rect" id="node5" href="$classXilinxUltraScale.html#afc4e9db4c8bcd178dc5cdbb383973051" title=" " alt="" coords="989,437,1191,478"/>
 <area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html#a7f5dd1945da9b8e8624369beb36c403d" title=" " alt="" coords="1013,306,1167,347"/>
@@ -37,12 +37,12 @@
 <area shape="rect" id="node32" href="$classXilinxSeries7.html#a8e89db38dbb60abae6aeec780fff5015" title=" " alt="" coords="15,560,227,587"/>
 <area shape="rect" id="node33" href="$classXilinxUltraScalePlus.html#a9ccfa49a6f644294caee371fec039174" title=" " alt="" coords="44,443,197,485"/>
 <area shape="rect" id="node34" href="$classXilinxUltraScale.html#af163f68ca538a15deb895f71c18e29f1" title=" " alt="" coords="5,509,236,536"/>
-<area shape="rect" id="node37" href="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75" title="Generate the encoding for reading a CAP register and write it to file std::ofstream." alt="" coords="1294,379,1477,405"/>
-<area shape="rect" id="node39" href="$inlineCAP_8h.html#a7d11e6758a06aae668fed38db62a46b9" title="Generate the encoding for Reserved instructions and write them to file std::ofstream." alt="" coords="1303,328,1468,355"/>
+<area shape="rect" id="node37" href="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75" title="Generate the encoding for reading a CAP register and write it to file ofstream." alt="" coords="1294,379,1477,405"/>
+<area shape="rect" id="node39" href="$inlineCAP_8h.html#a7d11e6758a06aae668fed38db62a46b9" title="Generate the encoding for Reserved instructions and write them to file ofstream." alt="" coords="1303,328,1468,355"/>
 <area shape="rect" id="node41" href="$inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="1539,379,1721,405"/>
 <area shape="rect" id="node50" href="$inlineCAP_8h.html#a4d5beb2ea0b41f6e58399b91f402018e" title="Generate and write only a type 1 FDRI command." alt="" coords="1563,480,1697,507"/>
-<area shape="rect" id="node52" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file std::ofstream." alt="" coords="1555,964,1705,991"/>
-<area shape="rect" id="node55" href="$inlineCAP_8h.html#a725ef00dd44fad9f8a7679ee1f0bc206" title="Generate the encoding for &quot;selecting&quot; a CAP register and write it to file std::ofstream." alt="" coords="1290,784,1481,811"/>
+<area shape="rect" id="node52" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="1555,964,1705,991"/>
+<area shape="rect" id="node55" href="$inlineCAP_8h.html#a725ef00dd44fad9f8a7679ee1f0bc206" title="Generate the encoding for &quot;selecting&quot; a CAP register and write it to file ofstream." alt="" coords="1290,784,1481,811"/>
 <area shape="rect" id="node42" href="$inlineInput_8h.html#ab5cfac2cc7fafc26cd6b69b74d0add29" title=" " alt="" coords="1299,176,1472,203"/>
 <area shape="rect" id="node43" href="$classXilinxSeries7.html#aa2872a891af5d1ebb0fcf39ac8693fa1" title=" " alt="" coords="989,107,1191,149"/>
 <area shape="rect" id="node44" href="$classXilinxUltraScale.html#a8df197754316355eae9b9f1d1fa8e44c" title=" " alt="" coords="979,173,1201,214"/>
@@ -52,6 +52,6 @@
 <area shape="rect" id="node48" href="$classXilinxUltraScale.html#a3c696df2b3cff66970de1bbbd63d2d0e" title=" " alt="" coords="673,56,900,83"/>
 <area shape="rect" id="node49" href="$classXilinxUltraScalePlus.html#aee626cbe876d1b294beff220903060a9" title=" " alt="" coords="710,107,863,149"/>
 <area shape="rect" id="node51" href="$inlineCAP_8h.html#a53b36536da1931208ed86ec193d53a96" title="Generate and write an FDRI command. Always uses type 2 command for simplicity." alt="" coords="1322,581,1449,608"/>
-<area shape="rect" id="node53" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file std::ofstream." alt="" coords="1304,1013,1467,1040"/>
-<area shape="rect" id="node54" href="$inlineCAP_8h.html#a82026709921b8d2c04dc152f3d6e43ce" title="Generate the encoding for writing a CAP register with a mask and write it to file std::ofstream." alt="" coords="1280,1772,1491,1799"/>
+<area shape="rect" id="node53" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="1304,1013,1467,1040"/>
+<area shape="rect" id="node54" href="$inlineCAP_8h.html#a82026709921b8d2c04dc152f3d6e43ce" title="Generate the encoding for writing a CAP register with a mask and write it to file ofstream." alt="" coords="1280,1772,1491,1799"/>
 </map>

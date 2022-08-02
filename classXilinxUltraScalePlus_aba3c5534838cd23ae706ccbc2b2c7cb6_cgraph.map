@@ -1,6 +1,6 @@
 <map id="XilinxUltraScalePlus::getDeviceByName" name="XilinxUltraScalePlus::getDeviceByName">
 <area shape="rect" id="node1" title=" " alt="" coords="5,49,159,90"/>
-<area shape="rect" id="node2" href="$namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead" title="Removes all space chars of str returns the resulting std::string." alt="" coords="217,5,359,32"/>
+<area shape="rect" id="node2" href="$namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead" title="Removes all space chars of str returns the resulting string." alt="" coords="217,5,359,32"/>
 <area shape="rect" id="node3" href="$namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf" title="Returns false. End of recursion for template." alt="" coords="207,56,369,83"/>
-<area shape="rect" id="node4" href="$namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting std::string." alt="" coords="219,107,357,133"/>
+<area shape="rect" id="node4" href="$namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="219,107,357,133"/>
 </map>

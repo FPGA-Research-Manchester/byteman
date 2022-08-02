@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a252bc8100dfaa56c47cda01331849ede">   37</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_BEFORE_CLK 60</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad01272ba0d76261e42a8b023b422906c">   38</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_AT_CLK 3</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ad09286c846c9a9b9c1546bef005b28dc">   39</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_AFTER_CLK 60</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a6e8704d4a39526836bb5171b357ece64">   40</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_PER_FRAME (XUS_WORDS_BEFORE_CLK+XUS_WORDS_AT_CLK+XUS_WORDS_AFTER_CLK)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a6e8704d4a39526836bb5171b357ece64">   40</a></span>&#160;<span class="preprocessor">    #define XUS_WORDS_PER_FRAME (XUS_WORDS_BEFORE_CLK + XUS_WORDS_AT_CLK + XUS_WORDS_AFTER_CLK)</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a19f35a19e334af26252750537dbf380d">   41</a></span>&#160;<span class="preprocessor">    #define XUS_FRAMES_PER_BRAM_CONTENT_COLUMN 128</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a1d8ba353268ff4316ea751b57b57d6ca">   42</a></span>&#160;<span class="preprocessor">    #define XUS_CLB_PER_CLOCK_REGION 60</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a8fe44139a1739b94992d8bf608637ba8">   43</a></span>&#160;<span class="preprocessor">    #define XUS_BRAM_PER_CLOCK_REGION 12</span></div>
@@ -130,13 +130,13 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#a5ece106108075e6c206e05b5bc0de032">   56</a></span>&#160;<span class="preprocessor">    #define XUS_MINORADDRESS_SHIFT 0</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#ae7cd7392c4e10de658e2828f1c4dae9f">   57</a></span>&#160;<span class="preprocessor">    #define XUS_MINORADDRESS_MASK 0x7F</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#af7977c0b96b2e14fe56bfa7388f59b96">   59</a></span>&#160;<span class="preprocessor">    #define archXUStemplate FABRIC_TEMPLATE(XUS_MAX_SLRS, XUS_MAX_ROWS, XUS_MAX_COLS, XUS_MAX_BRAM_COLS, XUS_BLOCKTYPE_MAX, XUS_BLOCKTYPE_LOGIC, XUS_BLOCKTYPE_BLOCKRAM,XUS_WORDS_BEFORE_CLK, XUS_WORDS_AT_CLK, XUS_WORDS_AFTER_CLK, XUS_WORDS_PER_FRAME,XUS_FRAMES_PER_BRAM_CONTENT_COLUMN, XUS_CLB_PER_CLOCK_REGION, XUS_BRAM_PER_CLOCK_REGION, XUS_EXTRA_FRAMES_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM_SHIFT, XUS_BLOCKTYPE_SHIFT, XUS_BLOCKTYPE_MASK, XUS_ROWADDRESS_SHIFT, XUS_ROWADDRESS_MASK, XUS_COLUMNADDRESS_SHIFT, XUS_COLUMNADDRESS_MASK, XUS_MINORADDRESS_SHIFT, XUS_MINORADDRESS_MASK)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="XUS__Fabric_8h.html#af7977c0b96b2e14fe56bfa7388f59b96">   59</a></span>&#160;<span class="preprocessor">    #define archXUStemplate FABRIC_TEMPLATE(XUS_MAX_SLRS, XUS_MAX_ROWS, XUS_MAX_COLS, XUS_MAX_BRAM_COLS, XUS_BLOCKTYPE_MAX, XUS_BLOCKTYPE_LOGIC, XUS_BLOCKTYPE_BLOCKRAM, XUS_WORDS_BEFORE_CLK, XUS_WORDS_AT_CLK, XUS_WORDS_AFTER_CLK, XUS_WORDS_PER_FRAME, XUS_FRAMES_PER_BRAM_CONTENT_COLUMN, XUS_CLB_PER_CLOCK_REGION, XUS_BRAM_PER_CLOCK_REGION, XUS_EXTRA_FRAMES_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM_SHIFT, XUS_BLOCKTYPE_SHIFT, XUS_BLOCKTYPE_MASK, XUS_ROWADDRESS_SHIFT, XUS_ROWADDRESS_MASK, XUS_COLUMNADDRESS_SHIFT, XUS_COLUMNADDRESS_MASK, XUS_MINORADDRESS_SHIFT, XUS_MINORADDRESS_MASK)</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif//XUS_FABRIC_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

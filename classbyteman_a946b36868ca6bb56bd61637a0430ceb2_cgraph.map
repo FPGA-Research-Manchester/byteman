@@ -1,6 +1,6 @@
 <map id="byteman::parseOutput" name="byteman::parseOutput">
 <area shape="rect" id="node1" title=" " alt="" coords="5,71,173,98"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf" title="Parses a std::string s, removes all integers and the last std::string word. Returns the rest." alt="" coords="222,5,407,47"/>
-<area shape="rect" id="node3" href="$namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a std::string s, removes all integers and returns the last of all std::string words." alt="" coords="221,71,408,98"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf" title="Parses a string s, removes all integers and the last string word. Returns the rest." alt="" coords="222,5,407,47"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="221,71,408,98"/>
 <area shape="rect" id="node4" href="$namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="230,122,399,149"/>
 </map>

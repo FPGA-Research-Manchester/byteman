@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #211)</span>
+   &#160;<span id="projectnumber">1.3 (Build #212)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -108,7 +108,7 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#ab3656e286bd06b47d5d237dd5e11b71a">   34</a></span>&#160;<span class="preprocessor">    #define XS6_WORDS_BEFORE_CLK 40</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a48ed84ad5a59803702d4abf8d5afa6be">   35</a></span>&#160;<span class="preprocessor">    #define XS6_WORDS_AT_CLK 1</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a513e26b82e456a11137af4f66f403587">   36</a></span>&#160;<span class="preprocessor">    #define XS6_WORDS_AFTER_CLK 40</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a5358accde4e9123929c292393a42a77d">   37</a></span>&#160;<span class="preprocessor">    #define XS6_WORDS_PER_FRAME (XS6_WORDS_BEFORE_CLK+XS6_WORDS_AT_CLK+XS6_WORDS_AFTER_CLK)</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a5358accde4e9123929c292393a42a77d">   37</a></span>&#160;<span class="preprocessor">    #define XS6_WORDS_PER_FRAME (XS6_WORDS_BEFORE_CLK + XS6_WORDS_AT_CLK + XS6_WORDS_AFTER_CLK)</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a7be25fdf53f7cb658930a3240cc4e7dd">   38</a></span>&#160;<span class="preprocessor">    #define XS6_FRAMES_PER_BRAM_CONTENT_COLUMN 128</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a23518ae078f6d7797de4c79645856fbe">   39</a></span>&#160;<span class="preprocessor">    #define XS6_CLB_PER_CLOCK_REGION 40</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#af6bf423e61b9d762f5283278bba8736d">   40</a></span>&#160;<span class="preprocessor">    #define XS6_BRAM_PER_CLOCK_REGION 10</span></div>
@@ -125,13 +125,13 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#ad3b1a1f6ba29e96a5213967ac4cd67d7">   51</a></span>&#160;<span class="preprocessor">    #define XS6_MINORADDRESS_SHIFT 0</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#ade6f3b7aa577b323122516e4a578bd04">   52</a></span>&#160;<span class="preprocessor">    #define XS6_MINORADDRESS_MASK 0x7F</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a7b4c8ce42c8b1e01bc18ccd22c5e96a7">   54</a></span>&#160;<span class="preprocessor">    #define archXS6template FABRIC_TEMPLATE(XS6_MAX_SLRS, XS6_MAX_ROWS, XS6_MAX_COLS, XS6_MAX_BRAM_COLS, XS6_BLOCKTYPE_LOGIC, XS6_BLOCKTYPE_BLOCKRAM,XS6_WORDS_BEFORE_CLK, XS6_WORDS_AT_CLK, XS6_WORDS_AFTER_CLK, XS6_WORDS_PER_FRAME,XS6_FRAMES_PER_BRAM_CONTENT_COLUMN, XS6_CLB_PER_CLOCK_REGION, XS6_BRAM_PER_CLOCK_REGION, XS6_EXTRA_FRAMES_PER_ROW, XS6_TOPBOTTOM_SHIFT, XS6_BLOCKTYPE_SHIFT, XS6_BLOCKTYPE_MASK, XS6_ROWADDRESS_SHIFT, XS6_ROWADDRESS_MASK, XS6_COLUMNADDRESS_SHIFT, XS6_COLUMNADDRESS_MASK, XS6_MINORADDRESS_SHIFT, XS6_MINORADDRESS_MASK)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="XS6__Fabric_8h.html#a7b4c8ce42c8b1e01bc18ccd22c5e96a7">   54</a></span>&#160;<span class="preprocessor">    #define archXS6template FABRIC_TEMPLATE(XS6_MAX_SLRS, XS6_MAX_ROWS, XS6_MAX_COLS, XS6_MAX_BRAM_COLS, XS6_BLOCKTYPE_LOGIC, XS6_BLOCKTYPE_BLOCKRAM, XS6_WORDS_BEFORE_CLK, XS6_WORDS_AT_CLK, XS6_WORDS_AFTER_CLK, XS6_WORDS_PER_FRAME, XS6_FRAMES_PER_BRAM_CONTENT_COLUMN, XS6_CLB_PER_CLOCK_REGION, XS6_BRAM_PER_CLOCK_REGION, XS6_EXTRA_FRAMES_PER_ROW, XS6_TOPBOTTOM_SHIFT, XS6_BLOCKTYPE_SHIFT, XS6_BLOCKTYPE_MASK, XS6_ROWADDRESS_SHIFT, XS6_ROWADDRESS_MASK, XS6_COLUMNADDRESS_SHIFT, XS6_COLUMNADDRESS_MASK, XS6_MINORADDRESS_SHIFT, XS6_MINORADDRESS_MASK)</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif//XS6_FABRIC_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 2 2022 10:23:39 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 2 2022 10:41:17 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

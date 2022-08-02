@@ -7,7 +7,7 @@ digraph "byteman::parseRegion"
   rankdir="LR";
   Node1 [label="byteman::parseRegion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="str::parse::allStringWords",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de",tooltip="Parses a std::string s, removes all integers and returns the rest."];
+  Node2 [label="str::parse::allStringWords",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de",tooltip="Parses a string s, removes all integers and returns the rest."];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="str::parse::multipleInts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276",tooltip=" "];
 }

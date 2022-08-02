@@ -1,5 +1,5 @@
 <map id="str::stringToLower" name="str::stringToLower">
-<area shape="rect" id="node1" title="Replaces all uppercase characters in str with lowercase and returns the resulting std::string." alt="" coords="356,173,493,199"/>
+<area shape="rect" id="node1" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="356,173,493,199"/>
 <area shape="rect" id="node2" href="$classXilinxSeries7.html#a3a86a4b901e87e80f8e1be3430ddc573" title=" " alt="" coords="117,5,299,47"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScale.html#a8373de2e75284ab358bb94d371feedc4" title=" " alt="" coords="108,71,308,112"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#aba3c5534838cd23ae706ccbc2b2c7cb6" title=" " alt="" coords="131,136,285,177"/>

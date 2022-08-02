@@ -20,10 +20,10 @@
 <area shape="rect" id="node17" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="2017,409,2177,436"/>
 <area shape="rect" id="node20" href="$namespacerect.html#a3fe341fa09e2c523a6dc3eda4118f050" title=" " alt="" coords="553,259,650,285"/>
 <area shape="rect" id="node21" href="$inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615" title=" " alt="" coords="547,5,655,32"/>
-<area shape="rect" id="node22" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file std::ofstream." alt="" coords="520,157,683,184"/>
-<area shape="rect" id="node23" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file std::ofstream." alt="" coords="741,140,892,167"/>
+<area shape="rect" id="node22" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="520,157,683,184"/>
+<area shape="rect" id="node23" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="741,140,892,167"/>
 <area shape="rect" id="node27" href="$inlineCAP_8h.html#a53b36536da1931208ed86ec193d53a96" title="Generate and write an FDRI command. Always uses type 2 command for simplicity." alt="" coords="538,208,665,235"/>
-<area shape="rect" id="node32" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file std::ofstream." alt="" coords="755,73,879,100"/>
+<area shape="rect" id="node32" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="755,73,879,100"/>
 <area shape="rect" id="node24" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="940,140,1167,167"/>
 <area shape="rect" id="node25" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="1225,73,1415,100"/>
 <area shape="rect" id="node26" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1509,99,1662,125"/>

@@ -1,5 +1,5 @@
 <map id="XCAP_writeNOP" name="XCAP_writeNOP">
-<area shape="rect" id="node1" title="Generate the encoding for NOP instructions and write them to file std::ofstream." alt="" coords="1268,845,1392,871"/>
+<area shape="rect" id="node1" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="1268,845,1392,871"/>
 <area shape="rect" id="node2" href="$classXilinxSeries7.html#a55408605598e79ef1e48420adf6848dd" title=" " alt="" coords="987,5,1169,47"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScale.html#afc4e9db4c8bcd178dc5cdbb383973051" title=" " alt="" coords="977,71,1179,112"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a7f5dd1945da9b8e8624369beb36c403d" title=" " alt="" coords="1001,136,1155,177"/>

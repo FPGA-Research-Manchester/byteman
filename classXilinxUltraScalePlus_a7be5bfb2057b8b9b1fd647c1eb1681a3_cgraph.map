@@ -1,5 +1,5 @@
 <map id="XilinxUltraScalePlus::assemblerParseHeader" name="XilinxUltraScalePlus::assemblerParseHeader">
 <area shape="rect" id="node1" title=" " alt="" coords="5,23,185,65"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a std::string s, removes all integers and returns the last of all std::string words." alt="" coords="233,5,420,32"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87" title="Parses a string s, removes all integers and returns the last of all string words." alt="" coords="233,5,420,32"/>
 <area shape="rect" id="node3" href="$namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf" title="Returns false. End of recursion for template." alt="" coords="245,56,408,83"/>
 </map>

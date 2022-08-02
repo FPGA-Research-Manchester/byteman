@@ -3,8 +3,8 @@
 <area shape="rect" id="node2" href="$classbyteman.html#a865b1b77969156eef90584612dae6614" title=" " alt="" coords="112,39,228,65"/>
 <area shape="rect" id="node4" href="$classbyteman.html#ac520ea42eff6df054ee77d730fb63b37" title=" " alt="" coords="108,123,232,149"/>
 <area shape="rect" id="node3" href="$classbyteman.html#aacff84465ee63b374e85acf9f5f96338" title=" " alt="" coords="309,5,425,32"/>
-<area shape="rect" id="node5" href="$namespacestr.html#ad52e17559eb9285babed0f83c11b136d" title="Finds std::string searchString inside checkedString and returns all to the right inside checkedString..." alt="" coords="280,57,455,98"/>
-<area shape="rect" id="node6" href="$namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4" title="Returns true if std::string checkedString&#39;s first word matches fully any of std::strings nextString o..." alt="" coords="280,123,455,149"/>
-<area shape="rect" id="node7" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..." alt="" coords="320,173,415,200"/>
-<area shape="rect" id="node8" href="$namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting std::string." alt="" coords="299,224,436,251"/>
+<area shape="rect" id="node5" href="$namespacestr.html#ad52e17559eb9285babed0f83c11b136d" title="Finds string searchString inside checkedString and returns all to the right inside checkedString...." alt="" coords="280,57,455,98"/>
+<area shape="rect" id="node6" href="$namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4" title="Returns true if string checkedString&#39;s first word matches fully any of strings nextString or restStri..." alt="" coords="280,123,455,149"/>
+<area shape="rect" id="node7" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="320,173,415,200"/>
+<area shape="rect" id="node8" href="$namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3" title="Replaces all uppercase characters in str with lowercase and returns the resulting string." alt="" coords="299,224,436,251"/>
 </map>

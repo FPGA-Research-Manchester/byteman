@@ -1,6 +1,6 @@
 <map id="XilinxUltraScale::assemblerAsmTo" name="XilinxUltraScale::assemblerAsmTo">
 <area shape="rect" id="node1" title=" " alt="" coords="5,530,208,571"/>
-<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a46601cfb98e089990fdb19655ce59695" title="Removes all std::string words from a given std::string s and returns the parsed arrsize number of int..." alt="" coords="265,5,440,32"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1parse.html#a46601cfb98e089990fdb19655ce59695" title="Removes all string words from a given string s and returns the parsed arrsize number of integers into..." alt="" coords="265,5,440,32"/>
 <area shape="rect" id="node3" href="$inlineCAP_8h.html#a4db13049c801b5294f3662c797970658" title=" " alt="" coords="281,107,424,133"/>
 <area shape="rect" id="node4" href="$namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf" title="Returns false. End of recursion for template." alt="" coords="519,107,681,133"/>
 <area shape="rect" id="node5" href="$inlineCAP_8h.html#aeef06b0e4b3e28e9b085974a3aec39f9" title=" " alt="" coords="289,56,416,83"/>
@@ -9,17 +9,17 @@
 <area shape="rect" id="node8" href="$inlineOutput_8h.html#a9b17679cb3f38c38b0faa8f0eff9fda6" title=" " alt="" coords="497,968,703,995"/>
 <area shape="rect" id="node9" href="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9" title=" " alt="" coords="819,779,935,805"/>
 <area shape="rect" id="node23" href="$inlineOutput_8h.html#a8fe62d8bda9cec6b6de8d1d13539044d" title=" " alt="" coords="256,867,449,893"/>
-<area shape="rect" id="node25" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in std::string str with newChar and returns the resulting std::stri..." alt="" coords="305,461,400,488"/>
+<area shape="rect" id="node25" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="305,461,400,488"/>
 <area shape="rect" id="node26" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="287,512,418,539"/>
 <area shape="rect" id="node27" href="$namespaceFileIO.html#ac50f56ad42f6971fc553591980e05776" title=" " alt="" coords="299,563,407,589"/>
 <area shape="rect" id="node28" href="$inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615" title=" " alt="" coords="299,613,407,640"/>
-<area shape="rect" id="node29" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file std::ofstream." alt="" coords="271,715,434,741"/>
-<area shape="rect" id="node30" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file std::ofstream." alt="" coords="525,715,675,741"/>
+<area shape="rect" id="node29" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="271,715,434,741"/>
+<area shape="rect" id="node30" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="525,715,675,741"/>
 <area shape="rect" id="node34" href="$inlineCAP_8h.html#a4d5beb2ea0b41f6e58399b91f402018e" title="Generate and write only a type 1 FDRI command." alt="" coords="533,613,667,640"/>
-<area shape="rect" id="node35" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file std::ofstream." alt="" coords="538,765,662,792"/>
-<area shape="rect" id="node37" href="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75" title="Generate the encoding for reading a CAP register and write it to file std::ofstream." alt="" coords="509,512,691,539"/>
-<area shape="rect" id="node39" href="$inlineCAP_8h.html#a7d11e6758a06aae668fed38db62a46b9" title="Generate the encoding for Reserved instructions and write them to file std::ofstream." alt="" coords="517,563,683,589"/>
-<area shape="rect" id="node41" href="$inlineCAP_8h.html#a725ef00dd44fad9f8a7679ee1f0bc206" title="Generate the encoding for &quot;selecting&quot; a CAP register and write it to file std::ofstream." alt="" coords="505,664,695,691"/>
+<area shape="rect" id="node35" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="538,765,662,792"/>
+<area shape="rect" id="node37" href="$inlineCAP_8h.html#aedc42f01b31e3e5ab31304a44c28bf75" title="Generate the encoding for reading a CAP register and write it to file ofstream." alt="" coords="509,512,691,539"/>
+<area shape="rect" id="node39" href="$inlineCAP_8h.html#a7d11e6758a06aae668fed38db62a46b9" title="Generate the encoding for Reserved instructions and write them to file ofstream." alt="" coords="517,563,683,589"/>
+<area shape="rect" id="node41" href="$inlineCAP_8h.html#a725ef00dd44fad9f8a7679ee1f0bc206" title="Generate the encoding for &quot;selecting&quot; a CAP register and write it to file ofstream." alt="" coords="505,664,695,691"/>
 <area shape="rect" id="node42" href="$inlineCAP_8h.html#a5fe8b103348dfce03a0202271e2fec64" title="Generate and write an SYNQ command." alt="" coords="287,917,419,944"/>
 <area shape="rect" id="node43" href="$inlineCAP_8h.html#a7f88f7623171587d4aed5d8ae0ab6886" title="Generate and write only a type 2 FDRI command." alt="" coords="533,1069,667,1096"/>
 <area shape="rect" id="node10" href="$namespaceFileIO.html#a2fa916aaa03f99c0a68d8a56093fea2f" title=" " alt="" coords="1065,849,1247,876"/>

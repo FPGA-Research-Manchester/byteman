@@ -1,5 +1,5 @@
 <map id="XCAP_writeReadRegister" name="XCAP_writeReadRegister">
-<area shape="rect" id="node1" title="Generate the encoding for reading a CAP register and write it to file std::ofstream." alt="" coords="5,209,188,236"/>
+<area shape="rect" id="node1" title="Generate the encoding for reading a CAP register and write it to file ofstream." alt="" coords="5,209,188,236"/>
 <area shape="rect" id="node2" href="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9" title=" " alt="" coords="290,159,406,185"/>
 <area shape="rect" id="node16" href="$inlineCAP_8h.html#a6f53e4d89bc4eca49b82ced4aa78e255" title="Generate and return the encoding for a type 1 Read instruction." alt="" coords="236,235,460,261"/>
 <area shape="rect" id="node3" href="$namespaceFileIO.html#a2fa916aaa03f99c0a68d8a56093fea2f" title=" " alt="" coords="523,5,704,32"/>

@@ -7,9 +7,9 @@ digraph "XilinxUltraScalePlus::getDeviceByName"
   rankdir="LR";
   Node1 [label="XilinxUltraScalePlus\l::getDeviceByName",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="str::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead",tooltip="Removes all space chars of str returns the resulting std::string."];
+  Node2 [label="str::removeSpaces",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a31ead85935ad1bc78eac2fea89af8ead",tooltip="Removes all space chars of str returns the resulting string."];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="str::iff::stringContains",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf",tooltip="Returns false. End of recursion for template."];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="str::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3",tooltip="Replaces all uppercase characters in str with lowercase and returns the resulting std::string."];
+  Node4 [label="str::stringToLower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3",tooltip="Replaces all uppercase characters in str with lowercase and returns the resulting string."];
 }
