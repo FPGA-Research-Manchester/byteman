@@ -47,7 +47,7 @@
 	#include "Devices/Xilinx/UltraScalePlus/XilinxUltraScalePlus.h"
 #endif
 
-using namespace std;
+
 
 class byteman
 {
@@ -80,24 +80,24 @@ class byteman
 			SelectedOptions():mainBufferSelected(false),tempBufferSelected(false){}
 		} options;
 		//parse
-		string parseParamsAndRemoveThemFromString(string);
+		std::string parseParamsAndRemoveThemFromString(std::string);
 		
-		void parse(string);
-		void setArchitecture(string);
-		void parseAssembly(string);
-		void parseOutput(string);
-		void parseMerge(string);
-		void parseInput(string);
-		void parseDevice(string);
-		void parseChange(string);
-		void parseBlank(string);
-		void parseRegion(string);
-		void parseWarn(string);
-		void parseVerbose(string);
+		void parse(std::string);
+		void setArchitecture(std::string);
+		void parseAssembly(std::string);
+		void parseOutput(std::string);
+		void parseMerge(std::string);
+		void parseInput(std::string);
+		void parseDevice(std::string);
+		void parseChange(std::string);
+		void parseBlank(std::string);
+		void parseRegion(std::string);
+		void parseWarn(std::string);
+		void parseVerbose(std::string);
 		
 		
-		void help(string, int);
-		void help(string);
+		void help(std::string, int);
+		void help(std::string);
 		void help();
 
 		void helpAssembly(bool=false);
@@ -115,7 +115,7 @@ class byteman
 		void helpStdin(bool=false);
 		
 		#if !defined(NDEBUG)
-		void parseTest(string);
+		void parseTest(std::string);
 		#endif
 };
 

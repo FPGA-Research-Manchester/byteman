@@ -21,13 +21,13 @@
  * @arg @c fin input file stream, which is left at the position following the
  * located sync command.
  *****************************************************************************/
-inline void parseBITheader(ifstream& fin, Endianness e)
+inline void parseBITheader(std::ifstream& fin, Endianness e)
 {
 	//.bit header c0nstant:
 	int headerConstTextLength = FileIO::read16(fin, e);
-	string headerConstText = FileIO::readString(fin, headerConstTextLength, e);
+	std::string headerConstText = FileIO::readString(fin, headerConstTextLength, e);
 	int headerConstText2Length = FileIO::read16(fin, e);
-	string headerConstText2 = FileIO::readString(fin, headerConstText2Length, e);
+	std::string headerConstText2 = FileIO::readString(fin, headerConstText2Length, e);
 	if((!((9 == headerConstTextLength) && ("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0" == headerConstText) && (1 == headerConstText2Length) && ("a" == headerConstText2))))
 		warn(".bit c0nstant header differs from expected.");
 	//.bit header vars:
@@ -80,9 +80,9 @@ inline void parseBITheader(ifstream& fin, Endianness e)
  * @arg @c fin input file stream. Gets fixed back to the original value before
  * leaving this function!
  *****************************************************************************/
-inline Endianness parseBitstreamEndianness(ifstream& fin)
+inline Endianness parseBitstreamEndianness(std::ifstream& fin)
 {
-	streamoff fileOffset = fin.tellg();
+	std::streamoff fileOffset = fin.tellg();
 	//Optional bitstream header
 	
 	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
@@ -91,7 +91,7 @@ inline Endianness parseBitstreamEndianness(ifstream& fin)
 	//Find sync
 	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
 		if(!fin.good())
-			throw runtime_error("Was unable to find input bitstream's SYNC command.");
+			throw std::runtime_error("Was unable to find input bitstream's SYNC command.");
 		int wordOld4 = FileIO::read32(fin, Endianness::NATIVE);
 		int wordOld3 = FileIO::read32(fin, Endianness::NATIVE);
 		int wordOld2 = FileIO::read32(fin, Endianness::NATIVE);
@@ -113,7 +113,7 @@ inline Endianness parseBitstreamEndianness(ifstream& fin)
 			returnVal = Endianness::LE_BS;
 			syncDetectionDone++;
 		} else
-			fin.seekg(-19,ios::cur);
+			fin.seekg(-19,std::ios::cur);
 	}
 	log("Detected file endianess: " + Endian::to_string(returnVal));
 	
@@ -128,7 +128,7 @@ inline Endianness parseBitstreamEndianness(ifstream& fin)
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
 
-bool findBitstreamSyncWord(ifstream& fin, Endianness e)
+bool findBitstreamSyncWord(std::ifstream& fin, Endianness e)
 {
 	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
 	//However we don't care about reading those
@@ -139,7 +139,7 @@ bool findBitstreamSyncWord(ifstream& fin, Endianness e)
 		if(word == XCAP_getSyncInstruction()){
 			return true;
 		} else
-			fin.seekg(-3,ios::cur);
+			fin.seekg(-3,std::ios::cur);
 	}
 	return false; //not going to be reached.
 }
@@ -151,7 +151,7 @@ bool findBitstreamSyncWord(ifstream& fin, Endianness e)
  * command and in a word-aligned position with the following instructions.
  *****************************************************************************/
 
-bool findBitstreamSyncSequence(ifstream& fin, Endianness e)
+bool findBitstreamSyncSequence(std::ifstream& fin, Endianness e)
 {
 	//Follow some 0xFF's and the bus width detection c0nstant "\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x44\x00\x22\x11\xBB\x00\x00\x00\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF"
 	//However we don't care about reading those
@@ -166,7 +166,7 @@ bool findBitstreamSyncSequence(ifstream& fin, Endianness e)
 		if(wordOld4 == 0x000000BB && wordOld3 == 0x11220044 && wordOld2 == 0xFFFFFFFF && wordOld1 == 0xFFFFFFFF && word == XCAP_getSyncInstruction()){
 			return true;
 		} else
-			fin.seekg(-19,ios::cur);
+			fin.seekg(-19,std::ios::cur);
 	}
 	return false; //not going to be reached.
 }
@@ -178,29 +178,29 @@ bool findBitstreamSyncSequence(ifstream& fin, Endianness e)
  * @arg @c fin input file stream. Gets fixed back to the original value before
  * leaving this function!
  *****************************************************************************/
-inline uint32_t parseBitstreamIDCODE(ifstream& fin, Endianness e)
+inline uint32_t parseBitstreamIDCODE(std::ifstream& fin, Endianness e)
 {
-	streamoff fileOffset = fin.tellg();
+	std::streamoff fileOffset = fin.tellg();
 	//Optional bitstream header
 	findBitstreamSyncSequence(fin, e);
 	uint32_t returnVal;
 	//Find sync
 	for(int syncDetectionDone = 0 ; !syncDetectionDone ; ){
 		if(!fin.good())
-			throw runtime_error("Was unable to find input bitstream's IDCODE command.");
+			throw std::runtime_error("Was unable to find input bitstream's IDCODE command.");
 		int word = FileIO::read32(fin, e);
 		if(XCAP_IDCODEInstruction() == word){
 			returnVal = FileIO::read32(fin, e);
 			syncDetectionDone++;
 		} else
-			fin.seekg(-3,ios::cur);
+			fin.seekg(-3,std::ios::cur);
 	}
 	
 	fin.seekg(fileOffset, fin.beg);
 	return returnVal;
 }
 
-inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
+inline void readBitstreamMain(std::ifstream& fin, Endianness bitstreamFileEndianness)
 {
 	int slr = 0;
 	XCAP::Register regAddr = XCAP::Register::UNDEFINED;
@@ -246,7 +246,7 @@ inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
 				} else if(instructionType == 2) {
 					wordCount = instructionPayload;
 				} else {
-					throw runtime_error("Bitstream has invalid instruction ("+to_string(instruction)+" @ "+to_string(fin.tellg())+") (invalid type).");
+					throw std::runtime_error("Bitstream has invalid instruction ("+std::to_string(instruction)+" @ "+std::to_string(fin.tellg())+") (invalid type).");
 				}
 				if(regAddr == XCAP::Register::MAGIC1){
 					slr++;
@@ -274,7 +274,7 @@ inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
 							*/
 						} else if(regAddr == XCAP::Register::FDRI){
 							if(wordCount % WORDS_PER_FRAME != 0)
-								throw runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
+								throw std::runtime_error("FDRI write of a partial frame was detected, which is currently not supported.");
 							if(shadowFrameValid){
 								throwingAssert(b, <, BLOCKTYPE_MAX);
 								throwingAssertPrintVar_1(r, >=, SLRinfo[slr].fromRow, slr);
@@ -287,7 +287,7 @@ inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
 									throwingAssert(m, <, FRAMES_PER_BRAM_CONTENT_COLUMN);
 									memcpy(&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], &shadowFrame, WORDS_PER_FRAME*4);
 								} else {
-									warn("Unknown BlockType("+to_string(b)+") written while reading bitstream file.");
+									warn("Unknown BlockType("+std::to_string(b)+") written while reading bitstream file.");
 								}
 								XCAP_IncrementFAR(slr, b, r, c, m);
 							}
@@ -299,7 +299,7 @@ inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
 									fin.read((char*)&bitstreamBRAM[r][c][m*WORDS_PER_FRAME], forwardShadowReg * WORDS_PER_FRAME * 4);
 								} else {
 									fin.ignore(forwardShadowReg * WORDS_PER_FRAME * 4);
-									warn("Unknown BlockType("+to_string(b)+") written while reading bitstream file.");
+									warn("Unknown BlockType("+std::to_string(b)+") written while reading bitstream file.");
 								}
 								for(int i = 0 ; i < forwardShadowReg ; i++){
 									XCAP_IncrementFAR(slr, b, r, c, m);
@@ -331,7 +331,7 @@ inline void readBitstreamMain(ifstream& fin, Endianness bitstreamFileEndianness)
 	bitstreamHasValidData = true;
 }
 
-inline void readBitstreamBIT(ifstream& fin)
+inline void readBitstreamBIT(std::ifstream& fin)
 {
 	Endianness bitstreamFileEndianness = parseBitstreamEndianness(fin);
 	
@@ -342,7 +342,7 @@ inline void readBitstreamBIT(ifstream& fin)
 	readBitstreamMain(fin, bitstreamFileEndianness);
 }
 
-inline void readBitstreamBIN(ifstream& fin)
+inline void readBitstreamBIN(std::ifstream& fin)
 {
 	Endianness bitstreamFileEndianness = parseBitstreamEndianness(fin);
 	

@@ -16,7 +16,7 @@
 
 #define FABRIC_SYNC_WORD 0xAA995566
 
-inline XCAP::Register getXCAPregister(string s)
+inline XCAP::Register getXCAPregister(std::string s)
 {
 	if(str::iff::stringContains(s, "CRC"))
 		return XCAP::Register::CRC;
@@ -64,7 +64,7 @@ inline XCAP::Register getXCAPregister(string s)
 	return XCAP::Register::UNDEFINED;
 }
 
-inline XCAP::Command getXCAPcommand(string s)
+inline XCAP::Command getXCAPcommand(std::string s)
 {
 	if(str::iff::stringContains(s, "NULL"))
 		return XCAP::Command::NULLCMD;
@@ -108,7 +108,7 @@ inline XCAP::Command getXCAPcommand(string s)
 	return XCAP::Command::UNDEFINED;
 }
 
-inline void writeXCAPcommandName(ofstream& fout, XCAP::Command commandID)
+inline void writeXCAPcommandName(std::ofstream& fout, XCAP::Command commandID)
 {
 	switch(commandID){
 		case XCAP::Command::NULLCMD:
@@ -169,12 +169,12 @@ inline void writeXCAPcommandName(ofstream& fout, XCAP::Command commandID)
 			fout << "MAGIC2";
 			break;
 		default:
-			fout << string("UNKNOWN(").append(to_string(static_cast<int>(commandID))).append(")");
+			fout << std::string("UNKNOWN(").append(std::to_string(static_cast<int>(commandID))).append(")");
 			break;
 	}
 }
 
-inline void writeXCAPregisterName(ofstream& fout, XCAP::Register registerID)
+inline void writeXCAPregisterName(std::ofstream& fout, XCAP::Register registerID)
 {
 	switch(registerID){
 		case XCAP::Register::CRC:
@@ -244,7 +244,7 @@ inline void writeXCAPregisterName(ofstream& fout, XCAP::Register registerID)
 			fout << "BSPI";
 			break;
 		default:
-			fout << string("UNKNOWN(").append(to_string(static_cast<int>(registerID))).append(")");
+			fout << std::string("UNKNOWN(").append(std::to_string(static_cast<int>(registerID))).append(")");
 			break;
 	}
 }
@@ -348,73 +348,73 @@ inline uint32_t XCAP_getType2ReservedInstruction(int payload)
 	return XCAP_getType2Instruction(XCAP::Operation::RESERVED, payload);
 }
 
-/// Generate the encoding for NOP instructions and write them to file ofstream.
-inline void XCAP_writeNOP(ofstream& fout, int cnt, int payload, Endianness e)
+/// Generate the encoding for NOP instructions and write them to file std::ofstream.
+inline void XCAP_writeNOP(std::ofstream& fout, int cnt, int payload, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1NopInstruction(payload);
 	for(int i = 0 ; i < cnt ; i++)
 		FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for Reserved instructions and write them to file ofstream.
-inline void XCAP_writeRESERVED(ofstream& fout, int cnt, int payload, Endianness e)
+/// Generate the encoding for Reserved instructions and write them to file std::ofstream.
+inline void XCAP_writeRESERVED(std::ofstream& fout, int cnt, int payload, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1ReservedInstruction(payload);
 	for(int i = 0 ; i < cnt ; i++)
 		FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for "selecting" a CAP register and write it to file ofstream.
-inline void XCAP_writeSelectRegister(ofstream& fout, XCAP::Register reg, Endianness e)
+/// Generate the encoding for "selecting" a CAP register and write it to file std::ofstream.
+inline void XCAP_writeSelectRegister(std::ofstream& fout, XCAP::Register reg, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1WriteInstruction(reg, 0);
 	FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for reading a CAP register and write it to file ofstream.
-inline void XCAP_writeReadRegister(ofstream& fout, XCAP::Register reg, int readLength, Endianness e)
+/// Generate the encoding for reading a CAP register and write it to file std::ofstream.
+inline void XCAP_writeReadRegister(std::ofstream& fout, XCAP::Register reg, int readLength, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1ReadInstruction(reg, readLength);
 	FileIO::write32(fout, instruction, e);
 }
 
-/// Generate the encoding for writing a CAP register and write it to file ofstream.
-inline void XCAP_writeRegister(ofstream& fout, XCAP::Register reg, int writeValue, Endianness e)
+/// Generate the encoding for writing a CAP register and write it to file std::ofstream.
+inline void XCAP_writeRegister(std::ofstream& fout, XCAP::Register reg, int writeValue, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1WriteInstruction(reg, 1);
 	FileIO::write32(fout, instruction, e);
 	FileIO::write32(fout, writeValue, e);
 }
 
-/// Generate the encoding for writing a CAP command and write it to file ofstream.
-inline void XCAP_writeCommand(ofstream& fout, XCAP::Command cmd, Endianness e)
+/// Generate the encoding for writing a CAP command and write it to file std::ofstream.
+inline void XCAP_writeCommand(std::ofstream& fout, XCAP::Command cmd, Endianness e)
 {
 	XCAP_writeRegister(fout, XCAP::Register::CMD, static_cast<int>(cmd), e);
 }
 
-/// Generate the encoding for writing a CAP register with a mask and write it to file ofstream.
-inline void XCAP_writeMaskAndRegister(ofstream& fout, XCAP::Register reg, int writeMask, int writeValue, Endianness e)
+/// Generate the encoding for writing a CAP register with a mask and write it to file std::ofstream.
+inline void XCAP_writeMaskAndRegister(std::ofstream& fout, XCAP::Register reg, int writeMask, int writeValue, Endianness e)
 {
 	XCAP_writeRegister(fout, XCAP::Register::MASK, writeMask, e);
 	XCAP_writeRegister(fout, reg, writeValue, e);
 }
 
 /// Generate and write only a type 1 FDRI command.
-inline void XCAP_writeFDRI1(ofstream& fout, int wordCount, Endianness e)
+inline void XCAP_writeFDRI1(std::ofstream& fout, int wordCount, Endianness e)
 {
 	uint32_t instruction = XCAP_getType1WriteInstruction(XCAP::Register::FDRI, wordCount);
 	FileIO::write32(fout, instruction, e);
 }
 
 /// Generate and write only a type 2 FDRI command.
-inline void XCAP_writeType2(ofstream& fout, int wordCount, Endianness e)
+inline void XCAP_writeType2(std::ofstream& fout, int wordCount, Endianness e)
 {
 	uint32_t instruction = XCAP_getType2WriteInstruction(wordCount);
 	FileIO::write32(fout, instruction, e);
 }
 
 /// Generate and write an FDRI command. Always uses type 2 command for simplicity.
-inline void XCAP_writeFDRI(ofstream& fout, int wordCount, Endianness e)
+inline void XCAP_writeFDRI(std::ofstream& fout, int wordCount, Endianness e)
 {
 	XCAP_writeFDRI1(fout, 0, e);
 	XCAP_writeType2(fout, wordCount, e);
@@ -433,7 +433,7 @@ inline uint32_t XCAP_getSyncInstruction()
 }
 
 /// Generate and write an SYNQ command.
-inline void XCAP_writeSYNQ(ofstream& fout, Endianness e)
+inline void XCAP_writeSYNQ(std::ofstream& fout, Endianness e)
 {
 	FileIO::write32(fout, XCAP_getSyncInstruction(), e);
 }
@@ -493,17 +493,17 @@ enum class GWE_CYCLE{
 inline uint32_t XCAP_getCOR0value(int Reserved_31_27, int ECLK_EN, int Reserved_25, int DRIVE_DONE, int Reserved_23, int OSCFSEL, int Reserved_16_15, DONE_CYCLE selDONE_CYCLE, MATCH_CYCLE selMATCH_CYCLE, LOCK_CYCLE selLOCK_CYCLE, GTS_CYCLE selGTS_CYCLE, GWE_CYCLE selGWE_CYCLE)
 {
 	uint32_t retValue = 0;
-	retValue |= Reserved_31_27<<27;
-	retValue |= ECLK_EN<<26;
-	retValue |= Reserved_25<<25;
-	retValue |= DRIVE_DONE<<24;
-	retValue |= Reserved_23<<23;
-	retValue |= OSCFSEL<<17;
-	retValue |= Reserved_16_15<<15;
-	retValue |= static_cast<int>(selDONE_CYCLE)<<12;
-	retValue |= static_cast<int>(selMATCH_CYCLE)<<9;
-	retValue |= static_cast<int>(selLOCK_CYCLE)<<6;
-	retValue |= static_cast<int>(selGTS_CYCLE)<<3;
+	retValue |= Reserved_31_27 << 27;
+	retValue |= ECLK_EN << 26;
+	retValue |= Reserved_25 << 25;
+	retValue |= DRIVE_DONE << 24;
+	retValue |= Reserved_23 << 23;
+	retValue |= OSCFSEL << 17;
+	retValue |= Reserved_16_15 << 15;
+	retValue |= static_cast<int>(selDONE_CYCLE) << 12;
+	retValue |= static_cast<int>(selMATCH_CYCLE) << 9;
+	retValue |= static_cast<int>(selLOCK_CYCLE) << 6;
+	retValue |= static_cast<int>(selGTS_CYCLE) << 3;
 	retValue |= static_cast<int>(selGWE_CYCLE);
 	return retValue;
 }
@@ -513,19 +513,19 @@ inline uint32_t XCAP_getCOR0value(int Reserved_31_27, int ECLK_EN, int Reserved_
 inline uint32_t XCAP_getCTRL0value(int EFUSE_KEY, int ICAP_SELECT, int Reserved_29_13, int OverTempShutDown, int Reserved_11, int ConfigFallback, int Reserved_9, int GLUTMASK_B, int Reserved_7, int DEC, int SBITS, int PERSIST, int Reserved_2_1, int GTS_USR_B)
 {
 	uint32_t retValue = 0;
-	retValue |= EFUSE_KEY<<31; //Selects the AES key source: 0: Battery-backed RAM (default) 1: eFUSE
-	retValue |= ICAP_SELECT<<30; //ICAPE3 port select: 0: Top ICAPE3 port enabled (default) 1: Bottom ICAPE3 port enabled
-	retValue |= Reserved_29_13<<13;
-	retValue |= OverTempShutDown<<12; //high-active: enables over-temperature shutdown (default:0)
-	retValue |= Reserved_11<<11;
-	retValue |= ConfigFallback<<10; //Stops when configuration fails and disables fallback to the default bitstream. 0: Enables fallback (default)
-	retValue |= Reserved_9<<9;
-	retValue |= GLUTMASK_B<<8; //Global LUT mask signal. Masks any changeable memory cell readback value. 0: Masks changeable memory cell readback value, such as distributed RAM or SRL 1: Does not mask changeable memory cell readback values(default)
-	retValue |= Reserved_7<<7;
-	retValue |= DEC<<6; //AES decryptor enable bit: 0: Decryptor disabled (default) 1: Decryptor enabled
-	retValue |= SBITS<<4; //Security level. The FPGA security level is extended to encrypted bitstreams. It is applicable to the configuration port, not to ICAPE3. The security level takes affect at the end of the encrypted bitstream or after EOS for an unencrypted bitstream. 00: Read/write OK (default) 01: Readback disabled 1x: Both writes and reads disabled Only FAR and FDRI allow encrypt write access for security levels 00 and 01.
-	retValue |= PERSIST<<3; //The configuration interface defined by M2:M0 remains after configuration. Typically used only with the SelectMAP interface to allow reconfiguration and readback. See Chapter 5, SelectMAP Configuration Modes. 0: No (default) 1: Yes
-	retValue |= Reserved_2_1<<1;
+	retValue |= EFUSE_KEY << 31; //Selects the AES key source: 0: Battery-backed RAM (default) 1: eFUSE
+	retValue |= ICAP_SELECT << 30; //ICAPE3 port select: 0: Top ICAPE3 port enabled (default) 1: Bottom ICAPE3 port enabled
+	retValue |= Reserved_29_13 << 13;
+	retValue |= OverTempShutDown << 12; //high-active: enables over-temperature shutdown (default:0)
+	retValue |= Reserved_11 << 11;
+	retValue |= ConfigFallback << 10; //Stops when configuration fails and disables fallback to the default bitstream. 0: Enables fallback (default)
+	retValue |= Reserved_9 << 9;
+	retValue |= GLUTMASK_B << 8; //Global LUT mask signal. Masks any changeable memory cell readback value. 0: Masks changeable memory cell readback value, such as distributed RAM or SRL 1: Does not mask changeable memory cell readback values(default)
+	retValue |= Reserved_7 << 7;
+	retValue |= DEC << 6; //AES decryptor enable bit: 0: Decryptor disabled (default) 1: Decryptor enabled
+	retValue |= SBITS << 4; //Security level. The FPGA security level is extended to encrypted bitstreams. It is applicable to the configuration port, not to ICAPE3. The security level takes affect at the end of the encrypted bitstream or after EOS for an unencrypted bitstream. 00: Read/write OK (default) 01: Readback disabled 1x: Both writes and reads disabled Only FAR and FDRI allow encrypt write access for security levels 00 and 01.
+	retValue |= PERSIST << 3; //The configuration interface defined by M2:M0 remains after configuration. Typically used only with the SelectMAP interface to allow reconfiguration and readback. See Chapter 5, SelectMAP Configuration Modes. 0: No (default) 1: Yes
+	retValue |= Reserved_2_1 << 1;
 	retValue |= GTS_USR_B; //Active-Low global 3-state I/Os. Turns off pull-ups if GTS_CFG_B is also asserted. 0: I/Os 3-stated 1: I/Os active (default)
 	return retValue;
 }

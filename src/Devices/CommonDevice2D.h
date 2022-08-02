@@ -24,7 +24,7 @@
 #include "CommonDevice.h"
 #include "../Common/Coords.h"
 
-using namespace std;
+
 
 class CommonDevice2D: virtual public CommonDevice
 {
@@ -37,8 +37,8 @@ class CommonDevice2D: virtual public CommonDevice
 			
 		};
 		//region selector
-		vector<Rect2D> regionSelection;
-		void region(string, Rect2D);
+		std::vector<Rect2D> regionSelection;
+		void region(std::string, Rect2D);
 };
 
 #endif //COMMONDEVICE2D_H

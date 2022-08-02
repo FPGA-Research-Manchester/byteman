@@ -26,7 +26,6 @@
 
 using namespace std;
 
-
 void XilinxUltraScalePlus::readBitstream(string filename)
 {
 	ifstream fin (filename, ifstream::binary);

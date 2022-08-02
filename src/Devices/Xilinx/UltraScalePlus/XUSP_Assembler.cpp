@@ -241,12 +241,12 @@ void XilinxUltraScalePlus::assemblerAsmTo(ifstream& fin, ofstream& fout)
 
 void XilinxUltraScalePlus::disassemblerWriteHeader(ofstream& fout)
 {
-	fout<<"--- HEADER BEGIN ---"<<endl;
-	fout<<"Name = \""<<designName<<"\""<<endl;
-	fout<<"FPGA = \""<<partName<<"\""<<endl;
-	fout<<"Date = \""<<fileDate<<"\""<<endl;
-	fout<<"Time = \""<<fileTime<<"\""<<endl;
-	fout<<"--- HEADER END ---"<<endl;
+	fout << "--- HEADER BEGIN ---" << endl;
+	fout << "Name = \"" << designName << "\"" << endl;
+	fout << "FPGA = \"" << partName << "\"" << endl;
+	fout << "Date = \"" << fileDate << "\"" << endl;
+	fout << "Time = \"" << fileTime << "\"" << endl;
+	fout << "--- HEADER END ---" << endl;
 }
 
 void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
@@ -324,7 +324,7 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 				} else { // XCAP::Operation::WRITE
 					if((regAddr == XCAP::Register::FDRI) && (wordCount > 0) && (wordCount % XUSP_WORDS_PER_FRAME == 0)) {
 						if(shadowFrameValid) {
-							fout << dec << "# Shadow register contents are written to frame (BlockType="<<b<<", GlobalRowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << getFrameType(b,r,c) << ")."<<endl;
+							fout << dec << "# Shadow register contents are written to frame (BlockType=" << b << ", GlobalRowAddress=" << r << ", MajorAddress=" << c << ", MinorAddress=" << m << ") (Frame type: " << getFrameType(b,r,c) << ")." << endl;
 							XCAP_IncrementFAR(slr, b, r, c, m);
 						}
 						shadowFrameValid = 1;
@@ -333,21 +333,21 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 						for(int i = 0 ; i < frameCount ; i++){
 							fout << "# ";
 							if(i == (frameCount-1)) fout << "(This frame data is written to shadow register!)";
-							fout << dec << "Writing frame #" << i << " (BlockType="<<b<<", GlobalRowAddress="<<r<<", MajorAddress="<<c<<", MinorAddress="<<m<<") (Frame type: " << getFrameType(b,r,c) << ") hex data:"<<endl;
+							fout << dec << "Writing frame #" << i << " (BlockType=" << b << ", GlobalRowAddress=" << r << ", MajorAddress=" << c << ", MinorAddress=" << m << ") (Frame type: " << getFrameType(b,r,c) << ") hex data:" << endl;
 							uint32_t frameData[XUSP_WORDS_PER_FRAME];
 							for(int w = 0 ; w < XUSP_WORDS_PER_FRAME ; w++){
 								frameData[w] = FileIO::read32(fin, loadedBitstreamEndianness);
 							}
-							fout<<"CLOCK: ";
+							fout << "CLOCK: ";
 							for(int w = XUSP_WORDS_BEFORE_CLK ; w < (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w++){
-								fout<< "0x"  << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
+								fout << "0x" << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
 							}
-							fout<<" ;DATA: ";
+							fout << " ;DATA: ";
 							for(int w = 0 ; w < XUSP_WORDS_BEFORE_CLK ; w++){
-								fout<< "0x"  << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
+								fout << "0x" << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
 							}
 							for(int w = (XUSP_WORDS_BEFORE_CLK + XUSP_WORDS_AT_CLK) ; w < XUSP_WORDS_PER_FRAME ; w++){
-								fout<< "0x"  << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
+								fout << "0x" << uppercase << hex << setw(8) << setfill('0') << frameData[w] << " ";
 							}
 							fout << endl;
 							XCAP_IncrementFAR(slr, b, r, c, m);
@@ -374,7 +374,7 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 							slr++;
 							synched = false;
 							aligned = false;
-							fout << "Select next SLR for the next #"<<dec<<nextInstrPayload<<" words." << endl;
+							fout << "Select next SLR for the next #" << dec << nextInstrPayload << " words." << endl;
 						} else {
 							fout << "Bad MAGIC1 instruction" << endl;
 							fin.seekg(-4,ios::cur);//rewind next instruction if not
@@ -389,12 +389,12 @@ void XilinxUltraScalePlus::disassemblerToAsm(ifstream& fin, ofstream& fout)
 						writeXCAPregisterName(fout, regAddr);
 						if(regAddr == XCAP::Register::FAR) {
 							XCAP_parseFAR(writeData, slr, b, r, c, m);
-							fout << " = BlockType=" << dec <<b<<" RowAddress="<<(r-SLRinfo[slr].fromRow)<<" MajorAddress="<<c<<" MinorAddress="<<m<< endl;
+							fout << " = BlockType=" << dec << b << " RowAddress=" << (r-SLRinfo[slr].fromRow) << " MajorAddress=" << c << " MinorAddress=" << m << endl;
 						} else {
 							fout << " = 0x" << uppercase << hex << setw(8) << setfill('0') << writeData << endl;
 						}
 					} else {
-						fout << "0x"<< uppercase << hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
+						fout << "0x" << uppercase << hex << setw(8) << setfill('0') << instruction << "(Bad instruction)" << endl;
 					}
 				} // OP_WRITE
 			}// if synched

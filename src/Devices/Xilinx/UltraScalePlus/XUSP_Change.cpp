@@ -22,7 +22,6 @@
 
 using namespace std;
 
-
 void XilinxUltraScalePlus::change(string params)
 {
 	parseParams(params);

@@ -26,7 +26,6 @@
 
 using namespace std;
 
-
 void XilinxSeries7::outputBitstreamGlobalHeaderSequence(ofstream& fout, bool fullBitstream, Endianness e)
 {
 	

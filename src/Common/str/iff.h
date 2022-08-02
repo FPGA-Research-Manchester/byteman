@@ -21,22 +21,22 @@
 #include<string>
 #include<sstream>
 
-using namespace std;
+
 
 /**************************************************************************//**
- * The str::iff:: namespace holds some custom and/or shorter functions for string
+ * The str::iff:: namespace holds some custom and/or shorter functions for std::string
  * conditionals (searching/matching).
  * 
  *****************************************************************************/
 namespace str{
 	namespace iff {
 		/// Returns false. End of recursion for template
-		template<typename ... Rest> inline bool stringEndsWith(string checkedString)	
+		template<typename ... Rest> inline bool stringEndsWith(std::string checkedString)	
 		{
 			return false;
 		}
-		/// Returns true if string @c checkedString's final characters match fully any of strings @c nextString or @c restStrings
-		template<typename ... Rest> inline bool stringEndsWith(string checkedString, string nextString, Rest ... restStrings)	
+		/// Returns true if std::string @c checkedString's final characters match fully any of std::strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringEndsWith(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(checkedString.length() >= nextString.length())
 				if(0 == checkedString.compare (checkedString.length() - nextString.length(), nextString.length(), nextString))
@@ -44,58 +44,58 @@ namespace str{
 			return stringEndsWith(checkedString, restStrings...);
 		}
 		/// Returns false. End of recursion for template
-		template<typename ... Rest> inline bool stringIs(string checkedString)	
+		template<typename ... Rest> inline bool stringIs(std::string checkedString)	
 		{
 			return false;
 		}
-		/// Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
-		template<typename ... Rest> inline bool stringIs(string checkedString, string nextString, Rest ... restStrings)	
+		/// Returns true if std::string @c checkedString matches fully any of std::strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringIs(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(checkedString == nextString)
 				return true;
 			return stringIs(checkedString, restStrings...);
 		}
 		/// Returns false. End of recursion for template
-		template<typename ... Rest> inline bool stringContains(string checkedString)	
+		template<typename ... Rest> inline bool stringContains(std::string checkedString)	
 		{
 			return false;
 		}
-		/// Returns true if string @c checkedString contains any of strings @c nextString or @c restStrings
-		template<typename ... Rest> inline bool stringContains(string checkedString, string nextString, Rest ... restStrings)	
+		/// Returns true if std::string @c checkedString contains any of std::strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringContains(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
-			if(string::npos != checkedString.rfind(nextString))
+			if(std::string::npos != checkedString.rfind(nextString))
 				return true;
 			return stringContains(checkedString, restStrings...);
 		}
 		/// Returns false. End of recursion for template
-		template<typename ... Rest> inline bool stringBeginsWith(string checkedString)	
+		template<typename ... Rest> inline bool stringBeginsWith(std::string checkedString)	
 		{
 			return false;
 		}
-		/// Returns true if string @c checkedString's first characters match fully any of strings @c nextString or @c restStrings
-		template<typename ... Rest> inline bool stringBeginsWith(string checkedString, string nextString, Rest ... restStrings)	
+		/// Returns true if std::string @c checkedString's first characters match fully any of std::strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringBeginsWith(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(0 == checkedString.rfind(nextString, 0))
 				return true;
 			return stringBeginsWith(checkedString, restStrings...);
 		}
 		/// Returns false. End of recursion for template
-		template<typename ... Rest> inline bool stringWordIs(string checkedString)	
+		template<typename ... Rest> inline bool stringWordIs(std::string checkedString)	
 		{
 			return false;
 		}
-		/// Returns true if string @c checkedString matches fully any of strings @c nextString or @c restStrings
-		template<typename ... Rest> inline bool stringWordIs(string checkedString, string nextString, Rest ... restStrings)	
+		/// Returns true if std::string @c checkedString matches fully any of std::strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool stringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
 			if(checkedString == nextString)
 				return true;
 			return stringBeginsWith(checkedString, restStrings...);
 		}
-		/// Returns true if string @c checkedString's first word matches fully any of strings @c nextString or @c restStrings
-		template<typename ... Rest> inline bool firstStringWordIs(string checkedString, string nextString, Rest ... restStrings)	
+		/// Returns true if std::string @c checkedString's first word matches fully any of std::strings @c nextString or @c restStrings
+		template<typename ... Rest> inline bool firstStringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)	
 		{
-			stringstream ss(checkedString);
-			string firstWord;
+			std::stringstream ss(checkedString);
+			std::string firstWord;
 			ss >> firstWord;
 			return stringWordIs(firstWord, nextString, restStrings...);
 		}

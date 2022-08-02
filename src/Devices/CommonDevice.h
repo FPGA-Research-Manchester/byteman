@@ -21,7 +21,7 @@
 #include<string>
 #include<time.h>
 
-using namespace std;
+
 
 class CommonDevice
 {
@@ -33,27 +33,27 @@ class CommonDevice
 		virtual ~CommonDevice(){
 			
 		};
-		string instanceName;
+		std::string instanceName;
 		int enableWarn;
 		int enableLog;
-		inline void printMessage(string message){
+		inline void printMessage(std::string message){
 			time_t timestamp = time(0);
 			struct tm  tstruct;
 			char	   timeChars[80];
 			tstruct = *localtime(&timestamp);
 			strftime(timeChars, sizeof(timeChars), "%d %b %Y %H:%M:%S @ ", &tstruct);
-			cout << timeChars << instanceName << message << endl;
+			std::cout << timeChars << instanceName << message << std::endl;
 		}
-		inline void warn(string message) {
+		inline void warn(std::string message) {
 			#ifdef ENABLEWARN
 				if(enableWarn)
-					CommonDevice::printMessage(string(" warning: ").append(message));
+					CommonDevice::printMessage(std::string(" warning: ").append(message));
 			#endif
 		}
-		inline void log(string message) {
+		inline void log(std::string message) {
 			#ifdef ENABLELOGS
 				if(enableLog)
-					CommonDevice::printMessage(string("  info  : ").append(message));
+					CommonDevice::printMessage(std::string("  info  : ").append(message));
 			#endif
 		}
 };

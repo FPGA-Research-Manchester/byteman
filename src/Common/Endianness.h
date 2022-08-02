@@ -24,7 +24,7 @@
 #include<sys/param.h>
 #endif
 
-using namespace std;
+
 
 #if (defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN) || (defined(BYTE_ORDER) && BYTE_ORDER == BIG_ENDIAN) || defined(__BIG_ENDIAN__) || defined(__ARMEB__) || defined(__THUMBEB__) || defined(__AARCH64EB__) || defined(_MIBSEB) || defined(__MIBSEB) || defined(__MIBSEB__)
 	#define IS_LITTLE_ENDIAN() 0
@@ -53,7 +53,7 @@ enum class Endianness	///< Endianness in byteman is represented not only by big/
 };
 
 namespace Endian {
-	inline string to_string(Endianness e)
+	inline std::string to_string(Endianness e)
 	{
 		if(Endianness::NATIVE == e)
 			return "Native";
@@ -211,19 +211,19 @@ namespace Endian {
 	//BitSwaps: swap bit order within the bytes
 	inline uint8_t  BitSwap8(uint8_t  x)
 	{
-		return (((x & 0x80)>>7) | ((x & 0x40)>>5) | ((x & 0x20)>>3) | ((x & 0x10)>>1) | ((x & 0x08)<<1) | ((x & 0x04)<<3) | ((x & 0x02)<<5) | ((x & 0x01)<<7));
+		return (((x & 0x80)>>7) | ((x & 0x40)>>5) | ((x & 0x20)>>3) | ((x & 0x10)>>1) | ((x & 0x08) << 1) | ((x & 0x04) << 3) | ((x & 0x02) << 5) | ((x & 0x01) << 7));
 	}
 	inline uint16_t BitSwap16(uint16_t x)
 	{
-		return (((x & 0x8080)>>7) | ((x & 0x4040)>>5) | ((x & 0x2020)>>3) | ((x & 0x1010)>>1) | ((x & 0x0808)<<1) | ((x & 0x0404)<<3) | ((x & 0x0202)<<5) | ((x & 0x0101)<<7));
+		return (((x & 0x8080)>>7) | ((x & 0x4040)>>5) | ((x & 0x2020)>>3) | ((x & 0x1010)>>1) | ((x & 0x0808) << 1) | ((x & 0x0404) << 3) | ((x & 0x0202) << 5) | ((x & 0x0101) << 7));
 	} 
 	inline uint32_t BitSwap32(uint32_t x)
 	{
-		return (((x & 0x80808080)>>7) | ((x & 0x40404040)>>5) | ((x & 0x20202020)>>3) | ((x & 0x10101010)>>1) | ((x & 0x08080808)<<1) | ((x & 0x04040404)<<3) | ((x & 0x02020202)<<5) | ((x & 0x01010101)<<7));
+		return (((x & 0x80808080)>>7) | ((x & 0x40404040)>>5) | ((x & 0x20202020)>>3) | ((x & 0x10101010)>>1) | ((x & 0x08080808) << 1) | ((x & 0x04040404) << 3) | ((x & 0x02020202) << 5) | ((x & 0x01010101) << 7));
 	} 
 	inline uint64_t BitSwap64(uint64_t x)
 	{
-		return (((x & 0x8080808080808080)>>7) | ((x & 0x4040404040404040)>>5) | ((x & 0x2020202020202020)>>3) | ((x & 0x1010101010101010)>>1) | ((x & 0x0808080808080808)<<1) | ((x & 0x0404040404040404)<<3) | ((x & 0x0202020202020202)<<5) | ((x & 0x0101010101010101)<<7));
+		return (((x & 0x8080808080808080)>>7) | ((x & 0x4040404040404040)>>5) | ((x & 0x2020202020202020)>>3) | ((x & 0x1010101010101010)>>1) | ((x & 0x0808080808080808) << 1) | ((x & 0x0404040404040404) << 3) | ((x & 0x0202020202020202) << 5) | ((x & 0x0101010101010101) << 7));
 	}
 
 	inline uint8_t  NativeToAnyEndianness8(uint8_t  x, Endianness e)

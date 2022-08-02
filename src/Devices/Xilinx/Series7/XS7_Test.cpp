@@ -17,6 +17,8 @@
 #if !defined(NDEBUG)
 #include "XilinxSeries7.h"
 
+using namespace std;
+
 void XilinxSeries7::test(bool usableFramesOnly, bool testValueEqual, uint32_t testValue){
 	log("Testing bitstream against value" + to_string(testValue) + ".");
 	ensureInitializedBitstreamArrays();

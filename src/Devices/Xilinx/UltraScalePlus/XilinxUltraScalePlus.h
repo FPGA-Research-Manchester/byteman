@@ -26,7 +26,7 @@
 #include "../../../Common/Endianness.h"
 #include "../../../Common/Coords.h"
 
-using namespace std;
+
 
 class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigurationAccessPort<archXUSPtemplate>
 {
@@ -34,31 +34,31 @@ class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigur
 		XilinxUltraScalePlus();
 		virtual ~XilinxUltraScalePlus();
 		
-		void blank(string);
+		void blank(std::string);
 		
 		void ensureInitializedBitstreamArrays() override;
 		
 		//Devices.cpp:
 		int getDeviceByIDCODEorThrow(int) override;
-		int getDeviceByNameOrThrow(string) override;
+		int getDeviceByNameOrThrow(std::string) override;
 		int getDeviceByIDCODE(int) override;
-		int getDeviceByName(string) override;
-		void setDevice(int, string = "") override;
+		int getDeviceByName(std::string) override;
+		void setDevice(int, std::string = "") override;
 		void setDeviceByPartNameOrThrow() override;
-		void setDeviceByNameOrThrow(string) override;
+		void setDeviceByNameOrThrow(std::string) override;
 		void setDeviceByIDCODEOrThrow(int) override;
 		
-		streamoff slrMagicInstrLocation[XUSP_MAX_SLRS];/// Written by outputBitstreamSLRHeaderAfterBitstreamSequence(), outputBitstreamEmptySLRHeaderSequence() and used by outputBitstreamSLRWrapUpSequence(), outputBitstreamEmptySLRWrapUpSequence()
-		void outputBitstreamGlobalHeaderSequence(ofstream&, bool, Endianness) override;
-		void outputBitstreamGlobalFooterSequence(ofstream&, bool, Endianness) override;
+		std::streamoff slrMagicInstrLocation[XUSP_MAX_SLRS];/// Written by outputBitstreamSLRHeaderAfterBitstreamSequence(), outputBitstreamEmptySLRHeaderSequence() and used by outputBitstreamSLRWrapUpSequence(), outputBitstreamEmptySLRWrapUpSequence()
+		void outputBitstreamGlobalHeaderSequence(std::ofstream&, bool, Endianness) override;
+		void outputBitstreamGlobalFooterSequence(std::ofstream&, bool, Endianness) override;
 		
-		void outputBitstreamSLRHeaderBitstreamSequence(ofstream&, int, bool, Endianness) override;
-		void outputBitstreamSLRFooterBitstreamSequence(ofstream&, int, bool, Endianness) override;
-		void outputBitstreamSLRHeaderAfterBitstreamSequence(ofstream&, int, bool, Endianness) override;
-		void outputBitstreamSLRWrapUpSequence(ofstream&, int, bool, Endianness) override;
+		void outputBitstreamSLRHeaderBitstreamSequence(std::ofstream&, int, bool, Endianness) override;
+		void outputBitstreamSLRFooterBitstreamSequence(std::ofstream&, int, bool, Endianness) override;
+		void outputBitstreamSLRHeaderAfterBitstreamSequence(std::ofstream&, int, bool, Endianness) override;
+		void outputBitstreamSLRWrapUpSequence(std::ofstream&, int, bool, Endianness) override;
 		
-		void outputBitstreamEmptySLRHeaderSequence(ofstream&, int, bool, Endianness) override;
-		void outputBitstreamEmptySLRWrapUpSequence(ofstream&, int, bool, Endianness) override;
+		void outputBitstreamEmptySLRHeaderSequence(std::ofstream&, int, bool, Endianness) override;
+		void outputBitstreamEmptySLRWrapUpSequence(std::ofstream&, int, bool, Endianness) override;
 		
 		//Info
 		void deviceHelp();
@@ -68,37 +68,37 @@ class XilinxUltraScalePlus: virtual public CommonDevice2D, public XilinxConfigur
 		//merge (relocate)
 		//void ensureRowCompatibility(Coord2D, int, int, Coord2D);
 		//void ensureRegionCompatibility(Rect2D, Coord2D);
-		void merge(XilinxUltraScalePlus*, string, Rect2D, Coord2D);
+		void merge(XilinxUltraScalePlus*, std::string, Rect2D, Coord2D);
 		
-		void readBitstream(string);
+		void readBitstream(std::string);
 		//The ones below are not needed to be public, but we don't really care
-		void writeBitstream(string, string, Rect2D);
+		void writeBitstream(std::string, std::string, Rect2D);
 		
-		//resource string parameters
+		//resource std::string parameters
 		void initializeResourceStringParameters() override;
 		
 		//assembler
-		void assemblerParseHeader(ifstream&);
-		void assemblerAsmToBit(ifstream&, ofstream&);
-		void assemblerAsmToBin(ifstream&, ofstream&);
-		void assemblerAsmTo(ifstream&, ofstream&);
+		void assemblerParseHeader(std::ifstream&);
+		void assemblerAsmToBit(std::ifstream&, std::ofstream&);
+		void assemblerAsmToBin(std::ifstream&, std::ofstream&);
+		void assemblerAsmTo(std::ifstream&, std::ofstream&);
 		
-		void disassemblerWriteHeader(ofstream&);
-		void disassemblerBitToAsm(ifstream&, ofstream&);
-		void disassemblerBinToAsm(string, ifstream&, ofstream&);
-		void disassemblerToAsm(ifstream&, ofstream&);
+		void disassemblerWriteHeader(std::ofstream&);
+		void disassemblerBitToAsm(std::ifstream&, std::ofstream&);
+		void disassemblerBinToAsm(std::string, std::ifstream&, std::ofstream&);
+		void disassemblerToAsm(std::ifstream&, std::ofstream&);
 		
-		void assembler(string, string);
+		void assembler(std::string, std::string);
 		
 		// Info 
-		string getFrameType(int, int, int) override;
+		std::string getFrameType(int, int, int) override;
 		
 		//Test
 		#if !defined(NDEBUG)
 		void test(bool, bool, uint32_t);
 		#endif
 		//change
-		void change(string);
+		void change(std::string);
 		
 		void initFabric();
 };

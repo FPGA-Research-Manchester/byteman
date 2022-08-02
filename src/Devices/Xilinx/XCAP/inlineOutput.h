@@ -21,20 +21,20 @@ inline void updateDateAndTime()
 	char	   buf[80];
 	tstruct = *localtime(&timestamp);
 	strftime(buf, sizeof(buf), "%Y/%m/%d", &tstruct);
-	fileDate = string(buf);
+	fileDate = std::string(buf);
 	strftime(buf, sizeof(buf), "%H:%M:%S", &tstruct);
-	fileTime = string(buf);
+	fileTime = std::string(buf);
 }
 
-inline void outputBITheader16bString(ofstream& fout, Endianness e, string s){
+inline void outputBITheader16bString(std::ofstream& fout, Endianness e, std::string s){
 	FileIO::write16(fout, static_cast<uint16_t>(s.size()+1), e);
 	FileIO::writeString(fout, s, e);
 }
 
-inline void outputBITheader(ofstream& fout, Endianness e)
+inline void outputBITheader(std::ofstream& fout, Endianness e)
 {
 	log("Generating bitstream header in " + Endian::to_string(e) + ".");
-	outputBITheader16bString(fout, e, string("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0"));
+	outputBITheader16bString(fout, e, std::string("\x0F\xF0\x0F\xF0\x0F\xF0\x0F\xF0"));
 	FileIO::write16(fout, 1, e);//16-bit BE value = 1
 	FileIO::write8(fout, 'a', e);
 	outputBITheader16bString(fout, e, designName);
@@ -49,15 +49,15 @@ inline void outputBITheader(ofstream& fout, Endianness e)
 	FileIO::write32(fout, 0, e);//32-bit BE value = 0 representing remaining file size. needs to be fixed later
 }
 
-inline void outputBITheaderLengthField(ofstream& fout, Endianness e)
+inline void outputBITheaderLengthField(std::ofstream& fout, Endianness e)
 {
-	streamoff finalFileSize = fout.tellp();
-	streamoff reportDiff = finalFileSize - (headerLocationOfRemainingFileLength + 4);
+	std::streamoff finalFileSize = fout.tellp();
+	std::streamoff reportDiff = finalFileSize - (headerLocationOfRemainingFileLength + 4);
 	fout.seekp(headerLocationOfRemainingFileLength);
 	FileIO::write32(fout, static_cast<uint32_t>(reportDiff), e);
 }
 
-inline void outputCAPheaderConstant(ofstream& fout, Endianness e)
+inline void outputCAPheaderConstant(std::ofstream& fout, Endianness e)
 {
 	for(int i = 0 ; i < 16 ; i++) // 64 bytes of 0xFF
 		FileIO::write32(fout, 0xFFFFFFFF, e);//32-bit BE value = 0xFFFFFFFF
@@ -68,13 +68,13 @@ inline void outputCAPheaderConstant(ofstream& fout, Endianness e)
 	FileIO::write32(fout, XCAP_getSyncInstruction(), e);
 }
 
-inline void writeBitstreamMainEmptySLR(ofstream& fout, int slr)
+inline void writeBitstreamMainEmptySLR(std::ofstream& fout, int slr)
 {
 	outputCAPheaderConstant(fout, loadedBitstreamEndianness);
 	outputBitstreamEmptySLRHeaderSequence(fout, slr, false, loadedBitstreamEndianness);
 }
 
-inline void writeBitstreamMainSingleRegion(ofstream& fout, int slr, Rect2D writeRect)
+inline void writeBitstreamMainSingleRegion(std::ofstream& fout, int slr, Rect2D writeRect)
 {
 	void *blankFrame = calloc(WORDS_PER_FRAME, 4);
 	
@@ -126,7 +126,7 @@ inline void writeBitstreamMainSingleRegion(ofstream& fout, int slr, Rect2D write
 	}
 }
 
-inline void writeBitstreamMainSingleSLR(ofstream& fout, int slr, Rect2D cmdRect)
+inline void writeBitstreamMainSingleSLR(std::ofstream& fout, int slr, Rect2D cmdRect)
 {
 	Rect2D slrCoordsRect = {{0, 0}, {0, 0}};
 	slrCoordsRect.position.row = SLRinfo[slr].fromRow * CLB_PER_CLOCK_REGION;
@@ -149,7 +149,7 @@ inline void writeBitstreamMainSingleSLR(ofstream& fout, int slr, Rect2D cmdRect)
 	outputBitstreamSLRHeaderAfterBitstreamSequence(fout, slr, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 }
 
-inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
+inline void writeBitstreamMain(std::ofstream& fout, Rect2D cmdRect)
 {
 	bool overlap[MAX_SLRS];
 	for(int slr = 0 ; slr < numberOfSLRs ; slr++){
@@ -186,7 +186,7 @@ inline void writeBitstreamMain(ofstream& fout, Rect2D cmdRect)
 	}
 }
 
-inline void writeBitstreamBIT(ofstream& fout, Rect2D cmdRect)
+inline void writeBitstreamBIT(std::ofstream& fout, Rect2D cmdRect)
 {
 	//if needing to ensure all .bit files MUST be bigendian, uncomment next line
 	//ensureSelectedEndianness(Endianness::BE);
@@ -204,7 +204,7 @@ inline void writeBitstreamBIT(ofstream& fout, Rect2D cmdRect)
 	outputBITheaderLengthField(fout, loadedBitstreamEndianness);
 }
 
-inline void writeBitstreamBIN(ofstream& fout, Rect2D cmdRect)
+inline void writeBitstreamBIN(std::ofstream& fout, Rect2D cmdRect)
 {
 	outputBitstreamGlobalHeaderSequence(fout, (!selectedOptions.partialNotFull), loadedBitstreamEndianness);
 	writeBitstreamMain(fout, cmdRect);

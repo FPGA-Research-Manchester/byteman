@@ -24,101 +24,101 @@
 
 #include "Endianness.h"
 
-using namespace std;
+
 
 namespace FileIO {
-	inline uint64_t readNative64(ifstream& fin)
+	inline uint64_t readNative64(std::ifstream& fin)
 	{
 		uint64_t readValue;
 		fin.read(reinterpret_cast<char*>(&readValue), 8);
 		return readValue;
 	}
-	inline uint32_t readNative32(ifstream& fin)
+	inline uint32_t readNative32(std::ifstream& fin)
 	{
 		uint32_t readValue;
 		fin.read(reinterpret_cast<char*>(&readValue), 4);
 		return readValue;
 	}
-	inline uint16_t readNative16(ifstream& fin)
+	inline uint16_t readNative16(std::ifstream& fin)
 	{
 		uint16_t readValue;
 		fin.read(reinterpret_cast<char*>(&readValue), 2);
 		return readValue;
 	}
-	inline uint8_t readNative8(ifstream& fin)
+	inline uint8_t readNative8(std::ifstream& fin)
 	{
 		uint8_t readValue;
 		fin.read(reinterpret_cast<char*>(&readValue), 1);
 		return readValue;
 	}
-	inline uint64_t readBigEndian64(ifstream& fin)
+	inline uint64_t readBigEndian64(std::ifstream& fin)
 	{
 		return Endian::NativeToBigEndian64(FileIO::readNative64(fin));
 	}
-	inline uint32_t readBigEndian32(ifstream& fin)
+	inline uint32_t readBigEndian32(std::ifstream& fin)
 	{
 		return Endian::NativeToBigEndian32(FileIO::readNative32(fin));
 	}
-	inline uint16_t readBigEndian16(ifstream& fin)
+	inline uint16_t readBigEndian16(std::ifstream& fin)
 	{
 		return Endian::NativeToBigEndian16(FileIO::readNative16(fin));
 	}
-	inline uint8_t readBigEndian8(ifstream& fin)
+	inline uint8_t readBigEndian8(std::ifstream& fin)
 	{
 		return readNative8(fin);
 	}
 
-	inline uint64_t readLittleEndian64(ifstream& fin)
+	inline uint64_t readLittleEndian64(std::ifstream& fin)
 	{
 		return Endian::NativeToLittleEndian64(FileIO::readNative64(fin));
 	}
-	inline uint32_t readLittleEndian32(ifstream& fin)
+	inline uint32_t readLittleEndian32(std::ifstream& fin)
 	{
 		return Endian::NativeToLittleEndian32(FileIO::readNative32(fin));
 	}
-	inline uint16_t readLittleEndian16(ifstream& fin)
+	inline uint16_t readLittleEndian16(std::ifstream& fin)
 	{
 		return Endian::NativeToLittleEndian16(FileIO::readNative16(fin));
 	}
-	inline uint8_t readLittleEndian8(ifstream& fin)
+	inline uint8_t readLittleEndian8(std::ifstream& fin)
 	{
 		return readNative8(fin);
 	}
 
-	inline uint64_t readBitSwappedBigEndian64(ifstream& fin)
+	inline uint64_t readBitSwappedBigEndian64(std::ifstream& fin)
 	{
 		return Endian::BitSwap64(FileIO::readBigEndian64(fin));
 	}
-	inline uint32_t readBitSwappedBigEndian32(ifstream& fin)
+	inline uint32_t readBitSwappedBigEndian32(std::ifstream& fin)
 	{
 		return Endian::BitSwap32(FileIO::readBigEndian32(fin));
 	}
-	inline uint16_t readBitSwappedBigEndian16(ifstream& fin)
+	inline uint16_t readBitSwappedBigEndian16(std::ifstream& fin)
 	{
 		return Endian::BitSwap16(FileIO::readBigEndian16(fin));
 	}
-	inline uint8_t readBitSwappedBigEndian8(ifstream& fin)
+	inline uint8_t readBitSwappedBigEndian8(std::ifstream& fin)
 	{
 		return Endian::BitSwap8(FileIO::readBigEndian8(fin));
 	}
 
-	inline uint64_t readBitSwappedLittleEndian64(ifstream& fin)
+	inline uint64_t readBitSwappedLittleEndian64(std::ifstream& fin)
 	{
 		return Endian::BitSwap64(FileIO::readLittleEndian64(fin));
 	}
-	inline uint32_t readBitSwappedLittleEndian32(ifstream& fin)
+	inline uint32_t readBitSwappedLittleEndian32(std::ifstream& fin)
 	{
 		return Endian::BitSwap32(FileIO::readLittleEndian32(fin));
 	}
-	inline uint16_t readBitSwappedLittleEndian16(ifstream& fin)
+	inline uint16_t readBitSwappedLittleEndian16(std::ifstream& fin)
 	{
 		return Endian::BitSwap16(FileIO::readLittleEndian16(fin));
 	}
-	inline uint8_t readBitSwappedLittleEndian8(ifstream& fin)
+	inline uint8_t readBitSwappedLittleEndian8(std::ifstream& fin)
 	{
 		return Endian::BitSwap8(FileIO::readLittleEndian8(fin));
 	}
-	inline uint64_t read64(ifstream& fin, Endianness e = Endianness::NATIVE)
+	inline uint64_t read64(std::ifstream& fin, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::BE)
 			return FileIO::readBigEndian64(fin);
@@ -130,7 +130,7 @@ namespace FileIO {
 			return FileIO::readBitSwappedLittleEndian64(fin);
 		return FileIO::readNative64(fin);
 	}
-	inline uint32_t read32(ifstream& fin, Endianness e = Endianness::NATIVE)
+	inline uint32_t read32(std::ifstream& fin, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::BE)
 			return FileIO::readBigEndian32(fin);
@@ -142,7 +142,7 @@ namespace FileIO {
 			return FileIO::readBitSwappedLittleEndian32(fin);
 		return FileIO::readNative32(fin);
 	}
-	inline uint16_t read16(ifstream& fin, Endianness e = Endianness::NATIVE)
+	inline uint16_t read16(std::ifstream& fin, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::BE)
 			return FileIO::readBigEndian16(fin);
@@ -154,7 +154,7 @@ namespace FileIO {
 			return FileIO::readBitSwappedLittleEndian16(fin);
 		return FileIO::readNative16(fin);
 	}
-	inline uint8_t read8 (ifstream& fin, Endianness e = Endianness::NATIVE)
+	inline uint8_t read8 (std::ifstream& fin, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::BE)
 			return FileIO::readBigEndian8(fin);
@@ -168,44 +168,44 @@ namespace FileIO {
 	}
 
 
-	inline char* readStringIntoCharArray(ifstream& fin, int stringSize)
+	inline char* readStringIntoCharArray(std::ifstream& fin, int stringSize)
 	{
 		char* readCharArray = new char[stringSize+1];
 		fin.read(readCharArray, stringSize);
 		readCharArray[stringSize]='\0';
 		return readCharArray;
 	}
-	inline string readString(ifstream& fin, int stringSize)
+	inline std::string readString(std::ifstream& fin, int stringSize)
 	{
 		char* readCharArray = readStringIntoCharArray(fin, stringSize);
-		string returnString = string(readCharArray);
+		std::string returnString = std::string(readCharArray);
 		delete readCharArray;
 		return returnString;
 	}
 
-	inline char* readBitSwappedStringIntoCharArray(ifstream& fin, int stringSize)
+	inline char* readBitSwappedStringIntoCharArray(std::ifstream& fin, int stringSize)
 	{
 		char* readCharArray = FileIO::readStringIntoCharArray(fin, stringSize);
 		for(int i = 0 ; i < stringSize ; i++)
 			readCharArray[i] = Endian::BitSwap8(readCharArray[i]);
 		return readCharArray;
 	}
-	inline string readBitSwappedString(ifstream& fin, int stringSize)
+	inline std::string readBitSwappedString(std::ifstream& fin, int stringSize)
 	{
 		char* readCharArray = readBitSwappedStringIntoCharArray(fin, stringSize);
-		string returnString = string(readCharArray);
+		std::string returnString = std::string(readCharArray);
 		delete readCharArray;
 		return returnString;
 	}
 
-	inline char* readStringIntoCharArray(ifstream& fin, int stringSize, Endianness e)
+	inline char* readStringIntoCharArray(std::ifstream& fin, int stringSize, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::readBitSwappedStringIntoCharArray(fin, stringSize);
 		else
 			return FileIO::readStringIntoCharArray(fin, stringSize);
 	}
-	inline string readString(ifstream& fin, int stringSize, Endianness e)
+	inline std::string readString(std::ifstream& fin, int stringSize, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::readBitSwappedString(fin, stringSize);
@@ -213,116 +213,116 @@ namespace FileIO {
 			return FileIO::readString(fin, stringSize);
 	}
 
-	inline void writeNative64(ofstream& fout, uint64_t writeValue)
+	inline void writeNative64(std::ofstream& fout, uint64_t writeValue)
 	{
 		fout.write(reinterpret_cast<char*>(&writeValue), sizeof(writeValue));
 	}
-	inline void writeNative32(ofstream& fout, uint32_t writeValue)
+	inline void writeNative32(std::ofstream& fout, uint32_t writeValue)
 	{
 		fout.write(reinterpret_cast<char*>(&writeValue), sizeof(writeValue));
 	}
-	inline void writeNative16(ofstream& fout, uint16_t writeValue)
+	inline void writeNative16(std::ofstream& fout, uint16_t writeValue)
 	{
 		fout.write(reinterpret_cast<char*>(&writeValue), sizeof(writeValue));
 	}
-	inline void writeNative8 (ofstream& fout, uint8_t writeValue)
+	inline void writeNative8 (std::ofstream& fout, uint8_t writeValue)
 	{
 		fout.write(reinterpret_cast<char*>(&writeValue), sizeof(writeValue));
 	}
 
-	inline void writeBigEndian64(ofstream& fout, uint64_t writeValue)
+	inline void writeBigEndian64(std::ofstream& fout, uint64_t writeValue)
 	{
 		uint64_t writeValueBigEndian = Endian::BigEndianToNative64(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueBigEndian), sizeof(writeValueBigEndian));
 	}
-	inline void writeBigEndian32(ofstream& fout, uint32_t writeValue)
+	inline void writeBigEndian32(std::ofstream& fout, uint32_t writeValue)
 	{
 		uint32_t writeValueBigEndian = Endian::BigEndianToNative32(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueBigEndian), sizeof(writeValueBigEndian));
 	}
-	inline void writeBigEndian16(ofstream& fout, uint16_t writeValue)
+	inline void writeBigEndian16(std::ofstream& fout, uint16_t writeValue)
 	{
 		uint16_t writeValueBigEndian = Endian::BigEndianToNative16(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueBigEndian), sizeof(writeValueBigEndian));
 	}
-	inline void writeBigEndian8 (ofstream& fout, uint8_t writeValue)
+	inline void writeBigEndian8 (std::ofstream& fout, uint8_t writeValue)
 	{
 		uint8_t writeValueBigEndian = Endian::BigEndianToNative8(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueBigEndian), sizeof(writeValueBigEndian));
 	}
 
-	inline void writeLittleEndian64(ofstream& fout, uint64_t writeValue)
+	inline void writeLittleEndian64(std::ofstream& fout, uint64_t writeValue)
 	{
 		uint64_t writeValueLittleEndian = Endian::LittleEndianToNative64(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueLittleEndian), sizeof(writeValueLittleEndian));
 	}
-	inline void writeLittleEndian32(ofstream& fout, uint32_t writeValue)
+	inline void writeLittleEndian32(std::ofstream& fout, uint32_t writeValue)
 	{
 		uint32_t writeValueLittleEndian = Endian::LittleEndianToNative32(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueLittleEndian), sizeof(writeValueLittleEndian));
 	}
-	inline void writeLittleEndian16(ofstream& fout, uint16_t writeValue)
+	inline void writeLittleEndian16(std::ofstream& fout, uint16_t writeValue)
 	{
 		uint16_t writeValueLittleEndian = Endian::LittleEndianToNative16(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueLittleEndian), sizeof(writeValueLittleEndian));
 	}
-	inline void writeLittleEndian8 (ofstream& fout, uint8_t writeValue)
+	inline void writeLittleEndian8 (std::ofstream& fout, uint8_t writeValue)
 	{
 		uint8_t writeValueLittleEndian = Endian::LittleEndianToNative8(writeValue);
 		fout.write(reinterpret_cast<char*>(&writeValueLittleEndian), sizeof(writeValueLittleEndian));
 	}
 
-	inline void writeBitSwappedBigEndian64(ofstream& fout, uint64_t writeValue)
+	inline void writeBitSwappedBigEndian64(std::ofstream& fout, uint64_t writeValue)
 	{
 		uint64_t writeValueByteSwapped = Endian::BitSwap64(writeValue);
 		uint64_t writeValueByteSwappedBigEndian = Endian::BigEndianToNative64(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedBigEndian), sizeof(writeValueByteSwappedBigEndian));
 	}
-	inline void writeBitSwappedBigEndian32(ofstream& fout, uint32_t writeValue)
+	inline void writeBitSwappedBigEndian32(std::ofstream& fout, uint32_t writeValue)
 	{
 		uint32_t writeValueByteSwapped = Endian::BitSwap32(writeValue);
 		uint32_t writeValueByteSwappedBigEndian = Endian::BigEndianToNative32(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedBigEndian), sizeof(writeValueByteSwappedBigEndian));
 	}
-	inline void writeBitSwappedBigEndian16(ofstream& fout, uint16_t writeValue)
+	inline void writeBitSwappedBigEndian16(std::ofstream& fout, uint16_t writeValue)
 	{
 		uint16_t writeValueByteSwapped = Endian::BitSwap16(writeValue);
 		uint16_t writeValueByteSwappedBigEndian = Endian::BigEndianToNative16(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedBigEndian), sizeof(writeValueByteSwappedBigEndian));
 	}
-	inline void writeBitSwappedBigEndian8 (ofstream& fout, uint8_t writeValue)
+	inline void writeBitSwappedBigEndian8 (std::ofstream& fout, uint8_t writeValue)
 	{
 		uint8_t writeValueByteSwapped = Endian::BitSwap8(writeValue);
 		uint8_t writeValueByteSwappedBigEndian = Endian::BigEndianToNative8(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedBigEndian), sizeof(writeValueByteSwappedBigEndian));
 	}
 
-	inline void writeBitSwappedLittleEndian64(ofstream& fout, uint64_t writeValue)
+	inline void writeBitSwappedLittleEndian64(std::ofstream& fout, uint64_t writeValue)
 	{
 		uint64_t writeValueByteSwapped = Endian::BitSwap64(writeValue);
 		uint64_t writeValueByteSwappedLittleEndian = Endian::LittleEndianToNative64(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedLittleEndian), sizeof(writeValueByteSwappedLittleEndian));
 	}
-	inline void writeBitSwappedLittleEndian32(ofstream& fout, uint32_t writeValue)
+	inline void writeBitSwappedLittleEndian32(std::ofstream& fout, uint32_t writeValue)
 	{
 		uint32_t writeValueByteSwapped = Endian::BitSwap32(writeValue);
 		uint32_t writeValueByteSwappedLittleEndian = Endian::LittleEndianToNative32(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedLittleEndian), sizeof(writeValueByteSwappedLittleEndian));
 	}
-	inline void writeBitSwappedLittleEndian16(ofstream& fout, uint16_t writeValue)
+	inline void writeBitSwappedLittleEndian16(std::ofstream& fout, uint16_t writeValue)
 	{
 		uint16_t writeValueByteSwapped = Endian::BitSwap16(writeValue);
 		uint16_t writeValueByteSwappedLittleEndian = Endian::LittleEndianToNative16(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedLittleEndian), sizeof(writeValueByteSwappedLittleEndian));
 	}
-	inline void writeBitSwappedLittleEndian8 (ofstream& fout, uint8_t writeValue)
+	inline void writeBitSwappedLittleEndian8 (std::ofstream& fout, uint8_t writeValue)
 	{
 		uint8_t writeValueByteSwapped = Endian::BitSwap8(writeValue);
 		uint8_t writeValueByteSwappedLittleEndian = Endian::LittleEndianToNative8(writeValueByteSwapped);
 		fout.write(reinterpret_cast<char*>(&writeValueByteSwappedLittleEndian), sizeof(writeValueByteSwappedLittleEndian));
 	}
 
-	inline void writeCharArray(ofstream& fout, char* writeCharArray, size_t outputSize = 0)
+	inline void writeCharArray(std::ofstream& fout, char* writeCharArray, size_t outputSize = 0)
 	{
 		uint8_t nullChar = 0;
 		size_t charArraySize = 1;
@@ -331,7 +331,7 @@ namespace FileIO {
 		for( ; charArraySize < outputSize ; charArraySize++)
 			fout.write(reinterpret_cast<char*>(&nullChar), 1);
 	}
-	inline void writeString(ofstream& fout, string writeString, size_t outputSize = 0)
+	inline void writeString(std::ofstream& fout, std::string writeString, size_t outputSize = 0)
 	{
 		uint8_t nullChar = 0;
 		size_t stringSize = writeString.size() + 1;
@@ -343,7 +343,7 @@ namespace FileIO {
 			fout.write(reinterpret_cast<char*>(&nullChar), 1);
 	}
 
-	inline void writeBitSwappedCharArray(ofstream& fout, char* writeCharArray, size_t outputSize = 0)
+	inline void writeBitSwappedCharArray(std::ofstream& fout, char* writeCharArray, size_t outputSize = 0)
 	{
 		uint8_t nextChar = 0;
 		size_t charArraySize = 1;
@@ -356,7 +356,7 @@ namespace FileIO {
 		for( ; charArraySize < outputSize ; charArraySize++)
 			fout.write(reinterpret_cast<char*>(&nextChar), 1);
 	}
-	inline void writeBitSwappedString(ofstream& fout, string writeString, size_t outputSize = 0)
+	inline void writeBitSwappedString(std::ofstream& fout, std::string writeString, size_t outputSize = 0)
 	{
 		uint8_t nextChar = 0;
 		size_t stringSize = writeString.size() + 1;
@@ -376,28 +376,28 @@ namespace FileIO {
 			fout.write(reinterpret_cast<char*>(&nextChar), 1);
 	}
 
-	inline void writeCharArray(ofstream& fout, char* writeCharArray, size_t outputSize, Endianness e)
+	inline void writeCharArray(std::ofstream& fout, char* writeCharArray, size_t outputSize, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::writeBitSwappedCharArray(fout, writeCharArray, outputSize);
 		else
 			return FileIO::writeCharArray(fout, writeCharArray, outputSize);
 	}
-	inline void writeString(ofstream& fout, string writeString, size_t outputSize, Endianness e)
+	inline void writeString(std::ofstream& fout, std::string writeString, size_t outputSize, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::writeBitSwappedString(fout, writeString, outputSize);
 		else
 			return FileIO::writeString(fout, writeString, outputSize);
 	}
-	inline void writeCharArray(ofstream& fout, char* writeCharArray, Endianness e)
+	inline void writeCharArray(std::ofstream& fout, char* writeCharArray, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::writeBitSwappedCharArray(fout, writeCharArray, 0);
 		else
 			return FileIO::writeCharArray(fout, writeCharArray, 0);
 	}
-	inline void writeString(ofstream& fout, string writeString, Endianness e)
+	inline void writeString(std::ofstream& fout, std::string writeString, Endianness e)
 	{
 		if(e == Endianness::BE_BS || e == Endianness::LE_BS)
 			return FileIO::writeBitSwappedString(fout, writeString, 0);
@@ -405,7 +405,7 @@ namespace FileIO {
 			return FileIO::writeString(fout, writeString, 0);
 	}
 
-	inline void write64(ofstream& fout, uint64_t writeValue, Endianness e = Endianness::NATIVE)
+	inline void write64(std::ofstream& fout, uint64_t writeValue, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::NATIVE)
 			FileIO::writeNative64(fout, writeValue);
@@ -418,7 +418,7 @@ namespace FileIO {
 		else if(e == Endianness::LE_BS)
 			FileIO::writeBitSwappedLittleEndian64(fout, writeValue);
 	}
-	inline void write32(ofstream& fout, uint32_t writeValue, Endianness e = Endianness::NATIVE)
+	inline void write32(std::ofstream& fout, uint32_t writeValue, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::NATIVE)
 			FileIO::writeNative32(fout, writeValue);
@@ -431,7 +431,7 @@ namespace FileIO {
 		else if(e == Endianness::LE_BS)
 			FileIO::writeBitSwappedLittleEndian32(fout, writeValue);
 	}
-	inline void write16(ofstream& fout, uint16_t writeValue, Endianness e = Endianness::NATIVE)
+	inline void write16(std::ofstream& fout, uint16_t writeValue, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::NATIVE)
 			FileIO::writeNative16(fout, writeValue);
@@ -444,7 +444,7 @@ namespace FileIO {
 		else if(e == Endianness::LE_BS)
 			FileIO::writeBitSwappedLittleEndian16(fout, writeValue);
 	}
-	inline void write8 (ofstream& fout, uint8_t  writeValue, Endianness e = Endianness::NATIVE)
+	inline void write8 (std::ofstream& fout, uint8_t  writeValue, Endianness e = Endianness::NATIVE)
 	{
 		if(e == Endianness::NATIVE)
 			FileIO::writeNative8(fout, writeValue);

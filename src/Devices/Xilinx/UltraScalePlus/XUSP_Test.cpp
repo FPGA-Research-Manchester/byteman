@@ -17,6 +17,8 @@
 #if !defined(NDEBUG)
 #include "XilinxUltraScalePlus.h"
 
+using namespace std;
+
 void XilinxUltraScalePlus::test(bool usableFramesOnly, bool testValueEqual, uint32_t testValue){
 	log("Testing bitstream against value" + to_string(testValue) + ".");
 	ensureInitializedBitstreamArrays();

@@ -17,6 +17,8 @@
 #include "XilinxSeries7.h"
 #include "../../../Common/str.h"
 
+using namespace std;
+
 void XilinxSeries7::blank(string params){
 	ensureInitializedBitstreamArrays();
 	parseParams(params);

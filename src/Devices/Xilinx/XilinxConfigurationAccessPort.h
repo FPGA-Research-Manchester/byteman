@@ -35,7 +35,7 @@
 #include "../../Common/str.h"
 #include "../../../VERSION" // To get byteman version
 
-using namespace std;
+
 
 //As indicator for number and types of variables in the template
 #define FABRIC_TEMPLATE(MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, ENABLE_TOP_BOTTOM, TOP_BOTTOM_BIT_SHIFT, BLOCKTYPE_SHIFT, BLOCKTYPE_MASK, ROWADDRESS_SHIFT, ROWADDRESS_MASK, COLUMNADDRESS_SHIFT, COLUMNADDRESS_MASK, MINORADDRESS_SHIFT, MINORADDRESS_MASK) MAX_SLRS, MAX_ROWS, MAX_COLS, MAX_BRAM_COLS, BLOCKTYPE_MAX, BLOCKTYPE_LOGIC, BLOCKTYPE_BLOCKRAM, WORDS_BEFORE_CLK, WORDS_AT_CLK, WORDS_AFTER_CLK, WORDS_PER_FRAME, FRAMES_PER_BRAM_CONTENT_COLUMN, CLB_PER_CLOCK_REGION, BRAM_PER_CLOCK_REGION, EXTRA_FRAMES_PER_ROW, ENABLE_TOP_BOTTOM, TOP_BOTTOM_BIT_SHIFT, BLOCKTYPE_SHIFT, BLOCKTYPE_MASK, ROWADDRESS_SHIFT, ROWADDRESS_MASK, COLUMNADDRESS_SHIFT, COLUMNADDRESS_MASK, MINORADDRESS_SHIFT, MINORADDRESS_MASK
@@ -102,16 +102,16 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 
 //Base variables
 	//Output
-		streamoff headerLocationOfRemainingFileLength; ///< gets set by outputBITheader() and gets used by outputBITheaderLengthField().
+		std::streamoff headerLocationOfRemainingFileLength; ///< gets set by outputBITheader() and gets used by outputBITheaderLengthField().
 
 	//bitstream meta
-		string designName;
-		string partName;
-		string fileDate;
-		string fileTime;
+		std::string designName;
+		std::string partName;
+		std::string fileDate;
+		std::string fileTime;
 
 	//bitstream structure
-		string initializedBitstreamShortPartName; 		///< The partName of currently initialized bitstream buffers
+		std::string initializedBitstreamShortPartName; 		///< The partName of currently initialized bitstream buffers
 		Endianness loadedBitstreamEndianness;   		///< The endianess of the currently loaded bitstream.
 		bool bitstreamHasValidData;
 		uint32_t* bitstreamBegin;
@@ -119,8 +119,8 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		uint32_t* bitstreamBRAM[MAX_ROWS][MAX_BRAM_COLS];
 		uint32_t* bitstreamEnd;
 
-	//resource string parameters
-		string initializedBitstreamParamsShortPartName; ///< the partName of currently initialized resource string parameters
+	//resource std::string parameters
+		std::string initializedBitstreamParamsShortPartName; ///< the partName of currently initialized resource std::string parameters
 		int numberOfSLRs;
 		int numberOfRows;
 		int numberOfBRAMCols[MAX_ROWS];
@@ -132,8 +132,8 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 		int numberOfFramesPerRow[MAX_ROWS];
 		int numberOfWordsPerRow[MAX_ROWS];
 
-	//SLR data and resource string
-		string initializedResourceStringShortPartName; ///< the partName of currently initialized resource string parameters
+	//SLR data and resource std::string
+		std::string initializedResourceStringShortPartName; ///< the partName of currently initialized resource std::string parameters
 		char resourceString[MAX_ROWS][MAX_COLS];
 		struct {
 			uint32_t IDCODE;
@@ -143,7 +143,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 
 	//constant arrays defining selected fabric
 		int LUT_numberOfFramesForResourceLetter[256];
-		string LUT_typeOfFrameForResourceLetter[256];
+		std::string LUT_typeOfFrameForResourceLetter[256];
 		bool LUT_isFrameUnusedForResourceLetter[256];
 
 //Base class functions are inlined and included here (this is so to force multiple instances that get optimized for the architectures' constants)
@@ -163,32 +163,32 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 //Some functions that will need to be implemented by each architecture
 	//get/set device type
 		virtual int getDeviceByIDCODEorThrow(int) = 0;
-		virtual int getDeviceByNameOrThrow(string) = 0;
+		virtual int getDeviceByNameOrThrow(std::string) = 0;
 		virtual int getDeviceByIDCODE(int) = 0;
-		virtual int getDeviceByName(string) = 0;
-		virtual void setDevice(int, string = "") = 0;
+		virtual int getDeviceByName(std::string) = 0;
+		virtual void setDevice(int, std::string = "") = 0;
 		virtual void setDeviceByPartNameOrThrow() = 0;
-		virtual void setDeviceByNameOrThrow(string) = 0;
+		virtual void setDeviceByNameOrThrow(std::string) = 0;
 		virtual void setDeviceByIDCODEOrThrow(int) = 0;
 
-	//initialize resource strings and bitstream buffers
+	//initialize resource std::strings and bitstream buffers
 		virtual void ensureInitializedBitstreamArrays() = 0;
 		virtual void initializeResourceStringParameters() = 0;
 
 	// output bitstream
-		virtual void outputBitstreamGlobalHeaderSequence(ofstream&, bool, Endianness) = 0;
-		virtual void outputBitstreamGlobalFooterSequence(ofstream&, bool, Endianness) = 0;
+		virtual void outputBitstreamGlobalHeaderSequence(std::ofstream&, bool, Endianness) = 0;
+		virtual void outputBitstreamGlobalFooterSequence(std::ofstream&, bool, Endianness) = 0;
 		
-		virtual void outputBitstreamSLRHeaderBitstreamSequence(ofstream&, int, bool, Endianness) = 0;
-		virtual void outputBitstreamSLRFooterBitstreamSequence(ofstream&, int, bool, Endianness) = 0;
-		virtual void outputBitstreamSLRHeaderAfterBitstreamSequence(ofstream&, int, bool, Endianness) = 0;
-		virtual void outputBitstreamSLRWrapUpSequence(ofstream&, int, bool, Endianness) = 0;
+		virtual void outputBitstreamSLRHeaderBitstreamSequence(std::ofstream&, int, bool, Endianness) = 0;
+		virtual void outputBitstreamSLRFooterBitstreamSequence(std::ofstream&, int, bool, Endianness) = 0;
+		virtual void outputBitstreamSLRHeaderAfterBitstreamSequence(std::ofstream&, int, bool, Endianness) = 0;
+		virtual void outputBitstreamSLRWrapUpSequence(std::ofstream&, int, bool, Endianness) = 0;
 		
-		virtual void outputBitstreamEmptySLRHeaderSequence(ofstream&, int, bool, Endianness) = 0;
-		virtual void outputBitstreamEmptySLRWrapUpSequence(ofstream&, int, bool, Endianness) = 0;
+		virtual void outputBitstreamEmptySLRHeaderSequence(std::ofstream&, int, bool, Endianness) = 0;
+		virtual void outputBitstreamEmptySLRWrapUpSequence(std::ofstream&, int, bool, Endianness) = 0;
 
 	// Info 
-		virtual string getFrameType(int, int, int) = 0;
+		virtual std::string getFrameType(int, int, int) = 0;
 
 	protected:
 	private:

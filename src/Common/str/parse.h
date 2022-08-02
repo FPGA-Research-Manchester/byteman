@@ -22,20 +22,20 @@
 #include<iomanip> //quoted
 #include<sstream>
 
-using namespace std;
+
 
 /**************************************************************************//**
- * The str::parse:: namespace holds some custom and/or shorter functions for string
+ * The str::parse:: namespace holds some custom and/or shorter functions for std::string
  * parsing.
  * 
  *****************************************************************************/
 namespace str{
 	namespace parse {
-		/// Parses a string @c s, returns the n-th string word that is not an integer
-		inline string nthStringWord(string s, int n)	
+		/// Parses a std::string @c s, returns the n-th std::string word that is not an integer
+		inline std::string nthStringWord(std::string s, int n)	
 		{
-			stringstream ss(s);
-			string temp;
+			std::stringstream ss(s);
+			std::string temp;
 			int intFound, i = 0;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
@@ -44,8 +44,8 @@ namespace str{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
-				} catch (const exception &e) {
+						throw std::exception();
+				} catch (const std::exception &e) {
 					if(i == n)
 						return temp;
 					i++;
@@ -53,13 +53,13 @@ namespace str{
 				}
 				temp.clear();
 			}
-			return string("");
+			return std::string("");
 		}
-		/// Parses a string @c s, removes all integers and returns the rest
-		inline string allStringWords(string s)	
+		/// Parses a std::string @c s, removes all integers and returns the rest
+		inline std::string allStringWords(std::string s)	
 		{
-			stringstream ss(s);
-			string temp, ret = "";
+			std::stringstream ss(s);
+			std::string temp, ret = "";
 			int intFound;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
@@ -68,8 +68,8 @@ namespace str{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
-				} catch (const exception &e) {
+						throw std::exception();
+				} catch (const std::exception &e) {
 					if(!ret.empty())
 						ret.append(" ");
 					ret.append(temp);
@@ -79,13 +79,13 @@ namespace str{
 			}
 			return ret;
 		}
-		/// Parses a string @c s, removes all integers and returns the last of all string words
-		inline string lastStringWord(string s)	
+		/// Parses a std::string @c s, removes all integers and returns the last of all std::string words
+		inline std::string lastStringWord(std::string s)	
 		{
-			stringstream ss(s);
-			string ret;
+			std::stringstream ss(s);
+			std::string ret;
 			ret.clear();
-			string temp;
+			std::string temp;
 			int intFound;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
@@ -94,8 +94,8 @@ namespace str{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
-				} catch (const exception &e) {
+						throw std::exception();
+				} catch (const std::exception &e) {
 					ret = temp;
 					e;
 				}
@@ -103,14 +103,14 @@ namespace str{
 			}
 			return ret;
 		}
-		/// Parses a string @c s, removes all integers and the last string word. Returns the rest
-		inline string allStringWordsWithoutLastStringWord(string s)	
+		/// Parses a std::string @c s, removes all integers and the last std::string word. Returns the rest
+		inline std::string allStringWordsWithoutLastStringWord(std::string s)	
 		{
-			stringstream ss(s);
-			string ret;
+			std::stringstream ss(s);
+			std::string ret;
 			ret.clear();
-			string temp;
-			string temp2;
+			std::string temp;
+			std::string temp2;
 			int intFound;
 			while (!ss.eof()) {
 				ss >> quoted(temp);
@@ -119,8 +119,8 @@ namespace str{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
-				} catch (const exception &e) {
+						throw std::exception();
+				} catch (const std::exception &e) {
 					if(!ret.empty())
 						ret.append(" ");
 					ret.append(temp2);
@@ -131,11 +131,11 @@ namespace str{
 			}
 			return ret;
 		}
-		/// Parses a string @c s, returns the n-th integer
-		inline bool nthInteger(string s, int n, int &x)	
+		/// Parses a std::string @c s, returns the n-th integer
+		inline bool nthInteger(std::string s, int n, int &x)	
 		{
-			stringstream ss(s);
-			string temp;
+			std::stringstream ss(s);
+			std::string temp;
 			int intFound;
 			int i = 0;
 			while (!ss.eof()) {
@@ -145,26 +145,26 @@ namespace str{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
+						throw std::exception();
 					if(i == n) {
 						x = intFound;
 						return true;
 					}
 					i++;
-				} catch (const exception &e) {
+				} catch (const std::exception &e) {
 					e;
 				}
 				temp.clear();
 			}
 			return false;
 		}
-		/// Removes all string words from a given string @c s and returns the parsed @c arrsize number of integers into @c arr
-		inline bool arrayOfUints(string s, int arrsize, uint32_t* arr)	
+		/// Removes all std::string words from a given std::string @c s and returns the parsed @c arrsize number of integers into @c arr
+		inline bool arrayOfUints(std::string s, int arrsize, uint32_t* arr)	
 		{
 			if (arrsize == 0)
 				return true;
-			stringstream ss(s);
-			string temp;
+			std::stringstream ss(s);
+			std::string temp;
 			uint32_t intFound;
 			bool intWasFound = false;
 			for (int i = 0 ; i < arrsize ; i++)
@@ -177,10 +177,10 @@ namespace str{
 						size_t sz;
 						intFound = (uint32_t)(stoll(temp, &sz, 0));
 						if(temp.size() != sz)
-							throw exception();
+							throw std::exception();
 						arr[i] = intFound;
 						intWasFound = true;
-					} catch (const exception &e) {
+					} catch (const std::exception &e) {
 						e;
 					}
 					temp.clear();
@@ -191,15 +191,15 @@ namespace str{
 			return true;   //success
 		}
 		
-		template<typename ... Rest> inline bool multipleInts(stringstream & ss)
+		template<typename ... Rest> inline bool multipleInts(std::stringstream & ss)
 		{
 			return true;
 		}
-		/// Parses stringstream @c ss for integer values, that are returned into @c x, @c args
-		template<typename ... Rest> inline bool multipleInts(stringstream & ss, int & x, Rest & ... args)	
+		/// Parses std::stringstream @c ss for integer values, that are returned into @c x, @c args
+		template<typename ... Rest> inline bool multipleInts(std::stringstream & ss, int & x, Rest & ... args)	
 		{
 			int numArgs = sizeof...(args);
-			string temp;
+			std::string temp;
 			int intFound;
 			bool intWasFound = false;
 			while ((!ss.eof()) && (!intWasFound)) {
@@ -209,10 +209,10 @@ namespace str{
 					size_t sz;
 					intFound = stoi(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
+						throw std::exception();
 					x = intFound;
 					intWasFound = true;
-				} catch (const exception &e) {
+				} catch (const std::exception &e) {
 					e;
 				}
 				temp.clear();
@@ -221,22 +221,22 @@ namespace str{
 				return false;
 			return multipleInts(ss, args...);
 		}
-		/// Parses string @c s for integer values, that are returned into @c args
-		template<typename ... Args> inline bool multipleInts(string s, Args & ... args)	
+		/// Parses std::string @c s for integer values, that are returned into @c args
+		template<typename ... Args> inline bool multipleInts(std::string s, Args & ... args)	
 		{
-			stringstream ss(s);
+			std::stringstream ss(s);
 			return multipleInts(ss, args...);
 		}
 		
-		template<typename ... Rest> inline bool multipleUints(stringstream & ss)
+		template<typename ... Rest> inline bool multipleUints(std::stringstream & ss)
 		{
 			return true;
 		}
-		/// Parses stringstream @c ss for uint32_t values, that are returned into @c x, @c args
-		template<typename ... Rest> inline bool multipleUints(stringstream & ss, uint32_t & x, Rest & ... args)	
+		/// Parses std::stringstream @c ss for uint32_t values, that are returned into @c x, @c args
+		template<typename ... Rest> inline bool multipleUints(std::stringstream & ss, uint32_t & x, Rest & ... args)	
 		{
 			int numArgs = sizeof...(args);
-			string temp;
+			std::string temp;
 			unsigned long uintFound;
 			bool intWasFound = false;
 			while ((!ss.eof()) && (!intWasFound)) {
@@ -246,10 +246,10 @@ namespace str{
 					size_t sz;
 					uintFound = stoul(temp, &sz, 0);
 					if(temp.size() != sz)
-						throw exception();
+						throw std::exception();
 					x = (uint32_t)uintFound;
 					intWasFound = true;
-				} catch (const exception &e) {
+				} catch (const std::exception &e) {
 					e;
 				}
 				temp.clear();
@@ -258,10 +258,10 @@ namespace str{
 				return false;
 			return multipleUints(ss, args...);
 		}
-		/// Parses string @c s for uint32_t values, that are returned into @c args
-		template<typename ... Args> inline bool multipleUints(string s, Args & ... args)	
+		/// Parses std::string @c s for uint32_t values, that are returned into @c args
+		template<typename ... Args> inline bool multipleUints(std::string s, Args & ... args)	
 		{
-			stringstream ss(s);
+			std::stringstream ss(s);
 			return multipleUints(ss, args...);
 		}
 	}

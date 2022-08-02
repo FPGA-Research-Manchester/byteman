@@ -17,6 +17,8 @@
 #include "XilinxUltraScale.h"
 #include "../../../Common/str.h"
 
+using namespace std;
+
 void XilinxUltraScale::blank(string params){
 	ensureInitializedBitstreamArrays();
 	parseParams(params);

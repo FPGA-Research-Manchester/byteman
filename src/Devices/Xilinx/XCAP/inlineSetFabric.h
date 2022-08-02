@@ -14,7 +14,7 @@
  * limitations under the License.
  *****************************************************************************/
 
-inline void setFabricChar(char character, int frameNumber, string tileName, bool isUnused=false){
+inline void setFabricChar(char character, int frameNumber, std::string tileName, bool isUnused=false){
 	LUT_numberOfFramesForResourceLetter[(uint8_t)character] = frameNumber;
 	LUT_isFrameUnusedForResourceLetter[(uint8_t)character]  = isUnused;
 	LUT_typeOfFrameForResourceLetter[(uint8_t)character]    = tileName;

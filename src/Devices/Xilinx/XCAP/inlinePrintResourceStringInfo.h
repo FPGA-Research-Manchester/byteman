@@ -15,20 +15,20 @@
  *****************************************************************************/
 
 inline void printResourceStringInfo(){
-	cout << "Brakdown of X coordinates in device " + partName + ":" << endl;
+	std::cout << "Brakdown of X coordinates in device " + partName + ":" << std::endl;
 	for(int r = 0 ; r < numberOfRows ; r++){
-		cout << "\tRow " << r << " (counting from bottom up) is represented by Y coordinate range " << r * CLB_PER_CLOCK_REGION << "-" << ((r + 1) * CLB_PER_CLOCK_REGION - 1) << "." << endl;
-		cout << "\tRow " << r << " has the following X coordinates with respective column resources:" << endl;
+		std::cout << "\tRow " << r << " (counting from bottom up) is represented by Y coordinate range " << r * CLB_PER_CLOCK_REGION << "-" << ((r + 1) * CLB_PER_CLOCK_REGION - 1) << "." << std::endl;
+		std::cout << "\tRow " << r << " has the following X coordinates with respective column resources:" << std::endl;
 		for(int c = 0 ; ; c++){
 			uint8_t resourceLetter = (uint8_t)resourceString[r][c];
 			if(resourceLetter <= 1)
 				break;
 			if(LUT_isFrameUnusedForResourceLetter[resourceLetter])
-				cout << "\t\t" << c << ": Unused/hidden resource" << endl;
+				std::cout << "\t\t" << c << ": Unused/hidden resource" << std::endl;
 			else
-				cout << "\t\t" << c << ": " << LUT_typeOfFrameForResourceLetter[resourceLetter] << endl;
+				std::cout << "\t\t" << c << ": " << LUT_typeOfFrameForResourceLetter[resourceLetter] << std::endl;
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
 }
 

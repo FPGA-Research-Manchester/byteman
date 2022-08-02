@@ -29,7 +29,7 @@
  * - "or" : Selects bitwise OR operation.
  * - "and" : Selects bitwise AND operation.
  *****************************************************************************/
-inline void parseParams(string params){
+inline void parseParams(std::string params){
 	selectedOptions = SelectedOptions();
 	selectedOptions.clk = false;
 	selectedOptions.clb = false;
@@ -41,8 +41,8 @@ inline void parseParams(string params){
 	selectedOptions.forceEndianness = false;
 	selectedOptions.intParam = 0;
 	replace(params.begin(), params.end(), ',', ' ');
-	stringstream ss(params);
-	string param;
+	std::stringstream ss(params);
+	std::string param;
 	while (!ss.eof()) {
 		ss >> param;
 		if(param == "clock" || param == "clk")selectedOptions.clk = true;
