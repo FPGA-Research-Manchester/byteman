@@ -126,10 +126,10 @@ void byteman::helpVerbose(bool selectedAll)
 	std::cout << "  enables/disables logging messages. they are disabled by default." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -verbose [VerboseValue]" << std::endl;
+	std::cout << "    " EXECUTABLE " -verbose [<VerboseValue>]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Arg:" << std::endl;
-	std::cout << "    [VerboseValue]: accepted values are 0 to disable and 1 to enable. Default is 1." << std::endl;
+	std::cout << "    [<VerboseValue>]: accepted values are 0 to disable and 1 to enable. Default is 1." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Examples:" << std::endl;
 	std::cout << "    # Enable logging:" << std::endl;
@@ -150,10 +150,10 @@ void byteman::helpWarn(bool selectedAll)
 	std::cout << "  enables/disables warning messages. they are enabled by default." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -warn [WarnValue]" << std::endl;
+	std::cout << "    " EXECUTABLE " -warn [<WarnValue>]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Arg:" << std::endl;
-	std::cout << "    [WarnValue]: accepted values are 0 to disable and 1 to enable. Default is 1." << std::endl;
+	std::cout << "    [<WarnValue>]: accepted values are 0 to disable and 1 to enable. Default is 1." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Examples:" << std::endl;
 	std::cout << "    # Enable warnings, but they were enabled by default anyway:" << std::endl;
