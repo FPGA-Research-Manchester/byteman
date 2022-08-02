@@ -154,7 +154,11 @@ string byteman::parseParamsAndRemoveThemFromString(string params)
 		ss >> param;
 		if("main" == param || "first"  == param)options.mainBufferSelected = true;
 		else if("temp" == param || "second" == param)options.tempBufferSelected = true;
-		else commandWithoutTheValidParams.append(param);
+		else {
+			if(commandWithoutTheValidParams != "")
+				commandWithoutTheValidParams.append(" ");
+			commandWithoutTheValidParams.append(param);
+		}
 		param.clear();
 	}
 	if(!options.mainBufferSelected && !options.tempBufferSelected) // by default, choose the main buffer

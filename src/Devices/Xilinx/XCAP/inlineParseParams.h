@@ -39,6 +39,7 @@ inline void parseParams(std::string params){
 	selectedOptions.op = MergeOP::SET;
 	selectedOptions.skipUnused = true;
 	selectedOptions.forceEndianness = false;
+	selectedOptions.word = false;
 	selectedOptions.intParam = 0;
 	replace(params.begin(), params.end(), ',', ' ');
 	std::stringstream ss(params);
@@ -51,6 +52,7 @@ inline void parseParams(std::string params){
 		if(param == "blank")selectedOptions.blank = true;
 		if(param == "full")selectedOptions.partialNotFull = false;
 		if(param == "partial")selectedOptions.partialNotFull = true;
+		if(param == "word")selectedOptions.word = true;
 		if(param == "set")selectedOptions.op = MergeOP::SET;
 		if(param == "xor")selectedOptions.op = MergeOP::XOR;
 		if(param == "or")selectedOptions.op = MergeOP::OR;

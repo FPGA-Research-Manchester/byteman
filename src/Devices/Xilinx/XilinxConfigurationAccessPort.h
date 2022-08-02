@@ -92,7 +92,7 @@ class XilinxConfigurationAccessPort: virtual public CommonDevice2D
 
 		struct SelectedOptions
 		{
-			bool clk, clb, bram, blank, partialNotFull, skipUnused, forceEndianness;
+			bool clk, clb, bram, blank, partialNotFull, skipUnused, forceEndianness, word;
 			MergeOP op;
 			int intParam;
 			Endianness forcedEndianness;

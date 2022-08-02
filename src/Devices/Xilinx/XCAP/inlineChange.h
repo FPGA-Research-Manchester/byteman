@@ -15,6 +15,7 @@
  *****************************************************************************/
 
 inline void ensureSelectedEndianness(Endianness newEndianness){
+	ensureInitializedBitstreamArrays();//initialize bitstream arrays before modifications
 	Endianness endiannessConvertion = Endian::diff(loadedBitstreamEndianness, newEndianness);
 	if(endiannessConvertion == Endianness::NATIVE)// if there is no actual convertion needed
 		return;
@@ -37,5 +38,18 @@ inline void ensureSelectedEndianness(Endianness newEndianness){
 			bitstreamBegin[i] = Endian::BitSwap32(Endian::NativeToLittleEndian32(bitstreamBegin[i]));
 		
 	loadedBitstreamEndianness = newEndianness;
+}
+
+inline void setBitstreamWord(std::string params){
+	ensureInitializedBitstreamArrays();//initialize bitstream arrays before modifications
+	uint32_t r, y, c, b, m, w, newVal;
+	str::parse::multipleUints(params, y, c, b, m, w, newVal);
+	r = y / CLB_PER_CLOCK_REGION;
+	if(b == BLOCKTYPE_LOGIC){
+		bitstreamCLB[r][c][m*WORDS_PER_FRAME + w] = Endian::NativeToAnyEndianness32(newVal, loadedBitstreamEndianness);
+	} else if(b == BLOCKTYPE_BLOCKRAM){
+		bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w] = Endian::NativeToAnyEndianness32(newVal, loadedBitstreamEndianness);
+	}
+	bitstreamHasValidData = true;
 }
 

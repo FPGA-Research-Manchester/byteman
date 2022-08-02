@@ -27,4 +27,6 @@ void XilinxUltraScalePlus::change(string params)
 	parseParams(params);
 	if(selectedOptions.forceEndianness)
 		ensureSelectedEndianness(selectedOptions.forcedEndianness);
+	if(selectedOptions.word)
+		setBitstreamWord(params);
 }

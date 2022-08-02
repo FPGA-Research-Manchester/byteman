@@ -85,6 +85,8 @@ inline void fastMerge(XilinxConfigurationAccessPort* srcBitstream, Rect2D src, C
 
 inline void flexiMerge(XilinxConfigurationAccessPort* srcBitstream, Endianness endianConversionNeeded, Rect2D src, Coord2D dst){
 	log("flexiMerge function called");
+	ensureInitializedBitstreamArrays();//initialize bitstream arrays before modifications
+	srcBitstream->ensureInitializedBitstreamArrays();//initialize bitstream arrays before modifications
 	int srcRA = src.position.row  / CLB_PER_CLOCK_REGION;
 	int sizeR = src.size.row / CLB_PER_CLOCK_REGION;
 	int dstRA = dst.row  / CLB_PER_CLOCK_REGION;
