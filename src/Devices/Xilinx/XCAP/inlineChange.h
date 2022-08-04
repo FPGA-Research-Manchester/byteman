@@ -48,9 +48,9 @@ inline void setBitstreamWord(std::string params){
 	newVal = Endian::NativeToAnyEndianness32(newVal, loadedBitstreamEndianness);
 	r = y / CLB_PER_CLOCK_REGION;
 	if(b == BLOCKTYPE_LOGIC){
-		bitstreamCLB[r][c][m*WORDS_PER_FRAME + w] = (mask & newVal) | ((newVal^0xFFFFFFFF) & bitstreamCLB[r][c][m*WORDS_PER_FRAME + w]);
+		bitstreamCLB[r][c][m*WORDS_PER_FRAME + w] = (mask & newVal) | ((mask^0xFFFFFFFF) & bitstreamCLB[r][c][m*WORDS_PER_FRAME + w]);
 	} else if(b == BLOCKTYPE_BLOCKRAM){
-		bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w] = (mask & newVal) | ((newVal^0xFFFFFFFF) & bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w]);
+		bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w] = (mask & newVal) | ((mask^0xFFFFFFFF) & bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w]);
 	}
 	bitstreamHasValidData = true;
 }
