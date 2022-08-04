@@ -13,7 +13,7 @@
 
 ## $> byteman.exe -help
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
@@ -49,7 +49,7 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
@@ -79,7 +79,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
@@ -106,11 +106,11 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   modifies bitstream data.
 
   Usage:
-    byteman.exe -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian] [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <value>]
+    byteman.exe -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian] [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <mask> <value>]
 
   Args:
     [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
@@ -120,7 +120,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
     [BigEndianWithBitSwap]: forces the stored bitstream data is in Big Endian with Bit Swap format. any future operations will inherit the endianness (such as -Output)
     [LittleEndianWithBitSwap]: forces the stored bitstream data is in Little Endian with Bit Swap format. any future operations will inherit the endianness (such as -Output)
     [NativeEndian]: forces the stored bitstream data is in the native endianness of the system. any future operations will inherit the endianness (such as -Output)
-    [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <value>]: forces bitstream value <value> to a word located at coordinates <Y>:<X> in block <blockType>
+    [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <mask> <value>]: forces bitstream value <value> (masked by <mask>) to a word located at coordinates <Y>:<X> in block <blockType>
                                                                         : with internal offsets for the frame <frameOffset> and word <wordOffset>
 
   Examples:
@@ -129,17 +129,17 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
     # reads a bitstream, forces little endianness, writes back the bitstream in the new endianness:
     byteman.exe xilinx series 7 -input boot.bin -change LITTLEendian -output full boot.bin
     # load a partial bitstream located at 180:0. targetting the third blockram left to right, located at 180:37.
-    # modify its routing at the 3rd frame (frame offset 2) at the 41-st word (word offset 40) to value 0xA5A5A5A5. (the blockram routing is located in CLB block Type - blockType 0):
-    byteman.exe xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 0 2 40 0xA5A5A5A5 -output ...
+    # modify its routing at the 3rd frame (frame offset 2) at the 41-st word (word offset 40) to value 0xA5A50000 (masked by 0xFFFF0000). (the blockram routing is located in CLB block Type - blockType 0):
+    byteman.exe xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 0 2 40 0xFFFF0000 0xA5A50000 -output ...
     # load a partial bitstream located at 180:0. targetting the second blockram left to right, located at 180:37.
-    # modify contents at the 233rd frame (frame offset 232) at the 5-th word (word offset 4) to value 0xFFFFFFFF. (the blockram contents are located in blockType 1):
-    byteman.exe xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 1 232 4 0xFFFFFFFF -output ...
+    # modify contents at the 233rd frame (frame offset 232) at the 5-th word (word offset 4) to value 0xFFFFFFFF (masked by 0xFFFFFFFF). (the blockram contents are located in blockType 1):
+    byteman.exe xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 1 232 4 0xFFFFFFFF 0xFFFFFFFF -output ...
 ```
 
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   Sets the target device manually.
 
   Usage:
@@ -213,14 +213,14 @@ A list of currently supported Xilinx UltraScale+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
@@ -253,7 +253,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   reads a bitstream from a file.
 
   Usage:
@@ -273,7 +273,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
@@ -303,7 +303,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
@@ -332,7 +332,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   modifies the list of selected regions.
 
   Usage:
@@ -356,7 +356,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
@@ -373,7 +373,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   enables/disables logging messages. they are disabled by default.
 
   Usage:
@@ -396,7 +396,7 @@ byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.3 (Build #216, compiled on Aug  2 2022 20:22:55)
+byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
   enables/disables warning messages. they are enabled by default.
 
   Usage:
