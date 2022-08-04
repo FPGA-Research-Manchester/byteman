@@ -13,7 +13,7 @@
 
 ## $> byteman.exe -help
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
@@ -49,7 +49,7 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
@@ -79,16 +79,17 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
-    byteman.exe -blank [First] [Second] [Logic] [BlockRAM] [<BlankValue>]
+    byteman.exe -blank [First] [Second] [Logic] [Clock] [BlockRAM] [<BlankValue>]
 
   Args:
     [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified.
     [Second]: selects the second of the two bitstream buffers.
-    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified.
+    [Logic]: selects the data excluding global clock from logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
+    [Clock]: selects the global clock data from logic plane of the bitstream. Enabled by default if no plane is explicitly specified.
     [BlockRAM]: selects the blockram contents plane of the bitstream. Enabled by default if no plane is explicitly specified.
     [<BlankValue>]: byte value (0-255) to be written in the selected bitstream location. Default is 0.
 
@@ -106,7 +107,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   modifies bitstream data.
 
   Usage:
@@ -139,7 +140,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   Sets the target device manually.
 
   Usage:
@@ -213,14 +214,14 @@ A list of currently supported Xilinx UltraScale+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
@@ -253,7 +254,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   reads a bitstream from a file.
 
   Usage:
@@ -273,7 +274,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
@@ -303,7 +304,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
@@ -332,7 +333,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   modifies the list of selected regions.
 
   Usage:
@@ -356,7 +357,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
@@ -373,7 +374,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   enables/disables logging messages. they are disabled by default.
 
   Usage:
@@ -396,7 +397,7 @@ byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.3 (Build #217, compiled on Aug  4 2022 09:38:58)
+byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
   enables/disables warning messages. they are enabled by default.
 
   Usage:
