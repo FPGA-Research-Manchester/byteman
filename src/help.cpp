@@ -227,7 +227,7 @@ void byteman::helpChange(bool selectedAll)
 	std::cout << "  modifies bitstream data." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian] [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <value>]" << std::endl;
+	std::cout << "    " EXECUTABLE " -change [First] [Second] [BigEndian, LittleEndian, BigEndianWithBitSwap, LittleEndianWithBitSwap, NativeEndian] [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <mask> <value>]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Args:" << std::endl;
 	std::cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << std::endl;
@@ -237,7 +237,7 @@ void byteman::helpChange(bool selectedAll)
 	std::cout << "    [BigEndianWithBitSwap]: forces the stored bitstream data is in Big Endian with Bit Swap format. any future operations will inherit the endianness (such as -Output)" << std::endl;
 	std::cout << "    [LittleEndianWithBitSwap]: forces the stored bitstream data is in Little Endian with Bit Swap format. any future operations will inherit the endianness (such as -Output)" << std::endl;
 	std::cout << "    [NativeEndian]: forces the stored bitstream data is in the native endianness of the system. any future operations will inherit the endianness (such as -Output)" << std::endl;
-	std::cout << "    [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <value>]: forces bitstream value <value> to a word located at coordinates <Y>:<X> in block <blockType>" << std::endl;
+	std::cout << "    [word <Y>:<X> <blockType> <frameOffset> <wordOffset> <mask> <value>]: forces bitstream value <value> (masked by <mask>) to a word located at coordinates <Y>:<X> in block <blockType>" << std::endl;
 	std::cout << "                                                                        : with internal offsets for the frame <frameOffset> and word <wordOffset>" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Examples:" << std::endl;
@@ -246,11 +246,11 @@ void byteman::helpChange(bool selectedAll)
 	std::cout << "    # reads a bitstream, forces little endianness, writes back the bitstream in the new endianness:" << std::endl;
 	std::cout << "    " EXECUTABLE " xilinx series 7 -input boot.bin -change LITTLEendian -output full boot.bin" << std::endl;
 	std::cout << "    # load a partial bitstream located at 180:0. targetting the third blockram left to right, located at 180:37." << std::endl;
-	std::cout << "    # modify its routing at the 3rd frame (frame offset 2) at the 41-st word (word offset 40) to value 0xA5A5A5A5. (the blockram routing is located in CLB block Type - blockType 0):" << std::endl;
-	std::cout << "    " EXECUTABLE " xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 0 2 40 0xA5A5A5A5 -output ..." << std::endl;
+	std::cout << "    # modify its routing at the 3rd frame (frame offset 2) at the 41-st word (word offset 40) to value 0xA5A50000 (masked by 0xFFFF0000). (the blockram routing is located in CLB block Type - blockType 0):" << std::endl;
+	std::cout << "    " EXECUTABLE " xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 0 2 40 0xFFFF0000 0xA5A50000 -output ..." << std::endl;
 	std::cout << "    # load a partial bitstream located at 180:0. targetting the second blockram left to right, located at 180:37." << std::endl;
-	std::cout << "    # modify contents at the 233rd frame (frame offset 232) at the 5-th word (word offset 4) to value 0xFFFFFFFF. (the blockram contents are located in blockType 1):" << std::endl;
-	std::cout << "    " EXECUTABLE " xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 1 232 4 0xFFFFFFFF -output ..." << std::endl;
+	std::cout << "    # modify contents at the 233rd frame (frame offset 232) at the 5-th word (word offset 4) to value 0xFFFFFFFF (masked by 0xFFFFFFFF). (the blockram contents are located in blockType 1):" << std::endl;
+	std::cout << "    " EXECUTABLE " xilinx UltraScale+ -device ZCU102 -input pr.bit -change word 180:37 1 232 4 0xFFFFFFFF 0xFFFFFFFF -output ..." << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;

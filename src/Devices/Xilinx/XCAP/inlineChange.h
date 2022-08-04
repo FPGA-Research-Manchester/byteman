@@ -42,13 +42,15 @@ inline void ensureSelectedEndianness(Endianness newEndianness){
 
 inline void setBitstreamWord(std::string params){
 	ensureInitializedBitstreamArrays();//initialize bitstream arrays before modifications
-	uint32_t r, y, c, b, m, w, newVal;
-	str::parse::multipleUints(params, y, c, b, m, w, newVal);
+	uint32_t r, y, c, b, m, w, mask, newVal;
+	str::parse::multipleUints(params, y, c, b, m, w, mask, newVal);
+	mask = Endian::NativeToAnyEndianness32(mask, loadedBitstreamEndianness);
+	newVal = Endian::NativeToAnyEndianness32(newVal, loadedBitstreamEndianness);
 	r = y / CLB_PER_CLOCK_REGION;
 	if(b == BLOCKTYPE_LOGIC){
-		bitstreamCLB[r][c][m*WORDS_PER_FRAME + w] = Endian::NativeToAnyEndianness32(newVal, loadedBitstreamEndianness);
+		bitstreamCLB[r][c][m*WORDS_PER_FRAME + w] = (mask & newVal) | ((newVal^0xFFFFFFFF) & bitstreamCLB[r][c][m*WORDS_PER_FRAME + w]);
 	} else if(b == BLOCKTYPE_BLOCKRAM){
-		bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w] = Endian::NativeToAnyEndianness32(newVal, loadedBitstreamEndianness);
+		bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w] = (mask & newVal) | ((newVal^0xFFFFFFFF) & bitstreamBRAM[r][numberOfBRAMsBeforeCol[r][c]][m*WORDS_PER_FRAME + w]);
 	}
 	bitstreamHasValidData = true;
 }
