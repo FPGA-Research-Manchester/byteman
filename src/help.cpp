@@ -199,12 +199,13 @@ void byteman::helpBlank(bool selectedAll)
 	std::cout << "  erases/sets the bitstream in the buffers. uses the list of selected regions (see \"-help Region\"). if the list is empty, works on the whole chip." << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Usage:" << std::endl;
-	std::cout << "    " EXECUTABLE " -blank [First] [Second] [Logic] [BlockRAM] [<BlankValue>]" << std::endl;
+	std::cout << "    " EXECUTABLE " -blank [First] [Second] [Logic] [Clock] [BlockRAM] [<BlankValue>]" << std::endl;
 	std::cout << std::endl;
 	std::cout << "  Args:" << std::endl;
 	std::cout << "    [First]: selects the first of the two bitstream buffers. Enabled by default if no buffer is explicitly specified." << std::endl;
 	std::cout << "    [Second]: selects the second of the two bitstream buffers." << std::endl;
-	std::cout << "    [Logic]: selects the logic plane (incl global clock) of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
+	std::cout << "    [Logic]: selects the data excluding global clock from logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
+	std::cout << "    [Clock]: selects the global clock data from logic plane of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
 	std::cout << "    [BlockRAM]: selects the blockram contents plane of the bitstream. Enabled by default if no plane is explicitly specified." << std::endl;
 	std::cout << "    [<BlankValue>]: byte value (0-255) to be written in the selected bitstream location. Default is 0." << std::endl;
 	std::cout << std::endl;
