@@ -16,7 +16,7 @@ You can find up-to-date extraction of these messages below.
 
 ## $> byteman.exe -help
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
 Usage:
   byteman.exe ARCH [-command...]* [-stdin]
 
@@ -52,7 +52,7 @@ Need more help? Try one of these:
 
 ## $> byteman.exe -help assembly
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   assembles and disassembles between bitstream files (.bit|.bin) and bitstream assembly (.bitasm) format.
 
   Usage:
@@ -82,7 +82,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help blank
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   erases/sets the bitstream in the buffers. uses the list of selected regions (see "-help Region"). if the list is empty, works on the whole chip.
 
   Usage:
@@ -110,7 +110,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help change
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   modifies bitstream data.
 
   Usage:
@@ -143,7 +143,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help device
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   Sets the target device manually.
 
   Usage:
@@ -217,14 +217,14 @@ A list of currently supported Xilinx UltraScale+ devices:
 
 ## $> byteman.exe -help exit
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   finishes execution of byteman. used with STDin mode (see "-help STDin") to identify the end of command sequence.
 ```
 
 
 ## $> byteman.exe -help help
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   prints these messages... help messages can change if architecture and/or specific device is selected to incorporate more information!
 
   Usage:
@@ -257,7 +257,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help input
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   reads a bitstream from a file.
 
   Usage:
@@ -277,7 +277,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help merge
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   merges portion of the bitstream in the second buffer into the first buffer.
 
   Usage:
@@ -307,7 +307,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help output
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   creates a bitstream file output from the first bitstream buffer in byteman.
 
   Usage:
@@ -336,7 +336,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help region
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   modifies the list of selected regions.
 
   Usage:
@@ -360,7 +360,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help stdin
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   continues reading commands from standard input rather than command line arguments. this way commands can be entered by hand or streamed in by another program or file.
 
   Usage:
@@ -377,7 +377,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help verbose
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   enables/disables logging messages. they are disabled by default.
 
   Usage:
@@ -400,7 +400,7 @@ byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
 
 ## $> byteman.exe -help warn
 ```python
-byteman 1.3 (Build #218, compiled on Aug  4 2022 11:15:34)
+byteman 1.3 (Build #219, compiled on Aug  5 2022 18:45:09)
   enables/disables warning messages. they are enabled by default.
 
   Usage:
