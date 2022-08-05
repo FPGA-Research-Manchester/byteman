@@ -10,8 +10,8 @@
 ## ![byteman icon](./Resources/icon16.png) Download binaries: [![Download windows x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseWindows.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Windows-x86/byteman.exe) [![Download linux x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinux.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-x86/byteman) [![Download linux ARM binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxARM.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-ARM/byteman) [![Download linux RISC-V binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxRISCV.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-RISC-V/byteman)
 
 byteman uses command line arguments and currently recognizes the following commands: -a/assembly -b/blank -c/change -d/device -e/exit -h/help -i/input -m/merge -o/output -r/region -s/stdin -v/verbose -w/warn.
-The description of what do these commands do and how to use them is provided in the help messages of the program.
-You can find up-to-date extraction of these messages below.
+The description of what these commands do and how to use them is provided in the help messages of the program.
+You can find an up-to-date extraction of these messages below.
 
 
 ## $> byteman.exe -help
