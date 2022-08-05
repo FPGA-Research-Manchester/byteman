@@ -351,28 +351,6 @@ void byteman::parseInput(string inputCmd)
 		}
 	#endif
 }
-void byteman::parseMerge(string mergeCmd)
-{
-	string params = str::parse::allStringWords(mergeCmd);
-	Rect2D rect;
-	Coord2D dst;
-	str::parse::multipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
-	#ifdef XS7
-		if(Architecture::Xilinx_Series7 == selectedArchitecture){
-			mainXS7.merge(&tempXS7, params, rect, dst);
-		}
-	#endif
-	#ifdef XUS
-		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
-			mainXUS.merge(&tempXUS, params, rect, dst);
-		}
-	#endif
-	#ifdef XUSP
-		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
-			mainXUSP.merge(&tempXUSP, params, rect, dst);
-		}
-	#endif
-}
 void byteman::parseOutput(string outputCmd)
 {
 	string params = str::parse::allStringWordsWithoutLastStringWord(outputCmd);
@@ -392,6 +370,28 @@ void byteman::parseOutput(string outputCmd)
 	#ifdef XUSP
 		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
 			mainXUSP.writeBitstream(filename, params, rect);
+		}
+	#endif
+}
+void byteman::parseMerge(string mergeCmd)
+{
+	string params = str::parse::allStringWords(mergeCmd);
+	Rect2D rect;
+	Coord2D dst;
+	str::parse::multipleInts(mergeCmd, rect.position.row, rect.position.col, rect.size.row, rect.size.col, dst.row, dst.col);
+	#ifdef XS7
+		if(Architecture::Xilinx_Series7 == selectedArchitecture){
+			mainXS7.merge(&tempXS7, params, rect, dst);
+		}
+	#endif
+	#ifdef XUS
+		if(Architecture::Xilinx_UltraScale == selectedArchitecture){
+			mainXUS.merge(&tempXUS, params, rect, dst);
+		}
+	#endif
+	#ifdef XUSP
+		if(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){
+			mainXUSP.merge(&tempXUSP, params, rect, dst);
 		}
 	#endif
 }
@@ -449,7 +449,7 @@ void byteman::setArchitecture(string arch)
 		if(str::iff::stringContains(arch, "xusp")
 		||	(	str::iff::stringContains(arch, "xilinx")
 			&&	str::iff::stringContains(arch, "ultrascale", "us")
-			&&	str::iff::stringContains(arch, "plus", " + ")
+			&&	str::iff::stringContains(arch, "plus", "+")
 			)
 		) {
 			selectedArchitecture = Architecture::Xilinx_UltraScalePlus;
