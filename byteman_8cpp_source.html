@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #218)</span>
+   &#160;<span id="projectnumber">1.3 (Build #219)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -411,47 +411,47 @@ $(function() {
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        }</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
-<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a>(<span class="keywordtype">string</span> mergeCmd)</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">  354</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a>(<span class="keywordtype">string</span> outputCmd)</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de">str::parse::allStringWords</a>(mergeCmd);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="structCoord2D.html">Coord2D</a> dst;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(mergeCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col, dst.<a class="code" href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">row</a>, dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf">str::parse::allStringWordsWithoutLastStringWord</a>(outputCmd);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">string</span> filename = <a class="code" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87">str::parse::lastStringWord</a>(outputCmd);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(outputCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_Series7 == selectedArchitecture){</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            mainXS7.merge(&amp;tempXS7, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            mainXS7.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        }</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScale == selectedArchitecture){</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            mainXUS.merge(&amp;tempXUS, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            mainXUS.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            mainXUSP.merge(&amp;tempXUSP, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            mainXUSP.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
-<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">  376</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a>(<span class="keywordtype">string</span> outputCmd)</div>
+<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">  376</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a>(<span class="keywordtype">string</span> mergeCmd)</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf">str::parse::allStringWordsWithoutLastStringWord</a>(outputCmd);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordtype">string</span> filename = <a class="code" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87">str::parse::lastStringWord</a>(outputCmd);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(outputCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de">str::parse::allStringWords</a>(mergeCmd);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="structCoord2D.html">Coord2D</a> dst;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(mergeCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col, dst.<a class="code" href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">row</a>, dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>);</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_Series7 == selectedArchitecture){</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            mainXS7.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            mainXS7.merge(&amp;tempXS7, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScale == selectedArchitecture){</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            mainXUS.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            mainXUS.merge(&amp;tempXUS, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
 <div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span>(Architecture::Xilinx_UltraScalePlus == selectedArchitecture){</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            mainXUSP.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            mainXUSP.merge(&amp;tempXUSP, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">    #endif</span></div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
@@ -509,7 +509,7 @@ $(function() {
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xusp&quot;</span>)</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>, <span class="stringliteral">&quot; + &quot;</span>)</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>)</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            )</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        ) {</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            selectedArchitecture = Architecture::Xilinx_UltraScalePlus;</div>
@@ -540,7 +540,7 @@ $(function() {
 <div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="keywordflow">throw</span> runtime_error(<span class="keywordtype">string</span>(<span class="stringliteral">&quot;Unknown architecture: \&quot;&quot;</span>).append(arch).append(<span class="stringliteral">&quot;\&quot;.&quot;</span>));</div>
 <div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassbyteman_html_a83049c7135e2c9070dcc8c59d0f27a12"><div class="ttname"><a href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a></div><div class="ttdeci">void parseMerge(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00354">byteman.cpp:354</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a83049c7135e2c9070dcc8c59d0f27a12"><div class="ttname"><a href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a></div><div class="ttdeci">void parseMerge(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00376">byteman.cpp:376</a></div></div>
 <div class="ttc" id="astructCoord2D_html"><div class="ttname"><a href="structCoord2D.html">Coord2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00022">Coords.h:22</a></div></div>
 <div class="ttc" id="astr_8h_html"><div class="ttname"><a href="str_8h.html">str.h</a></div></div>
 <div class="ttc" id="anamespacestr_html_a0bd38fabeadbabca285e6dd14d8cb1e3"><div class="ttname"><a href="namespacestr.html#a0bd38fabeadbabca285e6dd14d8cb1e3">str::stringToLower</a></div><div class="ttdeci">std::string stringToLower(std::string str)</div><div class="ttdoc">Replaces all uppercase characters in str with lowercase and returns the resulting string.</div><div class="ttdef"><b>Definition:</b> <a href="str_8h_source.html#l00073">str.h:73</a></div></div>
@@ -551,7 +551,7 @@ $(function() {
 <div class="ttc" id="aclassbyteman_html_ad3f344f49e76466a2a71bc2cb9e6808b"><div class="ttname"><a href="classbyteman.html#ad3f344f49e76466a2a71bc2cb9e6808b">byteman::parseInput</a></div><div class="ttdeci">void parseInput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00325">byteman.cpp:325</a></div></div>
 <div class="ttc" id="anamespacestr_1_1iff_html_ae05af07c11dbccb79c738faeb1c7b2d4"><div class="ttname"><a href="namespacestr_1_1iff.html#ae05af07c11dbccb79c738faeb1c7b2d4">str::iff::firstStringWordIs</a></div><div class="ttdeci">bool firstStringWordIs(std::string checkedString, std::string nextString, Rest ... restStrings)</div><div class="ttdoc">Returns true if string checkedString's first word matches fully any of strings nextString or restStri...</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00121">iff.h:121</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ad8460d099fe8e5f5b2416491f5ab35f1"><div class="ttname"><a href="classbyteman.html#ad8460d099fe8e5f5b2416491f5ab35f1">byteman::parseDevice</a></div><div class="ttdeci">void parseDevice(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00297">byteman.cpp:297</a></div></div>
-<div class="ttc" id="aclassbyteman_html_a946b36868ca6bb56bd61637a0430ceb2"><div class="ttname"><a href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a></div><div class="ttdeci">void parseOutput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00376">byteman.cpp:376</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a946b36868ca6bb56bd61637a0430ceb2"><div class="ttname"><a href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a></div><div class="ttdeci">void parseOutput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00354">byteman.cpp:354</a></div></div>
 <div class="ttc" id="anamespacerect_html"><div class="ttname"><a href="namespacerect.html">rect</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00033">Coords.h:33</a></div></div>
 <div class="ttc" id="astructbyteman_1_1SelectedOptions_html"><div class="ttname"><a href="structbyteman_1_1SelectedOptions.html">byteman::SelectedOptions</a></div><div class="ttdef"><b>Definition:</b> <a href="byteman_8h_source.html#l00077">byteman.h:77</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aee627bcad1c698d2d81e035edb9d32ca"><div class="ttname"><a href="classbyteman.html#aee627bcad1c698d2d81e035edb9d32ca">byteman::byteman</a></div><div class="ttdeci">byteman()</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00076">byteman.cpp:76</a></div></div>
@@ -581,7 +581,7 @@ $(function() {
 <div class="ttc" id="anamespacestr_1_1iff_html_ae2f4c77f643c6f31ffa4ae0930b6d2bf"><div class="ttname"><a href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a></div><div class="ttdeci">bool stringContains(std::string checkedString)</div><div class="ttdoc">Returns false. End of recursion for template.</div><div class="ttdef"><b>Definition:</b> <a href="iff_8h_source.html#l00085">iff.h:85</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 4 2022 11:15:05 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 5 2022 18:44:19 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="icon64.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">byteman
-   &#160;<span id="projectnumber">1.3 (Build #218)</span>
+   &#160;<span id="projectnumber">1.3 (Build #219)</span>
    </div>
    <div id="projectbrief">Bitstream relocation and manipulation tool</div>
   </td>
@@ -1614,28 +1614,28 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00354">354</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de">str::parse::allStringWords</a>(mergeCmd);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="structCoord2D.html">Coord2D</a> dst;</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(mergeCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col, dst.<a class="code" href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">row</a>, dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5a5a050bf4ea731aaa7f7f5dfa1c54c121">Architecture::Xilinx_Series7</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            mainXS7.merge(&amp;tempXS7, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        }</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aa78d1848929c56da1172030a4e85278f">Architecture::Xilinx_UltraScale</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            mainXUS.merge(&amp;tempXUS, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            mainXUSP.merge(&amp;tempXUSP, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00376">376</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#ae54683f4d2e705bb339e7407b58bc3de">str::parse::allStringWords</a>(mergeCmd);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="structCoord2D.html">Coord2D</a> dst;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(mergeCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col, dst.<a class="code" href="structCoord2D.html#a446bd3f197a1052f8d99f0a6d22406fc">row</a>, dst.<a class="code" href="structCoord2D.html#a2c86b6f3509b769d25a7b363bceab8f1">col</a>);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5a5a050bf4ea731aaa7f7f5dfa1c54c121">Architecture::Xilinx_Series7</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            mainXS7.merge(&amp;tempXS7, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aa78d1848929c56da1172030a4e85278f">Architecture::Xilinx_UltraScale</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            mainXUS.merge(&amp;tempXUS, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            mainXUSP.merge(&amp;tempXUSP, params, <a class="code" href="namespacerect.html">rect</a>, dst);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="parse_8h_source.html#l00085">str::parse::allStringWords()</a>, <a class="el" href="Coords_8h_source.html#l00039">Coord2D::col</a>, <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>, and <a class="el" href="Coords_8h_source.html#l00038">Coord2D::row</a>.</p>
 <div class="dynheader">
@@ -1667,28 +1667,28 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00376">376</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;{</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf">str::parse::allStringWordsWithoutLastStringWord</a>(outputCmd);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordtype">string</span> filename = <a class="code" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87">str::parse::lastStringWord</a>(outputCmd);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(outputCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5a5a050bf4ea731aaa7f7f5dfa1c54c121">Architecture::Xilinx_Series7</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            mainXS7.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aa78d1848929c56da1172030a4e85278f">Architecture::Xilinx_UltraScale</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            mainXUS.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            mainXUSP.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">    #endif</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="byteman_8cpp_source.html#l00354">354</a> of file <a class="el" href="byteman_8cpp_source.html">byteman.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;{</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="keywordtype">string</span> params = <a class="code" href="namespacestr_1_1parse.html#adc058cae8a89baaae4b584f576373eaf">str::parse::allStringWordsWithoutLastStringWord</a>(outputCmd);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">string</span> filename = <a class="code" href="namespacestr_1_1parse.html#a0ce35f8ca1e3fe77627b504cc34f8d87">str::parse::lastStringWord</a>(outputCmd);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="structRect2D.html">Rect2D</a> <a class="code" href="namespacerect.html">rect</a>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <a class="code" href="namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276">str::parse::multipleInts</a>(outputCmd, <a class="code" href="namespacerect.html">rect</a>.position.row, <a class="code" href="namespacerect.html">rect</a>.position.col, <a class="code" href="namespacerect.html">rect</a>.size.row, <a class="code" href="namespacerect.html">rect</a>.size.col);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;<span class="preprocessor">    #ifdef XS7</span></div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5a5a050bf4ea731aaa7f7f5dfa1c54c121">Architecture::Xilinx_Series7</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            mainXS7.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;<span class="preprocessor">    #ifdef XUS</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aa78d1848929c56da1172030a4e85278f">Architecture::Xilinx_UltraScale</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            mainXUS.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;<span class="preprocessor">    #ifdef XUSP</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a> == <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a>){</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            mainXUSP.writeBitstream(filename, params, <a class="code" href="namespacerect.html">rect</a>);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="parse_8h_source.html#l00133">str::parse::allStringWordsWithoutLastStringWord()</a>, <a class="el" href="parse_8h_source.html#l00109">str::parse::lastStringWord()</a>, and <a class="el" href="parse_8h_source.html#l00220">str::parse::multipleInts()</a>.</p>
 <div class="dynheader">
@@ -2011,7 +2011,7 @@ Here is the call graph for this function:</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xusp&quot;</span>)</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        ||  (   <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;xilinx&quot;</span>)</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;ultrascale&quot;</span>, <span class="stringliteral">&quot;us&quot;</span>)</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>, <span class="stringliteral">&quot; + &quot;</span>)</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            &amp;&amp;  <a class="code" href="namespacestr_1_1iff.html#ae2f4c77f643c6f31ffa4ae0930b6d2bf">str::iff::stringContains</a>(arch, <span class="stringliteral">&quot;plus&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>)</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            )</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        ) {</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            <a class="code" href="classbyteman.html#a4f7b4915572e137b25c7889c5c37ad1b">selectedArchitecture</a> = <a class="code" href="classbyteman.html#a910fbb89366d550b96ddcd27e6f826f5aae70c2c98ae90ce6480386451beba2d1">Architecture::Xilinx_UltraScalePlus</a>;</div>
@@ -2093,7 +2093,7 @@ Here is the call graph for this function:</div>
 <li>src/<a class="el" href="help_8cpp_source.html">help.cpp</a></li>
 </ul>
 </div><!-- contents -->
-<div class="ttc" id="aclassbyteman_html_a83049c7135e2c9070dcc8c59d0f27a12"><div class="ttname"><a href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a></div><div class="ttdeci">void parseMerge(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00354">byteman.cpp:354</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a83049c7135e2c9070dcc8c59d0f27a12"><div class="ttname"><a href="classbyteman.html#a83049c7135e2c9070dcc8c59d0f27a12">byteman::parseMerge</a></div><div class="ttdeci">void parseMerge(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00376">byteman.cpp:376</a></div></div>
 <div class="ttc" id="astructCoord2D_html"><div class="ttname"><a href="structCoord2D.html">Coord2D</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00022">Coords.h:22</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ac050b5f18d6d27f17718243c88156f3d"><div class="ttname"><a href="classbyteman.html#ac050b5f18d6d27f17718243c88156f3d">byteman::helpWarn</a></div><div class="ttdeci">void helpWarn(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00146">help.cpp:146</a></div></div>
 <div class="ttc" id="ahelp_8cpp_html_a7ff9beec60180e0b89c025f18d6d5179"><div class="ttname"><a href="help_8cpp.html#a7ff9beec60180e0b89c025f18d6d5179">EXECUTABLE</a></div><div class="ttdeci">#define EXECUTABLE</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00029">help.cpp:29</a></div></div>
@@ -2111,7 +2111,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassbyteman_html_a700076afbb7ae533069703fdadc0b714"><div class="ttname"><a href="classbyteman.html#a700076afbb7ae533069703fdadc0b714">byteman::helpMerge</a></div><div class="ttdeci">void helpMerge(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00348">help.cpp:348</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a73d0dd2f6e5ae00e3b1854924c8cf05b"><div class="ttname"><a href="classbyteman.html#a73d0dd2f6e5ae00e3b1854924c8cf05b">byteman::helpExit</a></div><div class="ttdeci">void helpExit(bool=false)</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00440">help.cpp:440</a></div></div>
 <div class="ttc" id="aclassbyteman_html_ad8460d099fe8e5f5b2416491f5ab35f1"><div class="ttname"><a href="classbyteman.html#ad8460d099fe8e5f5b2416491f5ab35f1">byteman::parseDevice</a></div><div class="ttdeci">void parseDevice(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00297">byteman.cpp:297</a></div></div>
-<div class="ttc" id="aclassbyteman_html_a946b36868ca6bb56bd61637a0430ceb2"><div class="ttname"><a href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a></div><div class="ttdeci">void parseOutput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00376">byteman.cpp:376</a></div></div>
+<div class="ttc" id="aclassbyteman_html_a946b36868ca6bb56bd61637a0430ceb2"><div class="ttname"><a href="classbyteman.html#a946b36868ca6bb56bd61637a0430ceb2">byteman::parseOutput</a></div><div class="ttdeci">void parseOutput(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00354">byteman.cpp:354</a></div></div>
 <div class="ttc" id="anamespacerect_html"><div class="ttname"><a href="namespacerect.html">rect</a></div><div class="ttdef"><b>Definition:</b> <a href="Coords_8h_source.html#l00033">Coords.h:33</a></div></div>
 <div class="ttc" id="aclassbyteman_html_aacff84465ee63b374e85acf9f5f96338"><div class="ttname"><a href="classbyteman.html#aacff84465ee63b374e85acf9f5f96338">byteman::help</a></div><div class="ttdeci">void help()</div><div class="ttdef"><b>Definition:</b> <a href="help_8cpp_source.html#l00040">help.cpp:40</a></div></div>
 <div class="ttc" id="aclassbyteman_html_a859bdf4a8f0b7002b5341d093fe9e3d1"><div class="ttname"><a href="classbyteman.html#a859bdf4a8f0b7002b5341d093fe9e3d1">byteman::parseParamsAndRemoveThemFromString</a></div><div class="ttdeci">std::string parseParamsAndRemoveThemFromString(std::string)</div><div class="ttdef"><b>Definition:</b> <a href="byteman_8cpp_source.html#l00146">byteman.cpp:146</a></div></div>
@@ -2148,7 +2148,7 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aclassbyteman_html_af98bd594ba5427722390a965184a963c"><div class="ttname"><a href="classbyteman.html#af98bd594ba5427722390a965184a963c">byteman::options</a></div><div class="ttdeci">struct byteman::SelectedOptions options</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 4 2022 11:15:05 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Aug 5 2022 18:44:19 for byteman by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.17
 </small></address>
