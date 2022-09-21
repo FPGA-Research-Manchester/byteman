@@ -35,6 +35,8 @@ void XilinxSeries7::readBitstream(string filename)
 		readBitstreamBIT(fin);
 	else if(str::iff::stringEndsWith(filename, ".bin"))
 		readBitstreamBIN(fin);
+	else if(str::iff::stringEndsWith(filename, ".rbd"))
+		readBitstreamRBD(fin);
 	else
 		throw runtime_error(string("Unknown Xilinx Series 7 file format tried to be read.\n"));
 	fin.close();

@@ -342,6 +342,7 @@ inline void readBitstreamBIT(std::ifstream& fin)
 	readBitstreamMain(fin, bitstreamFileEndianness);
 }
 
+
 inline void readBitstreamBIN(std::ifstream& fin)
 {
 	Endianness bitstreamFileEndianness = parseBitstreamEndianness(fin);
@@ -351,4 +352,35 @@ inline void readBitstreamBIN(std::ifstream& fin)
 	ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
 	
 	readBitstreamMain(fin, bitstreamFileEndianness);
+}
+
+inline void readBitstreamRBDMain(std::ifstream& fin, Endianness bitstreamFileEndianness)
+{
+	//int slr = 0;
+	XCAP::Register regAddr = XCAP::Register::UNDEFINED;
+	if(bitstreamHasValidData){
+		ensureSelectedEndianness(bitstreamFileEndianness);
+	}
+	loadedBitstreamEndianness = bitstreamFileEndianness;
+	//Parse RBD
+	std::string str;
+	for(int i = 0 ; i < WORDS_PER_FRAME ; i++)//dump first frame.
+		std::getline(fin, str);
+	uint32_t* fromPtr = bitstreamBegin;
+	uint32_t* toPtr = bitstreamEnd;
+	for(uint32_t* bitstreamLoc = fromPtr ; bitstreamLoc < toPtr ; bitstreamLoc++){
+		std::getline(fin, str);
+		uint32_t val = (uint32_t)(std::stoll(str, nullptr, 2) & 0xFFFFFFFF);
+		bitstreamLoc[0] = Endian::NativeToAnyEndianness32(val, loadedBitstreamEndianness);
+	}
+	bitstreamHasValidData = true;
+}
+
+inline void readBitstreamRBD(std::ifstream& fin)
+{
+	Endianness bitstreamFileEndianness = Endianness::BE;
+	
+	ensureInitializedBitstreamArrays();//initialize bitstream arrays before writing
+	
+	readBitstreamRBDMain(fin, bitstreamFileEndianness);
 }
