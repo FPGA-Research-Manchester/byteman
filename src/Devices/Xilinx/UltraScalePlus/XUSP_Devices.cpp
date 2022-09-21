@@ -122,8 +122,8 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 	if(IDCODE == XCVU57P_IDCODE)
 		return XUSP_DEVICE_XCVU57P;
 	#endif
-	//US+ RFSoC (RFSOC BEFORE MPSOC, since names collide!)
-	#ifdef XUSPZYNQ
+	//US+ RFSoC
+	#ifdef XUSPZYNQRF
 	if(IDCODE == XCZU21DR_IDCODE)
 		return XUSP_DEVICE_XCZU21DR;
 	if(IDCODE == XCZU25DR_IDCODE)
@@ -154,7 +154,7 @@ int XilinxUltraScalePlus::getDeviceByIDCODE(int IDCODE)
 		return XUSP_DEVICE_XCZU67DR;
 	#endif
 	//US+ Zynq
-	#ifdef XUSPZYNQ
+	#ifdef XUSPZYNQMP
 	if(IDCODE == XCZU1_IDCODE)
 		return XUSP_DEVICE_XCZU1;
 	if(IDCODE == XCZU2_IDCODE)
