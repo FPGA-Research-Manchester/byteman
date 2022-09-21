@@ -293,6 +293,8 @@ int XilinxSeries7::getDeviceByName(string name)
 			return XS7_DEVICE_BASYS3;
 		if(str::iff::stringContains(name, "pynq-z1", "pynqz1"))
 			return XS7_DEVICE_PYNQ_Z1;
+		if(str::iff::stringContains(name, "pynq-z2", "pynqz2"))
+			return XS7_DEVICE_PYNQ_Z2;
 		if(str::iff::stringContains(name, "nexysa7-50", "nexysa750", "nexys50"))
 			return XS7_DEVICE_NEXYS_A50;
 		if(str::iff::stringContains(name, "nexysa7-100", "nexysa7100", "nexys100"))
@@ -553,6 +555,10 @@ void XilinxSeries7::setDevice(int deviceID, string customPartName)
 			XC7Z020();
 			setCustomPartName("xc7z020-1clg400c");
 			break;
+		case XS7_DEVICE_PYNQ_Z2:
+			XC7Z020();
+			setCustomPartName("xc7z020-1clg400c");
+			break;
 		case XS7_DEVICE_NEXYS_A50:
 			XC7A50();
 			setCustomPartName("xc7a50t-1csg324c");
@@ -682,7 +688,7 @@ void XilinxSeries7::deviceHelp()
 		#ifdef XS7BOARDS
 		cout << "  Series 7 Boards: " << endl;
 		cout << "    Wizarde, Kintex-7 Connectivity Kit, KC705, KC724, SP701, AC701, Arty A7-35, Arty A7-100, Arty Z7-10, Arty Z7-20, " << endl;
-		cout << "    Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15, " << endl;
+		cout << "    Arty S7-25, Arty S7-50, Basys 3, Pynq Z1, Pynq Z2, Nexys A7-50, Nexys A7-100, Zybo Z7-10, Zybo Z7-20, Cmod A7-15, " << endl;
 		cout << "    Cmod A7-35, Cmod S7, ZedBoard, Cora Z7-07, Cora Z7-10, Nexys Video, Genesys 2, Eclypse Z7, USB104, NetFPGA-SUME, " << endl;
 		cout << "    VC707, VC709, VC7203, VC7215, VC7222, ZC702, ZC706" << endl;
 		#endif
