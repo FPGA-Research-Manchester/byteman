@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['mainbufferselected_2867',['mainBufferSelected',['../structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f',1,'byteman::SelectedOptions']]],
-  ['maxnumberofbramcols_2868',['maxNumberOfBRAMCols',['../classXilinxConfigurationAccessPort.html#a823b9c0377ffa9ebe668dcfd51ea5fd3',1,'XilinxConfigurationAccessPort']]],
-  ['maxnumberofcols_2869',['maxNumberOfCols',['../classXilinxConfigurationAccessPort.html#ab16868d9e8cc86598f403397f419d85c',1,'XilinxConfigurationAccessPort']]]
+  ['mainbufferselected_2873',['mainBufferSelected',['../structbyteman_1_1SelectedOptions.html#aa7ae52d9260d7c8eacd414e0927f1d2f',1,'byteman::SelectedOptions']]],
+  ['maxnumberofbramcols_2874',['maxNumberOfBRAMCols',['../classXilinxConfigurationAccessPort.html#a823b9c0377ffa9ebe668dcfd51ea5fd3',1,'XilinxConfigurationAccessPort']]],
+  ['maxnumberofcols_2875',['maxNumberOfCols',['../classXilinxConfigurationAccessPort.html#ab16868d9e8cc86598f403397f419d85c',1,'XilinxConfigurationAccessPort']]]
 ];
