@@ -378,6 +378,8 @@ int XilinxUltraScalePlus::getDeviceByName(string name)
 	
 	//Some boards for easier use
 	#ifdef XUSPBOARDS
+		if(str::iff::stringContains(name, "pynqzu", "pynq-zu"))
+			return XUSP_DEVICE_PYNQ_ZU;
 		if(str::iff::stringContains(name, "zcu102", "zu-gmsl2"))
 			return XUSP_DEVICE_ZCU102;
 		if(str::iff::stringContains(name, "zcu104"))
@@ -785,6 +787,10 @@ void XilinxUltraScalePlus::setDevice(int deviceID, string customPartName)
 		
 		//XUSP Boards
 		#ifdef XUSPBOARDS
+		case XUSP_DEVICE_PYNQ_ZU:
+			XCZU5();
+			setCustomPartName("xczu5eg-1sfvc784");
+			break;
 		case XUSP_DEVICE_ZCU102:
 			XCZU9();
 			setCustomPartName("xczu9eg-2ffvb1156");
@@ -1150,7 +1156,7 @@ void XilinxUltraScalePlus::deviceHelp()
 		cout << "    HTG-940-13, HTG-9200-5P, HTG-9200-9P, HTG-9200-13P, HTG-VUP-PCIE-HH-9P, HTG-910-9, HTG-VUP-PCIE-HH-13P, HTG-910-13, " << endl;
 		cout << "    HTG-ZRF-FMC-28, HTG-ZRF-FMC-48, HTG-ZRF16-29, HTG-ZRF16-49, HTG-ZRF-HH-28, HTG-ZRF-HH-48, HTG-ZUSP-PCIE-11-3, " << endl;
 		cout << "    HTG-ZUSP-PCIE-19-2, HTG-ZRF8-R2-28, HTG-ZRF8-28, HTG-ZRF8-R2-48-I, HTG-ZRF8-48-I, HTG-ZRF8-R2-48, HTG-ZRF8-48" << endl;
-		cout << "    ZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111" << endl;
+		cout << "    ZUBoard 1CG, KCU 116, Vermeo T1 MPSoC, Vermeo T1 RFSoC, ZCU 1275, ZCU 1285, ZCU 111, PYNQ-ZU" << endl;
 		#endif
 	} else {
 		printResourceStringInfo();

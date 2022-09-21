@@ -97,6 +97,7 @@ enum XUSP_DEVICE_ENUM    ///< Enumeration of recognized Xilinx UltraScale+ devic
     XUSP_DEVICE_K26I,
     XUSP_DEVICE_KV260,
     //XUSP Boards
+    XUSP_DEVICE_PYNQ_ZU,
     XUSP_DEVICE_ZCU102,
     XUSP_DEVICE_ZCU104,
     XUSP_DEVICE_ZCU106,
