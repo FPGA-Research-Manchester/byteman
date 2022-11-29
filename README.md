@@ -35,6 +35,14 @@ You can find an up-to-date extraction of these messages below.
 }
 ```
 
+
+## Get in Touch 
+
+If you would like to ask questions, report bugs or collaborate on research projects, please email any of the following: 
+
+- Kristiyan Manev (<knmanev@gmail.com>)
+
+
 # ![byteman icon](./Resources/icon32.png) Usage
 
 ## $> byteman.exe -help
