@@ -11,7 +11,7 @@ var searchData=
   ['readbigendian32_271',['readBigEndian32',['../namespaceFileIO.html#a22e3632506f53aee32a970b2d290c5b1',1,'FileIO']]],
   ['readbigendian64_272',['readBigEndian64',['../namespaceFileIO.html#a92a6ac874702117989a37b3cbd039b3a',1,'FileIO']]],
   ['readbigendian8_273',['readBigEndian8',['../namespaceFileIO.html#ada5867759f392c2c25a4233e40932bba',1,'FileIO']]],
-  ['readbitstream_274',['readBitstream',['../classXilinxSeries7.html#ac8bc127280d52c751350e759ed7b42ac',1,'XilinxSeries7::readBitstream()'],['../classXilinxUltraScale.html#a3c696df2b3cff66970de1bbbd63d2d0e',1,'XilinxUltraScale::readBitstream()'],['../classXilinxUltraScalePlus.html#aee626cbe876d1b294beff220903060a9',1,'XilinxUltraScalePlus::readBitstream()']]],
+  ['readbitstream_274',['readBitstream',['../classXilinxUltraScalePlus.html#aee626cbe876d1b294beff220903060a9',1,'XilinxUltraScalePlus::readBitstream()'],['../classXilinxUltraScale.html#a3c696df2b3cff66970de1bbbd63d2d0e',1,'XilinxUltraScale::readBitstream()'],['../classXilinxSeries7.html#ac8bc127280d52c751350e759ed7b42ac',1,'XilinxSeries7::readBitstream()']]],
   ['readbitstreambin_275',['readBitstreamBIN',['../inlineInput_8h.html#a4522075370053215660de95e4bfe9d9a',1,'inlineInput.h']]],
   ['readbitstreambit_276',['readBitstreamBIT',['../inlineInput_8h.html#a8e7e2bd44405c923c1ed0fc0cd284aaf',1,'inlineInput.h']]],
   ['readbitstreammain_277',['readBitstreamMain',['../inlineInput_8h.html#a661412fb2eb60eef0b26618da69aa742',1,'inlineInput.h']]],

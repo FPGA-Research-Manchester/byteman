@@ -7,13 +7,9 @@ digraph "FileIO::readLittleEndian16"
   rankdir="LR";
   Node1 [label="FileIO::readLittleEndian16",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Endian::BitSwap32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84",tooltip=" "];
-  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="FileIO::readBigEndian32",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a22e3632506f53aee32a970b2d290c5b1",tooltip=" "];
-  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="Endian::NativeToLittleEndian64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a70ebba7cd4f75a6825704e1b55c1db59",tooltip=" "];
-  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="Endian::swapbytes64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#ac57bf63196271e3e09c5029a4ea972e3",tooltip=" "];
-  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="FileIO::readNative64",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#ac852410d1a49e66d11a9d53086727351",tooltip=" "];
+  Node2 [label="Endian::NativeToLittleEndian16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Endian::swapbytes16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="FileIO::readNative16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#ad7455cc0a2ae8dab07cf3d255da35ac1",tooltip=" "];
 }

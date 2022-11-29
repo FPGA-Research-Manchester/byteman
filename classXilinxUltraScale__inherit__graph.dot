@@ -11,6 +11,6 @@ digraph "XilinxUltraScale"
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="CommonDevice",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCommonDevice.html",tooltip=" "];
   Node4 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="XilinxConfigurationAccess\lPort\< 3, 15, 1024, 32,\l 2, 0, 1, 60, XUS_WORDS\l_AT_CLK, XUS_WORDS_AFTER\l_CLK,(XUS_WORDS_BEFORE_CLK\l+XUS_WORDS_AT_CLK+XUS_WORDS\l_AFTER_CLK), 128, XUS_CLB_PER\l_CLOCK_REGION, 12, XUS_EXTRA_FRAMES\l_PER_ROW, XUS_USESTOPBOTTOM, XUS_TOPBOTTOM\l_SHIFT, 23, 0x7, 17, 0x3F, 7, 0x3FF, XUS\l_MINORADDRESS_SHIFT, 0x7F \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html",tooltip=" "];
+  Node4 [label="XilinxConfigurationAccess\lPort\< 3, 15, 1024, 32,\l 2, 0, 1, 60, 3, 60,(60\l+3+60), 128, 60, 12, 2, 0,\l 0, 23, 0x7, 17, 0x3F, 7,\l 0x3FF, 0, 0x7F \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxConfigurationAccessPort.html",tooltip=" "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

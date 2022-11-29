@@ -1,6 +1,6 @@
 <map id="XilinxSeries7" name="XilinxSeries7">
-<area shape="rect" id="node1" title=" " alt="" coords="699,45,805,72"/>
-<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="180,45,324,72"/>
-<area shape="rect" id="node4" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,33,651,206"/>
-<area shape="rect" id="node3" href="$classCommonDevice.html" title=" " alt="" coords="5,45,132,72"/>
+<area shape="rect" id="node1" title=" " alt="" coords="669,12,776,39"/>
+<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="180,12,324,39"/>
+<area shape="rect" id="node4" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,23,621,108"/>
+<area shape="rect" id="node3" href="$classCommonDevice.html" title=" " alt="" coords="5,12,132,39"/>
 </map>

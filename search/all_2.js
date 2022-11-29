@@ -2,7 +2,7 @@ var searchData=
 [
   ['cbc_42',['CBC',['../namespaceXCAP.html#a58a1b1de2e226d7cdab3db4acf58c514ad9058beaae2e147183870304dd526761',1,'XCAP']]],
   ['change_43',['change',['../classXilinxSeries7.html#a341729914076ebc445699425c51037ba',1,'XilinxSeries7::change()'],['../classXilinxUltraScale.html#a6fd473ac494b897805e5628817b833ba',1,'XilinxUltraScale::change()'],['../classXilinxUltraScalePlus.html#a8d1c488a56dac4290a90e5718ce2e0be',1,'XilinxUltraScalePlus::change()']]],
-  ['charis_44',['charIs',['../namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344',1,'str::iff::charIs(char checkedChar)'],['../namespacestr_1_1iff.html#a18e085fdfebd73384c7a52e51217ae89',1,'str::iff::charIs(char checkedChar, char nextChar, Rest ... restChars)']]],
+  ['charis_44',['charIs',['../namespacestr_1_1iff.html#a18e085fdfebd73384c7a52e51217ae89',1,'str::iff::charIs(char checkedChar, char nextChar, Rest ... restChars)'],['../namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344',1,'str::iff::charIs(char checkedChar)']]],
   ['clb_45',['clb',['../structXilinxConfigurationAccessPort_1_1SelectedOptions.html#a90a375985186f3ca95418f0d61436ed6',1,'XilinxConfigurationAccessPort::SelectedOptions']]],
   ['clearresourcestringarrays_46',['clearResourceStringArrays',['../inlineBlank_8h.html#a91a412528b3bd935888320cef1f2f0ce',1,'inlineBlank.h']]],
   ['clk_47',['clk',['../structXilinxConfigurationAccessPort_1_1SelectedOptions.html#abf6b31d13591ece623a0c620e35b8dce',1,'XilinxConfigurationAccessPort::SelectedOptions']]],

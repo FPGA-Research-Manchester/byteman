@@ -1,12 +1,12 @@
 <map id="XCAP_writeSelectRegister" name="XCAP_writeSelectRegister">
-<area shape="rect" id="node1" title="Generate the encoding for &quot;selecting&quot; a CAP register and write it to file ofstream." alt="" coords="316,282,507,309"/>
+<area shape="rect" id="node1" title="Generate the encoding for &quot;selecting&quot; a CAP register and write it to file ofstream." alt="" coords="316,274,507,301"/>
 <area shape="rect" id="node2" href="$classXilinxSeries7.html#a55408605598e79ef1e48420adf6848dd" title=" " alt="" coords="45,5,228,47"/>
 <area shape="rect" id="node3" href="$classXilinxUltraScale.html#afc4e9db4c8bcd178dc5cdbb383973051" title=" " alt="" coords="35,71,238,112"/>
 <area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a7f5dd1945da9b8e8624369beb36c403d" title=" " alt="" coords="60,136,213,177"/>
 <area shape="rect" id="node5" href="$classXilinxSeries7.html#a91a3c0ba562a173a1025c3e88bb3a396" title=" " alt="" coords="26,201,247,243"/>
-<area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html#a62860b8feb969823efe314884632cdf5" title=" " alt="" coords="12,267,261,323"/>
-<area shape="rect" id="node7" href="$classXilinxUltraScale.html#ae14390ee28e7fb6f68e83b6c712b5a43" title=" " alt="" coords="5,348,268,389"/>
-<area shape="rect" id="node8" href="$classXilinxUltraScalePlus.html#a15594d8a8ef3e566a76d4266543cb5f3" title=" " alt="" coords="17,414,256,470"/>
-<area shape="rect" id="node9" href="$classXilinxSeries7.html#a25f779cb66534990336e9e6abbca8e9a" title=" " alt="" coords="11,495,262,536"/>
-<area shape="rect" id="node10" href="$classXilinxUltraScale.html#add2aeffe25f7261c7f240e6aeaf686fa" title=" " alt="" coords="11,561,263,617"/>
+<area shape="rect" id="node6" href="$classXilinxUltraScale.html#ae14390ee28e7fb6f68e83b6c712b5a43" title=" " alt="" coords="5,267,268,308"/>
+<area shape="rect" id="node7" href="$classXilinxUltraScalePlus.html#a62860b8feb969823efe314884632cdf5" title=" " alt="" coords="12,333,261,389"/>
+<area shape="rect" id="node8" href="$classXilinxSeries7.html#a25f779cb66534990336e9e6abbca8e9a" title=" " alt="" coords="11,413,262,455"/>
+<area shape="rect" id="node9" href="$classXilinxUltraScale.html#add2aeffe25f7261c7f240e6aeaf686fa" title=" " alt="" coords="11,479,263,535"/>
+<area shape="rect" id="node10" href="$classXilinxUltraScalePlus.html#a15594d8a8ef3e566a76d4266543cb5f3" title=" " alt="" coords="17,559,256,615"/>
 </map>

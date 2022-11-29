@@ -23,9 +23,9 @@ digraph "XCAP_IncrementFAR_BlockType0_old"
   Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 [label="XilinxSeries7::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#ac8bc127280d52c751350e759ed7b42ac",tooltip=" "];
   Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node10 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aee626cbe876d1b294beff220903060a9",tooltip=" "];
+  Node10 [label="XilinxUltraScale::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a3c696df2b3cff66970de1bbbd63d2d0e",tooltip=" "];
   Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node11 [label="XilinxUltraScale::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#a3c696df2b3cff66970de1bbbd63d2d0e",tooltip=" "];
+  Node11 [label="XilinxUltraScalePlus\l::readBitstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#aee626cbe876d1b294beff220903060a9",tooltip=" "];
   Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node12 [label="readBitstreamBIT",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#a8e7e2bd44405c923c1ed0fc0cd284aaf",tooltip=" "];
   Node12 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

@@ -7,11 +7,11 @@ digraph "src/Devices/Xilinx" {
   subgraph clusterdir_3b80f9b66070ce327ebd8ab923ef7ff0 {
     graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_3b80f9b66070ce327ebd8ab923ef7ff0.html"];
     dir_3b80f9b66070ce327ebd8ab923ef7ff0 [shape=plaintext label="Xilinx"];
-    dir_e3c922a9c9f76f72e504e24e861a4c21 [shape=box label="Series6" color="black" fillcolor="white" style="filled" URL="dir_e3c922a9c9f76f72e504e24e861a4c21.html"];
-    dir_cea438afae86829b080cb4fb380c02c8 [shape=box label="Series7" color="black" fillcolor="white" style="filled" URL="dir_cea438afae86829b080cb4fb380c02c8.html"];
-    dir_7b76fff14966bd8560f559fcf35b3fae [shape=box label="UltraScale" color="black" fillcolor="white" style="filled" URL="dir_7b76fff14966bd8560f559fcf35b3fae.html"];
-    dir_21f1379af401b02d6de0cd697d1b0560 [shape=box label="UltraScalePlus" color="black" fillcolor="white" style="filled" URL="dir_21f1379af401b02d6de0cd697d1b0560.html"];
-    dir_19b34ec9645a1f319d95ced0a974b83e [shape=box label="XCAP" color="black" fillcolor="white" style="filled" URL="dir_19b34ec9645a1f319d95ced0a974b83e.html"];
+  dir_e3c922a9c9f76f72e504e24e861a4c21 [shape=box label="Series6" fillcolor="white" style="filled" URL="dir_e3c922a9c9f76f72e504e24e861a4c21.html"];
+  dir_cea438afae86829b080cb4fb380c02c8 [shape=box label="Series7" fillcolor="white" style="filled" URL="dir_cea438afae86829b080cb4fb380c02c8.html"];
+  dir_7b76fff14966bd8560f559fcf35b3fae [shape=box label="UltraScale" fillcolor="white" style="filled" URL="dir_7b76fff14966bd8560f559fcf35b3fae.html"];
+  dir_21f1379af401b02d6de0cd697d1b0560 [shape=box label="UltraScalePlus" fillcolor="white" style="filled" URL="dir_21f1379af401b02d6de0cd697d1b0560.html"];
+  dir_19b34ec9645a1f319d95ced0a974b83e [shape=box label="XCAP" fillcolor="white" style="filled" URL="dir_19b34ec9645a1f319d95ced0a974b83e.html"];
   }
   }
   dir_ba210d1fa67db7bee1bb22e0a3c11d9f [shape=box label="Common" fillcolor="white" style="filled" color="red" URL="dir_ba210d1fa67db7bee1bb22e0a3c11d9f.html"];

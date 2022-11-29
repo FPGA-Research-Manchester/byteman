@@ -1,4 +1,5 @@
 <map id="str::iff::stringIs" name="str::iff::stringIs">
-<area shape="rect" id="node1" title="Returns false. End of recursion for template." alt="" coords="169,5,285,32"/>
+<area shape="rect" id="node1" title="Returns false. End of recursion for template." alt="" coords="169,31,285,57"/>
 <area shape="rect" id="node2" href="$classbyteman.html#aef603360084a181b29b4f2142290d4ba" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a2abe0168849efcb2887d99ad574a910a" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="5,56,121,83"/>
 </map>

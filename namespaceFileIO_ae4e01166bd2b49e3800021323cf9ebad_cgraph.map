@@ -1,8 +1,4 @@
 <map id="FileIO::readLittleEndian8" name="FileIO::readLittleEndian8">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,187,57"/>
-<area shape="rect" id="node2" href="$namespaceEndian.html#a299b13501873eba82fbb3df182a26414" title=" " alt="" coords="252,5,395,32"/>
-<area shape="rect" id="node3" href="$namespaceFileIO.html#a5eaae785861198ef25f4356ffde51e41" title=" " alt="" coords="235,56,412,83"/>
-<area shape="rect" id="node4" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="460,31,684,57"/>
-<area shape="rect" id="node6" href="$namespaceFileIO.html#a2afbbb760f8c652d251a922b1239adb6" title=" " alt="" coords="495,81,649,108"/>
-<area shape="rect" id="node5" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="732,31,892,57"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node2" href="$namespaceFileIO.html#a0759b0d04f3246286ee9d95114413c93" title=" " alt="" coords="235,5,381,32"/>
 </map>

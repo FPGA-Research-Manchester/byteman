@@ -15,7 +15,7 @@ digraph "XCAP_getCTRL0value"
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="XilinxSeries7::outputBitstream\lSLRHeaderBitstreamSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#aee61eb0fdac436117fc21932118d98e9",tooltip=" "];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="XilinxUltraScalePlus\l::outputBitstreamSLRHeaderBitstream\lSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#afd2fb1ce101f83febe2024561c823a11",tooltip=" "];
+  Node6 [label="XilinxUltraScale::output\lBitstreamSLRHeaderBitstreamSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#af02eeea33625e348469cb6e4957f4632",tooltip=" "];
   Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 [label="XilinxUltraScale::output\lBitstreamSLRHeaderBitstreamSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#af02eeea33625e348469cb6e4957f4632",tooltip=" "];
+  Node7 [label="XilinxUltraScalePlus\l::outputBitstreamSLRHeaderBitstream\lSequence",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#afd2fb1ce101f83febe2024561c823a11",tooltip=" "];
 }

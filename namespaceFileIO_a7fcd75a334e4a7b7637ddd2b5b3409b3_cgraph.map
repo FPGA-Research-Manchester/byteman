@@ -1,11 +1,14 @@
 <map id="FileIO::write64" name="FileIO::write64">
 <area shape="rect" id="node1" title=" " alt="" coords="5,129,121,156"/>
-<area shape="rect" id="node2" href="$namespaceFileIO.html#a8c0506d6408b37c822b4a49235504042" title=" " alt="" coords="184,5,365,32"/>
-<area shape="rect" id="node3" href="$namespaceFileIO.html#ae4b3083b2a3c3e857cf908b5401cd8e0" title=" " alt="" coords="175,57,374,98"/>
-<area shape="rect" id="node4" href="$namespaceFileIO.html#a3963952d81068f85653dff1f5f357dc6" title=" " alt="" coords="169,122,380,163"/>
-<area shape="rect" id="node5" href="$namespaceFileIO.html#a93849b8d8b9429d4acdbbc414d998218" title=" " alt="" coords="178,188,371,215"/>
-<area shape="rect" id="node6" href="$namespaceFileIO.html#ad35c44baa638184b786a69c360e15357" title=" " alt="" coords="195,239,354,265"/>
-<area shape="rect" id="node7" href="$namespaceEndian.html#a6bde5f348e92ca9982cb0dbe832ea0fe" title=" " alt="" coords="428,239,640,265"/>
-<area shape="rect" id="node8" href="$namespaceEndian.html#a11c0d291e85247cd4ce004ca26bf3728" title=" " alt="" coords="688,239,900,265"/>
-<area shape="rect" id="node9" href="$namespaceEndian.html#ac57bf63196271e3e09c5029a4ea972e3" title=" " alt="" coords="948,239,1108,265"/>
+<area shape="rect" id="node2" href="$namespaceFileIO.html#ad3a885fef962625ec4eee2c34a6a09bb" title=" " alt="" coords="184,5,365,32"/>
+<area shape="rect" id="node6" href="$namespaceFileIO.html#ad49d1f8d033ff6e1bdefe3708826b766" title=" " alt="" coords="175,57,374,98"/>
+<area shape="rect" id="node8" href="$namespaceFileIO.html#ab0578da00b2bbda2176a1cfc6f98c310" title=" " alt="" coords="169,122,380,163"/>
+<area shape="rect" id="node11" href="$namespaceFileIO.html#ace922ce2f1c65c539888effc899d6208" title=" " alt="" coords="178,188,371,215"/>
+<area shape="rect" id="node12" href="$namespaceFileIO.html#ac8a0efb3b13e5610e93d1c0472be15bb" title=" " alt="" coords="195,239,354,265"/>
+<area shape="rect" id="node3" href="$namespaceEndian.html#a6bde5f348e92ca9982cb0dbe832ea0fe" title=" " alt="" coords="434,47,646,73"/>
+<area shape="rect" id="node4" href="$namespaceEndian.html#a11c0d291e85247cd4ce004ca26bf3728" title=" " alt="" coords="706,60,918,87"/>
+<area shape="rect" id="node5" href="$namespaceEndian.html#ac57bf63196271e3e09c5029a4ea972e3" title=" " alt="" coords="972,97,1132,124"/>
+<area shape="rect" id="node7" href="$namespaceEndian.html#a57e481bbc161c01a68eadc25ae9e24c9" title=" " alt="" coords="469,97,611,124"/>
+<area shape="rect" id="node9" href="$namespaceEndian.html#a9d9ee5db25197f4c16b6abd1ca0da228" title=" " alt="" coords="428,148,652,175"/>
+<area shape="rect" id="node10" href="$namespaceEndian.html#a70ebba7cd4f75a6825704e1b55c1db59" title=" " alt="" coords="700,123,924,149"/>
 </map>

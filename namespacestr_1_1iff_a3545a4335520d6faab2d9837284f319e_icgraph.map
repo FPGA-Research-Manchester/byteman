@@ -1,0 +1,5 @@
+<map id="str::iff::stringBeginsWith" name="str::iff::stringBeginsWith">
+<area shape="rect" id="node1" title="Returns false. End of recursion for template." alt="" coords="232,31,411,57"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1iff.html#a49868bbb7942618ec94428898591f9b9" title="Returns true if string checkedString&#39;s first characters match fully any of strings nextString or rest..." alt="" coords="5,5,184,32"/>
+<area shape="rect" id="node3" href="$namespacestr_1_1iff.html#a9d2f7c4062e11c7cec784dcdd40a1a21" title="Returns true if string checkedString matches fully any of strings nextString or restStrings." alt="" coords="20,56,169,83"/>
+</map>

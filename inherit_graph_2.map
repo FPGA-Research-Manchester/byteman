@@ -1,11 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classCommonDevice.html" title=" " alt="" coords="5,583,132,610"/>
-<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="180,583,324,610"/>
-<area shape="rect" id="node3" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,5,788,252"/>
-<area shape="rect" id="node4" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="391,277,769,450"/>
-<area shape="rect" id="node5" href="$classXilinxUltraScale.html" title=" " alt="" coords="849,413,976,439"/>
-<area shape="rect" id="node6" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="391,525,769,669"/>
-<area shape="rect" id="node7" href="$classXilinxUltraScalePlus.html" title=" " alt="" coords="836,638,989,665"/>
-<area shape="rect" id="node8" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="441,743,719,917"/>
-<area shape="rect" id="node9" href="$classXilinxSeries7.html" title=" " alt="" coords="859,878,966,905"/>
+<area shape="rect" id="node1" href="$classCommonDevice.html" title=" " alt="" coords="5,306,132,333"/>
+<area shape="rect" id="node2" href="$classCommonDevice2D.html" title=" " alt="" coords="180,306,324,333"/>
+<area shape="rect" id="node3" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="485,5,675,105"/>
+<area shape="rect" id="node4" href="$classXilinxUltraScale.html" title=" " alt="" coords="849,86,976,113"/>
+<area shape="rect" id="node5" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="485,181,675,281"/>
+<area shape="rect" id="node6" href="$classXilinxUltraScalePlus.html" title=" " alt="" coords="836,262,989,289"/>
+<area shape="rect" id="node7" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="455,357,705,442"/>
+<area shape="rect" id="node8" href="$classXilinxSeries7.html" title=" " alt="" coords="859,426,966,453"/>
+<area shape="rect" id="node9" href="$classXilinxConfigurationAccessPort.html" title=" " alt="" coords="372,516,788,763"/>
 </map>

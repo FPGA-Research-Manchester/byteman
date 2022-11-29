@@ -1,6 +1,7 @@
 <map id="str::iff::charIs" name="str::iff::charIs">
-<area shape="rect" id="node1" title="Returns false. End of recursion for template." alt="" coords="312,78,419,105"/>
-<area shape="rect" id="node2" href="$classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10" title=" " alt="" coords="37,5,232,47"/>
-<area shape="rect" id="node3" href="$classXilinxUltraScale.html#a5b099277c768a1fc55a573e2118e04f6" title=" " alt="" coords="37,71,232,112"/>
-<area shape="rect" id="node4" href="$classXilinxUltraScalePlus.html#a871cdd6311a28677781ce340d4cb248e" title=" " alt="" coords="5,136,264,177"/>
+<area shape="rect" id="node1" title="Returns false. End of recursion for template." alt="" coords="312,97,419,124"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1iff.html#a18e085fdfebd73384c7a52e51217ae89" title="Returns true if char checkedChar matches any of chars nextChar or restChars." alt="" coords="81,5,188,32"/>
+<area shape="rect" id="node3" href="$classXilinxSeries7.html#aac5e9625d788f518700d194fe0fb4a10" title=" " alt="" coords="37,57,232,98"/>
+<area shape="rect" id="node4" href="$classXilinxUltraScale.html#a5b099277c768a1fc55a573e2118e04f6" title=" " alt="" coords="37,122,232,163"/>
+<area shape="rect" id="node5" href="$classXilinxUltraScalePlus.html#a871cdd6311a28677781ce340d4cb248e" title=" " alt="" coords="5,187,264,229"/>
 </map>

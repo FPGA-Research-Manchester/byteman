@@ -2,60 +2,68 @@
 <area shape="rect" id="node1" title=" " alt="" coords="5,360,236,387"/>
 <area shape="rect" id="node2" href="$inlineParseParams_8h.html#a967f262c6d693437c133031f378de01c" title=" " alt="" coords="314,259,421,285"/>
 <area shape="rect" id="node5" href="$namespacestr_1_1iff.html#ac19713fe97c12aa85c6a4514a0bbd268" title="Returns false. End of recursion for template." alt="" coords="284,309,451,336"/>
-<area shape="rect" id="node6" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="1485,461,1616,488"/>
+<area shape="rect" id="node6" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="759,897,890,924"/>
 <area shape="rect" id="node7" href="$inlineOutput_8h.html#a219921af6a6c3663879d6929317e2a20" title=" " alt="" coords="296,360,439,387"/>
-<area shape="rect" id="node43" href="$inlineOutput_8h.html#a0add7e2ac43d97c33fb291db7ddce9ec" title=" " alt="" coords="297,461,437,488"/>
+<area shape="rect" id="node41" href="$inlineOutput_8h.html#a0add7e2ac43d97c33fb291db7ddce9ec" title=" " alt="" coords="297,411,437,437"/>
 <area shape="rect" id="node3" href="$namespacestr_1_1parse.html#af4246fb05f8a85ef7316146a8fc49276" title=" " alt="" coords="499,208,668,235"/>
 <area shape="rect" id="node4" href="$namespacestr.html#a2d2adf32604f4236cf7b7ca879653fec" title="Replaces all instances of oldChar in string str with newChar and returns the resulting string." alt="" coords="536,259,631,285"/>
 <area shape="rect" id="node8" href="$inlineOutput_8h.html#a3064b8b594edb427558e5c0c5935ba95" title=" " alt="" coords="508,309,659,336"/>
-<area shape="rect" id="node9" href="$namespacerect.html#a3fe341fa09e2c523a6dc3eda4118f050" title=" " alt="" coords="1266,5,1363,32"/>
-<area shape="rect" id="node10" href="$namespacerect.html#a97b9449bf7fcfe1754ad8383a82995ed" title=" " alt="" coords="1015,149,1141,176"/>
+<area shape="rect" id="node9" href="$namespacerect.html#a3fe341fa09e2c523a6dc3eda4118f050" title=" " alt="" coords="1299,259,1397,285"/>
+<area shape="rect" id="node10" href="$namespacerect.html#a97b9449bf7fcfe1754ad8383a82995ed" title=" " alt="" coords="1023,141,1150,168"/>
 <area shape="rect" id="node11" href="$inlineOutput_8h.html#a4f52ac6156f635c9592b03690073d51a" title=" " alt="" coords="716,309,933,336"/>
-<area shape="rect" id="node28" href="$inlineOutput_8h.html#a5fd8525df590cbfc7afc058df8335ab8" title=" " alt="" coords="717,233,932,260"/>
-<area shape="rect" id="node12" href="$inlineOutput_8h.html#a8fe62d8bda9cec6b6de8d1d13539044d" title=" " alt="" coords="981,309,1175,336"/>
-<area shape="rect" id="node13" href="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9" title=" " alt="" coords="1750,292,1866,319"/>
-<area shape="rect" id="node27" href="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="1223,360,1407,387"/>
-<area shape="rect" id="node14" href="$namespaceFileIO.html#a2fa916aaa03f99c0a68d8a56093fea2f" title=" " alt="" coords="1984,275,2165,301"/>
-<area shape="rect" id="node15" href="$namespaceFileIO.html#a2d67fb6a81fe99e987ddcfac643358e3" title=" " alt="" coords="1975,209,2174,250"/>
-<area shape="rect" id="node20" href="$namespaceFileIO.html#ad3152bc558b95cb7f9c30ffac1226fc4" title=" " alt="" coords="1969,427,2180,469"/>
-<area shape="rect" id="node22" href="$namespaceFileIO.html#ab7165d35b2f1c49760ed6fa94e0d2d92" title=" " alt="" coords="1978,325,2171,352"/>
-<area shape="rect" id="node23" href="$namespaceFileIO.html#aacd2c7076c547bf4a699dbe5c32c0344" title=" " alt="" coords="1995,376,2154,403"/>
-<area shape="rect" id="node16" href="$namespaceEndian.html#a57e481bbc161c01a68eadc25ae9e24c9" title=" " alt="" coords="2269,212,2411,239"/>
-<area shape="rect" id="node17" href="$namespaceEndian.html#a9d9ee5db25197f4c16b6abd1ca0da228" title=" " alt="" coords="2228,263,2452,289"/>
-<area shape="rect" id="node18" href="$namespaceEndian.html#a70ebba7cd4f75a6825704e1b55c1db59" title=" " alt="" coords="2500,263,2724,289"/>
-<area shape="rect" id="node19" href="$namespaceEndian.html#ac57bf63196271e3e09c5029a4ea972e3" title=" " alt="" coords="2772,263,2932,289"/>
-<area shape="rect" id="node21" href="$namespaceFileIO.html#a01fffd9a82e1a731e17219528951c020" title=" " alt="" coords="2257,451,2423,477"/>
-<area shape="rect" id="node24" href="$namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae" title=" " alt="" coords="2234,380,2446,407"/>
-<area shape="rect" id="node25" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="2506,409,2718,436"/>
-<area shape="rect" id="node26" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="2772,441,2932,468"/>
-<area shape="rect" id="node29" href="$inlineOutput_8h.html#af14ad53082c77eb7649df04c0ccd87bf" title=" " alt="" coords="983,201,1173,242"/>
-<area shape="rect" id="node30" href="$inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615" title=" " alt="" coords="1261,157,1369,184"/>
-<area shape="rect" id="node31" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="1233,208,1396,235"/>
-<area shape="rect" id="node32" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="1475,208,1626,235"/>
-<area shape="rect" id="node36" href="$inlineCAP_8h.html#a53b36536da1931208ed86ec193d53a96" title="Generate and write an FDRI command. Always uses type 2 command for simplicity." alt="" coords="1251,56,1378,83"/>
-<area shape="rect" id="node41" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="1489,259,1613,285"/>
-<area shape="rect" id="node33" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="1695,157,1921,184"/>
-<area shape="rect" id="node34" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="1979,157,2170,184"/>
-<area shape="rect" id="node35" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="2263,132,2417,159"/>
-<area shape="rect" id="node37" href="$inlineCAP_8h.html#a4d5beb2ea0b41f6e58399b91f402018e" title="Generate and write only a type 1 FDRI command." alt="" coords="1483,157,1618,184"/>
-<area shape="rect" id="node38" href="$inlineCAP_8h.html#a7f88f7623171587d4aed5d8ae0ab6886" title="Generate and write only a type 2 FDRI command." alt="" coords="1483,107,1618,133"/>
-<area shape="rect" id="node39" href="$inlineCAP_8h.html#a5eec1062e3915a2dae65733ca49a508b" title="Generate and return the encoding for a type 2 Write instruction." alt="" coords="1695,107,1921,133"/>
-<area shape="rect" id="node40" href="$inlineCAP_8h.html#a87029e32abb502c9ffc5c3569788d312" title="Generate and return the encoding for a type 2 instruction." alt="" coords="1979,107,2170,133"/>
-<area shape="rect" id="node42" href="$inlineCAP_8h.html#a5bfb2a4fd7d8f935b40ca366b76e06ab" title="Generate and return the encoding for a type 1 NOP instruction." alt="" coords="1699,225,1917,252"/>
-<area shape="rect" id="node44" href="$inlineOutput_8h.html#a0c4ad3b4e1c62c65e46e9cd76047b39e" title=" " alt="" coords="1249,563,1380,589"/>
-<area shape="rect" id="node58" href="$inlineOutput_8h.html#a9b17679cb3f38c38b0faa8f0eff9fda6" title=" " alt="" coords="722,461,927,488"/>
-<area shape="rect" id="node59" href="$inlineOutput_8h.html#a194a87f62d6a57dbed34257f5a6037bf" title=" " alt="" coords="505,512,661,539"/>
-<area shape="rect" id="node45" href="$inlineOutput_8h.html#ab5c46a8c5c50b0bbd4c9bfdd9c29051b" title=" " alt="" coords="1455,613,1647,640"/>
-<area shape="rect" id="node46" href="$namespaceFileIO.html#a5eba9ac0d7604d5907eb9effe14b4920" title=" " alt="" coords="1750,664,1866,691"/>
-<area shape="rect" id="node57" href="$namespaceFileIO.html#ac50f56ad42f6971fc553591980e05776" title=" " alt="" coords="1497,512,1605,539"/>
-<area shape="rect" id="node55" href="$namespaceFileIO.html#a5593f85a33496231ece8ca1dd2b78b15" title=" " alt="" coords="1739,544,1877,571"/>
-<area shape="rect" id="node47" href="$namespaceFileIO.html#aabde2039444f25bbb48c2601868b828d" title=" " alt="" coords="1988,763,2161,789"/>
-<area shape="rect" id="node48" href="$namespaceFileIO.html#af27bf39a3e75ab776a3c6a42698a098a" title=" " alt="" coords="1975,595,2174,637"/>
-<area shape="rect" id="node52" href="$namespaceFileIO.html#a21ca7bc65219c5965f7b9aab714f60bc" title=" " alt="" coords="1969,814,2180,855"/>
-<area shape="rect" id="node53" href="$namespaceFileIO.html#a96f4e092346e5a8ecc8e8a32be6defda" title=" " alt="" coords="1982,661,2167,688"/>
-<area shape="rect" id="node54" href="$namespaceFileIO.html#af41e178b591b71326619abd58bef999b" title=" " alt="" coords="1999,712,2150,739"/>
-<area shape="rect" id="node49" href="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="2269,603,2411,629"/>
-<area shape="rect" id="node50" href="$namespaceEndian.html#aabd838029ed523d5280997f4ca10f859" title=" " alt="" coords="2228,535,2452,561"/>
-<area shape="rect" id="node51" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="2500,475,2724,501"/>
-<area shape="rect" id="node56" href="$namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="2007,544,2142,571"/>
+<area shape="rect" id="node26" href="$inlineOutput_8h.html#a5fd8525df590cbfc7afc058df8335ab8" title=" " alt="" coords="717,204,932,231"/>
+<area shape="rect" id="node12" href="$inlineOutput_8h.html#a8fe62d8bda9cec6b6de8d1d13539044d" title=" " alt="" coords="990,309,1183,336"/>
+<area shape="rect" id="node13" href="$namespaceFileIO.html#afa294bfd5dd5b103f150467ec14e64a9" title=" " alt="" coords="1831,220,1947,247"/>
+<area shape="rect" id="node25" href="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="1256,309,1440,336"/>
+<area shape="rect" id="node14" href="$namespaceFileIO.html#a8c0506d6408b37c822b4a49235504042" title=" " alt="" coords="2065,107,2247,133"/>
+<area shape="rect" id="node18" href="$namespaceFileIO.html#ae4b3083b2a3c3e857cf908b5401cd8e0" title=" " alt="" coords="2057,158,2255,199"/>
+<area shape="rect" id="node20" href="$namespaceFileIO.html#a3963952d81068f85653dff1f5f357dc6" title=" " alt="" coords="2051,223,2261,265"/>
+<area shape="rect" id="node23" href="$namespaceFileIO.html#a93849b8d8b9429d4acdbbc414d998218" title=" " alt="" coords="2059,289,2253,316"/>
+<area shape="rect" id="node24" href="$namespaceFileIO.html#ad35c44baa638184b786a69c360e15357" title=" " alt="" coords="2077,340,2235,367"/>
+<area shape="rect" id="node15" href="$namespaceEndian.html#a6a54530860ad8ec19facaaa26ae9a6ae" title=" " alt="" coords="2315,148,2527,175"/>
+<area shape="rect" id="node16" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="2587,161,2799,188"/>
+<area shape="rect" id="node17" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="2853,199,3013,225"/>
+<area shape="rect" id="node19" href="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="2350,199,2493,225"/>
+<area shape="rect" id="node21" href="$namespaceEndian.html#aabd838029ed523d5280997f4ca10f859" title=" " alt="" coords="2309,249,2533,276"/>
+<area shape="rect" id="node22" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="2581,224,2805,251"/>
+<area shape="rect" id="node27" href="$inlineOutput_8h.html#af14ad53082c77eb7649df04c0ccd87bf" title=" " alt="" coords="991,193,1182,234"/>
+<area shape="rect" id="node28" href="$inlineFAR_8h.html#a5880cb28ac341c8171af1b777c51e615" title=" " alt="" coords="1294,157,1402,184"/>
+<area shape="rect" id="node29" href="$inlineCAP_8h.html#a523184af01d1123a582731ec80edb78b" title="Generate the encoding for writing a CAP command and write it to file ofstream." alt="" coords="1267,107,1429,133"/>
+<area shape="rect" id="node30" href="$inlineCAP_8h.html#a24c8331140999d0419c1a11ab3250d96" title="Generate the encoding for writing a CAP register and write it to file ofstream." alt="" coords="1541,107,1691,133"/>
+<area shape="rect" id="node34" href="$inlineCAP_8h.html#a53b36536da1931208ed86ec193d53a96" title="Generate and write an FDRI command. Always uses type 2 command for simplicity." alt="" coords="1285,5,1411,32"/>
+<area shape="rect" id="node39" href="$inlineCAP_8h.html#ae2bc9aff89db85a902d83e720fb6aea4" title="Generate the encoding for NOP instructions and write them to file ofstream." alt="" coords="1554,208,1678,235"/>
+<area shape="rect" id="node31" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="1776,56,2003,83"/>
+<area shape="rect" id="node32" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="2061,56,2251,83"/>
+<area shape="rect" id="node33" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="2345,31,2498,57"/>
+<area shape="rect" id="node35" href="$inlineCAP_8h.html#a4d5beb2ea0b41f6e58399b91f402018e" title="Generate and write only a type 1 FDRI command." alt="" coords="1549,56,1683,83"/>
+<area shape="rect" id="node36" href="$inlineCAP_8h.html#a7f88f7623171587d4aed5d8ae0ab6886" title="Generate and write only a type 2 FDRI command." alt="" coords="1549,5,1683,32"/>
+<area shape="rect" id="node37" href="$inlineCAP_8h.html#a5eec1062e3915a2dae65733ca49a508b" title="Generate and return the encoding for a type 2 Write instruction." alt="" coords="1776,5,2003,32"/>
+<area shape="rect" id="node38" href="$inlineCAP_8h.html#a87029e32abb502c9ffc5c3569788d312" title="Generate and return the encoding for a type 2 instruction." alt="" coords="2061,5,2251,32"/>
+<area shape="rect" id="node40" href="$inlineCAP_8h.html#a5bfb2a4fd7d8f935b40ca366b76e06ab" title="Generate and return the encoding for a type 1 NOP instruction." alt="" coords="1781,139,1998,165"/>
+<area shape="rect" id="node42" href="$inlineOutput_8h.html#a0c4ad3b4e1c62c65e46e9cd76047b39e" title=" " alt="" coords="518,745,649,772"/>
+<area shape="rect" id="node66" href="$inlineOutput_8h.html#a9b17679cb3f38c38b0faa8f0eff9fda6" title=" " alt="" coords="722,411,927,437"/>
+<area shape="rect" id="node67" href="$inlineOutput_8h.html#a194a87f62d6a57dbed34257f5a6037bf" title=" " alt="" coords="505,796,661,823"/>
+<area shape="rect" id="node43" href="$inlineOutput_8h.html#ab5c46a8c5c50b0bbd4c9bfdd9c29051b" title=" " alt="" coords="729,796,921,823"/>
+<area shape="rect" id="node44" href="$namespaceFileIO.html#a5eba9ac0d7604d5907eb9effe14b4920" title=" " alt="" coords="1029,847,1145,873"/>
+<area shape="rect" id="node57" href="$namespaceFileIO.html#ac50f56ad42f6971fc553591980e05776" title=" " alt="" coords="771,615,879,641"/>
+<area shape="rect" id="node56" href="$namespaceFileIO.html#a5593f85a33496231ece8ca1dd2b78b15" title=" " alt="" coords="1017,796,1156,823"/>
+<area shape="rect" id="node45" href="$namespaceFileIO.html#a2fa916aaa03f99c0a68d8a56093fea2f" title=" " alt="" coords="1257,1029,1439,1056"/>
+<area shape="rect" id="node49" href="$namespaceFileIO.html#a2d67fb6a81fe99e987ddcfac643358e3" title=" " alt="" coords="1249,963,1447,1005"/>
+<area shape="rect" id="node51" href="$namespaceFileIO.html#ad3152bc558b95cb7f9c30ffac1226fc4" title=" " alt="" coords="1243,898,1453,939"/>
+<area shape="rect" id="node54" href="$namespaceFileIO.html#ab7165d35b2f1c49760ed6fa94e0d2d92" title=" " alt="" coords="1251,847,1445,873"/>
+<area shape="rect" id="node55" href="$namespaceFileIO.html#aacd2c7076c547bf4a699dbe5c32c0344" title=" " alt="" coords="1269,796,1427,823"/>
+<area shape="rect" id="node46" href="$namespaceEndian.html#afb674eed3d17c61f0d99ecb1b2737ad5" title=" " alt="" coords="1510,988,1722,1015"/>
+<area shape="rect" id="node47" href="$namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="1783,975,1995,1001"/>
+<area shape="rect" id="node48" href="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="2076,924,2236,951"/>
+<area shape="rect" id="node50" href="$namespaceEndian.html#a299b13501873eba82fbb3df182a26414" title=" " alt="" coords="1545,937,1687,964"/>
+<area shape="rect" id="node52" href="$namespaceEndian.html#ae5a1794961e4b010f98402e353502c23" title=" " alt="" coords="1504,887,1728,913"/>
+<area shape="rect" id="node53" href="$namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="1777,899,2001,925"/>
+<area shape="rect" id="node58" href="$namespaceFileIO.html#aabde2039444f25bbb48c2601868b828d" title=" " alt="" coords="1000,461,1173,488"/>
+<area shape="rect" id="node60" href="$namespaceFileIO.html#af27bf39a3e75ab776a3c6a42698a098a" title=" " alt="" coords="987,513,1186,554"/>
+<area shape="rect" id="node62" href="$namespaceFileIO.html#a21ca7bc65219c5965f7b9aab714f60bc" title=" " alt="" coords="981,578,1192,619"/>
+<area shape="rect" id="node64" href="$namespaceFileIO.html#a96f4e092346e5a8ecc8e8a32be6defda" title=" " alt="" coords="994,695,1179,721"/>
+<area shape="rect" id="node65" href="$namespaceFileIO.html#af41e178b591b71326619abd58bef999b" title=" " alt="" coords="1011,644,1162,671"/>
+<area shape="rect" id="node59" href="$namespaceEndian.html#a1b015d819713390c25d87cc03f75be8f" title=" " alt="" coords="1246,468,1450,495"/>
+<area shape="rect" id="node61" href="$namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="1281,527,1415,553"/>
+<area shape="rect" id="node63" href="$namespaceEndian.html#a3e240c93c1ff33708295c8d92b0ebe92" title=" " alt="" coords="1240,640,1456,667"/>
 </map>

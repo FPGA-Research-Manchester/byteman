@@ -1,0 +1,4 @@
+<map id="str::iff::charIs" name="str::iff::charIs">
+<area shape="rect" id="node1" title="Returns true if char checkedChar matches any of chars nextChar or restChars." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$namespacestr_1_1iff.html#a13e4e72af819f11af13d70eaabd75344" title="Returns false. End of recursion for template." alt="" coords="160,5,267,32"/>
+</map>

@@ -1,7 +1,5 @@
 <map id="FileIO::writeBitSwappedBigEndian8" name="FileIO::writeBitSwappedBigEndian8">
 <area shape="rect" id="node1" title=" " alt="" coords="5,23,204,65"/>
-<area shape="rect" id="node2" href="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="293,5,435,32"/>
-<area shape="rect" id="node3" href="$namespaceEndian.html#aabd838029ed523d5280997f4ca10f859" title=" " alt="" coords="252,56,476,83"/>
-<area shape="rect" id="node4" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="524,56,748,83"/>
-<area shape="rect" id="node5" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="796,56,956,83"/>
+<area shape="rect" id="node2" href="$namespaceEndian.html#a1b015d819713390c25d87cc03f75be8f" title=" " alt="" coords="252,5,456,32"/>
+<area shape="rect" id="node3" href="$namespaceEndian.html#a36a7e410427efdc262d2d4c93fb80561" title=" " alt="" coords="287,56,421,83"/>
 </map>

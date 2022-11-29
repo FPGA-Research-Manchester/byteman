@@ -1,6 +1,6 @@
 <map id="FileIO::readBigEndian16" name="FileIO::readBigEndian16">
 <area shape="rect" id="node1" title=" " alt="" coords="5,31,183,57"/>
-<area shape="rect" id="node2" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="231,5,455,32"/>
-<area shape="rect" id="node4" href="$namespaceFileIO.html#a2afbbb760f8c652d251a922b1239adb6" title=" " alt="" coords="265,56,420,83"/>
-<area shape="rect" id="node3" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="503,5,663,32"/>
+<area shape="rect" id="node2" href="$namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="231,5,443,32"/>
+<area shape="rect" id="node4" href="$namespaceFileIO.html#ad7455cc0a2ae8dab07cf3d255da35ac1" title=" " alt="" coords="259,56,414,83"/>
+<area shape="rect" id="node3" href="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="491,5,651,32"/>
 </map>

@@ -7,5 +7,11 @@ digraph "FileIO::writeBitSwappedLittleEndian16"
   rankdir="LR";
   Node1 [label="FileIO::writeBitSwappedLittle\lEndian16",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="FileIO::writeCharArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceFileIO.html#a01fffd9a82e1a731e17219528951c020",tooltip=" "];
+  Node2 [label="Endian::BitSwap16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a299b13501873eba82fbb3df182a26414",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Endian::LittleEndianToNative16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#ae5a1794961e4b010f98402e353502c23",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Endian::NativeToLittleEndian16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Endian::swapbytes16",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f",tooltip=" "];
 }

@@ -11,9 +11,9 @@ digraph "Endian::NativeToAnyEndianness32"
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="XilinxSeries7::merge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxSeries7.html#aff92193475dd3bc2b62be8e744a7e42e",tooltip=" "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="XilinxUltraScalePlus\l::merge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d",tooltip=" "];
+  Node4 [label="XilinxUltraScale::merge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6",tooltip=" "];
   Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="XilinxUltraScale::merge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScale.html#ace95ed9853ff7b10236b84e74c036ee6",tooltip=" "];
+  Node5 [label="XilinxUltraScalePlus\l::merge",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classXilinxUltraScalePlus.html#adafdd0860f1961c32eb34a363a62e74d",tooltip=" "];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="readBitstreamRBDMain",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$inlineInput_8h.html#ab2c4206abdd9e28a058877f9d86dc7b9",tooltip=" "];
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

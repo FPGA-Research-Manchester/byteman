@@ -1,51 +1,63 @@
 <map id="XilinxSeries7::readBitstream" name="XilinxSeries7::readBitstream">
-<area shape="rect" id="node1" title=" " alt="" coords="5,284,213,311"/>
-<area shape="rect" id="node2" href="$inlineInput_8h.html#a4522075370053215660de95e4bfe9d9a" title=" " alt="" coords="275,259,414,285"/>
-<area shape="rect" id="node38" href="$inlineInput_8h.html#a8e7e2bd44405c923c1ed0fc0cd284aaf" title=" " alt="" coords="277,309,413,336"/>
-<area shape="rect" id="node46" href="$inlineInput_8h.html#a61d0cce2fcb0f3d15fec67d7fbe28adf" title=" " alt="" coords="273,157,416,184"/>
-<area shape="rect" id="node49" href="$namespacestr_1_1iff.html#ac19713fe97c12aa85c6a4514a0bbd268" title="Returns false. End of recursion for template." alt="" coords="261,360,428,387"/>
-<area shape="rect" id="node3" href="$inlineInput_8h.html#a119ccdadc6c03c8a21514e6a8877792c" title=" " alt="" coords="724,157,920,184"/>
-<area shape="rect" id="node11" href="$inlineInput_8h.html#ab5cfac2cc7fafc26cd6b69b74d0add29" title=" " alt="" coords="477,259,650,285"/>
-<area shape="rect" id="node17" href="$inlineInput_8h.html#a661412fb2eb60eef0b26618da69aa742" title=" " alt="" coords="490,487,637,513"/>
-<area shape="rect" id="node4" href="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1039,157,1182,184"/>
-<area shape="rect" id="node5" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1005,5,1217,32"/>
-<area shape="rect" id="node7" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="999,56,1223,83"/>
-<area shape="rect" id="node8" href="$namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace" title=" " alt="" coords="1055,411,1167,437"/>
-<area shape="rect" id="node9" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="1045,208,1176,235"/>
-<area shape="rect" id="node10" href="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="1019,360,1203,387"/>
-<area shape="rect" id="node6" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="1330,5,1490,32"/>
-<area shape="rect" id="node12" href="$inlineInput_8h.html#a7a336065cf356dcd13baf6e7ee541d60" title=" " alt="" coords="720,360,924,387"/>
-<area shape="rect" id="node13" href="$inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="731,208,913,235"/>
-<area shape="rect" id="node14" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="997,259,1224,285"/>
-<area shape="rect" id="node15" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="1315,259,1505,285"/>
-<area shape="rect" id="node16" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1592,259,1745,285"/>
-<area shape="rect" id="node18" href="$inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b" title=" " alt="" coords="724,107,920,133"/>
-<area shape="rect" id="node24" href="$inlineInput_8h.html#a9ac869b5d7471fdfec80cc95402bb5d5" title=" " alt="" coords="735,411,909,437"/>
-<area shape="rect" id="node25" href="$inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="713,512,931,539"/>
-<area shape="rect" id="node26" href="$inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="720,563,924,589"/>
-<area shape="rect" id="node27" href="$inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="719,613,925,640"/>
-<area shape="rect" id="node28" href="$inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="731,664,913,691"/>
-<area shape="rect" id="node29" href="$inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="710,715,934,741"/>
-<area shape="rect" id="node30" href="$inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="745,867,899,893"/>
-<area shape="rect" id="node37" href="$inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="761,461,883,488"/>
-<area shape="rect" id="node19" href="$namespaceEndian.html#adb5a175333bfc81edaee46e216cce009" title=" " alt="" coords="1063,107,1158,133"/>
-<area shape="rect" id="node20" href="$namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e" title=" " alt="" coords="1341,107,1479,133"/>
-<area shape="rect" id="node21" href="$namespaceEndian.html#a2908cb68d06425c31c71fae71797cded" title=" " alt="" coords="1360,157,1460,184"/>
-<area shape="rect" id="node22" href="$namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629" title=" " alt="" coords="1304,208,1516,235"/>
-<area shape="rect" id="node23" href="$namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="1315,56,1505,83"/>
-<area shape="rect" id="node31" href="$inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="993,841,1228,868"/>
-<area shape="rect" id="node34" href="$inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="993,892,1228,919"/>
-<area shape="rect" id="node32" href="$inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="1276,841,1544,868"/>
-<area shape="rect" id="node33" href="$inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="1279,791,1541,817"/>
-<area shape="rect" id="node35" href="$inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="1276,943,1544,969"/>
-<area shape="rect" id="node36" href="$inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="1279,892,1541,919"/>
-<area shape="rect" id="node39" href="$inlineInput_8h.html#a646785be1b63453b24d7e92fd4a1c452" title=" " alt="" coords="501,917,625,944"/>
-<area shape="rect" id="node40" href="$namespaceFileIO.html#aa1a4893c8bbd8188527b61107d0b6d21" title=" " alt="" coords="766,968,878,995"/>
-<area shape="rect" id="node41" href="$namespaceFileIO.html#a0759b0d04f3246286ee9d95114413c93" title=" " alt="" coords="749,1019,895,1045"/>
-<area shape="rect" id="node45" href="$namespaceFileIO.html#a0d6bb9a54ff40a26a297e592504d2ab6" title=" " alt="" coords="755,917,889,944"/>
-<area shape="rect" id="node42" href="$namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="1005,1019,1217,1045"/>
-<area shape="rect" id="node44" href="$namespaceFileIO.html#ad7455cc0a2ae8dab07cf3d255da35ac1" title=" " alt="" coords="1033,968,1188,995"/>
-<area shape="rect" id="node43" href="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="1330,1019,1490,1045"/>
-<area shape="rect" id="node47" href="$inlineInput_8h.html#ab2c4206abdd9e28a058877f9d86dc7b9" title=" " alt="" coords="476,107,651,133"/>
-<area shape="rect" id="node48" href="$namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847" title=" " alt="" coords="699,56,945,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,639,213,665"/>
+<area shape="rect" id="node2" href="$inlineInput_8h.html#a4522075370053215660de95e4bfe9d9a" title=" " alt="" coords="275,487,414,513"/>
+<area shape="rect" id="node43" href="$inlineInput_8h.html#a8e7e2bd44405c923c1ed0fc0cd284aaf" title=" " alt="" coords="277,613,413,640"/>
+<area shape="rect" id="node58" href="$inlineInput_8h.html#a61d0cce2fcb0f3d15fec67d7fbe28adf" title=" " alt="" coords="273,664,416,691"/>
+<area shape="rect" id="node61" href="$namespacestr_1_1iff.html#ac19713fe97c12aa85c6a4514a0bbd268" title="Returns false. End of recursion for template." alt="" coords="261,715,428,741"/>
+<area shape="rect" id="node3" href="$inlineInput_8h.html#a119ccdadc6c03c8a21514e6a8877792c" title=" " alt="" coords="711,613,907,640"/>
+<area shape="rect" id="node16" href="$inlineInput_8h.html#ab5cfac2cc7fafc26cd6b69b74d0add29" title=" " alt="" coords="476,107,649,133"/>
+<area shape="rect" id="node22" href="$inlineInput_8h.html#a661412fb2eb60eef0b26618da69aa742" title=" " alt="" coords="489,436,636,463"/>
+<area shape="rect" id="node4" href="$namespaceEndian.html#abaf85e5d8d9641e35ffb4a5bcfc37f84" title=" " alt="" coords="1609,461,1751,488"/>
+<area shape="rect" id="node5" href="$namespaceEndian.html#a7cd80b2cb2ed674196a68549c8489f88" title=" " alt="" coords="1846,664,2058,691"/>
+<area shape="rect" id="node7" href="$namespaceEndian.html#a4ef36a4fee2f667cf8ac3f67017716bb" title=" " alt="" coords="1840,613,2064,640"/>
+<area shape="rect" id="node8" href="$namespaceFileIO.html#ad34c7f82a6493b2badf319599f79cace" title=" " alt="" coords="1031,228,1143,255"/>
+<area shape="rect" id="node14" href="$namespaceEndian.html#a902308bd860c14813fea8a4d3607d7a0" title=" " alt="" coords="1021,715,1152,741"/>
+<area shape="rect" id="node15" href="$inlineCAP_8h.html#a445d56f4c0c7afb68ecfa18087a6af31" title="Generate and return the encoding for a SYNC instruction." alt="" coords="995,360,1179,387"/>
+<area shape="rect" id="node6" href="$namespaceEndian.html#a7c0178c39449483c29a1a305d0a73606" title=" " alt="" coords="2112,639,2272,665"/>
+<area shape="rect" id="node9" href="$namespaceFileIO.html#a22e3632506f53aee32a970b2d290c5b1" title=" " alt="" coords="1591,344,1769,371"/>
+<area shape="rect" id="node10" href="$namespaceFileIO.html#a2afbbb760f8c652d251a922b1239adb6" title=" " alt="" coords="1875,287,2029,313"/>
+<area shape="rect" id="node11" href="$namespaceFileIO.html#a82646a311817909c50a2af53ff0fa71f" title=" " alt="" coords="1289,345,1483,386"/>
+<area shape="rect" id="node12" href="$namespaceFileIO.html#a82495da428bf3f126a98a70103127572" title=" " alt="" coords="1283,279,1489,321"/>
+<area shape="rect" id="node13" href="$namespaceFileIO.html#a363ebd239278bddc0b95787d86ae2412" title=" " alt="" coords="1585,287,1775,313"/>
+<area shape="rect" id="node17" href="$inlineInput_8h.html#a7a336065cf356dcd13baf6e7ee541d60" title=" " alt="" coords="707,157,911,184"/>
+<area shape="rect" id="node18" href="$inlineCAP_8h.html#a5cf5745a3f7598d27061688cf9785f26" title="Generate and return the encoding for a IDCODE writing instruction." alt="" coords="718,5,901,32"/>
+<area shape="rect" id="node19" href="$inlineCAP_8h.html#a5cdd7f1c600ae94adc59f9ea624043c3" title="Generate and return the encoding for a type 1 Write instruction." alt="" coords="973,5,1200,32"/>
+<area shape="rect" id="node20" href="$inlineCAP_8h.html#aade38843ee9dfed5d286172b6b37b638" title="Generate and return the encoding for a type 1 instruction." alt="" coords="1291,5,1481,32"/>
+<area shape="rect" id="node21" href="$inlineCAP_8h.html#af67277d07acf4e5907420ff2bc75ecd1" title="Generate and return the encoding for an instruction." alt="" coords="1603,5,1757,32"/>
+<area shape="rect" id="node23" href="$inlineChange_8h.html#ae6a0714a04036157d8ed82cbbf724b8b" title=" " alt="" coords="1288,816,1484,843"/>
+<area shape="rect" id="node29" href="$inlineInput_8h.html#a9ac869b5d7471fdfec80cc95402bb5d5" title=" " alt="" coords="722,512,897,539"/>
+<area shape="rect" id="node30" href="$inlineCAP_8h.html#a1eb75ca7e22180ac716ad8209daadb04" title="Parses and returns instruction operation. Most Xil instructions will NOP or write." alt="" coords="701,208,918,235"/>
+<area shape="rect" id="node31" href="$inlineCAP_8h.html#a24b3d1820ac04f03d70f37a2c9ca3c9f" title="Parses and returns instruction payload. This is the immediate value after instruction type and operat..." alt="" coords="707,259,911,285"/>
+<area shape="rect" id="node32" href="$inlineCAP_8h.html#a0e95d810829bb4260d6c965e61953464" title="Parses and returns instruction register. This is the register being addressed if the instruction is o..." alt="" coords="706,309,913,336"/>
+<area shape="rect" id="node33" href="$inlineCAP_8h.html#a9ba7438c226da96455dffd27d8a3dece" title="Parses and returns instruction type. Valid Xil instructions will be of types 1 and 2." alt="" coords="718,360,901,387"/>
+<area shape="rect" id="node34" href="$inlineCAP_8h.html#a3ae52aa039feb014d7b06766a75da7d8" title="Parses and returns instruction word count. This is the number of words to be read/written if the inst..." alt="" coords="697,411,921,437"/>
+<area shape="rect" id="node35" href="$inlineFAR_8h.html#ada71464c75787bcd2a2de5a2e7743a3d" title=" " alt="" coords="733,664,886,691"/>
+<area shape="rect" id="node42" href="$inlineFAR_8h.html#a927d6ab4a838f56d601b5647bad75688" title=" " alt="" coords="748,461,871,488"/>
+<area shape="rect" id="node24" href="$namespaceEndian.html#adb5a175333bfc81edaee46e216cce009" title=" " alt="" coords="1633,867,1727,893"/>
+<area shape="rect" id="node25" href="$namespaceEndian.html#a0418cbe195a9aa09efd6f8e020bec98e" title=" " alt="" coords="1883,791,2021,817"/>
+<area shape="rect" id="node26" href="$namespaceEndian.html#a2908cb68d06425c31c71fae71797cded" title=" " alt="" coords="1902,841,2002,868"/>
+<area shape="rect" id="node27" href="$namespaceEndian.html#a4b0e3c09d2223c99001a39613b86f629" title=" " alt="" coords="1846,892,2058,919"/>
+<area shape="rect" id="node28" href="$namespaceEndian.html#a839576793bc5465bbdf7019b924c0ef8" title=" " alt="" coords="1857,943,2047,969"/>
+<area shape="rect" id="node36" href="$inlineFAR_8h.html#a41d9a4a7f4863333dfb731618ac70f49" title=" " alt="" coords="969,613,1204,640"/>
+<area shape="rect" id="node39" href="$inlineFAR_8h.html#a241e23fa866a5241fa5c4e0bab45df6a" title=" " alt="" coords="969,563,1204,589"/>
+<area shape="rect" id="node37" href="$inlineFAR_8h.html#ae73287221e889459f4797ab737c73675" title=" " alt="" coords="1252,664,1520,691"/>
+<area shape="rect" id="node38" href="$inlineFAR_8h.html#a7af01700cdf8295a0217aa06c7c2aa88" title=" " alt="" coords="1255,613,1517,640"/>
+<area shape="rect" id="node40" href="$inlineFAR_8h.html#a88a8c2bc126f3a6a2f0d21216387e547" title=" " alt="" coords="1252,563,1520,589"/>
+<area shape="rect" id="node41" href="$inlineFAR_8h.html#af4c39bab2775412d8a027af559cbfc51" title=" " alt="" coords="1255,512,1517,539"/>
+<area shape="rect" id="node44" href="$inlineInput_8h.html#a646785be1b63453b24d7e92fd4a1c452" title=" " alt="" coords="501,896,625,923"/>
+<area shape="rect" id="node45" href="$namespaceFileIO.html#aa1a4893c8bbd8188527b61107d0b6d21" title=" " alt="" coords="753,961,865,988"/>
+<area shape="rect" id="node55" href="$namespaceFileIO.html#a0759b0d04f3246286ee9d95114413c93" title=" " alt="" coords="736,896,883,923"/>
+<area shape="rect" id="node56" href="$namespaceFileIO.html#a0d6bb9a54ff40a26a297e592504d2ab6" title=" " alt="" coords="742,1077,877,1104"/>
+<area shape="rect" id="node46" href="$namespaceFileIO.html#a5eaae785861198ef25f4356ffde51e41" title=" " alt="" coords="1297,940,1475,967"/>
+<area shape="rect" id="node49" href="$namespaceFileIO.html#ad7455cc0a2ae8dab07cf3d255da35ac1" title=" " alt="" coords="1603,991,1757,1017"/>
+<area shape="rect" id="node50" href="$namespaceFileIO.html#aeff6ee4a9b7216151a4e4783dfe65089" title=" " alt="" coords="989,969,1184,1010"/>
+<area shape="rect" id="node52" href="$namespaceFileIO.html#a8bab0a62f4460a3dcb22789c32ecc35f" title=" " alt="" coords="983,1034,1190,1075"/>
+<area shape="rect" id="node53" href="$namespaceFileIO.html#afa016cd2013b10d623b090f9f389503b" title=" " alt="" coords="1291,1041,1481,1068"/>
+<area shape="rect" id="node47" href="$namespaceEndian.html#a93717d389cf7fd2e4c837599124ac67d" title=" " alt="" coords="1574,940,1786,967"/>
+<area shape="rect" id="node48" href="$namespaceEndian.html#a374ca218715c0e791eb073a14a66647f" title=" " alt="" coords="1872,1017,2032,1044"/>
+<area shape="rect" id="node51" href="$namespaceEndian.html#a299b13501873eba82fbb3df182a26414" title=" " alt="" coords="1315,991,1457,1017"/>
+<area shape="rect" id="node54" href="$namespaceEndian.html#a4a6b9949494c8d1e6bf260513542fc79" title=" " alt="" coords="1568,1041,1792,1068"/>
+<area shape="rect" id="node57" href="$namespaceFileIO.html#aae14b748305cb0ea84c93ac97b88fee5" title=" " alt="" coords="992,1151,1181,1193"/>
+<area shape="rect" id="node59" href="$inlineInput_8h.html#ab2c4206abdd9e28a058877f9d86dc7b9" title=" " alt="" coords="999,765,1174,792"/>
+<area shape="rect" id="node60" href="$namespaceEndian.html#a6e3f14d2195a9979513e9a7b87e24847" title=" " alt="" coords="1263,715,1509,741"/>
 </map>
