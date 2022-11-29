@@ -1,18 +1,41 @@
 # ![byteman icon](./Resources/icon32.png) byteman
-## *Open-source high-performance bitstream manipulation tool.*
-[![byteman project](https://img.shields.io/badge/byteman-v1.3-blue)](https://github.com/FPGA-Research-Manchester/byteman)
+## *Open-source high-performance bitstream manipulation framework.*
+- [![byteman project](https://img.shields.io/badge/byteman-v1.3-blue)](https://github.com/FPGA-Research-Manchester/byteman)
 [![byteman build](https://img.shields.io/badge/Build%20223-%E2%9C%94-green)](https://github.com/FPGA-Research-Manchester/byteman/commits/main)
-[![Apache license](https://img.shields.io/github/license/FPGA-Research-Manchester/byteman)](https://opensource.org/licenses/Apache-2.0)
+- [![Apache license](https://img.shields.io/github/license/FPGA-Research-Manchester/byteman)](https://opensource.org/licenses/Apache-2.0)
 [![C++ Standard](https://img.shields.io/badge/C%2B%2B-14-green.svg)](https://en.wikipedia.org/wiki/C%2B%2B14)
-[![Reports from automated testing](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml/badge.svg)](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml)
-[![Browse generated docs](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/generateDocs.yml/badge.svg)](https://FPGA-Research-Manchester.github.io/byteman/)
+- [![Reports from automated testing](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml/badge.svg)](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/test.yml)
+- [![Browse generated docs](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/generateDocs.yml/badge.svg)](https://FPGA-Research-Manchester.github.io/byteman/)
 
-## ![byteman icon](./Resources/icon16.png) Download binaries: [![Download windows x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseWindows.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Windows-x86/byteman.exe) [![Download linux x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinux.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-x86/byteman) [![Download linux ARM binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxARM.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-ARM/byteman) [![Download linux RISC-V binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxRISCV.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-RISC-V/byteman)
+# ![byteman icon](./Resources/icon32.png) Binaries
+- Windows
+  - [![Download windows x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseWindows.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Windows-x86/byteman.exe)
+- Linux
+  - [![Download linux x86 binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinux.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-x86/byteman)
+  - [![Download linux ARM binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxARM.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-ARM/byteman)
+  - [![Download linux RISC-V binary](https://github.com/FPGA-Research-Manchester/byteman/actions/workflows/releaseLinuxRISCV.yml/badge.svg)](https://raw.githubusercontent.com/FPGA-Research-Manchester/byteman/main/Binaries/Linux-RISC-V/byteman)
 
+# ![byteman icon](./Resources/icon32.png) Description
 byteman uses command line arguments and currently recognizes the following commands: -a/assembly -b/blank -c/change -d/device -e/exit -h/help -i/input -m/merge -o/output -r/region -s/stdin -v/verbose -w/warn.
 The description of what these commands do and how to use them is provided in the help messages of the program.
 You can find an up-to-date extraction of these messages below.
 
+
+
+# ![byteman icon](./Resources/icon32.png) Publications
+- byteman: A Bitstream Manipulation Framework: 
+   
+    [![ResearchGate](https://img.shields.io/static/v1?style=for-the-badge&message=ResearchGate&color=222222&logo=ResearchGate&logoColor=00CCBB&label=byteman:%20A%20Bitstream%20Manipulation%20Framework)](https://www.researchgate.net/publication/365276026)
+```
+@inproceedings{manev2022byteman,
+  author={Manev, Kristiyan and Powell, Joseph and M{\"a}tas, Kaspar and Koch, Dirk},
+  title = {{byteman: A Bitstream Manipulation Framework}},
+  booktitle={2022 International Conference on Field-Programmable Technology (FPT)},
+  year={2022}
+}
+```
+
+# ![byteman icon](./Resources/icon32.png) Usage
 
 ## $> byteman.exe -help
 ```python
